@@ -885,23 +885,23 @@ msgstr "Вы действительно хотите инициализиров�
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr "Свойства"
+msgstr "Свойства :"
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
-msgstr "Физического тома"
+msgstr "Физический том"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:97
 msgid "Logical Volume"
-msgstr "Логического тома"
+msgstr "Логический том"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr "Нераспределенного тома"
+msgstr "Нераспределенный том"
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr "Устройства хранения"
+msgstr "Устройство хранения"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
@@ -943,7 +943,7 @@ msgstr "Не распределеный"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr "Не инициализированый"
+msgstr "Не инициализировано"
 
 #: src/renderer.py:105
 msgid "extents"
