@@ -3,20 +3,21 @@
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # This file is distributed under the same license as the
 #   system-config-lvm package.
-# Josep Puigdemont <josep@imatge-sintetica.com>, 2004.
+# Josep Puigdemont <josep@imatge-sintetica.com>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: fedora@softcatala.org\n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-19 02:36+0200\n"
+"PO-Revision-Date: 2005-01-07 07:35+0100\n"
 "Last-Translator: Josep Puigdemont <josep@imatge-sintetica.com>\n"
 "Language-Team: Catalan <fedora@softcatala.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+# DUBTE: catch -> capturar? en aquest context?
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:24 src/Properties_Renderer.py:26 src/renderer.py:33
 #: src/Volume_Tab_View.py:28
@@ -29,6 +30,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  No s'ha pogut inicialitzar l'entorn gràfic, segurament degut a que s'ha\n"
+"  executat aquesta eina sense fer servir un entorn gràfic. Intenteu\n"
+"  iniciar l'entorn gràfic o especifiqueu la variable DISPLAY.\n"
+"\n"
+"  S'ha capturat l'excepció: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -76,7 +83,7 @@ msgstr "Entitat de disc no inicialitzada"
 #: src/InputController.py:91
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr ""
+msgstr "Seleccioneu una entitat de disc a afegir al grup de volum %s:"
 
 #: src/InputController.py:93
 msgid ""
@@ -90,16 +97,18 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
+"Ja hi ha un volum lògic anomenat %s en aquest grup de volum, escolliu un nom "
+"únic."
 
 #: src/InputController.py:97
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "Ja existeix un grup de volum anomenat %s, escolliu un nom únic."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
-msgstr "S'ha de proporcionarun nom per al nou volum lògic"
+msgstr "S'ha de proporcionar un nom per al nou volum lògic"
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
@@ -109,19 +118,19 @@ msgstr "S'ha de proporcionar un nom per al nou grup de volum"
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "El punt de muntatge indicat, %s, no existeix, voleu crear-lo?"
 
 #: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "No s'ha pogut crear el punt de muntatge %s, ha fallat inesperadament."
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:109
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "Espai sense utilitzar a %s"
 
 #: src/InputController.py:110
 #, python-format
@@ -153,19 +162,23 @@ msgstr ""
 #: src/InputController.py:117
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s només hauria de contenir valors numèrics"
 
 #: src/InputController.py:118
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"El camp per al màxim nombre de volums físics, només hauria de contenir "
+"valors enters entre 1 i 256"
 
 #: src/InputController.py:119
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"El camp per al màxim nombre de volums lògiccs, només hauria de contenir "
+"valors enters entre 1 i 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
@@ -193,7 +206,7 @@ msgstr ""
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "Esteu del tot segur que voleu suprimir el volum lògic %s?"
 
 #: src/InputController.py:130
 #, python-format
@@ -311,13 +324,15 @@ msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Afegeix volum fídic al GV"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"fegeix a un existent \n"
+"grup de volum"
 
 #: src/lvui.glade.h:16
 msgid "Autobackup?"
@@ -332,6 +347,8 @@ msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"Crea un nou\n"
+"volum lògic"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
@@ -339,13 +356,15 @@ msgstr ""
 
 #: src/lvui.glade.h:21
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "Crea un nou volum lògic"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"Crea un nou \n"
+"grup de volum"
 
 #: src/lvui.glade.h:24
 msgid ""
@@ -401,11 +420,11 @@ msgstr "Gestiona volums"
 
 #: src/lvui.glade.h:38
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Màxim nombre de volums lògics: "
 
 #: src/lvui.glade.h:39
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Màxim nombre de volums físics: "
 
 #: src/lvui.glade.h:40
 msgid "Meg"
@@ -423,27 +442,27 @@ msgstr ""
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr ""
+msgstr "Punt de muntatge (si es deixa en blanc, el VL no es muntarà):"
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Nom per al grup de volum: "
 
 #: src/lvui.glade.h:46
 msgid "Name for new LV:"
-msgstr ""
+msgstr "Nom per al nou VL:"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group"
-msgstr ""
+msgstr "Nou grup de volum"
 
 #: src/lvui.glade.h:48
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "Nou grup de volum de"
 
 #: src/lvui.glade.h:49
 msgid "No Filesystem"
-msgstr ""
+msgstr "Sense sistema de fitxers"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
@@ -462,38 +481,48 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Suprimeix \n"
+"Volum lògic"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Suprimeix els volums\n"
+"lògics seleccionats"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Suprimeis els volums\n"
+"físics seleccionats"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Suprimeix el volum del\n"
+"grup de volum"
 
 #: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Suprimeix el volum\n"
+"del LVM"
 
 #: src/lvui.glade.h:63
 msgid "Resizable?"
-msgstr ""
+msgstr "Redimensionable?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Seleccioneu a quin grup de volum voleu afegir aquest VF:"
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
@@ -517,7 +546,7 @@ msgstr ""
 
 #: src/lvui.glade.h:70
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "Usa la resta d'espai lliure"
 
 #: src/lvui.glade.h:71
 msgid "XFS"
@@ -586,11 +615,11 @@ msgstr ""
 #. Column names for lvdisplay calls
 #: src/lvm_model.py:35
 msgid "Unused"
-msgstr ""
+msgstr "Lliure"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "Espai lliure"
 
 #: src/lvm_model.py:37
 msgid "Free"
@@ -603,7 +632,7 @@ msgstr ""
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
-msgstr ""
+msgstr "Desmuntat"
 
 #: src/lvm_model.py:42
 msgid "No File System"
@@ -611,11 +640,11 @@ msgstr "Sense sitema de fitxers"
 
 #: src/lvm_model.py:53
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Nom del grup de volum:   "
 
 #: src/lvm_model.py:54
 msgid "System ID:   "
-msgstr ""
+msgstr "ID del sistema:   "
 
 #: src/lvm_model.py:55
 msgid "Format:   "
@@ -627,11 +656,11 @@ msgstr "Atributs:   "
 
 #: src/lvm_model.py:57
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Mida del grup de volum:   "
 
 #: src/lvm_model.py:58
 msgid "Available Space:   "
-msgstr ""
+msgstr "Espai disponible:   "
 
 #: src/lvm_model.py:59
 msgid "Total Number of Extents:   "
@@ -647,35 +676,35 @@ msgstr ""
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "Nombre màxim de volums físics permesos:   "
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Nombre màxim de volums físics:   "
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "Nombre màxim de volums lògics permesos:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Nombre de volums lògics:   "
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
-msgstr "VG UUID:   "
+msgstr "GV UUID:   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Nom del volum lògic:   "
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Mida del volum lògic:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "Nombre de segments:   "
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
@@ -707,15 +736,15 @@ msgstr "Sistema de fitxers:   "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Nom del volum físic:   "
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Mida del volum físic:   "
 
 #: src/lvm_model.py:83
 msgid "Space Used:   "
-msgstr ""
+msgstr "Espai usat:   "
 
 #: src/lvm_model.py:84
 msgid "Space Free:   "
@@ -851,18 +880,20 @@ msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
 msgstr ""
+"Esteu segur que voleu inicialitzar l'entitat de disc %s? Es perdran totes "
+"les ddes que hi hagi en aquest dispositiu/partició."
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "Propietats per"
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "Volum físic"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "Volum lògic"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
@@ -870,12 +901,12 @@ msgstr ""
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "Entitat de disc"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "Grup de volum"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -886,7 +917,7 @@ msgstr ""
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "No s'ha seleccionat cap volum"
 
 #: src/renderer.py:96
 msgid ""
@@ -896,11 +927,11 @@ msgstr ""
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "Visualització lògica"
 
 #: src/renderer.py:101 src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "Visualització física"
 
 #: src/renderer.py:102
 msgid "Unallocated"
@@ -908,7 +939,7 @@ msgstr ""
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "Sense inicialitzar"
 
 #: src/renderer.py:105
 msgid "extents"
@@ -916,7 +947,7 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Grups de volum"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
