@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-17 03:10+0900\n"
+"PO-Revision-Date: 2004-10-18 01:51+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -171,25 +171,23 @@ msgstr "%s は数値のみ使用可能です"
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"最大物理ボリュームフィールドは 1 から 256 までの整数のみ使用可能です"
+msgstr "最大物理ボリュームは 1 から 256 までの整数のみ使用可能です"
 
 #: src/InputController.py:119
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"最大論理ボリュームフィールドは 1 から 256 までの整数のみ使用可能です"
+msgstr "最大論理ボリュームは 1 から 256 までの整数のみ使用可能です"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
 msgid "Stripe Size field"
-msgstr "サイズフィールドのストライプ"
+msgstr "ストライプサイズ"
 
 #: src/InputController.py:124
 msgid "Number of Stripes field"
-msgstr "ストライプフィールドの数"
+msgstr "ストライプの数"
 
 #: src/InputController.py:126
 #, python-format
