@@ -34,6 +34,10 @@ import gnome
 import gnome.ui
 
 SIZE_COL = TYPE_COL
+VOL_TYPE_COL = 3
+
+UNALLOC_VOL = 0
+UNINIT_VOL = 1
 
 ###TRANSLATOR: The string below is seen when adding a new Physical
 ###Volume to an existing Volume Group.
@@ -70,6 +74,22 @@ ACCEPTABLE_STRIPE_SIZES = [4,8,16,32,64,128,256,512]
 
 ACCEPTABLE_EXTENT_SIZES = ["2","4","8","16","32","64","128","256","512","1024"]
 
+###TRANSLATOR: The two strings below refer to the name and type of
+###available disk entities on the system. There are two types --
+###The first is an 'unallocated physical volume' which is a disk or
+###partition that has been initialized for use with LVM, by writing
+###a special label onto the first block of the partition. The other type
+###is an 'uninitialized entity', which is an available disk or partition
+###that is NOT yet initialized to be used with LVM. Hope this helps give
+###some context.
+ENTITY_NAME=_("Name")
+ENTITY_SIZE=_("Size")
+ENTITY_TYPE=_("Entity Type")
+
+UNALLOCATED_PV=_("Unallocated Physical Volume")
+UNINIT_DE=_("Uninitialized Disk Entity") 
+ADD_VG_LABEL=_("Select a disk entity to add to the %s Volume Group:")
+
 CANT_STRIPE_MESSAGE=_("A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement.")
 
 NON_UNIQUE_NAME=_("A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name.")
@@ -104,7 +124,10 @@ STRIPE_SIZE_FIELD=_("Stripe Size field")
 NUM_STRIPES_FIELD=_("Number of Stripes field")
 
 CONFIRM_PVREMOVE=_("Are you quite certain that you wish to remove %s from Logical Volume Management?")
-                                                                                
+
+CONFIRM_PV_VG_REMOVE=_("Are you quite certain that you wish to remove %s from the %s Volume Group?")
+CONFIRM_LV_REMOVE=_("Are you quite certain that you wish to remove the Logical Volume %s?")
+NOT_ENOUGH_SPACE_VG=_("Volume Group %s does not have enough space to move the data stored on %s")
 ###########################################################
 class InputController:
   def __init__(self, reset_tree_model, treeview, model_factory, glade_xml):
@@ -114,6 +137,8 @@ class InputController:
     self.glade_xml = glade_xml
 
     self.command_handler = CommandHandler()
+    self.section_list = list()
+    self.section_type = UNSELECTABLE_TYPE
 
     self.setup_dialogs()
 
@@ -122,6 +147,8 @@ class InputController:
     self.init_entity_button.connect("clicked", self.on_init_entity)
 
     self.setup_new_vg_form()
+    #self.setup_pv_rm_migrate()
+    #self.setup_pv_rm()
 
     ###################
     ##This form adds an unallocated PV to a VG
@@ -145,6 +172,7 @@ class InputController:
     self.add_pv_to_vg_treeview.append_column(column2)
 
     self.setup_new_lv_form()
+    self.setup_extend_vg_form()
     self.setup_misc_widgets()
 
   ##################
@@ -273,6 +301,149 @@ class InputController:
       items[1].set_sensitive(FALSE)
       self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_KILO_IDX)
 
+  def on_pv_rm(self, button):
+    selection = self.treeview.get_selection()
+    model, iter = selection.get_selected()
+    name = model.get_value(iter, PATH_COL)
+    pvname = name.strip()
+    pv = self.model_factory.get_PV(pvname)
+    vgname = pv.get_vg_name().strip()
+    total,free,alloc = pv.get_extent_values()
+    retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
+    if (retval == gtk.RESPONSE_NO):
+      return
+    else:
+      ###FIXME - this just check for 'some' space - it should check for 
+      ###enough space by checking free versus needed for pv
+      if alloc != 0:
+        try:
+          self.command_handler.move_pv(pvname)
+        except CommandError, e:
+          self.errorMessage(e.getMessage())
+          return
+      #else:
+      #  self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
+      #  return
+
+      try:
+        self.command_handler.reduce_vg(vgname, pvname)
+      except CommandError, e:
+        self.errorMessage(e.getMessage())
+        return
+
+      args = list()
+      args.append(pvname)
+      apply(self.reset_tree_model, args)
+
+
+  def on_lv_rm(self, button):
+    selection = self.treeview.get_selection()
+    model, iter = selection.get_selected()
+    name = model.get_value(iter, PATH_COL)
+    lvname = name.strip()
+    retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
+    if (retval == gtk.RESPONSE_NO):
+      return
+    else:
+      #Check if LV is mounted -- if so, unmount
+      is_mounted = self.command_handler.is_lv_mounted(lvname)
+
+    if is_mounted == TRUE:
+      try:
+        self.command_handler.unmount_lv(lvname)
+      except CommandError, e:
+        errorMessage(e.getMessage())
+        return
+
+    try:
+      self.command_handler.remove_lv(lvname)
+    except CommandError, e:
+      errorMessage(e.getMessage())
+      return
+
+    #args = list()
+    #args.append(lvname)
+    #apply(self.reset_tree_model, args)
+    apply(self.reset_tree_model)
+
+  def on_rm_select_lvs(self, button):
+    if self.section_list == None:
+      return
+    #check if list > 0
+    if len(self.section_list) == 0:
+      return 
+    #need to check if section is 'unused'
+    for item in self.section_list:
+      if item.is_vol_utilized == FALSE:
+        continue
+      lvname = item.get_name().strip()
+      retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
+      if (retval == gtk.RESPONSE_NO):
+        continue
+      else:
+        #Check if LV is mounted -- if so, unmount
+        is_mounted = self.command_handler.is_lv_mounted(lvname)
+
+      if is_mounted == TRUE:
+        try:
+          self.command_handler.unmount_lv(lvname)
+        except CommandError, e:
+          errorMessage(e.getMessage())
+          return
+
+      try:
+        self.command_handler.remove_lv(lvname)
+      except CommandError, e:
+        errorMessage(e.getMessage())
+        return
+
+      #args = list()
+      #args.append(lvname)
+      #apply(self.reset_tree_model, args)
+    self.clear_highlighted_sections()
+    apply(self.reset_tree_model)
+
+  def on_rm_select_pvs(self, button):
+    if self.section_list == None:
+      return
+    #need tto check if list > 0
+    if len(self.section_list) == 0:
+      return 
+    selection = self.treeview.get_selection()
+    model,iter = selection.get_selected()
+    vgname = model.get_value(iter, PATH_COL).strip()
+    #need to check if section is 'unused'
+    for item in self.section_list:
+      if item.is_vol_utilized == FALSE:
+        continue
+      pvname = item.get_path().strip()
+      retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
+      if (retval == gtk.RESPONSE_NO):
+        continue
+      else:
+        #Check if PV has alloc ated extents - if so, move
+        total,free,alloc = item.get_extent_values()
+        if alloc != 0:
+          try:
+            self.command_handler.move_pv(pvname)
+          except CommandError, e:
+            self.errorMessage(e.getMessage())
+            continue
+
+          try:
+            self.command_handler.reduce_vg(vgname, pvname)
+          except CommandError, e:
+            self.errorMessage(e.getMessage())
+            continue
+
+
+
+      #args = list()
+      #args.append(lvname)
+      #apply(self.reset_tree_model, args)
+    self.clear_highlighted_sections()
+    apply(self.reset_tree_model)
+
   ###################
   ##This form adds a new Logical Volume
   def setup_new_lv_form(self):
@@ -352,6 +523,7 @@ class InputController:
 
   def on_ok_new_lv_button(self, button):
     Name_request = ""
+    VG_Name = ""
     Size_request = 0
     Unit_index = (-1)
     Striped = FALSE
@@ -373,6 +545,7 @@ class InputController:
     model, iter = selection.get_selected()
     if iter != None:
       vgname = model.get_value(iter, PATH_COL).strip()
+      self.model_factory.get_VG(vgname)
       lv_list = self.model_factory.query_LVs_for_VG(vgname)
       for lv in lv_list:
         if lv.get_name() == proposed_name:
@@ -380,6 +553,7 @@ class InputController:
           self.errorMessage(NON_UNIQUE_NAME % proposed_name)
           return
 
+    VG_Name = vgname
     Name_request = proposed_name
 
     #ok - name is ok. size must be below available space
@@ -394,32 +568,35 @@ class InputController:
                           (REMAINING_SPACE_EXTENTS % self.free_extents)) 
         self.new_lv_size.set_text("")
         return
+      normalized_size = int(prop_size)
 
-    elif Unit_index == MEGABYTE_IDX:
-      normalized_size = proposed_size * MEGA_MULTIPLIER
-      remaining_string = REMAINING_SPACE_MEGABYTES
-    elif Unit_index == GIGABYTE_IDX:
-      normalized_size = proposed_size * GIGA_MULTIPLIER
-      remaining_string = REMAINING_SPACE_GIGABYTES
-    elif Unit_index == KILOBYTE_IDX:
-      normalized_size = proposed_size * KILO_MULTIPLIER
-      remaining_string = REMAINING_SPACE_KILOBYTES
+    else:
+      if Unit_index == MEGABYTE_IDX:
+        normalized_size = proposed_size * MEGA_MULTIPLIER
+        remaining_string = REMAINING_SPACE_MEGABYTES
+      elif Unit_index == GIGABYTE_IDX:
+        normalized_size = proposed_size * GIGA_MULTIPLIER
+        remaining_string = REMAINING_SPACE_GIGABYTES
+      elif Unit_index == KILOBYTE_IDX:
+        normalized_size = proposed_size * KILO_MULTIPLIER
+        remaining_string = REMAINING_SPACE_KILOBYTES
 
-    if float(self.free_space_bytes) < normalized_size:
-      self.errorMessage((EXCEEDS_FREE_SPACE % vgname) + 
-                        (remaining_string % self.free_space)) 
-      self.new_lv_size.set_text("")
-      return
+      if float(self.free_space_bytes) < normalized_size:
+        self.errorMessage((EXCEEDS_FREE_SPACE % vgname) + 
+                          (remaining_string % self.free_space)) 
+        self.new_lv_size.set_text("")
+        return
 
     Size_request = normalized_size  #in bytes
    
     #Handle stripe request
     if self.new_lv_striped_radio.get_active() == TRUE:
       Striped = TRUE
-      num_stripes_str = str(self.new_lv_stripe_spinner.get_value())
+      num_stripes_str = str(self.new_lv_stripe_spinner.get_text())
       if num_stripes_str.isalnum():
         Num_stripes = int(num_stripes_str)
       else:
+        print "The val from stripe spinner is --->%s<--" % num_stripes_str
         self.errorMessage(NUMBERS_ONLY % NUM_STRIPES_FIELD)
         self.new_lv_stripe_spinner.set_value(2.0)
         return
@@ -454,12 +631,13 @@ class InputController:
     #Build command args
     new_lv_command_set = {}
     new_lv_command_set[NEW_LV_NAME_ARG] = Name_request
+    new_lv_command_set[NEW_LV_VGNAME_ARG] = VG_Name
     new_lv_command_set[NEW_LV_UNIT_ARG] = Unit_index
     new_lv_command_set[NEW_LV_SIZE_ARG] = Size_request
     new_lv_command_set[NEW_LV_IS_STRIPED_ARG] = Striped
     if Striped == TRUE:
       new_lv_command_set[NEW_LV_STRIPE_SIZE_ARG] = Stripe_size
-      new_lv_command_set[NEW_LV_NUM_STRIPES_ARG] = Size_request
+      new_lv_command_set[NEW_LV_NUM_STRIPES_ARG] = Num_stripes
     new_lv_command_set[NEW_LV_MAKE_FS_ARG] = Make_filesystem
     if Make_filesystem == TRUE:
       new_lv_command_set[NEW_LV_FS_TYPE_ARG] = FS_type
@@ -472,6 +650,9 @@ class InputController:
     self.command_handler.new_lv(new_lv_command_set)
     #Add confirmation dialog here... 
     self.new_lv_dlg.hide()
+    args = list()
+    args.append(Name_request)
+    apply(self.reset_tree_model, args)
 
   def on_cancel_new_lv_button(self, button):
     self.new_lv_dlg.hide()
@@ -632,9 +813,115 @@ class InputController:
   def on_cancel_add_pv_to_vg(self,button):
     self.add_pv_to_vg_dlg.hide()
 
+  def setup_extend_vg_form(self):
+    self.on_extend_vg_button = self.glade_xml.get_widget('on_extend_vg_button')
+    self.on_extend_vg_button.connect("clicked",self.on_extend_vg)
+    self.extend_vg_form = self.glade_xml.get_widget('extend_vg_form')
+    self.extend_vg_tree = self.glade_xml.get_widget('extend_vg_tree')
+    self.extend_vg_label = self.glade_xml.get_widget('extend_vg_label')
+    self.glade_xml.get_widget('on_ok_extend_vg').connect('clicked', self.on_ok_extend_vg)
+    self.glade_xml.get_widget('on_cancel_extend_vg').connect('clicked',self.on_cancel_extend_vg)
+    #set up columns for tree
+    model = gtk.ListStore (gobject.TYPE_STRING,
+                           gobject.TYPE_STRING,
+                           gobject.TYPE_STRING,
+                           gobject.TYPE_INT)
+
+    self.extend_vg_tree.set_model(model)
+    renderer1 = gtk.CellRendererText()
+    column1 = gtk.TreeViewColumn(ENTITY_NAME,renderer1, text=0)
+    self.extend_vg_tree.append_column(column1)
+    renderer2 = gtk.CellRendererText()
+    column2 = gtk.TreeViewColumn(ENTITY_SIZE,renderer2, text=1)
+    self.extend_vg_tree.append_column(column2)
+    renderer3 = gtk.CellRendererText()
+    column3 = gtk.TreeViewColumn(ENTITY_TYPE,renderer3, markup=2)
+    self.extend_vg_tree.append_column(column3)
+
+
+  def on_extend_vg(self, button):
+    self.rebuild_extend_vg_tree()
+    self.extend_vg_form.show()
+
+  def on_ok_extend_vg(self, button):
+    selection = self.extend_vg_tree.get_selection()
+    if selection == None:
+      self.extend_vg_form.hide() #cancel opp if OK clicked w/o selection
+
+    model,iter = selection.get_selected()
+    entity_name = model.get_value(iter, NAME_COL).strip()
+    entity_type = model.get_value(iter, VOL_TYPE_COL)
+    
+    #Now get name of VG to be extended...
+    main_selection = self.treeview.get_selection()
+    main_model,main_iter = main_selection.get_selected()
+    main_path = main_model.get_path(main_iter)
+    vgname = main_model.get_value(main_iter,PATH_COL).strip()
+
+    if entity_type == UNINIT_VOL:  #First, initialize if necessary
+      try:
+        self.command_handler.initialize_entity(entity_name)
+      except CommandError, e:
+        errorMessage(e.getMessage())
+        return
+
+    try:
+      self.command_handler.add_unalloc_to_vg(entity_name, vgname)
+    except CommandError, e:
+      errorMessage(e.getMessage())
+      return 
+
+    self.extend_vg_form.hide()
+    apply(self.reset_tree_model)
+    self.treeview.expand_to_path(main_path)
+
+    
+  def on_cancel_extend_vg(self, button):
+    self.extend_vg_form.hide()
+    
+
+  def rebuild_extend_vg_tree(self):
+    uv_string = "<span foreground=\"#ED1C2A\"><b>" + UNALLOCATED_PV + "</b></span>"
+    iv_string = "<span foreground=\"#BBBBBB\"><b>" + UNINIT_DE + "</b></span>"
+    model = self.extend_vg_tree.get_model()
+    if model != None:
+      model.clear()
+
+    unallocated_vols = self.model_factory.query_unallocated()
+    if len(unallocated_vols) > 0:
+      for vol in unallocated_vols:
+        iter = model.append()
+        model.set(iter, NAME_COL, vol.get_path(),
+                        SIZE_COL, vol.get_volume_size(),
+                        PATH_COL, uv_string,
+                        VOL_TYPE_COL, UNALLOC_VOL)
+
+    uninitialized_list = self.model_factory.query_uninitialized()
+    if len(uninitialized_list) > 0:
+      for item in uninitialized_list:
+        iter = model.append()
+        model.set(iter, NAME_COL, item.get_path(),
+                        SIZE_COL, item.get_volume_size(),
+                        PATH_COL, iv_string,
+                        VOL_TYPE_COL,UNINIT_VOL)
+
+    selection = self.treeview.get_selection()
+    main_model,iter_val = selection.get_selected()
+    vgname = main_model.get_value(iter_val, PATH_COL)
+    self.extend_vg_label.set_text(ADD_VG_LABEL % vgname)
+
+
   def setup_misc_widgets(self):
     self.remove_unalloc_pv = self.glade_xml.get_widget('remove_unalloc_pv')
     self.remove_unalloc_pv.connect("clicked",self.on_remove_unalloc_pv)
+    self.on_pv_rm_button = self.glade_xml.get_widget('on_pv_rm_button')
+    self.on_pv_rm_button.connect("clicked",self.on_pv_rm)
+    self.on_lv_rm_button = self.glade_xml.get_widget('on_lv_rm_button')
+    self.on_lv_rm_button.connect("clicked",self.on_lv_rm)
+    self.on_rm_select_lvs_button = self.glade_xml.get_widget('on_rm_select_lvs')
+    self.on_rm_select_lvs_button.connect("clicked",self.on_rm_select_lvs)
+    self.on_rm_select_pvs_button = self.glade_xml.get_widget('on_rm_select_pvs')
+    self.on_rm_select_pvs_button.connect("clicked",self.on_rm_select_pvs)
 
   def on_remove_unalloc_pv(self, button):
     selection = self.treeview.get_selection()
@@ -679,4 +966,10 @@ class InputController:
     dlg.destroy()
     return rc
                                                                                 
+  def register_highlighted_sections(self, section_type, section_list):
+    self.section_type = section_type
+    self.section_list = section_list
 
+  def clear_highlighted_sections(self):
+    self.section_type = UNSELECTABLE_TYPE
+    self.section_list = None

@@ -254,6 +254,7 @@ class Volume_Tab_View:
       vg_data = self.model_factory.get_data_for_VG(vg_name)
       self.lr.render_to_layout_area(vg_data, vg_name, type)
       self.treeview.expand_row(treepath, FALSE)
+      self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.phys_vol_view_panel.show()
     elif type == VG_LOG_TYPE:
@@ -265,6 +266,7 @@ class Volume_Tab_View:
       vg_data = self.model_factory.get_data_for_VG(vg_name)
       self.lr.render_to_layout_area(vg_data, vg_name, type)
       self.treeview.expand_row(treepath, FALSE)
+      self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.log_vol_view_panel.show()
     elif type == VG_TYPE:
@@ -276,6 +278,7 @@ class Volume_Tab_View:
       self.lr.render_to_layout_area(vg_data, vg_name, type)
       self.clear_all_buttonpanels()
       self.treeview.expand_row(treepath, FALSE)
+      self.input_controller.clear_highlighted_sections()
       self.vr.render_dual(pv_list, lv_list)
     elif type == PHYS_TYPE:
       pathname = model.get_value(iter, PATH_COL)
@@ -283,6 +286,7 @@ class Volume_Tab_View:
       pv = self.model_factory.get_PV(pv_name)
       pv_data = self.model_factory.get_data_for_PV(pv_name)
       self.lr.render_to_layout_area(pv_data, pv_name, type)
+      self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.phys_panel.show()
       self.vr.render_single_volume(pv, type) 
@@ -292,6 +296,7 @@ class Volume_Tab_View:
       lv = self.model_factory.get_LV(lv_name)
       lv_data = self.model_factory.get_data_for_LV(lv_name)
       self.lr.render_to_layout_area(lv_data, lv_name, type)
+      self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.log_panel.show()
       self.vr.render_single_volume(lv, type) 
@@ -302,6 +307,7 @@ class Volume_Tab_View:
       self.vr.render_single_volume(pv, type) 
       pv_data = self.model_factory.get_data_for_PV(pv_name)
       self.lr.render_to_layout_area(pv_data, pv_name, type)
+      self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.unalloc_panel.show()
     elif type == UNINITIALIZED_TYPE:
@@ -311,9 +317,11 @@ class Volume_Tab_View:
       uv_data = self.model_factory.get_data_for_UV(uv_name)
       self.lr.render_to_layout_area(uv_data, uv_name, type)
       self.vr.render_single_volume(uv, type) 
+      self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.uninit_panel.show()
     else:
+      self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.vr.render_noselection()
       self.lr.clear_layout_area()
@@ -333,9 +341,11 @@ class Volume_Tab_View:
     if type == VG_TYPE:
       self.vr.dual_highlight_section_persist(event)
     elif type == VG_PHYS_TYPE:
-      self.vr.highlight_section_persist(event)
+      result = self.vr.highlight_section_persist(event)
+      self.input_controller.register_highlighted_sections(VG_PHYS_TYPE, result)
     elif type == VG_LOG_TYPE:
-      self.vr.highlight_section_persist(event)
+      result = self.vr.highlight_section_persist(event)
+      self.input_controller.register_highlighted_sections(VG_LOG_TYPE, result)
     elif type == PHYS_TYPE:
       self.vr.single_highlight_extent_persist(event)
       #return
