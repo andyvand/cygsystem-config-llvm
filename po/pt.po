@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-26 12:42+0100\n"
+"PO-Revision-Date: 2005-02-17 09:34+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -280,14 +280,12 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "Tem a certeza que deseja remover o Volume Lógico %s?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
-"O Grupo de Volumes %s não tem espaço suficiente para mover os dados "
-"armazenados em %s"
+msgstr "O Grupo de Volumes %s não tem espaço suficiente para mover os dados armazenados em %s. Uma possível solução é adicionar um Volume Físico adicional ao Grupo de Volumes."
 
 #: src/InputController.py:163
 msgid ""
@@ -505,11 +503,8 @@ msgstr ""
 "Volume Lógico"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
-"Extender\n"
-"Grupo de Volumes"
+msgstr "Extender Grupo de Volumes"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -691,82 +686,82 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando vgextend falhou. Comando tentado: \"%s\""
+msgstr "O comando vgextend falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando pvcreate falhou. Comando tentado: \"%s\""
+msgstr "O comando pvcreate falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando pvcreate falhou. Comando tentado: \"%s\""
+msgstr "O comando pvcreate falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando pvremove falhou. Comando tentado: \"%s\""
+msgstr "O comando pvremove falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando lvremove falhou. Comando tentado: \"%s\""
+msgstr "O comando lvremove falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando pvremove falhou. Comando tentado: \"%s\""
+msgstr "O comando pvremove falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando vgcreate falhou. Comando tentado: \"%s\""
+msgstr "O comando vgcreate falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "O comando vgcreate falhou. Comando tentado: \"%s\""
+msgstr "O comando vgcreate falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando vgreduce falhou. Comando tentado: \"%s\""
+msgstr "O comando vgreduce falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando pvmove falhou. Comando tentado: \"%s\""
+msgstr "O comando pvmove falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando umount falhou. Comando tentado: \"%s\""
+msgstr "O comando umount falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "O comando pvmove falhou. Comando tentado: \"%s\""
+msgstr "O comando pvmove falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "O comando umount falhou. Comando tentado: \"%s\""
+msgstr "O comando umount falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1064,46 +1059,43 @@ msgstr "Livre"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
