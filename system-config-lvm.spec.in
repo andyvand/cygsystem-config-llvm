@@ -10,9 +10,10 @@ Group: Applications/System
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Requires: /sbin/chkconfig
-Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas, rhpl 
+Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas 
 Requires: lvm2 >= 2.00.20
 Requires: rhpl >= 0.148.2
+Requires: python >= 2.3
 
 %description
 system-config-lvm is a utility which allows you to configure a Logical Volume Management in a graphical setting.
@@ -49,6 +50,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Wed Nov 24 2004 Jim Parsons <jparsons@redhat.com> 0.9.18-1.0
+  - Adjustments to configure.in so this builds in fedora as well as RHEL.
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.17-1.0
   - Fixes for bz140413 and bz 140562
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.16-1.0

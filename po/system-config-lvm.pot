@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-23 11:52-0500\n"
+"POT-Creation-Date: 2004-11-23 14:03-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -663,58 +663,64 @@ msgstr ""
 #: src/CommandHandler.py:17
 #, python-format
 msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:22
 #, python-format
 msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
 
 #: src/CommandHandler.py:23
 #, python-format
 msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:24
 #, python-format
 msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:25
 #, python-format
 msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:26
+#, python-format
+msgid ""
+"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:27
 #, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
