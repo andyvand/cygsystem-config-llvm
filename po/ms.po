@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-07 19:57+0800\n"
+"PO-Revision-Date: 2005-02-22 08:42+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -819,11 +819,11 @@ msgstr ""
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "Tidak Dibahagikan"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "Tidak Dimulakan"
 
 #: src/renderer.py:105
 msgid "extents"
@@ -831,13 +831,13 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Kumpulan Volum"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Volum Tidak Dibahagikan"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "Entiti Tidak Dimulakan"
 
