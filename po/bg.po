@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-17 08:15+0300\n"
+"PO-Revision-Date: 2004-10-17 23:19+0300\n"
 "Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
 "MIME-Version: 1.0\n"
@@ -29,6 +29,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Невъзможност за инициализиране на графичната среда. По всяка вероятност\n"
+"  е, че инструмента не е стартиран под графична среда. Моля или стартирайте\n"
+"  своя графичен потребителски интерфейс или установете променливата DISPLAY.\n"
+"                                                                                \n"
+"  Уловено изключение: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -67,22 +73,25 @@ msgstr "Тип елемент"
 
 #: src/InputController.py:89
 msgid "Unallocated Physical Volume"
-msgstr "Неалокиран физически дял"
+msgstr "Свободен физически том"
 
 #: src/InputController.py:90
 msgid "Uninitialized Disk Entity"
-msgstr "Неинициализиран дисков елемент"
+msgstr "Не-инициализиран дисков елемент"
 
 #: src/InputController.py:91
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr "Изберете дисков елемент за добавка към Volume Group %s:"
+msgstr "Изберете дисков елемент за добавка към група томове %s:"
 
 #: src/InputController.py:93
+#, fuzzy
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
+"Група томове следва да бъде съставена от два или повече физически тома за да "
+"поддържа stripping. Тази група томове не удовлетворява това изискване."
 
 #: src/InputController.py:95
 #, python-format
@@ -90,36 +99,38 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
+"Логически том с име %s вече съществува в тази група томове. "
+"Моля изберете уникално име."
 
 #: src/InputController.py:97
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "Група томове с име %s вече съществува. Моля изберете уникално име."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "Необходимо е име за новия логически том"
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "Необходимо е име за новата група томове"
 
 #: src/InputController.py:103
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
 
 #: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "Създаването на точка на монтиране %s неочаквано не успя."
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:109
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "Свободно място на %s"
 
 #: src/InputController.py:110
 #, python-format
@@ -139,7 +150,7 @@ msgstr "%s гигабайта"
 #: src/InputController.py:113
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s разширения"
 
 #: src/InputController.py:115
 #, python-format
@@ -147,33 +158,41 @@ msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
+"Изисквания размер за новия логически том надвишава свободното място "
+"на група томове %s. Свободното място е: "
 
 #: src/InputController.py:117
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s следва да съдържа само цифрови стойности"
 
 #: src/InputController.py:118
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"Полето максимален брой физически томове следва да съдържа само цели "
+"числа в интервала от 1 до 256"
 
 #: src/InputController.py:119
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"Полето максимален брой логически томове следва да съдържа само цели "
+"числа в интервала от 1 до 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
+#, fuzzy
 msgid "Stripe Size field"
-msgstr ""
+msgstr "Stripe Size field"
 
 #: src/InputController.py:124
+#, fuzzy
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "Number of Stripes field"
 
 #: src/InputController.py:126
 #, python-format
@@ -181,21 +200,23 @@ msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
+"Напълно сигурен ли сте, че искате да махнете %s от мениджъра на "
+"логически томове?"
 
 #: src/InputController.py:128
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "Напълно сигурен ли сте, че искате да махнете %s от група томове %s?"
 
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "Напълно сигурен ли сте, че искате да премахнете логическия том %s?"
 
 #: src/InputController.py:130
 #, python-format
 msgid "Volume Group %s does not have enough space to move the data stored on %s"
-msgstr ""
+msgstr "Група томове %s няма достатъчно свободно място за да поеме данните от %s"
 
 #. ##########################################################
 #. self.setup_pv_rm_migrate()
@@ -307,61 +328,71 @@ msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Добавяне на физически том към ГТ"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"Добавяне към налична \n"
+"група томове"
 
 #: src/lvui.glade.h:16
 msgid "Autobackup?"
-msgstr ""
+msgstr "Автоматично резервно копие?"
 
 #: src/lvui.glade.h:17
 msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr ""
+msgstr "Маркирайте тук ако искате да бъде добавен запис в /etc/fstab"
 
 #: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"Създаване на нов\n"
+"логически том"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
-msgstr ""
+msgstr "Създаване нов ЛТ"
 
 #: src/lvui.glade.h:21
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "Създаване на нов логически том"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"Създаване нова \n"
+"група томове"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"Разширяване\n"
+"група томове"
 
 #: src/lvui.glade.h:26
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"Разширяване\n"
+"логически том"
 
 #: src/lvui.glade.h:28
 msgid "Extents"
-msgstr ""
+msgstr "Разширения"
 
 #: src/lvui.glade.h:29
 msgid "Filesystem: "
-msgstr "Файлова система:"
+msgstr "Файлова система: "
 
 #: src/lvui.glade.h:30
 msgid "Gigabytes"
@@ -369,7 +400,7 @@ msgstr "Гигабайта"
 
 #: src/lvui.glade.h:31
 msgid "Initialize Entity"
-msgstr ""
+msgstr "Инициал. на елемент"
 
 #: src/lvui.glade.h:32
 msgid "JFS"
@@ -385,23 +416,23 @@ msgstr "Килобайта"
 
 #: src/lvui.glade.h:35
 msgid "Linear"
-msgstr ""
+msgstr "Линеен"
 
 #: src/lvui.glade.h:36
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "Управление на логически томове"
 
 #: src/lvui.glade.h:37
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Управление на томове"
 
 #: src/lvui.glade.h:38
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Максимум логически томове: "
 
 #: src/lvui.glade.h:39
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Максимум физически томове: "
 
 #: src/lvui.glade.h:40
 msgid "Meg"
@@ -416,38 +447,41 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"Мигриране избраните\n"
+"разширения от тома"
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "Точка на монтиране (при липсваща LV няма да се монтира)"
+msgstr "Точка на монтиране (при празна ЛТ няма да се монтира):"
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Име на групата томове: "
 
 #: src/lvui.glade.h:46
 msgid "Name for new LV:"
-msgstr ""
+msgstr "Име за нов ЛТ:"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group"
-msgstr ""
+msgstr "Нова група томове"
 
 #: src/lvui.glade.h:48
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "Форма за нова група томове"
 
 #: src/lvui.glade.h:49
 msgid "No Filesystem"
-msgstr ""
+msgstr "Няма файлова система"
 
 #: src/lvui.glade.h:50
+#, fuzzy
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "Брой Stripes: "
 
 #: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Размер на физическо разширение: "
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
@@ -458,30 +492,40 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Премахване \n"
+"логически том"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Премахване избран(ите)\n"
+"логически том(ове)"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Премахване избран(ите)\n"
+"физически том(ове)"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Премахване том от\n"
+"група томове"
 
 #: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Премахване том \n"
+"от МЛТ"
 
 #: src/lvui.glade.h:63
 msgid "Resizable?"
@@ -489,31 +533,33 @@ msgstr "Преоразмерим?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Изберете към коя група томове да се добави този ФТ:"
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "Изберете дисков елемент за добавяне към групата томове:"
 
 #: src/lvui.glade.h:66
 msgid "Size:"
 msgstr "Размер:"
 
 #: src/lvui.glade.h:67
+#, fuzzy
 msgid "Stripe Size:"
-msgstr ""
+msgstr "Stripe Size:"
 
 #: src/lvui.glade.h:68
+#, fuzzy
 msgid "Striped"
-msgstr ""
+msgstr "Striped"
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "Свободно място на ГТ1:"
 
 #: src/lvui.glade.h:70
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "Ползване оставащото място"
 
 #: src/lvui.glade.h:71
 msgid "XFS"
@@ -536,42 +582,42 @@ msgstr "ext3"
 #: src/CommandHandler.py:14
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата vgextend не успя. Опитана команда: \"%s\""
 
 #: src/CommandHandler.py:15
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата pvcreate не успя. Опитана команда: \"%s\""
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата pvremove не успя. Опитана команда: \"%s\""
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата lvremove не успя. Опитана команда: \"%s\""
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата vgcreate не успя. Опитана команда: \"%s\""
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата vgreduce не успя. Опитана команда: \"%s\""
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата pvmove не успя. Опитана команда: \"%s\""
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "командата umount не успя. Опитана команда: \"%s\""
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -582,7 +628,7 @@ msgstr ""
 #. Column names for lvdisplay calls
 #: src/lvm_model.py:35
 msgid "Unused"
-msgstr "Свободен"
+msgstr "Свободно"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
@@ -594,12 +640,13 @@ msgstr "Свободно"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
+#, fuzzy
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Линейно Mapping"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
-msgstr "Размонтиран"
+msgstr "Демонтиран"
 
 #: src/lvm_model.py:42
 msgid "No File System"
@@ -607,7 +654,7 @@ msgstr "Няма файлова система"
 
 #: src/lvm_model.py:53
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Име на група томове:   "
 
 #: src/lvm_model.py:54
 msgid "System ID:   "
@@ -615,7 +662,7 @@ msgstr "Системно ID:   "
 
 #: src/lvm_model.py:55
 msgid "Format:   "
-msgstr "Форматиране:   "
+msgstr "Формат:   "
 
 #: src/lvm_model.py:56 src/lvm_model.py:73 src/lvm_model.py:87
 msgid "Attributes:   "
@@ -623,7 +670,7 @@ msgstr "Атрибути:   "
 
 #: src/lvm_model.py:57
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Размер на група томове:   "
 
 #: src/lvm_model.py:58
 msgid "Available Space:   "
@@ -631,59 +678,61 @@ msgstr "Свободно място:   "
 
 #: src/lvm_model.py:59
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Общ брой разширения:   "
 
 #: src/lvm_model.py:60
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Брой свободни разширения:   "
 
 #: src/lvm_model.py:61
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Размер на разширение:   "
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "Максимално позволени физически томове:   "
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Брой физически томове:   "
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "Максимално позволени логически томове:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Брой логически томове:   "
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
-msgstr "VG UUID:   "
+msgstr "ГТ UUID:   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Име на логическия том:   "
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Размер на логическия том:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "Брой сегменти:   "
 
 #: src/lvm_model.py:71
+#, fuzzy
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "Брой Stripes:   "
 
 #: src/lvm_model.py:72
+#, fuzzy
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Размер на Stripe:   "
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
-msgstr "LV UUID:   "
+msgstr "ЛТ UUID:   "
 
 #: src/lvm_model.py:76
 msgid "Partition Type:   "
@@ -703,11 +752,11 @@ msgstr "Файлова система:   "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Име на физическия том:   "
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Размер на физическия том:   "
 
 #: src/lvm_model.py:83
 msgid "Space Used:   "
@@ -719,15 +768,15 @@ msgstr "Свободно място:   "
 
 #: src/lvm_model.py:85
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Общо физически разширения:   "
 
 #: src/lvm_model.py:86
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Заети физически разширения:   "
 
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
-msgstr "PV UUID:   "
+msgstr "ФТ UUID:   "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -847,31 +896,33 @@ msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
 msgstr ""
+"Съвсем сигурен ли сте, че искате да инициализирате дисковия елемент %s? "
+"Всички данни на това устройство/дял ще бъдат загубени."
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "Свойства на"
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "Физически том"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "Логически том"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Свободен том"
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "Дисков елемент"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "Група томове"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -879,16 +930,20 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"Това разширение все още не е \n"
+" инициализиран за употреба с МЛТ."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Не е избран том"
 
 #: src/renderer.py:96
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
+"Този том не е зачислен \n"
+" към група томове все още."
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
@@ -908,17 +963,17 @@ msgstr "Неинициализиран"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "разширения"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Групи томове"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Свободни томове"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "Неинициализирани елементи"
 
