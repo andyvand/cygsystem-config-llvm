@@ -220,7 +220,7 @@ class Volume_Tab_View:
                             TYPE_COL, UNINITIALIZED_TYPE,
                             PATH_COL, item.get_path())
 
-    #self.treeview.expand_all()
+    self.treeview.expand_all()
     self.clear_all_buttonpanels()
 
   def on_expose_event(self,widget,event):

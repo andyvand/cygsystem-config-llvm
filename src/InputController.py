@@ -104,6 +104,8 @@ BAD_MNT_POINT=_("The specified mount point, %s, does not exist. Do you wish to c
 
 BAD_MNT_CREATION=_("The creation of mount point %s unexpectedly failed.")
 
+NOT_IMPLEMENTED=_("This capability is not yet implemented in this version")
+
 ###TRANSLATOR: An extent below is an abstract unit of storage. The size
 ###of an extent is user-definable.
 REMAINING_SPACE_VGNAME=_("Unused space on %s")
@@ -388,13 +390,13 @@ class InputController:
         try:
           self.command_handler.unmount_lv(lvname)
         except CommandError, e:
-          errorMessage(e.getMessage())
+          self.errorMessage(e.getMessage())
           return
 
       try:
         self.command_handler.remove_lv(lvname)
       except CommandError, e:
-        errorMessage(e.getMessage())
+        self.errorMessage(e.getMessage())
         return
 
       #args = list()
@@ -922,6 +924,10 @@ class InputController:
     self.on_rm_select_lvs_button.connect("clicked",self.on_rm_select_lvs)
     self.on_rm_select_pvs_button = self.glade_xml.get_widget('on_rm_select_pvs')
     self.on_rm_select_pvs_button.connect("clicked",self.on_rm_select_pvs)
+    self.migrate_exts_button = self.glade_xml.get_widget('button27')
+    self.migrate_exts_button.connect("clicked",self.on_migrate_exts)
+    self.extend_lv_button = self.glade_xml.get_widget('button31')
+    self.extend_lv_button.connect("clicked",self.on_extend_lv)
 
   def on_remove_unalloc_pv(self, button):
     selection = self.treeview.get_selection()
@@ -938,6 +944,15 @@ class InputController:
         errorMessage(e.getMessage())
         return
       apply(self.reset_tree_model)
+
+  def on_migrate_exts(self, button):
+    retval = self.simpleInfoMessage(NOT_IMPLEMENTED)
+    return
+
+  def on_extend_lv(self, button):
+    retval = self.simpleInfoMessage(NOT_IMPLEMENTED)
+    return
+
 
   #######################################################
   ###Convenience Dialogs
@@ -960,6 +975,14 @@ class InputController:
                                                                                 
   def infoMessage(self, message):
     dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_YES_NO,
+                            message)
+    dlg.show_all()
+    rc = dlg.run()
+    dlg.destroy()
+    return rc
+                                                                                
+  def simpleInfoMessage(self, message):
+    dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
                             message)
     dlg.show_all()
     rc = dlg.run()
