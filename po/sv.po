@@ -5,16 +5,15 @@
 #
 # Terminologi
 # -----------
-# extents	= extenter (kom inte på något bättre)
-# stripe 	= stripe (kom inte på något bättre, det verkar användas
-#		  oöversatt på andra ställen)
+# extents	= områden (enligt Tomas G.:s förslag)
+# stripe 	= strimla (enligt Tomas G. och Göran U.)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-15 17:45+0200\n"
+"PO-Revision-Date: 2004-10-18 13:36+0200\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +37,7 @@ msgstr ""
 "  verktyget inte kördes i en grafisk miljö. Starta antingen ditt grafiska\n"
 "  gränssnitt eller ställ in din DISPLAY-variabel.\n"
 "                                                                                \n"
-"  Fångade undantag: %s\n"
+"  Fångat undantag: %s\n"
 
 msgid ""
 "\n"
@@ -53,7 +52,7 @@ msgstr ""
 "  verktyget inte kördes i en grafisk miljö. Starta antingen ditt grafiska\n"
 "  gränssnitt eller ställ in din DISPLAY-variabel.\n"
 "\n"
-"  Fångade undantag: %s\n"
+"  Fångat undantag: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -108,8 +107,8 @@ msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
-"En volymgrupp måste bestå av två eller fler fysiska volymer för att stöda "
-"strimning (striping). Denna volymgrupp uppfyller inte det kravet."
+"En volymgrupp måste bestå av två eller fler fysiska volymer för att stödja "
+"strimling (striping). Denna volymgrupp uppfyller inte det kravet."
 
 #: src/InputController.py:95
 #, python-format
@@ -117,14 +116,14 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
-"Det finns redan en logisk volym med namnet %s i denna volymgrupp. Välj ett "
+"Det finns redan en logisk volym som heter %s i denna volymgrupp. Välj ett "
 "unikt namn."
 
 #: src/InputController.py:97
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Det finns redan en volymgrupp med namnet %s. Välj ett unikt namn."
+msgstr "Det finns redan en volymgrupp som heter %s. Välj ett unikt namn."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
@@ -170,7 +169,7 @@ msgstr "%s gigabyte"
 #: src/InputController.py:113
 #, python-format
 msgid "%s extents"
-msgstr "%s extenter"
+msgstr "%s områden"
 
 #: src/InputController.py:115
 #, python-format
@@ -178,14 +177,14 @@ msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
-"Den begärda storleken på den nya volymgruppen överstiger det tillgängliga "
+"Den begärda storleken på den nya logiska volymen överstiger det tillgängliga "
 "lediga utrymmet på volymgruppen %s. Det tillgängliga utrymmet är: "
 
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is:"
 msgstr ""
-"Den begärda storleken på den nya volymgruppen överstiger det tillgängliga "
+"Den begärda storleken på den nya logiska volymen överstiger det tillgängliga "
 "lediga utrymmet på volymgruppen %s. Det tillgängliga utrymmet är:"
 
 # Ser mycket trasigt ut... borde buggrapporteras!
@@ -228,11 +227,11 @@ msgstr ""
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
 msgid "Stripe Size field"
-msgstr "Fält med stripe-storlek"
+msgstr "Fält med storlek på strimla"
 
 #: src/InputController.py:124
 msgid "Number of Stripes field"
-msgstr "Fält med antal stripes"
+msgstr "Fält med antal strimlor"
 
 #: src/InputController.py:126
 #, python-format
@@ -240,18 +239,19 @@ msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
-"Är du säker på att du vill ta bort %s från hanteringen av logiska volymer?"
+"Är du helt säker på att du vill ta bort %s från hanteringen av logiska "
+"volymer?"
 
 #: src/InputController.py:128
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr "Är du säker på att du vill ta bort %s från volymgruppen %s?"
+msgstr "Är du helt säker på att du vill ta bort %s från volymgruppen %s?"
 
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr "Är du säker på att du vill ta bort den logiska volymen %s?"
+msgstr "Är du helt säker på att du vill ta bort den logiska volymen %s?"
 
 #: src/InputController.py:130
 #, python-format
@@ -449,7 +449,16 @@ msgstr "Utöka logisk volym"
 
 #: src/lvui.glade.h:28
 msgid "Extents"
-msgstr "Extenter"
+msgstr "Områden"
+
+msgid "Extent"
+msgstr "Område"
+
+msgid "Stripe"
+msgstr "Strimla"
+
+msgid "Stripes"
+msgstr "Strimlor"
 
 #: src/lvui.glade.h:29
 msgid "Filesystem: "
@@ -524,10 +533,10 @@ msgid ""
 "Extent(s) From Volume"
 msgstr ""
 "Migrera valda\n"
-"extenter från volym"
+"områden från volym"
 
 msgid "Migrate Selected Extent(s) From Volume"
-msgstr "Migrera valda extenter från volym"
+msgstr "Migrera valda områden från volym"
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
@@ -560,14 +569,14 @@ msgstr "Inget filsystem"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
-msgstr "Antal stripes:"
+msgstr "Antal strimlor:"
 
 msgid "Number of Stripes:"
-msgstr "Antal stripes:"
+msgstr "Antal strimlor:"
 
 #: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
-msgstr "Storlek på fysisk extent:"
+msgstr "Storlek på fysiskt område:"
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
@@ -630,14 +639,14 @@ msgstr "Ta bort volym från LVM"
 
 #: src/lvui.glade.h:63
 msgid "Resizable?"
-msgstr "Storleken ändringsbar?"
+msgstr "Anpassningsbar storlek?"
 
 msgid "Resizable"
-msgstr "Storleken ändringsbar"
+msgstr "Anpassningsbar storlek"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr "Välj en volymgrupp att lägga till denna PV i:"
+msgstr "Välj en volymgrupp att lägga till denna fysiska volym i:"
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
@@ -649,11 +658,11 @@ msgstr "Storlek:"
 
 #: src/lvui.glade.h:67
 msgid "Stripe Size:"
-msgstr "Storlek på stripe:"
+msgstr "Storlek på strimla:"
 
 #: src/lvui.glade.h:68
 msgid "Striped"
-msgstr "Strimmad"
+msgstr "Strimlad"
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
@@ -803,24 +812,24 @@ msgstr "Tillgängligt utrymme:"
 
 #: src/lvm_model.py:59
 msgid "Total Number of Extents:   "
-msgstr "Totalt antal extenter:   "
+msgstr "Totalt antal områden:   "
 
 msgid "Total Number of Extents:"
-msgstr "Totalt antal extenter:"
+msgstr "Totalt antal områden:"
 
 #: src/lvm_model.py:60
 msgid "Number of Free Extents:   "
-msgstr "Antal lediga extenter:  "
+msgstr "Antal lediga områden:  "
 
 msgid "Number of Free Extents:"
-msgstr "Antal lediga extenter:"
+msgstr "Antal lediga områden:"
 
 #: src/lvm_model.py:61
 msgid "Extent Size:   "
-msgstr "Storlek på extent:"
+msgstr "Storlek på område:"
 
 msgid "Extent Size:"
-msgstr "Storlek på extent:"
+msgstr "Storlek på område:"
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
@@ -880,11 +889,11 @@ msgstr "Antal segment:"
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
-msgstr "Antal stripes:"
+msgstr "Antal strimlor:"
 
 #: src/lvm_model.py:72
 msgid "Stripe Size:   "
-msgstr "Storlek på stripe: "
+msgstr "Storlek på strimla: "
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
@@ -929,10 +938,10 @@ msgstr "Filsystem:"
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr "Namn på logisk volym:   "
+msgstr "Namn på fysisk volym:   "
 
 msgid "Physical Volume Name:"
-msgstr "Namn på logisk volym:"
+msgstr "Namn på fysisk volym:"
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
@@ -957,24 +966,30 @@ msgstr "Ledigt utrymme:"
 
 #: src/lvm_model.py:85
 msgid "Total Physical Extents:   "
-msgstr "Totala fysiska extenter:"
+msgstr "Totalt antal fysiska områden:"
 
 msgid "Total Physical Extents:"
-msgstr "Totala fysiska extenter:"
+msgstr "Totalt antal fysiska områden:"
 
 #: src/lvm_model.py:86
 msgid "Allocated Physical Extents:   "
-msgstr "Allokerade fysiska extenter:"
+msgstr "Allokerade fysiska områden:"
 
 msgid "Allocated Physical Extents:"
-msgstr "Allokerade fysiska extenter:"
+msgstr "Allokerade fysiska områden:"
 
+# "PV" är nog "Physical Volume", så det blir nog "FV" på svenska
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
-msgstr "PV-UUID:   "
+msgstr "FV-UUID:   "
 
+# "PV" är nog "Physical Volume", så det blir nog "FV" på svenska
 msgid "PV UUID:"
-msgstr "PV-UUID:"
+msgstr "FV-UUID:"
+
+# "PV" är nog "Physical Volume", så det blir nog "FV" på svenska
+msgid "PV UUID"
+msgstr "FV-UUID"
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -1131,11 +1146,11 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
-"Denna extent har inte initierats\n"
+"Detta område har inte initierats\n"
 "för användning med LVM än."
 
 msgid "This extent has not yet been initialized for use with LVM."
-msgstr "Denna extent har inte initierats för användning med LVM än."
+msgstr "Detta område har inte initierats för användning med LVM än."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
@@ -1170,7 +1185,7 @@ msgstr "Oinitierad"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr "extenter"
+msgstr "områden"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
