@@ -76,23 +76,14 @@ class CommandHandler:
       raise CommandError('FATAL', msg)
 
   def create_new_vg(self, name, max_phys, max_log, extent_size, is_unit_megs,
-                    is_resizable, is_autobackup, pv):
-    if is_resizable:
-      resizable_arg = 'y'
-    else:
-      resizable_arg = 'n'
-
-    if is_autobackup:
-      autobackup_arg = 'y'
-    else:
-      autobackup_arg = 'n'
+                    pv):
 
     if is_unit_megs:
       units_arg = 'm'
     else:
       units_arg = 'k'
     
-    commandstring = "/usr/sbin/vgcreate -M2 -l " + max_log + " -p " + max_phys + " -s " + extent_size + units_arg + " -A " + autobackup_arg + " " + name + " " + pv
+    commandstring = "/usr/sbin/vgcreate -M2 -l " + max_log + " -p " + max_phys + " -s " + extent_size + units_arg + " " + name + " " + pv
     msg =  VGCREATE_FAILURE % commandstring
     retval = os.system(commandstring)
     if retval != 0:

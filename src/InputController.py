@@ -196,8 +196,6 @@ class InputController:
     self.new_vg_radio_meg = self.glade_xml.get_widget('radiobutton1')
     self.new_vg_radio_meg.connect('clicked', self.change_new_vg_radio)
     self.new_vg_radio_kilo = self.glade_xml.get_widget('radiobutton2')
-    self.new_vg_autobak_cbox = self.glade_xml.get_widget('checkbutton8')
-    self.new_vg_resize_cbox = self.glade_xml.get_widget('checkbutton7')
 
   def on_new_vg(self, button):
     self.prep_new_vg_dlg()
@@ -222,11 +220,12 @@ class InputController:
     proposed_name = self.new_vg_name.get_text().strip()
     if proposed_name == "":
       self.errorMessage(MUST_PROVIDE_VG_NAME)
+      return
 
     #Now check for unique name
     vg_list = self.model_factory.query_VGs()
     for vg in vg_list:
-      if vg.get_name() == proposed_name:
+      if vg.get_name().strip() == proposed_name:
         self.new_vg_name.select_region(0, (-1))
         self.errorMessage(NON_UNIQUE_NAME % proposed_name)
         return
@@ -260,8 +259,6 @@ class InputController:
 
     extent_idx = self.new_vg_extent_size.get_history()
     phys_extent_units_meg =  self.new_vg_radio_meg.get_active()
-    autobackup = self.new_vg_resize_cbox.get_active()
-    resizable = self.new_vg_resize_cbox.get_active() 
 
     try:
       self.command_handler.create_new_vg(Name_request,
@@ -269,8 +266,6 @@ class InputController:
                                          str(max_logical_volumes),
                                          ACCEPTABLE_EXTENT_SIZES[extent_idx],
                                          phys_extent_units_meg,
-                                         resizable,
-                                         autobackup,
                                          pv_name)
     except CommandError, e:
       self.errorMessage(e.getMessage())
@@ -287,8 +282,6 @@ class InputController:
     self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
     self.new_vg_radio_meg.set_active(TRUE)
     self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
-    self.new_vg_autobak_cbox.set_active(FALSE)
-    self.new_vg_resize_cbox.set_active(FALSE)
 
   def change_new_vg_radio(self, button):
     menu = self.new_vg_extent_size.get_menu()
@@ -356,13 +349,13 @@ class InputController:
       try:
         self.command_handler.unmount_lv(lvname)
       except CommandError, e:
-        errorMessage(e.getMessage())
+        self.errorMessage(e.getMessage())
         return
 
     try:
       self.command_handler.remove_lv(lvname)
     except CommandError, e:
-      errorMessage(e.getMessage())
+      self.errorMessage(e.getMessage())
       return
 
     #args = list()
@@ -770,7 +763,7 @@ class InputController:
     try:
       self.command_handler.initialize_entity(name)
     except CommandError, e:
-      errorMessage(e.getMessage())
+      self.errorMessage(e.getMessage())
       return
 
     args = list()
@@ -812,7 +805,7 @@ class InputController:
     try:
       self.command_handler.add_unalloc_to_vg(pathname, vgname)
     except CommandError, e:
-      errorMessage(e.getMessage)
+      self.errorMessage(e.getMessage)
       return
 
     args = list()
@@ -870,16 +863,21 @@ class InputController:
     vgname = main_model.get_value(main_iter,PATH_COL).strip()
 
     if entity_type == UNINIT_VOL:  #First, initialize if necessary
+      warn_message = INIT_ENTITY % entity_name
+      rc = self.warningMessage(warn_message)
+      if (rc == gtk.RESPONSE_NO):
+        return
+
       try:
         self.command_handler.initialize_entity(entity_name)
       except CommandError, e:
-        errorMessage(e.getMessage())
+        self.errorMessage(e.getMessage())
         return
 
     try:
       self.command_handler.add_unalloc_to_vg(entity_name, vgname)
     except CommandError, e:
-      errorMessage(e.getMessage())
+      self.errorMessage(e.getMessage())
       return 
 
     self.extend_vg_form.hide()
@@ -951,7 +949,7 @@ class InputController:
       try:
         self.command_handler.remove_pv(pvname)
       except CommandError, e:
-        errorMessage(e.getMessage())
+        self.errorMessage(e.getMessage())
         return
       apply(self.reset_tree_model)
 

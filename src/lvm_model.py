@@ -295,6 +295,7 @@ class lvm_model:
     result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
+      line.strip()
       words = line.split(",")
       vg = VolumeGroup(words[0], words[4], words[5])
       vglist.append(vg)
