@@ -1,0 +1,52 @@
+# -*- RPM-SPEC -*-
+Summary: system-config-lvm is a utility which allows you to configure Logical Volume Management in a graphical setting.
+Name: @PACKAGE@
+Version: @VERSION@
+Release: 2.2
+URL: http://www.redhat.com/ 
+Source0: %{name}-%{version}.tar.gz
+License: GPL
+Group: Applications/System
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
+Requires: /sbin/chkconfig
+Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas, rhpl 
+Requires: lvm2 >= 2.00.20
+
+%description
+system-config-lvm is a utility which allows you to configure a Logical Volume Management in a graphical setting.
+
+%prep
+%setup -q
+
+%build
+%configure
+make
+
+%install
+rm -rf %{buildroot}
+%makeinstall
+
+#Uncomment this when translations are done
+#%find_lang %name
+
+%clean
+rm -rf %{buildroot}
+
+#Replace the files line with the one commented out when translations are done
+#%files -f %{name}.lang
+%files
+
+%defattr(-,root,root)
+%doc COPYING
+#%doc docs/ReleaseNotes
+#%doc docs/html/*
+%{_sbindir}/*
+%{_bindir}/*
+%{_datadir}/system-config-lvm
+%config %{_sysconfdir}/pam.d/system-config-lvm
+%config %{_sysconfdir}/security/console.apps/system-config-lvm
+
+%changelog
+* Wed Sep 01 2004 Jim Parsons <jparsons@redhat.com> 0.9.1-1
+  - Initial copy

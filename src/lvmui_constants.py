@@ -1,0 +1,39 @@
+import gettext
+_ = gettext.gettext
+
+###Types of views to render
+UNSELECTABLE_TYPE = 0
+VG_TYPE = 1
+VG_PHYS_TYPE = 2
+VG_LOG_TYPE = 3
+PHYS_TYPE = 4
+LOG_TYPE = 5
+UNALLOCATED_TYPE = 6
+UNINITIALIZED_TYPE = 7
+
+NAME_COL = 0
+TYPE_COL = 1
+PATH_COL = 2
+
+INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
+
+NEW_LV_NAME_ARG = 0
+NEW_LV_SIZE_ARG = 1
+NEW_LV_UNIT_ARG = 2
+NEW_LV_IS_STRIPED_ARG = 3
+NEW_LV_STRIPE_SIZE_ARG = 4
+NEW_LV_NUM_STRIPES_ARG = 5
+NEW_LV_MAKE_FS_ARG = 6
+NEW_LV_FS_TYPE_ARG = 7
+NEW_LV_MAKE_MNT_POINT_ARG = 8
+NEW_LV_MNT_POINT_ARG = 9
+NEW_LV_FSTAB_ARG = 10
+
+MEGABYTE_IDX = 0
+GIGABYTE_IDX = 1
+KILOBYTE_IDX = 2
+EXTENT_IDX = 3
+
+
+
+
