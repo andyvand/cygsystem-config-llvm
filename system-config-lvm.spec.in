@@ -48,6 +48,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.6-1.0
+  - Changed gtk.mainloop to gtk.main to address bz137288. 
 * Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.5-1.0
   - Added Menubar to address bz137293. 
 * Fri Oct 29 2004 Jim Parsons <jparsons@redhat.com> 0.9.4-1.0
