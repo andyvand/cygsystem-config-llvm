@@ -15,10 +15,6 @@ import signal
 import string
 import os
 from gtk import TRUE, FALSE
-from renderer import volume_renderer
-from lvm_model import lvm_model
-from Volume_Tab_View import Volume_Tab_View
-from lvmui_constants import *
 
 PROGNAME = "system-config-lvm"
 VERSION = "@VERSION@"
@@ -49,6 +45,11 @@ except RuntimeError, e:
 """) % e
     sys.exit(-1)
                                                                                 
+from renderer import volume_renderer
+from lvm_model import lvm_model
+from Volume_Tab_View import Volume_Tab_View
+from lvmui_constants import *
+
 import gnome
 import gnome.ui
 
