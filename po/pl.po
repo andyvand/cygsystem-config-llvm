@@ -87,7 +87,7 @@ msgstr "Rozmiar"
 
 #: src/InputController.py:105
 msgid "Entity Type"
-msgstr "Typ Jednostki"
+msgstr "Typ jednostki"
 
 #: src/InputController.py:107
 msgid "Unallocated Physical Volume"
@@ -95,20 +95,20 @@ msgstr "Niezaalokowany wolumin fizyczny"
 
 #: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
-msgstr "Niezainicjalizowany Dysk"
+msgstr "Niezainicjalizowany dysk"
 
 #: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr "Wybierz dysk aby go dodać do Grupy Wolumenów %s:"
+msgstr "Wybierz dysk aby dodać go do grupy woluminów %s:"
 
 #: src/InputController.py:111
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
-"Aby storzyć stripe Grupa Wolumenów musi być utworzona z dwóch lub więcej "
-"Fizycznych Wolumenów. Ta Grupa Wolumenów nie spełnia tego Warunku."
+"Aby storzyć stripe grupa woluminów musi być utworzona z dwóch lub więcej "
+"fizycznych woluminów. Ta grupa woluminów nie spełnia tego warunku."
 
 #: src/InputController.py:113
 #, python-format
@@ -150,13 +150,13 @@ msgstr "Ta pojemność nie jest jeszcze zaimplementowana w tej wersji"
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "Liczba Fizycznych Wolumenów w grupie osiągnęła wilekość maksymalną."
+msgstr "Liczba fizycznych woluminów w grupie osiągnęła wielkość maksymalną."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "Liczba Logicznych Wolumenów w grupie osiągnęła wilekość maksymalną."
+msgstr "Liczba logicznych woluminów w grupie osiągnęła wielkość maksymalną."
 
 #: src/InputController.py:131
 msgid "Undefined type conversion error in model factory. Unable to complete task."
@@ -168,7 +168,7 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
-"Problem z wartością wprowadzoną w polu Rozmiaru. Wartość powinna być liczbą "
+"Problem z wartością wprowadzoną w polu Rozmiar. Wartość powinna być liczbą "
 "bez żadnych alfabetycznych znaków bądź symboli innego rodzaju."
 
 #: src/InputController.py:135
@@ -178,9 +178,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"POWAŻNE OSTRZEŻENIE: Wolumen Logiczny %s ma utworzony system plików %s , "
-"który jest aktualnie zamontowany jako %s. Czy jesteś absolutnie pewien, że chcesz utracić dane "
-"z tego zamontowanego systemu plików?"
+"POWAŻNE OSTRZEŻENIE: wolumin logiczny %s ma utworzony system plików %s , "
+"który jest aktualnie zamontowany jako %s. Czy jesteś absolutnie pewien, że "
+"chcesz utracić dane z tego zamontowanego systemu plików?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -268,11 +268,11 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
-"Dane Wolumenu Fizycznego nazwanego %s, który chcesz usunąć, są zmapowane "
-"na extent'y aktywnych Wolumenów Logicznych. Ponieważ jest to jedyny Wolumen Fizyczny "
-"w Grupie Wolumenów, nie ma gdzie przenieść danych. Rekomendowane działania to "
-"dodanie nowego Wolumenu Fizycznego lub przeniesienie skojarzonych z usuwanym "
-"wolumenem Wolumenów Logicznych."
+"Dane Woluminu fizycznego nazwanego %s, który chcesz usunąć, są zmapowane "
+"na rozszerzenia aktywnych woluminów logicznych. Ponieważ jest to jedyny wolumin "
+"fizyczny w grupie woluminów, nie ma gdzie przenieść danych. Rekomendowane działania "
+"to dodanie nowego woluminu fizycznego lub przeniesienie skojarzonych z usuwanym "
+"woluminem woluminów logicznych."
 
 #: src/InputController.py:159
 #, python-format
@@ -285,7 +285,7 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
-"Usunięcie Fizycznego Wolumenu %s z Grupy Wolumenów %s pozostawi grupę "
+"Usunięcie fizycznego woluminu %s z grupy woluminów %s pozostawi grupę "
 "pustą, zostanie ona zatem również usunięta. Czy chcesz kontynuować?"
 
 #: src/InputController.py:161
@@ -301,7 +301,7 @@ msgid ""
 "Volume Group."
 msgstr ""
 "Grupa woluminów %s nie ma wystarczającej ilości miejsca, żeby przenieść dane "
-"składowane na %s. Być może rozwiązaniem byłoby dodanie dodatkowego Fizycznego Wolumenu "
+"składowane na %s. Być może rozwiązaniem byłoby dodanie dodatkowego fizycznego woluminu "
 "do grupy."
 
 #: src/InputController.py:163
@@ -311,10 +311,10 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
-"Moduł dm-mirror jest albo nie załadowany do kernela, lub kernel nie wspiera "
+"Moduł dm-mirror jest albo nie załadowany do jądra, lub jądro nie wspiera "
 "obiektu działania dm-mirror. Jeśli obiekt jest wspierany, spróbuj wydać polecenie "
 "\"modprobe dm-mirror\". W przeciwnym wypadku operacje, które wymagają "
-"przeniesienia danych na Extent Fizyczny są niedostępne."
+"przeniesienia danych na rozszerzenia fizyczne są niedostępne."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -588,8 +588,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
-"Wybrano Migracje\n"
-"Extent(y) Z Wolumenu"
+"Wybrano migrację\n"
+"obszrów z woluminu"
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
@@ -601,7 +601,7 @@ msgstr "Nazwa grupy woluminów:"
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
-msgstr "Nazwa nowego WL:"
+msgstr "Nazwa nowej WL:"
 
 #: src/lvui.glade.h:46
 msgid "New Volume Group"
@@ -609,7 +609,7 @@ msgstr "Nowa grupa woluminów"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group Form"
-msgstr "Nowa formularz grupy woluminów"
+msgstr "Nowy formularz grupy woluminów"
 
 #. File System Types
 #: src/lvui.glade.h:48 src/lvmui_constants.py:48
@@ -618,7 +618,7 @@ msgstr "Brak systemu plików"
 
 #: src/lvui.glade.h:49
 msgid "Number of Stripes: "
-msgstr "Liczba Stripe'ów: "
+msgstr "Liczba stripe'ów: "
 
 #: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
@@ -670,7 +670,7 @@ msgstr "Wybierz grupę woluminów, do której dodać ten WL:"
 
 #: src/lvui.glade.h:62
 msgid "Select a disk entity to add to Volume Group:"
-msgstr "Wybierz dysk do dodanie do Grupy Wolumenów"
+msgstr "Wybierz dysk do dodania do grupy woluminów"
 
 #: src/lvui.glade.h:63
 msgid "Size:"
@@ -678,11 +678,11 @@ msgstr "Rozmiar:"
 
 #: src/lvui.glade.h:64
 msgid "Stripe Size:"
-msgstr "Rozmiar Stripe:"
+msgstr "Rozmiar stripe'a:"
 
 #: src/lvui.glade.h:65
 msgid "Striped"
-msgstr "Striped"
+msgstr "Stripe'owany"
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
@@ -709,67 +709,67 @@ msgstr "ext3"
 #: src/CommandHandler.py:15
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie vgextend nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie vgextend nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie pvcreate nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie pvcreate nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie pvcreate nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie pvcreate nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie pvremove nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie pvremove nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie lvremove nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie lvremove nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie pvremove nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie pvremove nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie vgcreate nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie vgcreate nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
 msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "Wykonanie vgcreate nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie vgcreate nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie vgreduce nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie vgreduce nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie pvmove nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie pvmove nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie umount nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie umount nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:26
 #, python-format
 msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Wykonanie umount nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie umount nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #: src/CommandHandler.py:27
 #, python-format
 msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "Wykonanie umount nie powiodło się. Próbowano wykonać: \"%s\" - Komunikat Błędu Systemu: %s"
+msgstr "Wykonanie umount nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu systemu: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -869,11 +869,11 @@ msgstr "Liczba segmentów:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Stripes:   "
-msgstr "Liczba Stripe'ów:   "
+msgstr "Liczba stripe'ów:   "
 
 #: src/lvm_model.py:71
 msgid "Stripe Size:   "
-msgstr "Rozmiar Sripe:   "
+msgstr "Rozmiar sripe'a:   "
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
@@ -1058,8 +1058,8 @@ msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
 msgstr ""
-"Jesteś pewien że chcesz zainicjalizować dysk %s? Wszystkie dane na tym "
-"urządzeniu/partycji będą skasowane."
+"Jesteś pewien, że chcesz zainicjalizować dysk %s? Wszystkie dane na tym "
+"urządzeniu/partycji zostaną skasowane."
 
 #: src/lvmui_constants.py:40
 msgid "Free"
@@ -1095,7 +1095,7 @@ msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
 msgid "Reiserfs"
-msgstr "Reiserfs"
+msgstr "ReiserFS"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
@@ -1103,7 +1103,7 @@ msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr "Cramfs"
+msgstr "CramFS"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1181,5 +1181,5 @@ msgstr "Niezaalokowane woluminy"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr "Niezainicjalizowane Jednostki"
+msgstr "Niezainicjalizowane jednostki"
 
