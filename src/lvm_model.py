@@ -198,6 +198,26 @@ class lvm_model:
             pelist.append(item)
             break
 
+    ##There needs to be one last check made on those PEs which have 
+    ##passed the test so far. It is possible that a partition set up
+    ##for swap may not have the partition ID for swap. The definitive
+    ##source for swap partitions is /proc/swaps, so we will cat this
+    ##file and remove any devices from pelist that are entered in 
+    ##that file
+    swaparg_list = list()
+    swaparg_list.append("/bin/cat")
+    swaparg_list.append("/proc/swaps")
+    result  = rhpl.executil.execWithCapture("/bin/cat", swaparg_list)
+    textlines = result.splitlines()
+    for pe in pelist:
+      path = pe.get_path().strip()
+      for textline in textlines:
+        swap_words = textline.split()
+        swap_path = swap_words[0].strip()
+        if swap_path == path:
+          pelist.remove(pe) #Found it in the swap list
+
+
     return pelist
 
   def get_PV(self,pathname):
@@ -407,12 +427,16 @@ class lvm_model:
       vgnm = words[LV_VGNAME_COL].strip()
       if vgnm == vg_name:
         candidate_path = words[LV_PATH_COL].strip()
-        if candidate_path.find(lv_name) >= 0:
-          return candidate_path
+        last_slash_index = candidate_path.rfind("/")
+        if last_slash_index >= 0:
+          last_slash_index = last_slash_index + 1
+          c_path = candidate_path[last_slash_index:]
+          if c_path == lv_name:
+            return candidate_path
 
     ###FIXME Raise exception here because true path is not being returned,
     ###But rather the lname arg is being returned.
-    return name
+    return lv_name
 
   def query_uninitialized(self):
     pe_list = self.query_PEs()
@@ -617,8 +641,29 @@ class lvm_model:
       if possible_path == path:
         is_mounted = text_words[1]
         break
+
+    #It is still possible for a partition to be mounted without being in
+    #/proc/mounts...this is often true of the root partition
+    arglist = list()
+    arglist.append("/bin/cat")
+    arglist.append("/etc/mtab")
+    result,err,code  = rhpl.executil.execWithCaptureErrorStatus("/bin/cat", arglist)
+    if code == 0:
+      textlines = result.splitlines()
+      for textline in textlines:
+        text_words = textline.split()
+        possible_path = text_words[0].strip()
+        if possible_path == path:
+          if text_words[1].strip() == "/":
+            mntpnt = "/   (Root Partition)"
+          else:
+            mntpnt = text_words[1]
+          is_mounted = mntpnt
+          break
+
     if is_mounted == "":
       is_mounted = UNMOUNTED
+
 
     #Finally, check for file system
     arglist = list()
@@ -773,6 +818,7 @@ class lvm_model:
     #The cases above all result in one extent segment per PV.
     #When a PV has multiple extent segments, we must build a list
     #of them, sort them, and make sure it is contiguous
+
     for lv in lvlist:
       if lv.is_vol_utilized() == FALSE:
         continue
@@ -846,13 +892,16 @@ class lvm_model:
 
     ##Now, sort 
     extentlist.sort(self.sortMe) 
+    for e in extentlist:
+      s,z = e.get_start_size()
 
     ##Due to the nature of the way lvdisplay presents mapping
     ##info, it is possible that an extent segment for a stripe
     ##may be broken into two adjacent pieces. It makes visual 
     ##sense to merge these segments. 
 
-    for k in range(0, len(extentlist) -1):
+    list_length = len(extentlist) - 2
+    for k in range(0, list_length):
       current = extentlist[k]
       next = extentlist[k+1]
       st,sz = current.get_start_size()
@@ -868,6 +917,8 @@ class lvm_model:
             extentlist.remove(current)
             extentlist.remove(next)
             k = 0
+            list_length = len(extentlist) - 2
+            extentlist.sort(self.sortMe)
             continue
 
     ##For good measure...

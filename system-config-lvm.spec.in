@@ -12,6 +12,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Requires: /sbin/chkconfig
 Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas, rhpl 
 Requires: lvm2 >= 2.00.20
+Requires: rhpl >= 0.148.2
 
 %description
 system-config-lvm is a utility which allows you to configure a Logical Volume Management in a graphical setting.
@@ -48,6 +49,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Thu Nov 18 2004 Jim Parsons <jparsons@redhat.com> 0.9.12-1.0
+  - Fix for bz137041, 139711 plus require for new RHPL pkg.
 * Tue Nov 16 2004 Jim Parsons <jparsons@redhat.com> 0.9.11-1.0
   - Fix for bz138019 -- extent segs correct for stripe corner case
 * Mon Nov 15 2004 Jim Parsons <jparsons@redhat.com> 0.9.10-1.0

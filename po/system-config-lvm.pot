@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-15 16:44-0500\n"
+"POT-Creation-Date: 2004-11-16 12:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -966,7 +966,13 @@ msgstr ""
 #. ## FIXME Wrap this in an exception handler in case format is wrong
 #. Now let's determine if this segment is striped or linear,
 #. and note this in the new extent...
+#. break
 #. #Now, sort
+#. #Due to the nature of the way lvdisplay presents mapping
+#. #info, it is possible that an extent segment for a stripe
+#. #may be broken into two adjacent pieces. It makes visual
+#. #sense to merge these segments.
+#. #For good measure...
 #. #Now fill in holes -- for each gap, create a 'free' seg block
 #. #This is set up as a double loop because inserting a new val
 #. #in a list probably hoses the loop iterator, so to be safe,

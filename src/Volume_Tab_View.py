@@ -130,18 +130,30 @@ class Volume_Tab_View:
     self.gc = self.pixmap.window.new_gc()
     self.prepare_tree()
                                                                                 
-  def reset_tree_model(self, args=None):
+  def reset_tree_model(self, *in_args):
+    args = list()
+    for a in in_args:
+      args.append(a)
+  
     self.prepare_tree()
-    if args != None:
-      name_to_be_selected = args
+    if len(args) != 0:
       model = self.treeview.get_model()
       self.found_selection = FALSE
-      model.foreach(self.check_tree_items, name_to_be_selected)
+      model.foreach(self.check_tree_items, args)
       
 
-  def check_tree_items(self, model, path, iter, name_selection):
+  def check_tree_items(self, model, path, iter, *args):
+    name_selection_argss = list()
+    for a in args:
+      name_selection_argss.append(a)
     if self.found_selection == TRUE:
       return
+
+    name_selection_args = name_selection_argss[0]
+    name_selection = name_selection_args[0]
+    vgname = None
+    if len(name_selection_args) > 1:
+      vgname = name_selection_args[1]
 
     selection = self.treeview.get_selection()
 
@@ -166,8 +178,23 @@ class Volume_Tab_View:
       self.found_selection = TRUE #prevents vgname selection in multiple places
 
     if lvname_val == name_selection:
-      self.treeview.expand_to_path(path)
-      selection.select_range(path, path)
+      print "FOREACH: lvname == selection"
+      if vgname == None:
+        self.treeview.expand_to_path(path)
+        selection.select_range(path, path)
+        self.found_selection = TRUE #prevents LVs with same name in diff VGs 
+                                    #from both being selected 
+      else:
+        #get parent path in model
+        parent_iter = model.iter_parent(iter)
+        name_string = model.get_value(parent_iter, NAME_COL)
+        result = name_string.find(vgname)
+        if result != (-1):
+          self.treeview.expand_to_path(path)
+          selection.select_range(path, path)
+          self.found_selection = TRUE  
+        else:
+          return
       
 
   def prepare_tree(self):

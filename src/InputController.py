@@ -797,9 +797,10 @@ class InputController:
       self.errorMessage(e.getMessage())
 
     #Add confirmation dialog here... 
-    self.new_lv_dlg.hide()
     args = list()
     args.append(Name_request)
+    args.append(VG_Name)
+    self.new_lv_dlg.hide()
     apply(self.reset_tree_model, args)
 
   def on_cancel_new_lv_button(self, button):

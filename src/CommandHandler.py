@@ -78,10 +78,10 @@ class CommandHandler:
       if cmd_args_dict[NEW_LV_MAKE_MNT_POINT_ARG] == TRUE:
         mnt_point =  cmd_args_dict[NEW_LV_MNT_POINT_ARG]
 
-      command = "mount " + lvpath + " " + mnt_point
-      retval = os.system(command)
-      if retval != 0:
-        raise CommandError('FATAL', MNTCREATE_FAILURE % commandstring)
+        command = "mount " + lvpath + " " + mnt_point
+        retval = os.system(command)
+        if retval != 0:
+          raise CommandError('FATAL', MNTCREATE_FAILURE % commandstring)
 
 
   def initialize_entity(self, entity):
