@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: Richard Allen <ra@ra.is>\n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-15 16:54+0000\n"
+"PO-Revision-Date: 2005-02-17 16:54+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -480,7 +480,7 @@ msgstr ""
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
-msgstr ""
+msgstr "Reiser"
 
 #: src/lvui.glade.h:53
 msgid ""
@@ -526,7 +526,7 @@ msgstr ""
 
 #: src/lvui.glade.h:66
 msgid "Size:"
-msgstr ""
+msgstr "Stærð:"
 
 #: src/lvui.glade.h:67
 msgid "Stripe Size:"
@@ -546,19 +546,19 @@ msgstr ""
 
 #: src/lvui.glade.h:71
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvui.glade.h:72
 msgid "dialog1"
-msgstr ""
+msgstr "dialog1"
 
 #: src/lvui.glade.h:73
 msgid "ext2"
-msgstr ""
+msgstr "ext2"
 
 #: src/lvui.glade.h:74
 msgid "ext3"
-msgstr ""
+msgstr "ext3"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
@@ -611,15 +611,15 @@ msgstr ""
 #. Column names for lvdisplay calls
 #: src/lvm_model.py:35
 msgid "Unused"
-msgstr ""
+msgstr "Ónotað"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "Ónotað pláss"
 
 #: src/lvm_model.py:37
 msgid "Free"
-msgstr ""
+msgstr "Laust"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
@@ -628,35 +628,35 @@ msgstr ""
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
-msgstr ""
+msgstr "Aftengt"
 
 #: src/lvm_model.py:42
 msgid "No File System"
-msgstr ""
+msgstr "Ekkert skráarkerfi"
 
 #: src/lvm_model.py:53
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Heiti sýndardiskhóps:   "
 
 #: src/lvm_model.py:54
 msgid "System ID:   "
-msgstr ""
+msgstr "Kerfisnúmer:   "
 
 #: src/lvm_model.py:55
 msgid "Format:   "
-msgstr ""
+msgstr "Forsnið:   "
 
 #: src/lvm_model.py:56 src/lvm_model.py:73 src/lvm_model.py:87
 msgid "Attributes:   "
-msgstr ""
+msgstr "Eiginleikar:  "
 
 #: src/lvm_model.py:57
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Stærð sýndardiskhóps:   "
 
 #: src/lvm_model.py:58
 msgid "Available Space:   "
-msgstr ""
+msgstr "Tiltækt pláss:   "
 
 #: src/lvm_model.py:59
 msgid "Total Number of Extents:   "
@@ -672,31 +672,31 @@ msgstr ""
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "Hámarksfjöldi raundiska:   "
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Fjöldi raundiska:   "
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "Hámarksfjöldi sýndardiska:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Fjöldi sýndardiska:   "
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Heiti sýndardisks:   "
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Stærð sýndardisks:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
@@ -712,47 +712,47 @@ msgstr ""
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:76
 msgid "Partition Type:   "
-msgstr ""
+msgstr "Disksneiðagerð:   "
 
 #: src/lvm_model.py:77
 msgid "Size:   "
-msgstr ""
+msgstr "Stærð:   "
 
 #: src/lvm_model.py:78
 msgid "Mount Point:   "
-msgstr ""
+msgstr "Tengipunktur:   "
 
 #: src/lvm_model.py:79
 msgid "File System:   "
-msgstr ""
+msgstr "Skráarkerfi:   "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Heiti raundisks:   "
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Stærð raundisks:   "
 
 #: src/lvm_model.py:83
 msgid "Space Used:   "
-msgstr ""
+msgstr "Notað pláss:   "
 
 #: src/lvm_model.py:84
 msgid "Space Free:   "
-msgstr ""
+msgstr "Laust pláss:   "
 
 #: src/lvm_model.py:85
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Raundiskabútar alls:   "
 
 #: src/lvm_model.py:86
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Notaðir Raundiskabútar:   "
 
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
@@ -950,8 +950,8 @@ msgstr "Sýndardiskhópar"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Ónotað tæki"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "Ófrumstiltir hlutir"
