@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-12-10 17:51+1000\n"
+"PO-Revision-Date: 2004-12-13 10:27+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Chinese Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -153,7 +153,7 @@ msgstr "這個 Volume 群組的邏輯 Volume 數目已經到達上限。"
 
 #: src/InputController.py:131
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "未定義的類型轉換錯誤。無法完成該項任務。"
 
 #: src/InputController.py:133
 msgid ""
@@ -195,7 +195,7 @@ msgstr "%s GB"
 #: src/InputController.py:143
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s 範圍"
 
 #: src/InputController.py:145
 #, python-format
@@ -247,7 +247,7 @@ msgid ""
 "action is either to add a new Physical Volume before removing this one, or "
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
-msgstr ""
+msgstr "您打算移除的實體 Volume %s 上面有來自運行中邏輯 Volume 的資料，對應到其範圍去。由於這是 Volume 群組中的唯一實體 Volume，所以沒有地方可以移動這些資料。建議的作法是在移除這個實體 Volume 前，增加新的實體 Volume；或移除與這個實體 Volume 有關的邏輯 Volume。"
 
 #: src/InputController.py:159
 #, python-format
@@ -259,7 +259,7 @@ msgstr "您非常肯定，要移除 %s（位於 Volume 群組 %s 中）？"
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "移除實體 Volume %s（位於 Volume 群組 %s）將會讓 Volume 群組成為空白，然後也被移除。您要繼續嗎？"
 
 #: src/InputController.py:161
 #, python-format
@@ -275,13 +275,12 @@ msgid ""
 msgstr "Volume 群組 %s 沒有足夠的空間，將儲存在 %s 的資料移開。可行的解決方法之一，是在 Volume 群組中，加入額外的實體 Volume。"
 
 #: src/InputController.py:163
-#, fuzzy
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr "dm-mirror 模組如果不是尚未載入核心，就是您的核心不支援 dm-mirrot 目標。如果核心支援，請試試執行「modprobe dm-mirror」指令。否則的話，就無法將"
+msgstr "dm-mirror 模組如果不是尚未載入核心，就是您的核心不支援 dm-mirrot 目標。如果核心支援，請試試執行「modprobe dm-mirror」指令。否則的話，就無法將實體範圍中的資料移除。"
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -496,7 +495,7 @@ msgstr "延伸 Volume 群組"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
-msgstr ""
+msgstr "範圍"
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
@@ -504,11 +503,11 @@ msgstr "檔案系統："
 
 #: src/lvui.glade.h:29
 msgid "Gigabytes"
-msgstr ""
+msgstr "十億位元組"
 
 #: src/lvui.glade.h:30
 msgid "Initialize Entity"
-msgstr ""
+msgstr "初始個體"
 
 #: src/lvui.glade.h:31 src/lvmui_constants.py:51
 msgid "JFS"
@@ -528,19 +527,19 @@ msgstr "線性"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr "邏輯 volume 管理"
+msgstr "邏輯 Volume 管理"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
-msgstr "管理 volume"
+msgstr "管理 Volume"
 
 #: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
-msgstr "最大邏輯 volume ："
+msgstr "最大邏輯 Volume ："
 
 #: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
-msgstr "最大實際 volume ："
+msgstr "最大實際 Volume ："
 
 #: src/lvui.glade.h:39
 msgid "Meg"
@@ -555,6 +554,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"從 Volume 中轉移\n"
+"選擇的範圍"
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
@@ -587,7 +588,7 @@ msgstr "等量磁區的數量："
 
 #: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "實體範圍的大小： "
 
 #: src/lvui.glade.h:51
 msgid ""
@@ -618,119 +619,123 @@ msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"從 Volume 群組\n"
+"移除 Volume"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"從 LVM 中\n"
+"移除 Volume"
 
 #: src/lvui.glade.h:61
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "選擇這個實體 Volume 要加入的 Volume 群組："
 
 #: src/lvui.glade.h:62
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "選擇要加入 Volume 群組的磁碟個體："
 
 #: src/lvui.glade.h:63
 msgid "Size:"
-msgstr ""
+msgstr "大小："
 
 #: src/lvui.glade.h:64
 msgid "Stripe Size:"
-msgstr ""
+msgstr "等量磁區大小："
 
 #: src/lvui.glade.h:65
 msgid "Striped"
-msgstr ""
+msgstr "等量磁區"
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "VG1 上的未使用空間："
 
 #: src/lvui.glade.h:67
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "使用剩餘空間"
 
 #: src/lvui.glade.h:68 src/lvmui_constants.py:55
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvui.glade.h:69
 msgid "ext2"
-msgstr ""
+msgstr "ext2"
 
 #: src/lvui.glade.h:70
 msgid "ext3"
-msgstr ""
+msgstr "ext3"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgextend 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "pvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "lvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "pvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "lvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:22
 #, python-format
 msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
+msgstr "vgchange 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:23
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgreduce 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:24
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "pvmove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:25
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "umount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:26
 #, python-format
 msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "mkfs 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:27
 #, python-format
 msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
+msgstr "mount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -741,104 +746,104 @@ msgstr ""
 #. Column names for lvdisplay calls
 #: src/lvm_model.py:35 src/lvmui_constants.py:39
 msgid "Unused"
-msgstr ""
+msgstr "未使用的"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "未使用的空間"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
 msgid "Linear Mapping"
-msgstr ""
+msgstr "線性對應"
 
 #: src/lvm_model.py:40
 msgid "Unmounted"
-msgstr ""
+msgstr "為掛載的"
 
 #: src/lvm_model.py:41
 msgid "No File System"
-msgstr ""
+msgstr "沒有檔案系統"
 
 #: src/lvm_model.py:52
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Volume 群組名稱：   "
 
 #: src/lvm_model.py:53
 msgid "System ID:   "
-msgstr ""
+msgstr "系統 ID：   "
 
 #: src/lvm_model.py:54
 msgid "Format:   "
-msgstr ""
+msgstr "格式：   "
 
 #: src/lvm_model.py:55 src/lvm_model.py:72 src/lvm_model.py:86
 msgid "Attributes:   "
-msgstr ""
+msgstr "屬性：   "
 
 #: src/lvm_model.py:56
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Volume 群組大小：   "
 
 #: src/lvm_model.py:57
 msgid "Available Space:   "
-msgstr ""
+msgstr "可用空間：   "
 
 #: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "範圍的數量：   "
 
 #: src/lvm_model.py:59
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "可用範圍的數量：   "
 
 #: src/lvm_model.py:60
 msgid "Extent Size:   "
-msgstr ""
+msgstr "範圍的大小：   "
 
 #: src/lvm_model.py:61
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "最大的可用實體 Volume 數：   "
 
 #: src/lvm_model.py:62
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "實體 Volume 的數量：   "
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "最大的可用邏輯 Volume 數：   "
 
 #: src/lvm_model.py:64
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "邏輯 Volume 的數量：   "
 
 #: src/lvm_model.py:65
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:67
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "邏輯 Volume 名稱：   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "邏輯 Volume 大小：   "
 
 #: src/lvm_model.py:69
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "分段的數量：   "
 
 #: src/lvm_model.py:70
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "等量磁區的數量：   "
 
 #: src/lvm_model.py:71
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "等量磁區的大小：   "
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:75
 msgid "Partition Type:   "
@@ -846,7 +851,7 @@ msgstr "分割區類型：   "
 
 #: src/lvm_model.py:76
 msgid "Size:   "
-msgstr ""
+msgstr "大小：   "
 
 #: src/lvm_model.py:77
 msgid "Mount Point:   "
@@ -874,15 +879,15 @@ msgstr "剩餘空間：   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "實體範圍的總數：   "
 
 #: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "已分配的實體範圍總數：   "
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -1018,51 +1023,51 @@ msgstr ""
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
-msgstr ""
+msgstr "您確定要把磁碟個體 %s 初始化？這個裝置/分割區上的資料都會遺失。"
 
 #: src/lvmui_constants.py:40
 msgid "Free"
-msgstr ""
+msgstr "可用"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
 msgid "Ext2"
-msgstr ""
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1070,24 +1075,24 @@ msgstr "屬性："
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "實體 Volume"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "邏輯 Volume"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "未分配的 Volume"
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr "磁碟實體"
+msgstr "磁碟個體"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "Volume 群組"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -1095,6 +1100,8 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"這個範圍尚未被\n"
+"初始化，以供 LVM 使用。"
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
@@ -1110,33 +1117,33 @@ msgstr ""
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "邏輯檢視"
 
 #: src/renderer.py:101 src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "實體檢視"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "未分配的"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "未初始化的"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "範圍"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Volume 群組"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "未分配的 Volume"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "未初始化的個體"
 
