@@ -2,20 +2,20 @@
 # translation of system-config-lvm.po to Bulgarian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Doncho N. Gunchev <mr700@globalnet.bg>, 2004.
+# Doncho N. Gunchev <mr700@globalnet.bg>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-20 01:15+0300\n"
+"PO-Revision-Date: 2005-02-26 13:05+0200\n"
 "Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
-"Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
+"Language-Team: Bulgarian <Bulgarian translators' team <dict@fsa-bg.org>>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Generator: KBabel 1.9\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
@@ -120,8 +120,7 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Група томове с име %s вече съществува. Моля изберете уникално име."
 
 #: src/InputController.py:117
@@ -134,10 +133,8 @@ msgstr "Необходимо е име за новата група томове
 
 #: src/InputController.py:121
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
 
 #: src/InputController.py:123
 #, python-format
@@ -146,23 +143,22 @@ msgstr "Създаването на точка на монтиране %s нео
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Тази възможност все още не е реалирана в настоящата версия"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Броя физически томове в тази група стигна своя максимален брой."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Броя логически томове в тази група стигна своя максимален брой."
 
 #: src/InputController.py:131
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:133
@@ -269,8 +265,7 @@ msgstr ""
 
 #: src/InputController.py:159
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Напълно сигурен ли сте, че искате да махнете %s от група томове %s?"
 
 #: src/InputController.py:160
@@ -286,13 +281,15 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "Напълно сигурен ли сте, че искате да премахнете логическия том %s?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Група томове %s няма достатъчно свободно място за да поеме данните от %s"
+"Група томове %s няма достатъчно свободно място за да поеме данните от %s. "
+"Възможно решение е добавянето на допълнителни физически томове към "
+"групата."
 
 #: src/InputController.py:163
 msgid ""
@@ -510,11 +507,8 @@ msgstr ""
 "логически том"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
-"Разширяване\n"
-"група томове"
+msgstr "Разширяване на групата"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -696,82 +690,69 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата vgextend не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата vgextend не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата pvcreate не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата pvcreate не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата pvcreate не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата pvcreate не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата pvremove не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата pvremove не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата lvremove не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата lvremove не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата pvremove не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата pvremove не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата vgcreate не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата vgcreate не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "командата vgcreate не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "командата vgcreate не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата vgreduce не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата vgreduce не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата pvmove не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата pvmove не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата umount не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата umount не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата pvmove не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "командата pvmove не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "командата umount не успя. Опитана команда: \"%s\""
+#, python-format
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "командата umount не успя. Опитана команда: \"%s\" - системно съобщение за грешка: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1084,31 +1065,28 @@ msgid "B"
 msgstr ""
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1188,14 +1166,3 @@ msgstr "Свободни томове"
 msgid "Uninitialized Entities"
 msgstr "Неинициализирани елементи"
 
-#~ msgid "Autobackup?"
-#~ msgstr "Автоматично резервно копие?"
-
-#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
-#~ msgstr "Маркирайте тук ако искате да бъде добавен запис в /etc/fstab"
-
-#~ msgid "Resizable?"
-#~ msgstr "Преоразмерим?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
