@@ -277,6 +277,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"Ef raundiskurinn %s er fjarlægður er sýndardiskhópurinn %s tómur og því "
+"verður hópnum einnig eytt. Viltu halda áfram?"
 
 #: src/InputController.py:161
 #, python-format
@@ -300,6 +302,10 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"Eininguna dm-mirror er hvergi að finna í kjarnanum þínum eða kjarninn "
+"styður ekki dm-mirror vinnslu. Ef þetta er stutt skaltu reyna að keyra "
+"skipunina \"modprobe dm-mirror\". Annars eru aðgerðir sem flytja gögn á "
+"raundiskum ekki tiltækar."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -573,6 +579,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"Færa valda diskhluta\n"
+"úr drifi"
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
