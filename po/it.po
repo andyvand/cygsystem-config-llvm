@@ -2,6 +2,7 @@
 # translation of it.po to
 # translation of it.po to
 # translation of it.po to
+# translation of it.po to
 # translation of system-config-lvm.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -12,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-18 17:46+0100\n"
+"PO-Revision-Date: 2005-02-19 12:23+0100\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,7 +167,7 @@ msgstr "Il numero di Volumi Logici in questo Gruppo di Volumi ha raggiunto il su
 
 #: src/InputController.py:131
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "Errore di conversione non definito nel model factory. Impossibile completare l'operazione."
 
 #: src/InputController.py:133
 msgid ""
@@ -555,7 +556,7 @@ msgstr "Lineare"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr "Logical Volume Management"
+msgstr "Gestione Volumi Logici"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
@@ -583,7 +584,7 @@ msgid ""
 "Extent(s) From Volume"
 msgstr ""
 "Migra dal Volume\n"
-"il(gli) extent(s) selezionati "
+"l'(le) Estensione(i) selezionata(e)"
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
@@ -603,7 +604,7 @@ msgstr "Nuovo Gruppo di Volume"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group Form"
-msgstr "Nuovo Gruppo di Volume da"
+msgstr "Modello per Nuovo Gruppo di Volume"
 
 #. File System Types
 #: src/lvui.glade.h:48 src/lvmui_constants.py:48
@@ -616,7 +617,7 @@ msgstr "Numero di Stripes: "
 
 #: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
-msgstr "Dimensione Extent Fisico: "
+msgstr "Dimensione Estensione Fisica: "
 
 #: src/lvui.glade.h:51
 msgid ""
@@ -632,7 +633,7 @@ msgid ""
 "Logical Volume(s)"
 msgstr ""
 "Rimuovi il(i)\n"
-"Volume(i) Logico(i) selezionati"
+"Volume(i) Logico(i) selezionato(i)"
 
 #: src/lvui.glade.h:55
 msgid ""
@@ -640,7 +641,7 @@ msgid ""
 "Physical Volume(s)"
 msgstr ""
 "Rimuovi il(i)\n"
-"Volume(i) Fisco(i) selezionati"
+"Volume(i) Fisco(i) selezionato(i)"
 
 #: src/lvui.glade.h:57
 msgid ""
@@ -668,7 +669,7 @@ msgstr "Scegliere un'entità disco da aggiungere al Gruppo di Volume: "
 
 #: src/lvui.glade.h:63
 msgid "Size:"
-msgstr "Dimensione"
+msgstr "Dimensione:"
 
 #: src/lvui.glade.h:64
 msgid "Stripe Size:"
@@ -701,95 +702,93 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
+#, python-format
 msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando vgextend eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando vgextend eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
+#, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando pvcreate eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando pvcreate eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
+#, python-format
 msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando pvcreate eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando lvcreate eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
+#, python-format
 msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando pvremove eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando pvremove eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
+#, python-format
 msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando lvremove eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando lvremove eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
+#, python-format
 msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando pvremove eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando vgremove eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
+#, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando vgcreate eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando vgcreate eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
+#, python-format
 msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
-"comando vgcreate eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando vgchange eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
+#, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando vgreduce eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\""
+"Comando vgreduce eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
+#, python-format
 msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando pvmove eseguito senza successo. Si è tentato di eseguire il comando: "
-"\"%s\""
+"Comando pvmove eseguito senza successo. Si è tentato di eseguire il comando: "
+"\"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
+#, python-format
 msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando umount eseguito senza successo. Si è tentato di eseguire il comando: "
-"\"%s\""
+"Comando umount eseguito senza successo. Si è tentato di eseguire il comando: "
+"\"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"comando pvmove eseguito senza successo. Si è tentato di eseguire il comando: "
-"\"%s\""
+"Comando mkfs eseguito senza successo. Si è tentato di eseguire il comando: "
+"\"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
-"comando umount eseguito senza successo. Si è tentato di eseguire il comando: "
-"\"%s\""
+msgstr "Comando mount eseguito senza successo. Si è tentato di eseguire il comando: %s  - Messaggio di Errore del Sistema: \"%s\""
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -809,7 +808,7 @@ msgstr "Spazio inutilizzato"
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
 msgid "Linear Mapping"
-msgstr "Mappaggio Lineare"
+msgstr "Mappatura Lineare"
 
 #: src/lvm_model.py:40
 msgid "Unmounted"
@@ -825,11 +824,11 @@ msgstr "Nome Gruppo di Volume:   "
 
 #: src/lvm_model.py:53
 msgid "System ID:   "
-msgstr "ID Sistema:   "
+msgstr "ID di Sistema:   "
 
 #: src/lvm_model.py:54
 msgid "Format:   "
-msgstr "Format:   "
+msgstr "Formato:   "
 
 #: src/lvm_model.py:55 src/lvm_model.py:72 src/lvm_model.py:86
 msgid "Attributes:   "
@@ -845,15 +844,15 @@ msgstr "Spazio disponibile"
 
 #: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
-msgstr "Numero totale di Extents:   "
+msgstr "Numero totale di Estensioni:   "
 
 #: src/lvm_model.py:59
 msgid "Number of Free Extents:   "
-msgstr "Numero di Extents liberi:   "
+msgstr "Numero di Estensioni libere:   "
 
 #: src/lvm_model.py:60
 msgid "Extent Size:   "
-msgstr "Dimensione Extent:   "
+msgstr "Dimensione Estensione:   "
 
 #: src/lvm_model.py:61
 msgid "Maximum Allowed Physical Volumes:   "
@@ -861,7 +860,7 @@ msgstr "Numero massimo di Volumi Fisici consentiti:   "
 
 #: src/lvm_model.py:62
 msgid "Number of Physical Volumes:   "
-msgstr "Numero di Volumi FIsici:   "
+msgstr "Numero di Volumi Fisici:   "
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
@@ -909,7 +908,7 @@ msgstr "Dimensione:   "
 
 #: src/lvm_model.py:77
 msgid "Mount Point:   "
-msgstr "Mount Point:   "
+msgstr "Punto di Montaggio:   "
 
 #: src/lvm_model.py:78
 msgid "File System:   "
@@ -933,11 +932,11 @@ msgstr "Spazio libero:   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
-msgstr "Totale Extents fisici:   "
+msgstr "Estensioni Fisiche Totali:   "
 
 #: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
-msgstr "Extents Fisici allocati:   "
+msgstr "Estensioni Fisiche Allocate:   "
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
@@ -1087,46 +1086,43 @@ msgstr "Libero"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1151,7 +1147,7 @@ msgstr "Entità disco"
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
 msgid "Volume Group"
-msgstr "Gruppo di Volume"
+msgstr "Gruppo di Volumi"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -1159,12 +1155,12 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
-"Questo extent non è \n"
-" stato ancora inizializzato per l'utilizzo con LVM"
+"Questa estensione non è \n"
+" stata ancora inizializzata per l'utilizzo con LVM"
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr "Nessun volume selezionato"
+msgstr "Nessun Volume Selezionato"
 
 #: src/renderer.py:96
 msgid ""
@@ -1192,7 +1188,7 @@ msgstr "Non inizializzato"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr "extents"
+msgstr "estensioni"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
