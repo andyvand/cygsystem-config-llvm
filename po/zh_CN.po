@@ -1,0 +1,1179 @@
+# translate the zh_CN.po to Chinese Simplified 
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# happy <metaphysis@yeah.net>, 2004.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: zn_CN\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2004-11-23 14:03-0500\n"
+"PO-Revision-Date: 2004-12-01 23:47+1000\n"
+"Last-Translator: happy <metaphysis@yeah.net>\n"
+"Language-Team: Simplified Chinese <i18n@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. ## gettext first, then import gtk (exception prints gettext "_") ###
+#: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
+#: src/Volume_Tab_View.py:28
+#, python-format
+msgid ""
+"\n"
+"  Unable to initialize graphical environment. Most likely cause of failure\n"
+"  is that the tool was not run using a graphical environment. Please either\n"
+"  start your graphical user interface or set your DISPLAY variable.\n"
+"                                                                                \n"
+"  Caught exception: %s\n"
+msgstr "\n不能够初始化图形环境.可能的原因是\n"
+"该工具并不能运行在图形化的环境下.请您\n"
+"启动用户图形接口或设置DISPLAY环境变量.\n"
+"                                                                                \n"
+"发生错误: %s\n"
+
+#. ##TRANSLATOR: The string below is seen when adding a new Physical
+#. ##Volume to an existing Volume Group.
+#. ######################################################
+#. # Note, please: The two hash maps below are related. #
+#. # When adding or removing a filesystem type, both    #
+#. # hashes must be updated. The values in the first,   #
+#. # are the keys of the second.                        #
+#. # The FS type names are globalized strings in        #
+#. # lvmui_constants.py                                 #
+#.
+#.
+#.
+#. 'mkfs.jfs':JFS_T,                      #
+#. 'mkfs.msdos':MSDOS_T,                  #
+#. 'mkfs.reiserfs':REISERFS_T,            #
+#. 'mkfs.vfat':VFAT_T,                    #
+#. 'mkfs.xfs':XFS_T,                      #
+#. 'mkfs.cramfs':CRAMFS_T                 #
+#.
+#.
+#.
+#.
+#. JFS_T:'jfs',                             #
+#. MSDOS_T:'msdos',                         #
+#. REISERFS_T:'reiserfs',                   #
+#. VFAT_T:'vfat',                           #
+#. XFS_T:'xfs',                             #
+#. CRAMFS_T:'cramfs'                        #
+#.
+#.
+#. ######################################################
+#. ##TRANSLATOR: The two strings below refer to the name and type of
+#. ##available disk entities on the system. There are two types --
+#. ##The first is an 'unallocated physical volume' which is a disk or
+#. ##partition that has been initialized for use with LVM, by writing
+#. ##a special label onto the first block of the partition. The other type
+#. ##is an 'uninitialized entity', which is an available disk or partition
+#. ##that is NOT yet initialized to be used with LVM. Hope this helps give
+#. ##some context.
+#: src/InputController.py:103
+msgid "Name"
+msgstr "名称"
+
+#: src/InputController.py:104
+msgid "Size"
+msgstr "大小"
+
+#: src/InputController.py:105
+msgid "Entity Type"
+msgstr "类型"
+
+#: src/InputController.py:107
+msgid "Unallocated Physical Volume"
+msgstr "未分配的物理卷"
+
+#: src/InputController.py:108
+msgid "Uninitialized Disk Entity"
+msgstr "未初始化的磁盘实例"
+
+#: src/InputController.py:109
+#, python-format
+msgid "Select a disk entity to add to the %s Volume Group:"
+msgstr "选择一个磁盘实例添加到 %s 卷组"
+
+#: src/InputController.py:111
+msgid ""
+"A Volume Group must be made up of two or more Physical Volumes to support "
+"striping. This Volume Group does not meet that requirement."
+msgstr "一个卷组必须由两个或两个以上的物理卷组成以支持"
+"分块.这个卷组不满足这个要求."
+
+#: src/InputController.py:113
+#, python-format
+msgid ""
+"A Logical Volume with the name %s already exists in this Volume Group. "
+"Please choose a unique name."
+msgstr "以名称 %s 命名的逻辑卷已经在卷组中存在."
+"请选择另一个名称."
+
+#: src/InputController.py:115
+#, python-format
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "以名称 %s 命名的卷组已经存在了.请选择另一个名称."
+
+#: src/InputController.py:117
+msgid "A Name must be provided for the new Logical Volume"
+msgstr "必须为新的逻辑卷命名"
+
+#: src/InputController.py:119
+msgid "A Name must be provided for the new Volume Group"
+msgstr "必须为新的卷组命名"
+
+#: src/InputController.py:121
+#, python-format
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "指定的挂载点, %s, 不存在. 要创建它吗?"
+
+#: src/InputController.py:123
+#, python-format
+msgid "The creation of mount point %s unexpectedly failed."
+msgstr "挂载点 %s 的创建因意外而失败."
+
+#: src/InputController.py:125
+msgid "This capability is not yet implemented in this version"
+msgstr "此版本还未支持此功能"
+
+#: src/InputController.py:127
+msgid ""
+"The number of Physical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr "在此卷组中的物理卷数目已达到了最大"
+"限制."
+
+#: src/InputController.py:129
+msgid ""
+"The number of Logical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr "在此卷组中的逻辑卷数目已达到了最大"
+"限制."
+
+#: src/InputController.py:131
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
+msgstr "未定义的类型的转换错误.不能完成该任务."
+
+#: src/InputController.py:133
+msgid ""
+"There is a problem with the value entered in the Size field. The value "
+"should be a numeric value with no alphabetical characters or symbols of any "
+"other kind."
+msgstr "在大小区域输入的值不满足要求.该值"
+"不能包含字母字符或标点符号,应是一个数字值."
+
+#: src/InputController.py:135
+#, python-format
+msgid ""
+"BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
+"mounted on %s. Are you absolutely certain that you wish to discard the data "
+"on this mounted filesystem?"
+msgstr "严重警告:逻辑卷 %s 上已经存在 %s 文件系统, 且当前被挂载在 %s 上. 您"
+"确定要丢弃在该挂载的文件系统上的所有数据吗?"
+
+#. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
+#. ##of an extent is user-definable.
+#: src/InputController.py:139
+#, python-format
+msgid "Unused space on %s"
+msgstr "在 %s 上未使用的空间 "
+
+#: src/InputController.py:140
+#, python-format
+msgid "%s megabytes"
+msgstr "%s MB"
+
+#: src/InputController.py:141
+#, python-format
+msgid "%s kilobytes"
+msgstr "%s KB"
+
+#: src/InputController.py:142
+#, python-format
+msgid "%s gigabytes"
+msgstr "%s GB"
+
+#: src/InputController.py:143
+#, python-format
+msgid "%s extents"
+msgstr "%s 扩展"
+
+#: src/InputController.py:145
+#, python-format
+msgid ""
+"The size requested for the new Logical Volume exceeds the available free "
+"space on Volume Group %s. The available space is: "
+msgstr "新的逻辑卷的大小已经超过了卷组 %s 的可用空间"
+"可用空间是: "
+
+#: src/InputController.py:147
+#, python-format
+msgid "The %s should only contain number values"
+msgstr "%s 应该只含有数字值"
+
+#: src/InputController.py:148
+msgid ""
+"The  Maximum Physical Volumes field should contain only integer values "
+"between 1 and 256"
+msgstr "在最大物理卷数区域中应该只包含整数值"
+"此值在1到256之间"
+
+#: src/InputController.py:149
+msgid ""
+"The  Maximum Logical Volumes field should contain only integer values "
+"between 1 and 256"
+msgstr "在最大逻辑卷数区域中应该只包含整数值"
+"此值在1到256之间"
+
+#. ##TRANSLATOR: Striping writes data to multiple physical devices
+#. ##concurrently, with the objective being redundance and/or speed
+#: src/InputController.py:153
+msgid "Stripe Size field"
+msgstr "分块大小区域"
+
+#: src/InputController.py:154
+msgid "Number of Stripes field"
+msgstr "分块区域的数目"
+
+#: src/InputController.py:156
+#, python-format
+msgid ""
+"Are you quite certain that you wish to remove %s from Logical Volume "
+"Management?"
+msgstr "您确定从逻辑卷管理器中移除 %s 吗?"
+
+#: src/InputController.py:158
+#, python-format
+msgid ""
+"The Physical Volume named %s, that you wish to remove, has data from active "
+"Logical Volume(s) mapped to its extents. Because it is the only Physical "
+"Volume in the Volume Group, there is no place to move the data. Recommended "
+"action is either to add a new Physical Volume before removing this one, or "
+"else remove the Logical Volumes that are associated with this Physical "
+"Volume."
+msgstr "您想移除的物理卷名称是 %s, 此卷上有已激活的"
+"逻辑卷映射的数据.因为该物理卷是此卷组中唯一的一个卷,"
+" 没有剩余空间移动数据.建议的操作是要么在移除此卷前添加"
+"一个新的物理卷,或者移除和此物理卷相关的逻辑"
+"卷."
+
+#: src/InputController.py:159
+#, python-format
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr "您确定将 %s 从卷组 %s 中移除吗?"
+
+#: src/InputController.py:160
+#, python-format
+msgid ""
+"Removing Physical Volume %s from the Volume Group %s will leave the Volume "
+"group empty, and it will be removed as well. Do you wish to proceed?"
+msgstr "将物理卷 %s 从卷组 %s 中移除将导致卷为空,但还是可以移除."
+"您要进行此操作吗?"
+
+#: src/InputController.py:161
+#, python-format
+msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
+msgstr "您确定将逻辑卷 %s 移除吗?"
+
+#: src/InputController.py:162
+#, python-format
+msgid ""
+"Volume Group %s does not have enough space to move the data stored on %s. A "
+"possible solution would be to add an additional Physical Volume to the "
+"Volume Group."
+msgstr "卷组 %s 没有足够的空间移动存储在 %s 的数据.一个"
+"可能的解决方法是添加一个额外的物理卷到"
+"卷组中"
+
+#: src/InputController.py:163
+msgid ""
+"The dm-mirror module is either not loaded in your kernel, or your kernel "
+"does not support the dm-mirror target. If it is supported, try running "
+"\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
+"Physical Extents are unavailable."
+msgstr "模块 dm-mirror 没有加载或您的内核"
+"不支持 dm-mirror.假如支持,请运行"
+"\"modprobe dm-mirror\".否则,在该物理区域上移动数据"
+"将不能执行"
+
+#. ##########################################################
+#. This global :( is used as a flag for the new lv form
+#. This one too
+#. self.setup_pv_rm_migrate()
+#. self.setup_pv_rm()
+#. ##################
+#. #This form adds an unallocated PV to a VG
+#. #################
+#. #This form adds a new VG
+#. #Buttons and fields...
+#. Now check for unique name
+#. We don't want to offer the 2 and 4 options for kilo's - min size is 8k
+#. The following cases must be considered in this method:
+#. 1) a PV is to be removed that has extents mapped to an LV:
+#. 1a) if there are other PVs, call pvmove on the PV to migrate the
+#. data to other  PVs in the VG
+#. i) If there is sufficient room, pvmove the extents, then vgreduce
+#. ii) If there is not room, inform the user to add more storage and
+#. try again later
+#. 1b) If there are not other PVs, state that either more PVs must
+#. be added so that the in use extents can be migrated, or else
+#. present a list of LVs that must be removed in order to
+#. remove the PV
+#. 2) a PV is to be removed that has NO LVs mapped to its extents:
+#. 2a) If there are more than one PV in the VG, just vgreduce away the PV
+#. 2b) If the PV is the only one, then vgremove the VG
+#.
+#. This says that tree reset will not be handled by caller
+#. ##FIX This method call needs to be handled for exception
+#. This PV is the only one in the VG
+#. There should always be at least one extent seg
+#. We now know either the entire PV is used by one LV, or else it is
+#. an unutilized PV. If the latter, we can just vgreduce it away
+#. Cases:
+#. call vgremove
+#. solo_pv is FALSE, more than one PV...
+#. Two cases here: if solo_pv, bail, else check for size needed
+#. There are additional PVs. We need to check space
+#. Check if LV is mounted -- if so, unmount
+#. args = list()
+#. args.append(lvname)
+#. apply(self.reset_tree_model, args)
+#. check if list > 0
+#. need to check if section is 'unused'
+#. args = list()
+#. args.append(lvname)
+#. apply(self.reset_tree_model, args)
+#. need tto check if list > 0
+#. need to check if section is 'unused'
+#. apply(self.reset_tree_model)
+#. ##################
+#. #This form adds a new Logical Volume
+#. #Fields and menus
+#. Get available space on vg and set as label
+#. set radiobutton group to linear
+#. set up filesystem menu
+#. deactivate #mount point field
+#. First item must be 'No Filesystem' option
+#. Means we did not find the mkfs varient in item present
+#. Validation Ladder:
+#. Name must be unique for this VG
+#. ok - name is ok. size must be below available space
+#. #In case gibberish is entered into the size field...
+#. Now we have an integer representation of our size field,
+#. and a floating point rep
+#. Normalize size depending on size_unit index
+#. This means the 'use remaining space button' used
+#. Handle stripe request
+#. Finally, address file system issues
+#. FS_type = FILE_SYSTEM_TYPE_LIST[fs_idx]
+#. ##stat mnt point
+#. create mount point
+#. Build command args
+#. Add confirmation dialog here...
+#. The following two methods are related. Here is how:
+#. There is a button on the new_lv_dlg form that allows
+#. the user to use all of the remaining space on the VG
+#. for their new LV. This is implemented by setting the size
+#. text entry field with the remaining space value, in whatever unit
+#. you happen to be working in according to the unit selection menu.
+#. Sending this value as a param to lvcreate when it is a floating
+#. point value, though, is problematic; so we will use a discrete value
+#. (free extents) instead. By setting the flag 'self.use_remaining'
+#. to the amount of extents available, we can check in the on_ok
+#. method for a value greater than zero, and send the size in
+#. extents to the command handler. A problem can occur, though,
+#. when the user presses the 'use remaining space' button, and
+#. then modify's the amount in the text field. The handler method
+#. immediately below resets the flag to 0, if chars in the text
+#. field are deleted, or new ones inserted.
+#.
+#. Of course, the act of loading the max value into the field is
+#. considered a 'change' so this must be trapped, and is what the
+#. self.loaded_field flag is for. It can only be set by the
+#. button handler.
+#. change units label
+#. First check if there are more than 1 PVs in volume
+#. if not, put up message dialog and reset radiobuttons to linear
+#. striping is not an option
+#. message = INIT_ENTITY_1 + name + INIT_ENTITY_2
+#. Check if this VG allows an Additional PV
+#. set up columns for tree
+#. cancel opp if OK clicked w/o selection
+#. Now get name of VG to be extended...
+#. First, initialize if necessary
+#. ######################################################
+#. ##Convenience Dialogs
+#: src/lvui.glade.h:1
+msgid "*"
+msgstr "*"
+
+#: src/lvui.glade.h:2
+msgid "1024"
+msgstr "1024"
+
+#: src/lvui.glade.h:3
+msgid "128"
+msgstr "128"
+
+#: src/lvui.glade.h:4
+msgid "16"
+msgstr "16"
+
+#: src/lvui.glade.h:5
+msgid "2"
+msgstr "2"
+
+#: src/lvui.glade.h:6
+msgid "256"
+msgstr "256"
+
+#: src/lvui.glade.h:7
+msgid "32"
+msgstr "32"
+
+#: src/lvui.glade.h:8
+msgid "4"
+msgstr "4"
+
+#: src/lvui.glade.h:9
+msgid "40 megabytes"
+msgstr "40 MB"
+
+#: src/lvui.glade.h:10
+msgid "512"
+msgstr "512"
+
+#: src/lvui.glade.h:11
+msgid "64"
+msgstr "64"
+
+#: src/lvui.glade.h:12
+msgid "8"
+msgstr "8"
+
+#: src/lvui.glade.h:13
+msgid "Add Physical Volume to VG"
+msgstr "将物理卷添加到VG"
+
+#: src/lvui.glade.h:14
+msgid ""
+"Add to existing \n"
+"Volume Group"
+msgstr "添加到已存在\n"
+"的卷组中"
+
+#: src/lvui.glade.h:16
+msgid ""
+"Create New\n"
+"Logical Volume"
+msgstr "创建新的\n"
+"逻辑卷"
+
+#: src/lvui.glade.h:18
+msgid "Create New LV"
+msgstr "创建新的LV"
+
+#: src/lvui.glade.h:19
+msgid "Create a New Logical Volume"
+msgstr "创建一个新的逻辑卷"
+
+#: src/lvui.glade.h:20
+msgid ""
+"Create new \n"
+"Volume Group"
+msgstr "创建新的\n"
+"卷组"
+
+#: src/lvui.glade.h:22
+msgid ""
+"Extend\n"
+"Volume Group"
+msgstr "扩展\n"
+"卷组"
+
+#: src/lvui.glade.h:24
+msgid ""
+"Extend \n"
+"Logical Volume"
+msgstr "扩展\n"
+"逻辑卷组"
+
+#: src/lvui.glade.h:26
+msgid "Extend Volume Group"
+msgstr "扩展卷组"
+
+#: src/lvui.glade.h:27
+msgid "Extents"
+msgstr "扩展"
+
+#: src/lvui.glade.h:28
+msgid "Filesystem: "
+msgstr "文件系统: "
+
+#: src/lvui.glade.h:29
+msgid "Gigabytes"
+msgstr "GB"
+
+#: src/lvui.glade.h:30
+msgid "Initialize Entity"
+msgstr "初始化实例"
+
+#: src/lvui.glade.h:31 src/lvmui_constants.py:51
+msgid "JFS"
+msgstr "JFS"
+
+#: src/lvui.glade.h:32
+msgid "Kilo"
+msgstr "Kilo"
+
+#: src/lvui.glade.h:33
+msgid "Kilobytes"
+msgstr "KB"
+
+#: src/lvui.glade.h:34
+msgid "Linear"
+msgstr "线性的"
+
+#: src/lvui.glade.h:35
+msgid "Logical Volume Management"
+msgstr "逻辑卷管理器"
+
+#: src/lvui.glade.h:36
+msgid "Manage Volumes"
+msgstr "管理卷"
+
+#: src/lvui.glade.h:37
+msgid "Maximum Logical Volumes: "
+msgstr "最大逻辑卷数: "
+
+#: src/lvui.glade.h:38
+msgid "Maximum Physical Volumes: "
+msgstr "最大物理卷数: "
+
+#: src/lvui.glade.h:39
+msgid "Meg"
+msgstr "Meg"
+
+#: src/lvui.glade.h:40 src/renderer.py:106
+msgid "Megabytes"
+msgstr "MB"
+
+#: src/lvui.glade.h:41
+msgid ""
+"Migrate Selected\n"
+"Extent(s) From Volume"
+msgstr "转移选择的\n"
+"区域到卷"
+
+#: src/lvui.glade.h:43
+msgid "Mount point (If blank, LV will not be mounted):"
+msgstr "挂载点(假如为空, LV将不会被挂载):"
+
+#: src/lvui.glade.h:44
+msgid "Name for Volume Group: "
+msgstr "卷组的名称:  "
+
+#: src/lvui.glade.h:45
+msgid "Name for new LV:"
+msgstr "新的LV的名称:"
+
+#: src/lvui.glade.h:46
+msgid "New Volume Group"
+msgstr "新的卷组"
+
+#: src/lvui.glade.h:47
+msgid "New Volume Group Form"
+msgstr "新的卷组格式"
+
+#. File System Types
+#: src/lvui.glade.h:48 src/lvmui_constants.py:48
+msgid "No Filesystem"
+msgstr "无文件系统"
+
+#: src/lvui.glade.h:49
+msgid "Number of Stripes: "
+msgstr "分块数目: "
+
+#: src/lvui.glade.h:50
+msgid "Physical Extent Size: "
+msgstr "物理区域大小: "
+
+#: src/lvui.glade.h:51
+msgid ""
+"Remove \n"
+"Logical Volume"
+msgstr ""
+"移除 \n"
+"逻辑卷"
+
+#: src/lvui.glade.h:53
+msgid ""
+"Remove Selected\n"
+"Logical Volume(s)"
+msgstr ""
+"移除选择的\n"
+"逻辑卷"
+
+#: src/lvui.glade.h:55
+msgid ""
+"Remove Selected\n"
+"Physical Volume(s)"
+msgstr ""
+"移除选择的\n"
+"物理卷"
+
+#: src/lvui.glade.h:57
+msgid ""
+"Remove Volume from\n"
+"Volume Group"
+msgstr ""
+"从卷组\n"
+"移除卷"
+
+#: src/lvui.glade.h:59
+msgid ""
+"Remove volume \n"
+"from LVM"
+msgstr ""
+"从LVM中 \n"
+"移除卷"
+
+#: src/lvui.glade.h:61
+msgid "Select a Volume Group to add this PV to:"
+msgstr "选择一个卷组以添加这个PV:"
+
+#: src/lvui.glade.h:62
+msgid "Select a disk entity to add to Volume Group:"
+msgstr "选择一个磁盘实例添加到卷组:"
+
+#: src/lvui.glade.h:63
+msgid "Size:"
+msgstr "大小"
+
+#: src/lvui.glade.h:64
+msgid "Stripe Size:"
+msgstr "分块大小"
+
+#: src/lvui.glade.h:65
+msgid "Striped"
+msgstr "分块的"
+
+#: src/lvui.glade.h:66
+msgid "Unused space on VG1:"
+msgstr "在VG1中未使用的空间:"
+
+#: src/lvui.glade.h:67
+msgid "Use Remaining Space"
+msgstr "使用剩余的空间"
+
+#: src/lvui.glade.h:68 src/lvmui_constants.py:55
+msgid "XFS"
+msgstr "XFS"
+
+#: src/lvui.glade.h:69
+msgid "ext2"
+msgstr "ext2"
+
+#: src/lvui.glade.h:70
+msgid "ext3"
+msgstr "ext3"
+
+#. ##TRANSLATOR: The first word in each string below is
+#. ##an lvm command line command phrase.
+#: src/CommandHandler.py:15
+#, python-format
+msgid ""
+"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 vgextend 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:16
+#, python-format
+msgid ""
+"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 pvcreate 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:17
+#, python-format
+msgid ""
+"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 lvcreate 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:18
+#, python-format
+msgid ""
+"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 pvremove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:19
+#, python-format
+msgid ""
+"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 lvremove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:20
+#, python-format
+msgid ""
+"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 vgremove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:21
+#, python-format
+msgid ""
+"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 vgcreate 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:22
+#, python-format
+msgid ""
+"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "命令 vgchange 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:23
+#, python-format
+msgid ""
+"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 vgreduce 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:24
+#, python-format
+msgid ""
+"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 pvmove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:25
+#, python-format
+msgid ""
+"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 umount 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:26
+#, python-format
+msgid ""
+"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "命令 mkfs 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#: src/CommandHandler.py:27
+#, python-format
+msgid ""
+"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "命令 mount 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
+
+#. first set up lvcreate args
+#. MUST be last arg for this command block
+#. ##next command
+#. Now make filesystem if necessary
+#. Column names for PVS calls
+#. Column names for PVS calls
+#. Column names for lvdisplay calls
+#: src/lvm_model.py:35 src/lvmui_constants.py:39
+msgid "Unused"
+msgstr "未使用的"
+
+#: src/lvm_model.py:36
+msgid "Unused Space"
+msgstr "未使用的空间"
+
+#. Translator - Linear mapping is another way of saying 'Not Striped' :-)
+#: src/lvm_model.py:39
+msgid "Linear Mapping"
+msgstr "线性映射"
+
+#: src/lvm_model.py:40
+msgid "Unmounted"
+msgstr "未挂载的"
+
+#: src/lvm_model.py:41
+msgid "No File System"
+msgstr "无文件系统"
+
+#: src/lvm_model.py:52
+msgid "Volume Group Name:   "
+msgstr "卷组名称:  "
+
+#: src/lvm_model.py:53
+msgid "System ID:   "
+msgstr "系统 ID:  "
+
+#: src/lvm_model.py:54
+msgid "Format:   "
+msgstr "格式化: "
+
+#: src/lvm_model.py:55 src/lvm_model.py:72 src/lvm_model.py:86
+msgid "Attributes:   "
+msgstr "属性: "
+
+#: src/lvm_model.py:56
+msgid "Volume Group Size:   "
+msgstr "卷组大小: "
+
+#: src/lvm_model.py:57
+msgid "Available Space:   "
+msgstr "可用空间: "
+
+#: src/lvm_model.py:58
+msgid "Total Number of Extents:   "
+msgstr "区域总数:  "
+
+#: src/lvm_model.py:59
+msgid "Number of Free Extents:   "
+msgstr "空闲区域数目:  "
+
+#: src/lvm_model.py:60
+msgid "Extent Size:   "
+msgstr "区域大小:  "
+
+#: src/lvm_model.py:61
+msgid "Maximum Allowed Physical Volumes:   "
+msgstr "最大的可允许的物理卷数:  "
+
+#: src/lvm_model.py:62
+msgid "Number of Physical Volumes:   "
+msgstr "物理卷数:  "
+
+#: src/lvm_model.py:63
+msgid "Maximum Allowed Logical Volumes:   "
+msgstr "最大可允许的逻辑卷数:  "
+
+#: src/lvm_model.py:64
+msgid "Number of Logical Volumes:   "
+msgstr "逻辑卷的数目: "
+
+#: src/lvm_model.py:65
+msgid "VG UUID:   "
+msgstr "VG UUID:   "
+
+#: src/lvm_model.py:67
+msgid "Logical Volume Name:   "
+msgstr "逻辑卷名称:  "
+
+#: src/lvm_model.py:68
+msgid "Logical Volume Size:   "
+msgstr "逻辑卷大小:  "
+
+#: src/lvm_model.py:69
+msgid "Number of Segments:   "
+msgstr "段的数目: "
+
+#: src/lvm_model.py:70
+msgid "Number of Stripes:   "
+msgstr "分块的数目: "
+
+#: src/lvm_model.py:71
+msgid "Stripe Size:   "
+msgstr "分块大小: "
+
+#: src/lvm_model.py:73
+msgid "LV UUID:   "
+msgstr "LV UUID:   "
+
+#: src/lvm_model.py:75
+msgid "Partition Type:   "
+msgstr "分区类型:  "
+
+#: src/lvm_model.py:76
+msgid "Size:   "
+msgstr "大小:  "
+
+#: src/lvm_model.py:77
+msgid "Mount Point:   "
+msgstr "挂载点:  "
+
+#: src/lvm_model.py:78
+msgid "File System:   "
+msgstr "文件系统:  "
+
+#: src/lvm_model.py:80
+msgid "Physical Volume Name:   "
+msgstr "物理卷名称:  "
+
+#: src/lvm_model.py:81
+msgid "Physical Volume Size:   "
+msgstr "物理卷大小:  "
+
+#: src/lvm_model.py:82
+msgid "Space Used:   "
+msgstr "未使用的空间:  "
+
+#: src/lvm_model.py:83
+msgid "Space Free:   "
+msgstr "自由空间:  "
+
+#: src/lvm_model.py:84
+msgid "Total Physical Extents:   "
+msgstr "总的物理区域数: "
+
+#: src/lvm_model.py:85
+msgid "Allocated Physical Extents:   "
+msgstr "已分配的物理扩展"
+
+#: src/lvm_model.py:87
+msgid "PV UUID:   "
+msgstr "PV UUID:   "
+
+#. No entry in column 3 means not initialized
+#. try and determine sizes and if vol is swap or extended
+#. At this point, all of the visible partitions initialized for LVM usage
+#. are listed in pelist. There are, however, usually other
+#. partitions that are either uninitialized or not to be included in a list
+#. that allows initialization for lvm, such as swap partitions.
+#. this code examines the uncertain list and moves appropriate
+#. physical extents to the pelist.
+#. fdisk 2.12 with the -l switch produces 7 columns
+#. column 2 is Boot, and signifies a boot partition if there
+#. is an asterisk in this column. If there is not, this column
+#. holds white space, hence the length of non-boot partitions
+#. will always be 6, and boot partitions will be 7
+#. A boot partition or swap partition
+#. There is a '+' at end of string...
+#. strip plus sign
+#. item.set_volume_size(float(adj_sz_str) / GIG)
+#. ##FIX need to be smarter about size conversions here
+#. ##FIX use lvmdiskscan here
+#. #There needs to be one last check made on those PEs which have
+#. #passed the test so far. It is possible that a partition set up
+#. #for swap may not have the partition ID for swap. The definitive
+#. #source for swap partitions is /proc/swaps, so we will cat this
+#. #file and remove any devices from pelist that are entered in
+#. #that file
+#. Found it in the swap list
+#. ##FIXME - Throw exception here, if no result is returned
+#. Add extent segments
+#. Add extent segments
+#. ##FIXME - Throw exception here, if no result is returned
+#. Now check if there is free space in Volume Group with name vg_name.
+#. If there is free space, add an LV marked as 'unused' for that available
+#. space, so that it can be rendered properly
+#. Checks for free extents
+#. lvs does not give path info
+#. The procedure below does the following:
+#. The output of the command is examined line by line for a volume
+#. group name match in the second column.
+#. If the volume group name matches, check if the LV name can be found
+#. within the first column string. If so, the column[0] string is the path.
+#. ##FIXME Raise exception here because true path is not being returned,
+#. ##But rather the lname arg is being returned.
+#. max LVs, number of LVs, max PVs, number of PVs
+#. arglist.append("--units")
+#. arglist.append("g")
+#. lvs reports 0 for sys max
+#. First determine partition type
+#. Now determine size
+#. If we find our path, we need to extract the size info from line
+#. Size info resides between two square brackets
+#. Here is a typical output line from lvmdiskscan:
+#. /dev/sda10 [      784.39 MB] LVM physical volume
+#. loose '['
+#. Next, check if partition is mounted
+#. It is still possible for a partition to be mounted without being in
+#. /proc/mounts...this is often true of the root partition
+#. Finally, check for file system
+#. No file system
+#. Finish up by returning data
+#. ##This method adds complete/contiguous extent lists to PVs -- no holes
+#. Cases:
+#. #1) vgname == "", add one extent 'free' using all extents
+#. #2) query_LVs_for_VG returns empty list, same as 1
+#. #3) extents are used, build list and fill in free holes
+#. 1
+#. 2
+#. if lvlist is empty, add one extent_segment for the empty space, then return
+#. Could be an 'unused' section or fully used section
+#. The cases above all result in one extent segment per PV.
+#. When a PV has multiple extent segments, we must build a list
+#. of them, sort them, and make sure it is contiguous
+#. #For ease of maintenance, here is an explanation of what is
+#. #going on here...the lvmdisplay command is run above for
+#. #each Logical Volume in the pv's volumegroup. The command
+#. #is run with the '-m' switch which supplies mapping info
+#. #between the LV and its PVs.
+#. #The first chunk of data that is returned from this command is
+#. #general info about the LV -- there is no chance that the
+#. #PV's path (such as /dev/sda7) will be in the first big
+#. #chunk. The second chunk is the mapping info, which is appended
+#. #onto the first chunk. It looks like this if linear:
+#. #
+#. #  --- Segments ---
+#. #  Logical extent 0 to 249:
+#. #    Type                linear
+#. #    Physical volume     /dev/sda7
+#. #    Physical extents    0 to 249
+#. #
+#. # And looks like this if striped:
+#. #
+#. #  --- Segments ---
+#. #  Logical extent 0 to 25:
+#. #    Type                striped
+#. #    Stripes             2
+#. #    Stripe size         64 KB
+#. #    Stripe 0:
+#. #      Physical volume   /dev/sda7
+#. #      Physical extents  250 to 262
+#. #    Stripe 1:
+#. #      Physical volume   /dev/sda11
+#. #      Physical extents  0 to 12
+#. # So the code below searches for the full PV path
+#. # on each line, and when it finds it, it
+#. # splits the following line (i + 1) into substrings
+#. # using whitespace is the sep char, and then looks
+#. # for the values for words[3] and words[5] to get the
+#. # start and ending extents. Hopefully, this map info
+#. # will be included in lvs soon, so this dangerous
+#. # parsing code can be removed.
+#. #######
+#. search for pathname in each string with while loop
+#. we found our PV in mapping table
+#. ## FIXME Wrap this in an exception handler in case format is wrong
+#. Now let's determine if this segment is striped or linear,
+#. and note this in the new extent...
+#. break
+#. #Now, sort
+#. #Due to the nature of the way lvdisplay presents mapping
+#. #info, it is possible that an extent segment for a stripe
+#. #may be broken into two adjacent pieces. It makes visual
+#. #sense to merge these segments.
+#. #For good measure...
+#. #Now fill in holes -- for each gap, create a 'free' seg block
+#. #This is set up as a double loop because inserting a new val
+#. #in a list probably hoses the loop iterator, so to be safe,
+#. #the for loop iterator is recreated after each list insertion
+#. Add final free segment if necessary
+#. Nothing in this PV is used...
+#. ##Types of views to render
+#: src/lvmui_constants.py:19
+#, python-format
+msgid ""
+"Are you certain that you wish to initialize disk entity %s? All data will be "
+"lost on this device/partition."
+msgstr ""
+"您确定要初始化磁盘实例 %s 吗? 在此"
+"设备/分区上的数据将全部丢失."
+
+#: src/lvmui_constants.py:40
+msgid "Free"
+msgstr "空闲"
+
+#: src/lvmui_constants.py:42
+msgid "G"
+msgstr "G"
+
+#: src/lvmui_constants.py:43
+msgid "M"
+msgstr "M"
+
+#: src/lvmui_constants.py:44
+msgid "K"
+msgstr "K"
+
+#: src/lvmui_constants.py:45
+msgid "B"
+msgstr "B"
+
+#: src/lvmui_constants.py:49
+msgid "Ext2"
+msgstr "Ext2"
+
+#: src/lvmui_constants.py:50
+msgid "Ext3"
+msgstr "Ext3"
+
+#: src/lvmui_constants.py:52
+msgid "MSDOS"
+msgstr "MSDOS"
+
+#: src/lvmui_constants.py:53
+msgid "Reiserfs"
+msgstr "Reiserfs"
+
+#: src/lvmui_constants.py:54
+msgid "VFAT"
+msgstr "VFAT"
+
+#: src/lvmui_constants.py:56
+msgid "Cramfs"
+msgstr "Cramfs"
+
+#: src/Properties_Renderer.py:44
+msgid "Properties for"
+msgstr "属性"
+
+#: src/Properties_Renderer.py:45 src/renderer.py:98
+msgid "Physical Volume"
+msgstr "物理卷"
+
+#: src/Properties_Renderer.py:46 src/renderer.py:97
+msgid "Logical Volume"
+msgstr "逻辑卷"
+
+#: src/Properties_Renderer.py:47
+msgid "Unallocated Volume"
+msgstr "未分配的卷"
+
+#: src/Properties_Renderer.py:48 src/renderer.py:104
+msgid "Disk Entity"
+msgstr "磁盘实例"
+
+#: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
+#: src/Properties_Renderer.py:51 src/renderer.py:99
+msgid "Volume Group"
+msgstr "卷组"
+
+#. Step offset size for lower labels
+#: src/renderer.py:94
+msgid ""
+"This extent has not yet been \n"
+" initialized for use with LVM."
+msgstr ""
+"区域还未用\n"
+"逻辑卷管理器进行初始化."
+
+#: src/renderer.py:95
+msgid "No Volume Selected"
+msgstr "没有选择卷"
+
+#: src/renderer.py:96
+msgid ""
+"This Volume has not been allocated \n"
+" to a Volume Group yet."
+msgstr ""
+"此卷还未被分配\n"
+"给任一卷组."
+
+#: src/renderer.py:100 src/Volume_Tab_View.py:44
+msgid "Logical View"
+msgstr "逻辑视图"
+
+#: src/renderer.py:101 src/Volume_Tab_View.py:43
+msgid "Physical View"
+msgstr "物理视图"
+
+#: src/renderer.py:102
+msgid "Unallocated"
+msgstr "未分配的"
+
+#: src/renderer.py:103
+msgid "Uninitialized"
+msgstr "未初始化的"
+
+#: src/renderer.py:105
+msgid "extents"
+msgstr "区域"
+
+#: src/Volume_Tab_View.py:40
+msgid "Volume Groups"
+msgstr "卷组"
+
+#: src/Volume_Tab_View.py:41
+msgid "Unallocated Volumes"
+msgstr "未分配的卷"
+
+#: src/Volume_Tab_View.py:42
+msgid "Uninitialized Entities"
+msgstr "未初始化的实例"
+ 
