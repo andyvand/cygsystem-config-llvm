@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-27 20:04+0200\n"
+"PO-Revision-Date: 2004-10-28 23:35+0200\n"
 "Last-Translator: Boris de Laage <bdelaage@free.fr>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -71,22 +71,19 @@ msgid "Entity Type"
 msgstr "Type d'Entité"
 
 #: src/InputController.py:89
-#, fuzzy
 msgid "Unallocated Physical Volume"
-msgstr "Volumes Physiques non Alloués"
+msgstr "Volume Physique non Alloué"
 
 #: src/InputController.py:90
-#, fuzzy
 msgid "Uninitialized Disk Entity"
-msgstr "Entité de Disque Non Initialisée"
+msgstr "Entité Disque Non Initialisée"
 
 #: src/InputController.py:91
-#, python-format, fuzzy
+#, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr "Selectionnez une entité de disque à ajouter au Groupe de Volumes %s:"
+msgstr "Selectionnez une entité disque à ajouter au Groupe de Volumes %s:"
 
 #: src/InputController.py:93
-#, fuzzy
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -95,7 +92,7 @@ msgstr ""
 "le mode stripping. Ce Groupe de Volume ne satisfait pas cette contrainte."
 
 #: src/InputController.py:95
-#, python-format, fuzzy
+#, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
@@ -104,27 +101,25 @@ msgstr ""
 "Veuillez choisir un autre nom."
 
 #: src/InputController.py:97
-#, python-format, fuzzy
+#, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Un Groupe de Volumes nommé %s existe déjà. Veuillez choisir un autre nom."
 
 #: src/InputController.py:99
-#, fuzzy
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "Vous devez spécifier un nom pour le nouveau Volume Logique"
 
 #: src/InputController.py:101
-#, fuzzy
 msgid "A Name must be provided for the new Volume Group"
 msgstr "Vous devez spécifier un nom pour le nouveau Groupe de Volumes"
 
 #: src/InputController.py:103
-#, python-format, fuzzy
+#, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Le point de montage spécifié, %s, n'existe pas. Voulez-vous le créer ?"
 
 #: src/InputController.py:105
-#, python-format, fuzzy
+#, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "La création du point de montage %s a échoué."
 
@@ -190,12 +185,11 @@ msgstr ""
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
 msgid "Stripe Size field"
-msgstr ""
+msgstr "champs Taille des Bandes"
 
 #: src/InputController.py:124
-#, fuzzy
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "champs Nombre de Bandes"
 
 #: src/InputController.py:126
 #, python-format
@@ -340,12 +334,10 @@ msgstr ""
 "de Volumes existant"
 
 #: src/lvui.glade.h:16
-#, fuzzy
 msgid "Autobackup?"
 msgstr "Sauvegarde automatique ?"
 
 #: src/lvui.glade.h:17
-#, fuzzy
 msgid "Check here if you would like an entry to be made in /etc/fstab"
 msgstr "Cochez si vous souhaitez qu'une entrée soit ajoutée dans /etc/fstab"
 
@@ -390,9 +382,8 @@ msgstr ""
 "Volume Logique"
 
 #: src/lvui.glade.h:28
-#, fuzzy
 msgid "Extents"
-msgstr "Etend"
+msgstr "Extents"
 
 #: src/lvui.glade.h:29
 msgid "Filesystem: "
@@ -451,6 +442,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"Migrer Extent(s)\n"
+"Sélectionné(s) depuis Volume"
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
@@ -471,9 +464,8 @@ msgid "New Volume Group"
 msgstr "Nouveau Groupe de Volumes"
 
 #: src/lvui.glade.h:48
-#, fuzzy
 msgid "New Volume Group Form"
-msgstr "New Volume Group Form"
+msgstr ""
 
 #: src/lvui.glade.h:49
 msgid "No Filesystem"
@@ -481,12 +473,11 @@ msgstr "Pas de Système de Fichiers"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "Nombre de Bandes"
 
 #: src/lvui.glade.h:51
-#, fuzzy
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Taille des Physical Extents : "
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
@@ -514,7 +505,7 @@ msgid ""
 "Physical Volume(s)"
 msgstr ""
 "Supprimer Volume(s)\n"
-"Physique(s) Sélectionnés"
+"Physique(s) Sélectionné(s)"
 
 #: src/lvui.glade.h:59
 msgid ""
@@ -549,12 +540,10 @@ msgid "Size:"
 msgstr "Taille : "
 
 #: src/lvui.glade.h:67
-#, fuzzy
 msgid "Stripe Size:"
-msgstr ""
+msgstr "Taille de Bande : "
 
 #: src/lvui.glade.h:68
-#, fuzzy
 msgid "Striped"
 msgstr "Striped"
 
@@ -646,7 +635,7 @@ msgstr "Libre"
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Mapping Linéaire"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
@@ -682,15 +671,15 @@ msgstr "Espace Disponible :   "
 
 #: src/lvm_model.py:59
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Nombre Total d'Extents : "
 
 #: src/lvm_model.py:60
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Nombre d'Extents Libres : "
 
 #: src/lvm_model.py:61
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Taille des Extents : "
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
@@ -710,7 +699,7 @@ msgstr "Nombre de Volumes Logiques : "
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
-msgstr "GV UUID:   "
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
@@ -725,17 +714,16 @@ msgid "Number of Segments:   "
 msgstr "Nombre de Segments : "
 
 #: src/lvm_model.py:71
-#, fuzzy
 msgid "Number of Stripes:   "
-msgstr "Nombre de Stripes : "
+msgstr "Nombre de Bandes : "
 
 #: src/lvm_model.py:72
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Taille des Bandes : "
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
-msgstr "VL UUID:   "
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:76
 msgid "Partition Type:   "
@@ -771,15 +759,15 @@ msgstr "Espace Disponible :  "
 
 #: src/lvm_model.py:85
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Nombre Total de Physical Extents : "
 
 #: src/lvm_model.py:86
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Physical Extents Alloués : "
 
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
-msgstr "VP UUID:   "
+msgstr "PV UUID:   "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -918,7 +906,6 @@ msgid "Unallocated Volume"
 msgstr "Volume Non Alloué"
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
-#, fuzzy
 msgid "Disk Entity"
 msgstr "Entité Disque"
 
@@ -933,6 +920,8 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"Cet extent n'a pas encore été\n"
+"initialisé pour être utilisé avec LVM."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
@@ -963,7 +952,7 @@ msgstr "Non Initialisé"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "extents"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
