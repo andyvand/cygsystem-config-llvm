@@ -94,13 +94,12 @@ class CommandHandler:
 
 
   def initialize_entity(self, entity):
-    #commandstring = "/usr/sbin/pvcreate -M2 " + entity
     command_args = list()
     command_args.append("/usr/sbin/pvcreate")
     command_args.append("-M2")
     command_args.append(entity)
     commandstring = ' '.join(command_args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvcreate",cmd_args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvcreate",command_args)
     if res != 0:
       raise CommandError('FATAL', PVCREATE_FAILURE % (commandstring,err))
 
@@ -121,6 +120,8 @@ class CommandHandler:
       units_arg = 'm'
     else:
       units_arg = 'k'
+
+    size_arg = extent_size + units_arg
     
     args = list()
     args.append("/usr/sbin/vgcreate")
@@ -130,8 +131,7 @@ class CommandHandler:
     args.append("-p")
     args.append(max_phys)
     args.append("-s")
-    args.append(extent_size)
-    args.append(units_arg)
+    args.append(size_arg)
     args.append(name)
     args.append(pv)
     cmdstr = ' '.join(args)

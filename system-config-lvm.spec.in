@@ -49,6 +49,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.15-1.0
+  - Fixes for two small nits.
 * Mon Nov 22 2004 Jim Parsons <jparsons@redhat.com> 0.9.14-1.0
   - Fixes for bz140413, 140386, 140355, 140359, 140419, 138103, 140529.
 * Thu Nov 18 2004 Jim Parsons <jparsons@redhat.com> 0.9.12-1.0
