@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-22 08:42+0800\n"
+"PO-Revision-Date: 2005-03-30 23:34+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: src/Properties_Renderer.py:26
 #: src/renderer.py:33
 #: src/Volume_Tab_View.py:28
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "\n"
 "  Unable to initialize graphical environment. Most likely cause of failure\n"
@@ -29,6 +29,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Tidak dapat memulakan persekitaran bergrafik. Kemungkinan besar punca kegagalan\n"
+"  adalah peralatan tersebut tidak dilaksanakan menggunakan persekitaran bergrafik. Sila\n"
+"  sama ada memulakan antaramuka pengguna bergrafik atau tetapkan pembolehubah DISPLAY anda.\n"
+"\n"
+"  Ralat dikesan: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. # lvmui_constants.py                                 #
@@ -57,25 +63,25 @@ msgstr "Entiti Cakera Tidak Dimulakan"
 #: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr ""
+msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
 
 #: src/InputController.py:111
 msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "Kumpulan Volum mesti terdiri daripada dua atau lebih Volum Fizikal untuk menyokong striping. Kumpulan Volum tidak memenuhi keperluan tersebut."
 
 #: src/InputController.py:113
 #, python-format
 msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
-msgstr ""
+msgstr "Volum Logikal dengan nama %s telah wujud dalam Kumpulan Volum. Sila pilih nama unik."
 
 #: src/InputController.py:115
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "Kumpulan Volum dengan nama %s telah wujud. Sila pilih nama unik."
 
 #: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "Satu Nama mesti diberikan untuk Volum Logikal baru"
 
 #: src/InputController.py:119
 msgid "A Name must be provided for the new Volume Group"
@@ -118,9 +124,9 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #: src/InputController.py:139
-#, python-format
+#, fuzzy, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "[%s (%s): 1 halaman pada 1 helaian]\n"
 
 #: src/InputController.py:140
 #, python-format
@@ -162,12 +168,14 @@ msgstr ""
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #: src/InputController.py:153
+#, fuzzy
 msgid "Stripe Size field"
-msgstr ""
+msgstr "pengspesifikasi medan tidak sah: `%s'"
 
 #: src/InputController.py:154
+#, fuzzy
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "bilangan medan tidak sah: `%s'"
 
 #: src/InputController.py:156
 #, python-format
@@ -266,50 +274,59 @@ msgid "8"
 msgstr "8"
 
 #: src/lvui.glade.h:13
+#, fuzzy
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
 
 #: src/lvui.glade.h:14
+#, fuzzy
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr ""
+msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
 
 #: src/lvui.glade.h:16
+#, fuzzy
 msgid ""
 "Create New\n"
 "Logical Volume"
-msgstr ""
+msgstr "Tiada volum baru; keluar.\n"
 
 #: src/lvui.glade.h:18
+#, fuzzy
 msgid "Create New LV"
-msgstr ""
+msgstr "Cipta Queue baru"
 
 #: src/lvui.glade.h:19
+#, fuzzy
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "Partisyen Baru atau Volum Logikal?"
 
 #: src/lvui.glade.h:20
+#, fuzzy
 msgid ""
 "Create new \n"
 "Volume Group"
-msgstr ""
+msgstr "Cipta sambungan Ethernet baru."
 
 #: src/lvui.glade.h:22
+#, fuzzy
 msgid ""
 "Extend\n"
 "Volume Group"
-msgstr ""
+msgstr "nama kumpulan tak dah %s"
 
 #: src/lvui.glade.h:24
+#, fuzzy
 msgid ""
 "Extend \n"
 "Logical Volume"
-msgstr ""
+msgstr "Buat Volum Logikal"
 
 #: src/lvui.glade.h:26
+#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
+msgstr "Nama Kumpulan _Volum:"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -324,8 +341,9 @@ msgid "Gigabytes"
 msgstr "Gigabyte"
 
 #: src/lvui.glade.h:30
+#, fuzzy
 msgid "Initialize Entity"
-msgstr ""
+msgstr "Jenis Entiti"
 
 #: src/lvui.glade.h:31
 #: src/lvmui_constants.py:51
@@ -345,20 +363,24 @@ msgid "Linear"
 msgstr "Linear"
 
 #: src/lvui.glade.h:35
+#, fuzzy
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "Menetapkan Pengurusan Volum Logikal: "
 
 #: src/lvui.glade.h:36
+#, fuzzy
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Volum Logikal:"
 
 #: src/lvui.glade.h:37
+#, fuzzy
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Buat Volum Logikal"
 
 #: src/lvui.glade.h:38
+#, fuzzy
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Tidak cukup volum fizikal"
 
 #: src/lvui.glade.h:39
 msgid "Meg"
@@ -380,40 +402,48 @@ msgid "Mount point (If blank, LV will not be mounted):"
 msgstr ""
 
 #: src/lvui.glade.h:44
+#, fuzzy
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Nama Kumpulan Volum Tidak Sah"
 
 #: src/lvui.glade.h:45
+#, fuzzy
 msgid "Name for new LV:"
-msgstr ""
+msgstr "Memeriksa perkakasan baru"
 
 #: src/lvui.glade.h:46
+#, fuzzy
 msgid "New Volume Group"
-msgstr ""
+msgstr "Nama Kumpulan _Volum:"
 
 #: src/lvui.glade.h:47
+#, fuzzy
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "Nama Kumpulan Volum Tidak Sah"
 
 #. File System Types
 #: src/lvui.glade.h:48
 #: src/lvmui_constants.py:48
+#, fuzzy
 msgid "No Filesystem"
-msgstr ""
+msgstr "Tiada sistemfail"
 
 #: src/lvui.glade.h:49
+#, fuzzy
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "nombor kumpulan"
 
 #: src/lvui.glade.h:50
+#, fuzzy
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Kepastian Perubahan Lanjutan Fizikal"
 
 #: src/lvui.glade.h:51
+#, fuzzy
 msgid ""
 "Remove \n"
 "Logical Volume"
-msgstr ""
+msgstr "Buat Volum Logikal"
 
 #: src/lvui.glade.h:53
 msgid ""
@@ -434,26 +464,30 @@ msgid ""
 msgstr ""
 
 #: src/lvui.glade.h:59
+#, fuzzy
 msgid ""
 "Remove volume \n"
 "from LVM"
-msgstr ""
+msgstr "Buat Kumpulan Volum LVM"
 
 #: src/lvui.glade.h:61
+#, fuzzy
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
 
 #: src/lvui.glade.h:62
+#, fuzzy
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
 
 #: src/lvui.glade.h:63
 msgid "Size:"
 msgstr "Saiz:"
 
 #: src/lvui.glade.h:64
+#, fuzzy
 msgid "Stripe Size:"
-msgstr ""
+msgstr "saiz blok"
 
 #: src/lvui.glade.h:65
 msgid "Striped"
@@ -464,8 +498,9 @@ msgid "Unused space on VG1:"
 msgstr ""
 
 #: src/lvui.glade.h:67
+#, fuzzy
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "Ruang tidak mencukupi"
 
 #: src/lvui.glade.h:68
 #: src/lvmui_constants.py:55
@@ -553,8 +588,9 @@ msgid "Unused"
 msgstr ""
 
 #: src/lvm_model.py:36
+#, fuzzy
 msgid "Unused Space"
-msgstr ""
+msgstr "Ruang Diperlukan"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
@@ -562,20 +598,24 @@ msgid "Linear Mapping"
 msgstr ""
 
 #: src/lvm_model.py:40
+#, fuzzy
 msgid "Unmounted"
-msgstr ""
+msgstr "tidak dilekap"
 
 #: src/lvm_model.py:41
+#, fuzzy
 msgid "No File System"
-msgstr ""
+msgstr "Memformat sistem fail %s ..."
 
 #: src/lvm_model.py:52
+#, fuzzy
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Nama Kumpulan _Volum:"
 
 #: src/lvm_model.py:53
+#, fuzzy
 msgid "System ID:   "
-msgstr ""
+msgstr "ID SCSI"
 
 #: src/lvm_model.py:54
 msgid "Format:   "
@@ -584,112 +624,136 @@ msgstr "Format:   "
 #: src/lvm_model.py:55
 #: src/lvm_model.py:72
 #: src/lvm_model.py:86
+#, fuzzy
 msgid "Attributes:   "
-msgstr ""
+msgstr "mendapatkan atribut baru untuk %s"
 
 #: src/lvm_model.py:56
+#, fuzzy
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Nama Kumpulan _Volum:"
 
 #: src/lvm_model.py:57
+#, fuzzy
 msgid "Available Space:   "
-msgstr ""
+msgstr "Penuhkan semua ruang yang ada"
 
 #: src/lvm_model.py:58
+#, fuzzy
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Masukkan nombor baris"
 
 #: src/lvm_model.py:59
+#, fuzzy
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "The Free Software Foundation"
 
 #: src/lvm_model.py:60
+#, fuzzy
 msgid "Extent Size:   "
-msgstr ""
+msgstr "saiz blok"
 
 #: src/lvm_model.py:61
+#, fuzzy
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "Tidak cukup volum fizikal"
 
 #: src/lvm_model.py:62
+#, fuzzy
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Tidak cukup volum fizikal"
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
 msgstr ""
 
 #: src/lvm_model.py:64
+#, fuzzy
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Buat Volum Logikal"
 
 #: src/lvm_model.py:65
 msgid "VG UUID:   "
 msgstr "VG UUID:   "
 
 #: src/lvm_model.py:67
+#, fuzzy
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Nama Volum _Logikal:"
 
 #: src/lvm_model.py:68
+#, fuzzy
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Buat Volum Logikal"
 
 #: src/lvm_model.py:69
+#, fuzzy
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "nombor kumpulan"
 
 #: src/lvm_model.py:70
+#, fuzzy
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "nombor kumpulan"
 
 #: src/lvm_model.py:71
+#, fuzzy
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "saiz blok"
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
 msgstr "LV UUID:   "
 
 #: src/lvm_model.py:75
+#, fuzzy
 msgid "Partition Type:   "
-msgstr ""
+msgstr "Jenis Partisyen"
 
 #: src/lvm_model.py:76
+#, fuzzy
 msgid "Size:   "
-msgstr ""
+msgstr "Saiz"
 
 #: src/lvm_model.py:77
+#, fuzzy
 msgid "Mount Point:   "
-msgstr ""
+msgstr "Titik Lekapan"
 
 #: src/lvm_model.py:78
+#, fuzzy
 msgid "File System:   "
-msgstr ""
+msgstr "Memformat sistem fail %s ..."
 
 #: src/lvm_model.py:80
+#, fuzzy
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Nama Volum _Logikal:"
 
 #: src/lvm_model.py:81
+#, fuzzy
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Volum Fizikal LVM"
 
 #: src/lvm_model.py:82
+#, fuzzy
 msgid "Space Used:   "
-msgstr ""
+msgstr "Ruang Digunakan:"
 
 #: src/lvm_model.py:83
+#, fuzzy
 msgid "Space Free:   "
-msgstr ""
+msgstr "Ruang Bebas:"
 
 #: src/lvm_model.py:84
+#, fuzzy
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Volum Fizikal LVM"
 
 #: src/lvm_model.py:85
+#, fuzzy
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Volum Fizikal LVM"
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
@@ -717,8 +781,9 @@ msgid "Are you certain that you wish to initialize disk entity %s? All data will
 msgstr ""
 
 #: src/lvmui_constants.py:40
+#, fuzzy
 msgid "Free"
-msgstr ""
+msgstr "Bebas"
 
 #: src/lvmui_constants.py:42
 msgid "G"
@@ -761,34 +826,40 @@ msgid "Cramfs"
 msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
+#, fuzzy
 msgid "Properties for"
-msgstr ""
+msgstr "Untuk ncurses:"
 
 #: src/Properties_Renderer.py:45
 #: src/renderer.py:98
+#, fuzzy
 msgid "Physical Volume"
-msgstr ""
+msgstr "Volum Fizikal LVM"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:97
+#, fuzzy
 msgid "Logical Volume"
-msgstr ""
+msgstr "volum logikal"
 
 #: src/Properties_Renderer.py:47
+#, fuzzy
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Volum Fizikal Tidak Dibahagikan"
 
 #: src/Properties_Renderer.py:48
 #: src/renderer.py:104
+#, fuzzy
 msgid "Disk Entity"
-msgstr ""
+msgstr "Entiti Cakera Tidak Dimulakan"
 
 #: src/Properties_Renderer.py:49
 #: src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51
 #: src/renderer.py:99
+#, fuzzy
 msgid "Volume Group"
-msgstr ""
+msgstr "Kumpulan Volum:"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -798,8 +869,9 @@ msgid ""
 msgstr ""
 
 #: src/renderer.py:95
+#, fuzzy
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Tiada monitor dipilih"
 
 #: src/renderer.py:96
 msgid ""
@@ -809,13 +881,15 @@ msgstr ""
 
 #: src/renderer.py:100
 #: src/Volume_Tab_View.py:44
+#, fuzzy
 msgid "Logical View"
-msgstr ""
+msgstr "Paparan _Pepohon"
 
 #: src/renderer.py:101
 #: src/Volume_Tab_View.py:43
+#, fuzzy
 msgid "Physical View"
-msgstr ""
+msgstr "Paparan _Pepohon"
 
 #: src/renderer.py:102
 msgid "Unallocated"
