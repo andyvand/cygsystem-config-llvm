@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-12-08 15:54+1000\n"
+"PO-Revision-Date: 2004-12-10 17:51+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Chinese Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -583,7 +583,7 @@ msgstr "沒有檔案系統"
 
 #: src/lvui.glade.h:49
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "等量磁區的數量："
 
 #: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
@@ -594,18 +594,24 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"移除 \n"
+"邏輯磁區"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"移除選擇的\n"
+"邏輯磁區"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"移除選擇的\n"
+"實體磁區"
 
 #: src/lvui.glade.h:57
 msgid ""
