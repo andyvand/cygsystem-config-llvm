@@ -14,6 +14,7 @@ _ = gettext.gettext
 ###an lvm command line command phrase.
 VGEXTEND_FAILURE=_("vgextend command failed. Command attempted: \"%s\" - System Error Message: %s")
 PVCREATE_FAILURE=_("pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s")
+LVCREATE_FAILURE=_("lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s")
 PVREMOVE_FAILURE=_("pvremove command failed. Command attempted: \"%s\" - System Error Message: %s")
 LVREMOVE_FAILURE=_("lvremove command failed. Command attempted: \"%s\" - System Error Message: %s")
 VGREMOVE_FAILURE=_("vgremove command failed. Command attempted: \"%s\" - System Error Message: %s")
@@ -60,8 +61,12 @@ class CommandHandler:
     #MUST be last arg for this command block
     vgname = cmd_args_dict[NEW_LV_VGNAME_ARG]
     arglist.append(vgname)
+    cmd_str = ' '.join(arglist)
 
     result_string,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/lvcreate",arglist)
+    if res != 0:
+      raise CommandError('FATAL', LVCREATE_FAILURE % (cmd_str,err))
+
 
     ###next command
 

@@ -1012,6 +1012,7 @@ class InputController:
     self.on_extend_vg_button = self.glade_xml.get_widget('on_extend_vg_button')
     self.on_extend_vg_button.connect("clicked",self.on_extend_vg)
     self.extend_vg_form = self.glade_xml.get_widget('extend_vg_form')
+    self.extend_vg_form.connect("delete_event",self.extend_vg_delete_event)
     self.extend_vg_tree = self.glade_xml.get_widget('extend_vg_tree')
     self.extend_vg_label = self.glade_xml.get_widget('extend_vg_label')
     self.glade_xml.get_widget('on_ok_extend_vg').connect('clicked', self.on_ok_extend_vg)
@@ -1091,6 +1092,10 @@ class InputController:
     
   def on_cancel_extend_vg(self, button):
     self.extend_vg_form.hide()
+
+  def extend_vg_delete_event(self, *args):
+    self.extend_vg_form.hide()
+    return gtk.TRUE
     
 
   def rebuild_extend_vg_tree(self):
