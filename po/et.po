@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-26 16:14-0400\n"
-"PO-Revision-Date: 2004-11-03 22:13+0200\n"
+"PO-Revision-Date: 2005-01-15 13:29+0200\n"
 "Last-Translator: Allan Sims <allsi@eau.ee>\n"
 "Language-Team: Estonian <et@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,11 +32,15 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Ei suuda lähtestada graafilist keskkonda. Enamasti on põhjuseks \n"
+"  et tööriist ei käinud graafilises keskkonnas. Sa kas käivita graafiline\n"
+"  keskkond või säti oma DISPLAY seadeid.\n"
+"\n"
+"  Püütud erand: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
-#. #remain related. A  chhange in one requires a change#
 #. ##partition that has been initialized for use with LVM, by writing
-#. ##some context.
 #: src/InputController.py:85
 msgid "Name"
 msgstr "Nimi"
@@ -51,7 +55,7 @@ msgstr "Olemi tüüp"
 
 #: src/InputController.py:89
 msgid "Unallocated Physical Volume"
-msgstr "Paigutamata kettaruum"
+msgstr "Paigutamata füüsiline ruum"
 
 #: src/InputController.py:90
 msgid "Uninitialized Disk Entity"
@@ -60,43 +64,43 @@ msgstr "Lähtestamata ketta olem"
 #: src/InputController.py:91
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr "Vali ketta olem lisamaks ketta gruppi %s:"
+msgstr "Vali ketta olem lisamaks ruumigruppi %s:"
 
 #: src/InputController.py:93
 msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "Ruumigrupis peab olema vähemalt kaks füüsilist ruumi, et toetada triipe. See ruumigrupp ei täida neid tingimusi."
 
 #: src/InputController.py:95
 #, python-format
 msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
-msgstr ""
+msgstr "Loogiline ruum nimega %s on juba olemas selles ruumigrupis. Palun vali unikaalne nimi."
 
 #: src/InputController.py:97
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "%s nimeline ruumigrupp on juba olemas. Palun vali unikaalne nimi."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "Uue loogilise ruumi jaoks on vajalik nimi"
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "Uue ruumigrupi jaoks on vajalik nimi"
 
 #: src/InputController.py:103
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "Määratud ühenduspunkti %s ei ole olemas. Soovid sa seda luua?"
 
 #: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "Ühenduspunkti %s loomine ebaõnnestus."
 
 #: src/InputController.py:107
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "See võimalus ei ole veel rakendatud antud versioonis"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #: src/InputController.py:111
@@ -122,67 +126,61 @@ msgstr "%s gigabaiti"
 #: src/InputController.py:115
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s ulatused"
 
 #: src/InputController.py:117
 #, python-format
 msgid "The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: "
-msgstr ""
+msgstr "Uue loogilise ruumi päritud suurus ületab ruumigrupi %s kättesaadavat vaba ruumi. Kättesaadav ruum on:"
 
 #: src/InputController.py:119
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s-is peaks olema ainult numbrid"
 
 #: src/InputController.py:120
 msgid "The  Maximum Physical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Suurima füüsilise ruumi väli peaks sisaldama ainult täisarve vahemikul 1 ja 256"
 
 #: src/InputController.py:121
 msgid "The  Maximum Logical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Suurima loogilise ruumi väli peaks sisaldama ainult täisarve vahemikul 1 ja 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #: src/InputController.py:125
 msgid "Stripe Size field"
-msgstr ""
+msgstr "Triibu suuruse väli"
 
 #: src/InputController.py:126
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "Triibu väljade arv"
 
 #: src/InputController.py:128
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr ""
+msgstr "Oled sa üsna kindel, et soovid eemaldada %s-i loogilisest ruumi haldusest (LRH)?"
 
 #: src/InputController.py:130
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "Oled sa üsna kindel, et soovid eemaldada %s-i ruumigrupist %s?"
 
 #: src/InputController.py:131
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "Oled sa üsna kindel, et soovid eemaldada loogilist ruumi %s?"
 
 #: src/InputController.py:132
 #, python-format
 msgid "Volume Group %s does not have enough space to move the data stored on %s"
-msgstr ""
+msgstr "Ruumigrupis %s ei ole piisavalt ruumi paigutamaks %s-ist pärinevaid andmeid "
 
 #. ##########################################################
-#. #This form adds an unallocated PV to a VG
 #. Now check for unique name
-#. else:
 #. args = list()
-#. need to check if section is 'unused'
 #. #This form adds a new Logical Volume
-#. set filesystem option menu to 'no filesystem, and deactivate
 #. ok - name is ok. size must be below available space
-#. Finally, address file system issues
 #. Add confirmation dialog here...
-#. striping is not an option
 #. Now get name of VG to be extended...
 #: src/lvui.glade.h:1
 msgid "*"
@@ -234,57 +232,67 @@ msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Lisa füüsiline ruum RG-i"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"Lisa olemasolevasse\n"
+"ruumigruppi"
 
 #: src/lvui.glade.h:16
 msgid "Autobackup?"
-msgstr ""
+msgstr "Automaatne varund?"
 
 #: src/lvui.glade.h:17
 msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr ""
+msgstr "Kontrolli kas sulle meeldib /etc/fstab-is tehtud muudatused"
 
 #: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"Loo uus\n"
+"loogiline ruum"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
-msgstr ""
+msgstr "Loo uus LR"
 
 #: src/lvui.glade.h:21
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "Loo uus loogiline ruum"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"Loo uus\n"
+"ruumigrupp"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"Ulatus\n"
+"ruumigrupp"
 
 #: src/lvui.glade.h:26
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"Ulatus\n"
+"Loogiline ruum"
 
 #: src/lvui.glade.h:28
 msgid "Extents"
-msgstr ""
+msgstr "Ulatused"
 
 #: src/lvui.glade.h:29
 msgid "Filesystem: "
@@ -296,11 +304,11 @@ msgstr "Gigabaiti"
 
 #: src/lvui.glade.h:31
 msgid "Initialize Entity"
-msgstr ""
+msgstr "Lähtesta olem"
 
 #: src/lvui.glade.h:32
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvui.glade.h:33
 msgid "Kilo"
@@ -312,58 +320,60 @@ msgstr "Kilobaiti"
 
 #: src/lvui.glade.h:35
 msgid "Linear"
-msgstr ""
+msgstr "Sirge"
 
 #: src/lvui.glade.h:36
 msgid "Logical Volume Management"
-msgstr "Loogilise ketta haldamine"
+msgstr "Loogilise ruumi haldamine"
 
 #: src/lvui.glade.h:37
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Halda ruume"
 
 #: src/lvui.glade.h:38
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Suurim loogiline ruum:"
 
 #: src/lvui.glade.h:39
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Suurim füüsiline ruum:"
 
 #: src/lvui.glade.h:40
 msgid "Meg"
-msgstr ""
+msgstr "Mega"
 
 #: src/lvui.glade.h:41
 #: src/renderer.py:106
 msgid "Megabytes"
-msgstr ""
+msgstr "Megabaiti"
 
 #: src/lvui.glade.h:42
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"Asupaiga vahetaja valitud\n"
+"ulatus(ed) ruumist"
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr ""
+msgstr "ühenduspunkt (kui tühi, siis LR-i ei ühendata):"
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Ruumigrupi nimi:"
 
 #: src/lvui.glade.h:46
 msgid "Name for new LV:"
-msgstr ""
+msgstr "Uue LR nimi:"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group"
-msgstr ""
+msgstr "Uus ruumigrupp"
 
 #: src/lvui.glade.h:48
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "Uus ruumigrupp pärineb"
 
 #: src/lvui.glade.h:49
 msgid "No Filesystem"
@@ -371,57 +381,67 @@ msgstr "Failisüsteem puudub"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "Triipude arv:"
 
 #: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Füüsilise ulatuse suurus:"
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
-msgstr ""
+msgstr "Reiser"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Eemalda\n"
+"loogiline ruum"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Eemalda valitud\n"
+"loogiline/sed ruum(id)"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Eemalda valitud\n"
+"füüsiline/sed ruum(id)"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Eemalda ruum\n"
+"ruumigrupist"
 
 #: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Eemalda ruum \n"
+"LRH-st"
 
 #: src/lvui.glade.h:63
 msgid "Resizable?"
-msgstr ""
+msgstr "Muudetav?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Vali ruumigrupp lisamaks see FR:"
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "Vali ketta olemus lisamaks ruumigruppi:"
 
 #: src/lvui.glade.h:66
 msgid "Size:"
@@ -429,15 +449,15 @@ msgstr "Suurus:"
 
 #: src/lvui.glade.h:67
 msgid "Stripe Size:"
-msgstr ""
+msgstr "Triibu suurus:"
 
 #: src/lvui.glade.h:68
 msgid "Striped"
-msgstr ""
+msgstr "Triibuline"
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "Kasutama ruum RG1-s:"
 
 #: src/lvui.glade.h:70
 msgid "Use Remaining Space"
@@ -463,45 +483,44 @@ msgstr "ext3"
 #: src/CommandHandler.py:14
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "vgextend käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #: src/CommandHandler.py:15
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "pvccreate käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "pvremove käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "lvremove käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "vgcreate käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "vgreduce käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "pvmove käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "unmount käsk ebaõnnestus. Käsk üritas: \"%s\""
 
 #. first set up lvcreate args
-#. Column names for PVS calls
 #: src/lvm_model.py:35
 msgid "Unused"
 msgstr "Kasutamata"
@@ -517,7 +536,7 @@ msgstr "Vaba"
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Lineaarne kaardistamine"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
@@ -529,11 +548,11 @@ msgstr "Failisüsteem puudub"
 
 #: src/lvm_model.py:53
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Ruumigrupi nimi:"
 
 #: src/lvm_model.py:54
 msgid "System ID:   "
-msgstr ""
+msgstr "Süsteemi ID:"
 
 #: src/lvm_model.py:55
 msgid "Format:   "
@@ -547,7 +566,7 @@ msgstr "Atribuudid:"
 
 #: src/lvm_model.py:57
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Ruumigrupi suurus:"
 
 #: src/lvm_model.py:58
 msgid "Available Space:   "
@@ -555,43 +574,43 @@ msgstr "Kättesaadav ruum:"
 
 #: src/lvm_model.py:59
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Kogu ulatuste arv:"
 
 #: src/lvm_model.py:60
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Vabade ulatuste arv:"
 
 #: src/lvm_model.py:61
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Ulatuse suurus:"
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "Lubatud füüsiliste ketaste maksimaalne arv:"
+msgstr "Lubatud füüsiliste ruumide suurim arv:"
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
-msgstr "Füüsiliste ketaste arv:"
+msgstr "Füüsiliste ruumide arv:"
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "Lubatud loogiliste ketaste maksimaalne arv:"
+msgstr "Lubatud loogiliste ruumide suurim arv:"
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr "Loogiliste ketaste arv:"
+msgstr "Loogiliste ruumide arv:"
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
-msgstr ""
+msgstr "RG UUID:"
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr "Loogilise ketta nimi:"
+msgstr "Loogilise ruumi nimi:"
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr "Loogilise ketta suurus:"
+msgstr "Loogilise ruumi suurus:"
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
@@ -599,15 +618,15 @@ msgstr "Segmentide arv:"
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "Triipude arv:"
 
 #: src/lvm_model.py:72
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Triibu suurus:"
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LR UUID:"
 
 #: src/lvm_model.py:76
 msgid "Partition Type:   "
@@ -627,11 +646,11 @@ msgstr "Failisüsteem:"
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr "Ketta füüsiline nimi:"
+msgstr "Füüsilise ruumi nimi:"
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
-msgstr "Ketta füüsiline suurus:"
+msgstr "Füüsilise ruumi suurus:"
 
 #: src/lvm_model.py:83
 msgid "Space Used:   "
@@ -643,77 +662,64 @@ msgstr "Vaba ruum:"
 
 #: src/lvm_model.py:85
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Kogu füüsiline ulatus:"
 
 #: src/lvm_model.py:86
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Paigutatud füüsilised ulatused:"
 
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
-msgstr ""
+msgstr "FR UUID:"
 
 #. No entry in column 3 means not initialized
-#. partitions that are either uninitialized or not to be included in a list
 #. fdisk 2.12 with the -l switch produces 7 columns
-#. will always be 6, and boot partitions will be 7
 #. item.set_volume_size(float(adj_sz_str) / GIG)
-#. Add extent segments
 #. If there is free space, add an LV marked as 'unused' for that available
-#. The output of the command is examined line by line for a volume
 #. ##FIXME Raise exception here because true path is not being returned,
-#. lvs reports 0 for sys max
 #. Size info resides between two square brackets
-#. Next, check if partition is mounted
 #. ##This method adds complete/contiguous extent lists to PVs -- no holes
-#. #3) extents are used, build list and fill in free holes
 #. Could be an 'unused' section or fully used section
-#. #For ease of maintenance, here is an explanation of what is
 #. #between the LV and its PVs.
-#. #chunk. The second chunk is the mapping info, which is appended
 #. #  Logical extent 0 to 249:
-#. #  Logical extent 0 to 25:
 #. #    Stripe 0:
-#. #      Physical volume   /dev/sda11
 #. # splits the following line (i + 1) into substrings
-#. # will be included in lvs soon, so this dangerous
 #. we found our PV in mapping table
-#. #Now, sort
 #. #the for loop iterator is recreated after each list insertion
 #: src/lvmui_constants.py:18
 #, python-format
 msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
-msgstr ""
+msgstr "Oled sa kindel, et soovid lähtestada ketast %s? Kõik andmed võivad kaduda sellelt seadmelt/partitsioonilt"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "Omadused"
 
 #: src/Properties_Renderer.py:45
 #: src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "Füüsiline ruum"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "Loogiline ruum"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Paigutamata ruum"
 
 #: src/Properties_Renderer.py:48
 #: src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "Ketta olem"
 
 #: src/Properties_Renderer.py:49
 #: src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51
 #: src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "Ruumigrupp"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -721,48 +727,52 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"See ulatus ei ole lähtestatud\n"
+"veel LRH-ga kasutamiseks."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Ruum valimata"
 
 #: src/renderer.py:96
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
+"See ruum ei ole veel paigutatud\n"
+"ruumigruppi."
 
 #: src/renderer.py:100
 #: src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "Loogiline vaade"
 
 #: src/renderer.py:101
 #: src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "Füüsiline vaade"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "Paigutamata"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "Väärtustamata"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "ulatused"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Ruumigrupid"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Paigutamata ruumid"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "Väärtustamata olemid"
 
