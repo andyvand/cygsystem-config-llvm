@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-23 10:24-0500\n"
+"POT-Creation-Date: 2004-11-23 11:13-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -724,7 +724,6 @@ msgstr ""
 #. MUST be last arg for this command block
 #. ##next command
 #. Now make filesystem if necessary
-#. commandstring = "/usr/sbin/pvcreate -M2 " + entity
 #. Column names for PVS calls
 #. Column names for PVS calls
 #. Column names for lvdisplay calls

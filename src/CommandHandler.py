@@ -93,10 +93,12 @@ class CommandHandler:
           raise CommandError('FATAL', MNTCREATE_FAILURE % (cmdstr,err))
 
 
-  def initialize_entity(self, entity):
+  def initialize_entity(self, ent):
+    entity = ent.strip()
     command_args = list()
     command_args.append("/usr/sbin/pvcreate")
-    command_args.append("-M2")
+    command_args.append("-M")
+    command_args.append("2")
     command_args.append(entity)
     commandstring = ' '.join(command_args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvcreate",command_args)
@@ -106,8 +108,8 @@ class CommandHandler:
   def add_unalloc_to_vg(self, pv, vg):
     args = list()
     args.append("/usr/sbin/vgextend")
-    args.append(vg)
-    args.append(pv)
+    args.append(vg.strip())
+    args.append(pv.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgextend",args)
     if res != 0:
@@ -132,8 +134,8 @@ class CommandHandler:
     args.append(max_phys)
     args.append("-s")
     args.append(size_arg)
-    args.append(name)
-    args.append(pv)
+    args.append(name.strip())
+    args.append(pv.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgcreate",args)
     if res != 0:
@@ -144,7 +146,7 @@ class CommandHandler:
     args.append("/usr/sbin/vgchange")
     args.append("-a")
     args.append("n")
-    args.append(vgname)
+    args.append(vgname.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgchange",args)
     if res != 0:
@@ -163,7 +165,7 @@ class CommandHandler:
   def remove_pv(self, pvname):
     args = list()
     args.append("/usr/sbin/pvremove")
-    args.append(pvname)
+    args.append(pvname.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvremove",args)
     if res != 0:
@@ -173,7 +175,7 @@ class CommandHandler:
     args = list()
     args.append("/usr/sbin/lvremove")
     args.append("--force")
-    args.append(lvname)
+    args.append(lvname.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/lvremove",args)
     if res != 0:
@@ -182,7 +184,7 @@ class CommandHandler:
   def unmount_lv(self, lvname):
     args = list()
     args.append("/bin/umount")
-    args.append(lvname)
+    args.append(lvname.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/bin/umount",args)
     if res != 0:
@@ -191,8 +193,8 @@ class CommandHandler:
   def reduce_vg(self, vg, pv):
     args = list()
     args.append("/usr/sbin/vgreduce")
-    args.append(vg)
-    args.append(pv)
+    args.append(vg.strip())
+    args.append(pv.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgreduce",args)
     if res != 0:
@@ -201,7 +203,7 @@ class CommandHandler:
   def move_pv(self, pv):
     args = list()
     args.append("/usr/sbin/pvmove")
-    args.append(pv)
+    args.append(pv.strip())
     cmdstr = ' '.join(args)
     out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvmove",args)
     if res != 0:

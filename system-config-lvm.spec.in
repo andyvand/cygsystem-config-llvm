@@ -49,6 +49,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.16-1.0
+  - Strips whitespace off of all incoming command handler args.
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.15-1.0
   - Fixes for two small nits.
 * Mon Nov 22 2004 Jim Parsons <jparsons@redhat.com> 0.9.14-1.0
