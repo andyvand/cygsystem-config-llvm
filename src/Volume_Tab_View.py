@@ -178,7 +178,6 @@ class Volume_Tab_View:
       self.found_selection = TRUE #prevents vgname selection in multiple places
 
     if lvname_val == name_selection:
-      print "FOREACH: lvname == selection"
       if vgname == None:
         self.treeview.expand_to_path(path)
         selection.select_range(path, path)
