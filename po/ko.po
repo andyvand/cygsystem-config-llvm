@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-18 12:26+1000\n"
-"Last-Translator: Michelle J Kim <mkim@redhat.com>\n"
+"PO-Revision-Date: 2004-10-25 08:56+0900\n"
+"Last-Translator: hyunjun kim <hyunjun@gmail.com>\n"
 "Language-Team:  <ko@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,9 @@ msgstr ""
 "X-Generator: KBabel 1.0.2\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
-#: src/InputController.py:24 src/Properties_Renderer.py:26 src/renderer.py:33
+#: src/InputController.py:24
+#: src/Properties_Renderer.py:26
+#: src/renderer.py:33
 #: src/Volume_Tab_View.py:28
 #, python-format
 msgid ""
@@ -30,27 +32,11 @@ msgid ""
 msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
-#. ##Volume to an existing Volume Group.
 #. #####################################################
-#. #Note: the enum below and the list that follows MUST#
 #. #remain related. A  chhange in one requires a change#
-#. #in the other                                       #
-#.
-#.
-#.
-#.
-#.
-#.
-#.
-#.
-#. #####################################################
-#. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
-#. ##The first is an 'unallocated physical volume' which is a disk or
 #. ##partition that has been initialized for use with LVM, by writing
-#. ##a special label onto the first block of the partition. The other type
 #. ##is an 'uninitialized entity', which is an available disk or partition
-#. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
 #: src/InputController.py:85
 msgid "Name"
@@ -78,16 +64,12 @@ msgid "Select a disk entity to add to the %s Volume Group:"
 msgstr ""
 
 #: src/InputController.py:93
-msgid ""
-"A Volume Group must be made up of two or more Physical Volumes to support "
-"striping. This Volume Group does not meet that requirement."
+msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
 msgstr ""
 
 #: src/InputController.py:95
 #, python-format
-msgid ""
-"A Logical Volume with the name %s already exists in this Volume Group. "
-"Please choose a unique name."
+msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
 msgstr ""
 
 #: src/InputController.py:97
@@ -97,7 +79,7 @@ msgstr ""
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "새로운 논리적 볼륨에 대한 이름이 반드시 필요합니다."
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
@@ -114,7 +96,6 @@ msgid "The creation of mount point %s unexpectedly failed."
 msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
-#. ##of an extent is user-definable.
 #: src/InputController.py:109
 #, python-format
 msgid "Unused space on %s"
@@ -142,9 +123,7 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"The size requested for the new Logical Volume exceeds the available free "
-"space on Volume Group %s. The available space is: "
+msgid "The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: "
 msgstr ""
 
 #: src/InputController.py:117
@@ -153,19 +132,14 @@ msgid "The %s should only contain number values"
 msgstr ""
 
 #: src/InputController.py:118
-msgid ""
-"The  Maximum Physical Volumes field should contain only integer values "
-"between 1 and 256"
+msgid "The  Maximum Physical Volumes field should contain only integer values between 1 and 256"
 msgstr ""
 
 #: src/InputController.py:119
-msgid ""
-"The  Maximum Logical Volumes field should contain only integer values "
-"between 1 and 256"
+msgid "The  Maximum Logical Volumes field should contain only integer values between 1 and 256"
 msgstr ""
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
-#. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
 msgid "Stripe Size field"
 msgstr ""
@@ -176,9 +150,7 @@ msgstr ""
 
 #: src/InputController.py:126
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from Logical Volume "
-"Management?"
+msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
 msgstr ""
 
 #: src/InputController.py:128
@@ -197,65 +169,30 @@ msgid "Volume Group %s does not have enough space to move the data stored on %s"
 msgstr ""
 
 #. ##########################################################
-#. self.setup_pv_rm_migrate()
 #. self.setup_pv_rm()
-#. ##################
 #. #This form adds an unallocated PV to a VG
-#. #################
 #. #This form adds a new VG
-#. #Buttons and fields...
 #. Now check for unique name
-#. We don't want to offer the 2 and 4 options for kilo's - min size is 8k
 #. ##FIXME - this just check for 'some' space - it should check for
-#. ##enough space by checking free versus needed for pv
 #. else:
-#. self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
 #. return
-#. Check if LV is mounted -- if so, unmount
 #. args = list()
-#. args.append(lvname)
 #. apply(self.reset_tree_model, args)
-#. check if list > 0
 #. need to check if section is 'unused'
-#. Check if LV is mounted -- if so, unmount
-#. args = list()
-#. args.append(lvname)
-#. apply(self.reset_tree_model, args)
-#. need tto check if list > 0
-#. need to check if section is 'unused'
-#. Check if PV has alloc ated extents - if so, move
-#. args = list()
-#. args.append(lvname)
-#. apply(self.reset_tree_model, args)
-#. ##################
 #. #This form adds a new Logical Volume
-#. #Fields and menus
 #. Get available space on vg and set as label
-#. set radiobutton group to linear
 #. set filesystem option menu to 'no filesystem, and deactivate
-#. mount point field
 #. Validation Ladder:
-#. Name must be unique for this VG
 #. ok - name is ok. size must be below available space
-#. Normalize size depending on size_unit index
 #. in bytes
-#. Handle stripe request
 #. Finally, address file system issues
-#. ##stat mnt point
 #. create mount point
-#. Build command args
 #. Add confirmation dialog here...
-#. change units label
 #. First check if there are more than 1 PVs in volume
-#. if not, put up message dialog and reset radiobuttons to linear
 #. striping is not an option
-#. message = INIT_ENTITY_1 + name + INIT_ENTITY_2
 #. set up columns for tree
-#. cancel opp if OK clicked w/o selection
 #. Now get name of VG to be extended...
-#. First, initialize if necessary
 #. ######################################################
-#. ##Convenience Dialogs
 #: src/lvui.glade.h:1
 msgid "*"
 msgstr ""
@@ -406,7 +343,8 @@ msgstr ""
 msgid "Meg"
 msgstr ""
 
-#: src/lvui.glade.h:41 src/renderer.py:106
+#: src/lvui.glade.h:41
+#: src/renderer.py:106
 msgid "Megabytes"
 msgstr ""
 
@@ -531,7 +469,6 @@ msgid "ext3"
 msgstr ""
 
 #. ##TRANSLATOR: The first word in each string below is
-#. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\""
@@ -573,10 +510,7 @@ msgid "umount command failed. Command attempted: \"%s\""
 msgstr ""
 
 #. first set up lvcreate args
-#. MUST be last arg for this command block
 #. ##next command
-#. Now make filesystem if necessary
-#. Column names for PVS calls
 #. Column names for PVS calls
 #. Column names for lvdisplay calls
 #: src/lvm_model.py:35
@@ -616,7 +550,9 @@ msgstr ""
 msgid "Format:   "
 msgstr ""
 
-#: src/lvm_model.py:56 src/lvm_model.py:73 src/lvm_model.py:87
+#: src/lvm_model.py:56
+#: src/lvm_model.py:73
+#: src/lvm_model.py:87
 msgid "Attributes:   "
 msgstr ""
 
@@ -677,8 +613,9 @@ msgid "Number of Stripes:   "
 msgstr ""
 
 #: src/lvm_model.py:72
+#, fuzzy
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "스트라입 크기"
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
@@ -686,191 +623,136 @@ msgstr ""
 
 #: src/lvm_model.py:76
 msgid "Partition Type:   "
-msgstr ""
+msgstr "파티션 타입"
 
 #: src/lvm_model.py:77
 msgid "Size:   "
-msgstr ""
+msgstr "크기"
 
 #: src/lvm_model.py:78
 msgid "Mount Point:   "
-msgstr ""
+msgstr "마운트 위치"
 
 #: src/lvm_model.py:79
 msgid "File System:   "
-msgstr ""
+msgstr "파일 시스템"
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "물리적 볼륨 이름"
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "물리적 볼륨 크기"
 
 #: src/lvm_model.py:83
 msgid "Space Used:   "
-msgstr ""
+msgstr "사용된 공간"
 
 #: src/lvm_model.py:84
 msgid "Space Free:   "
-msgstr ""
+msgstr "남은 공간"
 
 #: src/lvm_model.py:85
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "총 물리적인 확장"
 
 #: src/lvm_model.py:86
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "할당된 물리적인 확장"
 
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
 msgstr ""
 
 #. No entry in column 3 means not initialized
-#. try and determine sizes and if vol is swap or extended
 #. At this point, all of the visible partitions initialized for LVM usage
-#. are listed in pelist. There are, however, usually other
 #. partitions that are either uninitialized or not to be included in a list
-#. that allows initialization for lvm, such as swap partitions.
 #. this code examines the uncertain list and moves appropriate
-#. physical extents to the pelist.
 #. fdisk 2.12 with the -l switch produces 7 columns
-#. column 2 is Boot, and signifies a boot partition if there
 #. is an asterisk in this column. If there is not, this column
-#. holds white space, hence the length of non-boot partitions
 #. will always be 6, and boot partitions will be 7
-#. A boot partition or swap partition
 #. There is a '+' at end of string...
-#. strip plus sign
 #. item.set_volume_size(float(adj_sz_str) / GIG)
-#. ##FIX need to be smarter about size conversions here
 #. ##FIX use lvmdiskscan here
-#. ##FIXME - Throw exception here, if no result is returned
-#. Add extent segments
 #. Add extent segments
 #. ##FIXME - Throw exception here, if no result is returned
-#. Now check if there is free space in Volume Group with name vg_name.
 #. If there is free space, add an LV marked as 'unused' for that available
-#. space, so that it can be rendered properly
 #. lvs does not give path info
-#. The procedure below does the following:
 #. The output of the command is examined line by line for a volume
-#. group name match in the second column.
 #. If the volume group name matches, check if the LV name can be found
-#. within the first column string. If so, the column[0] string is the path.
 #. ##FIXME Raise exception here because true path is not being returned,
-#. ##But rather the lname arg is being returned.
 #. arglist.append("--units")
-#. arglist.append("g")
 #. lvs reports 0 for sys max
-#. First determine partition type
 #. Now determine size
-#. If we find our path, we need to extract the size info from line
 #. Size info resides between two square brackets
-#. Here is a typical output line from lvmdiskscan:
 #. /dev/sda10 [      784.39 MB] LVM physical volume
-#. loose '['
 #. Next, check if partition is mounted
-#. Finally, check for file system
 #. No file system
-#. Finish up by returning data
 #. ##This method adds complete/contiguous extent lists to PVs -- no holes
-#. Cases:
 #. #1) vgname == "", add one extent 'free' using all extents
-#. #2) query_LVs_for_VG returns empty list, same as 1
 #. #3) extents are used, build list and fill in free holes
-#. 1
 #. 2
-#. if lvlist is empty, add one extent_segment for the empty space, then return
 #. Could be an 'unused' section or fully used section
-#. The cases above all result in one extent segment per PV.
 #. When a PV has multiple extent segments, we must build a list
-#. of them, sort them, and make sure it is contiguous
 #. #For ease of maintenance, here is an explanation of what is
-#. #going on here...the lvmdisplay command is run above for
 #. #each Logical Volume in the pv's volumegroup. The command
-#. #is run with the '-m' switch which supplies mapping info
 #. #between the LV and its PVs.
-#. #The first chunk of data that is returned from this command is
 #. #general info about the LV -- there is no chance that the
-#. #PV's path (such as /dev/sda7) will be in the first big
 #. #chunk. The second chunk is the mapping info, which is appended
-#. #onto the first chunk. It looks like this if linear:
 #. #
-#. #  --- Segments ---
 #. #  Logical extent 0 to 249:
-#. #    Type                linear
 #. #    Physical volume     /dev/sda7
-#. #    Physical extents    0 to 249
-#. #
-#. # And looks like this if striped:
-#. #
-#. #  --- Segments ---
 #. #  Logical extent 0 to 25:
-#. #    Type                striped
 #. #    Stripes             2
-#. #    Stripe size         64 KB
 #. #    Stripe 0:
-#. #      Physical volume   /dev/sda7
 #. #      Physical extents  250 to 262
-#. #    Stripe 1:
 #. #      Physical volume   /dev/sda11
-#. #      Physical extents  0 to 12
 #. # So the code below searches for the full PV path
-#. # on each line, and when it finds it, it
 #. # splits the following line (i + 1) into substrings
-#. # using whitespace is the sep char, and then looks
 #. # for the values for words[3] and words[5] to get the
-#. # start and ending extents. Hopefully, this map info
 #. # will be included in lvs soon, so this dangerous
-#. # parsing code can be removed.
 #. #######
-#. search for pathname in each string with while loop
 #. we found our PV in mapping table
-#. ## FIXME Wrap this in an exception handler in case format is wrong
 #. Now let's determine if this segment is striped or linear,
-#. and note this in the new extent...
 #. #Now, sort
-#. #Now fill in holes -- for each gap, create a 'free' seg block
 #. #This is set up as a double loop because inserting a new val
-#. #in a list probably hoses the loop iterator, so to be safe,
 #. #the for loop iterator is recreated after each list insertion
-#. Add final free segment if necessary
 #. Nothing in this PV is used...
-#. ##Types of views to render
 #: src/lvmui_constants.py:18
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize disk entity %s? All data will be "
-"lost on this device/partition."
-msgstr ""
+msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
+msgstr "정말로 디스크 엔티티 %s를 초기화하시겠습니까? 이 장치/파티션에 있는 모든 데이타는 없어질 것입니다."
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "에 대한 속성들"
 
-#: src/Properties_Renderer.py:45 src/renderer.py:98
+#: src/Properties_Renderer.py:45
+#: src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "물리적 볼륨"
 
-#: src/Properties_Renderer.py:46 src/renderer.py:97
+#: src/Properties_Renderer.py:46
+#: src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "논리적 볼륨"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "할당되지 않은 볼륨"
 
-#: src/Properties_Renderer.py:48 src/renderer.py:104
+#: src/Properties_Renderer.py:48
+#: src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "디스크 엔티티"
 
-#: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
-#: src/Properties_Renderer.py:51 src/renderer.py:99
+#: src/Properties_Renderer.py:49
+#: src/Properties_Renderer.py:50
+#: src/Properties_Renderer.py:51
+#: src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "볼륨 그룹"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -878,46 +760,52 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"이 확장영역은 아직 LVM으로 \n"
+"사용되기 위한 초기화가 되지 않았습니다."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "선택된 볼륨없음."
 
 #: src/renderer.py:96
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
+"이 볼륨은 아직 볼륨그룹으로 할당되지\n"
+"않았습니다."
 
-#: src/renderer.py:100 src/Volume_Tab_View.py:44
+#: src/renderer.py:100
+#: src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "논리적인 뷰"
 
-#: src/renderer.py:101 src/Volume_Tab_View.py:43
+#: src/renderer.py:101
+#: src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "물리적인 뷰"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "할당되지 않은"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "초기화되지 않은"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "확장"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "볼륨 그룹들"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "할당되지 않은 볼륨들"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "초기화되지 않은 엔티티들"
 
