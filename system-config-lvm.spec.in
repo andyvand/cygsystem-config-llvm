@@ -2,7 +2,7 @@
 Summary: system-config-lvm is a utility which allows you to configure Logical Volume Management in a graphical setting.
 Name: @PACKAGE@
 Version: @VERSION@
-Release: 2.4
+Release: 2.5
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
 License: GPL
@@ -48,5 +48,7 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Wed Oct 20 2004 Jim Parsons <jparsons@redhat.com> 0.9.1-2.5
+  - Fixed size selection issue. 
 * Wed Sep 01 2004 Jim Parsons <jparsons@redhat.com> 0.9.1-1
   - Initial copy
