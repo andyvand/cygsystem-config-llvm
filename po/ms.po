@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-05 22:51+0800\n"
+"PO-Revision-Date: 2005-02-07 19:57+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -31,13 +31,9 @@ msgid ""
 msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
-#. # When adding or removing a filesystem type, both    #
 #. # lvmui_constants.py                                 #
-#. 'mkfs.reiserfs':REISERFS_T,            #
 #. JFS_T:'jfs',                             #
-#. XFS_T:'xfs',                             #
 #. ##partition that has been initialized for use with LVM, by writing
-#. ##some context.
 #: src/InputController.py:103
 msgid "Name"
 msgstr "Nama"
@@ -48,15 +44,15 @@ msgstr "Saiz"
 
 #: src/InputController.py:105
 msgid "Entity Type"
-msgstr ""
+msgstr "Jenis Entiti"
 
 #: src/InputController.py:107
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "Volum Fizikal Tidak Dibahagikan"
 
 #: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "Entiti Cakera Tidak Dimulakan"
 
 #: src/InputController.py:109
 #, python-format
@@ -208,31 +204,18 @@ msgid "The dm-mirror module is either not loaded in your kernel, or your kernel 
 msgstr ""
 
 #. ##########################################################
-#. self.setup_pv_rm()
 #. #This form adds a new VG
-#. The following cases must be considered in this method:
 #. i) If there is sufficient room, pvmove the extents, then vgreduce
-#. be added so that the in use extents can be migrated, or else
 #. 2a) If there are more than one PV in the VG, just vgreduce away the PV
-#. This PV is the only one in the VG
 #. Cases:
-#. There are additional PVs. We need to check space
 #. apply(self.reset_tree_model, args)
-#. args.append(lvname)
 #. apply(self.reset_tree_model)
-#. Get available space on vg and set as label
 #. First item must be 'No Filesystem' option
-#. ok - name is ok. size must be below available space
 #. Normalize size depending on size_unit index
-#. FS_type = FILE_SYSTEM_TYPE_LIST[fs_idx]
 #. Add confirmation dialog here...
-#. for their new LV. This is implemented by setting the size
 #. point value, though, is problematic; so we will use a discrete value
-#. extents to the command handler. A problem can occur, though,
 #. field are deleted, or new ones inserted.
-#. self.loaded_field flag is for. It can only be set by the
 #. if not, put up message dialog and reset radiobuttons to linear
-#. set up columns for tree
 #. ######################################################
 #: src/lvui.glade.h:1
 msgid "*"
@@ -334,7 +317,7 @@ msgstr ""
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
-msgstr ""
+msgstr "Sistemfail:"
 
 #: src/lvui.glade.h:29
 msgid "Gigabytes"
@@ -474,7 +457,7 @@ msgstr ""
 
 #: src/lvui.glade.h:65
 msgid "Striped"
-msgstr ""
+msgstr "Jaluran"
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
@@ -564,7 +547,6 @@ msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s
 msgstr ""
 
 #. first set up lvcreate args
-#. Column names for PVS calls
 #: src/lvm_model.py:35
 #: src/lvmui_constants.py:39
 msgid "Unused"
@@ -714,37 +696,21 @@ msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
 #. No entry in column 3 means not initialized
-#. partitions that are either uninitialized or not to be included in a list
 #. fdisk 2.12 with the -l switch produces 7 columns
-#. will always be 6, and boot partitions will be 7
 #. item.set_volume_size(float(adj_sz_str) / GIG)
-#. #passed the test so far. It is possible that a partition set up
 #. #that file
-#. Add extent segments
 #. space, so that it can be rendered properly
-#. The output of the command is examined line by line for a volume
 #. ##FIXME Raise exception here because true path is not being returned,
-#. arglist.append("g")
 #. If we find our path, we need to extract the size info from line
-#. loose '['
 #. Finally, check for file system
-#. Cases:
 #. 1
-#. The cases above all result in one extent segment per PV.
 #. #going on here...the lvmdisplay command is run above for
-#. #The first chunk of data that is returned from this command is
 #. #onto the first chunk. It looks like this if linear:
-#. #    Type                linear
 #. # And looks like this if striped:
-#. #    Stripe size         64 KB
 #. #    Stripe 1:
-#. # on each line, and when it finds it, it
 #. # start and ending extents. Hopefully, this map info
-#. search for pathname in each string with while loop
 #. and note this in the new extent...
-#. #info, it is possible that an extent segment for a stripe
 #. #Now fill in holes -- for each gap, create a 'free' seg block
-#. Add final free segment if necessary
 #: src/lvmui_constants.py:19
 #, python-format
 msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
