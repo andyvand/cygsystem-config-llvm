@@ -1753,15 +1753,6 @@ Logical Volume</property>
 		      </child>
 
 		      <child>
-			<widget class="GtkMenuItem" id="reiser1">
-			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">Reiser</property>
-			  <property name="use_underline">True</property>
-			  <signal name="activate" handler="on_reiser1_activate" last_modification_time="Thu, 26 Aug 2004 21:35:56 GMT"/>
-			</widget>
-		      </child>
-
-		      <child>
 			<widget class="GtkMenuItem" id="xfs1">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">XFS</property>

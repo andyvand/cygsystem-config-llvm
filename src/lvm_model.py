@@ -373,14 +373,16 @@ class lvm_model:
     vg_arglist.append("g")
     vg_arglist.append("--separator")
     vg_arglist.append(",")
+    vg_arglist.append("-o")
+    vg_arglist.append("+vg_free_count")
     vg_arglist.append(vg_name)
 
     result_string = rhpl.executil.execWithCapture("/sbin/lvm",vg_arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
-      if words[6] > 0.0:
-       lv = LogicalVolume(UNUSED, None, words[1],None, words[6], FALSE)
+      if int(words[7].strip()) > 0: #Checks for free extents
+       lv = LogicalVolume(UNUSED, None, vg_name,None, words[6], FALSE)
        lvlist.append(lv)
 
     return lvlist

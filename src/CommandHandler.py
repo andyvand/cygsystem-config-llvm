@@ -2,6 +2,7 @@ import os
 import string
 from gtk import TRUE, FALSE
 from CommandError import CommandError
+from lvm_model import lvm_model
 import rhpl.executil
 
 from lvmui_constants import *
@@ -21,6 +22,8 @@ VGCHANGE_FAILURE=_("vgchange command failed. Command attempted: \"%s\"")
 VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\"")
 PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\"")
 LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\"")
+FSCREATE_FAILURE=_("mkfs command failed. Command attempted: \"%s\"")
+MNTCREATE_FAILURE=_("mount command failed. Command attempted: \"%s\"")
 
 class CommandHandler:
 
@@ -28,12 +31,14 @@ class CommandHandler:
     pass
 
   def new_lv(self, cmd_args_dict):
+    model_factory = lvm_model()
     #first set up lvcreate args
 
     arglist = list()
     arglist.append("/usr/sbin/lvcreate")
     arglist.append("-n")
-    arglist.append(cmd_args_dict[NEW_LV_NAME_ARG])
+    lvname = cmd_args_dict[NEW_LV_NAME_ARG]
+    arglist.append(lvname)
     if cmd_args_dict[NEW_LV_UNIT_ARG] == EXTENT_IDX:
       arglist.append("-l")
       arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]))
@@ -53,7 +58,8 @@ class CommandHandler:
       arglist.append(str(cmd_args_dict[NEW_LV_STRIPE_SIZE_ARG]))
 
     #MUST be last arg for this command block
-    arglist.append(cmd_args_dict[NEW_LV_VGNAME_ARG])
+    vgname = cmd_args_dict[NEW_LV_VGNAME_ARG]
+    arglist.append(vgname)
 
     result_string = rhpl.executil.execWithCapture("/usr/sbin/lvcreate",arglist)
 
@@ -61,7 +67,21 @@ class CommandHandler:
 
     #Now make filesystem if necessary
     if cmd_args_dict[NEW_LV_MAKE_FS_ARG] == TRUE:
-      pass
+      lvpath = model_factory.get_logical_volume_path(lvname,vgname)
+
+      fs_type = cmd_args_dict[NEW_LV_FS_TYPE_ARG] 
+      commandstring = "/sbin/mkfs -t " + fs_type + " " + lvpath
+      retval = os.system(commandstring)
+      if retval != 0:
+        raise CommandError('FATAL', FSCREATE_FAILURE % commandstring)
+
+      if cmd_args_dict[NEW_LV_MAKE_MNT_POINT_ARG] == TRUE:
+        mnt_point =  cmd_args_dict[NEW_LV_MNT_POINT_ARG]
+
+      command = "mount " + lvpath + " " + mnt_point
+      retval = os.system(command)
+      if retval != 0:
+        raise CommandError('FATAL', MNTCREATE_FAILURE % commandstring)
 
 
   def initialize_entity(self, entity):
@@ -142,6 +162,8 @@ class CommandHandler:
 
   def is_lv_mounted(self, lvname):
     is_mounted = FALSE
+    mount_point = ""
+    filesys = ""
     arglist = list()
     arglist.append("/bin/cat")
     arglist.append("/proc/mounts")
@@ -152,8 +174,10 @@ class CommandHandler:
       possible_path = text_words[0].strip()
       if possible_path == lvname:
         is_mounted = TRUE
+        mount_point = text_words[1]
+        filesys = text_words[2]
         break
-    return is_mounted
+    return is_mounted,mount_point,filesys
 
   def is_dm_mirror_loaded(self):
     arglist = list()

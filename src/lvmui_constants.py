@@ -43,3 +43,15 @@ GIG_SUFFIX=_("G")
 MEG_SUFFIX=_("M")
 KILO_SUFFIX=_("K")
 BYTE_SUFFIX=_("B")
+
+#File System Types
+NO_FILESYSTEM=_("No Filesystem")
+EXT2_T=_("Ext2")
+EXT3_T=_("Ext3")
+JFS_T=_("JFS")
+MSDOS_T=_("MSDOS")
+REISERFS_T=_("Reiserfs")
+VFAT_T=_("VFAT")
+XFS_T=_("XFS")
+CRAMFS_T=_("Cramfs")
+

@@ -7,6 +7,7 @@ __author__ = 'Jim Parsons (jparsons@redhat.com)'
 from gtk import TRUE, FALSE
 import string
 import os
+import stat
 import os.path
 import gobject
 from lvm_model import lvm_model
@@ -55,20 +56,37 @@ DEFAULT_EXTENT_SIZE = 4
 DEFAULT_EXTENT_SIZE_MEG_IDX = 1
 DEFAULT_EXTENT_SIZE_KILO_IDX = 2
 
-######################################################
-##Note: the enum below and the list that follows MUST#
-##remain related. A  chhange in one requires a change# 
-##in the other                                       #
-NO_FILESYSTEM_FS = 0                                 #
-EXT2_FS = 1                                          #
-EXT3_FS = 2                                          #
-REISER_FS = 3                                        #
-XFS_FS = 4                                           #
-JFS_FS = 5                                           #
-                                                     #
-FILE_SYSTEM_TYPE_LIST = [" ","ext2","ext3","reiser","xfs","jfs"]
-                                                     #
-######################################################
+#######################################################
+## Note, please: The two hash maps below are related. #
+## When adding or removing a filesystem type, both    #
+## hashes must be updated. The values in the first,   #
+## are the keys of the second.                        #
+## The FS type names are globalized strings in        #
+## lvmui_constants.py                                 #
+                                                      #
+MKFS_HASH = { 'mkfs.ext2':EXT2_T,                     #
+              'mkfs.ext3':EXT3_T,                     #
+#              'mkfs.jfs':JFS_T,                      #
+#              'mkfs.msdos':MSDOS_T,                  #
+#              'mkfs.reiserfs':REISERFS_T,            #
+#              'mkfs.vfat':VFAT_T,                    #
+#              'mkfs.xfs':XFS_T,                      #
+#              'mkfs.cramfs':CRAMFS_T                 #
+            }                                         #
+                                                      #
+FS_HASH = { EXT2_T:'ext2',                            #
+            EXT3_T:'ext3',                            #
+#            JFS_T:'jfs',                             #
+#            MSDOS_T:'msdos',                         #
+#            REISERFS_T:'reiserfs',                   #
+#            VFAT_T:'vfat',                           #
+#            XFS_T:'xfs',                             #
+#            CRAMFS_T:'cramfs'                        #
+           }                                          #
+                                                      #
+#######################################################
+
+NO_FILESYSTEM_FS = 0
 
 ACCEPTABLE_STRIPE_SIZES = [4,8,16,32,64,128,256,512]
 
@@ -111,7 +129,10 @@ EXCEEDED_MAX_PVS=_("The number of Physical Volumes in this Volume Group has reac
 EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reached its maximum limit.")
 
 TYPE_CONVERSION_ERROR=_("Undefined type conversion error in model factory. Unable to complete task.")
+
 NUMERIC_CONVERSION_ERROR=_("There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind.")
+
+MOUNTED_WARNING=_("BIG WARNING: Logical Volume %s has an %s file system on it and is currently mounted on %s. Are you absolutely certain that you wish to discard the data on this mounted filesystem?")
 
 ###TRANSLATOR: An extent below is an abstract unit of storage. The size
 ###of an extent is user-definable.
@@ -422,21 +443,32 @@ class InputController:
     else:
       return vgname
 
-
   def on_lv_rm(self, button):
-    selection = self.treeview.get_selection()
-    model, iter = selection.get_selected()
-    name = model.get_value(iter, PATH_COL)
-    lvname = name.strip()
+    self.remove_lv()
+
+  def remove_lv(self, lvname=None):
+    reset_tree = FALSE
+    if lvname == None:
+      reset_tree = TRUE
+      selection = self.treeview.get_selection()
+      model, iter = selection.get_selected()
+      name = model.get_value(iter, PATH_COL)
+      lvname = name.strip()
+
     retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
     if (retval == gtk.RESPONSE_NO):
       return
 
     else:
       #Check if LV is mounted -- if so, unmount
-      is_mounted = self.command_handler.is_lv_mounted(lvname)
+      is_mounted,mnt_point,filesys = self.command_handler.is_lv_mounted(lvname)
+
 
     if is_mounted == TRUE:
+      retval = self.warningMessage(MOUNTED_WARNING % (lvname,filesys,mnt_point))
+      if (retval == gtk.RESPONSE_NO):
+        return
+
       try:
         self.command_handler.unmount_lv(lvname)
       except CommandError, e:
@@ -452,7 +484,8 @@ class InputController:
     #args = list()
     #args.append(lvname)
     #apply(self.reset_tree_model, args)
-    apply(self.reset_tree_model)
+    if reset_tree == TRUE:
+      apply(self.reset_tree_model)
 
   def on_rm_select_lvs(self, button):
     if self.section_list == None:
@@ -465,26 +498,8 @@ class InputController:
       if item.is_vol_utilized == FALSE:
         continue
       lvname = item.get_path().strip()
-      retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
-      if (retval == gtk.RESPONSE_NO):
-        continue
+      self.remove_lv(lvname)
 
-      else:
-        #Check if LV is mounted -- if so, unmount
-        is_mounted = self.command_handler.is_lv_mounted(lvname)
-
-      if is_mounted == TRUE:
-        try:
-          self.command_handler.unmount_lv(lvname)
-        except CommandError, e:
-          self.errorMessage(e.getMessage())
-          return
-
-      try:
-        self.command_handler.remove_lv(lvname)
-      except CommandError, e:
-        self.errorMessage(e.getMessage())
-        return
 
       #args = list()
       #args.append(lvname)
@@ -596,13 +611,36 @@ class InputController:
     self.new_lv_stripe_size.set_history(DEFAULT_STRIPE_SIZE_IDX)
     self.new_lv_stripe_spinner.set_value(2.0)
 
-    #set filesystem option menu to 'no filesystem, and deactivate
-    #mount point field
-    self.new_lv_fs_menu.set_history(NO_FILESYSTEM_FS)
+    #set up filesystem menu
+    self.prep_filesystem_menu()
+
+    #deactivate #mount point field
     self.new_lv_mnt_point.set_text("")
 
     self.change_new_lv_fs(None, None)
     self.change_new_lv_radio(None)
+
+  def prep_filesystem_menu(self):
+    menu = gtk.Menu()
+    #First item must be 'No Filesystem' option
+    m = gtk.MenuItem(NO_FILESYSTEM)
+    m.show()
+    menu.append(m)
+
+    mkfs_list = MKFS_HASH.keys()
+    for item in mkfs_list:
+      stat_string = "/sbin/" + item
+      try:
+        mode = os.stat(stat_string)[stat.ST_MODE]
+      except OSError, e:
+        continue  #Means we did not find the mkfs varient in item present
+      m = gtk.MenuItem(MKFS_HASH[item])
+      m.show()
+      menu.append(m)
+
+    self.new_lv_fs_menu.set_menu(menu)
+
+    self.new_lv_fs_menu.set_history(NO_FILESYSTEM_FS)
 
   def on_ok_new_lv_button(self, button):
     Name_request = ""
@@ -713,9 +751,11 @@ class InputController:
 
     #Finally, address file system issues
     fs_idx = self.new_lv_fs_menu.get_history()
+    desired_fs_type = self.new_lv_fs_menu.get_children()[0].get()
     if fs_idx > 0:
       Make_filesystem = TRUE
-      FS_type = FILE_SYSTEM_TYPE_LIST[fs_idx] 
+      #FS_type = FILE_SYSTEM_TYPE_LIST[fs_idx] 
+      FS_type = FS_HASH[desired_fs_type] 
       if self.new_lv_mnt_point.get_text() != "":
         Mount_filesystem = TRUE
         Mount_point = self.new_lv_mnt_point.get_text()
