@@ -1,15 +1,15 @@
 # translation of hi.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rajesh Ranjan <rranjan@redhat.com>, 2004.
+# Rajesh Ranjan <rranjan@redhat.com>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-12-14 12:18+0530\n"
+"PO-Revision-Date: 2005-03-29 15:04+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
-"Language-Team: Hindi\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -104,8 +104,8 @@ msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
-"एक आयतन समूह को स्ट्रिपिंग को समर्थन देने के लिये दो या ज्यादा भौतिक आयतन से मिलकर जरूर "
-"बना होना चाहिये. यह Volume समूह जरूरतों को पूरा नहीं करता है."
+"एक आयतन समूह के स्ट्रिपिंग को समर्थन देने के लिये दो या ज्यादा भौतिक आयतन से मिलकर जरूर "
+"बना होना चाहिये. यह आयतन समूह जरूरतों को पूरा नहीं करता है."
 
 #: src/InputController.py:113
 #, python-format
@@ -118,8 +118,7 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s नाम के साथ पहले से ही एक आयतन समूह मौजूद है. कृपया एक अद्वितीय नाम चुनें."
 
 #: src/InputController.py:117
@@ -132,8 +131,7 @@ msgstr "नये आयतन समूह के लिये एक नाम
 
 #: src/InputController.py:121
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "निर्दिष्ट आरोह बिंदु %s मौजूद नहीं है. क्या आप इसे बनाना चाहते हैं?"
 
 #: src/InputController.py:123
@@ -158,8 +156,7 @@ msgid ""
 msgstr "इस आयतन समूह में तार्किक आयतन की संख्या इसके अधिकतम सीमा तक पहुंच गई है."
 
 #: src/InputController.py:131
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "मॉडल फैक्टरी में अपरिभाषित प्रकार कनवर्सन त्रुटि. कार्य पूरा करने में असमर्थ."
 
 #: src/InputController.py:133
@@ -178,7 +175,7 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"गंभीर चेतावनी: तार्किक आयतन %s पर %s फाइल सिस्टम है और अभी %s पर आरोहित है. क्या आप "
+"गंभीर चेतावनी: %s तार्किक आयतन के पास %s फाइल सिस्टम है और अभी %s पर आरोहित है. क्या आप "
 "पूरी तरह से निश्चित हैं कि आप इस आरोहित फाइल सिस्टम के आंकड़े को छोड़ना चाहते हैं?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
@@ -263,13 +260,12 @@ msgid ""
 msgstr ""
 "%s नामक भौतिक आयतन, जिसे आप हटाना चाहते हैं, के पास सक्रिय तार्किक आयतन से इसके "
 "विस्तार पर मैप किया आंकड़ा है. चूंकि यह आयतन समूह में एकमात्र भौतिक आयतन है, इसलिये आंकड़ों "
-"को हटाने के लिये कोई स्थान नहीं है. अनुशंसित क्रिया या तो एक नया भौतिक आयतन को इसे "
+"को हटाने के लिये कोई स्थान नहीं है. अनुशंसित क्रिया या तो एक नये भौतिक आयतन को इसे "
 "हटाने के पहले जोड़ना है, या तार्किक आयतन को हटायें जो इस भौतिक आयतन से जुड़ा है."
 
 #: src/InputController.py:159
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "क्या आप पूरी तरह से निश्चित हैं कि %s आयतन समूह से %s को हटाना चाहते हैं?"
 
 #: src/InputController.py:160
@@ -700,80 +696,67 @@ msgstr "ext3"
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgextend समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr "vgchange समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgreduce समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvmove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "umount समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:26
 #, python-format
-msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "mkfs समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:27
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "आरोह समादेश विफल. प्रयास किया गया समादेश: %s  - सिस्टम त्रुटि संदेश: \"%s\""
 
 #. first set up lvcreate args
@@ -1187,3 +1170,4 @@ msgstr "असंभाजित आयतन"
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr "अप्रारंभीकृत एंटिटी"
+
