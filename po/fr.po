@@ -147,7 +147,6 @@ msgstr "%s giga-octets"
 
 #: src/InputController.py:113
 #, python-format
-#, fuzzy
 msgid "%s extents"
 msgstr "%s extents"
 
