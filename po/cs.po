@@ -1,14 +1,14 @@
 # Czech translation of system-config-lvm.
-# Copyright (C) 2004 system-config-lvm'S COPYRIGHT HOLDER
-# Copyright (C) 2004 Miloslav Trmac <mitr@volny.cz>
+# Copyright (C) 2004, 2005 system-config-lvm'S COPYRIGHT HOLDER
+# Copyright (C) 2004, 2005 Miloslav Trmac <mitr@volny.cz>
 # This file is distributed under the same license as the system-config-lvm package.
-# Miloslav Trmac <mitr@volny.cz>, 2004.
+# Miloslav Trmac <mitr@volny.cz>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm VERSION\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-20 21:31+0200\n"
+"PO-Revision-Date: 2005-02-20 11:50+0100\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -145,31 +145,31 @@ msgstr "Tvorba místa připojení %s neočekávaně selhala."
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Tato funkce v této verzi ještě není implementována"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Počet fyzických svazků v této skupině svazků dosáhl maxima."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Počet logických svazků v této skupině svazků dosáhl maxima."
 
 #: src/InputController.py:131
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "CHyba nedefinovaného převodu typů v generátoru modelu. Nemohu dokončit úkol."
 
 #: src/InputController.py:133
 msgid ""
 "There is a problem with the value entered in the Size field. The value "
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
-msgstr ""
+msgstr "S hodnotou zadanou v poli Velikost je problém. Hodnota má být číselná hodnota bez jakýchkoli písmen nebo symbolů."
 
 #: src/InputController.py:135
 #, python-format
@@ -177,7 +177,7 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr ""
+msgstr "VELKÉ VAROVÁNÍ: Logický svazek %s má na sobě systém souborů %s a je momentálně připojen na %s. Opravdu chcete zničit data na tomto připojeném systému souborů?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -260,7 +260,7 @@ msgid ""
 "action is either to add a new Physical Volume before removing this one, or "
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
-msgstr ""
+msgstr "Fyzický svazek nazvaný %s, který chcete odstranit, má do svých oddílů mapována data z aktivních logických svazků. Protože je to jediný fyzický svaze ve skupině svazků, není kam přesunout data. Doporučená akce je buď před odstraňováním tohoto fyzického svazku přidat nový, nebo odstranit logické svazky asociované s tímto fyzickým svazkem."
 
 #: src/InputController.py:159
 #, python-format
@@ -273,7 +273,7 @@ msgstr "Opravdu chcete odstranit %s ze skupiny svazků %s?"
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "Odstranění fyzického svazku %s ze skupiny svazků %s nechá skupinu svazků prázdnou, a ona byde také odstraněna. Chcete pokračovat?"
 
 #: src/InputController.py:161
 #, python-format
@@ -281,12 +281,12 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "Opravdu chcete odstranit logický svazek %s?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr "Skupina svazků %s nemá dost místa pro přesun dat uložených na %s"
+msgstr "Skupina svazků %s nemá dost místa pro přesun dat uložených na %s. Možné řešení je přidat další fyzický svazek do skupiny svazků."
 
 #: src/InputController.py:163
 msgid ""
@@ -294,7 +294,7 @@ msgid ""
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr ""
+msgstr "Modul dm-mirror buď není načten do vašeho jádra, nebo vaše jádro nepodporuje cíl dm-mirror. Je-li podporován, zkuste spustit \"modprobe dm-mirror\". V opačném případě nejsou operace, které vyžadují přesun dat ve fyzických oddílech, k dispozici."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -504,11 +504,8 @@ msgstr ""
 "logický svazek"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
-"Rozšířit\n"
-"skupinu svazků"
+msgstr "Rozšířit skupinu svazků"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -691,82 +688,83 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz vgextend selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz vgextend selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz pvcreate selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz pvcreate selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz pvcreate selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz lvcreate selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz pvremove selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz pvremove selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz lvremove selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz lvremove selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz pvremove selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz vgremove selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz vgcreate selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz vgcreate selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
+# FIXME: s/Message/&:/
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "Příkaz vgcreate selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz vgchange selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz vgreduce selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz vgreduce selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz pvmove selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz pvmove selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz umount selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz umount selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Příkaz pvmove selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz mkfs selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "Příkaz umount selhal. Zkoušený příkaz: \"%s\""
+msgstr "Příkaz mount selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1064,46 +1062,43 @@ msgstr "Volné"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1183,14 +1178,8 @@ msgstr "Nealokované svazky"
 msgid "Uninitialized Entities"
 msgstr "Neinicializované entity"
 
-#~ msgid "Autobackup?"
-#~ msgstr "Autozáloha?"
-
 #~ msgid "Check here if you would like an entry to be made in /etc/fstab"
 #~ msgstr "Zaškrtněte toto, pokud chcete vytvořit položku v /etc/fstab"
 
 #~ msgid "Resizable?"
 #~ msgstr "Lze měnit velikost?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
