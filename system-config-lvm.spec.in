@@ -45,11 +45,16 @@ rm -rf %{buildroot}
 #%doc docs/html/*
 %{_sbindir}/*
 %{_bindir}/*
+%{_datadir}/applications/system-config-lvm.desktop
 %{_datadir}/system-config-lvm
 %config %{_sysconfdir}/pam.d/system-config-lvm
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.20-1.0
+  - Added desktop icon file.
+* Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.19-1.0
+  - Added desktop file.
 * Wed Nov 24 2004 Jim Parsons <jparsons@redhat.com> 0.9.18-1.0
   - Adjustments to configure.in so this builds in fedora as well as RHEL.
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.17-1.0

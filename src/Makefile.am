@@ -19,6 +19,7 @@ pixmaps/VG.xpm	\
 pixmaps/LV.xpm	\
 pixmaps/PV.xpm	\
 pixmaps/grad3.xpm	\
+pixmaps/lv_icon.png	\
 system-config-lvm.py
 
 GLADE_FILES = lvui.glade
@@ -59,6 +60,7 @@ install-exec-local:
 	install -m 0640 $(srcdir)/pixmaps/UV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/VG.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/grad3.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
+	install -m 0640 $(srcdir)/pixmaps/lv_icon.png  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	softdir=$(pkgdatadir); \
 	p=$(DESTDIR) ; \
 	softdir=$${softdir/#$$p} ; \
