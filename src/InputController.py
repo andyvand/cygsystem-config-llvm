@@ -1,4 +1,4 @@
-"""This class represents the primaru controller interface
+"""This class represents the primary controller interface
    for the LVM UI application.
 """
 __author__ = 'Jim Parsons (jparsons@redhat.com)'
@@ -34,6 +34,9 @@ import gnome
 import gnome.ui
 
 SIZE_COL = TYPE_COL
+
+###TRANSLATOR: The string below is seen when adding a new Physical
+###Volume to an existing Volume Group.
 ADD_PV_TO_VG_LABEL=("Select a Volume Group to add %s to:")
 
 MEGA_MULTIPLIER = 1000000.0
@@ -67,7 +70,7 @@ ACCEPTABLE_STRIPE_SIZES = [4,8,16,32,64,128,256,512]
 
 ACCEPTABLE_EXTENT_SIZES = ["2","4","8","16","32","64","128","256","512","1024"]
 
-CANT_STRIPE_MESSAGE=_("A Volume Group must be made up of 2 or more Physical Volumes to support striping. This Volume Group does not meet that requirement.")
+CANT_STRIPE_MESSAGE=_("A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement.")
 
 NON_UNIQUE_NAME=_("A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name.")
 
@@ -81,6 +84,8 @@ BAD_MNT_POINT=_("The specified mount point, %s, does not exist. Do you wish to c
 
 BAD_MNT_CREATION=_("The creation of mount point %s unexpectedly failed.")
 
+###TRANSLATOR: An extent below is an abstract unit of storage. The size
+###of an extent is user-definable.
 REMAINING_SPACE_VGNAME=_("Unused space on %s")
 REMAINING_SPACE_MEGABYTES=_("%s megabytes")
 REMAINING_SPACE_KILOBYTES=_("%s kilobytes")
@@ -93,6 +98,8 @@ NUMBERS_ONLY=_("The %s should only contain number values")
 NUMBERS_ONLY_MAX_PVS=_("The  Maximum Physical Volumes field should contain only integer values between 1 and 256")
 NUMBERS_ONLY_MAX_LVS=_("The  Maximum Logical Volumes field should contain only integer values between 1 and 256")
 
+###TRANSLATOR: Striping writes data to multiple physical devices 
+###concurrently, with the objective being redundance and/or speed
 STRIPE_SIZE_FIELD=_("Stripe Size field")
 NUM_STRIPES_FIELD=_("Number of Stripes field")
 
