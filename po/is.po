@@ -27,6 +27,13 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Get ekki ræst upp myndræna viðmótið. Algengasta skýring þessarar villu\n"
+"  er sú að tólið var ekki keyrt upp með myndræna gluggaumhverfið í gangi.\n"
+"  Vinsamlega ræstu myndræna umhverfið eða gakktu úr skugga um að DISPLAY\n"
+"  umhverfisbreytan er rétt stillt.\n"
+"                                                                                \n"
+"  Fékk villuboð: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -65,22 +72,24 @@ msgstr "Gerð tækis"
 
 #: src/InputController.py:89
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "Ónotaður raundiskur"
 
 #: src/InputController.py:90
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "Óuppsettur diskur"
 
 #: src/InputController.py:91
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr ""
+msgstr "Veldu disk til að bæta í sýndardiskhópinn %s:"
 
 #: src/InputController.py:93
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
+"Sýndardiskhópur verður að innihalda að minnsta kosti tvo diska til að "
+"hann styðji RAID 0. Þessi sýndardiskhópur uppfyllir ekki skilyrðin."
 
 #: src/InputController.py:95
 #, python-format
@@ -88,53 +97,57 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
+"Sýndardiskur með heitinu %s er þegar til í þessum sýndardiskhóp. "
+"Vinsamlega veldu annað heiti."
 
 #: src/InputController.py:97
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
+"Sýndardiskhópur með heitinu %s er þegar til. Vinsamlega veldu annað heiti."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "Þú verður að gefa nýja sýndardisknum heiti"
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "Þú verður að gefa nýja sýndardiskhópnum heiti"
 
 #: src/InputController.py:103
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
+"Tengipúnkturinn %s er ekki til. Viltu búa hann til núna?"
 
 #: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "Það kom upp óvænt villa við að búa til tengipúnktinn %s."
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:109
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "Ónotað rými á %s"
 
 #: src/InputController.py:110
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s megabæti"
 
 #: src/InputController.py:111
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s kílóbæti"
 
 #: src/InputController.py:112
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s gígabæti"
 
 #: src/InputController.py:113
 #, python-format
