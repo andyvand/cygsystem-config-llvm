@@ -48,6 +48,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Wed Nov 10 2004 Jim Parsons <jparsons@redhat.com> 0.9.8-1.0
+  - Fixes for bz137930, 137872, 137292, 137052, 137054
 * Tue Nov 9 2004 Jim Parsons <jparsons@redhat.com> 0.9.7-1.0
   - Improved handling of garbage in the size string -- try catch in place
     now that traps for ValueError 

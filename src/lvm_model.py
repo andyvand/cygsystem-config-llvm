@@ -462,6 +462,35 @@ class lvm_model:
 
     return words[0],words[1]
 
+  def get_max_LVs_PVs_on_VG(self, vgname):
+    vg_name = vgname.strip()
+    arglist = list()
+    arglist.append("/sbin/lvm")
+    arglist.append("vgs")
+    arglist.append("--nosuffix")
+    arglist.append("--noheadings")
+    arglist.append("--separator")
+    arglist.append(",")
+    arglist.append("-o")
+    arglist.append("max_lv,lv_count,max_pv,pv_count")
+    arglist.append(vg_name)
+
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
+
+    words = result_string.split(",")
+
+    #max LVs, number of LVs, max PVs, number of PVs
+    if words[0] == "0":
+      words[0] = "256"
+    if words[2] == "0":
+      words[2] = "256"
+    
+    max_lvs = int(words[0])
+    lvs = int(words[1])
+    max_pvs = int(words[2])
+    pvs = int(words[3])
+    return max_lvs,lvs,max_pvs,pvs
+
   def get_data_for_VG(self, vgname):
     name = vgname.strip()
     text_list = list()
@@ -866,4 +895,4 @@ class lvm_model:
     else:
       return (-1)
 
- 
+

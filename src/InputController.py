@@ -106,6 +106,12 @@ BAD_MNT_CREATION=_("The creation of mount point %s unexpectedly failed.")
 
 NOT_IMPLEMENTED=_("This capability is not yet implemented in this version")
 
+EXCEEDED_MAX_PVS=_("The number of Physical Volumes in this Volume Group has reached its maximum limit.")
+
+EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reached its maximum limit.")
+
+TYPE_CONVERSION_ERROR=_("Undefined type conversion error in model factory. Unable to complete task.")
+
 ###TRANSLATOR: An extent below is an abstract unit of storage. The size
 ###of an extent is user-definable.
 REMAINING_SPACE_VGNAME=_("Unused space on %s")
@@ -455,7 +461,7 @@ class InputController:
     for item in self.section_list:
       if item.is_vol_utilized == FALSE:
         continue
-      lvname = item.get_name().strip()
+      lvname = item.get_path().strip()
       retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
       if (retval == gtk.RESPONSE_NO):
         continue
@@ -540,6 +546,19 @@ class InputController:
     self.prep_new_lv_dlg()
 
   def on_new_lv(self, button):
+    main_selection = self.treeview.get_selection()
+    main_model,main_iter = main_selection.get_selected()
+    main_path = main_model.get_path(main_iter)
+    vgname = main_model.get_value(main_iter,PATH_COL).strip()
+    try:
+      max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
+    except ValueError, e:
+      self.errorMessage(TYPE_CONVERSION_ERROR % e)
+      return
+    if max_lvs == lvs:
+      self.errorMessage(EXCEEDED_MAX_LVS)
+      return
+
     self.prep_new_lv_dlg()
     self.new_lv_dlg.show()
 
@@ -621,7 +640,7 @@ class InputController:
       float_proposed_size = float(prop_size)
       int_proposed_size = int(prop_size)
     except ValueError, e: 
-      self.errorMessage(NUMERIC_CONVERSION_ERROR % e)
+      self.errorMessage(TYPE_CONVERSION_ERROR % e)
       self.new_lv_size.set_text("")
       return
 
@@ -880,10 +899,22 @@ class InputController:
     model, iter = selection.get_selected()
     name = model.get_value(iter, NAME_COL)
     vgname = name.strip()
+
+    #Check if this VG allows an Additional PV
+    try:
+      max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
+    except ValueError, e:
+      self.errorMessage(TYPE_CONVERSION_ERROR % e)
+      return
+    if max_pvs == pvs:
+      self.errorMessage(EXCEEDED_MAX_PVS)
+      self.add_pv_to_vg_dlg.hide()
+      return
+
     try:
       self.command_handler.add_unalloc_to_vg(pathname, vgname)
     except CommandError, e:
-      self.errorMessage(e.getMessage)
+      self.errorMessage(e.getMessage())
       return
 
     args = list()
@@ -922,6 +953,19 @@ class InputController:
 
 
   def on_extend_vg(self, button):
+    main_selection = self.treeview.get_selection()
+    main_model,main_iter = main_selection.get_selected()
+    main_path = main_model.get_path(main_iter)
+    vgname = main_model.get_value(main_iter,PATH_COL).strip()
+    try:
+      max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
+    except ValueError, e:
+      self.errorMessage(TYPE_CONVERSION_ERROR % e)
+      return
+    if max_pvs == pvs:
+      self.errorMessage(EXCEEDED_MAX_PVS)
+      return
+
     self.rebuild_extend_vg_tree()
     self.extend_vg_form.show()
 
