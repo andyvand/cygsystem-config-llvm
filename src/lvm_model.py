@@ -842,10 +842,36 @@ class lvm_model:
             idx = typestr.find(":")
             extent.set_annotation(typestr[:idx])
           extentlist.append(extent)
-          break
+         # break
 
     ##Now, sort 
-    extentlist.sort(self.sortMe)         
+    extentlist.sort(self.sortMe) 
+
+    ##Due to the nature of the way lvdisplay presents mapping
+    ##info, it is possible that an extent segment for a stripe
+    ##may be broken into two adjacent pieces. It makes visual 
+    ##sense to merge these segments. 
+
+    for k in range(0, len(extentlist) -1):
+      current = extentlist[k]
+      next = extentlist[k+1]
+      st,sz = current.get_start_size()
+      st_next,sz_next = next.get_start_size()
+      if (st + sz) == st_next:
+        name = current.get_name()
+        name_next = next.get_name()
+        if name == name_next:
+          if current.get_annotation() == next.get_annotation():
+            extent = ExtentSegment(name_next,st,(sz + sz_next),TRUE)
+            extent.set_annotation(current.get_annotation())
+            extentlist.insert(k,extent)
+            extentlist.remove(current)
+            extentlist.remove(next)
+            k = 0
+            continue
+
+    ##For good measure...
+    extentlist.sort(self.sortMe)
 
     ##Now fill in holes -- for each gap, create a 'free' seg block
     ##This is set up as a double loop because inserting a new val

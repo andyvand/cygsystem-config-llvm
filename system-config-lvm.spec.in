@@ -48,6 +48,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Tue Nov 16 2004 Jim Parsons <jparsons@redhat.com> 0.9.11-1.0
+  - Fix for bz138019 -- extent segs correct for stripe corner case
 * Mon Nov 15 2004 Jim Parsons <jparsons@redhat.com> 0.9.10-1.0
   - Fixes for bz137291, 138008, and 137122
 * Thu Nov 11 2004 Jim Parsons <jparsons@redhat.com> 0.9.9-1.0
