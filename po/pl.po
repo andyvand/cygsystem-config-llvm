@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-21 14:47+0100\n"
+"PO-Revision-Date: 2004-10-21 20:05+0100\n"
 "Last-Translator: Adam Woś <adam.wos@post.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -72,7 +72,7 @@ msgstr ""
 #: src/InputController.py:95
 #, python-format
 msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
-msgstr "Dysk logiczny o nazwie %s już istnieje w tej grupie woluminów. Proszę wybrać unikalną nazwę."
+msgstr "Wolumin logiczny o nazwie %s już istnieje w tej grupie woluminów. Proszę wybrać unikalną nazwę."
 
 #: src/InputController.py:97
 #, python-format
@@ -81,11 +81,11 @@ msgstr "Grupa woluminów o nazwie %s już istnieje. Proszę wybrać unikalną na
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
-msgstr "Musisz podać nazwę dla nowej partycji logicznej."
+msgstr "Musisz podać nazwę dla nowego woluminu logicznego."
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
-msgstr "Musisz podać nazwę dla grupy partycji."
+msgstr "Musisz podać nazwę dla grupy woluminów."
 
 #: src/InputController.py:103
 #, python-format
@@ -126,7 +126,7 @@ msgstr ""
 #: src/InputController.py:115
 #, python-format
 msgid "The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: "
-msgstr "Rozmiar przeznaczony na nowy dysk logiczny przekracza dostępne wolne miejsce w grupie wolumenów %s. Dostępne wolne miejsce to: "
+msgstr "Rozmiar przeznaczony na nowy wolumin logiczny przekracza dostępne wolne miejsce w grupie woluminów %s. Dostępne wolne miejsce to: "
 
 #: src/InputController.py:117
 #, python-format
@@ -135,11 +135,11 @@ msgstr "%s powinno zawierać tylko wartości liczbowe"
 
 #: src/InputController.py:118
 msgid "The  Maximum Physical Volumes field should contain only integer values between 1 and 256"
-msgstr "Pole Maks. liczba woluminów fizycznych powinno zawierać tylko liczby pomiędzy 1 a 256"
+msgstr "Pole  Maks. liczba woluminów fizycznych powinno zawierać tylko liczby pomiędzy 1 a 256"
 
 #: src/InputController.py:119
 msgid "The  Maximum Logical Volumes field should contain only integer values between 1 and 256"
-msgstr "Pole Maks. liczba dysków logicznych powinno zawierać tylko liczby pomiędzy 1 a 256"
+msgstr "Pole  Maks. liczba woluminów logicznych powinno zawierać tylko liczby pomiędzy 1 a 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #: src/InputController.py:123
@@ -153,7 +153,7 @@ msgstr ""
 #: src/InputController.py:126
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr "Czy masz pewność, że chcesz usunąć %s z Zarządzania Dyskami Logicznymi LVM?"
+msgstr "Czy masz pewność, że chcesz usunąć %s z Zarządzania Woluminami Logicznymi LVM?"
 
 #: src/InputController.py:128
 #, python-format
@@ -163,7 +163,7 @@ msgstr "Czy masz pewność, że chcesz usunąć %s z grupy woluminów %s?"
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr "Czy masz pewność, że chcesz usunąć dysk logiczny %s?"
+msgstr "Czy masz pewność, że chcesz usunąć wolumin logiczny %s?"
 
 #: src/InputController.py:130
 #, python-format
@@ -171,7 +171,6 @@ msgid "Volume Group %s does not have enough space to move the data stored on %s"
 msgstr "Grupa woluminów %s nie ma wystarczającej ilości miejsca, żeby przenieść dane składowane na %s"
 
 #. ##########################################################
-#. in bytes
 #: src/lvui.glade.h:1
 msgid "*"
 msgstr "*"
@@ -246,15 +245,15 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "Utwórz nowy\n"
-"dysk logiczny"
+"wolumin logiczny"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
-msgstr "Utwórz nowy DL"
+msgstr "Utwórz nowy WL"
 
 #: src/lvui.glade.h:21
 msgid "Create a New Logical Volume"
-msgstr "Utwórz nowy dysk logiczny"
+msgstr "Utwórz nowy wolumin logiczny"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -278,7 +277,7 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "Rozszerz\n"
-"dysk logiczny"
+"wolumin logiczny"
 
 #: src/lvui.glade.h:28
 msgid "Extents"
@@ -314,15 +313,15 @@ msgstr "Liniowy"
 
 #: src/lvui.glade.h:36
 msgid "Logical Volume Management"
-msgstr "Zarządzanie dyskami logicznymi LVM"
+msgstr "Zarządzanie Woluminami Logicznymi LVM"
 
 #: src/lvui.glade.h:37
 msgid "Manage Volumes"
-msgstr "Zarządzaj dyskami"
+msgstr "Zarządzaj woluminami"
 
 #: src/lvui.glade.h:38
 msgid "Maximum Logical Volumes: "
-msgstr "Maks. liczba dysków logicznych:"
+msgstr "Maks. liczba woluminów logicznych:"
 
 #: src/lvui.glade.h:39
 msgid "Maximum Physical Volumes: "
@@ -345,7 +344,7 @@ msgstr ""
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "Punkt montowania (jeśli pusty, dysk nie zostanie zamontowany):"
+msgstr "Punkt montowania (jeśli pusty, wolumin nie zostanie zamontowany):"
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
@@ -353,7 +352,7 @@ msgstr "Nazwa grupy woluminów:"
 
 #: src/lvui.glade.h:46
 msgid "Name for new LV:"
-msgstr "Nazwa nowego DL:"
+msgstr "Nazwa nowego WL:"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group"
@@ -385,7 +384,7 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "Usuń\n"
-"dysk logiczny"
+"wolumin logiczny"
 
 #: src/lvui.glade.h:55
 msgid ""
@@ -393,7 +392,7 @@ msgid ""
 "Logical Volume(s)"
 msgstr ""
 "Usuń wybrany(e)\n"
-"dysk(i) logiczny(e)"
+"wolumin(y) logiczny(e)"
 
 #: src/lvui.glade.h:57
 msgid ""
@@ -408,7 +407,7 @@ msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
-"Usuń dysk z\n"
+"Usuń wolumin z\n"
 "grupy woluminów"
 
 #: src/lvui.glade.h:61
@@ -416,7 +415,7 @@ msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
-"Usuń dysk\n"
+"Usuń wolumin\n"
 "z LVM"
 
 #: src/lvui.glade.h:63
@@ -425,7 +424,7 @@ msgstr "Zmienny rozmiar?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr "Wybierz grupę wolumenów, do której dodać ten DL:"
+msgstr "Wybierz grupę woluminów, do której dodać ten WL:"
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
@@ -574,7 +573,7 @@ msgstr ""
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "Maks. liczba dozwolonych woluminów fizycznych:"
+msgstr "Maks. dozw. liczba woluminów fizycznych:"
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
@@ -582,11 +581,11 @@ msgstr "Liczba woluminów fizycznych:"
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "Maks. liczba dozwolonych dysków logicznych:"
+msgstr "Maks. dozw. liczba woluminów logicznych:"
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr "Liczba dysków logicznych:"
+msgstr "Liczba woluminów logicznych:"
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
@@ -594,11 +593,11 @@ msgstr ""
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr "Nazwa dysku logicznego:"
+msgstr "Nazwa woluminu logicznego:"
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr "Rozmiar dysku logicznego:"
+msgstr "Rozmiar woluminu logicznego:"
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
@@ -614,7 +613,7 @@ msgstr ""
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
-msgstr "LV UUID:   "
+msgstr "UUID woluminu:"
 
 #: src/lvm_model.py:76
 msgid "Partition Type:   "
@@ -661,9 +660,7 @@ msgid "PV UUID:   "
 msgstr ""
 
 #. No entry in column 3 means not initialized
-#. ##FIXME Raise exception here because true path is not being returned,
 #. #between the LV and its PVs.
-#. we found our PV in mapping table
 #: src/lvmui_constants.py:18
 #, python-format
 msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
@@ -676,16 +673,16 @@ msgstr "Właściwości"
 #: src/Properties_Renderer.py:45
 #: src/renderer.py:98
 msgid "Physical Volume"
-msgstr "wolumin fizyczny"
+msgstr "Wolumin fizyczny"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:97
 msgid "Logical Volume"
-msgstr "dysk logiczny"
+msgstr "Wolumin logiczny"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr "niezaalokowany wolumin"
+msgstr "Niezaalokowany wolumin"
 
 #: src/Properties_Renderer.py:48
 #: src/renderer.py:104
@@ -697,7 +694,7 @@ msgstr ""
 #: src/Properties_Renderer.py:51
 #: src/renderer.py:99
 msgid "Volume Group"
-msgstr "grupa woluminów"
+msgstr "Grupa woluminów"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
