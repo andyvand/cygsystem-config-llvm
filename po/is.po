@@ -742,7 +742,7 @@ msgstr ""
 
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -862,31 +862,32 @@ msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
 msgstr ""
+"Ertu viss um að þú viljir frumstilla diskinn %s? Öll gögn á honum munu tapast."
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "Eiginleikar"
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "raundiska"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "sýndardiska"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Ónotaður diskur"
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "Diskur"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "Sýndardiskhópur"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -894,40 +895,44 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"Þessi hluti hefur ekki verið \n"
+"frumstilltur til notkunar í LVM."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Enginn diskur valinn"
 
 #: src/renderer.py:96
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
+"Þessum disk hefur ekki verið bætt \n"
+"í sýndardiskhóp ennþá."
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "Sýndardiskasýn"
 
 #: src/renderer.py:101 src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "Raundiskasýn"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "Ónotað"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "Ófrumstillt"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "hlutar"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Sýndardiskhópar"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
