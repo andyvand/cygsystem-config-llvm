@@ -2,20 +2,20 @@
 # translation of system-config-lvm.po to Tamil
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Jayaradha N <njaya@redhat.com>, 2004.
+# Jayaradha N <njaya@redhat.com>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-29 15:15+0530\n"
-"Last-Translator: Jayaradha N <njaya@redhat.com>\n"
+"PO-Revision-Date: 2005-03-22 14:39+0530\n"
+"Last-Translator: Jayaradha <njaya@redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
@@ -121,8 +121,7 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s என்ற பெயரில் வால்யூம் குழு ஏற்கெனவே உள்லது. வேறு பெயரை தேர்வு செய்யவும்."
 
 #: src/InputController.py:117
@@ -135,8 +134,7 @@ msgstr "வால்யூம் குழுவின் பெயரை கு
 
 #: src/InputController.py:121
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "சிறப்பு ஏற்றப்புள்ளி , %s, ஏற்கெனவே உள்ளது. இதை உருவாக்க விருப்பமா?"
 
 #: src/InputController.py:123
@@ -152,25 +150,24 @@ msgstr "இந்த வசதி இந்த பதிப்பில் இ�
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "இந்த தொகுதிக்குழுவில் உள்ள பிசிக்கல் தொகுதிக்குழுக்களின் எண்ணிக்கை அதிக பட்ச எண்ணிக்கையை கடந்துவிட்டது."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "இந்த தொகுதிக்குழுவில் உள்ள லாஜிக்கல் தொகுதிக்குழுக்களின் எண்ணிக்கை அதிக பட்ச எண்ணிக்கையை கடந்துவிட்டது."
 
 #: src/InputController.py:131
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgstr "மாதிரி தொழிற்சாலையில் குறிப்பிடப்படாத வகை மாற்றம் நிகழ்துள்ளது. வேலையை முடிக்க முடியவில்லை."
 
 #: src/InputController.py:133
 msgid ""
 "There is a problem with the value entered in the Size field. The value "
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
-msgstr ""
+msgstr "அளவு புலத்தில் உள்ளிட்ட மதிப்பில் சிக்கல். அளவு எண் எழுத்துக்களாக அல்லது குறியீடுகளாக இல்லாமல் எண்களாக இருக்க வேண்டும். "
 
 #: src/InputController.py:135
 #, python-format
@@ -178,7 +175,7 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr ""
+msgstr "எச்சரிக்கை :தொகுதிக்குழு %s இல் %s கோப்பு முறை %s இல் ஏற்றப்பட்டுள்ளது. இந்த ஏற்றப்பட்ட கோப்பு அமைப்பில் உள்ள தகவல்களை சிதைக்க நிச்சயமாக விரும்புகிறீர்களா?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -263,12 +260,11 @@ msgid ""
 "action is either to add a new Physical Volume before removing this one, or "
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
-msgstr ""
+msgstr "நீங்கள் நீக்க விரும்பும், பிசிக்கல் தொகுதிக்குழு %s, இல் செயலில் உல்ல லாஜிகல் தொகுதிக்குழுவின் தகவல்கள் உள்ளது. இது பிசிக்கல் தொகுதிக்குழுவாக இருப்பதால், தகவலை நகர்த்த இடம் இருக்காது. எனவே புதிய இதை நீக்கும் முன் பிசிக்கல் தொகுதிக்குழுவை சேர்க்கலாம் அல்லது லாஜிக்கல் தொகுதிக்குழுவோடு தொடர்புடைய பிசிக்கல் தொகுதிக்குழுவை நீக்கலாம்."
 
 #: src/InputController.py:159
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s ஐ %s வால்யூம் குழுவிலிருந்து நீக்க விருப்பமா?"
 
 #: src/InputController.py:160
@@ -276,7 +272,7 @@ msgstr "%s ஐ %s வால்யூம் குழுவிலிருந்�
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "%s தொகுதிக்குழுவிலிருந்து பிசிக்கல் தொகுதியை%s ஐ  நீக்குவதால் தொகுதிக்குழு காலியாக்கப்பட்டு நீக்கப்படும். தொடர விருப்பமா?"
 
 #: src/InputController.py:161
 #, python-format
@@ -284,12 +280,12 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "நீங்கள் %s லாஜிக்கல் வால்யூமை நீக்க முற்பட்டுள்ளீர்கள் என்பதை அறிவீர்களா?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr "வால்யூம் குழு %s இல் %s இல் சேமிக்கப்பட்ட தகவல்களை நகர்த்த போதிய இடமில்லை."
+msgstr "வால்யூம் குழு %s இல் %s இல் சேமிக்கப்பட்ட தகவல்களை நகர்த்த போதிய இடமில்லை. எனவே கூடுதல் பிசிக்கல் தொகுதிக்குவை வால்யூம் குழுவுடன் சேர்க்கவும்."
 
 #: src/InputController.py:163
 msgid ""
@@ -297,7 +293,7 @@ msgid ""
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr ""
+msgstr "dm-mirror உங்கள் கர்னலில் ஏற்றப்படவில்லை அல்லது உங்கள் இதற்கான ஆதரவு உங்கள் கர்னலில் இல்லை. ஆதரவு இருந்தால் \"modprobe dm-mirror\" ஐ இயக்கி முயற்சிக்கவும். அல்லது, தகவலை பிசிகல் நீட்டிப்புக்கு நகர்த்தும் முறை இல்லை."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -507,11 +503,8 @@ msgstr ""
 "பரப்பு"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
-"வால்யூம் குழு\n"
-"பரப்புகள்"
+msgstr "நீட்டிக்கப்பட்ட தொகுதிக்குழு"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -693,82 +686,69 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgextend கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgextend கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\" - கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "vgchange கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, python-format
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1066,46 +1046,43 @@ msgstr "காலி"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1185,14 +1162,3 @@ msgstr "ஒதுக்கப்படாத வால்யூம்கள்"
 msgid "Uninitialized Entities"
 msgstr "துவக்கப்படாத என்டிட்டிகள்"
 
-#~ msgid "Autobackup?"
-#~ msgstr "தானாக காப்பெடுக்கவா?"
-
-#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
-#~ msgstr "/etc/fstab இல் தகவல் உள்ளிட விரும்பினால் இங்கே க்ளிக் செய்யவும்"
-
-#~ msgid "Resizable?"
-#~ msgstr "அளவைமாற்றகூடியதா?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
