@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm mk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-19 00:50+0100\n"
+"PO-Revision-Date: 2004-10-19 01:01+0100\n"
 "Last-Translator: Adrian Grygier <adi@zwami.pl>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
@@ -33,11 +33,8 @@ msgid ""
 msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
-#. #####################################################
 #. #remain related. A  chhange in one requires a change#
-#. ##available disk entities on the system. There are two types --
 #. ##partition that has been initialized for use with LVM, by writing
-#. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##some context.
 #: src/InputController.py:85
 msgid "Name"
@@ -170,29 +167,17 @@ msgid "Volume Group %s does not have enough space to move the data stored on %s"
 msgstr ""
 
 #. ##########################################################
-#. self.setup_pv_rm()
 #. #This form adds an unallocated PV to a VG
-#. #This form adds a new VG
 #. Now check for unique name
-#. ##FIXME - this just check for 'some' space - it should check for
 #. else:
-#. return
 #. args = list()
-#. apply(self.reset_tree_model, args)
 #. need to check if section is 'unused'
-#. #This form adds a new Logical Volume
 #. Get available space on vg and set as label
-#. set filesystem option menu to 'no filesystem, and deactivate
 #. Validation Ladder:
-#. ok - name is ok. size must be below available space
 #. in bytes
-#. Finally, address file system issues
 #. create mount point
-#. Add confirmation dialog here...
 #. First check if there are more than 1 PVs in volume
-#. striping is not an option
 #. set up columns for tree
-#. Now get name of VG to be extended...
 #. ######################################################
 #: src/lvui.glade.h:1
 msgid "*"
@@ -511,20 +496,18 @@ msgid "umount command failed. Command attempted: \"%s\""
 msgstr ""
 
 #. first set up lvcreate args
-#. ##next command
 #. Column names for PVS calls
-#. Column names for lvdisplay calls
 #: src/lvm_model.py:35
 msgid "Unused"
-msgstr ""
+msgstr "Nie używane"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "Wolne miejsce"
 
 #: src/lvm_model.py:37
 msgid "Free"
-msgstr ""
+msgstr "Wolne"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
@@ -666,59 +649,32 @@ msgid "PV UUID:   "
 msgstr ""
 
 #. No entry in column 3 means not initialized
-#. At this point, all of the visible partitions initialized for LVM usage
 #. partitions that are either uninitialized or not to be included in a list
-#. this code examines the uncertain list and moves appropriate
 #. fdisk 2.12 with the -l switch produces 7 columns
-#. is an asterisk in this column. If there is not, this column
 #. will always be 6, and boot partitions will be 7
-#. There is a '+' at end of string...
 #. item.set_volume_size(float(adj_sz_str) / GIG)
-#. ##FIX use lvmdiskscan here
 #. Add extent segments
-#. ##FIXME - Throw exception here, if no result is returned
 #. If there is free space, add an LV marked as 'unused' for that available
-#. lvs does not give path info
 #. The output of the command is examined line by line for a volume
-#. If the volume group name matches, check if the LV name can be found
 #. ##FIXME Raise exception here because true path is not being returned,
-#. arglist.append("--units")
 #. lvs reports 0 for sys max
-#. Now determine size
 #. Size info resides between two square brackets
-#. /dev/sda10 [      784.39 MB] LVM physical volume
 #. Next, check if partition is mounted
-#. No file system
 #. ##This method adds complete/contiguous extent lists to PVs -- no holes
-#. #1) vgname == "", add one extent 'free' using all extents
 #. #3) extents are used, build list and fill in free holes
-#. 2
 #. Could be an 'unused' section or fully used section
-#. When a PV has multiple extent segments, we must build a list
 #. #For ease of maintenance, here is an explanation of what is
-#. #each Logical Volume in the pv's volumegroup. The command
 #. #between the LV and its PVs.
-#. #general info about the LV -- there is no chance that the
 #. #chunk. The second chunk is the mapping info, which is appended
-#. #
 #. #  Logical extent 0 to 249:
-#. #    Physical volume     /dev/sda7
 #. #  Logical extent 0 to 25:
-#. #    Stripes             2
 #. #    Stripe 0:
-#. #      Physical extents  250 to 262
 #. #      Physical volume   /dev/sda11
-#. # So the code below searches for the full PV path
 #. # splits the following line (i + 1) into substrings
-#. # for the values for words[3] and words[5] to get the
 #. # will be included in lvs soon, so this dangerous
-#. #######
 #. we found our PV in mapping table
-#. Now let's determine if this segment is striped or linear,
 #. #Now, sort
-#. #This is set up as a double loop because inserting a new val
 #. #the for loop iterator is recreated after each list insertion
-#. Nothing in this PV is used...
 #: src/lvmui_constants.py:18
 #, python-format
 msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
