@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-13 09:30-0400\n"
+"POT-Creation-Date: 2004-10-26 16:14-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,52 +115,56 @@ msgstr ""
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr ""
 
+#: src/InputController.py:107
+msgid "This capability is not yet implemented in this version"
+msgstr ""
+
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:109
+#: src/InputController.py:111
 #, python-format
 msgid "Unused space on %s"
 msgstr ""
 
-#: src/InputController.py:110
+#: src/InputController.py:112
 #, python-format
 msgid "%s megabytes"
 msgstr ""
 
-#: src/InputController.py:111
+#: src/InputController.py:113
 #, python-format
 msgid "%s kilobytes"
 msgstr ""
 
-#: src/InputController.py:112
+#: src/InputController.py:114
 #, python-format
 msgid "%s gigabytes"
 msgstr ""
 
-#: src/InputController.py:113
+#: src/InputController.py:115
 #, python-format
 msgid "%s extents"
 msgstr ""
 
-#: src/InputController.py:115
+#: src/InputController.py:117
 #, python-format
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
 
-#: src/InputController.py:117
+#: src/InputController.py:119
 #, python-format
 msgid "The %s should only contain number values"
 msgstr ""
 
-#: src/InputController.py:118
+#: src/InputController.py:120
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
 
-#: src/InputController.py:119
+#: src/InputController.py:121
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -168,33 +172,33 @@ msgstr ""
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
-#: src/InputController.py:123
+#: src/InputController.py:125
 msgid "Stripe Size field"
 msgstr ""
 
-#: src/InputController.py:124
+#: src/InputController.py:126
 msgid "Number of Stripes field"
 msgstr ""
 
-#: src/InputController.py:126
+#: src/InputController.py:128
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
 
-#: src/InputController.py:128
+#: src/InputController.py:130
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
-#: src/InputController.py:129
+#: src/InputController.py:131
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr ""
 
-#: src/InputController.py:130
+#: src/InputController.py:132
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s"
@@ -229,8 +233,8 @@ msgstr ""
 #. need to check if section is 'unused'
 #. Check if PV has alloc ated extents - if so, move
 #. args = list()
-#. args.append(lvname)
-#. apply(self.reset_tree_model, args)
+#. args.append(vgname)
+#. apply(self.reset_tree_model,args)
 #. ##################
 #. #This form adds a new Logical Volume
 #. #Fields and menus
