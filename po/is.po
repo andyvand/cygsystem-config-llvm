@@ -152,7 +152,7 @@ msgstr "%s gígabæti"
 #: src/InputController.py:113
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s diskhlutar"
 
 #: src/InputController.py:115
 #, python-format
@@ -160,23 +160,29 @@ msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
+"Umbeðin stærð nýja sýndardisksins er stærri en plássið sem er laust í "
+"sýndardiskhópnum %s. Plássið sem er tiltækt er: "
 
 #: src/InputController.py:117
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "Gildið %s ætti einungis að innihalda tölustafi"
 
 #: src/InputController.py:118
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"Sviðið fyrir hámarksfjölda raundiska ætti einungis að innihalda tölustafi "
+"á milli 1 og 256"
 
 #: src/InputController.py:119
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"Sviðið fyrir hámarksfjölda sýndardiska ætti einungis að innihalda tölustafi "
+"á milli 1 og 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
@@ -194,23 +200,27 @@ msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
+"Ertu viss um að þú viljir fjarlægja %s úr sýndardiskstjóranum?"
 
 #: src/InputController.py:128
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
+"Ertu viss um að þú viljir fjarlægja %s úr sýndardiskhópnum %s?"
 
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "Ertu viss um að þú viljir fjarlægja sýndardiskinn %s?"
 
 #: src/InputController.py:130
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s"
 msgstr ""
+"Sýndardiskhópurinn %s hefur ekki nægilegt pláss til að flytja gögnin "
+"sem eru á %s"
 
 #. ##########################################################
 #. self.setup_pv_rm_migrate()
@@ -322,35 +332,39 @@ msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Bæta raundisk í sýndardiskhóp"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"Bæta við sýndardiskhóp \n"
+"sem þegar er til"
 
 #: src/lvui.glade.h:16
 msgid "Autobackup?"
-msgstr ""
+msgstr "Afrita?"
 
 #: src/lvui.glade.h:17
 msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr ""
+msgstr "Smelltu hér ef þú vilt bæta við færslu í /etc/fstab"
 
 #: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"Búa til nýjann\n"
+"sýndardisk"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
-msgstr ""
+msgstr "Búa til nýjann sýndardisk"
 
 #: src/lvui.glade.h:21
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "Búa til nýjann sýndardisk"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -376,11 +390,11 @@ msgstr ""
 
 #: src/lvui.glade.h:29
 msgid "Filesystem: "
-msgstr ""
+msgstr "Skráarkerfi: "
 
 #: src/lvui.glade.h:30
 msgid "Gigabytes"
-msgstr ""
+msgstr "Gígabæti"
 
 #: src/lvui.glade.h:31
 msgid "Initialize Entity"
@@ -388,19 +402,19 @@ msgstr ""
 
 #: src/lvui.glade.h:32
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvui.glade.h:33
 msgid "Kilo"
-msgstr ""
+msgstr "Kíló"
 
 #: src/lvui.glade.h:34
 msgid "Kilobytes"
-msgstr ""
+msgstr "Kílóbæti"
 
 #: src/lvui.glade.h:35
 msgid "Linear"
-msgstr ""
+msgstr "Línulegt"
 
 #: src/lvui.glade.h:36
 msgid "Logical Volume Management"
@@ -420,11 +434,11 @@ msgstr ""
 
 #: src/lvui.glade.h:40
 msgid "Meg"
-msgstr ""
+msgstr "Mega"
 
 #: src/lvui.glade.h:41 src/renderer.py:106
 msgid "Megabytes"
-msgstr ""
+msgstr "Megabæti"
 
 #: src/lvui.glade.h:42
 msgid ""
