@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-09 23:23-0500\n"
+"POT-Creation-Date: 2004-11-10 01:26-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -119,52 +119,69 @@ msgstr ""
 msgid "This capability is not yet implemented in this version"
 msgstr ""
 
+#: src/InputController.py:109
+msgid ""
+"The number of Physical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+
+#: src/InputController.py:111
+msgid ""
+"The number of Logical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+
+#: src/InputController.py:113
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
+msgstr ""
+
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:111
+#: src/InputController.py:117
 #, python-format
 msgid "Unused space on %s"
 msgstr ""
 
-#: src/InputController.py:112
+#: src/InputController.py:118
 #, python-format
 msgid "%s megabytes"
 msgstr ""
 
-#: src/InputController.py:113
+#: src/InputController.py:119
 #, python-format
 msgid "%s kilobytes"
 msgstr ""
 
-#: src/InputController.py:114
+#: src/InputController.py:120
 #, python-format
 msgid "%s gigabytes"
 msgstr ""
 
-#: src/InputController.py:115
+#: src/InputController.py:121
 #, python-format
 msgid "%s extents"
 msgstr ""
 
-#: src/InputController.py:117
+#: src/InputController.py:123
 #, python-format
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
 
-#: src/InputController.py:119
+#: src/InputController.py:125
 #, python-format
 msgid "The %s should only contain number values"
 msgstr ""
 
-#: src/InputController.py:120
+#: src/InputController.py:126
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
 
-#: src/InputController.py:121
+#: src/InputController.py:127
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -172,22 +189,22 @@ msgstr ""
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
-#: src/InputController.py:125
+#: src/InputController.py:131
 msgid "Stripe Size field"
 msgstr ""
 
-#: src/InputController.py:126
+#: src/InputController.py:132
 msgid "Number of Stripes field"
 msgstr ""
 
-#: src/InputController.py:128
+#: src/InputController.py:134
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
 
-#: src/InputController.py:130
+#: src/InputController.py:136
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -198,25 +215,25 @@ msgid ""
 "Volume."
 msgstr ""
 
-#: src/InputController.py:131
+#: src/InputController.py:137
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
-#: src/InputController.py:132
+#: src/InputController.py:138
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
 
-#: src/InputController.py:133
+#: src/InputController.py:139
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr ""
 
-#: src/InputController.py:134
+#: src/InputController.py:140
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -224,7 +241,7 @@ msgid ""
 "Volume Group."
 msgstr ""
 
-#: src/InputController.py:135
+#: src/InputController.py:141
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -306,6 +323,7 @@ msgstr ""
 #. if not, put up message dialog and reset radiobuttons to linear
 #. striping is not an option
 #. message = INIT_ENTITY_1 + name + INIT_ENTITY_2
+#. Check if this VG allows an Additional PV
 #. set up columns for tree
 #. cancel opp if OK clicked w/o selection
 #. Now get name of VG to be extended...
@@ -816,6 +834,7 @@ msgstr ""
 #. within the first column string. If so, the column[0] string is the path.
 #. ##FIXME Raise exception here because true path is not being returned,
 #. ##But rather the lname arg is being returned.
+#. max LVs, number of LVs, max PVs, number of PVs
 #. arglist.append("--units")
 #. arglist.append("g")
 #. lvs reports 0 for sys max

@@ -11,7 +11,8 @@ class PhysicalVolume(Volume):
     self.name = self.extract_name(path)
     self.path = path
     self.vg = vg
-    self.size = float(psize)
+    self.size = float(psize) #This is in gigabytes
+    self.size_string = self.build_size_string(self.size)
     self.pfree = float(pfree)
     self.format = fmt
     self.is_utilized = initialized
@@ -43,3 +44,4 @@ class PhysicalVolume(Volume):
 
   def get_extent_values(self):
     return self.total_extents,self.free_extents,self.allocated_extents
+

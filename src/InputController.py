@@ -111,6 +111,7 @@ EXCEEDED_MAX_PVS=_("The number of Physical Volumes in this Volume Group has reac
 EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reached its maximum limit.")
 
 TYPE_CONVERSION_ERROR=_("Undefined type conversion error in model factory. Unable to complete task.")
+NUMERIC_CONVERSION_ERROR=_("There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind.")
 
 ###TRANSLATOR: An extent below is an abstract unit of storage. The size
 ###of an extent is user-definable.
@@ -150,6 +151,8 @@ class InputController:
     self.command_handler = CommandHandler()
     self.section_list = list()
     self.section_type = UNSELECTABLE_TYPE
+    self.use_remaining = 0 #This global :( is used as a flag for the new lv form
+    self.loaded_field = 0  #This one too
 
     self.setup_dialogs()
 
@@ -388,7 +391,7 @@ class InputController:
       else: #There are additional PVs. We need to check space 
         size, ext_count = self.model_factory.get_free_space_on_VG(vgname, "m")
         actual_free_exts = int(ext_count) - free
-        if alloc <= actual_free_extents:
+        if alloc <= actual_free_exts:
           if self.command_handler.is_dm_mirror_loaded() == FALSE:
             self.errorMessage(NO_DM_MIRROR)
             return
@@ -523,6 +526,7 @@ class InputController:
     ##Fields and menus
     self.new_lv_name = self.glade_xml.get_widget('new_lv_name')
     self.new_lv_size = self.glade_xml.get_widget('new_lv_size')
+    self.new_lv_size.connect('changed',self.unset_use_remaining_flag)
     self.new_lv_size_unit = self.glade_xml.get_widget('new_lv_size_unit')
     self.new_lv_size_unit.connect('changed', self.change_new_lv_size_unit)
     self.unused_space_label1 = self.glade_xml.get_widget('unused_space_label1')
@@ -541,7 +545,6 @@ class InputController:
     self.new_lv_fs_menu.connect('changed', self.change_new_lv_fs)
     self.new_lv_mnt_point = self.glade_xml.get_widget('new_lv_mnt_point')
     self.new_lv_mnt_point_label = self.glade_xml.get_widget('new_lv_mnt_point_label')
-    self.new_lv_fstab_cbox = self.glade_xml.get_widget('fstab_cbox')
 
     self.prep_new_lv_dlg()
 
@@ -563,6 +566,8 @@ class InputController:
     self.new_lv_dlg.show()
 
   def prep_new_lv_dlg(self):
+    self.use_remaining = 0
+    self.loaded_field = 0
     #Get available space on vg and set as label
     selection = self.treeview.get_selection()
     model, iter = selection.get_selected()
@@ -638,9 +643,9 @@ class InputController:
     prop_size = self.new_lv_size.get_text()
     try:  ##In case gibberish is entered into the size field...
       float_proposed_size = float(prop_size)
-      int_proposed_size = int(prop_size)
+      int_proposed_size = int(float_proposed_size)
     except ValueError, e: 
-      self.errorMessage(TYPE_CONVERSION_ERROR % e)
+      self.errorMessage(NUMERIC_CONVERSION_ERROR % e)
       self.new_lv_size.set_text("")
       return
 
@@ -649,40 +654,45 @@ class InputController:
     #Normalize size depending on size_unit index
     Unit_index = self.new_lv_size_unit.get_history()
     Size_request = 0
-    if Unit_index == EXTENT_IDX:
-      if int(self.free_extents) < int_proposed_size:
-        self.errorMessage((EXCEEDS_FREE_SPACE % vgname) + 
-                          (REMAINING_SPACE_EXTENTS % self.free_extents)) 
-        self.new_lv_size.set_text("")
-        return
-      Size_request = int_proposed_size
 
-    elif Unit_index == MEGABYTE_IDX:
-        normalized_size = float_proposed_size * MEGA_MULTIPLIER
-        if float(self.free_space_bytes) < normalized_size:
-          self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
-                            (REMAINING_SPACE_MEGABYTES % self.free_space))
+    if self.use_remaining > 0: #This means the 'use remaining space button' used
+      Unit_index = EXTENT_IDX
+      Size_request = self.use_remaining
+    else:
+      if Unit_index == EXTENT_IDX:
+        if int(self.free_extents) < int_proposed_size:
+          self.errorMessage((EXCEEDS_FREE_SPACE % vgname) + 
+                            (REMAINING_SPACE_EXTENTS % self.free_extents)) 
           self.new_lv_size.set_text("")
           return
-        Size_request = float_proposed_size
+        Size_request = int_proposed_size
+
+      elif Unit_index == MEGABYTE_IDX:
+          normalized_size = float_proposed_size * MEGA_MULTIPLIER
+          if float(self.free_space_bytes) < normalized_size:
+            self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
+                              (REMAINING_SPACE_MEGABYTES % self.free_space))
+            self.new_lv_size.set_text("")
+            return
+          Size_request = float_proposed_size
           
-    elif Unit_index == GIGABYTE_IDX:
-        normalized_size = float_proposed_size * GIGA_MULTIPLIER
-        if float(self.free_space_bytes) < normalized_size:
-          self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
-                            (REMAINING_SPACE_GIGABYTES % self.free_space))
-          self.new_lv_size.set_text("")
-          return
-        Size_request = float_proposed_size
+      elif Unit_index == GIGABYTE_IDX:
+          normalized_size = float_proposed_size * GIGA_MULTIPLIER
+          if float(self.free_space_bytes) < normalized_size:
+            self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
+                              (REMAINING_SPACE_GIGABYTES % self.free_space))
+            self.new_lv_size.set_text("")
+            return
+          Size_request = float_proposed_size
           
-    elif Unit_index == KILOBYTE_IDX:
-        normalized_size = float_proposed_size * KILO_MULTIPLIER
-        if float(self.free_space_bytes) < normalized_size:
-          self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
-                            (REMAINING_SPACE_KILOBYTES % self.free_space))
-          self.new_lv_size.set_text("")
-          return
-        Size_request = float_proposed_size
+      elif Unit_index == KILOBYTE_IDX:
+          normalized_size = float_proposed_size * KILO_MULTIPLIER
+          if float(self.free_space_bytes) < normalized_size:
+            self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
+                              (REMAINING_SPACE_KILOBYTES % self.free_space))
+            self.new_lv_size.set_text("")
+            return
+          Size_request = float_proposed_size
           
 
 
@@ -721,8 +731,6 @@ class InputController:
           else:
             self.new_lv_mnt_point.select_region(0, (-1))
             return
-        if self.new_lv_fstab_cbox.get_active() == TRUE:
-          FSTAB_entry = TRUE
 
     #Build command args
     new_lv_command_set = {}
@@ -757,6 +765,33 @@ class InputController:
   def on_cancel_new_lv_button(self, button):
     self.new_lv_dlg.hide()
 
+  #The following two methods are related. Here is how:
+  #There is a button on the new_lv_dlg form that allows
+  #the user to use all of the remaining space on the VG
+  #for their new LV. This is implemented by setting the size
+  #text entry field with the remaining space value, in whatever unit
+  #you happen to be working in according to the unit selection menu.
+  #Sending this value as a param to lvcreate when it is a floating
+  #point value, though, is problematic; so we will use a discrete value 
+  #(free extents) instead. By setting the flag 'self.use_remaining'
+  #to the amount of extents available, we can check in the on_ok
+  #method for a value greater than zero, and send the size in 
+  #extents to the command handler. A problem can occur, though,
+  #when the user presses the 'use remaining space' button, and 
+  #then modify's the amount in the text field. The handler method
+  #immediately below resets the flag to 0, if chars in the text
+  #field are deleted, or new ones inserted.
+  #
+  #Of course, the act of loading the max value into the field is 
+  #considered a 'change' so this must be trapped, and is what the 
+  #self.loaded_field flag is for. It can only be set by the 
+  #button handler.
+  def unset_use_remaining_flag(self, *args):
+    if self.loaded_field == 0:
+      self.use_remaining = 0
+    else:
+      self.loaded_field = 0
+
   def on_new_lv_remaining_space(self,button):
     unit_index = self.new_lv_size_unit.get_history()
     if unit_index == MEGABYTE_IDX:
@@ -776,6 +811,8 @@ class InputController:
       self.free_space_bytes = free_space_bytes
       self.free_space = free_space
       self.free_extents = free_extents
+      self.use_remaining = free_extents
+      self.loaded_field = 1
 
     if unit_index == EXTENT_IDX:
       self.new_lv_size.set_text(free_extents)
@@ -823,7 +860,6 @@ class InputController:
     fs_idx_val = self.new_lv_fs_menu.get_history()
     self.new_lv_mnt_point.set_sensitive(fs_idx_val)
     self.new_lv_mnt_point_label.set_sensitive(fs_idx_val)
-    self.new_lv_fstab_cbox.set_sensitive(fs_idx_val)
     
 
   def make_new_lv_stripe_radio_active(self,val):
@@ -1023,7 +1059,7 @@ class InputController:
       for vol in unallocated_vols:
         iter = model.append()
         model.set(iter, NAME_COL, vol.get_path(),
-                        SIZE_COL, vol.get_volume_size(),
+                        SIZE_COL, vol.get_volume_size_string(),
                         PATH_COL, uv_string,
                         VOL_TYPE_COL, UNALLOC_VOL)
 
@@ -1032,7 +1068,7 @@ class InputController:
       for item in uninitialized_list:
         iter = model.append()
         model.set(iter, NAME_COL, item.get_path(),
-                        SIZE_COL, item.get_volume_size(),
+                        SIZE_COL, item.get_volume_size_string(),
                         PATH_COL, iv_string,
                         VOL_TYPE_COL,UNINIT_VOL)
 

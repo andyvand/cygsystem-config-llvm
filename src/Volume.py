@@ -11,7 +11,8 @@ from lvmui_constants import *
 class Volume:
   def __init__(self):
     self.name = ""
-    self.size = 0.0
+    self.size = 0.0  #This is a floating point number
+    self.size_string = "0.0M" #This is a rep of size with unit initial appended
     self.is_utilized = TRUE
     self.type = UNINITIALIZED_TYPE
     self.extent_segment_list = list()
@@ -24,6 +25,10 @@ class Volume:
 
   def set_volume_size(self, sz):
     self.size = sz
+    self.size_string = self.build_size_string(self.size)
+
+  def get_volume_size_string(self):
+    return self.size_string
 
   def is_vol_utilized(self):
     return self.is_utilized
@@ -45,3 +50,21 @@ class Volume:
 
   def get_type(self):
     return self.type
+
+  def build_size_string(self, size):
+    #incoming size is a string representation in gig. we need to evaluate
+    #it and append an appropriate unit suffix.
+    fsize = size
+    if fsize > 1.0:
+      return "%.2f"%fsize + GIG_SUFFIX
+    else:
+      fsize = fsize * 1000.0  #move unit into meg range
+      if fsize > 1.0:
+        return "%.2f"%fsize + MEG_SUFFIX
+      else:
+        fsize = fsize * 1000.0  #move unit into kilo range
+        if fsize > 1.0:
+          return "%.2f"%fsize + KILO_SUFFIX
+        else:
+          return "%.2f"%fsize + BYTE_SUFFIX
+

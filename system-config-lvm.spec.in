@@ -48,6 +48,9 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Thu Nov 11 2004 Jim Parsons <jparsons@redhat.com> 0.9.9-1.0
+  - Fixes for bz137111, 138887, 138006,138097. Also removed fstab checkbox
+    and added it as a feature at 138831 for next release.
 * Wed Nov 10 2004 Jim Parsons <jparsons@redhat.com> 0.9.8-1.0
   - Fixes for bz137930, 137872, 137292, 137052, 137054
 * Tue Nov 9 2004 Jim Parsons <jparsons@redhat.com> 0.9.7-1.0

@@ -1849,37 +1849,6 @@ Logical Volume</property>
 	  </child>
 
 	  <child>
-	    <widget class="GtkHBox" id="hbox47">
-	      <property name="visible">True</property>
-	      <property name="homogeneous">False</property>
-	      <property name="spacing">0</property>
-
-	      <child>
-		<widget class="GtkCheckButton" id="fstab_cbox">
-		  <property name="visible">True</property>
-		  <property name="can_focus">True</property>
-		  <property name="label" translatable="yes">Check here if you would like an entry to be made in /etc/fstab</property>
-		  <property name="use_underline">True</property>
-		  <property name="relief">GTK_RELIEF_NORMAL</property>
-		  <property name="active">False</property>
-		  <property name="inconsistent">False</property>
-		  <property name="draw_indicator">True</property>
-		</widget>
-		<packing>
-		  <property name="padding">4</property>
-		  <property name="expand">False</property>
-		  <property name="fill">False</property>
-		</packing>
-	      </child>
-	    </widget>
-	    <packing>
-	      <property name="padding">0</property>
-	      <property name="expand">True</property>
-	      <property name="fill">True</property>
-	    </packing>
-	  </child>
-
-	  <child>
 	    <widget class="GtkHSeparator" id="hseparator27">
 	      <property name="visible">True</property>
 	    </widget>
@@ -2029,7 +1998,7 @@ Logical Volume</property>
 </widget>
 
 <widget class="GtkDialog" id="extend_vg_form">
-  <property name="title" translatable="yes">dialog1</property>
+  <property name="title" translatable="yes">Extend Volume Group</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>
   <property name="modal">False</property>

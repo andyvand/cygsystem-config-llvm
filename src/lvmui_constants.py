@@ -39,4 +39,7 @@ EXTENT_IDX = 3
 UNUSED=_("Unused")
 FREE=_("Free")
 
-
+GIG_SUFFIX=_("G")
+MEG_SUFFIX=_("M")
+KILO_SUFFIX=_("K")
+BYTE_SUFFIX=_("B")
