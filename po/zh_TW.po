@@ -6,7 +6,6 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zh_TW\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
 "PO-Revision-Date: 2004-12-13 10:27+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
@@ -14,6 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
 "X-Generator: KBabel 1.9.1\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
@@ -31,8 +31,8 @@ msgstr ""
 "\n"
 "  無法啟動圖形環境。最可能造成這錯誤的原因，是這工具並\n"
 "  沒有在圖形環境中執行。請啟動您的圖形使用者界面，或設\n"
-"  定您的 DISPLAY 變數。"
-"                                                                                \n"
+"  定您的 DISPLAY 變"
+"數。                                                                                \n"
 "  擷取到的例外：%s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
@@ -103,18 +103,23 @@ msgstr "請選擇磁碟個體，以加入 %s Volume 群組："
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr "Volume 群組至少由兩個以上的實體 Volume 所組成，以支援等量磁區。這個 Volume 群組並不符合這項要求。"
+msgstr ""
+"Volume 群組至少由兩個以上的實體 Volume 所組成，以支援等量磁區。這個 Volume 群"
+"組並不符合這項要求。"
 
 #: src/InputController.py:113
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr "名為 %s 的邏輯 Volume 已經存在於這個 Volume 群組中。請選擇一個獨一無二的名稱。"
+msgstr ""
+"名為 %s 的邏輯 Volume 已經存在於這個 Volume 群組中。請選擇一個獨一無二的名"
+"稱。"
 
 #: src/InputController.py:115
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "名為 %s 的 Volume 群組已經存在。請選擇一個獨一無二的名稱。"
 
 #: src/InputController.py:117
@@ -127,7 +132,8 @@ msgstr "您必須賦予新 Volume 群組一個名稱"
 
 #: src/InputController.py:121
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "指定的掛載點 %s 不存在。您想要建立這掛載點嗎？"
 
 #: src/InputController.py:123
@@ -152,7 +158,8 @@ msgid ""
 msgstr "這個 Volume 群組的邏輯 Volume 數目已經到達上限。"
 
 #: src/InputController.py:131
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr "未定義的類型轉換錯誤。無法完成該項任務。"
 
 #: src/InputController.py:133
@@ -168,7 +175,9 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr "重要警告：邏輯 Volume %s 上面已經有了 %s 檔案系統，目前掛載於 %s 上。您百分之百確定，要移除這個已掛載檔案系統上的所有檔案？"
+msgstr ""
+"重要警告：邏輯 Volume %s 上面已經有了 %s 檔案系統，目前掛載於 %s 上。您百分之"
+"百確定，要移除這個已掛載檔案系統上的所有檔案？"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -247,11 +256,16 @@ msgid ""
 "action is either to add a new Physical Volume before removing this one, or "
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
-msgstr "您打算移除的實體 Volume %s 上面有來自運行中邏輯 Volume 的資料，對應到其範圍去。由於這是 Volume 群組中的唯一實體 Volume，所以沒有地方可以移動這些資料。建議的作法是在移除這個實體 Volume 前，增加新的實體 Volume；或移除與這個實體 Volume 有關的邏輯 Volume。"
+msgstr ""
+"您打算移除的實體 Volume %s 上面有來自運行中邏輯 Volume 的資料，對應到其範圍"
+"去。由於這是 Volume 群組中的唯一實體 Volume，所以沒有地方可以移動這些資料。建"
+"議的作法是在移除這個實體 Volume 前，增加新的實體 Volume；或移除與這個實體 "
+"Volume 有關的邏輯 Volume。"
 
 #: src/InputController.py:159
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "您非常肯定，要移除 %s（位於 Volume 群組 %s 中）？"
 
 #: src/InputController.py:160
@@ -259,7 +273,9 @@ msgstr "您非常肯定，要移除 %s（位於 Volume 群組 %s 中）？"
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr "移除實體 Volume %s（位於 Volume 群組 %s）將會讓 Volume 群組成為空白，然後也被移除。您要繼續嗎？"
+msgstr ""
+"移除實體 Volume %s（位於 Volume 群組 %s）將會讓 Volume 群組成為空白，然後也被"
+"移除。您要繼續嗎？"
 
 #: src/InputController.py:161
 #, python-format
@@ -272,7 +288,9 @@ msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr "Volume 群組 %s 沒有足夠的空間，將儲存在 %s 的資料移開。可行的解決方法之一，是在 Volume 群組中，加入額外的實體 Volume。"
+msgstr ""
+"Volume 群組 %s 沒有足夠的空間，將儲存在 %s 的資料移開。可行的解決方法之一，是"
+"在 Volume 群組中，加入額外的實體 Volume。"
 
 #: src/InputController.py:163
 msgid ""
@@ -280,7 +298,10 @@ msgid ""
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr "dm-mirror 模組如果不是尚未載入核心，就是您的核心不支援 dm-mirrot 目標。如果核心支援，請試試執行「modprobe dm-mirror」指令。否則的話，就無法將實體範圍中的資料移除。"
+msgstr ""
+"dm-mirror 模組如果不是尚未載入核心，就是您的核心不支援 dm-mirrot 目標。如果核"
+"心支援，請試試執行「modprobe dm-mirror」指令。否則的話，就無法將實體範圍中的"
+"資料移除。"
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -674,67 +695,80 @@ msgstr "ext3"
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
 #, python-format
-msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgextend 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid ""
+"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr "vgchange 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgreduce 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvmove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "umount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:26
 #, python-format
-msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "mkfs 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:27
 #, python-format
-msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid ""
+"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "mount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #. first set up lvcreate args
@@ -1146,4 +1180,3 @@ msgstr "未分配的 Volume"
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr "未初始化的個體"
-
