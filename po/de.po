@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-15 16:22+0200\n"
-"Last-Translator: Eduard Pech <kongretkrassescheissendreck@simstim.net>\n"
+"PO-Revision-Date: 2004-10-15 23:56+0200\n"
+"Last-Translator: Ronny Buchmann <ronny-vlug@vlugnet.org>\n"
 "Language-Team: de <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,9 +31,12 @@ msgid ""
 "  Caught exception: %s\n"
 msgstr ""
 "\n"
-"Initialisierung der grafischen Oberfläche fehlgeschlagen. Höchstwahrscheinlich wurde das Programm nicht unter einer grafischen Oberfläche aufgerufen. Bitte starten Sie die grafische Benutzerschnittstelle Ihrer Wahl oder setzen Sie die DISPLAY-Variable.\n"
+"  Initialisierung der grafischen Oberfläche fehlgeschlagen. HöchstWahrschein-\n"
+"  lich wurde das Programm nicht unter einer grafischen Oberfläche aufgerufen.\n"
+"  Bitte starten Sie die grafische Benutzerschnittstelle Ihrer Wahl oder setzen\n"
+"  Sie die DISPLAY-Variable.\n"
 "\n"
-"Aufgefangene Ausname: %s\n"
+"  Abgefangene Ausnahme: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -69,7 +72,7 @@ msgstr "Größe"
 
 #: src/InputController.py:87
 msgid "Entity Type"
-msgstr "Laufwerktyp"
+msgstr "Laufwerkstyp"
 
 #: src/InputController.py:89
 msgid "Unallocated Physical Volume"
@@ -88,14 +91,19 @@ msgstr "Wählen Sie ein Laufwerk, das der Datenträgergruppe %s hinzugefügt wer
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr "Eine Datenträgergruppe muss aus mindestens zwei physischen Datenträgern bestehen, um Streifung zu unterstützen. Die Datenträgergruppe erfüllt diese Anforderung nicht."
+msgstr ""
+"Eine Datenträgergruppe muss aus mindestens zwei physischen Datenträgern "
+"bestehen, um Streifung zu unterstützen. Die Datenträgergruppe erfüllt "
+"diese Anforderung nicht."
 
 #: src/InputController.py:95
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr "Ein logischer Datenträger namens %s existiert bereits in dieser Datenträgergruppe. Bitte wählen Sie einen eindeutigen Namen."
+msgstr ""
+"Ein logischer Datenträger namens %s existiert bereits in dieser "
+"Datenträgergruppe. Bitte wählen Sie einen eindeutigen Namen."
 
 #: src/InputController.py:97
 #, python-format
@@ -113,12 +121,12 @@ msgstr "Die neue Datenträgergruppe muss benannt werden"
 #: src/InputController.py:103
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr "Der spezifische Objektträger %s existiert nicht. Möchten Sie ihn erzeugen?"
+msgstr "Der angegebene Einhängepunkt %s existiert nicht. Möchten Sie ihn erzeugen?"
 
 #: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr "Das Erzeugen des Objektträgers %s ist unerwartet fehlgeschlagen."
+msgstr "Die Erstellung des Einhängepunkt %s ist unerwartet fehlgeschlagen."
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -130,17 +138,17 @@ msgstr "Freier Speicherplatz auf %s"
 #: src/InputController.py:110
 #, python-format
 msgid "%s megabytes"
-msgstr "%s MB"
+msgstr "%s Megabyte"
 
 #: src/InputController.py:111
 #, python-format
 msgid "%s kilobytes"
-msgstr "%s KB"
+msgstr "%s Kilobyte"
 
 #: src/InputController.py:112
 #, python-format
 msgid "%s gigabytes"
-msgstr "%s GB"
+msgstr "%s Gigabyte"
 
 #: src/InputController.py:113
 #, python-format
@@ -152,7 +160,9 @@ msgstr "%s Bereiche"
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
-msgstr "Die angeforderte Größe für den neuen logischen Datenträger übersteigt den verfügbaren Speicherplatz in der Datenträgergruppe %s. Der verfügbare Speicherplatz beträgt: "
+msgstr "Die angeforderte Größe für den neuen logischen Datenträger übersteigt"
+"den verfügbaren Speicherplatz in der Datenträgergruppe %s. Der verfügbare"
+" Speicherplatz beträgt: "
 
 #: src/InputController.py:117
 #, python-format
@@ -298,7 +308,7 @@ msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "40 megabytes"
-msgstr "40 MB"
+msgstr "40 Megabyte"
 
 #: src/lvui.glade.h:10
 msgid "512"
@@ -320,7 +330,9 @@ msgstr "Physischen Datenträger der Datenträgergruppe hinzufügen"
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr "Einer existierenden Datenträgergruppe hinzufügen"
+msgstr ""
+"Einer existierenden\n"
+"Datenträgergruppe hinzufügen"
 
 #: src/lvui.glade.h:16
 msgid "Autobackup?"
@@ -328,13 +340,15 @@ msgstr "Automatische Sicherung?"
 
 #: src/lvui.glade.h:17
 msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr "Hier ankzeuzen, wenn Sie einen Eintrag in /etc/fstab wünschen"
+msgstr "Hier ankreuzen, wenn Sie einen Eintrag in /etc/fstab wünschen"
 
 #: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
-msgstr "Neuen logischen Datenträger erzeugen"
+msgstr ""
+"Neuen logischen\n"
+"Datenträger erzeugen"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
@@ -348,19 +362,25 @@ msgstr "Neuen logischen Datenträger erzeugen"
 msgid ""
 "Create new \n"
 "Volume Group"
-msgstr "Neue Datenträgergruppe erzeugen"
+msgstr ""
+"Neue Datenträger-\n"
+"gruppe erzeugen"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend\n"
 "Volume Group"
-msgstr "Datenträgengruppe erweitern"
+msgstr ""
+"Datenträgengruppe\n"
+"erweitern"
 
 #: src/lvui.glade.h:26
 msgid ""
 "Extend \n"
 "Logical Volume"
-msgstr "Logischen Datenträger erweitern"
+msgstr ""
+"Logischen Datenträger\n"
+"erweitern"
 
 #: src/lvui.glade.h:28
 msgid "Extents"
@@ -384,11 +404,11 @@ msgstr "JFS"
 
 #: src/lvui.glade.h:33
 msgid "Kilo"
-msgstr "Kilo"
+msgstr "KB"
 
 #: src/lvui.glade.h:34
 msgid "Kilobytes"
-msgstr "KB"
+msgstr "Kilobyte"
 
 #: src/lvui.glade.h:35
 msgid "Linear"
@@ -396,7 +416,7 @@ msgstr "Linear"
 
 #: src/lvui.glade.h:36
 msgid "Logical Volume Management"
-msgstr "Logische Datenträgerverwaltung"
+msgstr "Logische Datenträgerverwaltung (LVM)"
 
 #: src/lvui.glade.h:37
 msgid "Manage Volumes"
@@ -412,25 +432,27 @@ msgstr "Höchstzahl physischer Datenträger"
 
 #: src/lvui.glade.h:40
 msgid "Meg"
-msgstr "Mega"
+msgstr "MB"
 
 #: src/lvui.glade.h:41 src/renderer.py:106
 msgid "Megabytes"
-msgstr "MB"
+msgstr "Megabyte"
 
 #: src/lvui.glade.h:42
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
-msgstr "Ausgewählte(n) Bereich(e) von Datenträger übersiedeln"
+msgstr ""
+"Ausgewählte(n) Bereich(e)\n"
+"von Datenträger migrieren"
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "Objektträger (wenn nicht angegeben, wird das logische Laufwerk nicht montiert):"
+msgstr "Einhängepunkt (wenn nicht angegeben, wird das logische Laufwerk nicht eingehängt):"
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
-msgstr "Name der Datenträgergruppe"
+msgstr "Name der Datenträgergruppe: "
 
 #: src/lvui.glade.h:46
 msgid "Name for new LV:"
@@ -458,37 +480,47 @@ msgstr "Größe des physischen Bereichs: "
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
-msgstr "Reiser"
+msgstr "ReiserFS"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove \n"
 "Logical Volume"
-msgstr "Entferne logischen Datenträger"
+msgstr ""
+"Entferne\n"
+"logischen Datenträger"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
-msgstr "Entferne ausgewählte(n) logische Datenträger"
+msgstr ""
+"Entferne ausgewählte(n)\n"
+"logische(n) Datenträger"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
-msgstr "Entferne ausgewählte(n) physischen Datenträger"
+msgstr ""
+"Entferne ausgewählte(n)\n"
+"physischen Datenträger"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
-msgstr "Entferne Datenträger aus der Datenträgergruppe"
+msgstr ""
+"Entferne Datenträger\n"
+"aus der Datenträgergruppe"
 
 #: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
-msgstr "Entferne Datenträger aus der logischen Datenträgerverwaltung"
+msgstr ""
+"Entferne Datenträger\n"
+"aus der logischen Datenträgerverwaltung"
 
 #: src/lvui.glade.h:63
 msgid "Resizable?"
@@ -532,11 +564,11 @@ msgstr "dialog1"
 
 #: src/lvui.glade.h:73
 msgid "ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvui.glade.h:74
 msgid "ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
@@ -602,11 +634,11 @@ msgstr "Frei"
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
 msgid "Linear Mapping"
-msgstr "Lineare Abbildung"
+msgstr "Lineare Anordnung"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
-msgstr "Nicht montiert"
+msgstr "Nicht eingehängt"
 
 #: src/lvm_model.py:42
 msgid "No File System"
@@ -702,7 +734,7 @@ msgstr "Größe:   "
 
 #: src/lvm_model.py:78
 msgid "Mount Point:   "
-msgstr "Objektträger:   "
+msgstr "Einhängepunkt:   "
 
 #: src/lvm_model.py:79
 msgid "File System:   "
@@ -853,7 +885,9 @@ msgstr "Physischer Datenträger UUID:   "
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
-msgstr "Sind Sie sicher, dass Sie das Lauswerk %s initialisieren möchten? Alle Daten auf diesem Gerät bzw. dieser Partition gehen dabei verloren."
+msgstr ""
+"Sind Sie sicher, dass Sie das Laufwerk %s initialisieren möchten? "
+"Alle Daten auf diesem Gerät bzw. dieser Partition gehen dabei verloren."
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -885,7 +919,10 @@ msgstr "Datenträgergruppe"
 msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
-msgstr "Dieser Bereich ist noch nicht initialisiert für eine Verwendung durch die logische Datenträgerverwaltung."
+msgstr ""
+"Dieser Bereich ist noch nicht \n"
+" initialisiert für eine Verwendung \n"
+" durch die logische Datenträgerverwaltung."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
@@ -895,7 +932,9 @@ msgstr "Kein Datenträger ausgewählt"
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
-msgstr "Dieser Datenträger ist noch keiner Datenträgergruppe zugeteilt."
+msgstr ""
+"Dieser Datenträger ist noch keiner \n"
+" Datenträgergruppe zugeteilt."
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
