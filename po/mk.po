@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm mk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-25 20:59+0200\n"
+"PO-Revision-Date: 2004-10-25 21:13+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
@@ -157,6 +157,8 @@ msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
+"Големината за новиот логички простор го надминува расположивиот "
+"слободен простор во групата %s. Располживиот простор е: "
 
 #: src/InputController.py:117
 #, python-format
@@ -181,11 +183,11 @@ msgstr ""
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
 msgid "Stripe Size field"
-msgstr ""
+msgstr "Големина на полето на бранот"
 
 #: src/InputController.py:124
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "Број на полиња на бранови"
 
 #: src/InputController.py:126
 #, python-format
@@ -469,7 +471,7 @@ msgstr "Без датотечен систем"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "Број на бранови: "
 
 #: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
@@ -537,11 +539,11 @@ msgstr "Големина:"
 
 #: src/lvui.glade.h:67
 msgid "Stripe Size:"
-msgstr ""
+msgstr "Големина на бран:"
 
 #: src/lvui.glade.h:68
 msgid "Striped"
-msgstr ""
+msgstr "Брановиден"
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
@@ -631,7 +633,7 @@ msgstr "Слбодно"
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Линеарно мапирање"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
@@ -703,7 +705,7 @@ msgstr "Име на логички простор:   "
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Големина на логичкиот простор:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
@@ -711,11 +713,11 @@ msgstr "Број на сегменти:   "
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "Број на бранови:   "
 
 #: src/lvm_model.py:72
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Големина на бранот:   "
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
