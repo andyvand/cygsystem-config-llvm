@@ -1,20 +1,21 @@
-# translation of ar.po to Chinese Traditional
+# translation of system-config-lvm.po to UTF8
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Chester Cheng <ccheng@redhat.com>, 2004.
+# Turki M. Al-Ibrahim <turkim@gmail.com>, 2004.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ar\n"
+"Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-12-02 09:25+1000\n"
-"Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
-"Language-Team: Chinese Traditional <zh_TW@li.org>\n"
+"PO-Revision-Date: 2004-11-26 15:53+0300\n"
+"Last-Translator: Turki M. Al-Ibrahim <turkim@gmail.com>\n"
+"Language-Team: UTF8 <fedora-trans-ar@redhat.com.>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
@@ -28,6 +29,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"لا يمكن تشغيل البييئة الرسومية. غالبا سبب المشكلة \n"
+"هو أن الأداة المستخدمة لم تنفذ عن طريق بيئة رسومية.\n"
+"إما أن تبدأ البيئة الرسومية أو تعرف المتغير DISPLAY \n"
+"                                                                                \n"
+"حصل إستثناء :  %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -70,34 +77,36 @@ msgstr ""
 #. ##some context.
 #: src/InputController.py:103
 msgid "Name"
-msgstr ""
+msgstr "الإسم"
 
 #: src/InputController.py:104
 msgid "Size"
-msgstr ""
+msgstr "الحجم"
 
 #: src/InputController.py:105
 msgid "Entity Type"
-msgstr ""
+msgstr "نوع' الوحدة"
 
 #: src/InputController.py:107
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "وحدة تخزين حقيقية غير مستخدمة"
 
 #: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "وحدة غير مهيأة من القرص "
 
 #: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr ""
+msgstr "إختر وحدة من القرص لإضافتها لـمجموعة وحدة التخزين  %s "
 
 #: src/InputController.py:111
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
+"مجموعة وحدة التخزين يجب أن تتكون من جزئين حقيقين أو أكثر لتدعم الشريطية. "
+"مجموعة وحدة التخزين هذه لا توفي هذا المتطلب."
 
 #: src/InputController.py:113
 #, python-format
@@ -105,33 +114,38 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
+"توجد وحدة تخزين منطقية باﻹسم %s بمجموعة وحدة التخزين. الرجاء إستخدام إسم "
+"جديد."
 
 #: src/InputController.py:115
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "توجد مجموعة وحدة تخزين باﻹسم %s. الرجاء إستخدام إسم جديد."
 
 #: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "يجب أن يحدد إسم لوحدة التخزين المنطقية  الجديدة."
 
 #: src/InputController.py:119
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "يجب أن يعطى إسم لمجموعة وحدة التخزين الجديدة."
 
+# ِUpdate this if you have a better translation of 'mount point'
 #: src/InputController.py:121
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "نقطة التثبيت المحددة, %s,غير موجودة. هل تود إنشاءها ؟"
 
 #: src/InputController.py:123
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "إنشاء نقطة التثبيت %s  فشلت بشكل غير متوقع. "
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "هذه الخاصية غير مطبقة بعد في هذا اﻹصدار."
 
 #: src/InputController.py:127
 msgid ""
@@ -146,7 +160,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:131
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:133
@@ -169,27 +184,27 @@ msgstr ""
 #: src/InputController.py:139
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "مسافة غير مستخدمة في %s"
 
 #: src/InputController.py:140
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s ميجابايت"
 
 #: src/InputController.py:141
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s كيلوبايت"
 
 #: src/InputController.py:142
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s جيجابايت"
 
 #: src/InputController.py:143
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s إمتداد"
 
 #: src/InputController.py:145
 #, python-format
@@ -197,40 +212,45 @@ msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
+"المساحة المطلوبة لإنشاء وحدة التخزين المنطقية يتعدى المساحة الحرة المتاحة في "
+"مجموعة وحدة التخزين %s. المساحة المتاحة هي: "
 
 #: src/InputController.py:147
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr " %s يجب أن يحوي قيم من أرقام فقط."
 
+# This translation sounds strange , but try to translate it and you will know !!!
 #: src/InputController.py:148
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"الحقل \"أعلى حد لوحدات التخزين الحقيقية\" يجب أن يحوي عدد صحيح فقطبين 1 و 256"
 
 #: src/InputController.py:149
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"الحقل \"أعلى حد لوحدات التخزين المنطقية\" يجب أن يحوي عدد صحيح فقطبين 1 و 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:153
 msgid "Stripe Size field"
-msgstr ""
+msgstr "حقل حجم الشريطية"
 
 #: src/InputController.py:154
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "حقل عدد الشريطيات"
 
 #: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد إزالة %s من إدارة وحدات التخزين المنطقية؟"
 
 #: src/InputController.py:158
 #, python-format
@@ -245,8 +265,9 @@ msgstr ""
 
 #: src/InputController.py:159
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr "هل أنت متأكد من أنك تريد إزالة %s من مجموعة وحدة التخزين %s؟"
 
 #: src/InputController.py:160
 #, python-format
@@ -258,15 +279,16 @@ msgstr ""
 #: src/InputController.py:161
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "هل أنت متأكد من أنك تريد إزالة وحدة التخزين المنطقية %s؟"
 
 #: src/InputController.py:162
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
+"مجموعة وحدة التخزين %s لا تحتوي على مساحة تكفي لنقل البيانات المخزنة في %s."
 
 #: src/InputController.py:163
 msgid ""
@@ -385,329 +407,380 @@ msgstr ""
 #. ##Convenience Dialogs
 #: src/lvui.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "40 megabytes"
-msgstr ""
+msgstr "40 ميجابايت"
 
 #: src/lvui.glade.h:10
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:11
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:12
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "أضف وحدة تخزين حقيقية لمجموعة وحدة التخزين"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr ""
+msgstr "ضم لمجموعة وحدة التخزين الحالية"
 
 #: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"إنشاء وحدة\n"
+"تخزين منطقية جديدة "
 
 #: src/lvui.glade.h:18
 msgid "Create New LV"
-msgstr ""
+msgstr "إنشاء وحدة تخزين منطقية جديدة"
 
 #: src/lvui.glade.h:19
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "إنشاء وحدة تخزين حقيقية جديدة"
 
 #: src/lvui.glade.h:20
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"إنشاء مجموعة\n"
+"وحدة تخزين جديدة"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"زد في\n"
+"مجموعة وحدة التخزين"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"زد في\n"
+"وحدة التخزين المنطقية"
 
 #: src/lvui.glade.h:26
+#, fuzzy
 msgid "Extend Volume Group"
 msgstr ""
+"زد في\n"
+"مجموعة وحدة التخزين"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
-msgstr ""
+msgstr "إمتدادات"
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
-msgstr ""
+msgstr "نظام الملفات"
 
 #: src/lvui.glade.h:29
 msgid "Gigabytes"
-msgstr ""
+msgstr "جيجابايت"
 
 #: src/lvui.glade.h:30
 msgid "Initialize Entity"
-msgstr ""
+msgstr "هيء الوحدة"
 
+# Update this if you a better translation !
 #: src/lvui.glade.h:31 src/lvmui_constants.py:51
 msgid "JFS"
-msgstr ""
+msgstr "نظام الملفات المجلي"
 
 #: src/lvui.glade.h:32
 msgid "Kilo"
-msgstr ""
+msgstr "كيلو"
 
 #: src/lvui.glade.h:33
 msgid "Kilobytes"
-msgstr ""
+msgstr "كيلوبايت"
 
 #: src/lvui.glade.h:34
 msgid "Linear"
-msgstr ""
+msgstr "خطي"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "إدارة وحدات التخزين المنطقية"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
-msgstr ""
+msgstr "تحكم بوحدات التخزين"
 
 #: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "أقصى حد لوحدات التخزين المنطقية"
 
 #: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "أقصى حد لوحدات التخزين الحقيقية"
 
 #: src/lvui.glade.h:39
 msgid "Meg"
-msgstr ""
+msgstr "ميج"
 
 #: src/lvui.glade.h:40 src/renderer.py:106
 msgid "Megabytes"
-msgstr ""
+msgstr "ميجابايت"
 
 #: src/lvui.glade.h:41
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"رحل الإمتداد)ات(\n"
+"المختارة من وحدة التخزين "
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr ""
+msgstr "نقطة التثبيت )إذا تركت فارغة ، وحدة التخزين المنطقية لن تثبت("
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "إسم مجموعة وحدة التخزين"
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
-msgstr ""
+msgstr "إسم وحدة التخزين المنطقية الجديدة"
 
 #: src/lvui.glade.h:46
 msgid "New Volume Group"
-msgstr ""
+msgstr "مجموعة وحدة تخزين جديدة"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "إستمارة مجموعة وحدة تخزين جديدة"
 
 #. File System Types
 #: src/lvui.glade.h:48 src/lvmui_constants.py:48
 msgid "No Filesystem"
-msgstr ""
+msgstr "لا يوجد نظام ملفات"
 
+# not sure about stribes
 #: src/lvui.glade.h:49
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "عدد الشريطيات"
 
 #: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "حجم اﻹمتداد الحقيقي"
 
 #: src/lvui.glade.h:51
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"أزل\n"
+"وحدة التخزين المنطقية"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"أزل وحدة )وحدات(\n"
+"التخزين المنطقية المختارة"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"أزل وحدة )وحدات(\n"
+"التخزين الحقيقية المختارة"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"أزل وحدة التخزين من\n"
+"مجوعة وحدة التخزين"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"أزل وحدة التخزين\n"
+"من إدارة وحدات التخزين المنطقية"
 
 #: src/lvui.glade.h:61
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "إختر مجموعة وحدة التخزين التي سيضاف إليها وحدة التخزين الحقيقية هذه:"
 
 #: src/lvui.glade.h:62
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "إختر وحدة من القرص لإضافتها لمجموعة وحدة التخزين:"
 
 #: src/lvui.glade.h:63
 msgid "Size:"
-msgstr ""
+msgstr "الحجم:"
 
 #: src/lvui.glade.h:64
 msgid "Stripe Size:"
-msgstr ""
+msgstr "حجم الشريطية:"
 
 #: src/lvui.glade.h:65
 msgid "Striped"
-msgstr ""
+msgstr "تم إنجاز الشريطية"
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "حجم غير مستخدم في مجموعة وحدة التخزين 1:"
 
 #: src/lvui.glade.h:67
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "إستخدم المساحة المتبقية"
 
+# The X in XFS doesn't stadn for any abreviation. According to
+# Steve Lord at SGI and one of the developers of XFS:
+#    "The X does not stand for anything except X, it is not eXtent, or
+#    eXtended or any other word. Originally the project was internally
+#    refered to as xFS.
+#    Think of it as a little like the G in GNU, the X in XFS stands
+#    for XFS ;-) "
+# see http://five2one.org/stdio/retrospect/the_x_in_xfs.html
 #: src/lvui.glade.h:68 src/lvmui_constants.py:55
 msgid "XFS"
-msgstr ""
+msgstr "نظام الملفات إكس"
 
 #: src/lvui.glade.h:69
 msgid "ext2"
-msgstr ""
+msgstr "نظام الملفات الممتد الثاني ext2"
 
 #: src/lvui.glade.h:70
 msgid "ext3"
-msgstr ""
+msgstr "نظام الملفات الممتد الثالث ext3"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, python-format
-msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, fuzzy, python-format
+msgid ""
+"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"فشل أمر تغيير حجم مجموعة وحدة التخزين )vgextend(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:16
-#, python-format
-msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "فشل أمر إنشاء وحدة تخزين حقيقية )pvcreate(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:17
-#, python-format
-msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "فشل أمر إنشاء وحدة تخزين حقيقية )pvcreate(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:18
-#, python-format
-msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, fuzzy, python-format
+msgid ""
+"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"فشل أمر إزالة وحدة التخزين الحقيقية )pvremove(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:19
-#, python-format
-msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, fuzzy, python-format
+msgid ""
+"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"فشل أمر إزالة وحدة التخزين المنطقية )lvremove(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:20
-#, python-format
-msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, fuzzy, python-format
+msgid ""
+"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"فشل أمر إزالة وحدة التخزين الحقيقية )pvremove(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:21
-#, python-format
-msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "فشل أمر نشاء مجموعة وحدة التخزين )vgcreate(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:22
-#, python-format
-msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "فشل أمر نشاء مجموعة وحدة التخزين )vgcreate(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:23
-#, python-format
-msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, fuzzy, python-format
+msgid ""
+"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"فشل أمر إنقاص حجم مجموعة وحدة التخزين )vgreduce(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:24
-#, python-format
-msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "فشل أمر نقل وحدة التخزين الحقيقية )pvmove(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:25
-#, python-format
-msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "فشل أمر تفريغ نقطة التثبيت )umount(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:26
-#, python-format
-msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "فشل أمر تفريغ نقطة التثبيت )umount(. اﻷمر المستخدم كان: \"%s\""
 
 #: src/CommandHandler.py:27
-#, python-format
-msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
+#, fuzzy, python-format
+msgid ""
+"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "فشل أمر تفريغ نقطة التثبيت )umount(. اﻷمر المستخدم كان: \"%s\""
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -718,148 +791,148 @@ msgstr ""
 #. Column names for lvdisplay calls
 #: src/lvm_model.py:35 src/lvmui_constants.py:39
 msgid "Unused"
-msgstr ""
+msgstr "غير مستخدم"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "مساحة غير مستخدمة"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
 msgid "Linear Mapping"
-msgstr ""
+msgstr "مطابقة خطية"
 
 #: src/lvm_model.py:40
 msgid "Unmounted"
-msgstr ""
+msgstr "نقطة غير مثبتة"
 
 #: src/lvm_model.py:41
 msgid "No File System"
-msgstr ""
+msgstr "لا وجود لنظام ملفات"
 
 #: src/lvm_model.py:52
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "إسم مجموعة التخزين:   "
 
 #: src/lvm_model.py:53
 msgid "System ID:   "
-msgstr ""
+msgstr "رمز النظام:   "
 
 #: src/lvm_model.py:54
 msgid "Format:   "
-msgstr ""
+msgstr "الصيغة:   "
 
 #: src/lvm_model.py:55 src/lvm_model.py:72 src/lvm_model.py:86
 msgid "Attributes:   "
-msgstr ""
+msgstr "الخصائص:   "
 
 #: src/lvm_model.py:56
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "حجم مجموعة وحدة التخزين:   "
 
 #: src/lvm_model.py:57
 msgid "Available Space:   "
-msgstr ""
+msgstr "المساحة المتاحة:   "
 
 #: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "مجموع عدد الإمتدادات:   "
 
 #: src/lvm_model.py:59
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "عدد الإمتدادات المتاحة:   "
 
 #: src/lvm_model.py:60
 msgid "Extent Size:   "
-msgstr ""
+msgstr "حجم اﻹمتداد:   "
 
 #: src/lvm_model.py:61
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "أكبر عدد ممكن من وحدات التخزين الحقيقية:   "
 
 #: src/lvm_model.py:62
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "عدد وحدات التخزين الحقيقية:   "
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "أكبر عدد ممكن من وحدات التخزين المنطقية:   "
 
 #: src/lvm_model.py:64
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "عدد وحدات التخزين المنطقية:   "
 
 #: src/lvm_model.py:65
 msgid "VG UUID:   "
-msgstr ""
+msgstr "الرمز الفريد العام )UUID( لمجموعة وحدة التخزين:   "
 
 #: src/lvm_model.py:67
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "إسم وحدة التخزين المنطقية:   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "حجم وحدة التخزين المنطقية:   "
 
 #: src/lvm_model.py:69
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "عدد اﻷجزاء:      "
 
 #: src/lvm_model.py:70
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "عدد الشريطيات:   "
 
 #: src/lvm_model.py:71
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "حجم الشريطية:   "
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
-msgstr ""
+msgstr "الرمز الفريد العام )UUID( لوحدة التخزين المنطقية:   "
 
 #: src/lvm_model.py:75
 msgid "Partition Type:   "
-msgstr ""
+msgstr "نوع القسم:   "
 
 #: src/lvm_model.py:76
 msgid "Size:   "
-msgstr ""
+msgstr "الحجم:   "
 
 #: src/lvm_model.py:77
 msgid "Mount Point:   "
-msgstr ""
+msgstr "نقطة التثبيت:   "
 
 #: src/lvm_model.py:78
 msgid "File System:   "
-msgstr ""
+msgstr "نظام الملفات:   "
 
 #: src/lvm_model.py:80
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "أسم وحدة التخزين الحقيقية:   "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "حجم وحدة التخزين الحقيقية:   "
 
 #: src/lvm_model.py:82
 msgid "Space Used:   "
-msgstr ""
+msgstr "المساحة المستخدمة:   "
 
 #: src/lvm_model.py:83
 msgid "Space Free:   "
-msgstr ""
+msgstr "المساحة المتاحة:   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "مجموع الإمتدادت الحقيقية:   "
 
 #: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "الإمتدادت الحقيقية المخصصة:   "
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
-msgstr ""
+msgstr "الرمز الفريد العام )UUID( لوحدة التخزين الحقيقية:   "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -996,10 +1069,11 @@ msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
 msgstr ""
+"هل أنت متأكد من تهيئة وحدة القرص %s ؟ ستفقد جميع البيانات في هذا القرص/القسم."
 
 #: src/lvmui_constants.py:40
 msgid "Free"
-msgstr ""
+msgstr "فارغ"
 
 #: src/lvmui_constants.py:42
 msgid "G"
@@ -1018,20 +1092,24 @@ msgid "B"
 msgstr ""
 
 #: src/lvmui_constants.py:49
+#, fuzzy
 msgid "Ext2"
-msgstr ""
+msgstr "نظام الملفات الممتد الثاني ext2"
 
 #: src/lvmui_constants.py:50
+#, fuzzy
 msgid "Ext3"
-msgstr ""
+msgstr "نظام الملفات الممتد الثالث ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
 msgstr ""
 
+# not sure about this ,
 #: src/lvmui_constants.py:53
+#, fuzzy
 msgid "Reiserfs"
-msgstr ""
+msgstr "ريزر"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
@@ -1043,28 +1121,28 @@ msgstr ""
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "الخصائص"
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "وحدة التخزين الحقيقية"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "وحدة التخزين المنطقية"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "وحدة تخزين غير مخصصة"
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "وحدة قرص"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "مجموعة وحدة التخزين"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -1072,46 +1150,62 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"هذا الإمتداد لم يهيأ بعد \n"
+"ليستخدم في وحدة التخزين المنطقية."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "لم يتم إختيار وحدة تخزين"
 
 #: src/renderer.py:96
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
+"وحدة التخزين هذه لم تخصص بعد \n"
+"لمجموعة وحدة تخزين."
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "عرض منطقي"
 
 #: src/renderer.py:101 src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "عرض حقيقي"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "غير مخصص"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "غير مهيأ"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "إمتدادات"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "مجموعات وحدات التخزين"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "وحدات تخزين غير مخصصة"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "وحدات غير مخصصة"
 
+# or you can say تلقائيا
+#~ msgid "Autobackup?"
+#~ msgstr "حفظ البيانات آلياً؟"
+
+#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
+#~ msgstr "أشرهنا إذا كنت تريد إضافة مدخل في الملف /etc/fstab"
+
+#~ msgid "Resizable?"
+#~ msgstr "حجم قابل للتغيير؟"
+
+#~ msgid "dialog1"
+#~ msgstr "حوار1"
