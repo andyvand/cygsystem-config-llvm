@@ -502,7 +502,6 @@ class volume_renderer:
       #return updated list of selected sections
       return_list = list()
       for vvol in self.viewable_vols:
-        print "vvol get_is_selected: %d" % vvol.get_is_selected()
         if vvol.get_is_selected() == TRUE:  
           return_list.append(vvol.get_volume())
       if len(return_list) > 0:

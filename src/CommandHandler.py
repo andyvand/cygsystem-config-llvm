@@ -37,12 +37,12 @@ class CommandHandler:
       arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]))
     else:
       arglist.append("-L")
-    if cmd_args_dict[NEW_LV_UNIT_ARG] == KILOBYTE_IDX:
-      arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "k")
-    elif cmd_args_dict[NEW_LV_UNIT_ARG] == MEGABYTE_IDX:
-      arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "m")
-    elif cmd_args_dict[NEW_LV_UNIT_ARG] == GIGABYTE_IDX:
-      arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "g")
+      if cmd_args_dict[NEW_LV_UNIT_ARG] == KILOBYTE_IDX:
+        arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "k")
+      elif cmd_args_dict[NEW_LV_UNIT_ARG] == MEGABYTE_IDX:
+        arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "m")
+      elif cmd_args_dict[NEW_LV_UNIT_ARG] == GIGABYTE_IDX:
+        arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "g")
 
     if cmd_args_dict[NEW_LV_IS_STRIPED_ARG] == TRUE:
       arglist.append("-i")

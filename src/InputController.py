@@ -440,10 +440,10 @@ class InputController:
 
 
 
-      #args = list()
-      #args.append(lvname)
-      #apply(self.reset_tree_model, args)
     self.clear_highlighted_sections()
+    #args = list()
+    #args.append(vgname)
+    #apply(self.reset_tree_model,args)
     apply(self.reset_tree_model)
 
   ###################
@@ -589,7 +589,7 @@ class InputController:
         self.new_lv_size.set_text("")
         return
 
-    Size_request = normalized_size  #in bytes
+    Size_request = proposed_size  #in bytes
    
     #Handle stripe request
     if self.new_lv_striped_radio.get_active() == TRUE:
@@ -648,8 +648,12 @@ class InputController:
       new_lv_command_set[NEW_LV_MNT_POINT_ARG] = Mount_point
       if FSTAB_entry == TRUE:
         new_lv_command_set[NEW_FSTAB_ARG] = FSTAB_entry
-        
-    self.command_handler.new_lv(new_lv_command_set)
+    
+    try:    
+      self.command_handler.new_lv(new_lv_command_set)
+    except CommandError, e:
+      self.errorMessage(e.getMessage())
+
     #Add confirmation dialog here... 
     self.new_lv_dlg.hide()
     args = list()
