@@ -188,6 +188,7 @@ class InputController:
     ###################
     ##This form adds an unallocated PV to a VG
     self.add_pv_to_vg_dlg = self.glade_xml.get_widget('add_pv_to_vg_form')
+    self.add_pv_to_vg_dlg.connect("delete_event",self.add_pv_to_vg_delete_event)
     self.add_pv_to_vg_button = self.glade_xml.get_widget('add_pv_to_vg_button')
     self.add_pv_to_vg_button.connect("clicked",self.on_add_pv_to_vg)
     self.add_pv_to_vg_treeview = self.glade_xml.get_widget('add_pv_to_vg_treeview')
@@ -261,7 +262,7 @@ class InputController:
     for vg in vg_list:
       if vg.get_name().strip() == proposed_name:
         self.new_vg_name.select_region(0, (-1))
-        self.errorMessage(NON_UNIQUE_NAME % proposed_name)
+        self.errorMessage(NON_UNIQUE_VG_NAME % proposed_name)
         return
     Name_request = proposed_name
 
@@ -595,7 +596,7 @@ class InputController:
         self.free_space = free_space
         self.free_extents = free_ex
         self.unused_space_label1.set_text(REMAINING_SPACE_VGNAME % vgname)
-        self.unused_space_label2.set_text(REMAINING_SPACE_MEGABYTES % free_space)
+        self.unused_space_label2.set_text(REMAINING_SPACE_EXTENTS % free_ex)
       else:
         self.free_space_bytes = 0
         self.free_space = 0
@@ -604,7 +605,7 @@ class InputController:
         
     self.new_lv_name.set_text("")
     self.new_lv_size.set_text("")
-    self.new_lv_size_unit.set_history(MEGABYTE_IDX)
+    self.new_lv_size_unit.set_history(EXTENT_IDX)
 
     #set radiobutton group to linear
     self.new_lv_linear_radio.set_active(TRUE) 
@@ -955,7 +956,7 @@ class InputController:
       for item in vg_list:
         iter = model.append()
         model.set(iter, NAME_COL, item.get_name(), 
-                        SIZE_COL, item.get_volume_size())
+                        SIZE_COL, item.get_volume_size_string())
     
     selection = self.treeview.get_selection()
     main_model, iter_val = selection.get_selected()
@@ -965,6 +966,10 @@ class InputController:
     self.add_pv_to_vg_label.set_text(label_string)
     self.add_pv_to_vg_treeview.set_model(model)
     self.add_pv_to_vg_dlg.show()
+
+  def add_pv_to_vg_delete_event(self, *args):
+    self.add_pv_to_vg_dlg.hide()
+    return gtk.TRUE
 
   def on_ok_add_pv_to_vg(self, button):
     selection = self.treeview.get_selection()

@@ -49,6 +49,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Nov 22 2004 Jim Parsons <jparsons@redhat.com> 0.9.14-1.0
+  - Fixes for bz140413, 140386, 140355, 140359, 140419.
 * Thu Nov 18 2004 Jim Parsons <jparsons@redhat.com> 0.9.12-1.0
   - Fix for bz137041, 139711 plus require for new RHPL pkg.
 * Tue Nov 16 2004 Jim Parsons <jparsons@redhat.com> 0.9.11-1.0

@@ -12,18 +12,18 @@ _ = gettext.gettext
 
 ###TRANSLATOR: The first word in each string below is
 ###an lvm command line command phrase.
-VGEXTEND_FAILURE=_("vgextend command failed. Command attempted: \"%s\"")
-PVCREATE_FAILURE=_("pvcreate command failed. Command attempted: \"%s\"")
-PVREMOVE_FAILURE=_("pvremove command failed. Command attempted: \"%s\"")
-LVREMOVE_FAILURE=_("lvremove command failed. Command attempted: \"%s\"")
-VGREMOVE_FAILURE=_("vgremove command failed. Command attempted: \"%s\"")
-VGCREATE_FAILURE=_("vgcreate command failed. Command attempted: \"%s\"")
-VGCHANGE_FAILURE=_("vgchange command failed. Command attempted: \"%s\"")
-VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\"")
-PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\"")
-LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\"")
-FSCREATE_FAILURE=_("mkfs command failed. Command attempted: \"%s\"")
-MNTCREATE_FAILURE=_("mount command failed. Command attempted: \"%s\"")
+VGEXTEND_FAILURE=_("vgextend command failed. Command attempted: \"%s\" - System Error Message: %s")
+PVCREATE_FAILURE=_("pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s")
+PVREMOVE_FAILURE=_("pvremove command failed. Command attempted: \"%s\" - System Error Message: %s")
+LVREMOVE_FAILURE=_("lvremove command failed. Command attempted: \"%s\" - System Error Message: %s")
+VGREMOVE_FAILURE=_("vgremove command failed. Command attempted: \"%s\" - System Error Message: %s")
+VGCREATE_FAILURE=_("vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s")
+VGCHANGE_FAILURE=_("vgchange command failed. Command attempted: \"%s\" - System Error Message %s")
+VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s")
+PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\" - System Error Message: %s")
+LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\" - System Error Message: %s")
+FSCREATE_FAILURE=_("mkfs command failed. Command attempted: \"%s\" - System Error Message: %s")
+MNTCREATE_FAILURE=_("mount command failed. Command Attempted: %s  - System Error Message: \"%s\"")
 
 class CommandHandler:
 
@@ -61,7 +61,7 @@ class CommandHandler:
     vgname = cmd_args_dict[NEW_LV_VGNAME_ARG]
     arglist.append(vgname)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvcreate",arglist)
+    result_string,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/lvcreate",arglist)
 
     ###next command
 
@@ -70,32 +70,49 @@ class CommandHandler:
       lvpath = model_factory.get_logical_volume_path(lvname,vgname)
 
       fs_type = cmd_args_dict[NEW_LV_FS_TYPE_ARG] 
-      commandstring = "/sbin/mkfs -t " + fs_type + " " + lvpath
-      retval = os.system(commandstring)
-      if retval != 0:
-        raise CommandError('FATAL', FSCREATE_FAILURE % commandstring)
+      args = list()
+      args.append("/sbin/mkfs")
+      args.append("-t")
+      args.append(fs_type)
+      args.append(lvpath)
+      cmdstr = ' '.join(args)
+      o,e,r = rhpl.executil.execWithCaptureErrorStatus("/sbin/mkfs",args)
+      if r != 0:
+        raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
 
       if cmd_args_dict[NEW_LV_MAKE_MNT_POINT_ARG] == TRUE:
         mnt_point =  cmd_args_dict[NEW_LV_MNT_POINT_ARG]
 
-        command = "mount " + lvpath + " " + mnt_point
-        retval = os.system(command)
-        if retval != 0:
-          raise CommandError('FATAL', MNTCREATE_FAILURE % commandstring)
+        cmd_args = list()
+        cmd_args.append("/bin/mount")
+        cmd_args.append(lvpath)
+        cmd_args.append(mnt_point)
+        cmdstr = ' '.join(cmd_args)
+        out,err,res = rhpl.executil.execWithCaptureErrorStatus("/bin/mount",cmd_args)
+        if res != 0:
+          raise CommandError('FATAL', MNTCREATE_FAILURE % (cmdstr,err))
 
 
   def initialize_entity(self, entity):
-    commandstring = "/usr/sbin/pvcreate -M2 " + entity
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', PVCREATE_FAILURE % commandstring)
+    #commandstring = "/usr/sbin/pvcreate -M2 " + entity
+    command_args = list()
+    command_args.append("/usr/sbin/pvcreate")
+    command_args.append("-M2")
+    command_args.append(entity)
+    commandstring = ' '.join(command_args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvcreate",cmd_args)
+    if res != 0:
+      raise CommandError('FATAL', PVCREATE_FAILURE % (commandstring,err))
 
   def add_unalloc_to_vg(self, pv, vg):
-    commandstring = "/usr/sbin/vgextend " + vg + " " + pv
-    msg =  VGEXTEND_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/usr/sbin/vgextend")
+    args.append(vg)
+    args.append(pv)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgextend",args)
+    if res != 0:
+      raise CommandError('FATAL', VGEXTEND_FAILURE % (cmdstr,err))
 
   def create_new_vg(self, name, max_phys, max_log, extent_size, is_unit_megs,
                     pv):
@@ -105,60 +122,90 @@ class CommandHandler:
     else:
       units_arg = 'k'
     
-    commandstring = "/usr/sbin/vgcreate -M2 -l " + max_log + " -p " + max_phys + " -s " + extent_size + units_arg + " " + name + " " + pv
-    msg =  VGCREATE_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/usr/sbin/vgcreate")
+    args.append("-M2")
+    args.append("-l")
+    args.append(max_log)
+    args.append("-p")
+    args.append(max_phys)
+    args.append("-s")
+    args.append(extent_size)
+    args.append(units_arg)
+    args.append(name)
+    args.append(pv)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgcreate",args)
+    if res != 0:
+      raise CommandError('FATAL', VGCREATE_FAILURE % (cmdstr,err))
 
   def remove_vg(self, vgname):
-    commandstring = "/usr/sbin/vgchange -a n " + vgname
-    msg = VGCHANGE_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/usr/sbin/vgchange")
+    args.append("-a")
+    args.append("n")
+    args.append(vgname)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgchange",args)
+    if res != 0:
+      raise CommandError('FATAL', VGCHANGE_FAILURE % (cmdstr,err))
       return
 
     commandstring = "/usr/sbin/vgremove " + vgname
-    msg = VGREMOVE_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args_list = list()
+    args_list.append("/usr/sbin/vgremove")
+    args_list.append(vgname)
+    cmdstring = ' '.join(args)
+    outs,errs,result = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgremove",args_list)
+    if result != 0:
+      raise CommandError('FATAL', VGREMOVE_FAILURE % (cmdstring,errs))
 
   def remove_pv(self, pvname):
-    commandstring = "/usr/sbin/pvremove " + pvname
-    msg = PVREMOVE_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/usr/sbin/pvremove")
+    args.append(pvname)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvremove",args)
+    if res != 0:
+      raise CommandError('FATAL', PVREMOVE_FAILURE % (cmdstr,err))
 
   def remove_lv(self, lvname):
-    commandstring = "/usr/sbin/lvremove --force " + lvname
-    msg = LVREMOVE_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/usr/sbin/lvremove")
+    args.append("--force")
+    args.append(lvname)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/lvremove",args)
+    if res != 0:
+      raise CommandError('FATAL', LVREMOVE_FAILURE % (cmdstr,err))
 
   def unmount_lv(self, lvname):
-    commandstring = "/bin/umount " + lvname
-    msg = LV_UMOUNT_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/bin/umount")
+    args.append(lvname)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/bin/umount",args)
+    if res != 0:
+      raise CommandError('FATAL', LV_UMOUNT_FAILURE % (cmdstr,err))
 
   def reduce_vg(self, vg, pv):
-    commandstring = "/usr/sbin/vgreduce " + vg + " " + pv
-    msg = VGREDUCE_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/usr/sbin/vgreduce")
+    args.append(vg)
+    args.append(pv)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgreduce",args)
+    if res != 0:
+      raise CommandError('FATAL', VGREDUCE_FAILURE % (cmdstr,err))
 
   def move_pv(self, pv):
-    commandstring = "/usr/sbin/pvmove " + pv
-    msg = PVMOVE_FAILURE % commandstring
-    retval = os.system(commandstring)
-    if retval != 0:
-      raise CommandError('FATAL', msg)
+    args = list()
+    args.append("/usr/sbin/pvmove")
+    args.append(pv)
+    cmdstr = ' '.join(args)
+    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvmove",args)
+    if res != 0:
+      raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr,err))
 
   def is_lv_mounted(self, lvname):
     is_mounted = FALSE
@@ -193,3 +240,4 @@ class CommandHandler:
 
     return FALSE
 
+      

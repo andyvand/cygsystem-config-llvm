@@ -1247,11 +1247,11 @@ Logical Volume</property>
 		    <widget class="GtkMenu" id="menu2">
 
 		      <child>
-			<widget class="GtkMenuItem" id="megabytes1">
+			<widget class="GtkMenuItem" id="extents1">
 			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">Megabytes</property>
+			  <property name="label" translatable="yes">Extents</property>
 			  <property name="use_underline">True</property>
-			  <signal name="activate" handler="on_megabytes1_activate" last_modification_time="Tue, 31 Aug 2004 21:54:32 GMT"/>
+			  <signal name="activate" handler="on_extents1_activate" last_modification_time="Tue, 07 Sep 2004 15:29:43 GMT"/>
 			</widget>
 		      </child>
 
@@ -1265,20 +1265,20 @@ Logical Volume</property>
 		      </child>
 
 		      <child>
+			<widget class="GtkMenuItem" id="megabytes1">
+			  <property name="visible">True</property>
+			  <property name="label" translatable="yes">Megabytes</property>
+			  <property name="use_underline">True</property>
+			  <signal name="activate" handler="on_megabytes1_activate" last_modification_time="Tue, 31 Aug 2004 21:54:32 GMT"/>
+			</widget>
+		      </child>
+
+		      <child>
 			<widget class="GtkMenuItem" id="kilobytes1">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="yes">Kilobytes</property>
 			  <property name="use_underline">True</property>
 			  <signal name="activate" handler="on_kilobytes1_activate" last_modification_time="Tue, 31 Aug 2004 21:54:32 GMT"/>
-			</widget>
-		      </child>
-
-		      <child>
-			<widget class="GtkMenuItem" id="extents1">
-			  <property name="visible">True</property>
-			  <property name="label" translatable="yes">Extents</property>
-			  <property name="use_underline">True</property>
-			  <signal name="activate" handler="on_extents1_activate" last_modification_time="Tue, 07 Sep 2004 15:29:43 GMT"/>
 			</widget>
 		      </child>
 		    </widget>
@@ -1989,6 +1989,8 @@ Logical Volume</property>
 </widget>
 
 <widget class="GtkDialog" id="extend_vg_form">
+  <property name="width_request">325</property>
+  <property name="height_request">235</property>
   <property name="title" translatable="yes">Extend Volume Group</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
   <property name="window_position">GTK_WIN_POS_NONE</property>

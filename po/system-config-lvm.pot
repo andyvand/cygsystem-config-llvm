@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-11-16 12:18-0500\n"
+"POT-Creation-Date: 2004-11-19 01:07-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -879,6 +879,13 @@ msgstr ""
 #. item.set_volume_size(float(adj_sz_str) / GIG)
 #. ##FIX need to be smarter about size conversions here
 #. ##FIX use lvmdiskscan here
+#. #There needs to be one last check made on those PEs which have
+#. #passed the test so far. It is possible that a partition set up
+#. #for swap may not have the partition ID for swap. The definitive
+#. #source for swap partitions is /proc/swaps, so we will cat this
+#. #file and remove any devices from pelist that are entered in
+#. #that file
+#. Found it in the swap list
 #. ##FIXME - Throw exception here, if no result is returned
 #. Add extent segments
 #. Add extent segments
@@ -907,6 +914,8 @@ msgstr ""
 #. /dev/sda10 [      784.39 MB] LVM physical volume
 #. loose '['
 #. Next, check if partition is mounted
+#. It is still possible for a partition to be mounted without being in
+#. /proc/mounts...this is often true of the root partition
 #. Finally, check for file system
 #. No file system
 #. Finish up by returning data
