@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bg\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-26 13:05+0200\n"
+"PO-Revision-Date: 2005-03-04 23:09+0200\n"
 "Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
 "Language-Team: Bulgarian <Bulgarian translators' team <dict@fsa-bg.org>>\n"
 "MIME-Version: 1.0\n"
@@ -30,10 +30,10 @@ msgid ""
 "  Caught exception: %s\n"
 msgstr ""
 "\n"
-"  Невъзможност за инициализиране на графичната среда. По всяка вероятност\n"
-"  е, че инструмента не е стартиран под графична среда. Моля или стартирайте\n"
-"  своя графичен потребителски интерфейс или установете променливата "
-"DISPLAY.\n"
+"  Невъзможност за инициализиране на графичната среда. Проблема по\n"
+"  всяка вероятност е, че инструмента не е стартиран под графична среда.\n"
+"  Моля или стартирайте графичния си потребителски интерфейс или\n"
+"  установете променливата DISPLAY.\n"
 "                                                                                \n"
 "  Уловено изключение: %s\n"
 
@@ -159,7 +159,7 @@ msgstr "Броя логически томове в тази група стиг
 
 #: src/InputController.py:131
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "Недефинирано конвертиране на тип в model factory. Невъзможно е завършването на задачата."
 
 #: src/InputController.py:133
 msgid ""
@@ -167,6 +167,8 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
+"В полето за размер е въведена грешна стойност. Това поле следва "
+"да съдържа цифрова стойност без букви и/или други символи."
 
 #: src/InputController.py:135
 #, python-format
@@ -175,6 +177,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"ВАЖНО ПРЕДУПРЕЖДЕНИЕ: Логическия том %s съдържа %s файлова система, която "
+"в момента е монтирана в %s. Абсолютно сигурни ли сте, че желаете да се откажете "
+"от данните на тази файлова система?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -262,6 +267,12 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
+"Физическия том с име %s, който искате да премахнете, съдържа данни от "
+"активен(ни) логически дял(ове) разположени върху неговите разширения. "
+"Понеже той е единствения физически дял в групата томове, няма къде да "
+"бъдат преместени данните. Препоръчително е, или да добавите нов "
+"физически том преди премахването на този, или да премахнете "
+"логическите томове асоциирани с този физически том."
 
 #: src/InputController.py:159
 #, python-format
@@ -274,6 +285,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"Премахването на физическия том %s от групата томове %s ще я остави "
+"празна и тя също ще бъде премахната. Желаете ли да продължите?"
 
 #: src/InputController.py:161
 #, python-format
@@ -298,6 +311,10 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"Модула dm-mirror или не е зареден в ядрото, или Вашето ядро "
+"не поддържа dm-mirror. Ако се поддържа, опитайте да изпълните"
+"\"modprobe dm-mirror\". В противен случай, операциите изискващи "
+"преместване на данни на физически разширения са недостъпниe."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -1050,19 +1067,19 @@ msgstr "Свободно"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
 msgid "Ext2"
