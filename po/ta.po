@@ -7,19 +7,20 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-26 16:14-0400\n"
+"POT-Creation-Date: 2004-11-23 14:03-0500\n"
 "PO-Revision-Date: 2004-10-29 15:15+0530\n"
 "Last-Translator: Jayaradha N <njaya@redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
-#: src/InputController.py:24 src/Properties_Renderer.py:26 src/renderer.py:33
+#: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
 #: src/Volume_Tab_View.py:28
 #, python-format
 msgid ""
@@ -39,19 +40,35 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#. #####################################################
-#. #Note: the enum below and the list that follows MUST#
-#. #remain related. A  chhange in one requires a change#
-#. #in the other                                       #
+#. ######################################################
+#. # Note, please: The two hash maps below are related. #
+#. # When adding or removing a filesystem type, both    #
+#. # hashes must be updated. The values in the first,   #
+#. # are the keys of the second.                        #
+#. # The FS type names are globalized strings in        #
+#. # lvmui_constants.py                                 #
+#.
+#.
+#.
+#. 'mkfs.jfs':JFS_T,                      #
+#. 'mkfs.msdos':MSDOS_T,                  #
+#. 'mkfs.reiserfs':REISERFS_T,            #
+#. 'mkfs.vfat':VFAT_T,                    #
+#. 'mkfs.xfs':XFS_T,                      #
+#. 'mkfs.cramfs':CRAMFS_T                 #
 #.
 #.
 #.
 #.
+#. JFS_T:'jfs',                             #
+#. MSDOS_T:'msdos',                         #
+#. REISERFS_T:'reiserfs',                   #
+#. VFAT_T:'vfat',                           #
+#. XFS_T:'xfs',                             #
+#. CRAMFS_T:'cramfs'                        #
 #.
 #.
-#.
-#.
-#. #####################################################
+#. ######################################################
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
 #. ##The first is an 'unallocated physical volume' which is a disk or
@@ -60,157 +77,231 @@ msgstr ""
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:85
+#: src/InputController.py:103
 msgid "Name"
 msgstr "பெயர்"
 
-#: src/InputController.py:86
+#: src/InputController.py:104
 msgid "Size"
 msgstr "அளவு"
 
-#: src/InputController.py:87
+#: src/InputController.py:105
 msgid "Entity Type"
 msgstr "என்டிட்டி வகை"
 
-#: src/InputController.py:89
+#: src/InputController.py:107
 msgid "Unallocated Physical Volume"
 msgstr "ஒதுக்கப்படாத கொள்ளளவு"
 
-#: src/InputController.py:90
+#: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
 msgstr "துவக்கப்படாத வட்டு என்டிட்டி"
 
-#: src/InputController.py:91
+#: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
 msgstr "%s வால்யூம் குழுவை சேர்க்க வட்டை தேர்வு செய்யவும்"
 
-#: src/InputController.py:93
+#: src/InputController.py:111
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr "வால்யூம் குழு ஒன்று அல்லது அதற்கு மேற்பட்ட striping ஐ ஆதரிக்கும் பிசிக்கல் வால்யூம்களாகும். இந்த வால்யூம் குழு தேவைகளை பூர்த்தி செய்யவில்லை."
+msgstr ""
+"வால்யூம் குழு ஒன்று அல்லது அதற்கு மேற்பட்ட striping ஐ ஆதரிக்கும் பிசிக்கல் "
+"வால்யூம்களாகும். இந்த வால்யூம் குழு தேவைகளை பூர்த்தி செய்யவில்லை."
 
-#: src/InputController.py:95
+#: src/InputController.py:113
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
-"%s பெயருடைய லாஜிக்கல் வால்யூம் ஏற்கெனவே இந்த குழுவில் உள்ளது. "
-"வேறு பெயரை தேர்வு செய்யவும்."
+"%s பெயருடைய லாஜிக்கல் வால்யூம் ஏற்கெனவே இந்த குழுவில் உள்ளது. வேறு பெயரை தேர்வு "
+"செய்யவும்."
 
-#: src/InputController.py:97
+#: src/InputController.py:115
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s என்ற பெயரில் வால்யூம் குழு ஏற்கெனவே உள்லது. வேறு பெயரை தேர்வு செய்யவும்."
 
-#: src/InputController.py:99
+#: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "லாஜிக்கல் வால்யூமின் பெயரை குறிப்பிட வேண்டும்"
 
-#: src/InputController.py:101
+#: src/InputController.py:119
 msgid "A Name must be provided for the new Volume Group"
 msgstr "வால்யூம் குழுவின் பெயரை குறிப்பிட வேண்டும்"
 
-#: src/InputController.py:103
+#: src/InputController.py:121
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "சிறப்பு ஏற்றப்புள்ளி , %s, ஏற்கெனவே உள்ளது. இதை உருவாக்க விருப்பமா?"
 
-#: src/InputController.py:105
+#: src/InputController.py:123
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "ஏற்றப்புள்ள %s தோல்வியுற்றது."
 
-#: src/InputController.py:107
+#: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
 msgstr "இந்த வசதி இந்த பதிப்பில் இன்னும் செயல்படுத்தப்படவில்லை"
 
+#: src/InputController.py:127
+msgid ""
+"The number of Physical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+
+#: src/InputController.py:129
+msgid ""
+"The number of Logical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+
+#: src/InputController.py:131
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
+msgstr ""
+
+#: src/InputController.py:133
+msgid ""
+"There is a problem with the value entered in the Size field. The value "
+"should be a numeric value with no alphabetical characters or symbols of any "
+"other kind."
+msgstr ""
+
+#: src/InputController.py:135
+#, python-format
+msgid ""
+"BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
+"mounted on %s. Are you absolutely certain that you wish to discard the data "
+"on this mounted filesystem?"
+msgstr ""
+
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:111
+#: src/InputController.py:139
 #, python-format
 msgid "Unused space on %s"
 msgstr "%s இல் பயன்பாட்டில் இல்லாத காலிஇடம் "
 
-#: src/InputController.py:112
+#: src/InputController.py:140
 #, python-format
 msgid "%s megabytes"
 msgstr "%s மெகாபைட்கள்"
 
-#: src/InputController.py:113
+#: src/InputController.py:141
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s கிலோபைட்கள்"
 
-#: src/InputController.py:114
+#: src/InputController.py:142
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s கிகாபைட்கள்"
 
-#: src/InputController.py:115
+#: src/InputController.py:143
 #, python-format
 msgid "%s extents"
 msgstr "%s பரப்புகள்"
 
-#: src/InputController.py:117
+#: src/InputController.py:145
 #, python-format
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
-msgstr "லாஜிக்கல் வால்யூமிற்கு வால்யூம் குழு %s இன் அளவை விட அதிக அளவு தேவை என குறிப்பிடப்பட்டுள்லது. தற்போது காலியாக உள்ள இடத்தின் அளவு:"
+msgstr ""
+"லாஜிக்கல் வால்யூமிற்கு வால்யூம் குழு %s இன் அளவை விட அதிக அளவு தேவை என "
+"குறிப்பிடப்பட்டுள்லது. தற்போது காலியாக உள்ள இடத்தின் அளவு:"
 
-#: src/InputController.py:119
+#: src/InputController.py:147
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s எண்களை மட்டும் கொண்டிருக்க வேண்டும்"
 
-#: src/InputController.py:120
+#: src/InputController.py:148
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr "அதிகபட்ச பிசிக்கல் வால்யூம் புலம் 1 லிருந்து 256 க்குட்பட்ட இயல் எண்களை மட்டும் கொண்டிருக்க வேண்டும்."
+msgstr ""
+"அதிகபட்ச பிசிக்கல் வால்யூம் புலம் 1 லிருந்து 256 க்குட்பட்ட இயல் எண்களை மட்டும் கொண்டிருக்க "
+"வேண்டும்."
 
-#: src/InputController.py:121
+#: src/InputController.py:149
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr "அதிகபட்ச லாஜிக்கல் வால்யூம் புலம் 1 லிருந்து 256 க்குட்பட்ட இயல் எண்களை மட்டும் கொண்டிருக்க வேண்டும்."
+msgstr ""
+"அதிகபட்ச லாஜிக்கல் வால்யூம் புலம் 1 லிருந்து 256 க்குட்பட்ட இயல் எண்களை மட்டும் கொண்டிருக்க "
+"வேண்டும்."
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
-#: src/InputController.py:125
+#: src/InputController.py:153
 msgid "Stripe Size field"
 msgstr "Stripe அளவு புலம்"
 
-#: src/InputController.py:126
+#: src/InputController.py:154
 msgid "Number of Stripes field"
 msgstr "Stripe புலங்களின் எண்ணிக்கை"
 
-#: src/InputController.py:128
+#: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr "%s லாஜிக்கல் வால்யூம் மேலாண்மையை நீக்க விருப்பமா?"
 
-#: src/InputController.py:130
+#: src/InputController.py:158
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"The Physical Volume named %s, that you wish to remove, has data from active "
+"Logical Volume(s) mapped to its extents. Because it is the only Physical "
+"Volume in the Volume Group, there is no place to move the data. Recommended "
+"action is either to add a new Physical Volume before removing this one, or "
+"else remove the Logical Volumes that are associated with this Physical "
+"Volume."
+msgstr ""
+
+#: src/InputController.py:159
+#, python-format
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s ஐ %s வால்யூம் குழுவிலிருந்து நீக்க விருப்பமா?"
 
-#: src/InputController.py:131
+#: src/InputController.py:160
+#, python-format
+msgid ""
+"Removing Physical Volume %s from the Volume Group %s will leave the Volume "
+"group empty, and it will be removed as well. Do you wish to proceed?"
+msgstr ""
+
+#: src/InputController.py:161
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "நீங்கள் %s லாஜிக்கல் வால்யூமை நீக்க முற்பட்டுள்ளீர்கள் என்பதை அறிவீர்களா?"
 
-#: src/InputController.py:132
-#, python-format
-msgid "Volume Group %s does not have enough space to move the data stored on %s"
+#: src/InputController.py:162
+#, fuzzy, python-format
+msgid ""
+"Volume Group %s does not have enough space to move the data stored on %s. A "
+"possible solution would be to add an additional Physical Volume to the "
+"Volume Group."
 msgstr "வால்யூம் குழு %s இல் %s இல் சேமிக்கப்பட்ட தகவல்களை நகர்த்த போதிய இடமில்லை."
 
+#: src/InputController.py:163
+msgid ""
+"The dm-mirror module is either not loaded in your kernel, or your kernel "
+"does not support the dm-mirror target. If it is supported, try running "
+"\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
+"Physical Extents are unavailable."
+msgstr ""
+
 #. ##########################################################
+#. This global :( is used as a flag for the new lv form
+#. This one too
 #. self.setup_pv_rm_migrate()
 #. self.setup_pv_rm()
 #. ##################
@@ -220,50 +311,95 @@ msgstr "வால்யூம் குழு %s இல் %s இல் சே�
 #. #Buttons and fields...
 #. Now check for unique name
 #. We don't want to offer the 2 and 4 options for kilo's - min size is 8k
-#. ##FIXME - this just check for 'some' space - it should check for
-#. ##enough space by checking free versus needed for pv
-#. else:
-#. self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
-#. return
+#. The following cases must be considered in this method:
+#. 1) a PV is to be removed that has extents mapped to an LV:
+#. 1a) if there are other PVs, call pvmove on the PV to migrate the
+#. data to other  PVs in the VG
+#. i) If there is sufficient room, pvmove the extents, then vgreduce
+#. ii) If there is not room, inform the user to add more storage and
+#. try again later
+#. 1b) If there are not other PVs, state that either more PVs must
+#. be added so that the in use extents can be migrated, or else
+#. present a list of LVs that must be removed in order to
+#. remove the PV
+#. 2) a PV is to be removed that has NO LVs mapped to its extents:
+#. 2a) If there are more than one PV in the VG, just vgreduce away the PV
+#. 2b) If the PV is the only one, then vgremove the VG
+#.
+#. This says that tree reset will not be handled by caller
+#. ##FIX This method call needs to be handled for exception
+#. This PV is the only one in the VG
+#. There should always be at least one extent seg
+#. We now know either the entire PV is used by one LV, or else it is
+#. an unutilized PV. If the latter, we can just vgreduce it away
+#. Cases:
+#. call vgremove
+#. solo_pv is FALSE, more than one PV...
+#. Two cases here: if solo_pv, bail, else check for size needed
+#. There are additional PVs. We need to check space
 #. Check if LV is mounted -- if so, unmount
 #. args = list()
 #. args.append(lvname)
 #. apply(self.reset_tree_model, args)
 #. check if list > 0
 #. need to check if section is 'unused'
-#. Check if LV is mounted -- if so, unmount
 #. args = list()
 #. args.append(lvname)
 #. apply(self.reset_tree_model, args)
 #. need tto check if list > 0
 #. need to check if section is 'unused'
-#. Check if PV has alloc ated extents - if so, move
-#. args = list()
-#. args.append(vgname)
-#. apply(self.reset_tree_model,args)
+#. apply(self.reset_tree_model)
 #. ##################
 #. #This form adds a new Logical Volume
 #. #Fields and menus
 #. Get available space on vg and set as label
 #. set radiobutton group to linear
-#. set filesystem option menu to 'no filesystem, and deactivate
-#. mount point field
+#. set up filesystem menu
+#. deactivate #mount point field
+#. First item must be 'No Filesystem' option
+#. Means we did not find the mkfs varient in item present
 #. Validation Ladder:
 #. Name must be unique for this VG
 #. ok - name is ok. size must be below available space
+#. #In case gibberish is entered into the size field...
+#. Now we have an integer representation of our size field,
+#. and a floating point rep
 #. Normalize size depending on size_unit index
-#. in bytes
+#. This means the 'use remaining space button' used
 #. Handle stripe request
 #. Finally, address file system issues
+#. FS_type = FILE_SYSTEM_TYPE_LIST[fs_idx]
 #. ##stat mnt point
 #. create mount point
 #. Build command args
 #. Add confirmation dialog here...
+#. The following two methods are related. Here is how:
+#. There is a button on the new_lv_dlg form that allows
+#. the user to use all of the remaining space on the VG
+#. for their new LV. This is implemented by setting the size
+#. text entry field with the remaining space value, in whatever unit
+#. you happen to be working in according to the unit selection menu.
+#. Sending this value as a param to lvcreate when it is a floating
+#. point value, though, is problematic; so we will use a discrete value
+#. (free extents) instead. By setting the flag 'self.use_remaining'
+#. to the amount of extents available, we can check in the on_ok
+#. method for a value greater than zero, and send the size in
+#. extents to the command handler. A problem can occur, though,
+#. when the user presses the 'use remaining space' button, and
+#. then modify's the amount in the text field. The handler method
+#. immediately below resets the flag to 0, if chars in the text
+#. field are deleted, or new ones inserted.
+#.
+#. Of course, the act of loading the max value into the field is
+#. considered a 'change' so this must be trapped, and is what the
+#. self.loaded_field flag is for. It can only be set by the
+#. button handler.
 #. change units label
 #. First check if there are more than 1 PVs in volume
 #. if not, put up message dialog and reset radiobuttons to linear
 #. striping is not an option
 #. message = INIT_ENTITY_1 + name + INIT_ENTITY_2
+#. Check if this VG allows an Additional PV
 #. set up columns for tree
 #. cancel opp if OK clicked w/o selection
 #. Now get name of VG to be extended...
@@ -331,14 +467,6 @@ msgstr ""
 "குழுவுடன் சேர்"
 
 #: src/lvui.glade.h:16
-msgid "Autobackup?"
-msgstr "தானாக காப்பெடுக்கவா?"
-
-#: src/lvui.glade.h:17
-msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr "/etc/fstab இல் தகவல் உள்ளிட விரும்பினால் இங்கே க்ளிக் செய்யவும்"
-
-#: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
@@ -346,15 +474,15 @@ msgstr ""
 "புதிய லாஜிகல் வால்யூமை\n"
 "உருவாக்குகிறது"
 
-#: src/lvui.glade.h:20
+#: src/lvui.glade.h:18
 msgid "Create New LV"
 msgstr "புதிய LV ஐ உருவாக்கவும்"
 
-#: src/lvui.glade.h:21
+#: src/lvui.glade.h:19
 msgid "Create a New Logical Volume"
 msgstr "புதிய லாஜிக்கல் வால்யூமை உருவாக்கவும்."
 
-#: src/lvui.glade.h:22
+#: src/lvui.glade.h:20
 msgid ""
 "Create new \n"
 "Volume Group"
@@ -362,7 +490,7 @@ msgstr ""
 "புதிய வால்யூம் குழுவை\n"
 "உருவாக்கு."
 
-#: src/lvui.glade.h:24
+#: src/lvui.glade.h:22
 msgid ""
 "Extend\n"
 "Volume Group"
@@ -370,7 +498,7 @@ msgstr ""
 "வால்யூம் குழு\n"
 "பரப்புகள்"
 
-#: src/lvui.glade.h:26
+#: src/lvui.glade.h:24
 msgid ""
 "Extend \n"
 "Logical Volume"
@@ -378,63 +506,70 @@ msgstr ""
 "லாஜிக்கல் வால்யூம்\n"
 "பரப்பு"
 
-#: src/lvui.glade.h:28
+#: src/lvui.glade.h:26
+#, fuzzy
+msgid "Extend Volume Group"
+msgstr ""
+"வால்யூம் குழு\n"
+"பரப்புகள்"
+
+#: src/lvui.glade.h:27
 msgid "Extents"
 msgstr "பரப்புகள்"
 
-#: src/lvui.glade.h:29
+#: src/lvui.glade.h:28
 msgid "Filesystem: "
 msgstr "கோப்பு முறை:"
 
-#: src/lvui.glade.h:30
+#: src/lvui.glade.h:29
 msgid "Gigabytes"
 msgstr "கிகாபைட்கள்"
 
-#: src/lvui.glade.h:31
+#: src/lvui.glade.h:30
 msgid "Initialize Entity"
 msgstr "என்டிட்டியை துவக்கு"
 
-#: src/lvui.glade.h:32
+#: src/lvui.glade.h:31 src/lvmui_constants.py:51
 msgid "JFS"
 msgstr "JFS"
 
-#: src/lvui.glade.h:33
+#: src/lvui.glade.h:32
 msgid "Kilo"
 msgstr "கிலோ"
 
-#: src/lvui.glade.h:34
+#: src/lvui.glade.h:33
 msgid "Kilobytes"
 msgstr "கிலோபைட்கள்"
 
-#: src/lvui.glade.h:35
+#: src/lvui.glade.h:34
 msgid "Linear"
 msgstr "நேர்"
 
-#: src/lvui.glade.h:36
+#: src/lvui.glade.h:35
 msgid "Logical Volume Management"
 msgstr "லாஜிகல் வால்யூம் மேலாண்மை"
 
-#: src/lvui.glade.h:37
+#: src/lvui.glade.h:36
 msgid "Manage Volumes"
 msgstr "வால்யூம்களை கையாள்"
 
-#: src/lvui.glade.h:38
+#: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
 msgstr "அதிகபட்ச லாஜிக்கல் வால்யூம்:"
 
-#: src/lvui.glade.h:39
+#: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
 msgstr "அதிகபட்ச பிசிக்கல் வால்யூம்:"
 
-#: src/lvui.glade.h:40
+#: src/lvui.glade.h:39
 msgid "Meg"
 msgstr "Meg"
 
-#: src/lvui.glade.h:41 src/renderer.py:106
+#: src/lvui.glade.h:40 src/renderer.py:106
 msgid "Megabytes"
 msgstr "மெகாமைட்கள்"
 
-#: src/lvui.glade.h:42
+#: src/lvui.glade.h:41
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
@@ -442,43 +577,40 @@ msgstr ""
 "தேர்வு செய்தவைகளை வால்யூமிலிருந்து\n"
 "குறிப்பிடா பரப்புக்கு நகர்த்து"
 
-#: src/lvui.glade.h:44
+#: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
 msgstr "ஏற்றப்புள்ளி (காலி எனில், LV ஏற்றப்படாது):"
 
-#: src/lvui.glade.h:45
+#: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
 msgstr "வால்யூம் குழுவின் பெயர்:"
 
-#: src/lvui.glade.h:46
+#: src/lvui.glade.h:45
 msgid "Name for new LV:"
 msgstr "புதிய LV இன் பெயர்:"
 
-#: src/lvui.glade.h:47
+#: src/lvui.glade.h:46
 msgid "New Volume Group"
 msgstr "புதிய வால்யூம் குழு"
 
-#: src/lvui.glade.h:48
+#: src/lvui.glade.h:47
 msgid "New Volume Group Form"
 msgstr "புதிய வால்யூம் குழுவிலிருந்து "
 
-#: src/lvui.glade.h:49
+#. File System Types
+#: src/lvui.glade.h:48 src/lvmui_constants.py:48
 msgid "No Filesystem"
 msgstr "கோப்புமுறைமை இல்லை"
 
-#: src/lvui.glade.h:50
+#: src/lvui.glade.h:49
 msgid "Number of Stripes: "
 msgstr "Stripeகளின் எண்ணிக்கை:"
 
-#: src/lvui.glade.h:51
+#: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
 msgstr "பிசிக்கல் பரப்பளவு:"
 
-#: src/lvui.glade.h:52
-msgid "Reiser"
-msgstr "Reiser"
-
-#: src/lvui.glade.h:53
+#: src/lvui.glade.h:51
 msgid ""
 "Remove \n"
 "Logical Volume"
@@ -486,7 +618,7 @@ msgstr ""
 "லாஜிக்கல் வால்யூமை\n"
 "நீக்கு"
 
-#: src/lvui.glade.h:55
+#: src/lvui.glade.h:53
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
@@ -494,7 +626,7 @@ msgstr ""
 "தேர்வு செய்யப்பட்ட\n"
 "லாஜிக்கல் வால்யூம்கள்."
 
-#: src/lvui.glade.h:57
+#: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
@@ -502,7 +634,7 @@ msgstr ""
 "பிசிக்கல் வால்யூம்கள் நீக்க\n"
 "தேர்வு செய்யப்பட்டது."
 
-#: src/lvui.glade.h:59
+#: src/lvui.glade.h:57
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
@@ -510,7 +642,7 @@ msgstr ""
 "வால்யூமிலிருந்து வால்யூம் குழுக்களை\n"
 "நீக்கு"
 
-#: src/lvui.glade.h:61
+#: src/lvui.glade.h:59
 msgid ""
 "Remove volume \n"
 "from LVM"
@@ -518,94 +650,124 @@ msgstr ""
 "LVM லிருந்து வால்யூம்\n"
 "குழுக்களை நீக்கு"
 
-#: src/lvui.glade.h:63
-msgid "Resizable?"
-msgstr "அளவைமாற்றகூடியதா?"
-
-#: src/lvui.glade.h:64
+#: src/lvui.glade.h:61
 msgid "Select a Volume Group to add this PV to:"
 msgstr "இந்த PV இல் சேர்க வேண்டிய வால்யூம் குழு:"
 
-#: src/lvui.glade.h:65
+#: src/lvui.glade.h:62
 msgid "Select a disk entity to add to Volume Group:"
 msgstr "வால்யூம் குழுவுடன் சேர்க்க வேண்டிய வட்டு என்டிட்டியை தேர்வு செய்யவும்."
 
-#: src/lvui.glade.h:66
+#: src/lvui.glade.h:63
 msgid "Size:"
 msgstr "அளவு:"
 
-#: src/lvui.glade.h:67
+#: src/lvui.glade.h:64
 msgid "Stripe Size:"
 msgstr "Stripe அளவு:"
 
-#: src/lvui.glade.h:68
+#: src/lvui.glade.h:65
 msgid "Striped"
 msgstr "Striped"
 
-#: src/lvui.glade.h:69
+#: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
 msgstr "VG1 இல் உள்ள பயன்படுத்தப்படாத காலியிடம்:"
 
-#: src/lvui.glade.h:70
+#: src/lvui.glade.h:67
 msgid "Use Remaining Space"
 msgstr "மீதமுள்ள இடத்தை பயன்படுத்து"
 
-#: src/lvui.glade.h:71
+#: src/lvui.glade.h:68 src/lvmui_constants.py:55
 msgid "XFS"
 msgstr "XFS"
 
-#: src/lvui.glade.h:72
-msgid "dialog1"
-msgstr "dialog1"
-
-#: src/lvui.glade.h:73
+#: src/lvui.glade.h:69
 msgid "ext2"
 msgstr "ext2"
 
-#: src/lvui.glade.h:74
+#: src/lvui.glade.h:70
 msgid "ext3"
 msgstr "ext3"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
-#: src/CommandHandler.py:14
-#, python-format
-msgid "vgextend command failed. Command attempted: \"%s\""
+#: src/CommandHandler.py:15
+#, fuzzy, python-format
+msgid ""
+"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgextend கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
 
-#: src/CommandHandler.py:15
-#, python-format
-msgid "pvcreate command failed. Command attempted: \"%s\""
+#: src/CommandHandler.py:16
+#, fuzzy, python-format
+msgid ""
+"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
 
-#: src/CommandHandler.py:16
-#, python-format
-msgid "pvremove command failed. Command attempted: \"%s\""
-msgstr "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
-
 #: src/CommandHandler.py:17
-#, python-format
-msgid "lvremove command failed. Command attempted: \"%s\""
-msgstr "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
 
 #: src/CommandHandler.py:18
-#, python-format
-msgid "vgcreate command failed. Command attempted: \"%s\""
-msgstr "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
 
 #: src/CommandHandler.py:19
-#, python-format
-msgid "vgreduce command failed. Command attempted: \"%s\""
-msgstr "vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
 
 #: src/CommandHandler.py:20
-#, python-format
-msgid "pvmove command failed. Command attempted: \"%s\""
-msgstr "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
 
 #: src/CommandHandler.py:21
-#, python-format
-msgid "umount command failed. Command attempted: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+
+#: src/CommandHandler.py:22
+#, fuzzy, python-format
+msgid ""
+"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+
+#: src/CommandHandler.py:23
+#, fuzzy, python-format
+msgid ""
+"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+
+#: src/CommandHandler.py:24
+#, fuzzy, python-format
+msgid ""
+"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+
+#: src/CommandHandler.py:25
+#, fuzzy, python-format
+msgid ""
+"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+
+#: src/CommandHandler.py:26
+#, fuzzy, python-format
+msgid ""
+"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
+
+#: src/CommandHandler.py:27
+#, fuzzy, python-format
+msgid ""
+"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\""
 
 #. first set up lvcreate args
@@ -615,7 +777,7 @@ msgstr "umount கட்டளை தோல்வியுற்றது. க�
 #. Column names for PVS calls
 #. Column names for PVS calls
 #. Column names for lvdisplay calls
-#: src/lvm_model.py:35
+#: src/lvm_model.py:35 src/lvmui_constants.py:39
 msgid "Unused"
 msgstr "பயன்படுத்தப்படாத"
 
@@ -623,144 +785,140 @@ msgstr "பயன்படுத்தப்படாத"
 msgid "Unused Space"
 msgstr "பயன்படுத்தப்படாத காலியிடம்"
 
-#: src/lvm_model.py:37
-msgid "Free"
-msgstr "காலி"
-
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
-#: src/lvm_model.py:40
+#: src/lvm_model.py:39
 msgid "Linear Mapping"
 msgstr "லீனியர் மேப்பிங்"
 
-#: src/lvm_model.py:41
+#: src/lvm_model.py:40
 msgid "Unmounted"
 msgstr "வெளியேற்றப்பட்ட"
 
-#: src/lvm_model.py:42
+#: src/lvm_model.py:41
 msgid "No File System"
 msgstr "கோப்பு முறை இல்லை"
 
-#: src/lvm_model.py:53
+#: src/lvm_model.py:52
 msgid "Volume Group Name:   "
 msgstr "வால்யூம் குழு இல்லை:   "
 
-#: src/lvm_model.py:54
+#: src/lvm_model.py:53
 msgid "System ID:   "
 msgstr "கணினி ID:   "
 
-#: src/lvm_model.py:55
+#: src/lvm_model.py:54
 msgid "Format:   "
 msgstr "வடிவமை:   "
 
-#: src/lvm_model.py:56 src/lvm_model.py:73 src/lvm_model.py:87
+#: src/lvm_model.py:55 src/lvm_model.py:72 src/lvm_model.py:86
 msgid "Attributes:   "
 msgstr "பண்புகள்:   "
 
-#: src/lvm_model.py:57
+#: src/lvm_model.py:56
 msgid "Volume Group Size:   "
 msgstr "வால்யூம் குழு அளவு:   "
 
-#: src/lvm_model.py:58
+#: src/lvm_model.py:57
 msgid "Available Space:   "
 msgstr "இருக்கும் காலியிடம்:   "
 
-#: src/lvm_model.py:59
+#: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
 msgstr "பரப்புகளின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:60
+#: src/lvm_model.py:59
 msgid "Number of Free Extents:   "
 msgstr "காலி பரப்புகளின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:61
+#: src/lvm_model.py:60
 msgid "Extent Size:   "
 msgstr "பரப்பின் அளவு:   "
 
-#: src/lvm_model.py:62
+#: src/lvm_model.py:61
 msgid "Maximum Allowed Physical Volumes:   "
 msgstr "அனுமதிக்கப்பட்ட அதிகபட்ச பிசிக்கல் வால்யூம்:   "
 
-#: src/lvm_model.py:63
+#: src/lvm_model.py:62
 msgid "Number of Physical Volumes:   "
 msgstr "பிசிக்கல் வால்யூம்களின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:64
+#: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
 msgstr "அனுமதிக்கப்படட் அதிக பட்ச லாஜிக்கல் வால்யூம்:   "
 
-#: src/lvm_model.py:65
+#: src/lvm_model.py:64
 msgid "Number of Logical Volumes:   "
 msgstr "லாஜிக்கல் வால்யூம்களின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:66
+#: src/lvm_model.py:65
 msgid "VG UUID:   "
 msgstr "VG UUID:   "
 
-#: src/lvm_model.py:68
+#: src/lvm_model.py:67
 msgid "Logical Volume Name:   "
 msgstr "லாஜிக்கல் வால்யூம் பெயர்:   "
 
-#: src/lvm_model.py:69
+#: src/lvm_model.py:68
 msgid "Logical Volume Size:   "
 msgstr "லாஜிக்கல் வால்யூம் அளவு:  "
 
-#: src/lvm_model.py:70
+#: src/lvm_model.py:69
 msgid "Number of Segments:   "
 msgstr "செக்மன்ட்களின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:71
+#: src/lvm_model.py:70
 msgid "Number of Stripes:   "
 msgstr "Stripeகளின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:72
+#: src/lvm_model.py:71
 msgid "Stripe Size:   "
 msgstr "Stripe அளவு:   "
 
-#: src/lvm_model.py:74
+#: src/lvm_model.py:73
 msgid "LV UUID:   "
 msgstr "LV UUID:   "
 
-#: src/lvm_model.py:76
+#: src/lvm_model.py:75
 msgid "Partition Type:   "
 msgstr "பகிர்வு வகை:   "
 
-#: src/lvm_model.py:77
+#: src/lvm_model.py:76
 msgid "Size:   "
 msgstr "அளவு:   "
 
-#: src/lvm_model.py:78
+#: src/lvm_model.py:77
 msgid "Mount Point:   "
 msgstr "ஏற்றப்புள்ளி:   "
 
-#: src/lvm_model.py:79
+#: src/lvm_model.py:78
 msgid "File System:   "
 msgstr "கோப்பு முறைமை:   "
 
-#: src/lvm_model.py:81
+#: src/lvm_model.py:80
 msgid "Physical Volume Name:   "
 msgstr "பிசிக்கல் வால்யூம் பெயர்:   "
 
-#: src/lvm_model.py:82
+#: src/lvm_model.py:81
 msgid "Physical Volume Size:   "
 msgstr "பிசிக்கல் வால்யூம் அளவு:   "
 
-#: src/lvm_model.py:83
+#: src/lvm_model.py:82
 msgid "Space Used:   "
 msgstr "பயன்படுத்தப்பட்ட இடம்:   "
 
-#: src/lvm_model.py:84
+#: src/lvm_model.py:83
 msgid "Space Free:   "
 msgstr "காலியிடம்:    "
 
-#: src/lvm_model.py:85
+#: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
 msgstr "மொத்த பிசிக்கல் பரப்பு:   "
 
-#: src/lvm_model.py:86
+#: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
 msgstr "ஒதுக்கப்பட்ட பிசிக்கல் பரப்புகள்:   "
 
-#: src/lvm_model.py:88
+#: src/lvm_model.py:87
 msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
@@ -783,6 +941,13 @@ msgstr "PV UUID:   "
 #. item.set_volume_size(float(adj_sz_str) / GIG)
 #. ##FIX need to be smarter about size conversions here
 #. ##FIX use lvmdiskscan here
+#. #There needs to be one last check made on those PEs which have
+#. #passed the test so far. It is possible that a partition set up
+#. #for swap may not have the partition ID for swap. The definitive
+#. #source for swap partitions is /proc/swaps, so we will cat this
+#. #file and remove any devices from pelist that are entered in
+#. #that file
+#. Found it in the swap list
 #. ##FIXME - Throw exception here, if no result is returned
 #. Add extent segments
 #. Add extent segments
@@ -790,6 +955,7 @@ msgstr "PV UUID:   "
 #. Now check if there is free space in Volume Group with name vg_name.
 #. If there is free space, add an LV marked as 'unused' for that available
 #. space, so that it can be rendered properly
+#. Checks for free extents
 #. lvs does not give path info
 #. The procedure below does the following:
 #. The output of the command is examined line by line for a volume
@@ -798,6 +964,7 @@ msgstr "PV UUID:   "
 #. within the first column string. If so, the column[0] string is the path.
 #. ##FIXME Raise exception here because true path is not being returned,
 #. ##But rather the lname arg is being returned.
+#. max LVs, number of LVs, max PVs, number of PVs
 #. arglist.append("--units")
 #. arglist.append("g")
 #. lvs reports 0 for sys max
@@ -809,6 +976,8 @@ msgstr "PV UUID:   "
 #. /dev/sda10 [      784.39 MB] LVM physical volume
 #. loose '['
 #. Next, check if partition is mounted
+#. It is still possible for a partition to be mounted without being in
+#. /proc/mounts...this is often true of the root partition
 #. Finally, check for file system
 #. No file system
 #. Finish up by returning data
@@ -868,7 +1037,13 @@ msgstr "PV UUID:   "
 #. ## FIXME Wrap this in an exception handler in case format is wrong
 #. Now let's determine if this segment is striped or linear,
 #. and note this in the new extent...
+#. break
 #. #Now, sort
+#. #Due to the nature of the way lvdisplay presents mapping
+#. #info, it is possible that an extent segment for a stripe
+#. #may be broken into two adjacent pieces. It makes visual
+#. #sense to merge these segments.
+#. #For good measure...
 #. #Now fill in holes -- for each gap, create a 'free' seg block
 #. #This is set up as a double loop because inserting a new val
 #. #in a list probably hoses the loop iterator, so to be safe,
@@ -876,12 +1051,61 @@ msgstr "PV UUID:   "
 #. Add final free segment if necessary
 #. Nothing in this PV is used...
 #. ##Types of views to render
-#: src/lvmui_constants.py:18
+#: src/lvmui_constants.py:19
 #, python-format
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
-msgstr "%s வட்டு என்டிட்டியை துவக்க விருப்பமா? device/partition இல் உள்ள அனைத்து தகவல்களையும் இழக்க நேரிடும்."
+msgstr ""
+"%s வட்டு என்டிட்டியை துவக்க விருப்பமா? device/partition இல் உள்ள அனைத்து தகவல்களையும் "
+"இழக்க நேரிடும்."
+
+#: src/lvmui_constants.py:40
+msgid "Free"
+msgstr "காலி"
+
+#: src/lvmui_constants.py:42
+msgid "G"
+msgstr ""
+
+#: src/lvmui_constants.py:43
+msgid "M"
+msgstr ""
+
+#: src/lvmui_constants.py:44
+msgid "K"
+msgstr ""
+
+#: src/lvmui_constants.py:45
+msgid "B"
+msgstr ""
+
+#: src/lvmui_constants.py:49
+#, fuzzy
+msgid "Ext2"
+msgstr "ext2"
+
+#: src/lvmui_constants.py:50
+#, fuzzy
+msgid "Ext3"
+msgstr "ext3"
+
+#: src/lvmui_constants.py:52
+msgid "MSDOS"
+msgstr ""
+
+#: src/lvmui_constants.py:53
+#, fuzzy
+msgid "Reiserfs"
+msgstr "Reiser"
+
+#: src/lvmui_constants.py:54
+msgid "VFAT"
+msgstr ""
+
+#: src/lvmui_constants.py:56
+msgid "Cramfs"
+msgstr ""
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -961,3 +1185,14 @@ msgstr "ஒதுக்கப்படாத வால்யூம்கள்"
 msgid "Uninitialized Entities"
 msgstr "துவக்கப்படாத என்டிட்டிகள்"
 
+#~ msgid "Autobackup?"
+#~ msgstr "தானாக காப்பெடுக்கவா?"
+
+#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
+#~ msgstr "/etc/fstab இல் தகவல் உள்ளிட விரும்பினால் இங்கே க்ளிக் செய்யவும்"
+
+#~ msgid "Resizable?"
+#~ msgstr "அளவைமாற்றகூடியதா?"
+
+#~ msgid "dialog1"
+#~ msgstr "dialog1"
