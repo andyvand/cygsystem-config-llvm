@@ -115,7 +115,7 @@ def runFullGUI():
     blvm = baselvm(glade_xml, app)
     app.show()
     app.connect("destroy", lambda w: gtk.mainquit())
-    gtk.mainloop()
+    gtk.main()
                                                                                 
                                                                                 
 if __name__ == "__main__":
