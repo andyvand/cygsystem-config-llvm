@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-21 14:41+0100\n"
+"PO-Revision-Date: 2004-10-21 14:47+0100\n"
 "Last-Translator: Adam Woś <adam.wos@post.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -168,12 +168,10 @@ msgstr "Czy masz pewność, że chcesz usunąć dysk logiczny %s?"
 #: src/InputController.py:130
 #, python-format
 msgid "Volume Group %s does not have enough space to move the data stored on %s"
-msgstr ""
+msgstr "Grupa woluminów %s nie ma wystarczającej ilości miejsca, żeby przenieść dane składowane na %s"
 
 #. ##########################################################
-#. args = list()
 #. in bytes
-#. ######################################################
 #: src/lvui.glade.h:1
 msgid "*"
 msgstr "*"
@@ -427,7 +425,7 @@ msgstr "Zmienny rozmiar?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Wybierz grupę wolumenów, do której dodać ten DL:"
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
@@ -546,7 +544,7 @@ msgstr "ID systemu:"
 
 #: src/lvm_model.py:55
 msgid "Format:   "
-msgstr ""
+msgstr "Format:"
 
 #: src/lvm_model.py:56
 #: src/lvm_model.py:73
@@ -556,7 +554,7 @@ msgstr "Atrybuty:   "
 
 #: src/lvm_model.py:57
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Rozmiar grupy woluminów:"
 
 #: src/lvm_model.py:58
 msgid "Available Space:   "
@@ -576,15 +574,15 @@ msgstr ""
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "Maks. liczba dozwolonych woluminów fizycznych:"
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Liczba woluminów fizycznych:"
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "Maks. liczba dozwolonych dysków logicznych:"
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
@@ -663,11 +661,8 @@ msgid "PV UUID:   "
 msgstr ""
 
 #. No entry in column 3 means not initialized
-#. item.set_volume_size(float(adj_sz_str) / GIG)
 #. ##FIXME Raise exception here because true path is not being returned,
-#. ##This method adds complete/contiguous extent lists to PVs -- no holes
 #. #between the LV and its PVs.
-#. #    Stripe 0:
 #. we found our PV in mapping table
 #: src/lvmui_constants.py:18
 #, python-format
@@ -681,16 +676,16 @@ msgstr "Właściwości"
 #: src/Properties_Renderer.py:45
 #: src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "wolumin fizyczny"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "dysk logiczny"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "niezaalokowany wolumin"
 
 #: src/Properties_Renderer.py:48
 #: src/renderer.py:104
@@ -702,7 +697,7 @@ msgstr ""
 #: src/Properties_Renderer.py:51
 #: src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "grupa woluminów"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -713,7 +708,7 @@ msgstr ""
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Nie wybrano żadnego woluminu."
 
 #: src/renderer.py:96
 msgid ""
@@ -724,20 +719,20 @@ msgstr ""
 #: src/renderer.py:100
 #: src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "Widok logiczny"
 
 #: src/renderer.py:101
 #: src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "Widok fizyczny"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "Niezaalokowane"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "Niezainicjalizowane"
 
 #: src/renderer.py:105
 msgid "extents"
@@ -745,11 +740,11 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Grupy woluminów"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Niezaalokowane woluminy"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
