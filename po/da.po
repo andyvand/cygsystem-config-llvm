@@ -5,17 +5,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-13 09:30-0400\n"
+"POT-Creation-Date: 2004-11-23 14:03-0500\n"
 "PO-Revision-Date: 2004-10-23 17:59+0200\n"
 "Last-Translator: Martin Willemoes Hansen <mwh@sysrq.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
-#: src/InputController.py:24 src/Properties_Renderer.py:26 src/renderer.py:33
+#: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
 #: src/Volume_Tab_View.py:28
 #, python-format
 msgid ""
@@ -27,7 +27,8 @@ msgid ""
 "  Caught exception: %s\n"
 msgstr ""
 "\n"
-"  Kan ikke klargøre grafisk miljø. Den mest sandsynlige årsag til fejlen er at\n"
+"  Kan ikke klargøre grafisk miljø. Den mest sandsynlige årsag til fejlen er "
+"at\n"
 "  værktøjet ikke køres i et grafisk miljø. Start enten din grafiske\n"
 "  grænseflade eller sæt din DISPLAY-variabel.\n"
 "                                                                                \n"
@@ -35,19 +36,35 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#. #####################################################
-#. #Note: the enum below and the list that follows MUST#
-#. #remain related. A  chhange in one requires a change#
-#. #in the other                                       #
+#. ######################################################
+#. # Note, please: The two hash maps below are related. #
+#. # When adding or removing a filesystem type, both    #
+#. # hashes must be updated. The values in the first,   #
+#. # are the keys of the second.                        #
+#. # The FS type names are globalized strings in        #
+#. # lvmui_constants.py                                 #
+#.
+#.
+#.
+#. 'mkfs.jfs':JFS_T,                      #
+#. 'mkfs.msdos':MSDOS_T,                  #
+#. 'mkfs.reiserfs':REISERFS_T,            #
+#. 'mkfs.vfat':VFAT_T,                    #
+#. 'mkfs.xfs':XFS_T,                      #
+#. 'mkfs.cramfs':CRAMFS_T                 #
 #.
 #.
 #.
 #.
+#. JFS_T:'jfs',                             #
+#. MSDOS_T:'msdos',                         #
+#. REISERFS_T:'reiserfs',                   #
+#. VFAT_T:'vfat',                           #
+#. XFS_T:'xfs',                             #
+#. CRAMFS_T:'cramfs'                        #
 #.
 #.
-#.
-#.
-#. #####################################################
+#. ######################################################
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
 #. ##The first is an 'unallocated physical volume' which is a disk or
@@ -56,171 +73,237 @@ msgstr ""
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:85
+#: src/InputController.py:103
 msgid "Name"
 msgstr "Navn"
 
-#: src/InputController.py:86
+#: src/InputController.py:104
 msgid "Size"
 msgstr "Størrelse"
 
-#: src/InputController.py:87
+#: src/InputController.py:105
 msgid "Entity Type"
 msgstr "Entitetstype"
 
-#: src/InputController.py:89
+#: src/InputController.py:107
 msgid "Unallocated Physical Volume"
 msgstr "Ikke tildelt fysisk delarkiv"
 
-#: src/InputController.py:90
+#: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
 msgstr "Ikke klargjort diskentitet"
 
-#: src/InputController.py:91
+#: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
 msgstr "Vælg en diskentitet at tilføje i delarkivgruppen %s:"
 
-#: src/InputController.py:93
+#: src/InputController.py:111
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
-"En delarkivgruppe skal bestå af to eller flere fysiske delarkiver for at understøtte "
-"strimling (striping). Denne delarkivgruppe opfylder ikke kravet."
+"En delarkivgruppe skal bestå af to eller flere fysiske delarkiver for at "
+"understøtte strimling (striping). Denne delarkivgruppe opfylder ikke kravet."
 
-#: src/InputController.py:95
+#: src/InputController.py:113
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
-"Der findes allerede et logisk delarkiv som hedder %s i denne "
-"delarkivgruppe. Vælg et unikt navn."
+"Der findes allerede et logisk delarkiv som hedder %s i denne delarkivgruppe. "
+"Vælg et unikt navn."
 
-#: src/InputController.py:97
+#: src/InputController.py:115
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
 
-#: src/InputController.py:99
+#: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "Et navn skal angives for det nye logiske delarkiv"
 
-#: src/InputController.py:101
+#: src/InputController.py:119
 msgid "A Name must be provided for the new Volume Group"
 msgstr "Et navn skal angives for den nye delarkivgruppe"
 
-#: src/InputController.py:103
+#: src/InputController.py:121
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Det angivne monteringspunkt %s, findes ikke. Vil du oprette det?"
 
-#: src/InputController.py:105
+#: src/InputController.py:123
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "Oprettelsen af monteringspunktet %s mislykkedes uventet."
 
+#: src/InputController.py:125
+msgid "This capability is not yet implemented in this version"
+msgstr ""
+
+#: src/InputController.py:127
+msgid ""
+"The number of Physical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+
+#: src/InputController.py:129
+msgid ""
+"The number of Logical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+
+#: src/InputController.py:131
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
+msgstr ""
+
+#: src/InputController.py:133
+msgid ""
+"There is a problem with the value entered in the Size field. The value "
+"should be a numeric value with no alphabetical characters or symbols of any "
+"other kind."
+msgstr ""
+
+#: src/InputController.py:135
+#, python-format
+msgid ""
+"BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
+"mounted on %s. Are you absolutely certain that you wish to discard the data "
+"on this mounted filesystem?"
+msgstr ""
+
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:109
+#: src/InputController.py:139
 #, python-format
 msgid "Unused space on %s"
 msgstr "Ledig plads på %s"
 
-#: src/InputController.py:110
+#: src/InputController.py:140
 #, python-format
 msgid "%s megabytes"
 msgstr "%s megabyte"
 
-#: src/InputController.py:111
+#: src/InputController.py:141
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s kilobyte"
 
-#: src/InputController.py:112
+#: src/InputController.py:142
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s gigabyte"
 
-#: src/InputController.py:113
+#: src/InputController.py:143
 #, python-format
 msgid "%s extents"
 msgstr "%s områder"
 
-#: src/InputController.py:115
+#: src/InputController.py:145
 #, python-format
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
 "Den forespurgte størrelse på det nye logiske delarkiv overstiger den "
-"tilgængelige ledige plads på delarkivgruppen %s. Den tilgængelige plads "
-"er: "
+"tilgængelige ledige plads på delarkivgruppen %s. Den tilgængelige plads er: "
 
 # Ser meget trasigt ud... borde buggrapporteres!
-#: src/InputController.py:117
+#: src/InputController.py:147
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s bør kun indholde talværdier"
 
-#: src/InputController.py:118
+#: src/InputController.py:148
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"Feltet maksimum antal fysiske delarkiver bør kun indholde heltalsværdier mellem "
-"1 og 256"
+"Feltet maksimum antal fysiske delarkiver bør kun indholde heltalsværdier "
+"mellem 1 og 256"
 
-#: src/InputController.py:119
+#: src/InputController.py:149
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"Feltet maksimum antal logiske delarkiver bør kun indholde heltalsværdier mellem "
-"1 og 256"
+"Feltet maksimum antal logiske delarkiver bør kun indholde heltalsværdier "
+"mellem 1 og 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
-#: src/InputController.py:123
+#: src/InputController.py:153
 msgid "Stripe Size field"
 msgstr "Felt med størrelse på strimmel"
 
-#: src/InputController.py:124
+#: src/InputController.py:154
 msgid "Number of Stripes field"
 msgstr "Felt med antal strimler"
 
-#: src/InputController.py:126
+#: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
-"Er du helt sikker på at du vil fjerne %s fra håndteringen af logiske delarkiver?"
+"Er du helt sikker på at du vil fjerne %s fra håndteringen af logiske "
+"delarkiver?"
 
-#: src/InputController.py:128
+#: src/InputController.py:158
+#, python-format
+msgid ""
+"The Physical Volume named %s, that you wish to remove, has data from active "
+"Logical Volume(s) mapped to its extents. Because it is the only Physical "
+"Volume in the Volume Group, there is no place to move the data. Recommended "
+"action is either to add a new Physical Volume before removing this one, or "
+"else remove the Logical Volumes that are associated with this Physical "
+"Volume."
+msgstr ""
+
+#: src/InputController.py:159
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Er du helt sikker på at du vil fjerne %s fra delarkivgruppen %s?"
 
-#: src/InputController.py:129
+#: src/InputController.py:160
+#, python-format
+msgid ""
+"Removing Physical Volume %s from the Volume Group %s will leave the Volume "
+"group empty, and it will be removed as well. Do you wish to proceed?"
+msgstr ""
+
+#: src/InputController.py:161
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "Er du helt sikker på at du vil fjerne det logiske delarkiv %s?"
 
-#: src/InputController.py:130
-#, python-format
+#: src/InputController.py:162
+#, fuzzy, python-format
 msgid ""
-"Volume Group %s does not have enough space to move the data stored on %s"
+"Volume Group %s does not have enough space to move the data stored on %s. A "
+"possible solution would be to add an additional Physical Volume to the "
+"Volume Group."
 msgstr ""
 "Delarkivgruppen %s har ikke tilstrækkeligt med plads for at flytte de data "
 "som er lagrede på %s"
 
+#: src/InputController.py:163
+msgid ""
+"The dm-mirror module is either not loaded in your kernel, or your kernel "
+"does not support the dm-mirror target. If it is supported, try running "
+"\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
+"Physical Extents are unavailable."
+msgstr ""
+
 #. ##########################################################
+#. This global :( is used as a flag for the new lv form
+#. This one too
 #. self.setup_pv_rm_migrate()
 #. self.setup_pv_rm()
 #. ##################
@@ -230,50 +313,95 @@ msgstr ""
 #. #Buttons and fields...
 #. Now check for unique name
 #. We don't want to offer the 2 and 4 options for kilo's - min size is 8k
-#. ##FIXME - this just check for 'some' space - it should check for
-#. ##enough space by checking free versus needed for pv
-#. else:
-#. self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
-#. return
+#. The following cases must be considered in this method:
+#. 1) a PV is to be removed that has extents mapped to an LV:
+#. 1a) if there are other PVs, call pvmove on the PV to migrate the
+#. data to other  PVs in the VG
+#. i) If there is sufficient room, pvmove the extents, then vgreduce
+#. ii) If there is not room, inform the user to add more storage and
+#. try again later
+#. 1b) If there are not other PVs, state that either more PVs must
+#. be added so that the in use extents can be migrated, or else
+#. present a list of LVs that must be removed in order to
+#. remove the PV
+#. 2) a PV is to be removed that has NO LVs mapped to its extents:
+#. 2a) If there are more than one PV in the VG, just vgreduce away the PV
+#. 2b) If the PV is the only one, then vgremove the VG
+#.
+#. This says that tree reset will not be handled by caller
+#. ##FIX This method call needs to be handled for exception
+#. This PV is the only one in the VG
+#. There should always be at least one extent seg
+#. We now know either the entire PV is used by one LV, or else it is
+#. an unutilized PV. If the latter, we can just vgreduce it away
+#. Cases:
+#. call vgremove
+#. solo_pv is FALSE, more than one PV...
+#. Two cases here: if solo_pv, bail, else check for size needed
+#. There are additional PVs. We need to check space
 #. Check if LV is mounted -- if so, unmount
 #. args = list()
 #. args.append(lvname)
 #. apply(self.reset_tree_model, args)
 #. check if list > 0
 #. need to check if section is 'unused'
-#. Check if LV is mounted -- if so, unmount
 #. args = list()
 #. args.append(lvname)
 #. apply(self.reset_tree_model, args)
 #. need tto check if list > 0
 #. need to check if section is 'unused'
-#. Check if PV has alloc ated extents - if so, move
-#. args = list()
-#. args.append(lvname)
-#. apply(self.reset_tree_model, args)
+#. apply(self.reset_tree_model)
 #. ##################
 #. #This form adds a new Logical Volume
 #. #Fields and menus
 #. Get available space on vg and set as label
 #. set radiobutton group to linear
-#. set filesystem option menu to 'no filesystem, and deactivate
-#. mount point field
+#. set up filesystem menu
+#. deactivate #mount point field
+#. First item must be 'No Filesystem' option
+#. Means we did not find the mkfs varient in item present
 #. Validation Ladder:
 #. Name must be unique for this VG
 #. ok - name is ok. size must be below available space
+#. #In case gibberish is entered into the size field...
+#. Now we have an integer representation of our size field,
+#. and a floating point rep
 #. Normalize size depending on size_unit index
-#. in bytes
+#. This means the 'use remaining space button' used
 #. Handle stripe request
 #. Finally, address file system issues
+#. FS_type = FILE_SYSTEM_TYPE_LIST[fs_idx]
 #. ##stat mnt point
 #. create mount point
 #. Build command args
 #. Add confirmation dialog here...
+#. The following two methods are related. Here is how:
+#. There is a button on the new_lv_dlg form that allows
+#. the user to use all of the remaining space on the VG
+#. for their new LV. This is implemented by setting the size
+#. text entry field with the remaining space value, in whatever unit
+#. you happen to be working in according to the unit selection menu.
+#. Sending this value as a param to lvcreate when it is a floating
+#. point value, though, is problematic; so we will use a discrete value
+#. (free extents) instead. By setting the flag 'self.use_remaining'
+#. to the amount of extents available, we can check in the on_ok
+#. method for a value greater than zero, and send the size in
+#. extents to the command handler. A problem can occur, though,
+#. when the user presses the 'use remaining space' button, and
+#. then modify's the amount in the text field. The handler method
+#. immediately below resets the flag to 0, if chars in the text
+#. field are deleted, or new ones inserted.
+#.
+#. Of course, the act of loading the max value into the field is
+#. considered a 'change' so this must be trapped, and is what the
+#. self.loaded_field flag is for. It can only be set by the
+#. button handler.
 #. change units label
 #. First check if there are more than 1 PVs in volume
 #. if not, put up message dialog and reset radiobuttons to linear
 #. striping is not an option
 #. message = INIT_ENTITY_1 + name + INIT_ENTITY_2
+#. Check if this VG allows an Additional PV
 #. set up columns for tree
 #. cancel opp if OK clicked w/o selection
 #. Now get name of VG to be extended...
@@ -341,14 +469,6 @@ msgstr ""
 "eksisterende delarkivgruppe"
 
 #: src/lvui.glade.h:16
-msgid "Autobackup?"
-msgstr "Sikkerhedskopiér automatisk?"
-
-#: src/lvui.glade.h:17
-msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr "Afkryds her hvis du ønsker at en post skal oprettes i /etc/fstab"
-
-#: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
@@ -356,15 +476,15 @@ msgstr ""
 "Opret nyt\n"
 "logisk delarkiv"
 
-#: src/lvui.glade.h:20
+#: src/lvui.glade.h:18
 msgid "Create New LV"
 msgstr "Opret nyt LV"
 
-#: src/lvui.glade.h:21
+#: src/lvui.glade.h:19
 msgid "Create a New Logical Volume"
 msgstr "Opret et nyt logisk delarkiv"
 
-#: src/lvui.glade.h:22
+#: src/lvui.glade.h:20
 msgid ""
 "Create new \n"
 "Volume Group"
@@ -372,7 +492,7 @@ msgstr ""
 "Opret ny\n"
 "delarkivgruppe"
 
-#: src/lvui.glade.h:24
+#: src/lvui.glade.h:22
 msgid ""
 "Extend\n"
 "Volume Group"
@@ -380,7 +500,7 @@ msgstr ""
 "Udvid\n"
 "delarkivgruppe"
 
-#: src/lvui.glade.h:26
+#: src/lvui.glade.h:24
 msgid ""
 "Extend \n"
 "Logical Volume"
@@ -388,63 +508,70 @@ msgstr ""
 "Udvid\n"
 "logisk delarkiv"
 
-#: src/lvui.glade.h:28
+#: src/lvui.glade.h:26
+#, fuzzy
+msgid "Extend Volume Group"
+msgstr ""
+"Udvid\n"
+"delarkivgruppe"
+
+#: src/lvui.glade.h:27
 msgid "Extents"
 msgstr "Områder"
 
-#: src/lvui.glade.h:29
+#: src/lvui.glade.h:28
 msgid "Filesystem: "
 msgstr "Filsystem: "
 
-#: src/lvui.glade.h:30
+#: src/lvui.glade.h:29
 msgid "Gigabytes"
 msgstr "Gigabyte"
 
-#: src/lvui.glade.h:31
+#: src/lvui.glade.h:30
 msgid "Initialize Entity"
 msgstr "Klargør entitet"
 
-#: src/lvui.glade.h:32
+#: src/lvui.glade.h:31 src/lvmui_constants.py:51
 msgid "JFS"
 msgstr "JFS"
 
-#: src/lvui.glade.h:33
+#: src/lvui.glade.h:32
 msgid "Kilo"
 msgstr "KB"
 
-#: src/lvui.glade.h:34
+#: src/lvui.glade.h:33
 msgid "Kilobytes"
 msgstr "Kilobyte"
 
-#: src/lvui.glade.h:35
+#: src/lvui.glade.h:34
 msgid "Linear"
 msgstr "Lineær"
 
-#: src/lvui.glade.h:36
+#: src/lvui.glade.h:35
 msgid "Logical Volume Management"
 msgstr "Håndtering af logiske delarkiver"
 
-#: src/lvui.glade.h:37
+#: src/lvui.glade.h:36
 msgid "Manage Volumes"
 msgstr "Håndtér delarkiver"
 
-#: src/lvui.glade.h:38
+#: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
 msgstr "Maksimum antal logiske delarkiver: "
 
-#: src/lvui.glade.h:39
+#: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
 msgstr "Maksimum antal fysiske delarkiver: "
 
-#: src/lvui.glade.h:40
+#: src/lvui.glade.h:39
 msgid "Meg"
 msgstr "MB"
 
-#: src/lvui.glade.h:41 src/renderer.py:106
+#: src/lvui.glade.h:40 src/renderer.py:106
 msgid "Megabytes"
 msgstr "Megabyte"
 
-#: src/lvui.glade.h:42
+#: src/lvui.glade.h:41
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
@@ -452,43 +579,40 @@ msgstr ""
 "Migrér valgte\n"
 "områder fra delarkiv"
 
-#: src/lvui.glade.h:44
+#: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
 msgstr "Monteringspunkt (Hvis blankt, vil LV ikke blive monteret):"
 
-#: src/lvui.glade.h:45
+#: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
 msgstr "Navn på delarkivgruppe: "
 
-#: src/lvui.glade.h:46
+#: src/lvui.glade.h:45
 msgid "Name for new LV:"
 msgstr "Navn på ny LV:"
 
-#: src/lvui.glade.h:47
+#: src/lvui.glade.h:46
 msgid "New Volume Group"
 msgstr "Ny delarkivgruppe"
 
-#: src/lvui.glade.h:48
+#: src/lvui.glade.h:47
 msgid "New Volume Group Form"
 msgstr "Formular for ny delarkivgruppe"
 
-#: src/lvui.glade.h:49
+#. File System Types
+#: src/lvui.glade.h:48 src/lvmui_constants.py:48
 msgid "No Filesystem"
 msgstr "Intet filsystem"
 
-#: src/lvui.glade.h:50
+#: src/lvui.glade.h:49
 msgid "Number of Stripes: "
 msgstr "Antal strimler:"
 
-#: src/lvui.glade.h:51
+#: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
 msgstr "Størrelse på fysisk område:"
 
-#: src/lvui.glade.h:52
-msgid "Reiser"
-msgstr "Reiser"
-
-#: src/lvui.glade.h:53
+#: src/lvui.glade.h:51
 msgid ""
 "Remove \n"
 "Logical Volume"
@@ -496,7 +620,7 @@ msgstr ""
 "Fjern\n"
 "logisk delarkiv"
 
-#: src/lvui.glade.h:55
+#: src/lvui.glade.h:53
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
@@ -504,7 +628,7 @@ msgstr ""
 "Fjern valgte\n"
 "logiske delarkiver"
 
-#: src/lvui.glade.h:57
+#: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
@@ -512,7 +636,7 @@ msgstr ""
 "Fjern valgte\n"
 "fysiske delarkiver"
 
-#: src/lvui.glade.h:59
+#: src/lvui.glade.h:57
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
@@ -520,7 +644,7 @@ msgstr ""
 "Fjern delarkiv fra\n"
 "delarkivgruppe"
 
-#: src/lvui.glade.h:61
+#: src/lvui.glade.h:59
 msgid ""
 "Remove volume \n"
 "from LVM"
@@ -528,94 +652,124 @@ msgstr ""
 "Fjern delarkiv\n"
 "fra LVM"
 
-#: src/lvui.glade.h:63
-msgid "Resizable?"
-msgstr "Skalérbar?"
-
-#: src/lvui.glade.h:64
+#: src/lvui.glade.h:61
 msgid "Select a Volume Group to add this PV to:"
 msgstr "Vælg en delarkivgruppe at tilføje dette fysiske delarkiv i:"
 
-#: src/lvui.glade.h:65
+#: src/lvui.glade.h:62
 msgid "Select a disk entity to add to Volume Group:"
 msgstr "Vælg en diskentitet at tilføje i delarkivgruppen:"
 
-#: src/lvui.glade.h:66
+#: src/lvui.glade.h:63
 msgid "Size:"
 msgstr "Størrelse:"
 
-#: src/lvui.glade.h:67
+#: src/lvui.glade.h:64
 msgid "Stripe Size:"
 msgstr "Størrelse på strimmel:"
 
-#: src/lvui.glade.h:68
+#: src/lvui.glade.h:65
 msgid "Striped"
 msgstr "Strimlet"
 
-#: src/lvui.glade.h:69
+#: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
 msgstr "Ledig plads på VG1:"
 
-#: src/lvui.glade.h:70
+#: src/lvui.glade.h:67
 msgid "Use Remaining Space"
 msgstr "Anvend tilbagestående plads"
 
-#: src/lvui.glade.h:71
+#: src/lvui.glade.h:68 src/lvmui_constants.py:55
 msgid "XFS"
 msgstr "XFS"
 
-#: src/lvui.glade.h:72
-msgid "dialog1"
-msgstr "dialog1"
-
-#: src/lvui.glade.h:73
+#: src/lvui.glade.h:69
 msgid "ext2"
 msgstr "ext2"
 
-#: src/lvui.glade.h:74
+#: src/lvui.glade.h:70
 msgid "ext3"
 msgstr "ext3"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
-#: src/CommandHandler.py:14
-#, python-format
-msgid "vgextend command failed. Command attempted: \"%s\""
+#: src/CommandHandler.py:15
+#, fuzzy, python-format
+msgid ""
+"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgextend-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 
-#: src/CommandHandler.py:15
-#, python-format
-msgid "pvcreate command failed. Command attempted: \"%s\""
+#: src/CommandHandler.py:16
+#, fuzzy, python-format
+msgid ""
+"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 
-#: src/CommandHandler.py:16
-#, python-format
-msgid "pvremove command failed. Command attempted: \"%s\""
-msgstr "pvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
-
 #: src/CommandHandler.py:17
-#, python-format
-msgid "lvremove command failed. Command attempted: \"%s\""
-msgstr "lvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 
 #: src/CommandHandler.py:18
-#, python-format
-msgid "vgcreate command failed. Command attempted: \"%s\""
-msgstr "vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 
 #: src/CommandHandler.py:19
-#, python-format
-msgid "vgreduce command failed. Command attempted: \"%s\""
-msgstr "vgreduce-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 
 #: src/CommandHandler.py:20
-#, python-format
-msgid "pvmove command failed. Command attempted: \"%s\""
-msgstr "pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 
 #: src/CommandHandler.py:21
-#, python-format
-msgid "umount command failed. Command attempted: \"%s\""
+#, fuzzy, python-format
+msgid ""
+"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+
+#: src/CommandHandler.py:22
+#, fuzzy, python-format
+msgid ""
+"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+
+#: src/CommandHandler.py:23
+#, fuzzy, python-format
+msgid ""
+"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgreduce-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+
+#: src/CommandHandler.py:24
+#, fuzzy, python-format
+msgid ""
+"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+
+#: src/CommandHandler.py:25
+#, fuzzy, python-format
+msgid ""
+"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "umount-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+
+#: src/CommandHandler.py:26
+#, fuzzy, python-format
+msgid ""
+"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+
+#: src/CommandHandler.py:27
+#, fuzzy, python-format
+msgid ""
+"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "umount-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 
 #. first set up lvcreate args
@@ -625,7 +779,7 @@ msgstr "umount-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
 #. Column names for PVS calls
 #. Column names for PVS calls
 #. Column names for lvdisplay calls
-#: src/lvm_model.py:35
+#: src/lvm_model.py:35 src/lvmui_constants.py:39
 msgid "Unused"
 msgstr "Ledig"
 
@@ -633,145 +787,141 @@ msgstr "Ledig"
 msgid "Unused Space"
 msgstr "Ledig plads"
 
-#: src/lvm_model.py:37
-msgid "Free"
-msgstr "Ledigt"
-
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
-#: src/lvm_model.py:40
+#: src/lvm_model.py:39
 msgid "Linear Mapping"
 msgstr "Lineær afbildning"
 
-#: src/lvm_model.py:41
+#: src/lvm_model.py:40
 msgid "Unmounted"
 msgstr "Afmonteret"
 
-#: src/lvm_model.py:42
+#: src/lvm_model.py:41
 msgid "No File System"
 msgstr "Intet filsystem"
 
-#: src/lvm_model.py:53
+#: src/lvm_model.py:52
 msgid "Volume Group Name:   "
 msgstr "Navn på delarkivgruppe:   "
 
-#: src/lvm_model.py:54
+#: src/lvm_model.py:53
 msgid "System ID:   "
 msgstr "System-id:   "
 
-#: src/lvm_model.py:55
+#: src/lvm_model.py:54
 msgid "Format:   "
 msgstr "Format:   "
 
-#: src/lvm_model.py:56 src/lvm_model.py:73 src/lvm_model.py:87
+#: src/lvm_model.py:55 src/lvm_model.py:72 src/lvm_model.py:86
 msgid "Attributes:   "
 msgstr "Attributter:   "
 
-#: src/lvm_model.py:57
+#: src/lvm_model.py:56
 msgid "Volume Group Size:   "
 msgstr "Størrelse på delarkivgruppe:"
 
-#: src/lvm_model.py:58
+#: src/lvm_model.py:57
 msgid "Available Space:   "
 msgstr "Tilgængeligt plads:"
 
-#: src/lvm_model.py:59
+#: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
 msgstr "Totalt antal områder:   "
 
-#: src/lvm_model.py:60
+#: src/lvm_model.py:59
 msgid "Number of Free Extents:   "
 msgstr "Antal ledige områder:  "
 
-#: src/lvm_model.py:61
+#: src/lvm_model.py:60
 msgid "Extent Size:   "
 msgstr "Størrelse på område:"
 
-#: src/lvm_model.py:62
+#: src/lvm_model.py:61
 msgid "Maximum Allowed Physical Volumes:   "
 msgstr "Maksimum antal fysiske delarkiver:     "
 
-#: src/lvm_model.py:63
+#: src/lvm_model.py:62
 msgid "Number of Physical Volumes:   "
 msgstr "Antal fysiske delarkiver:        "
 
-#: src/lvm_model.py:64
+#: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
 msgstr "Maksimum antal logiske delarkiver:    "
 
-#: src/lvm_model.py:65
+#: src/lvm_model.py:64
 msgid "Number of Logical Volumes:   "
 msgstr "Antal logiske delarkiver:       "
 
-#: src/lvm_model.py:66
+#: src/lvm_model.py:65
 msgid "VG UUID:   "
 msgstr "VG-UUID:   "
 
-#: src/lvm_model.py:68
+#: src/lvm_model.py:67
 msgid "Logical Volume Name:   "
 msgstr "Navn på logisk delarkiv:  "
 
-#: src/lvm_model.py:69
+#: src/lvm_model.py:68
 msgid "Logical Volume Size:   "
 msgstr "Størrelse på logisk delarkiv:"
 
-#: src/lvm_model.py:70
+#: src/lvm_model.py:69
 msgid "Number of Segments:   "
 msgstr "Antal segment:        "
 
-#: src/lvm_model.py:71
+#: src/lvm_model.py:70
 msgid "Number of Stripes:   "
 msgstr "Antal strimler:"
 
-#: src/lvm_model.py:72
+#: src/lvm_model.py:71
 msgid "Stripe Size:   "
 msgstr "Størrelse på strimmel: "
 
-#: src/lvm_model.py:74
+#: src/lvm_model.py:73
 msgid "LV UUID:   "
 msgstr "LV-UUID:   "
 
-#: src/lvm_model.py:76
+#: src/lvm_model.py:75
 msgid "Partition Type:   "
 msgstr "Partitionstype:    "
 
-#: src/lvm_model.py:77
+#: src/lvm_model.py:76
 msgid "Size:   "
 msgstr "Størrelse:"
 
-#: src/lvm_model.py:78
+#: src/lvm_model.py:77
 msgid "Mount Point:   "
 msgstr "Monteringspunkt:"
 
-#: src/lvm_model.py:79
+#: src/lvm_model.py:78
 msgid "File System:   "
 msgstr "Filsystem:     "
 
-#: src/lvm_model.py:81
+#: src/lvm_model.py:80
 msgid "Physical Volume Name:   "
 msgstr "Navn på fysisk delarkiv:   "
 
-#: src/lvm_model.py:82
+#: src/lvm_model.py:81
 msgid "Physical Volume Size:   "
 msgstr "Størrelse på fysisk delarkiv:"
 
-#: src/lvm_model.py:83
+#: src/lvm_model.py:82
 msgid "Space Used:   "
 msgstr "Anvendt plads:"
 
-#: src/lvm_model.py:84
+#: src/lvm_model.py:83
 msgid "Space Free:   "
 msgstr "Ledigt plads:"
 
-#: src/lvm_model.py:85
+#: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
 msgstr "Totalt antal fysiske områder:"
 
-#: src/lvm_model.py:86
+#: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
 msgstr "Allokerede fysiske områder:"
 
 # "PV" er nog "Physical Volume", så det blir nog "FV" på svenska
-#: src/lvm_model.py:88
+#: src/lvm_model.py:87
 msgid "PV UUID:   "
 msgstr "FV-UUID:   "
 
@@ -794,6 +944,13 @@ msgstr "FV-UUID:   "
 #. item.set_volume_size(float(adj_sz_str) / GIG)
 #. ##FIX need to be smarter about size conversions here
 #. ##FIX use lvmdiskscan here
+#. #There needs to be one last check made on those PEs which have
+#. #passed the test so far. It is possible that a partition set up
+#. #for swap may not have the partition ID for swap. The definitive
+#. #source for swap partitions is /proc/swaps, so we will cat this
+#. #file and remove any devices from pelist that are entered in
+#. #that file
+#. Found it in the swap list
 #. ##FIXME - Throw exception here, if no result is returned
 #. Add extent segments
 #. Add extent segments
@@ -801,6 +958,7 @@ msgstr "FV-UUID:   "
 #. Now check if there is free space in Volume Group with name vg_name.
 #. If there is free space, add an LV marked as 'unused' for that available
 #. space, so that it can be rendered properly
+#. Checks for free extents
 #. lvs does not give path info
 #. The procedure below does the following:
 #. The output of the command is examined line by line for a volume
@@ -809,6 +967,7 @@ msgstr "FV-UUID:   "
 #. within the first column string. If so, the column[0] string is the path.
 #. ##FIXME Raise exception here because true path is not being returned,
 #. ##But rather the lname arg is being returned.
+#. max LVs, number of LVs, max PVs, number of PVs
 #. arglist.append("--units")
 #. arglist.append("g")
 #. lvs reports 0 for sys max
@@ -820,6 +979,8 @@ msgstr "FV-UUID:   "
 #. /dev/sda10 [      784.39 MB] LVM physical volume
 #. loose '['
 #. Next, check if partition is mounted
+#. It is still possible for a partition to be mounted without being in
+#. /proc/mounts...this is often true of the root partition
 #. Finally, check for file system
 #. No file system
 #. Finish up by returning data
@@ -879,7 +1040,13 @@ msgstr "FV-UUID:   "
 #. ## FIXME Wrap this in an exception handler in case format is wrong
 #. Now let's determine if this segment is striped or linear,
 #. and note this in the new extent...
+#. break
 #. #Now, sort
+#. #Due to the nature of the way lvdisplay presents mapping
+#. #info, it is possible that an extent segment for a stripe
+#. #may be broken into two adjacent pieces. It makes visual
+#. #sense to merge these segments.
+#. #For good measure...
 #. #Now fill in holes -- for each gap, create a 'free' seg block
 #. #This is set up as a double loop because inserting a new val
 #. #in a list probably hoses the loop iterator, so to be safe,
@@ -887,14 +1054,61 @@ msgstr "FV-UUID:   "
 #. Add final free segment if necessary
 #. Nothing in this PV is used...
 #. ##Types of views to render
-#: src/lvmui_constants.py:18
+#: src/lvmui_constants.py:19
 #, python-format
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
 msgstr ""
-"Er du sikker på at du vil klargøre diskentiteten %s? Alle data vil gå "
-"tabt på denne enhed/partition."
+"Er du sikker på at du vil klargøre diskentiteten %s? Alle data vil gå tabt "
+"på denne enhed/partition."
+
+#: src/lvmui_constants.py:40
+msgid "Free"
+msgstr "Ledigt"
+
+#: src/lvmui_constants.py:42
+msgid "G"
+msgstr ""
+
+#: src/lvmui_constants.py:43
+msgid "M"
+msgstr ""
+
+#: src/lvmui_constants.py:44
+msgid "K"
+msgstr ""
+
+#: src/lvmui_constants.py:45
+msgid "B"
+msgstr ""
+
+#: src/lvmui_constants.py:49
+#, fuzzy
+msgid "Ext2"
+msgstr "ext2"
+
+#: src/lvmui_constants.py:50
+#, fuzzy
+msgid "Ext3"
+msgstr "ext3"
+
+#: src/lvmui_constants.py:52
+msgid "MSDOS"
+msgstr ""
+
+#: src/lvmui_constants.py:53
+#, fuzzy
+msgid "Reiserfs"
+msgstr "Reiser"
+
+#: src/lvmui_constants.py:54
+msgid "VFAT"
+msgstr ""
+
+#: src/lvmui_constants.py:56
+msgid "Cramfs"
+msgstr ""
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -973,3 +1187,15 @@ msgstr "Ikke tildelte delarkiver"
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr "Ikke klargjorte entiteter"
+
+#~ msgid "Autobackup?"
+#~ msgstr "Sikkerhedskopiér automatisk?"
+
+#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
+#~ msgstr "Afkryds her hvis du ønsker at en post skal oprettes i /etc/fstab"
+
+#~ msgid "Resizable?"
+#~ msgstr "Skalérbar?"
+
+#~ msgid "dialog1"
+#~ msgstr "dialog1"

@@ -120,8 +120,10 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr ""
+"Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
 
 #: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
@@ -133,7 +135,8 @@ msgstr "É necessário prover um nome para o novo Grupo de Volume"
 
 #: src/InputController.py:121
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "O ponto de montagem %s especificado não existe. Você deseja criá-lo?"
 
 #: src/InputController.py:123
@@ -149,19 +152,22 @@ msgstr "Esta funcionalidade ainda não está implementada nesta versão"
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr ""
+"O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr ""
+"O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:131
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
-"Erro de conversão de tipos não definido no model factory. Não foi "
-"possível completar a operação."
+"Erro de conversão de tipos não definido no model factory. Não foi possível "
+"completar a operação."
 
 #: src/InputController.py:133
 msgid ""
@@ -169,8 +175,8 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
-"Há um problema com o valor indicado no campo Tamanho. O valor "
-"deve ser numérico sem caracteres alfabéticos ou outros símbolos."
+"Há um problema com o valor indicado no campo Tamanho. O valor deve ser "
+"numérico sem caracteres alfabéticos ou outros símbolos."
 
 #: src/InputController.py:135
 #, python-format
@@ -180,8 +186,8 @@ msgid ""
 "on this mounted filesystem?"
 msgstr ""
 "ATENÇÃO! O Volume Lógico %s possui um sistema de arquivo %s e está montado "
-"em %s. Você tem certeza que deseja descartar os dados contidos neste sistema de "
-"arquivo montado?"
+"em %s. Você tem certeza que deseja descartar os dados contidos neste sistema "
+"de arquivo montado?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -216,8 +222,8 @@ msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
-"O tamanho requisitado para o novo Volume Lógico excede o espaço "
-"livre disponível no Grupo de Volume %s. O espaço disponível é: "
+"O tamanho requisitado para o novo Volume Lógico excede o espaço livre "
+"disponível no Grupo de Volume %s. O espaço disponível é: "
 
 #: src/InputController.py:147
 #, python-format
@@ -229,16 +235,16 @@ msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"O campo Volumes Físicos Máximos deve conter somente valores inteiros "
-"entre 1 e 256"
+"O campo Volumes Físicos Máximos deve conter somente valores inteiros entre 1 "
+"e 256"
 
 #: src/InputController.py:149
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"O campo Volumes Lógicos Máximos deve conter somente valores inteiros "
-"entre 1 e 256"
+"O campo Volumes Lógicos Máximos deve conter somente valores inteiros entre 1 "
+"e 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
@@ -256,8 +262,8 @@ msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
-"Você tem certeza que deseja remover %s da Administração de "
-"Volume Lógico (LVM)?"
+"Você tem certeza que deseja remover %s da Administração de Volume Lógico "
+"(LVM)?"
 
 #: src/InputController.py:158
 #, python-format
@@ -269,15 +275,16 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
-"O Volue Físico chamado %s, que você deseja remover, possui dados de "
-"Volume(s) Lógico(s) mapeado(s) para suas extensões. Como este é o único "
-"Volume Físico no Grupo de Volume, não há lugar para mover os dados. "
-"A ação recomendada é adicionar um novo Volume Físico antes de remover "
-"este ou então remover os Volumes Lógicos associados a este Volume Físico."
+"O Volue Físico chamado %s, que você deseja remover, possui dados de Volume"
+"(s) Lógico(s) mapeado(s) para suas extensões. Como este é o único Volume "
+"Físico no Grupo de Volume, não há lugar para mover os dados. A ação "
+"recomendada é adicionar um novo Volume Físico antes de remover este ou então "
+"remover os Volumes Lógicos associados a este Volume Físico."
 
 #: src/InputController.py:159
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Você tem certeza que deseja remover %s do Grupo de Volume %s?"
 
 #: src/InputController.py:160
@@ -286,8 +293,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
-"Remover o Volume Físico %s do Grupo de Volume %s esvaziará o Grupo de "
-"Volum, que também será removido. Você deseja proceder?"
+"Remover o Volume Físico %s do Grupo de Volume %s esvaziará o Grupo de Volum, "
+"que também será removido. Você deseja proceder?"
 
 #: src/InputController.py:161
 #, python-format
@@ -302,8 +309,8 @@ msgid ""
 "Volume Group."
 msgstr ""
 "O Grupo de Volume %s não tem espaço suficiente para mover os dados "
-"armazenados em %s. Uma possível solução é adicionar um Volume Físico "
-"ao Grupo de Volume."
+"armazenados em %s. Uma possível solução é adicionar um Volume Físico ao "
+"Grupo de Volume."
 
 #: src/InputController.py:163
 msgid ""
@@ -313,8 +320,8 @@ msgid ""
 "Physical Extents are unavailable."
 msgstr ""
 "O módulo dm-mirror não está carregado no seu kernel ou seu kernel não "
-"suporta o alvo dm-mirror. Se for suportado, tente rodar \"modprobe dm-mirror\". "
-"Caso contrário, não será possível executar operações que requerem mover "
+"suporta o alvo dm-mirror. Se for suportado, tente rodar \"modprobe dm-mirror"
+"\". Caso contrário, não será possível executar operações que requerem mover "
 "dados em Extensões Físicas."
 
 #. ##########################################################
@@ -594,7 +601,8 @@ msgstr ""
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "Ponto de Montagem (se estiver em branco, o volume lógico não será montado):"
+msgstr ""
+"Ponto de Montagem (se estiver em branco, o volume lógico não será montado):"
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
@@ -709,94 +717,107 @@ msgstr "ext3"
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
 #, python-format
-msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando vgextend falhou. Tentativa de comando: \"%s\" - Mensagem de "
-"Erro do Sistema: %s"
+"o comando vgextend falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando pvcreate falhou. Tentativa de Comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando pvcreate falhou. Tentativa de Comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando lvcreate falhou. Tentativa de comando: \"%s\" - Mensagem de "
-"Erro do Sistema: %s"
+"o comando lvcreate falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando pvremove falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando pvremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando lvremove falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando lvremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando vgremove falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando vgremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando vgcreate falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando vgcreate falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid ""
+"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
-"o comando vgchange falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando vgchange falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando vgreduce falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando vgreduce falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando pvmove falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando pvmove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"Sistema: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando umount falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando umount falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"Sistema: %s"
 
 #: src/CommandHandler.py:26
 #, python-format
-msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid ""
+"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando mkfs falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando mkfs falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"Sistema: %s"
 
 #: src/CommandHandler.py:27
 #, python-format
-msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid ""
+"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr ""
-"o comando mount falhou. Tentativa de comando: \"%s\" - Mensagem "
-"de Erro do Sistema: %s"
+"o comando mount falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"Sistema: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1209,4 +1230,3 @@ msgstr "Volumes Não Alocados"
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr "Entidades Não Inicializadas"
-
