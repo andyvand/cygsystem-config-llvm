@@ -688,7 +688,7 @@ msgstr "Ukuran Stripe:"
 
 #: src/lvui.glade.h:65
 msgid "Striped"
-msgstr ""
+msgstr "Striped"
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
