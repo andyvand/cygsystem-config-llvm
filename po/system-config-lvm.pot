@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-10-26 16:14-0400\n"
+"POT-Creation-Date: 2004-11-01 11:21-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -323,218 +323,210 @@ msgid ""
 msgstr ""
 
 #: src/lvui.glade.h:16
-msgid "Autobackup?"
-msgstr ""
-
-#: src/lvui.glade.h:17
 msgid "Check here if you would like an entry to be made in /etc/fstab"
 msgstr ""
 
-#: src/lvui.glade.h:18
+#: src/lvui.glade.h:17
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
 
-#: src/lvui.glade.h:20
+#: src/lvui.glade.h:19
 msgid "Create New LV"
 msgstr ""
 
-#: src/lvui.glade.h:21
+#: src/lvui.glade.h:20
 msgid "Create a New Logical Volume"
 msgstr ""
 
-#: src/lvui.glade.h:22
+#: src/lvui.glade.h:21
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
 
-#: src/lvui.glade.h:24
+#: src/lvui.glade.h:23
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
 
-#: src/lvui.glade.h:26
+#: src/lvui.glade.h:25
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
 
-#: src/lvui.glade.h:28
+#: src/lvui.glade.h:27
 msgid "Extents"
 msgstr ""
 
-#: src/lvui.glade.h:29
+#: src/lvui.glade.h:28
 msgid "Filesystem: "
 msgstr ""
 
-#: src/lvui.glade.h:30
+#: src/lvui.glade.h:29
 msgid "Gigabytes"
 msgstr ""
 
-#: src/lvui.glade.h:31
+#: src/lvui.glade.h:30
 msgid "Initialize Entity"
 msgstr ""
 
-#: src/lvui.glade.h:32
+#: src/lvui.glade.h:31
 msgid "JFS"
 msgstr ""
 
-#: src/lvui.glade.h:33
+#: src/lvui.glade.h:32
 msgid "Kilo"
 msgstr ""
 
-#: src/lvui.glade.h:34
+#: src/lvui.glade.h:33
 msgid "Kilobytes"
 msgstr ""
 
-#: src/lvui.glade.h:35
+#: src/lvui.glade.h:34
 msgid "Linear"
 msgstr ""
 
-#: src/lvui.glade.h:36
+#: src/lvui.glade.h:35
 msgid "Logical Volume Management"
 msgstr ""
 
-#: src/lvui.glade.h:37
+#: src/lvui.glade.h:36
 msgid "Manage Volumes"
 msgstr ""
 
-#: src/lvui.glade.h:38
+#: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
 msgstr ""
 
-#: src/lvui.glade.h:39
+#: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
 msgstr ""
 
-#: src/lvui.glade.h:40
+#: src/lvui.glade.h:39
 msgid "Meg"
 msgstr ""
 
-#: src/lvui.glade.h:41 src/renderer.py:106
+#: src/lvui.glade.h:40 src/renderer.py:106
 msgid "Megabytes"
 msgstr ""
 
-#: src/lvui.glade.h:42
+#: src/lvui.glade.h:41
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
 
-#: src/lvui.glade.h:44
+#: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
 msgstr ""
 
-#: src/lvui.glade.h:45
+#: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
 msgstr ""
 
-#: src/lvui.glade.h:46
+#: src/lvui.glade.h:45
 msgid "Name for new LV:"
 msgstr ""
 
-#: src/lvui.glade.h:47
+#: src/lvui.glade.h:46
 msgid "New Volume Group"
 msgstr ""
 
-#: src/lvui.glade.h:48
+#: src/lvui.glade.h:47
 msgid "New Volume Group Form"
 msgstr ""
 
-#: src/lvui.glade.h:49
+#: src/lvui.glade.h:48
 msgid "No Filesystem"
 msgstr ""
 
-#: src/lvui.glade.h:50
+#: src/lvui.glade.h:49
 msgid "Number of Stripes: "
 msgstr ""
 
-#: src/lvui.glade.h:51
+#: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
 msgstr ""
 
-#: src/lvui.glade.h:52
+#: src/lvui.glade.h:51
 msgid "Reiser"
 msgstr ""
 
-#: src/lvui.glade.h:53
+#: src/lvui.glade.h:52
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
 
-#: src/lvui.glade.h:55
+#: src/lvui.glade.h:54
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
 
-#: src/lvui.glade.h:57
+#: src/lvui.glade.h:56
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
 
-#: src/lvui.glade.h:59
+#: src/lvui.glade.h:58
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
 
-#: src/lvui.glade.h:61
+#: src/lvui.glade.h:60
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
 
-#: src/lvui.glade.h:63
-msgid "Resizable?"
-msgstr ""
-
-#: src/lvui.glade.h:64
+#: src/lvui.glade.h:62
 msgid "Select a Volume Group to add this PV to:"
 msgstr ""
 
-#: src/lvui.glade.h:65
+#: src/lvui.glade.h:63
 msgid "Select a disk entity to add to Volume Group:"
 msgstr ""
 
-#: src/lvui.glade.h:66
+#: src/lvui.glade.h:64
 msgid "Size:"
 msgstr ""
 
-#: src/lvui.glade.h:67
+#: src/lvui.glade.h:65
 msgid "Stripe Size:"
 msgstr ""
 
-#: src/lvui.glade.h:68
+#: src/lvui.glade.h:66
 msgid "Striped"
 msgstr ""
 
-#: src/lvui.glade.h:69
+#: src/lvui.glade.h:67
 msgid "Unused space on VG1:"
 msgstr ""
 
-#: src/lvui.glade.h:70
+#: src/lvui.glade.h:68
 msgid "Use Remaining Space"
 msgstr ""
 
-#: src/lvui.glade.h:71
+#: src/lvui.glade.h:69
 msgid "XFS"
 msgstr ""
 
-#: src/lvui.glade.h:72
+#: src/lvui.glade.h:70
 msgid "dialog1"
 msgstr ""
 
-#: src/lvui.glade.h:73
+#: src/lvui.glade.h:71
 msgid "ext2"
 msgstr ""
 
-#: src/lvui.glade.h:74
+#: src/lvui.glade.h:72
 msgid "ext3"
 msgstr ""
 

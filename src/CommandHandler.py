@@ -154,3 +154,18 @@ class CommandHandler:
         is_mounted = TRUE
         break
     return is_mounted
+
+  def is_dm_mirror_loaded(self):
+    arglist = list()
+    arglist.append("/sbin/dmsetup")
+    arglist.append("targets")
+    result  = rhpl.executil.execWithCapture("/sbin/dmsetup", arglist)
+    textlines = result.splitlines()
+    for textline in textlines:
+      text_words = textline.split()
+      possible_target = text_words[0].strip()
+      if possible_target == "mirror":
+        return TRUE
+
+    return FALSE
+

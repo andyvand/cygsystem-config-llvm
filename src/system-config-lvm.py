@@ -95,7 +95,7 @@ class baselvm:
                                                                                 
                                                                                 
   def quit(self, *args):
-    gtk.mainquit()
+    gtk.main_quit()
 
 
 

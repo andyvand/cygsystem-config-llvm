@@ -54,6 +54,7 @@ class Volume_Tab_View:
     self.width = 0
     self.height = 0
     self.glade_xml = glade_xml
+    self.found_selection = FALSE  #sentinel for foreach loop
 
     ##Set up list structure
     self.treeview = self.glade_xml.get_widget('treeview1')
@@ -134,10 +135,14 @@ class Volume_Tab_View:
     if args != None:
       name_to_be_selected = args
       model = self.treeview.get_model()
+      self.found_selection = FALSE
       model.foreach(self.check_tree_items, name_to_be_selected)
       
 
   def check_tree_items(self, model, path, iter, name_selection):
+    if self.found_selection == TRUE:
+      return
+
     selection = self.treeview.get_selection()
 
     #Here we need to check PVs and LVs differently.
@@ -158,6 +163,7 @@ class Volume_Tab_View:
     if pvname_val == name_selection:
       self.treeview.expand_to_path(path)
       selection.select_range(path, path)
+      self.found_selection = TRUE #prevents vgname selection in multiple places
 
     if lvname_val == name_selection:
       self.treeview.expand_to_path(path)

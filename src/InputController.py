@@ -132,6 +132,7 @@ CONFIRM_PV_VG_REMOVE=_("Are you quite certain that you wish to remove %s from th
 CONFIRM_VG_REMOVE=_("Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?")
 CONFIRM_LV_REMOVE=_("Are you quite certain that you wish to remove the Logical Volume %s?")
 NOT_ENOUGH_SPACE_VG=_("Volume Group %s does not have enough space to move the data stored on %s. A possible solution would be to add an additional Physical Volume to the Volume Group.")
+NO_DM_MIRROR=_("The dm-mirror module is either not loaded in your kernel, or your kernel does not support the dm-mirror target. If it is supported, try running \"modprobe dm-mirror\". Otherwise, operations that require moving data on Physical Extents are unavailable.")
 ###########################################################
 class InputController:
   def __init__(self, reset_tree_model, treeview, model_factory, glade_xml):
@@ -183,6 +184,7 @@ class InputController:
   ##This form adds a new VG
   def setup_new_vg_form(self):
     self.new_vg_dlg = self.glade_xml.get_widget('new_vg_form')
+    self.new_vg_dlg.connect("delete_event",self.new_vg_delete_event)
     self.new_vg_button = self.glade_xml.get_widget('new_vg_button')
     self.new_vg_button.connect("clicked", self.on_new_vg)
     self.ok_new_vg_button = self.glade_xml.get_widget('ok_new_vg_button')
@@ -299,6 +301,9 @@ class InputController:
       self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_KILO_IDX)
 
   def on_pv_rm(self, button):
+    self.remove_pv()
+
+  def remove_pv(self, pvname=None):
     #The following cases must be considered in this method:
     #1) a PV is to be removed that has extents mapped to an LV:
     #  1a) if there are other PVs, call pvmove on the PV to migrate the 
@@ -313,12 +318,18 @@ class InputController:
     #2) a PV is to be removed that has NO LVs mapped to its extents:
     #  2a) If there are more than one PV in the VG, just vgreduce away the PV
     #  2b) If the PV is the only one, then vgremove the VG
+    #
     mapped_lvs = TRUE
     solo_pv = FALSE
-    selection = self.treeview.get_selection()
-    model, iter = selection.get_selected()
-    name = model.get_value(iter, PATH_COL)
-    pvname = name.strip()
+    reset_tree = FALSE
+    if pvname == None:
+      reset_tree = TRUE #This says that tree reset will not be handled by caller
+      selection = self.treeview.get_selection()
+      model, iter = selection.get_selected()
+      name = model.get_value(iter, PATH_COL)
+      pvname = name.strip()
+
+    ###FIX This method call needs to be handled for exception
     pv = self.model_factory.get_PV(pvname)
     extent_list = pv.get_extent_segments()
 
@@ -372,6 +383,9 @@ class InputController:
         size, ext_count = self.model_factory.get_free_space_on_VG(vgname, "m")
         actual_free_exts = int(ext_count) - free
         if alloc <= actual_free_extents:
+          if self.command_handler.is_dm_mirror_loaded() == FALSE:
+            self.errorMessage(NO_DM_MIRROR)
+            return
           retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
           if (retval == gtk.RESPONSE_NO):
             return
@@ -392,10 +406,12 @@ class InputController:
           return
 
 
-
-    args = list()
-    args.append(vgname)
-    apply(self.reset_tree_model, args)
+    if reset_tree == TRUE:
+      args = list()
+      args.append(vgname)
+      apply(self.reset_tree_model, args)
+    else:
+      return vgname
 
 
   def on_lv_rm(self, button):
@@ -478,36 +494,14 @@ class InputController:
     vgname = model.get_value(iter, PATH_COL).strip()
     #need to check if section is 'unused'
     for item in self.section_list:
-      if item.is_vol_utilized == FALSE:
-        continue
       pvname = item.get_path().strip()
-      retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
-      if (retval == gtk.RESPONSE_NO):
-        continue
-
-      else:
-        #Check if PV has alloc ated extents - if so, move
-        total,free,alloc = item.get_extent_values()
-        if alloc != 0:
-          try:
-            self.command_handler.move_pv(pvname)
-          except CommandError, e:
-            self.errorMessage(e.getMessage())
-            continue
-
-          try:
-            self.command_handler.reduce_vg(vgname, pvname)
-          except CommandError, e:
-            self.errorMessage(e.getMessage())
-            continue
-
-
+      self.remove_pv(pvname)
 
     self.clear_highlighted_sections()
-    #args = list()
-    #args.append(vgname)
-    #apply(self.reset_tree_model,args)
-    apply(self.reset_tree_model)
+    args = list()
+    args.append(vgname)
+    apply(self.reset_tree_model,args)
+    #apply(self.reset_tree_model)
 
   ###################
   ##This form adds a new Logical Volume
@@ -1003,6 +997,9 @@ class InputController:
     vgname = main_model.get_value(iter_val, PATH_COL)
     self.extend_vg_label.set_text(ADD_VG_LABEL % vgname)
 
+  def new_vg_delete_event(self, *args):
+    self.new_vg_dlg.hide()
+    return gtk.TRUE
 
   def setup_misc_widgets(self):
     self.remove_unalloc_pv = self.glade_xml.get_widget('remove_unalloc_pv')

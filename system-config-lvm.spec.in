@@ -48,6 +48,21 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Tue Nov 9 2004 Jim Parsons <jparsons@redhat.com> 0.9.7-1.0
+  - Improved handling of garbage in the size string -- try catch in place
+    now that traps for ValueError 
+  - Improved handling of sizes/units for new LV creation
+  - Now 'Unused' sections in Logical View of VGs, are unselectable. Also,
+    if there are no LVs associated with a VG, the Logical view buttonpanel 
+    button for "Remove selected extents"  is set to not be sensitive, as 
+    there is nothing to remove from this case.
+  - Revamped PV removal code, so that proper checking is done before moving
+    extents.
+  - Added new method that checks if dm-mirror mod is loaded in kernel. If not,
+    an appropriate error message is generated.
+  - Fixed tree selection mechanism by preventing multiple VG selection.
+  - Handle delete-event on VG creation dialog, so it is hidden.
+  - Fixed bz137099, 137071, 137869, 137434, 138085
 * Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.6-1.0
   - Changed gtk.mainloop to gtk.main to address bz137288. 
 * Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.5-1.0
