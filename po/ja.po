@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-18 01:51+0900\n"
+"PO-Revision-Date: 2005-02-18 23:46+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -147,24 +147,27 @@ msgstr "マウントポイント %s の作成は予期しない失敗になり�
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "この機能は現在のバージョンでは導入されていません"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr ""
+"このボリュームグループの中の物理ボリューム数は最大に達しました。"
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr ""
+"このボリュームグループの論理ボリューム数は最大に達しました。"
 
 #: src/InputController.py:131
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
+"モデルファクトリーで定義されていない変換エラー。タスクを完了することができません。"
 
 #: src/InputController.py:133
 msgid ""
@@ -172,6 +175,8 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
+"サイズフィールドに入力された値に問題があります。値はアルファベットや他の"
+"記号の含まれない数値でなければいけません。"
 
 #: src/InputController.py:135
 #, python-format
@@ -180,6 +185,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"重大な警告: 論理ボリューム %s はシステムで %s ファイルシステムを使っていて、"
+"現在 %s にマウントされています。マウントされたファイルシステムのデータを"
+"完全に無視しても構いませんか?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -261,6 +269,11 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
+"除こうとしている物理ボリューム %s はマッピングされているアクティブな論理"
+"ボリュームからのデータを保有しています。なぜなら、ボリュームグループの中で"
+"唯一の物理ボリュームであり、データを移動する空きスペースがないからです。"
+"これを削除する前に新しい物理ボリュームを加えるか、この物理ボリュームに割り"
+"当てられている論理ボリュームを削除することを推奨します。"
 
 #: src/InputController.py:159
 #, python-format
@@ -274,6 +287,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"ボリュームグループ %s から論理ボリューム %s を削除するとボリュームグループが"
+"空になるだけでなく、それが空になります。続けますか?"
 
 #: src/InputController.py:161
 #, python-format
@@ -281,14 +296,14 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "本当に論理ボリューム %s を外してもよろしいですか?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"ボリュームグループ %s には %s にあるデータを移動させる十分なスペースがありま"
-"せん。"
+"ボリュームグループ %s には %s にあるデータを移動させる十分なスペースがあり"
+"ません。解決策としてボリュームグループに追加の物理ボリュームを加えます。"
 
 #: src/InputController.py:163
 msgid ""
@@ -297,6 +312,10 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"dm-mirror モジュールはカーネルの中でロードされず、カーネルは dm-mirror ター"
+"ゲットをサポートしません。もし、サポートするのであれば、\"modprobe "
+"dm-mirror\" を実行してみてください。そうしないと、物理拡張にあるデータの"
+"移動の要求は利用できません。"
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -506,11 +525,8 @@ msgstr ""
 "の拡張"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
-"ボリューム\n"
-"グループの拡張"
+msgstr "拡張ボリュームグループ"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -692,82 +708,96 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgextend コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"vgextend コマンドの失敗。以下を試みました: \"%s\" - システムエラー"
+"メッセージ: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"pvcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"lvcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"pvremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"lvremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"vgremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgcreate コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"vgcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "vgcreate コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"vgcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgreduce コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"vgreduce コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"pvmove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "umount  コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"umount  コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"mkfs コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "umount  コマンドの失敗。以下を試みました: \"%s\""
+msgstr ""
+"umount  コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1065,46 +1095,43 @@ msgstr "フリー"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
