@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-19 10:24+0100\n"
+"PO-Revision-Date: 2004-10-20 10:17+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,6 +26,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Não foi possível inicializar o  ambiente gráfico. A causa mais provável\n"
+"  de falha é não ter executado a ferramenta num ambiente gráfico. Inicie a\n"
+"  interface gráfico ou configure a variável DISPLAY.\n"
+"                                                                                \n"
+"  Recebida a excepção: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -79,20 +85,20 @@ msgstr "Seleccione uma entidade de disco a adicionar ao Grupo de Volumes %s:"
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "O Grupo de Volumes tem que consistir em dois ou mais Volumes Físicos para suportar faixas. Este Grupo de Volumes não cumpre este requisito."
 
 #: src/InputController.py:95
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr ""
+msgstr "Já existe neste Grupo de Volumes um Volume Lógico com o nome %s. Por favor escolha um nome único."
 
 #: src/InputController.py:97
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "Já existe um Grupo de Volumes com o nome %s. Por favor escolha um nome único."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
@@ -145,7 +151,7 @@ msgstr "%s extensões"
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
-msgstr ""
+msgstr "O espaço pedido para o novo Volume Lógico excede o espaço livre disponível no Grupo de Volumes %s. O espaço disponível é: "
 
 #: src/InputController.py:117
 #, python-format
@@ -156,47 +162,47 @@ msgstr "O %s deve apenas conter valores numéricos"
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
+msgstr "O campo Máximo de Volumes Físicos deve conter apenas valores inteiros entre 1 e 256"
 
 #: src/InputController.py:119
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
+msgstr "O campo Máximo de Volumes Lógicos deve conter apenas valores inteiros entre 1 e 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
 msgid "Stripe Size field"
-msgstr ""
+msgstr "Campo de Tamanho de Faixa"
 
 #: src/InputController.py:124
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "Campo de Número de Faixas"
 
 #: src/InputController.py:126
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
+msgstr "Tem a certeza que deseja remover %s da Gestão de Volumes Lógicos?"
 
 #: src/InputController.py:128
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "Tem a certeza que deseja remover %s do Grupo de Volumes %s?"
 
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "Tem a certeza que deseja remover o Volume Lógico %s?"
 
 #: src/InputController.py:130
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s"
-msgstr ""
+msgstr "O Grupo de Volumes %s não tem espaço suficiente para mover os dados armazenados em %s"
 
 #. ##########################################################
 #. self.setup_pv_rm_migrate()
@@ -456,11 +462,11 @@ msgstr "Sem Sistema de Ficheiros"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "Número de Faixas: "
 
 #: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Tamanho das Extensões Físicas: "
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
@@ -524,11 +530,11 @@ msgstr "Tamanho:"
 
 #: src/lvui.glade.h:67
 msgid "Stripe Size:"
-msgstr ""
+msgstr "Tamanho das Faixas:"
 
 #: src/lvui.glade.h:68
 msgid "Striped"
-msgstr ""
+msgstr "Em faixas"
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
@@ -698,11 +704,11 @@ msgstr "Número de Segmentos:   "
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "Números de Faixas:   "
 
 #: src/lvm_model.py:72
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Tamanho da Faixa:   "
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
@@ -869,7 +875,7 @@ msgstr "UUID do VF:   "
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
-msgstr ""
+msgstr "Tem a certeza que deseja inicializar a entidade de disco %s? Todos os dados serão perdidos neste dispositivo/partição."
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
