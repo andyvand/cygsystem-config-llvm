@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-17 09:34+0000\n"
+"PO-Revision-Date: 2005-02-17 10:14+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -142,31 +142,31 @@ msgstr "A criação do ponto de montagem %s falhou inesperadamente."
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Esta capacidade ainda não foi implementada nesta versão"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "O número de Volumes Físicos neste Grupo de Volumes atingiu o limite máximo."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "O número de Volumes Lógicos neste Grupo de Volumes atingiu o limite máximo."
 
 #: src/InputController.py:131
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "Erro de conversão de tipo indefinido na fábrico de modelos. Não é possível completar a tarefa."
 
 #: src/InputController.py:133
 msgid ""
 "There is a problem with the value entered in the Size field. The value "
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
-msgstr ""
+msgstr "Há um problema com o valor inserido no campo Tamanho. O valor deve ser numérico sem caracteres alfabéticos nem símbolos de qualquer espécie."
 
 #: src/InputController.py:135
 #, python-format
@@ -174,7 +174,7 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr ""
+msgstr "GRANDE AVISO: O Volume Lógico %s tem um sistema de ficheiro %s e está actualmente montado em %s. Tem a certeza absoluta que deseja destruir os dados deste sistema de ficheiros montado?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -259,7 +259,7 @@ msgid ""
 "action is either to add a new Physical Volume before removing this one, or "
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
-msgstr ""
+msgstr "O Volume Físico chamado %s, que deseja remover, tem dados de Volume(s) Lógico(s) mapeados na sua extensão. Uma vez que é o único Volume Físico no Grupo de Volumes, não há sítio para mover os dados. A acção recomendada é adicionar um novo Vlume Físico antes de remover este ou remover os Volumes Lógicos associados com este Volume Físico."
 
 #: src/InputController.py:159
 #, python-format
@@ -272,7 +272,7 @@ msgstr "Tem a certeza que deseja remover %s do Grupo de Volumes %s?"
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "Remover o Volume Físico %s do Grupo de Volumes %s deixa-o vazio, e este vai também ser removido. Deseja continuar?"
 
 #: src/InputController.py:161
 #, python-format
@@ -293,7 +293,7 @@ msgid ""
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr ""
+msgstr "O módulo dm-mirror não está carregado no 'kernel', ou este não suporta o alvo dm-mirror. Se é suportado, tente correr \"modprobe dm-mirror\". Em caso contrário, as operações que necessitem de mover dados em Extensões Físicas não estão disponíveis."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -1174,15 +1174,3 @@ msgstr "Volumes Não Alocados"
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr "Entidades Não Inicializadas"
-
-#~ msgid "Autobackup?"
-#~ msgstr "Salvaguarda automática?"
-
-#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
-#~ msgstr "Active se deseja que seja criada uma entrada no /etc/fstab"
-
-#~ msgid "Resizable?"
-#~ msgstr "Possível Mudar Tamanho?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
