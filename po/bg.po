@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: bg\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-17 23:19+0300\n"
+"PO-Revision-Date: 2004-10-20 01:15+0300\n"
 "Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
 "Language-Team: Bulgarian <dict@linux.zonebg.com>\n"
 "MIME-Version: 1.0\n"
@@ -85,13 +85,12 @@ msgid "Select a disk entity to add to the %s Volume Group:"
 msgstr "Изберете дисков елемент за добавка към група томове %s:"
 
 #: src/InputController.py:93
-#, fuzzy
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
 "Група томове следва да бъде съставена от два или повече физически тома за да "
-"поддържа stripping. Тази група томове не удовлетворява това изискване."
+"поддържа редуване. Тази група томове не удовлетворява това изискване."
 
 #: src/InputController.py:95
 #, python-format
@@ -185,14 +184,12 @@ msgstr ""
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:123
-#, fuzzy
 msgid "Stripe Size field"
-msgstr "Stripe Size field"
+msgstr "Размер за поле на редуване"
 
 #: src/InputController.py:124
-#, fuzzy
 msgid "Number of Stripes field"
-msgstr "Number of Stripes field"
+msgstr "Брой полета за редуване"
 
 #: src/InputController.py:126
 #, python-format
@@ -475,9 +472,8 @@ msgid "No Filesystem"
 msgstr "Няма файлова система"
 
 #: src/lvui.glade.h:50
-#, fuzzy
 msgid "Number of Stripes: "
-msgstr "Брой Stripes: "
+msgstr "Брой полета за редуване: "
 
 #: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
@@ -544,14 +540,12 @@ msgid "Size:"
 msgstr "Размер:"
 
 #: src/lvui.glade.h:67
-#, fuzzy
 msgid "Stripe Size:"
-msgstr "Stripe Size:"
+msgstr "Размер на поле за редуване:"
 
 #: src/lvui.glade.h:68
-#, fuzzy
 msgid "Striped"
-msgstr "Striped"
+msgstr "редуващ се"
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
@@ -640,9 +634,8 @@ msgstr "Свободно"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
-#, fuzzy
 msgid "Linear Mapping"
-msgstr "Линейно Mapping"
+msgstr "Линейна връзка"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
@@ -721,14 +714,12 @@ msgid "Number of Segments:   "
 msgstr "Брой сегменти:   "
 
 #: src/lvm_model.py:71
-#, fuzzy
 msgid "Number of Stripes:   "
-msgstr "Брой Stripes:   "
+msgstr "Брой полета за редуване:   "
 
 #: src/lvm_model.py:72
-#, fuzzy
 msgid "Stripe Size:   "
-msgstr "Размер на Stripe:   "
+msgstr "Размер на поле за редуване:   "
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
