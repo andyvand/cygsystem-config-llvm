@@ -1021,3 +1021,4 @@ class InputController:
   def clear_highlighted_sections(self):
     self.section_type = UNSELECTABLE_TYPE
     self.section_list = None
+
