@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-03-30 23:34+0800\n"
+"PO-Revision-Date: 2005-03-31 22:37+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -711,9 +711,8 @@ msgid "Partition Type:   "
 msgstr "Jenis Partisyen"
 
 #: src/lvm_model.py:76
-#, fuzzy
 msgid "Size:   "
-msgstr "Saiz"
+msgstr "Saiz:"
 
 #: src/lvm_model.py:77
 #, fuzzy
@@ -736,12 +735,10 @@ msgid "Physical Volume Size:   "
 msgstr "Volum Fizikal LVM"
 
 #: src/lvm_model.py:82
-#, fuzzy
 msgid "Space Used:   "
 msgstr "Ruang Digunakan:"
 
 #: src/lvm_model.py:83
-#, fuzzy
 msgid "Space Free:   "
 msgstr "Ruang Bebas:"
 
@@ -781,7 +778,6 @@ msgid "Are you certain that you wish to initialize disk entity %s? All data will
 msgstr ""
 
 #: src/lvmui_constants.py:40
-#, fuzzy
 msgid "Free"
 msgstr "Bebas"
 
@@ -857,9 +853,8 @@ msgstr "Entiti Cakera Tidak Dimulakan"
 #: src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51
 #: src/renderer.py:99
-#, fuzzy
 msgid "Volume Group"
-msgstr "Kumpulan Volum:"
+msgstr "Kumpulan Volum"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
