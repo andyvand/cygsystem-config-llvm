@@ -7,12 +7,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-lvm mk\n"
+"Project-Id-Version: system-config-lvm pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-19 01:01+0100\n"
-"Last-Translator: Adrian Grygier <adi@zwami.pl>\n"
-"Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
+"PO-Revision-Date: 2004-10-21 14:41+0100\n"
+"Last-Translator: Adam Woś <adam.wos@post.pl>\n"
+"Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -31,11 +31,15 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Nie udało się zainicjalizować środowiska graficznego. Najbardziej\n"
+"  prawdopodobną przyczyną błędu było uruchomienie tego narzędzia\n"
+"  spoza środowiska graficznego.\n"
+"  Uruchom swoje środowisko graficzne albo ustaw zmienną DISPLAY.\n"
+"                                                                                \n"
+"  Przechwycony wyjątek: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
-#. #remain related. A  chhange in one requires a change#
-#. ##partition that has been initialized for use with LVM, by writing
-#. ##some context.
 #: src/InputController.py:85
 msgid "Name"
 msgstr "Nazwa"
@@ -50,7 +54,7 @@ msgstr ""
 
 #: src/InputController.py:89
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "Niezaalokowany wolumin fizyczny"
 
 #: src/InputController.py:90
 msgid "Uninitialized Disk Entity"
@@ -68,30 +72,30 @@ msgstr ""
 #: src/InputController.py:95
 #, python-format
 msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
-msgstr ""
+msgstr "Dysk logiczny o nazwie %s już istnieje w tej grupie woluminów. Proszę wybrać unikalną nazwę."
 
 #: src/InputController.py:97
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "Grupa woluminów o nazwie %s już istnieje. Proszę wybrać unikalną nazwę."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "Musisz podać nazwę dla nowej partycji logicznej."
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "Musisz podać nazwę dla grupy partycji."
 
 #: src/InputController.py:103
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "Podany punkt montowania (%s) nie istnieje. Czy chcesz go utworzyć?"
 
 #: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "Tworzenie punktu montowania %s nie powiodło się."
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #: src/InputController.py:109
@@ -122,20 +126,20 @@ msgstr ""
 #: src/InputController.py:115
 #, python-format
 msgid "The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: "
-msgstr ""
+msgstr "Rozmiar przeznaczony na nowy dysk logiczny przekracza dostępne wolne miejsce w grupie wolumenów %s. Dostępne wolne miejsce to: "
 
 #: src/InputController.py:117
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s powinno zawierać tylko wartości liczbowe"
 
 #: src/InputController.py:118
 msgid "The  Maximum Physical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Pole Maks. liczba woluminów fizycznych powinno zawierać tylko liczby pomiędzy 1 a 256"
 
 #: src/InputController.py:119
 msgid "The  Maximum Logical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Pole Maks. liczba dysków logicznych powinno zawierać tylko liczby pomiędzy 1 a 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #: src/InputController.py:123
@@ -149,17 +153,17 @@ msgstr ""
 #: src/InputController.py:126
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr ""
+msgstr "Czy masz pewność, że chcesz usunąć %s z Zarządzania Dyskami Logicznymi LVM?"
 
 #: src/InputController.py:128
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "Czy masz pewność, że chcesz usunąć %s z grupy woluminów %s?"
 
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "Czy masz pewność, że chcesz usunąć dysk logiczny %s?"
 
 #: src/InputController.py:130
 #, python-format
@@ -167,17 +171,8 @@ msgid "Volume Group %s does not have enough space to move the data stored on %s"
 msgstr ""
 
 #. ##########################################################
-#. #This form adds an unallocated PV to a VG
-#. Now check for unique name
-#. else:
 #. args = list()
-#. need to check if section is 'unused'
-#. Get available space on vg and set as label
-#. Validation Ladder:
 #. in bytes
-#. create mount point
-#. First check if there are more than 1 PVs in volume
-#. set up columns for tree
 #. ######################################################
 #: src/lvui.glade.h:1
 msgid "*"
@@ -229,53 +224,63 @@ msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Dodaj wolumin fizyczny do GW"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"Dodaj do istniejącej\n"
+"grupy woluminów"
 
 #: src/lvui.glade.h:16
 msgid "Autobackup?"
-msgstr ""
+msgstr "Autobackup?"
 
 #: src/lvui.glade.h:17
 msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr ""
+msgstr "Zaznacz tutaj, aby dodać wpis do /etc/fstab"
 
 #: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"Utwórz nowy\n"
+"dysk logiczny"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
-msgstr ""
+msgstr "Utwórz nowy DL"
 
 #: src/lvui.glade.h:21
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "Utwórz nowy dysk logiczny"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"Utwórz nową\n"
+"grupę woluminów"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"Rozszerz\n"
+"grupę woluminów"
 
 #: src/lvui.glade.h:26
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"Rozszerz\n"
+"dysk logiczny"
 
 #: src/lvui.glade.h:28
 msgid "Extents"
@@ -311,19 +316,19 @@ msgstr "Liniowy"
 
 #: src/lvui.glade.h:36
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "Zarządzanie dyskami logicznymi LVM"
 
 #: src/lvui.glade.h:37
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Zarządzaj dyskami"
 
 #: src/lvui.glade.h:38
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Maks. liczba dysków logicznych:"
 
 #: src/lvui.glade.h:39
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Maks. liczba woluminów fizycznych:"
 
 #: src/lvui.glade.h:40
 msgid "Meg"
@@ -342,27 +347,27 @@ msgstr ""
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr ""
+msgstr "Punkt montowania (jeśli pusty, dysk nie zostanie zamontowany):"
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Nazwa grupy woluminów:"
 
 #: src/lvui.glade.h:46
 msgid "Name for new LV:"
-msgstr ""
+msgstr "Nazwa nowego DL:"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group"
-msgstr ""
+msgstr "Nowa grupa woluminów"
 
 #: src/lvui.glade.h:48
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "Nowa grupa woluminów z"
 
 #: src/lvui.glade.h:49
 msgid "No Filesystem"
-msgstr ""
+msgstr "Brak systemu plików"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
@@ -374,41 +379,51 @@ msgstr ""
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
-msgstr ""
+msgstr "Reiser"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Usuń\n"
+"dysk logiczny"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Usuń wybrany(e)\n"
+"dysk(i) logiczny(e)"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Usuń wybrany(e)\n"
+"wolumin(y) fizyczny(e)"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Usuń dysk z\n"
+"grupy woluminów"
 
 #: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Usuń dysk\n"
+"z LVM"
 
 #: src/lvui.glade.h:63
 msgid "Resizable?"
-msgstr ""
+msgstr "Zmienny rozmiar?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
@@ -436,7 +451,7 @@ msgstr ""
 
 #: src/lvui.glade.h:70
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "Użyj pozostałego miejsca"
 
 #: src/lvui.glade.h:71
 msgid "XFS"
@@ -444,7 +459,7 @@ msgstr "XFS"
 
 #: src/lvui.glade.h:72
 msgid "dialog1"
-msgstr ""
+msgstr "dialog1"
 
 #: src/lvui.glade.h:73
 msgid "ext2"
@@ -458,45 +473,44 @@ msgstr "ext3"
 #: src/CommandHandler.py:14
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie vgextend nie powiodło się. Próbowano wykonać: \"%s\""
 
 #: src/CommandHandler.py:15
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie pvcreate nie powiodło się. Próbowano wykonać: \"%s\""
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie pvremove nie powiodło się. Próbowano wykonać: \"%s\""
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie lvremove nie powiodło się. Próbowano wykonać: \"%s\""
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie vgcreate nie powiodło się. Próbowano wykonać: \"%s\""
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie vgreduce nie powiodło się. Próbowano wykonać: \"%s\""
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie pvmove nie powiodło się. Próbowano wykonać: \"%s\""
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Wykonanie umount nie powiodło się. Próbowano wykonać: \"%s\""
 
 #. first set up lvcreate args
-#. Column names for PVS calls
 #: src/lvm_model.py:35
 msgid "Unused"
 msgstr "Nie używane"
@@ -516,19 +530,19 @@ msgstr ""
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
-msgstr ""
+msgstr "Nie zamontowany"
 
 #: src/lvm_model.py:42
 msgid "No File System"
-msgstr ""
+msgstr "Brak systemu plików"
 
 #: src/lvm_model.py:53
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Nazwa grupy woluminów:"
 
 #: src/lvm_model.py:54
 msgid "System ID:   "
-msgstr ""
+msgstr "ID systemu:"
 
 #: src/lvm_model.py:55
 msgid "Format:   "
@@ -574,7 +588,7 @@ msgstr ""
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Liczba dysków logicznych:"
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
@@ -582,15 +596,15 @@ msgstr ""
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Nazwa dysku logicznego:"
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Rozmiar dysku logicznego:"
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "Liczba segmentów: "
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
@@ -622,11 +636,11 @@ msgstr "System plików:   "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Nazwa woluminu fizycznego:"
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Rozmiar woluminu fizycznego:"
 
 #: src/lvm_model.py:83
 msgid "Space Used:   "
@@ -649,32 +663,12 @@ msgid "PV UUID:   "
 msgstr ""
 
 #. No entry in column 3 means not initialized
-#. partitions that are either uninitialized or not to be included in a list
-#. fdisk 2.12 with the -l switch produces 7 columns
-#. will always be 6, and boot partitions will be 7
 #. item.set_volume_size(float(adj_sz_str) / GIG)
-#. Add extent segments
-#. If there is free space, add an LV marked as 'unused' for that available
-#. The output of the command is examined line by line for a volume
 #. ##FIXME Raise exception here because true path is not being returned,
-#. lvs reports 0 for sys max
-#. Size info resides between two square brackets
-#. Next, check if partition is mounted
 #. ##This method adds complete/contiguous extent lists to PVs -- no holes
-#. #3) extents are used, build list and fill in free holes
-#. Could be an 'unused' section or fully used section
-#. #For ease of maintenance, here is an explanation of what is
 #. #between the LV and its PVs.
-#. #chunk. The second chunk is the mapping info, which is appended
-#. #  Logical extent 0 to 249:
-#. #  Logical extent 0 to 25:
 #. #    Stripe 0:
-#. #      Physical volume   /dev/sda11
-#. # splits the following line (i + 1) into substrings
-#. # will be included in lvs soon, so this dangerous
 #. we found our PV in mapping table
-#. #Now, sort
-#. #the for loop iterator is recreated after each list insertion
 #: src/lvmui_constants.py:18
 #, python-format
 msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
@@ -682,7 +676,7 @@ msgstr ""
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "Właściwości"
 
 #: src/Properties_Renderer.py:45
 #: src/renderer.py:98
