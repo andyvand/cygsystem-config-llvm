@@ -7,7 +7,6 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: zn_CN\n"
-"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
 "PO-Revision-Date: 2004-12-01 23:47+1000\n"
 "Last-Translator: happy <metaphysis@yeah.net>\n"
@@ -15,6 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Report-Msgid-Bugs-To: \n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
@@ -27,7 +27,9 @@ msgid ""
 "  start your graphical user interface or set your DISPLAY variable.\n"
 "                                                                                \n"
 "  Caught exception: %s\n"
-msgstr "\n不能够初始化图形环境.可能的原因是\n"
+msgstr ""
+"\n"
+"不能够初始化图形环境.可能的原因是\n"
 "该工具并不能运行在图形化的环境下.请您\n"
 "启动用户图形接口或设置DISPLAY环境变量.\n"
 "                                                                                \n"
@@ -101,16 +103,15 @@ msgstr "选择一个磁盘实例添加到 %s 卷组"
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr "一个卷组必须由两个或两个以上的物理卷组成以支持"
-"分块.这个卷组不满足这个要求."
+msgstr ""
+"一个卷组必须由两个或两个以上的物理卷组成以支持分块.这个卷组不满足这个要求."
 
 #: src/InputController.py:113
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr "以名称 %s 命名的逻辑卷已经在卷组中存在."
-"请选择另一个名称."
+msgstr "以名称 %s 命名的逻辑卷已经在卷组中存在.请选择另一个名称."
 
 #: src/InputController.py:115
 #, python-format
@@ -145,15 +146,13 @@ msgstr "此版本还未支持此功能"
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "在此卷组中的物理卷数目已达到了最大"
-"限制."
+msgstr "在此卷组中的物理卷数目已达到了最大限制."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "在此卷组中的逻辑卷数目已达到了最大"
-"限制."
+msgstr "在此卷组中的逻辑卷数目已达到了最大限制."
 
 #: src/InputController.py:131
 msgid ""
@@ -165,8 +164,8 @@ msgid ""
 "There is a problem with the value entered in the Size field. The value "
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
-msgstr "在大小区域输入的值不满足要求.该值"
-"不能包含字母字符或标点符号,应是一个数字值."
+msgstr ""
+"在大小区域输入的值不满足要求.该值不能包含字母字符或标点符号,应是一个数字值."
 
 #: src/InputController.py:135
 #, python-format
@@ -174,8 +173,9 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr "严重警告:逻辑卷 %s 上已经存在 %s 文件系统, 且当前被挂载在 %s 上. 您"
-"确定要丢弃在该挂载的文件系统上的所有数据吗?"
+msgstr ""
+"严重警告:逻辑卷 %s 上已经存在 %s 文件系统, 且当前被挂载在 %s 上. 您确定要丢弃"
+"在该挂载的文件系统上的所有数据吗?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -209,8 +209,7 @@ msgstr "%s 扩展"
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
-msgstr "新的逻辑卷的大小已经超过了卷组 %s 的可用空间"
-"可用空间是: "
+msgstr "新的逻辑卷的大小已经超过了卷组 %s 的可用空间可用空间是: "
 
 #: src/InputController.py:147
 #, python-format
@@ -221,15 +220,13 @@ msgstr "%s 应该只含有数字值"
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr "在最大物理卷数区域中应该只包含整数值"
-"此值在1到256之间"
+msgstr "在最大物理卷数区域中应该只包含整数值此值在1到256之间"
 
 #: src/InputController.py:149
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr "在最大逻辑卷数区域中应该只包含整数值"
-"此值在1到256之间"
+msgstr "在最大逻辑卷数区域中应该只包含整数值此值在1到256之间"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
@@ -257,11 +254,10 @@ msgid ""
 "action is either to add a new Physical Volume before removing this one, or "
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
-msgstr "您想移除的物理卷名称是 %s, 此卷上有已激活的"
-"逻辑卷映射的数据.因为该物理卷是此卷组中唯一的一个卷,"
-" 没有剩余空间移动数据.建议的操作是要么在移除此卷前添加"
-"一个新的物理卷,或者移除和此物理卷相关的逻辑"
-"卷."
+msgstr ""
+"您想移除的物理卷名称是 %s, 此卷上有已激活的逻辑卷映射的数据.因为该物理卷是此"
+"卷组中唯一的一个卷, 没有剩余空间移动数据.建议的操作是要么在移除此卷前添加一个"
+"新的物理卷,或者移除和此物理卷相关的逻辑卷."
 
 #: src/InputController.py:159
 #, python-format
@@ -274,8 +270,8 @@ msgstr "您确定将 %s 从卷组 %s 中移除吗?"
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr "将物理卷 %s 从卷组 %s 中移除将导致卷为空,但还是可以移除."
-"您要进行此操作吗?"
+msgstr ""
+"将物理卷 %s 从卷组 %s 中移除将导致卷为空,但还是可以移除.您要进行此操作吗?"
 
 #: src/InputController.py:161
 #, python-format
@@ -288,9 +284,9 @@ msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr "卷组 %s 没有足够的空间移动存储在 %s 的数据.一个"
-"可能的解决方法是添加一个额外的物理卷到"
-"卷组中"
+msgstr ""
+"卷组 %s 没有足够的空间移动存储在 %s 的数据.一个可能的解决方法是添加一个额外的"
+"物理卷到卷组中"
 
 #: src/InputController.py:163
 msgid ""
@@ -298,10 +294,9 @@ msgid ""
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr "模块 dm-mirror 没有加载或您的内核"
-"不支持 dm-mirror.假如支持,请运行"
-"\"modprobe dm-mirror\".否则,在该物理区域上移动数据"
-"将不能执行"
+msgstr ""
+"模块 dm-mirror 没有加载或您的内核不支持 dm-mirror.假如支持,请运行\"modprobe "
+"dm-mirror\".否则,在该物理区域上移动数据将不能执行"
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -466,14 +461,16 @@ msgstr "将物理卷添加到VG"
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr "添加到已存在\n"
+msgstr ""
+"添加到已存在\n"
 "的卷组中"
 
 #: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
-msgstr "创建新的\n"
+msgstr ""
+"创建新的\n"
 "逻辑卷"
 
 #: src/lvui.glade.h:18
@@ -488,21 +485,24 @@ msgstr "创建一个新的逻辑卷"
 msgid ""
 "Create new \n"
 "Volume Group"
-msgstr "创建新的\n"
+msgstr ""
+"创建新的\n"
 "卷组"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Extend\n"
 "Volume Group"
-msgstr "扩展\n"
+msgstr ""
+"扩展\n"
 "卷组"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend \n"
 "Logical Volume"
-msgstr "扩展\n"
+msgstr ""
+"扩展\n"
 "逻辑卷组"
 
 #: src/lvui.glade.h:26
@@ -569,7 +569,8 @@ msgstr "MB"
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
-msgstr "转移选择的\n"
+msgstr ""
+"转移选择的\n"
 "区域到卷"
 
 #: src/lvui.glade.h:43
@@ -1051,9 +1052,7 @@ msgstr "PV UUID:   "
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
-msgstr ""
-"您确定要初始化磁盘实例 %s 吗? 在此"
-"设备/分区上的数据将全部丢失."
+msgstr "您确定要初始化磁盘实例 %s 吗? 在此设备/分区上的数据将全部丢失."
 
 #: src/lvmui_constants.py:40
 msgid "Free"
@@ -1176,4 +1175,3 @@ msgstr "未分配的卷"
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr "未初始化的实例"
- 
