@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-16 00:00+0900\n"
+"PO-Revision-Date: 2004-10-17 03:10+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -119,7 +119,7 @@ msgstr "名前は新しいボリュームグループに対して与えられな
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
-"特定のマウントポイント、%s が存在しません。作成しますか?"
+"特定されたマウントポイント、%s が存在しません。作成しますか?"
 
 #: src/InputController.py:105
 #, python-format
@@ -447,12 +447,12 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
-"選択した得玖珠展との\n"
+"選択したエクステントの\n"
 "ボリュームからの移動"
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "マウントポイント (もし空きで、LV をマウントしないなら): "
+msgstr "マウントポイント (もし指定がなければ、LV をマウントしないなら): "
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
@@ -686,7 +686,7 @@ msgstr "エクステントサイズ:"
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "最大許容物理ボリューム:                "
+msgstr "最大物理ボリューム:                "
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
@@ -694,7 +694,7 @@ msgstr "物理ボリューム数:               "
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "最大許容論理ボリューム:               "
+msgstr "最大論理ボリューム:               "
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
