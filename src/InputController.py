@@ -314,10 +314,6 @@ class InputController:
     retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
     if (retval == gtk.RESPONSE_NO):
       return
-    elif (rc == gtk.RESPONSE_DELETE_EVENT):
-      return
-    elif (rc == gtk.RESPONSE_CLOSE):
-      return
 
     else:
       ###FIXME - this just check for 'some' space - it should check for 
@@ -350,10 +346,6 @@ class InputController:
     lvname = name.strip()
     retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
     if (retval == gtk.RESPONSE_NO):
-      return
-    elif (rc == gtk.RESPONSE_DELETE_EVENT):
-      return
-    elif (rc == gtk.RESPONSE_CLOSE):
       return
 
     else:
@@ -391,10 +383,6 @@ class InputController:
       lvname = item.get_name().strip()
       retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
       if (retval == gtk.RESPONSE_NO):
-        continue
-      elif (rc == gtk.RESPONSE_DELETE_EVENT):
-        continue
-      elif (rc == gtk.RESPONSE_CLOSE):
         continue
 
       else:
@@ -437,10 +425,6 @@ class InputController:
       retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
       if (retval == gtk.RESPONSE_NO):
         continue
-      elif (rc == gtk.RESPONSE_DELETE_EVENT):
-        continue
-      elif (rc == gtk.RESPONSE_CLOSE):
-        continue 
 
       else:
         #Check if PV has alloc ated extents - if so, move
@@ -782,10 +766,6 @@ class InputController:
     rc = self.warningMessage(message)
     if (rc == gtk.RESPONSE_NO):
       return
-    if (rc == gtk.RESPONSE_DELETE_EVENT):
-      return
-    if (rc == gtk.RESPONSE_CLOSE):
-      return
 
     try:
       self.command_handler.initialize_entity(name)
@@ -966,10 +946,6 @@ class InputController:
     retval = self.warningMessage(CONFIRM_PVREMOVE % pvname)
     if (retval == gtk.RESPONSE_NO):
       return
-    elif (rc == gtk.RESPONSE_DELETE_EVENT):
-      return
-    elif (rc == gtk.RESPONSE_CLOSE):
-      return
 
     else:
       try:
@@ -997,6 +973,15 @@ class InputController:
     dlg.show_all()
     rc = dlg.run()
     dlg.destroy()
+    if (rc == gtk.RESPONSE_NO):
+      return gtk.RESPONSE_NO
+    if (rc == gtk.RESPONSE_DELETE_EVENT):
+      return gtk.RESPONSE_NO
+    if (rc == gtk.RESPONSE_CLOSE):
+      return gtk.RESPONSE_NO
+    if (rc == gtk.RESPONSE_CANCEL):
+      return gtk.RESPONSE_NO
+ 
     return rc
                                                                                 
   def errorMessage(self, message):
@@ -1021,6 +1006,14 @@ class InputController:
     dlg.show_all()
     rc = dlg.run()
     dlg.destroy()
+    if (rc == gtk.RESPONSE_NO):
+      return gtk.RESPONSE_NO
+    if (rc == gtk.RESPONSE_DELETE_EVENT):
+      return gtk.RESPONSE_NO
+    if (rc == gtk.RESPONSE_CLOSE):
+      return gtk.RESPONSE_NO
+    if (rc == gtk.RESPONSE_CANCEL):
+      return gtk.RESPONSE_NO
     return rc
                                                                                 
   def register_highlighted_sections(self, section_type, section_list):
