@@ -14,6 +14,7 @@ UNINITIALIZED_TYPE = 7
 NAME_COL = 0
 TYPE_COL = 1
 PATH_COL = 2
+SIMPLE_LV_NAME_COL = 3
 
 INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 
@@ -35,6 +36,7 @@ GIGABYTE_IDX = 1
 KILOBYTE_IDX = 2
 EXTENT_IDX = 3
 
-
+UNUSED=_("Unused")
+FREE=_("Free")
 
 

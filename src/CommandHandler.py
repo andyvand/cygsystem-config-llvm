@@ -15,7 +15,9 @@ VGEXTEND_FAILURE=_("vgextend command failed. Command attempted: \"%s\"")
 PVCREATE_FAILURE=_("pvcreate command failed. Command attempted: \"%s\"")
 PVREMOVE_FAILURE=_("pvremove command failed. Command attempted: \"%s\"")
 LVREMOVE_FAILURE=_("lvremove command failed. Command attempted: \"%s\"")
+VGREMOVE_FAILURE=_("vgremove command failed. Command attempted: \"%s\"")
 VGCREATE_FAILURE=_("vgcreate command failed. Command attempted: \"%s\"")
+VGCHANGE_FAILURE=_("vgchange command failed. Command attempted: \"%s\"")
 VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\"")
 PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\"")
 LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\"")
@@ -85,6 +87,20 @@ class CommandHandler:
     
     commandstring = "/usr/sbin/vgcreate -M2 -l " + max_log + " -p " + max_phys + " -s " + extent_size + units_arg + " " + name + " " + pv
     msg =  VGCREATE_FAILURE % commandstring
+    retval = os.system(commandstring)
+    if retval != 0:
+      raise CommandError('FATAL', msg)
+
+  def remove_vg(self, vgname):
+    commandstring = "/usr/sbin/vgchange -a n " + vgname
+    msg = VGCHANGE_FAILURE % commandstring
+    retval = os.system(commandstring)
+    if retval != 0:
+      raise CommandError('FATAL', msg)
+      return
+
+    commandstring = "/usr/sbin/vgremove " + vgname
+    msg = VGREMOVE_FAILURE % commandstring
     retval = os.system(commandstring)
     if retval != 0:
       raise CommandError('FATAL', msg)

@@ -6,7 +6,7 @@ class ExtentSegment:
     self.name = name
     self.start = start
     self.size = size   #in extents, of course
-    self.is_utilized = utilized
+    self.utilized = utilized
     self.annotation = ""
 
   def get_name(self):
@@ -22,4 +22,4 @@ class ExtentSegment:
     return self.start,self.size
 
   def is_utilized(self):
-    return self.is_utilized
+    return self.utilized

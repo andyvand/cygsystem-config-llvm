@@ -34,7 +34,6 @@ LV_VGNAME_COL=1
 
 UNUSED=_("Unused") 
 UNUSED_SPACE=_("Unused Space")
-FREE=_("Free")
 
 #Translator - Linear mapping is another way of saying 'Not Striped' :-)
 LINEAR_MAPPING=_("Linear Mapping")
@@ -834,7 +833,8 @@ class lvm_model:
           new_sz = st_next - new_st
           ex = ExtentSegment(FREE, new_st, new_sz, FALSE)
           ex.set_annotation(UNUSED_SPACE)
-          extentlist.insert(j, ex)
+          extentlist.insert(0, ex)
+          extentlist.sort(self.sortMe)
           need_to_continue = TRUE
           break
 

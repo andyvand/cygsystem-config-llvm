@@ -491,7 +491,8 @@ class volume_renderer:
 
     if event.button == 1:
       section = self.retrieve_section(x, y)
-      #vol = self.viewable_vols[section]
+      if self.viewable_vols[section].get_volume().is_vol_utilized() == FALSE:
+        return None
       if self.viewable_vols[section].get_is_selected() == TRUE:
         self.viewable_vols[section].set_is_selected(FALSE)
       else:

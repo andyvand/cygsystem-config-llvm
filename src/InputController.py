@@ -127,9 +127,11 @@ NUM_STRIPES_FIELD=_("Number of Stripes field")
 
 CONFIRM_PVREMOVE=_("Are you quite certain that you wish to remove %s from Logical Volume Management?")
 
+SOLO_PV_IN_VG=_("The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume.") 
 CONFIRM_PV_VG_REMOVE=_("Are you quite certain that you wish to remove %s from the %s Volume Group?")
+CONFIRM_VG_REMOVE=_("Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?")
 CONFIRM_LV_REMOVE=_("Are you quite certain that you wish to remove the Logical Volume %s?")
-NOT_ENOUGH_SPACE_VG=_("Volume Group %s does not have enough space to move the data stored on %s")
+NOT_ENOUGH_SPACE_VG=_("Volume Group %s does not have enough space to move the data stored on %s. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 ###########################################################
 class InputController:
   def __init__(self, reset_tree_model, treeview, model_factory, glade_xml):
@@ -297,39 +299,103 @@ class InputController:
       self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_KILO_IDX)
 
   def on_pv_rm(self, button):
+    #The following cases must be considered in this method:
+    #1) a PV is to be removed that has extents mapped to an LV:
+    #  1a) if there are other PVs, call pvmove on the PV to migrate the 
+    #      data to other  PVs in the VG
+    #      i) If there is sufficient room, pvmove the extents, then vgreduce
+    #      ii) If there is not room, inform the user to add more storage and
+    #           try again later
+    #  1b) If there are not other PVs, state that either more PVs must
+    #      be added so that the in use extents can be migrated, or else
+    #      present a list of LVs that must be removed in order to 
+    #      remove the PV
+    #2) a PV is to be removed that has NO LVs mapped to its extents:
+    #  2a) If there are more than one PV in the VG, just vgreduce away the PV
+    #  2b) If the PV is the only one, then vgremove the VG
+    mapped_lvs = TRUE
+    solo_pv = FALSE
     selection = self.treeview.get_selection()
     model, iter = selection.get_selected()
     name = model.get_value(iter, PATH_COL)
     pvname = name.strip()
     pv = self.model_factory.get_PV(pvname)
+    extent_list = pv.get_extent_segments()
+
     vgname = pv.get_vg_name().strip()
     total,free,alloc = pv.get_extent_values()
-    retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
-    if (retval == gtk.RESPONSE_NO):
-      return
-
+    pv_list = self.model_factory.query_PVs_for_VG(vgname)
+    if len(pv_list) <= 1: #This PV is the only one in the VG
+      solo_pv = TRUE
     else:
-      ###FIXME - this just check for 'some' space - it should check for 
-      ###enough space by checking free versus needed for pv
-      if alloc != 0:
+      solo_pv = FALSE
+
+    if len(extent_list) == 1: #There should always be at least one extent seg
+      #We now know either the entire PV is used by one LV, or else it is
+      #an unutilized PV. If the latter, we can just vgreduce it away 
+      seg_name = extent_list[0].get_name()
+      if (seg_name == FREE) or (seg_name == UNUSED):
+        mapped_lvs = FALSE
+      else:
+        mapped_lvs = TRUE
+    else:
+      mapped_lvs = TRUE
+
+    #Cases:
+    if mapped_lvs == FALSE:
+      if solo_pv == TRUE:
+        #call vgremove
+        retval = self.warningMessage(CONFIRM_VG_REMOVE % (pvname,vgname))
+        if (retval == gtk.RESPONSE_NO):
+          return
         try:
-          self.command_handler.move_pv(pvname)
+          self.command_handler.remove_vg(vgname)
         except CommandError, e:
           self.errorMessage(e.getMessage())
           return
-      #else:
-      #  self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
-      #  return
 
-      try:
-        self.command_handler.reduce_vg(vgname, pvname)
-      except CommandError, e:
-        self.errorMessage(e.getMessage())
+      else: #solo_pv is FALSE, more than one PV...
+        retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
+        if (retval == gtk.RESPONSE_NO):
+          return
+        try:
+          self.command_handler.reduce_vg(vgname, pvname)
+        except CommandError, e:
+          self.errorMessage(e.getMessage())
+          return
+    else:
+      #Two cases here: if solo_pv, bail, else check for size needed
+      if solo_pv == TRUE:
+        self.errorMessage(SOLO_PV_IN_VG % pvname)
         return
+      else: #There are additional PVs. We need to check space 
+        size, ext_count = self.model_factory.get_free_space_on_VG(vgname, "m")
+        actual_free_exts = int(ext_count) - free
+        if alloc <= actual_free_extents:
+          retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
+          if (retval == gtk.RESPONSE_NO):
+            return
+          try:
+            self.command_handler.move_pv(pvname)
+          except CommandError, e:
+            self.errorMessage(e.getMessage())
+            return
 
-      args = list()
-      args.append(pvname)
-      apply(self.reset_tree_model, args)
+          try:
+            self.command_handler.reduce_vg(vgname, pvname)
+          except CommandError, e:
+            self.errorMessage(e.getMessage())
+            return
+
+        else:
+          self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
+          return
+
+
+
+    args = list()
+    args.append(vgname)
+    apply(self.reset_tree_model, args)
 
 
   def on_lv_rm(self, button):
@@ -557,37 +623,56 @@ class InputController:
 
     #ok - name is ok. size must be below available space
     prop_size = self.new_lv_size.get_text()
-    proposed_size = float(prop_size)
+    try:  ##In case gibberish is entered into the size field...
+      float_proposed_size = float(prop_size)
+      int_proposed_size = int(prop_size)
+    except ValueError, e: 
+      self.errorMessage(NUMERIC_CONVERSION_ERROR % e)
+      self.new_lv_size.set_text("")
+      return
+
+    #Now we have an integer representation of our size field,
+    #and a floating point rep
     #Normalize size depending on size_unit index
     Unit_index = self.new_lv_size_unit.get_history()
-    Size_request = prop_size
+    Size_request = 0
     if Unit_index == EXTENT_IDX:
-      if int(self.free_extents) < int(prop_size):
+      if int(self.free_extents) < int_proposed_size:
         self.errorMessage((EXCEEDS_FREE_SPACE % vgname) + 
                           (REMAINING_SPACE_EXTENTS % self.free_extents)) 
         self.new_lv_size.set_text("")
         return
-      normalized_size = int(prop_size)
+      Size_request = int_proposed_size
 
-    else:
-      if Unit_index == MEGABYTE_IDX:
-        normalized_size = proposed_size * MEGA_MULTIPLIER
-        remaining_string = REMAINING_SPACE_MEGABYTES
-      elif Unit_index == GIGABYTE_IDX:
-        normalized_size = proposed_size * GIGA_MULTIPLIER
-        remaining_string = REMAINING_SPACE_GIGABYTES
-      elif Unit_index == KILOBYTE_IDX:
-        normalized_size = proposed_size * KILO_MULTIPLIER
-        remaining_string = REMAINING_SPACE_KILOBYTES
+    elif Unit_index == MEGABYTE_IDX:
+        normalized_size = float_proposed_size * MEGA_MULTIPLIER
+        if float(self.free_space_bytes) < normalized_size:
+          self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
+                            (REMAINING_SPACE_MEGABYTES % self.free_space))
+          self.new_lv_size.set_text("")
+          return
+        Size_request = float_proposed_size
+          
+    elif Unit_index == GIGABYTE_IDX:
+        normalized_size = float_proposed_size * GIGA_MULTIPLIER
+        if float(self.free_space_bytes) < normalized_size:
+          self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
+                            (REMAINING_SPACE_GIGABYTES % self.free_space))
+          self.new_lv_size.set_text("")
+          return
+        Size_request = float_proposed_size
+          
+    elif Unit_index == KILOBYTE_IDX:
+        normalized_size = float_proposed_size * KILO_MULTIPLIER
+        if float(self.free_space_bytes) < normalized_size:
+          self.errorMessage((EXCEEDS_FREE_SPACE % vgname) +
+                            (REMAINING_SPACE_KILOBYTES % self.free_space))
+          self.new_lv_size.set_text("")
+          return
+        Size_request = float_proposed_size
+          
 
-      if float(self.free_space_bytes) < normalized_size:
-        self.errorMessage((EXCEEDS_FREE_SPACE % vgname) + 
-                          (remaining_string % self.free_space)) 
-        self.new_lv_size.set_text("")
-        return
 
-    Size_request = proposed_size  #in bytes
-   
     #Handle stripe request
     if self.new_lv_striped_radio.get_active() == TRUE:
       Striped = TRUE
@@ -595,7 +680,6 @@ class InputController:
       if num_stripes_str.isalnum():
         Num_stripes = int(num_stripes_str)
       else:
-        print "The val from stripe spinner is --->%s<--" % num_stripes_str
         self.errorMessage(NUMBERS_ONLY % NUM_STRIPES_FIELD)
         self.new_lv_stripe_spinner.set_value(2.0)
         return
@@ -1021,4 +1105,4 @@ class InputController:
   def clear_highlighted_sections(self):
     self.section_type = UNSELECTABLE_TYPE
     self.section_list = None
-
+                           

@@ -60,6 +60,7 @@ class Volume_Tab_View:
     self.treemodel = self.treeview.get_model()
     self.treemodel = gtk.TreeStore (gobject.TYPE_STRING,
                                     gobject.TYPE_INT,
+                                    gobject.TYPE_STRING,
                                     gobject.TYPE_STRING)
     self.treeview.set_model(self.treemodel)
     self.treeview.set_headers_visible(FALSE)
@@ -115,6 +116,7 @@ class Volume_Tab_View:
     self.phys_vol_view_panel.hide()
     self.log_vol_view_panel = self.glade_xml.get_widget('log_vol_view_panel')
     self.log_vol_view_panel.hide()
+    self.on_rm_select_lvs_button = self.glade_xml.get_widget('on_rm_select_lvs')
     self.phys_panel = self.glade_xml.get_widget('phys_panel')
     self.phys_panel.hide()
     self.log_panel = self.glade_xml.get_widget('log_panel')
@@ -137,12 +139,27 @@ class Volume_Tab_View:
 
   def check_tree_items(self, model, path, iter, name_selection):
     selection = self.treeview.get_selection()
+
+    #Here we need to check PVs and LVs differently.
+    #LVs have a special model column.
     nv = model.get_value(iter, PATH_COL)
+    lvn = model.get_value(iter, SIMPLE_LV_NAME_COL)
+
     if nv != None:
-      name_val = nv.strip()
+      pvname_val = nv.strip()
     else:
-      name_val = nv
-    if name_val == name_selection:
+      pvname_val = nv
+
+    if lvn != None:
+      lvname_val = lvn.strip()
+    else:
+      lvname_val = lvn
+
+    if pvname_val == name_selection:
+      self.treeview.expand_to_path(path)
+      selection.select_range(path, path)
+
+    if lvname_val == name_selection:
       self.treeview.expand_to_path(path)
       selection.select_range(path, path)
       
@@ -191,7 +208,8 @@ class Volume_Tab_View:
             treemodel.set(iter, 
                           NAME_COL, log_string, 
                           TYPE_COL, LOG_TYPE,
-                          PATH_COL, lv.get_path())
+                          PATH_COL, lv.get_path(),
+                          SIMPLE_LV_NAME_COL, lv.get_name())
       #Expand if there are entries 
       self.treeview.expand_row(treemodel.get_path(vg_iter),FALSE)
 
@@ -268,7 +286,7 @@ class Volume_Tab_View:
       self.treeview.expand_row(treepath, FALSE)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
-      self.log_vol_view_panel.show()
+      self.show_log_vol_view_panel(lv_list)
     elif type == VG_TYPE:
       nme = model.get_value(iter, NAME_COL)
       vg_name = nme.strip()
@@ -369,6 +387,19 @@ class Volume_Tab_View:
     return TRUE
 #    else:
 #    return FALSE
+
+  def show_log_vol_view_panel(self,lv_list):
+    #This is a wrapper for self.log_vol_view_panel.show()
+    #If the VG has no LVs, then a proxy LV is returned as an 'Unused' LV.
+    #We do not want to allow the deletion of this unused LV.
+    #So we'll gray out the button.
+    self.on_rm_select_lvs_button.set_sensitive(TRUE)
+    x = len(lv_list)
+    if x == 1:
+      if lv_list[0].is_vol_utilized() == FALSE:
+        self.on_rm_select_lvs_button.set_sensitive(FALSE)
+
+    self.log_vol_view_panel.show()
 
   def clear_all_buttonpanels(self):
     self.unalloc_panel.hide()
