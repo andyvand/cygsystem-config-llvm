@@ -100,7 +100,7 @@ msgstr "Niezainicjalizowany dysk"
 #: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr "Wybierz dysk aby dodać go do grupy woluminów %s:"
+msgstr "Wybierz dysk, aby dodać go do grupy woluminów %s:"
 
 #: src/InputController.py:111
 msgid ""
