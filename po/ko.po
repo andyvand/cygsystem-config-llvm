@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-25 08:56+0900\n"
+"PO-Revision-Date: 2004-10-25 13:01+0900\n"
 "Last-Translator: hyunjun kim <hyunjun@gmail.com>\n"
 "Language-Team:  <ko@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,52 +30,55 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+" 그래픽 환경을 초기화할 없음. 가장 흔한 실패의 이유는 그래픽 환경을 사용하지 \n"
+" 않는 상태에서 툴이 실행되지 않은것에 있음. GUI를 시작시키거나, DISPLAY환경변수가 \n"
+" 사용가능하게 셋팅을 하시오.\n"
+"                                                                                \n"
+"  감지된 예외상황: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
-#. #####################################################
 #. #remain related. A  chhange in one requires a change#
-#. ##available disk entities on the system. There are two types --
 #. ##partition that has been initialized for use with LVM, by writing
-#. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##some context.
 #: src/InputController.py:85
 msgid "Name"
-msgstr ""
+msgstr "이름"
 
 #: src/InputController.py:86
 msgid "Size"
-msgstr ""
+msgstr "크기"
 
 #: src/InputController.py:87
 msgid "Entity Type"
-msgstr ""
+msgstr "엔티티 타입"
 
 #: src/InputController.py:89
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "할당되지 않은 물리적인 볼륨"
 
 #: src/InputController.py:90
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "초기화되지 않는 디스크 엔티티"
 
 #: src/InputController.py:91
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr ""
+msgstr "볼륨 그룹 %s에 추가하기위한 디스크 엔티티를 선택하십시오."
 
 #: src/InputController.py:93
 msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "볼륨 그룹은 스트라이핑을 지원하기위해서 두개 이상의 물리적인 볼륨으로 구성되어야 합니다. 이 볼륨 그룹은 이 조건을 만족시키지 않습니다."
 
 #: src/InputController.py:95
 #, python-format
 msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
-msgstr ""
+msgstr "볼륨 그룹내에 논리적인 볼륨 이름 %s가 이미 존재합니다. 겹치지 않는 이름을 선택해 주십시오."
 
 #: src/InputController.py:97
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "볼륨 그룹이름 %s가 이미 존재합니다. 겹치지 않는 이름을 선택해주십시오."
 
 #: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
@@ -83,23 +86,23 @@ msgstr "새로운 논리적 볼륨에 대한 이름이 반드시 필요합니다
 
 #: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "새로운 볼륨 그룹에 대한 이름이 필요합니다."
 
 #: src/InputController.py:103
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "특정 마운트 포인트 %s가 존재하지 않습니다. 생성할까요?"
 
 #: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "마운트 위치 %s의 생성이 갑작스럽게 실패하였습니다."
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #: src/InputController.py:109
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "%s에 사용되지 않는 공간"
 
 #: src/InputController.py:110
 #, python-format
@@ -124,20 +127,20 @@ msgstr ""
 #: src/InputController.py:115
 #, python-format
 msgid "The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: "
-msgstr ""
+msgstr "새로운 논리 볼륨으로 정할 크기가 볼륨 그룹 %s의 비어있는 공간을 초과하였습니다.  가능한 공간은 :"
 
 #: src/InputController.py:117
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s는 숫자이어야 합니다."
 
 #: src/InputController.py:118
 msgid "The  Maximum Physical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "최대 물리적인 볼륨 필드는 1부터 256사이의 정수이어야 합니다."
 
 #: src/InputController.py:119
 msgid "The  Maximum Logical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "최대 논리적인 볼륨 필드는 1부터 256사이의 정수이어야 합니다."
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #: src/InputController.py:123
@@ -151,47 +154,35 @@ msgstr ""
 #: src/InputController.py:126
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr ""
+msgstr "논리적인 볼륨 관리로부터 %s를 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:128
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "%s를 볼륨 그룹 %s로부터 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:129
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "논리적 볼륨 %s를 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:130
 #, python-format
 msgid "Volume Group %s does not have enough space to move the data stored on %s"
-msgstr ""
+msgstr "볼륨 그룹 %s는 %s에 저장된 자료를 옮기기에 충분한 공간이 있지 않습니다."
 
 #. ##########################################################
-#. self.setup_pv_rm()
 #. #This form adds an unallocated PV to a VG
-#. #This form adds a new VG
 #. Now check for unique name
-#. ##FIXME - this just check for 'some' space - it should check for
 #. else:
-#. return
 #. args = list()
-#. apply(self.reset_tree_model, args)
 #. need to check if section is 'unused'
-#. #This form adds a new Logical Volume
 #. Get available space on vg and set as label
-#. set filesystem option menu to 'no filesystem, and deactivate
 #. Validation Ladder:
-#. ok - name is ok. size must be below available space
 #. in bytes
-#. Finally, address file system issues
 #. create mount point
-#. Add confirmation dialog here...
 #. First check if there are more than 1 PVs in volume
-#. striping is not an option
 #. set up columns for tree
-#. Now get name of VG to be extended...
 #. ######################################################
 #: src/lvui.glade.h:1
 msgid "*"
@@ -243,53 +234,63 @@ msgstr ""
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "VG에 물리적 볼륨 추가하기"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"기존 볼륨 그룹에\n"
+"추가하기"
 
 #: src/lvui.glade.h:16
 msgid "Autobackup?"
-msgstr ""
+msgstr "자동백업?"
 
 #: src/lvui.glade.h:17
 msgid "Check here if you would like an entry to be made in /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab에 엔트리를 추가하려면 여기를 체크하십시오."
 
 #: src/lvui.glade.h:18
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"새로운 볼륨\n"
+"그룹 만들기"
 
 #: src/lvui.glade.h:20
 msgid "Create New LV"
-msgstr ""
+msgstr "새로운 LV 만들기"
 
 #: src/lvui.glade.h:21
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "새로운 논리적 볼륨 만들기"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"새로운 볼륨\n"
+"그룹 만들기"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"볼륨 그룹 \n"
+"확장하기"
 
 #: src/lvui.glade.h:26
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"논리적인 볼륨을 \n"
+"확장하기"
 
 #: src/lvui.glade.h:28
 msgid "Extents"
@@ -305,7 +306,7 @@ msgstr ""
 
 #: src/lvui.glade.h:31
 msgid "Initialize Entity"
-msgstr ""
+msgstr "엔티티 초기화하기"
 
 #: src/lvui.glade.h:32
 msgid "JFS"
@@ -320,24 +321,26 @@ msgid "Kilobytes"
 msgstr ""
 
 #: src/lvui.glade.h:35
+#, fuzzy
 msgid "Linear"
-msgstr ""
+msgstr "선형적인"
 
 #: src/lvui.glade.h:36
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "논리적인 볼륨 관리"
 
 #: src/lvui.glade.h:37
+#, fuzzy
 msgid "Manage Volumes"
-msgstr ""
+msgstr "볼륨 관리하기"
 
 #: src/lvui.glade.h:38
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "최대 논리적인 볼륨들"
 
 #: src/lvui.glade.h:39
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "최대 물리적인 볼륨들"
 
 #: src/lvui.glade.h:40
 msgid "Meg"
@@ -349,34 +352,35 @@ msgid "Megabytes"
 msgstr ""
 
 #: src/lvui.glade.h:42
+#, fuzzy
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
-msgstr ""
+msgstr "볼륨으로부터 선택된 확장을 이전하기"
 
 #: src/lvui.glade.h:44
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr ""
+msgstr "마운트 위치(여백으로 남긴다면, LV는 마운트되지 않을 것입니다.)"
 
 #: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "볼륨 그룹을 위한 이름"
 
 #: src/lvui.glade.h:46
 msgid "Name for new LV:"
-msgstr ""
+msgstr "새로운 LV를 위한 이름"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group"
-msgstr ""
+msgstr "새로운 볼륨 그룹"
 
 #: src/lvui.glade.h:48
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "새로운 볼륨 그룹 형식"
 
 #: src/lvui.glade.h:49
 msgid "No Filesystem"
-msgstr ""
+msgstr "파일 시스템 없음"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
@@ -395,42 +399,53 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"논리적 볼륨 \n"
+"을 제거"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"논리적 볼륨(들)으로부터 \n"
+"볼륨을 제거"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"물리적 볼륨(들)으로부터 \n"
+"볼륨을 제거"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"볼륨 그룹으로부터 \n"
+"볼륨을 제거"
 
 #: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"LVM으로부터 \n"
+"볼륨을 제거"
 
 #: src/lvui.glade.h:63
+#, fuzzy
 msgid "Resizable?"
-msgstr ""
+msgstr "크기조정가능한?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "이 PV에 추가하기위한 볼륨 그룹을 선택하십시오."
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "볼륨 그룹에 추가하기위해 디스크 엔티티를 선택하십시오."
 
 #: src/lvui.glade.h:66
 msgid "Size:"
@@ -446,11 +461,11 @@ msgstr ""
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "VG1의 사용되지 않는 영역"
 
 #: src/lvui.glade.h:70
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "남은 공간 사용하기"
 
 #: src/lvui.glade.h:71
 msgid "XFS"
@@ -472,125 +487,126 @@ msgstr ""
 #: src/CommandHandler.py:14
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "vgextend 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #: src/CommandHandler.py:15
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "pvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "pvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "vgreduce 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "pvmove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "umount 명령이 실패하였습니다. 수행했던 명령:\"%s\""
 
 #. first set up lvcreate args
-#. ##next command
 #. Column names for PVS calls
-#. Column names for lvdisplay calls
 #: src/lvm_model.py:35
 msgid "Unused"
-msgstr ""
+msgstr "사용하지 않는"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "사용되지 않은 공간"
 
 #: src/lvm_model.py:37
 msgid "Free"
-msgstr ""
+msgstr "비어있는"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
 msgid "Linear Mapping"
-msgstr ""
+msgstr "선형 맵핑"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
-msgstr ""
+msgstr "마운트되지 않은"
 
 #: src/lvm_model.py:42
 msgid "No File System"
-msgstr ""
+msgstr "화일 시스템이 존재안함"
 
 #: src/lvm_model.py:53
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "볼륨 그룹 이름"
 
 #: src/lvm_model.py:54
 msgid "System ID:   "
-msgstr ""
+msgstr "시스템 ID"
 
 #: src/lvm_model.py:55
 msgid "Format:   "
-msgstr ""
+msgstr "포맷"
 
 #: src/lvm_model.py:56
 #: src/lvm_model.py:73
 #: src/lvm_model.py:87
 msgid "Attributes:   "
-msgstr ""
+msgstr "속성"
 
 #: src/lvm_model.py:57
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "볼륨 그룹 크기"
 
 #: src/lvm_model.py:58
 msgid "Available Space:   "
-msgstr ""
+msgstr "사용가능한 공간"
 
 #: src/lvm_model.py:59
+#, fuzzy
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "확장의 전체 개수"
 
 #: src/lvm_model.py:60
+#, fuzzy
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "빈 확장의 개수"
 
 #: src/lvm_model.py:61
+#, fuzzy
 msgid "Extent Size:   "
-msgstr ""
+msgstr "확장 크기"
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "최대 허용 물리적 볼륨 개수"
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "물리적 볼륨 개수"
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "최대 허용 논리적 볼륨 개수"
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "논리적 볼륨 개수"
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
@@ -598,19 +614,19 @@ msgstr ""
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "논리적 볼륨 이름"
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "논리적 볼륨 크기"
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "세그먼트의 개수"
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "스트라입의 개수"
 
 #: src/lvm_model.py:72
 #, fuzzy
@@ -666,59 +682,32 @@ msgid "PV UUID:   "
 msgstr ""
 
 #. No entry in column 3 means not initialized
-#. At this point, all of the visible partitions initialized for LVM usage
 #. partitions that are either uninitialized or not to be included in a list
-#. this code examines the uncertain list and moves appropriate
 #. fdisk 2.12 with the -l switch produces 7 columns
-#. is an asterisk in this column. If there is not, this column
 #. will always be 6, and boot partitions will be 7
-#. There is a '+' at end of string...
 #. item.set_volume_size(float(adj_sz_str) / GIG)
-#. ##FIX use lvmdiskscan here
 #. Add extent segments
-#. ##FIXME - Throw exception here, if no result is returned
 #. If there is free space, add an LV marked as 'unused' for that available
-#. lvs does not give path info
 #. The output of the command is examined line by line for a volume
-#. If the volume group name matches, check if the LV name can be found
 #. ##FIXME Raise exception here because true path is not being returned,
-#. arglist.append("--units")
 #. lvs reports 0 for sys max
-#. Now determine size
 #. Size info resides between two square brackets
-#. /dev/sda10 [      784.39 MB] LVM physical volume
 #. Next, check if partition is mounted
-#. No file system
 #. ##This method adds complete/contiguous extent lists to PVs -- no holes
-#. #1) vgname == "", add one extent 'free' using all extents
 #. #3) extents are used, build list and fill in free holes
-#. 2
 #. Could be an 'unused' section or fully used section
-#. When a PV has multiple extent segments, we must build a list
 #. #For ease of maintenance, here is an explanation of what is
-#. #each Logical Volume in the pv's volumegroup. The command
 #. #between the LV and its PVs.
-#. #general info about the LV -- there is no chance that the
 #. #chunk. The second chunk is the mapping info, which is appended
-#. #
 #. #  Logical extent 0 to 249:
-#. #    Physical volume     /dev/sda7
 #. #  Logical extent 0 to 25:
-#. #    Stripes             2
 #. #    Stripe 0:
-#. #      Physical extents  250 to 262
 #. #      Physical volume   /dev/sda11
-#. # So the code below searches for the full PV path
 #. # splits the following line (i + 1) into substrings
-#. # for the values for words[3] and words[5] to get the
 #. # will be included in lvs soon, so this dangerous
-#. #######
 #. we found our PV in mapping table
-#. Now let's determine if this segment is striped or linear,
 #. #Now, sort
-#. #This is set up as a double loop because inserting a new val
 #. #the for loop iterator is recreated after each list insertion
-#. Nothing in this PV is used...
 #: src/lvmui_constants.py:18
 #, python-format
 msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
