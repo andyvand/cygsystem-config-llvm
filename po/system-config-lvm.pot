@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-09-29 11:26-0400\n"
+"POT-Creation-Date: 2004-10-13 09:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,8 @@ msgid ""
 "  Caught exception: %s\n"
 msgstr ""
 
+#. ##TRANSLATOR: The string below is seen when adding a new Physical
+#. ##Volume to an existing Volume Group.
 #. #####################################################
 #. #Note: the enum below and the list that follows MUST#
 #. #remain related. A  chhange in one requires a change#
@@ -42,109 +44,165 @@ msgstr ""
 #.
 #.
 #. #####################################################
-#: src/InputController.py:70
+#. ##TRANSLATOR: The two strings below refer to the name and type of
+#. ##available disk entities on the system. There are two types --
+#. ##The first is an 'unallocated physical volume' which is a disk or
+#. ##partition that has been initialized for use with LVM, by writing
+#. ##a special label onto the first block of the partition. The other type
+#. ##is an 'uninitialized entity', which is an available disk or partition
+#. ##that is NOT yet initialized to be used with LVM. Hope this helps give
+#. ##some context.
+#: src/InputController.py:85
+msgid "Name"
+msgstr ""
+
+#: src/InputController.py:86
+msgid "Size"
+msgstr ""
+
+#: src/InputController.py:87
+msgid "Entity Type"
+msgstr ""
+
+#: src/InputController.py:89
+msgid "Unallocated Physical Volume"
+msgstr ""
+
+#: src/InputController.py:90
+msgid "Uninitialized Disk Entity"
+msgstr ""
+
+#: src/InputController.py:91
+#, python-format
+msgid "Select a disk entity to add to the %s Volume Group:"
+msgstr ""
+
+#: src/InputController.py:93
 msgid ""
-"A Volume Group must be made up of 2 or more Physical Volumes to support "
+"A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
 
-#: src/InputController.py:72
+#: src/InputController.py:95
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
 
-#: src/InputController.py:74
+#: src/InputController.py:97
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 
-#: src/InputController.py:76
+#: src/InputController.py:99
 msgid "A Name must be provided for the new Logical Volume"
 msgstr ""
 
-#: src/InputController.py:78
+#: src/InputController.py:101
 msgid "A Name must be provided for the new Volume Group"
 msgstr ""
 
-#: src/InputController.py:80
+#: src/InputController.py:103
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
 
-#: src/InputController.py:82
+#: src/InputController.py:105
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr ""
 
-#: src/InputController.py:84
+#. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
+#. ##of an extent is user-definable.
+#: src/InputController.py:109
 #, python-format
 msgid "Unused space on %s"
 msgstr ""
 
-#: src/InputController.py:85
+#: src/InputController.py:110
 #, python-format
 msgid "%s megabytes"
 msgstr ""
 
-#: src/InputController.py:86
+#: src/InputController.py:111
 #, python-format
 msgid "%s kilobytes"
 msgstr ""
 
-#: src/InputController.py:87
+#: src/InputController.py:112
 #, python-format
 msgid "%s gigabytes"
 msgstr ""
 
-#: src/InputController.py:88
+#: src/InputController.py:113
 #, python-format
 msgid "%s extents"
 msgstr ""
 
-#: src/InputController.py:90
+#: src/InputController.py:115
 #, python-format
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
 
-#: src/InputController.py:92
+#: src/InputController.py:117
 #, python-format
 msgid "The %s should only contain number values"
 msgstr ""
 
-#: src/InputController.py:93
+#: src/InputController.py:118
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
 
-#: src/InputController.py:94
+#: src/InputController.py:119
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
 
-#: src/InputController.py:96
+#. ##TRANSLATOR: Striping writes data to multiple physical devices
+#. ##concurrently, with the objective being redundance and/or speed
+#: src/InputController.py:123
 msgid "Stripe Size field"
 msgstr ""
 
-#: src/InputController.py:97
+#: src/InputController.py:124
 msgid "Number of Stripes field"
 msgstr ""
 
-#: src/InputController.py:99
+#: src/InputController.py:126
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
 
+#: src/InputController.py:128
+#, python-format
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr ""
+
+#: src/InputController.py:129
+#, python-format
+msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
+msgstr ""
+
+#: src/InputController.py:130
+#, python-format
+msgid ""
+"Volume Group %s does not have enough space to move the data stored on %s"
+msgstr ""
+
 #. ##########################################################
+#. self.setup_pv_rm_migrate()
+#. self.setup_pv_rm()
 #. ##################
 #. #This form adds an unallocated PV to a VG
 #. #################
@@ -152,6 +210,27 @@ msgstr ""
 #. #Buttons and fields...
 #. Now check for unique name
 #. We don't want to offer the 2 and 4 options for kilo's - min size is 8k
+#. ##FIXME - this just check for 'some' space - it should check for
+#. ##enough space by checking free versus needed for pv
+#. else:
+#. self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
+#. return
+#. Check if LV is mounted -- if so, unmount
+#. args = list()
+#. args.append(lvname)
+#. apply(self.reset_tree_model, args)
+#. check if list > 0
+#. need to check if section is 'unused'
+#. Check if LV is mounted -- if so, unmount
+#. args = list()
+#. args.append(lvname)
+#. apply(self.reset_tree_model, args)
+#. need tto check if list > 0
+#. need to check if section is 'unused'
+#. Check if PV has alloc ated extents - if so, move
+#. args = list()
+#. args.append(lvname)
+#. apply(self.reset_tree_model, args)
 #. ##################
 #. #This form adds a new Logical Volume
 #. #Fields and menus
@@ -175,6 +254,10 @@ msgstr ""
 #. if not, put up message dialog and reset radiobuttons to linear
 #. striping is not an option
 #. message = INIT_ENTITY_1 + name + INIT_ENTITY_2
+#. set up columns for tree
+#. cancel opp if OK clicked w/o selection
+#. Now get name of VG to be extended...
+#. First, initialize if necessary
 #. ######################################################
 #. ##Convenience Dialogs
 #: src/lvui.glade.h:1
@@ -338,149 +421,165 @@ msgid ""
 msgstr ""
 
 #: src/lvui.glade.h:44
-msgid ""
-"Modify\n"
-"Volume Properties"
-msgstr ""
-
-#: src/lvui.glade.h:46
-msgid ""
-"Modify Volume\n"
-"Properties"
-msgstr ""
-
-#: src/lvui.glade.h:48
-msgid ""
-"Modify Volume \n"
-"Group Properties"
-msgstr ""
-
-#: src/lvui.glade.h:50
 msgid "Mount point (If blank, LV will not be mounted):"
 msgstr ""
 
-#: src/lvui.glade.h:51
+#: src/lvui.glade.h:45
 msgid "Name for Volume Group: "
 msgstr ""
 
-#: src/lvui.glade.h:52
+#: src/lvui.glade.h:46
 msgid "Name for new LV:"
 msgstr ""
 
-#: src/lvui.glade.h:53
+#: src/lvui.glade.h:47
 msgid "New Volume Group"
 msgstr ""
 
-#: src/lvui.glade.h:54
+#: src/lvui.glade.h:48
 msgid "New Volume Group Form"
 msgstr ""
 
-#: src/lvui.glade.h:55
+#: src/lvui.glade.h:49
 msgid "No Filesystem"
 msgstr ""
 
-#: src/lvui.glade.h:56
+#: src/lvui.glade.h:50
 msgid "Number of Stripes: "
 msgstr ""
 
-#: src/lvui.glade.h:57
+#: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
 msgstr ""
 
-#: src/lvui.glade.h:58
+#: src/lvui.glade.h:52
 msgid "Reiser"
 msgstr ""
 
-#: src/lvui.glade.h:59
+#: src/lvui.glade.h:53
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
 
-#: src/lvui.glade.h:61
+#: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
 
-#: src/lvui.glade.h:63
+#: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
 
-#: src/lvui.glade.h:65
-msgid "Remove Volume"
+#: src/lvui.glade.h:59
+msgid ""
+"Remove Volume from\n"
+"Volume Group"
 msgstr ""
 
-#: src/lvui.glade.h:66
+#: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
 
-#: src/lvui.glade.h:68
+#: src/lvui.glade.h:63
 msgid "Resizable?"
 msgstr ""
 
-#: src/lvui.glade.h:69
+#: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
 msgstr ""
 
-#: src/lvui.glade.h:70
+#: src/lvui.glade.h:65
+msgid "Select a disk entity to add to Volume Group:"
+msgstr ""
+
+#: src/lvui.glade.h:66
 msgid "Size:"
 msgstr ""
 
-#: src/lvui.glade.h:71
+#: src/lvui.glade.h:67
 msgid "Stripe Size:"
 msgstr ""
 
-#: src/lvui.glade.h:72
+#: src/lvui.glade.h:68
 msgid "Striped"
 msgstr ""
 
-#: src/lvui.glade.h:73
+#: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
 msgstr ""
 
-#: src/lvui.glade.h:74
+#: src/lvui.glade.h:70
 msgid "Use Remaining Space"
 msgstr ""
 
-#: src/lvui.glade.h:75
+#: src/lvui.glade.h:71
 msgid "XFS"
 msgstr ""
 
-#: src/lvui.glade.h:76
+#: src/lvui.glade.h:72
+msgid "dialog1"
+msgstr ""
+
+#: src/lvui.glade.h:73
 msgid "ext2"
 msgstr ""
 
-#: src/lvui.glade.h:77
+#: src/lvui.glade.h:74
 msgid "ext3"
 msgstr ""
 
-#: src/CommandHandler.py:13
+#. ##TRANSLATOR: The first word in each string below is
+#. ##an lvm command line command phrase.
+#: src/CommandHandler.py:14
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\""
 msgstr ""
 
-#: src/CommandHandler.py:14
+#: src/CommandHandler.py:15
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\""
 msgstr ""
 
-#: src/CommandHandler.py:15
+#: src/CommandHandler.py:16
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\""
 msgstr ""
 
-#: src/CommandHandler.py:16
+#: src/CommandHandler.py:17
+#, python-format
+msgid "lvremove command failed. Command attempted: \"%s\""
+msgstr ""
+
+#: src/CommandHandler.py:18
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\""
 msgstr ""
 
+#: src/CommandHandler.py:19
+#, python-format
+msgid "vgreduce command failed. Command attempted: \"%s\""
+msgstr ""
+
+#: src/CommandHandler.py:20
+#, python-format
+msgid "pvmove command failed. Command attempted: \"%s\""
+msgstr ""
+
+#: src/CommandHandler.py:21
+#, python-format
+msgid "umount command failed. Command attempted: \"%s\""
+msgstr ""
+
 #. first set up lvcreate args
-#. run command
+#. MUST be last arg for this command block
+#. ##next command
+#. Now make filesystem if necessary
 #. Column names for PVS calls
 #. Column names for PVS calls
 #. Column names for lvdisplay calls
@@ -743,6 +842,7 @@ msgstr ""
 #. #in a list probably hoses the loop iterator, so to be safe,
 #. #the for loop iterator is recreated after each list insertion
 #. Add final free segment if necessary
+#. Nothing in this PV is used...
 #. ##Types of views to render
 #: src/lvmui_constants.py:18
 #, python-format
