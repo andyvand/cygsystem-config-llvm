@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-12-01 23:47+0800\n"
+"PO-Revision-Date: 2004-12-08 15:54+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Chinese Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  無法啟動圖形環境。最可能造成這錯誤的原因，是這工具並\n"
+"  沒有在圖形環境中執行。請啟動您的圖形使用者界面，或設\n"
+"  定您的 DISPLAY 變數。"
+"                                                                                \n"
+"  擷取到的例外：%s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -78,78 +84,75 @@ msgstr "大小"
 
 #: src/InputController.py:105
 msgid "Entity Type"
-msgstr ""
+msgstr "個體種類"
 
 #: src/InputController.py:107
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "未分配的實體 Volume"
 
 #: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "未初始化的磁碟個體"
 
 #: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr ""
+msgstr "請選擇磁碟個體，以加入 %s Volume 群組："
 
 #: src/InputController.py:111
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "Volume 群組至少由兩個以上的實體 Volume 所組成，以支援等量磁區。這個 Volume 群組並不符合這項要求。"
 
 #: src/InputController.py:113
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr ""
+msgstr "名為 %s 的邏輯 Volume 已經存在於這個 Volume 群組中。請選擇一個獨一無二的名稱。"
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "名為 %s 的 Volume 群組已經存在。請選擇一個獨一無二的名稱。"
 
 #: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "您必須賦予新邏輯 Volume 一個名稱"
 
 #: src/InputController.py:119
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "您必須賦予新 Volume 群組一個名稱"
 
 #: src/InputController.py:121
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "指定的掛載點 %s 不存在。您想要建立這掛載點嗎？"
 
 #: src/InputController.py:123
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "在無預期的情形下，建立掛載點 %s 失敗。"
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "在這版本中，本功能尚未完成"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "這個 Volume 群組的實體 Volume 數目已經到達上限。"
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "這個 Volume 群組的邏輯 Volume 數目已經到達上限。"
 
 #: src/InputController.py:131
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:133
@@ -157,7 +160,7 @@ msgid ""
 "There is a problem with the value entered in the Size field. The value "
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
-msgstr ""
+msgstr "在「大小」欄位中輸入的值有誤。這個值應該是數字，不包含任何字母或符號。"
 
 #: src/InputController.py:135
 #, python-format
@@ -165,29 +168,29 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr ""
+msgstr "重要警告：邏輯 Volume %s 上面已經有了 %s 檔案系統，目前掛載於 %s 上。您百分之百確定，要移除這個已掛載檔案系統上的所有檔案？"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:139
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "%s 上的未使用空間"
 
 #: src/InputController.py:140
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s MB"
 
 #: src/InputController.py:141
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s KB"
 
 #: src/InputController.py:142
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s GB"
 
 #: src/InputController.py:143
 #, python-format
@@ -199,41 +202,41 @@ msgstr ""
 msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
-msgstr ""
+msgstr "新邏輯 volume 所需的大小超過 Volume 群組 %s 的可用空間。可用空間為："
 
 #: src/InputController.py:147
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s 只能包括數字"
 
 #: src/InputController.py:148
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
+msgstr "「最大實體 Volume」欄位只能含括 1 到 256 之間的整數值"
 
 #: src/InputController.py:149
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
+msgstr "「最大邏輯 Volume」欄位只能含括 1 到 256 之間的整數值"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:153
 msgid "Stripe Size field"
-msgstr ""
+msgstr "等量磁區大小的欄位"
 
 #: src/InputController.py:154
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "等量磁區數量的欄位"
 
 #: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
+msgstr "您非常肯定，要從邏輯 Volume 管理中，移除 %s？"
 
 #: src/InputController.py:158
 #, python-format
@@ -248,9 +251,8 @@ msgstr ""
 
 #: src/InputController.py:159
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr "您非常肯定，要移除 %s（位於 Volume 群組 %s 中）？"
 
 #: src/InputController.py:160
 #, python-format
@@ -262,7 +264,7 @@ msgstr ""
 #: src/InputController.py:161
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "您非常肯定，要移除邏輯 Volume %s？"
 
 #: src/InputController.py:162
 #, python-format
@@ -270,15 +272,16 @@ msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
+msgstr "Volume 群組 %s 沒有足夠的空間，將儲存在 %s 的資料移開。可行的解決方法之一，是在 Volume 群組中，加入額外的實體 Volume。"
 
 #: src/InputController.py:163
+#, fuzzy
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr ""
+msgstr "dm-mirror 模組如果不是尚未載入核心，就是您的核心不支援 dm-mirrot 目標。如果核心支援，請試試執行「modprobe dm-mirror」指令。否則的話，就無法將"
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -389,97 +392,107 @@ msgstr ""
 #. ##Convenience Dialogs
 #: src/lvui.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "40 megabytes"
-msgstr ""
+msgstr "40 MB"
 
 #: src/lvui.glade.h:10
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:11
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:12
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "將實體 Volume 加入 Volume 群組中"
 
 #: src/lvui.glade.h:14
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"加到現有的 \n"
+"Volume 群組中"
 
 #: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"建立新的\n"
+"邏輯 Volume"
 
 #: src/lvui.glade.h:18
 msgid "Create New LV"
-msgstr ""
+msgstr "建立新的邏輯 Volume"
 
 #: src/lvui.glade.h:19
 msgid "Create a New Logical Volume"
-msgstr ""
+msgstr "建立新的邏輯 Volume"
 
 #: src/lvui.glade.h:20
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"建立新的 \n"
+"Volume 群組"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"延伸\n"
+"Volume 群組"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"延伸 \n"
+"邏輯 Volume"
 
 #: src/lvui.glade.h:26
 msgid "Extend Volume Group"
-msgstr ""
+msgstr "延伸 Volume 群組"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -487,7 +500,7 @@ msgstr ""
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
-msgstr ""
+msgstr "檔案系統："
 
 #: src/lvui.glade.h:29
 msgid "Gigabytes"
@@ -499,43 +512,43 @@ msgstr ""
 
 #: src/lvui.glade.h:31 src/lvmui_constants.py:51
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvui.glade.h:32
 msgid "Kilo"
-msgstr ""
+msgstr "千"
 
 #: src/lvui.glade.h:33
 msgid "Kilobytes"
-msgstr ""
+msgstr "千位元組"
 
 #: src/lvui.glade.h:34
 msgid "Linear"
-msgstr ""
+msgstr "線性"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "邏輯 volume 管理"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
-msgstr ""
+msgstr "管理 volume"
 
 #: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "最大邏輯 volume ："
 
 #: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "最大實際 volume ："
 
 #: src/lvui.glade.h:39
 msgid "Meg"
-msgstr ""
+msgstr "百萬"
 
 #: src/lvui.glade.h:40 src/renderer.py:106
 msgid "Megabytes"
-msgstr ""
+msgstr "百萬位元組"
 
 #: src/lvui.glade.h:41
 msgid ""
@@ -545,28 +558,28 @@ msgstr ""
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr ""
+msgstr "掛載點（如果空白的話，邏輯 volume 將不會被掛載）："
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr " volume 群組的名稱："
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
-msgstr ""
+msgstr "新邏輯 volume 的名稱："
 
 #: src/lvui.glade.h:46
 msgid "New Volume Group"
-msgstr ""
+msgstr "新 volume 群組"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "新 volume 群組的格式"
 
 #. File System Types
 #: src/lvui.glade.h:48 src/lvmui_constants.py:48
 msgid "No Filesystem"
-msgstr ""
+msgstr "沒有檔案系統"
 
 #: src/lvui.glade.h:49
 msgid "Number of Stripes: "
@@ -650,80 +663,67 @@ msgstr ""
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:26
 #, python-format
-msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
 #: src/CommandHandler.py:27
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr ""
 
 #. first set up lvcreate args
@@ -836,7 +836,7 @@ msgstr ""
 
 #: src/lvm_model.py:75
 msgid "Partition Type:   "
-msgstr ""
+msgstr "分割區類型：   "
 
 #: src/lvm_model.py:76
 msgid "Size:   "
@@ -844,27 +844,27 @@ msgstr ""
 
 #: src/lvm_model.py:77
 msgid "Mount Point:   "
-msgstr ""
+msgstr "掛載點：   "
 
 #: src/lvm_model.py:78
 msgid "File System:   "
-msgstr ""
+msgstr "檔案系統：   "
 
 #: src/lvm_model.py:80
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "實體 Volume 名稱：   "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "實體 Volume 大小：   "
 
 #: src/lvm_model.py:82
 msgid "Space Used:   "
-msgstr ""
+msgstr "已使用空間：   "
 
 #: src/lvm_model.py:83
 msgid "Space Free:   "
-msgstr ""
+msgstr "剩餘空間：   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
@@ -1060,7 +1060,7 @@ msgstr ""
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "屬性："
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
@@ -1076,7 +1076,7 @@ msgstr ""
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "磁碟實體"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
@@ -1092,13 +1092,15 @@ msgstr ""
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "尚未選取 Volume"
 
 #: src/renderer.py:96
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
+"這個 Volume 尚未被分配到\n"
+"任何 Volume 群組。"
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
@@ -1131,3 +1133,4 @@ msgstr ""
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr ""
+
