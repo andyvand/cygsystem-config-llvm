@@ -48,6 +48,12 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Fri Oct 29 2004 Jim Parsons <jparsons@redhat.com> 0.9.4-1.0
+  - Fixes for bz137190 empty vg name field validation, 
+  - bz137048 removes resizable checkbox for vgcreate, 
+  - bz137208 unique vg name checking fixed, 
+  - bz137107 remove autobackup checkbox, 
+  - bz137231 warn on extend vg when init'ing a new entity. 
 * Tue Oct 26 2004 Jim Parsons <jparsons@redhat.com> 0.9.3-1.0
   - Version bump. 
 * Tue Oct 26 2004 Jim Parsons <jparsons@redhat.com> 0.9.2-1.0
