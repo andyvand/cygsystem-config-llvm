@@ -838,14 +838,19 @@ class lvm_model:
           break
 
     #Add final free segment if necessary
-    st,sz = extentlist[len(extentlist) - 1].get_start_size()
     total,free,alloc = pv.get_extent_values()
-    if (st + sz) != total:
-      new_start = st + sz
-      new_size = total - new_start
-      ex = ExtentSegment(FREE, new_start, new_size, FALSE)
+    if total == free:  #Nothing in this PV is used...
+      ex = ExtentSegment(FREE, 0, free, FALSE)
       ex.set_annotation(UNUSED_SPACE)
       extentlist.append(ex)
+    else:
+      st,sz = extentlist[len(extentlist) - 1].get_start_size()
+      if (st + sz) != total:
+        new_start = st + sz
+        new_size = total - new_start
+        ex = ExtentSegment(FREE, new_start, new_size, FALSE)
+        ex.set_annotation(UNUSED_SPACE)
+        extentlist.append(ex)
     
     for es in extentlist:
       pv.add_extent_segment(es)
@@ -860,25 +865,4 @@ class lvm_model:
     else:
       return (-1)
 
-  def get_extent_data_for_PV(self, pathname):
-    arglist = list()
-    arglist.append("/usr/sbin/lvm")
-    arglist.append("pvs")
-    arglist.append("--noheadings")
-    arglist.append("--separator")
-    arglist.append(",")
-    arglist.append("-o")
-    arglist.append("pv_pe_count,pv_pe_alloc_count")
-    arglist.append("pathname")
-   
-    result_string = rhpl.executil.execWithCapture("/sbin/lvm",vg_arglist)
-    lines = result_string.splitlines()
-    for line in lines:
-      words = line.split(",")
-      break
-
-    total = int(words[0])
-    alloc = int(words[1])
-    free = total - alloc
-    return total,alloc,free
  
