@@ -481,13 +481,13 @@ class volume_renderer:
   def highlight_section_persist(self, event):
     x,y = event.get_coords()
     if x < X_PIXMAP_OFFSET:
-      return
+      return None
     if x > MAX_X + X_PIXMAP_OFFSET + X_BOUND:
-      return
+      return None
     if y < Y_PIXMAP_OFFSET:
-      return
+      return None
     if y > Y_BOUND + Y_PIXMAP_OFFSET:
-      return
+      return None
 
     if event.button == 1:
       section = self.retrieve_section(x, y)
@@ -497,7 +497,20 @@ class volume_renderer:
       else:
         self.viewable_vols[section].set_is_selected(TRUE)
       #self.highlight_this_section(section)
+
       self.rerender() 
+      #return updated list of selected sections
+      return_list = list()
+      for vvol in self.viewable_vols:
+        print "vvol get_is_selected: %d" % vvol.get_is_selected()
+        if vvol.get_is_selected() == TRUE:  
+          return_list.append(vvol.get_volume())
+      if len(return_list) > 0:
+        return return_list
+      else:
+        return None
+
+    return None
 
   def dual_highlight_section_persist(self, event):
     x,y = event.get_coords()
