@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-17 16:54+0000\n"
+"PO-Revision-Date: 2005-02-25 16:54+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -489,18 +489,24 @@ msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"Búa til nýjann \n"
+"sýndardiskahóp"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"Stækka\n"
+"sýndardiskhóp"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"Stækka \n"
+"sýndardisk"
 
 #: src/lvui.glade.h:26
 msgid "Extend Volume Group"
@@ -508,7 +514,7 @@ msgstr "Stækka sýndardiskhóp"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
-msgstr ""
+msgstr "Diskhlutar"
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
@@ -520,7 +526,7 @@ msgstr "Gígabæti"
 
 #: src/lvui.glade.h:30
 msgid "Initialize Entity"
-msgstr ""
+msgstr "Frumstilla hlutinn"
 
 #: src/lvui.glade.h:31 src/lvmui_constants.py:51
 msgid "JFS"
@@ -540,19 +546,19 @@ msgstr "Línulegt"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "Umsýsla sýndardiska"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Stýra drifum"
 
 #: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Hámarksfjöldi sýndardiska: "
 
 #: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Hámarksfjöldi raundiska: "
 
 #: src/lvui.glade.h:39
 msgid "Meg"
@@ -570,74 +576,84 @@ msgstr ""
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr ""
+msgstr "Tengipunktur (ef autt verður diskurinn ótengdur):"
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Heiti sýndardiskhópsins: "
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
-msgstr ""
+msgstr "Heiti nýja sýndardisksins:"
 
 #: src/lvui.glade.h:46
 msgid "New Volume Group"
-msgstr ""
+msgstr "Nýr diskhópur"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "Sniðmát nýs diskhóps"
 
 #. File System Types
 #: src/lvui.glade.h:48 src/lvmui_constants.py:48
 msgid "No Filesystem"
-msgstr ""
+msgstr "Ekkert skráarkerfi"
 
 #: src/lvui.glade.h:49
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "Fjöldi strípa: "
 
 #: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Stærð diskhluta: "
 
 #: src/lvui.glade.h:51
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Fjarlægja \n"
+"sýndardisk"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Fjarlægja valda\n"
+"sýndardiska"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Fjarlægja valda\n"
+"raundiska"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Fjarlægja drif úr\n"
+"sýndardiskhóp"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Fjarlægja disk \n"
+"úr LVM"
 
 #: src/lvui.glade.h:61
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Veldu sýndardiskhóp til að bæta þessum disk í:"
 
 #: src/lvui.glade.h:62
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "Veldu disk til að bæta í sýndardiskhópinn:"
 
 #: src/lvui.glade.h:63
 msgid "Size:"
@@ -645,19 +661,19 @@ msgstr "Stærð:"
 
 #: src/lvui.glade.h:64
 msgid "Stripe Size:"
-msgstr ""
+msgstr "Strípustærð:"
 
 #: src/lvui.glade.h:65
 msgid "Striped"
-msgstr ""
+msgstr "Strípað"
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "Ónotað pláss á VG1:"
 
 #: src/lvui.glade.h:67
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "Nota all pláss sem er eftir"
 
 #: src/lvui.glade.h:68 src/lvmui_constants.py:55
 msgid "XFS"
@@ -678,78 +694,91 @@ msgstr "ext3"
 msgid ""
 "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"vgextend skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid ""
 "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"pvcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid ""
 "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"lvcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid ""
 "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"pvremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid ""
 "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"lvremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid ""
 "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"vgremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid ""
 "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"vgcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:22
 #, python-format
 msgid ""
 "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
+"vgchange skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:23
 #, python-format
 msgid ""
 "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"vgreduce skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:24
 #, python-format
 msgid ""
 "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"pvmove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:25
 #, python-format
 msgid ""
 "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"umount skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:26
 #, python-format
 msgid ""
 "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
+"mkfs skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:27
 #, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr ""
+"mount skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -769,7 +798,7 @@ msgstr "Ónotað pláss"
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Línuleg möppun"
 
 #: src/lvm_model.py:40
 msgid "Unmounted"
@@ -805,15 +834,15 @@ msgstr "Tiltækt pláss:   "
 
 #: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Diskhlutar alls:   "
 
 #: src/lvm_model.py:59
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Fjöldi lausra diskhluta:   "
 
 #: src/lvm_model.py:60
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Stærð diskbúta:   "
 
 #: src/lvm_model.py:61
 msgid "Maximum Allowed Physical Volumes:   "
@@ -845,15 +874,15 @@ msgstr "Stærð sýndardisks:   "
 
 #: src/lvm_model.py:69
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "Fjöldi búta:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "Fjöldi strípa:   "
 
 #: src/lvm_model.py:71
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Stærð stípa:   "
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
@@ -893,11 +922,11 @@ msgstr "Laust pláss:   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
-msgstr "Raundiskabútar alls:   "
+msgstr "Raundiskhlutar alls:   "
 
 #: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
-msgstr "Notaðir Raundiskabútar:   "
+msgstr "Notaðir Raundiskhlutar:   "
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
