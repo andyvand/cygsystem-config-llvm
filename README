@@ -1,0 +1,5 @@
+Notes on building system-config-lvm:
+You will need automake-1.7 and aclocal-1.7
+type './autogen.sh'
+type 'make'
+type 'make srpm'
