@@ -9,11 +9,16 @@ from lvmui_constants import *
 import gettext
 _ = gettext.gettext
 
-
+###TRANSLATOR: The first word in each string below is
+###an lvm command line command phrase.
 VGEXTEND_FAILURE=_("vgextend command failed. Command attempted: \"%s\"")
 PVCREATE_FAILURE=_("pvcreate command failed. Command attempted: \"%s\"")
 PVREMOVE_FAILURE=_("pvremove command failed. Command attempted: \"%s\"")
+LVREMOVE_FAILURE=_("lvremove command failed. Command attempted: \"%s\"")
 VGCREATE_FAILURE=_("vgcreate command failed. Command attempted: \"%s\"")
+VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\"")
+PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\"")
+LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\"")
 
 class CommandHandler:
 
@@ -29,7 +34,7 @@ class CommandHandler:
     arglist.append(cmd_args_dict[NEW_LV_NAME_ARG])
     if cmd_args_dict[NEW_LV_UNIT_ARG] == EXTENT_IDX:
       arglist.append("-l")
-      arglist.append(cmd_args_dict[NEW_LV_SIZE_ARG])
+      arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]))
     else:
       arglist.append("-L")
     if cmd_args_dict[NEW_LV_UNIT_ARG] == KILOBYTE_IDX:
@@ -37,16 +42,25 @@ class CommandHandler:
     elif cmd_args_dict[NEW_LV_UNIT_ARG] == MEGABYTE_IDX:
       arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "m")
     elif cmd_args_dict[NEW_LV_UNIT_ARG] == GIGABYTE_IDX:
-      arglist.append(int(cmd_args_dict[NEW_LV_SIZE_ARG]) + "g")
+      arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "g")
 
     if cmd_args_dict[NEW_LV_IS_STRIPED_ARG] == TRUE:
       arglist.append("-i")
-      arglist.append(cmd_args_dict[NEW_LV_NUM_STRIPES_ARG])
+      arglist.append(str(cmd_args_dict[NEW_LV_NUM_STRIPES_ARG]))
       arglist.append("-I")
-      arglist.append(cmd_args_dict[NEW_LV_STRIPE_SIZE_ARG])
+      arglist.append(str(cmd_args_dict[NEW_LV_STRIPE_SIZE_ARG]))
+
+    #MUST be last arg for this command block
+    arglist.append(cmd_args_dict[NEW_LV_VGNAME_ARG])
 
     result_string = rhpl.executil.execWithCapture("/usr/sbin/lvcreate",arglist)
-    #run command
+
+    ###next command
+
+    #Now make filesystem if necessary
+    if cmd_args_dict[NEW_LV_MAKE_FS_ARG] == TRUE:
+      pass
+
 
   def initialize_entity(self, entity):
     commandstring = "/usr/sbin/pvcreate -M2 " + entity
@@ -90,3 +104,46 @@ class CommandHandler:
     retval = os.system(commandstring)
     if retval != 0:
       raise CommandError('FATAL', msg)
+
+  def remove_lv(self, lvname):
+    commandstring = "/usr/sbin/lvremove --force " + lvname
+    msg = LVREMOVE_FAILURE % commandstring
+    retval = os.system(commandstring)
+    if retval != 0:
+      raise CommandError('FATAL', msg)
+
+  def unmount_lv(self, lvname):
+    commandstring = "/bin/umount " + lvname
+    msg = LV_UMOUNT_FAILURE % commandstring
+    retval = os.system(commandstring)
+    if retval != 0:
+      raise CommandError('FATAL', msg)
+
+  def reduce_vg(self, vg, pv):
+    commandstring = "/usr/sbin/vgreduce " + vg + " " + pv
+    msg = VGREDUCE_FAILURE % commandstring
+    retval = os.system(commandstring)
+    if retval != 0:
+      raise CommandError('FATAL', msg)
+
+  def move_pv(self, pv):
+    commandstring = "/usr/sbin/pvmove " + pv
+    msg = PVMOVE_FAILURE % commandstring
+    retval = os.system(commandstring)
+    if retval != 0:
+      raise CommandError('FATAL', msg)
+
+  def is_lv_mounted(self, lvname):
+    is_mounted = FALSE
+    arglist = list()
+    arglist.append("/bin/cat")
+    arglist.append("/proc/mounts")
+    result  = rhpl.executil.execWithCapture("/bin/cat", arglist)
+    textlines = result.splitlines()
+    for textline in textlines:
+      text_words = textline.split()
+      possible_path = text_words[0].strip()
+      if possible_path == lvname:
+        is_mounted = TRUE
+        break
+    return is_mounted
