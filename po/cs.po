@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-10-13 09:30-0400\n"
-"PO-Revision-Date: 2004-10-17 14:20+0200\n"
+"PO-Revision-Date: 2004-10-20 21:31+0200\n"
 "Last-Translator: Miloslav Trmac <mitr@volny.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -452,147 +452,158 @@ msgstr "Název nového logického svazku:"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group"
-msgstr ""
+msgstr "Nová skupina svazků"
 
 #: src/lvui.glade.h:48
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "Formulář pro novou skupinu svazků"
 
 #: src/lvui.glade.h:49
 msgid "No Filesystem"
-msgstr ""
+msgstr "Žádný systém souborů"
 
 #: src/lvui.glade.h:50
 msgid "Number of Stripes: "
-msgstr ""
+msgstr "Počet stripů: "
 
 #: src/lvui.glade.h:51
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Velikost fyzického oddílu: "
 
 #: src/lvui.glade.h:52
 msgid "Reiser"
-msgstr ""
+msgstr "Reiser"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Odstranit \n"
+"logický svazek"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Odstranit vybrané<\n"
+"logické svazky"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Odstranit vybrané\n"
+"fyzické svazky"
 
 #: src/lvui.glade.h:59
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Odstranit svazek\n"
+"ze skupiny svazků"
 
 #: src/lvui.glade.h:61
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Odstranit svazek \n"
+"z LVM"
 
 #: src/lvui.glade.h:63
 msgid "Resizable?"
-msgstr ""
+msgstr "Lze měnit velikost?"
 
 #: src/lvui.glade.h:64
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Zvolte skupinu svazků, do které přidat tento fyzický svazek:"
 
 #: src/lvui.glade.h:65
 msgid "Select a disk entity to add to Volume Group:"
-msgstr ""
+msgstr "Zvolte diskovou entitu, kterou přidat do skupiny svazků:"
 
 #: src/lvui.glade.h:66
 msgid "Size:"
-msgstr ""
+msgstr "Velikost:"
 
 #: src/lvui.glade.h:67
 msgid "Stripe Size:"
-msgstr ""
+msgstr "Velikost stripu:"
 
 #: src/lvui.glade.h:68
 msgid "Striped"
-msgstr ""
+msgstr "Stripován"
 
 #: src/lvui.glade.h:69
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "Nepoužitý prostor na VG1:"
 
 #: src/lvui.glade.h:70
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "Použít zbývající prostor"
 
 #: src/lvui.glade.h:71
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvui.glade.h:72
 msgid "dialog1"
-msgstr ""
+msgstr "dialog1"
 
 #: src/lvui.glade.h:73
 msgid "ext2"
-msgstr ""
+msgstr "ext2"
 
 #: src/lvui.glade.h:74
 msgid "ext3"
-msgstr ""
+msgstr "ext3"
 
+# Somebody should learn about variables
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz vgextend selhal. Zkoušený příkaz: \"%s\""
 
 #: src/CommandHandler.py:15
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz pvcreate selhal. Zkoušený příkaz: \"%s\""
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz pvremove selhal. Zkoušený příkaz: \"%s\""
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz lvremove selhal. Zkoušený příkaz: \"%s\""
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz vgcreate selhal. Zkoušený příkaz: \"%s\""
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz vgreduce selhal. Zkoušený příkaz: \"%s\""
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz pvmove selhal. Zkoušený příkaz: \"%s\""
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\""
-msgstr ""
+msgstr "Příkaz umount selhal. Zkoušený příkaz: \"%s\""
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -603,152 +614,152 @@ msgstr ""
 #. Column names for lvdisplay calls
 #: src/lvm_model.py:35
 msgid "Unused"
-msgstr ""
+msgstr "Nepoužito"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "Nepoužité místo"
 
 #: src/lvm_model.py:37
 msgid "Free"
-msgstr ""
+msgstr "Volné"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:40
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Lineární mapování"
 
 #: src/lvm_model.py:41
 msgid "Unmounted"
-msgstr ""
+msgstr "Odpojeno"
 
 #: src/lvm_model.py:42
 msgid "No File System"
-msgstr ""
+msgstr "Žádný systém souborů"
 
 #: src/lvm_model.py:53
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Název skupiny svazků: "
 
 #: src/lvm_model.py:54
 msgid "System ID:   "
-msgstr ""
+msgstr "ID systému: "
 
 #: src/lvm_model.py:55
 msgid "Format:   "
-msgstr ""
+msgstr "Formát: "
 
 #: src/lvm_model.py:56 src/lvm_model.py:73 src/lvm_model.py:87
 msgid "Attributes:   "
-msgstr ""
+msgstr "Atributy: "
 
 #: src/lvm_model.py:57
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "Velikost skupiny svazků: "
 
 #: src/lvm_model.py:58
 msgid "Available Space:   "
-msgstr ""
+msgstr "Dostupné místo: "
 
 #: src/lvm_model.py:59
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Celkový počet oddílů: "
 
 #: src/lvm_model.py:60
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Počet volných oddílů: "
 
 #: src/lvm_model.py:61
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Velikost oddílu: "
 
 #: src/lvm_model.py:62
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "Maximum povolených fyzických svazků: "
 
 #: src/lvm_model.py:63
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Počet fyzických svazků: "
 
 #: src/lvm_model.py:64
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "Maximum povolených logických svazků: "
 
 #: src/lvm_model.py:65
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Počet logických svazků: "
 
 #: src/lvm_model.py:66
 msgid "VG UUID:   "
-msgstr ""
+msgstr "UUID skupiny svazků: "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Název skupiny svazků: "
 
 #: src/lvm_model.py:69
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Velikost skupiny svazků: "
 
 #: src/lvm_model.py:70
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "Počet segmentů: "
 
 #: src/lvm_model.py:71
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "Počet stripů: "
 
 #: src/lvm_model.py:72
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Velikost stripu: "
 
 #: src/lvm_model.py:74
 msgid "LV UUID:   "
-msgstr ""
+msgstr "UUID logického svazku: "
 
 #: src/lvm_model.py:76
 msgid "Partition Type:   "
-msgstr ""
+msgstr "Typ oddílu: "
 
 #: src/lvm_model.py:77
 msgid "Size:   "
-msgstr ""
+msgstr "Velikost: "
 
 #: src/lvm_model.py:78
 msgid "Mount Point:   "
-msgstr ""
+msgstr "Místo připojení: "
 
 #: src/lvm_model.py:79
 msgid "File System:   "
-msgstr ""
+msgstr "Systém souborů: "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Název fyzického svazku: "
 
 #: src/lvm_model.py:82
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Velikost fyzického svazku: "
 
 #: src/lvm_model.py:83
 msgid "Space Used:   "
-msgstr ""
+msgstr "Použité místo: "
 
 #: src/lvm_model.py:84
 msgid "Space Free:   "
-msgstr ""
+msgstr "Volné místo: "
 
 #: src/lvm_model.py:85
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Celkem fyzických oddílů: "
 
 #: src/lvm_model.py:86
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Alokovaných fyzických oddílů: "
 
 #: src/lvm_model.py:88
 msgid "PV UUID:   "
-msgstr ""
+msgstr "UUID fyzického svazku: "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -867,32 +878,32 @@ msgstr ""
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
-msgstr ""
+msgstr "Opravdu chcete inicializovat diskovou entitu %s? Všechna data na tomto zařízení/oddíle budou ztracena."
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "Vlastnosti"
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "Fyzický svazek"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "Logický svazek"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Nealokovaný svazek"
 
 #: src/Properties_Renderer.py:48 src/renderer.py:104
 msgid "Disk Entity"
-msgstr ""
+msgstr "Disková entita"
 
 #: src/Properties_Renderer.py:49 src/Properties_Renderer.py:50
 #: src/Properties_Renderer.py:51 src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "SKupina svazků"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -900,45 +911,49 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
+"Tento oddíl nebyl inicializován \n"
+" pro použití s LVM."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Nevybrán svazek"
 
 #: src/renderer.py:96
 msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
+"Tento svazek ještě nebyl přidělen \n"
+"  skupině svakzů."
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "Logický pohled"
 
 #: src/renderer.py:101 src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "Fyzický pohled"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "Nealokováno"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "Neinicializováno"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr ""
+msgstr "oddíly"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Skupiny svazků"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Nealokované svazky"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "Neinicializované entity"
