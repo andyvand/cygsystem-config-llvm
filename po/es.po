@@ -690,7 +690,6 @@ msgid "Stripe Size:"
 msgstr "Tamaño de Stripe:"
 
 #: src/lvui.glade.h:65
-#, fuzzy
 msgid "Striped"
 msgstr "Striped"
 
