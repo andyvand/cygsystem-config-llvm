@@ -1,14 +1,14 @@
 # translation of es.po to Español
 # translation of system-config-lvm.po to Español
-# This file is distributed under the same license as the system-config-lvm package.
-# Copyright (C) 2004 Redhat.
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Hernan Fernandez <uk@mitierra.cl>, 2004.
 # Rodolfo Raya <rodolfo@heartsome.net>, 2005.
 #
 msgid ""
 msgstr "Project-Id-Version: es\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-04-09 18:44-0300\n"
+"PO-Revision-Date: 2005-04-09 19:40-0300\n"
 "Last-Translator: Rodolfo Raya <rodolfo@heartsome.net>\n"
 "Language-Team: Español <fedora-trans-es@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr "Volumen Físico no Asignado"
 
 #: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
-msgstr "Entidad de Disco Inicializada"
+msgstr "Entidad de Disco no Inicializada"
 
 #: src/InputController.py:109
 #, python-format
@@ -115,8 +115,8 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
-"Ya existe un Volumen Lógico con el nombre %s en este Grupo Volumen Por favor "
-"seleccione otro nombre."
+"Ya existe un Volumen Lógico con el nombre %s en este Grupo Volumen."
+"Por favor seleccione un nombre no repetido."
 
 #: src/InputController.py:115
 #, python-format
@@ -138,7 +138,8 @@ msgstr "Debe proporcionar un nombre para el nuevo Grupo Volumen"
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr "El punto de montaje especificado %s no existe. ¿Desea crearlo?"
+msgstr ""
+"El punto de montaje especificado, %s no existe. ¿Desea crearlo?"
 
 #: src/InputController.py:123
 #, python-format
@@ -167,6 +168,7 @@ msgstr ""
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
+"Tipo de conversión no definida en model factory. No se puede completar la tarea."
 
 #: src/InputController.py:133
 msgid ""
@@ -174,7 +176,8 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
-"Hay un problema con el valor ingresado en el campo Tamaño. El valor debe ser un número sin caracteres alfabéticos o símbolos de cualquier otro tipo."
+"Hay un problema con el valor ingresado en el campo Tamaño. El valor debe "
+"ser un número sin caracteres alfabéticos o símbolos de cualquier otro tipo."
 
 #: src/InputController.py:135
 #, python-format
@@ -184,9 +187,8 @@ msgid ""
 "on this mounted filesystem?"
 msgstr ""
 "AVISO IMPORTANTE: el Volumen Lógico %s contiene un sistema de archivos %s "
-"y esta actualmente montado en %s. ¿Está absolutamente seguro de que "
-"desea descartar los datos de este sistema de archivos montado?"
-""
+"y esta actualmente montado en %s. ¿Está absolutamente seguro de que desea "
+"descartar los datos de este sistema de archivos montado?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -211,7 +213,6 @@ msgid "%s gigabytes"
 msgstr "%s gigabytes"
 
 #: src/InputController.py:143
-#, fuzzy
 msgid "%s extents"
 msgstr "%s extents"
 
@@ -227,34 +228,33 @@ msgstr ""
 #: src/InputController.py:147
 #, python-format
 msgid "The %s should only contain number values"
-msgstr "El %s solo puede contener valores numericos"
+msgstr "El %s sólo puede contener valores numéricos"
 
 #: src/InputController.py:148
 msgid ""
 "The  Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"El campo Volumen Físico Máximo solo puede contener números enteros entre 1 y "
-"256"
+"El campo Volumen Físico Máximo solo puede contener números enteros "
+"entre 1 y 256"
 
 #: src/InputController.py:149
 msgid ""
 "The  Maximum Logical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"El campo Volumen Lógico Máximo solo puede contener números enteros entre 1 y "
-"256"
+"El campo Volumen Lógico Máximo solo puede contener números enteros "
+"entre 1 y 256"
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:153
 msgid "Stripe Size field"
-msgstr ""
+msgstr "campo Tamaño de Stripe"
 
 #: src/InputController.py:154
-#, fuzzy
 msgid "Number of Stripes field"
-msgstr "Número de campos Stripes"
+msgstr "campo Número de Stripes"
 
 #: src/InputController.py:156
 #, python-format
@@ -262,8 +262,8 @@ msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
-"¿Está usted absolutamente seguro de que desea eliminar el %s desde el "
-"administrador de Volumen Lógico?"
+"¿Está usted absolutamente seguro de que desea eliminar %s de la "
+"Administración de Volúmenenes Lógicos?"
 
 #: src/InputController.py:158
 #, python-format
@@ -286,7 +286,7 @@ msgstr ""
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
-"¿Está usted absolutamente seguro de que desea eliminar el %s desde el Grupo "
+"¿Está usted absolutamente seguro de que desea eliminar %s del Grupo "
 "Volumen %s?"
 
 #: src/InputController.py:160
@@ -301,8 +301,7 @@ msgstr ""
 #: src/InputController.py:161
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
-"¿Está usted absolutamente seguro de que esea eliminar el Volumen Lógico %s?"
+msgstr "¿Está usted absolutamente seguro de que esea eliminar el Volumen Lógico %s?"
 
 #: src/InputController.py:162
 msgid ""
@@ -490,8 +489,8 @@ msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
-"Agregar al existente\n"
-"Grupo Volumen"
+"Agregar al Grupo\n"
+"Volumen existente"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -503,7 +502,7 @@ msgstr ""
 
 #: src/lvui.glade.h:18
 msgid "Create New LV"
-msgstr "Crear Nuevo LV"
+msgstr "Crear Nuevo VL"
 
 #: src/lvui.glade.h:19
 msgid "Create a New Logical Volume"
@@ -539,11 +538,11 @@ msgstr "Extender Grupo Volumen"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
-msgstr "Extents"
+msgstr "Extensiones"
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
-msgstr "Filesystem: "
+msgstr "Sistema de archivo: "
 
 #: src/lvui.glade.h:29
 msgid "Gigabytes"
@@ -567,23 +566,23 @@ msgstr "Kilobytes"
 
 #: src/lvui.glade.h:34
 msgid "Linear"
-msgstr "Linear"
+msgstr "Lineal"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr "Administrador de Volumen Lógico"
+msgstr "Administración de Volúmenes Lógicos"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
-msgstr "Administrar Volumenes"
+msgstr "Administrar Volúmenes"
 
 #: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
-msgstr "Volumen Lógico Máximo"
+msgstr "Máximo de Volúmenes Lógicos: "
 
 #: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
-msgstr "Volumen Físico Máximo"
+msgstr "Máximo  de Volúmenes Físicos: "
 
 #: src/lvui.glade.h:39
 msgid "Meg"
@@ -598,20 +597,20 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
-"Migrar lo Seleccionado\n"
-"Extender desde el Volumen"
+"Migrar las Extensiones\n"
+"Seleccionadas del Volumen"
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "Punto de montaje (si se deja en blanco LV no se montará):"
+msgstr "Punto de montaje (si se deja en blanco el VL no se montará):"
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
-msgstr "Nombre para el Grupo Volumen"
+msgstr "Nombre para el Grupo Volumen: "
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
-msgstr "Nombre para el nuevo LV:"
+msgstr "Nombre para el nuevo VL:"
 
 #: src/lvui.glade.h:46
 msgid "New Volume Group"
@@ -624,15 +623,15 @@ msgstr "Formulario Nuevo Grupo Volumen"
 #. File System Types
 #: src/lvui.glade.h:48 src/lvmui_constants.py:48
 msgid "No Filesystem"
-msgstr "No Filesystem"
+msgstr "Sin Sistema de Archivos"
 
 #: src/lvui.glade.h:49
 msgid "Number of Stripes: "
-msgstr "Número de Stripes"
+msgstr "Número de Stripes: "
 
 #: src/lvui.glade.h:50
 msgid "Physical Extent Size: "
-msgstr "Tamaño del Extent Físico: "
+msgstr "Tamaño de la Extensión Física: "
 
 #: src/lvui.glade.h:51
 msgid ""
@@ -647,7 +646,7 @@ msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
-"Eliminar Volumenes Lógicos\n"
+"Eliminar Volúmenes Lógicos\n"
 "Seleccionados"
 
 #: src/lvui.glade.h:55
@@ -655,15 +654,15 @@ msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
-"Eliminar Volumenes Físicos\n"
-"Seleccionados"
+"Eliminar Volúmenes \n "
+"Físicos Seleccionados"
 
 #: src/lvui.glade.h:57
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
-"Eliminar Volumen desde\n"
+"Eliminar Volumen del\n"
 "Grupo Volumen"
 
 #: src/lvui.glade.h:59
@@ -672,24 +671,23 @@ msgid ""
 "from LVM"
 msgstr ""
 "Eliminar Volumen\n"
-"desde LVM"
+"de la AVL"
 
 #: src/lvui.glade.h:61
 msgid "Select a Volume Group to add this PV to:"
-msgstr "Seleccione el Grupo Volumen para Agregar este PV a:"
+msgstr "Seleccione un Grupo Volumen para agregar este VF:"
 
 #: src/lvui.glade.h:62
 msgid "Select a disk entity to add to Volume Group:"
-msgstr "Seleccione la entidad de disco para agregar al Grupo Volumen:"
+msgstr "Seleccione una entidad de disco para agregar al Grupo Volumen:"
 
 #: src/lvui.glade.h:63
 msgid "Size:"
 msgstr "Tamaño:"
 
 #: src/lvui.glade.h:64
-#, fuzzy
 msgid "Stripe Size:"
-msgstr "Stripe Tamaño:"
+msgstr "Tamaño de Stripe:"
 
 #: src/lvui.glade.h:65
 #, fuzzy
@@ -698,7 +696,7 @@ msgstr "Striped"
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
-msgstr "Espacio disponible en VG1:"
+msgstr "Espacio disponible en GV1:"
 
 #: src/lvui.glade.h:67
 msgid "Use Remaining Space"
@@ -814,7 +812,7 @@ msgstr "Espacio Disponible"
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Mapeo Lineal"
 
 #: src/lvm_model.py:40
 msgid "Unmounted"
@@ -822,15 +820,15 @@ msgstr "No montado"
 
 #: src/lvm_model.py:41
 msgid "No File System"
-msgstr "No Systema de Archivo"
+msgstr "Sin Sistema de Archivo"
 
 #: src/lvm_model.py:52
 msgid "Volume Group Name:   "
-msgstr "Nombre del Grupo Volumen:  "
+msgstr "Nombre del Grupo Volumen:   "
 
 #: src/lvm_model.py:53
 msgid "System ID:   "
-msgstr "ID Sistema:   "
+msgstr "ID de Sistema:   "
 
 #: src/lvm_model.py:54
 msgid "Format:   "
@@ -850,43 +848,43 @@ msgstr "Espacio Disponible:   "
 
 #: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Número Total de Extensiones:   "
 
 #: src/lvm_model.py:59
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Número de Extensiones Libres:   "
 
 #: src/lvm_model.py:60
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Tamaño de Extensión:   "
 
 #: src/lvm_model.py:61
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "Máximo de Volumenes Físicos permitidos:  "
+msgstr "Máximo de Volumenes Físicos permitidos:   "
 
 #: src/lvm_model.py:62
 msgid "Number of Physical Volumes:   "
-msgstr "Número de Volumenes Físicos"
+msgstr "Número de Volumenes Físicos:   "
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "Máximo de Volumenes Lógicos permitidos:  "
+msgstr "Máximo de Volúmenes Lógicos permitidos:   "
 
 #: src/lvm_model.py:64
 msgid "Number of Logical Volumes:   "
-msgstr "Número de Volumenes Lógicos:  "
+msgstr "Número de Volúmenes Lógicos:   "
 
 #: src/lvm_model.py:65
 msgid "VG UUID:   "
-msgstr "VG UUID:   "
+msgstr "UUID de GV:   "
 
 #: src/lvm_model.py:67
 msgid "Logical Volume Name:   "
-msgstr "Nombre del Volumen Lógico:  "
+msgstr "Nombre del Volumen Lógico:   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Size:   "
-msgstr "Tamaño del Volumen Lógico:  "
+msgstr "Tamaño del Volumen Lógico:   "
 
 #: src/lvm_model.py:69
 msgid "Number of Segments:   "
@@ -902,7 +900,7 @@ msgstr "Tamaño de Stripe:   "
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
-msgstr "LV UUID:   "
+msgstr "UUID de VL:   "
 
 #: src/lvm_model.py:75
 msgid "Partition Type:   "
@@ -918,15 +916,15 @@ msgstr "Punto de Montaje:   "
 
 #: src/lvm_model.py:78
 msgid "File System:   "
-msgstr "File System:   "
+msgstr "Sistema de Archivos:   "
 
 #: src/lvm_model.py:80
 msgid "Physical Volume Name:   "
-msgstr "Nombre del Volumen Físico:  "
+msgstr "Nombre del Volumen Físico:   "
 
 #: src/lvm_model.py:81
 msgid "Physical Volume Size:   "
-msgstr "Tamaño del Volumen Físico:  "
+msgstr "Tamaño del Volumen Físico:   "
 
 #: src/lvm_model.py:82
 msgid "Space Used:   "
@@ -934,19 +932,19 @@ msgstr "Espacio Utilizado:   "
 
 #: src/lvm_model.py:83
 msgid "Space Free:   "
-msgstr "Espacio Disponible:  "
+msgstr "Espacio Disponible:   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Total de Extensiones Físicas:   "
 
 #: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Extensiones Físicas Resevadas:   "
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
-msgstr "PV UUID:   "
+msgstr "UUID de VF:   "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -1083,8 +1081,8 @@ msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
 msgstr ""
-"¿Esta absolutamente seguro de que desea inicializar la entidad del disco %"
-"s?. Todos los datos serán destruidos en este dispositivo/partición."
+"¿Esta absolutamente seguro de que desea inicializar la entidad del disco %s?"
+"Todos los datos serán destruidos en este dispositivo/partición."
 
 #: src/lvmui_constants.py:40
 msgid "Free"
@@ -1161,8 +1159,8 @@ msgid ""
 "This extent has not yet been \n"
 " initialized for use with LVM."
 msgstr ""
-"Esta extent aun no ha sido \n"
-" inicializada para el uso con LVM."
+"Esta extensión aun no ha sido \n"
+" inicializada para usar con AVL."
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
@@ -1173,8 +1171,8 @@ msgid ""
 "This Volume has not been allocated \n"
 " to a Volume Group yet."
 msgstr ""
-"Esta Volumen aun no ha sido \n"
-"asignado a Grupo Volumen."
+"Este Volumen aun no ha sido \n"
+"asignado a un Grupo Volumen."
 
 #: src/renderer.py:100 src/Volume_Tab_View.py:44
 msgid "Logical View"
@@ -1190,11 +1188,11 @@ msgstr "No Asignado"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr "No Inicializado"
+msgstr "Sin Inicializar"
 
 #: src/renderer.py:105
 msgid "extents"
-msgstr "extents"
+msgstr "extensiones"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
@@ -1202,7 +1200,7 @@ msgstr "Grupos Volumen"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr "Volumenes no Asignados"
+msgstr "Volúmenes no Asignados"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
