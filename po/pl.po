@@ -525,7 +525,7 @@ msgstr ""
 
 #: src/lvui.glade.h:26
 msgid "Extend Volume Group"
-msgstr "Rozszerz grupę wolumenów"
+msgstr "Rozszerz grupę woluminów"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
