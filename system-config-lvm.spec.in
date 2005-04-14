@@ -51,6 +51,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.24-1.0
+  - Changed permissions on Icon file.
 * Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.23-1.0
   - Subtle change to .desktop file moves app launcher to system settings
 * Wed Apr 06 2005 Jim Parsons <jparsons@redhat.com> 0.9.22-1.0
