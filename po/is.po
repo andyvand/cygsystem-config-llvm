@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-04-11 16:54+0000\n"
+"PO-Revision-Date: 2005-04-16 16:54+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -164,6 +164,7 @@ msgstr ""
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
+"Óskilgreind gerð gagna í reit framleiðanda. Get ekki klárað verkið."
 
 #: src/InputController.py:133
 msgid ""
@@ -171,6 +172,8 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
+"Það kom upp villa í stærðarreitnum. Gildið þar ætti að vera tala sem "
+"inniheldur enga bókstafi eða önnur tákn."
 
 #: src/InputController.py:135
 #, python-format
@@ -179,6 +182,8 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"AÐVÖRUN: Sýndardiskurinn %s inniheldur %s skráarkerfi sem er tengt á %s. "
+"Ertu viss um að þú viljir helda gögnunum sem eru á þessu skráarkerfi?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -241,11 +246,11 @@ msgstr ""
 #. ##concurrently, with the objective being redundance and/or speed
 #: src/InputController.py:153
 msgid "Stripe Size field"
-msgstr ""
+msgstr "Stærð strípa"
 
 #: src/InputController.py:154
 msgid "Number of Stripes field"
-msgstr ""
+msgstr "Fjöldi strípa"
 
 #: src/InputController.py:156
 #, python-format
@@ -264,6 +269,11 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
+"Raundiskurinn %s sem þú vilt fjarlægja inniheldur gögn sem tilheyra "
+"virkum sýndardiskum. Þar sem hann er eini raundiskurinn í diskhópnum "
+"er ekki hægt að færa þessi gögn annað. Við mælum með að þú annaðhvort "
+"bætir við nýjum disk áður en þessi er fjarlægður eða fjarlægir sýndardiskinn "
+"sem gögnin á disknum tilheyrir."
 
 #: src/InputController.py:159
 #, python-format
