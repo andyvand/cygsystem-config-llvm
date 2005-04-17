@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-03-31 22:37+0800\n"
+"PO-Revision-Date: 2005-04-17 22:44+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: src/Properties_Renderer.py:26
 #: src/renderer.py:33
 #: src/Volume_Tab_View.py:28
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "\n"
 "  Unable to initialize graphical environment. Most likely cause of failure\n"
@@ -33,7 +33,7 @@ msgstr ""
 "  Tidak dapat memulakan persekitaran bergrafik. Kemungkinan besar punca kegagalan\n"
 "  adalah peralatan tersebut tidak dilaksanakan menggunakan persekitaran bergrafik. Sila\n"
 "  sama ada memulakan antaramuka pengguna bergrafik atau tetapkan pembolehubah DISPLAY anda.\n"
-"\n"
+"                                                                                \n"
 "  Ralat dikesan: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
@@ -124,9 +124,9 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #: src/InputController.py:139
-#, fuzzy, python-format
+#, python-format
 msgid "Unused space on %s"
-msgstr "[%s (%s): 1 halaman pada 1 helaian]\n"
+msgstr "Ruang tidak digunakan pada %s"
 
 #: src/InputController.py:140
 #, python-format
@@ -168,14 +168,12 @@ msgstr ""
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #: src/InputController.py:153
-#, fuzzy
 msgid "Stripe Size field"
-msgstr "pengspesifikasi medan tidak sah: `%s'"
+msgstr "Medan Saiz Stripe"
 
 #: src/InputController.py:154
-#, fuzzy
 msgid "Number of Stripes field"
-msgstr "bilangan medan tidak sah: `%s'"
+msgstr "Medan Jumlah Stripe"
 
 #: src/InputController.py:156
 #, python-format
@@ -274,9 +272,8 @@ msgid "8"
 msgstr "8"
 
 #: src/lvui.glade.h:13
-#, fuzzy
 msgid "Add Physical Volume to VG"
-msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
+msgstr "Tambah Volum Fizikal ke VG"
 
 #: src/lvui.glade.h:14
 #, fuzzy
@@ -307,7 +304,7 @@ msgstr "Partisyen Baru atau Volum Logikal?"
 msgid ""
 "Create new \n"
 "Volume Group"
-msgstr "Cipta sambungan Ethernet baru."
+msgstr "Tambah perhubungan kumpulan "
 
 #: src/lvui.glade.h:22
 #, fuzzy
@@ -409,7 +406,7 @@ msgstr "Nama Kumpulan Volum Tidak Sah"
 #: src/lvui.glade.h:45
 #, fuzzy
 msgid "Name for new LV:"
-msgstr "Memeriksa perkakasan baru"
+msgstr "Isi nama kumpulan baru:"
 
 #: src/lvui.glade.h:46
 #, fuzzy
@@ -594,8 +591,9 @@ msgstr "Ruang Diperlukan"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
+#, fuzzy
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Simpan pemetaan ARP"
 
 #: src/lvm_model.py:40
 #, fuzzy
@@ -626,7 +624,7 @@ msgstr "Format:   "
 #: src/lvm_model.py:86
 #, fuzzy
 msgid "Attributes:   "
-msgstr "mendapatkan atribut baru untuk %s"
+msgstr "Atribut"
 
 #: src/lvm_model.py:56
 #, fuzzy
