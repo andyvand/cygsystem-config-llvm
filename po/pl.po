@@ -1059,7 +1059,7 @@ msgid ""
 "lost on this device/partition."
 msgstr ""
 "Jesteś pewien, że chcesz zainicjalizować dysk %s? Wszystkie dane na tym "
-"urządzeniu/partycji zostaną skasowane."
+"urządzeniu/partycji zostaną usunięte."
 
 #: src/lvmui_constants.py:40
 msgid "Free"
