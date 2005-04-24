@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-04-17 22:44+0800\n"
+"PO-Revision-Date: 2005-04-24 22:35+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -276,35 +276,36 @@ msgid "Add Physical Volume to VG"
 msgstr "Tambah Volum Fizikal ke VG"
 
 #: src/lvui.glade.h:14
-#, fuzzy
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
+msgstr ""
+"Tambah ke Kumpulan Volum \n"
+"sedia ada"
 
 #: src/lvui.glade.h:16
-#, fuzzy
 msgid ""
 "Create New\n"
 "Logical Volume"
-msgstr "Tiada volum baru; keluar.\n"
+msgstr ""
+"Cipta Volum Logikal\n"
+"Baru"
 
 #: src/lvui.glade.h:18
-#, fuzzy
 msgid "Create New LV"
-msgstr "Cipta Queue baru"
+msgstr "Cipta LV Baru"
 
 #: src/lvui.glade.h:19
-#, fuzzy
 msgid "Create a New Logical Volume"
-msgstr "Partisyen Baru atau Volum Logikal?"
+msgstr "Cipta Volum Logikal Baru"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid ""
 "Create new \n"
 "Volume Group"
-msgstr "Tambah perhubungan kumpulan "
+msgstr ""
+"Cipta Kumpulan Volum \n"
+"baru"
 
 #: src/lvui.glade.h:22
 #, fuzzy
