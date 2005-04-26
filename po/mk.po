@@ -8,14 +8,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm mk\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-25 21:13+0200\n"
+"PO-Revision-Date: 2005-04-26 18:23+0200\n"
 "Last-Translator: Томислав Марковски <tome@users.ossm.org.mk>\n"
 "Language-Team: Macedonian <ossm-members@hedona.on.net.mk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
+"Content-Transfer-Encoding: 8bit"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
@@ -149,24 +149,24 @@ msgstr "Креирањето на точката за монтирање %s е �
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Можноста сеуште не е имплементирана во оваа верзија"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Бројот на физички простори во оваа група на простори го достигна максимумот."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Бројот на логичките простори во групата на простори го достигна максимумот."
 
 #: src/InputController.py:131
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "Недифиниран тип на грешка при конверзија во моделот на фабрика. Не сум во можност да ја завршам задачата."
 
 #: src/InputController.py:133
 msgid ""
@@ -174,6 +174,7 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
+"Се појави проблем околу вредноста внесена во полето за големина. Вредноста треба да се состои само од бројки, без никакви букви или било какви симболи."
 
 #: src/InputController.py:135
 #, python-format
@@ -181,7 +182,7 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr ""
+msgstr "ВАЖНО ПРЕДУПРЕДУВАЊЕ: Логичкиот простор %s има %s датотечен систем моментално монтиран на %s. Дали сте сигурни дека сакате да ги занемарите податоците на овој монтиран датотечен систем?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -268,7 +269,7 @@ msgid ""
 "action is either to add a new Physical Volume before removing this one, or "
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
-msgstr ""
+msgstr "Физичкиот простор %s, кој што сакате да го отстраните не содржи податоци од активни логички простори мапирани на некои додатни простори. Поради тоа што е физички простор во група на простори, не постои место за преместување на податоците. Препорачлива акција би било да додадете нов физички простор пред да го отстраните овој или пак да го отстраните логичкиот простор кој што е асоциран со физичкиот волумен."
 
 #: src/InputController.py:159
 #, python-format
@@ -282,7 +283,7 @@ msgstr ""
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "Отстранување на физичкиот простор %s од групата на простори %s ќе ја остави групата празна а воедно и ќе ја отстрани. Дали сакате да продолжите?"
 
 #: src/InputController.py:161
 #, python-format
@@ -290,14 +291,14 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "Дали сте сигурни дека сакате да го отстраните физичкиот простор %s?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
 "Групата на просторот %s нема доволно простор за да ги премести податоците "
-"складирани на %s"
+"складирани на %s."
 
 #: src/InputController.py:163
 msgid ""
@@ -305,7 +306,7 @@ msgid ""
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr ""
+msgstr "Најверојатно модулот dm-mirror не е вчитан во Вашиот кернел или пак Вашиот кернел не поддржува dm-mirror цели. Доколку е кернелот го поддржува модулот пробајте ја следнава команда \"modprobe dm-mirror\". Доколку ова не успее операциите кои што побаруваат преместување на податоци на физички простори ќе бидат недостапни."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -515,11 +516,9 @@ msgstr ""
 "логички простор"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
 msgstr ""
-"Продолжена\n"
-"група на простор"
+"Продолжена група на простор"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -701,82 +700,82 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·vgextend·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·vgextend·е·неуспешна.·Пробана·команда:·\"%s\"  порака за погрешна команда: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·pvcreate·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·pvcreate·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·pvcreate·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·pvcreate·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·pvremove·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·pvremove·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·lvremove·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·lvremove·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·pvremove·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·pvremove·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·vgcreate·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·vgcreate·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "командата·vgcreate·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·vgcreate·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·vgreduce·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·vgreduce·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·pvmove·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·pvmove·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата за демонтирање е неуспешна. Пробана команда: \"%s\""
+msgstr "командата за демонтирање е неуспешна. Пробана команда: \"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "командата·pvmove·е·неуспешна.·Пробана·команда:·\"%s\""
+msgstr "командата·pvmove·е·неуспешна.·Пробана·команда:·\"%s\" - порака·за·погрешна·команда:·%s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "командата за демонтирање е неуспешна. Пробана команда: \"%s\""
+msgstr "командата за демонтирање е неуспешна. Пробана команда: \"%s\" - порака·за·погрешна·команда:·%s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1074,46 +1073,43 @@ msgstr "Слбодно"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
