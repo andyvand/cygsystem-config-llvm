@@ -1,15 +1,18 @@
+# translation of tr.po to Türkçe
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-lvm\n"
+"Project-Id-Version: tr\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2005-04-17 00:57+0200\n"
-"Last-Translator: Bahadır Yağan <bahadir.yagan@mht.com.tr>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2005-04-24 23:53+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Turkish\n"
 "X-Poedit-Country: TURKEY\n"
+"X-Generator: KBabel 1.10\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25
@@ -25,6 +28,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Grafiksel ortam başlatılamadı. Bu araç grafiksel ortamda çalıştırılmıyor\n"
+"  olabilir. Lütfen grafiksel ekrana geçiş yaparak programı yeniden çalıştırın,\n"
+"  ya da DISPLAY değişkeninizi tanımlayın.\n"
+"                                                                                \n"
+"  Alınan hata: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -67,11 +76,11 @@ msgstr ""
 #. ##some context.
 #: src/InputController.py:103
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: src/InputController.py:104
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: src/InputController.py:105
 msgid "Entity Type"
@@ -79,7 +88,7 @@ msgstr ""
 
 #: src/InputController.py:107
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "Atanmamış Fiziksel Bölüm"
 
 #: src/InputController.py:108
 msgid "Uninitialized Disk Entity"
@@ -88,7 +97,7 @@ msgstr ""
 #: src/InputController.py:109
 #, python-format
 msgid "Select a disk entity to add to the %s Volume Group:"
-msgstr ""
+msgstr "%s Hacimsel Grubuna eklemek için bir sabit disk bölümü girin:"
 
 #: src/InputController.py:111
 msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
@@ -97,77 +106,77 @@ msgstr ""
 #: src/InputController.py:113
 #, python-format
 msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
-msgstr ""
+msgstr "Bu Hacimsel Grup içinde %s adında bir Mantıksal Hacim zaten var. Lütfen başka bir isim seçin."
 
 #: src/InputController.py:115
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "%s adında bir Hacimsel Grup zaten var. Lütfen başka bir isim seçin."
 
 #: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "Yeni Mantıksal Hacim için bir isim girilmelidir"
 
 #: src/InputController.py:119
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "Yeni Hacimsel Grup için bir isim girilmelidir"
 
 #: src/InputController.py:121
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "Belirtilen bağlantı noktası (%s) bulunamadı. Bu bağlantı noktasını oluşturmak ister misiniz?"
 
 #: src/InputController.py:123
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "%s bağlantı noktasının oluşturulması sırasında bir hata alındı."
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Belirtilen özellik bu sürümde henüz yoktur"
 
 #: src/InputController.py:127
 msgid "The number of Physical Volumes in this Volume Group has reached its maximum limit."
-msgstr ""
+msgstr "Bu Hacimsel Gruptaki Fiziksel Hacim sayısı azami sınırına ulaşmış."
 
 #: src/InputController.py:129
 msgid "The number of Logical Volumes in this Volume Group has reached its maximum limit."
-msgstr ""
+msgstr "Bu Hacim Grubundaki Mantıksal Hacimlerin sayısı azami sınıra ulaşmış."
 
 #: src/InputController.py:131
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "Bir hata alındı. İşlem tamamlanamadı."
 
 #: src/InputController.py:133
 msgid "There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind."
-msgstr ""
+msgstr "Boyut alanına girilen boyutla ilgili bir hata var. Bu değerin sayısal olması gerekiyor."
 
 #: src/InputController.py:135
 #, python-format
 msgid "BIG WARNING: Logical Volume %s has an %s file system on it and is currently mounted on %s. Are you absolutely certain that you wish to discard the data on this mounted filesystem?"
-msgstr ""
+msgstr "ÖNEMLİ UYARI: %s Mantıksal Hacim bölümü üzerinde %s dosya sistemi var. Bu dosya sistemi ise %s dizinine bağlanmış. Bu bağlı dosya sistemi üzerindeki tüm verileri silmek istiyor musunuz?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:139
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "%s üzerinde kullanılmayan bölüm"
 
 #: src/InputController.py:140
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s megabayt"
 
 #: src/InputController.py:141
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s kilobayt"
 
 #: src/InputController.py:142
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s gigabayt"
 
 #: src/InputController.py:143
 #, python-format
@@ -182,15 +191,15 @@ msgstr ""
 #: src/InputController.py:147
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s sadece sayısal değer alabilir"
 
 #: src/InputController.py:148
 msgid "The  Maximum Physical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Azami Fiziksel Hacim bölümü 1 ve 256 arası bir değer alabilir."
 
 #: src/InputController.py:149
 msgid "The  Maximum Logical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Azami Mantıksal Hacim bölümü 1 ve 256 arası bir değer alabilir."
 
 #. ##TRANSLATOR: Striping writes data to multiple physical devices
 #. ##concurrently, with the objective being redundance and/or speed
@@ -205,7 +214,7 @@ msgstr ""
 #: src/InputController.py:156
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr ""
+msgstr "Mantıksal Hacim Yönetiminden %s bölümünü kaldırmak istiyor musunuz?"
 
 #: src/InputController.py:158
 #, python-format
@@ -215,17 +224,17 @@ msgstr ""
 #: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "Gerçekten %s bölümünü %s Hacimsel Grubundan silmek istiyor musunuz?"
 
 #: src/InputController.py:160
 #, python-format
 msgid "Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "%s Fiziksel Hacimini %s Hacimsel Grubundan silmek hacimsel grubu boşaltacaktır, bu nedenle hacimsel grup da silinecektir. Devam etmek istiyor musunuz?"
 
 #: src/InputController.py:161
 #, python-format
 msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
-msgstr ""
+msgstr "Gerçekten %s Mantıksal Hacim bölümünü silmek istiyor musunuz?"
 
 #: src/InputController.py:162
 #, python-format
@@ -234,7 +243,7 @@ msgstr ""
 
 #: src/InputController.py:163
 msgid "The dm-mirror module is either not loaded in your kernel, or your kernel does not support the dm-mirror target. If it is supported, try running \"modprobe dm-mirror\". Otherwise, operations that require moving data on Physical Extents are unavailable."
-msgstr ""
+msgstr "dm-minor modülü çekirdekte yüklü değil, ya da çekirdeğiniz dm-minor desteği sağlamıyor. Eğer modülü varsa, \"modproble dm-minor\" komutunu girin. "
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -345,55 +354,55 @@ msgstr ""
 #. ##Convenience Dialogs
 #: src/lvui.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "40 megabytes"
-msgstr ""
+msgstr "40 megabayt"
 
 #: src/lvui.glade.h:10
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:11
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:12
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:13
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Hacimsel Gruba Fiziksel Hacim Ekle"
 
 #: src/lvui.glade.h:14
 msgid ""
@@ -426,12 +435,16 @@ msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"Hacimsel Grubu\n"
+"Genişlet"
 
 #: src/lvui.glade.h:24
 msgid ""
 "Extend \n"
 "Logical Volume"
 msgstr ""
+"Mantıksal Hacimi \n"
+"Genişlet"
 
 #: src/lvui.glade.h:26
 msgid "Extend Volume Group"
@@ -443,11 +456,11 @@ msgstr ""
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
-msgstr ""
+msgstr "Dosya sistemi: "
 
 #: src/lvui.glade.h:29
 msgid "Gigabytes"
-msgstr ""
+msgstr "Gigabayt"
 
 #: src/lvui.glade.h:30
 msgid "Initialize Entity"
@@ -456,44 +469,44 @@ msgstr ""
 #: src/lvui.glade.h:31
 #: src/lvmui_constants.py:51
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvui.glade.h:32
 msgid "Kilo"
-msgstr ""
+msgstr "Kilo"
 
 #: src/lvui.glade.h:33
 msgid "Kilobytes"
-msgstr ""
+msgstr "Kilobayt"
 
 #: src/lvui.glade.h:34
 msgid "Linear"
-msgstr ""
+msgstr "Doğrusal"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "Mantıksal Hacim Yönetimi"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Hacimleri Yönet"
 
 #: src/lvui.glade.h:37
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Azami Mantıksal Hacim Sayısı: "
 
 #: src/lvui.glade.h:38
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Azami Fiziksel Hacim Sayısı: "
 
 #: src/lvui.glade.h:39
 msgid "Meg"
-msgstr ""
+msgstr "Meg"
 
 #: src/lvui.glade.h:40
 #: src/renderer.py:106
 msgid "Megabytes"
-msgstr ""
+msgstr "Megabayt"
 
 #: src/lvui.glade.h:41
 msgid ""
@@ -507,7 +520,7 @@ msgstr ""
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Hacimsel Grubun Adı: "
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
@@ -525,7 +538,7 @@ msgstr ""
 #: src/lvui.glade.h:48
 #: src/lvmui_constants.py:48
 msgid "No Filesystem"
-msgstr ""
+msgstr "Dosya Sistemi Yok"
 
 #: src/lvui.glade.h:49
 msgid "Number of Stripes: "
@@ -540,18 +553,24 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Mantıksal \n"
+"Hacimi Sil"
 
 #: src/lvui.glade.h:53
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Seçilen Mantıksal\n"
+"Hacim(i)leri Sil"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Seçilen Fiziksel\n"
+"Hacim(i)leri Sil"
 
 #: src/lvui.glade.h:57
 msgid ""
@@ -587,91 +606,91 @@ msgstr ""
 
 #: src/lvui.glade.h:66
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "HG1 üzerindeki kullanılmayan alan:"
 
 #: src/lvui.glade.h:67
 msgid "Use Remaining Space"
-msgstr ""
+msgstr "Kalan Bölümü Kullan"
 
 #: src/lvui.glade.h:68
 #: src/lvmui_constants.py:55
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvui.glade.h:69
 msgid "ext2"
-msgstr ""
+msgstr "ext2"
 
 #: src/lvui.glade.h:70
 msgid "ext3"
-msgstr ""
+msgstr "ext3"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
 #, python-format
 msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgextend komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
 msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "pvcreate komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
 msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "lvcreate komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
 msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "pvremove komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
 msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "lvremove komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
 msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgremove komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
 msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgcreate komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
 msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
+msgstr "vgchange komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
 msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "vgreduce komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
 msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "pvmove komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
 msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "umount komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:26
 #, python-format
 msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "mkfs komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #: src/CommandHandler.py:27
 #, python-format
 msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
+msgstr "mount komutu çalıştırılırken bir hata oluştu. Verilen komut: %s, sistem hatası: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -683,24 +702,24 @@ msgstr ""
 #: src/lvm_model.py:35
 #: src/lvmui_constants.py:39
 msgid "Unused"
-msgstr ""
+msgstr "Kullanılmıyor"
 
 #: src/lvm_model.py:36
 msgid "Unused Space"
-msgstr ""
+msgstr "Kullanılmayan Alan"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Doğrusal Eşleme"
 
 #: src/lvm_model.py:40
 msgid "Unmounted"
-msgstr ""
+msgstr "Bağlanmamış"
 
 #: src/lvm_model.py:41
 msgid "No File System"
-msgstr ""
+msgstr "Dosya Sistemi Yok"
 
 #: src/lvm_model.py:52
 msgid "Volume Group Name:   "
@@ -708,17 +727,17 @@ msgstr ""
 
 #: src/lvm_model.py:53
 msgid "System ID:   "
-msgstr ""
+msgstr "Sistem No:   "
 
 #: src/lvm_model.py:54
 msgid "Format:   "
-msgstr ""
+msgstr "Biçim:   "
 
 #: src/lvm_model.py:55
 #: src/lvm_model.py:72
 #: src/lvm_model.py:86
 msgid "Attributes:   "
-msgstr ""
+msgstr "Özellikler:   "
 
 #: src/lvm_model.py:56
 msgid "Volume Group Size:   "
@@ -726,7 +745,7 @@ msgstr ""
 
 #: src/lvm_model.py:57
 msgid "Available Space:   "
-msgstr ""
+msgstr "Kullanılabilir Alan:   "
 
 #: src/lvm_model.py:58
 msgid "Total Number of Extents:   "
@@ -746,7 +765,7 @@ msgstr ""
 
 #: src/lvm_model.py:62
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Fiziksel Hacim Sayısı:"
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
@@ -754,19 +773,19 @@ msgstr ""
 
 #: src/lvm_model.py:64
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Mantıksal Hacim Sayısı:"
 
 #: src/lvm_model.py:65
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:67
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Mantıksal Hacim Adı:   "
 
 #: src/lvm_model.py:68
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Mantıksal Hacim Boyu:   "
 
 #: src/lvm_model.py:69
 msgid "Number of Segments:   "
@@ -786,15 +805,15 @@ msgstr ""
 
 #: src/lvm_model.py:75
 msgid "Partition Type:   "
-msgstr ""
+msgstr "Disk Bölümü Türü:   "
 
 #: src/lvm_model.py:76
 msgid "Size:   "
-msgstr ""
+msgstr "Boyut:   "
 
 #: src/lvm_model.py:77
 msgid "Mount Point:   "
-msgstr ""
+msgstr "Bağlama Noktası:   "
 
 #: src/lvm_model.py:78
 msgid "File System:   "
@@ -810,11 +829,11 @@ msgstr ""
 
 #: src/lvm_model.py:82
 msgid "Space Used:   "
-msgstr ""
+msgstr "Kullanılan Alan:   "
 
 #: src/lvm_model.py:83
 msgid "Space Free:   "
-msgstr ""
+msgstr "Boş Alan:   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
@@ -826,7 +845,7 @@ msgstr ""
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
-msgstr ""
+msgstr "FH UUID:   "
 
 #. No entry in column 3 means not initialized
 #. try and determine sizes and if vol is swap or extended
@@ -964,65 +983,65 @@ msgstr ""
 
 #: src/lvmui_constants.py:40
 msgid "Free"
-msgstr ""
+msgstr "Boş"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
 msgid "Ext2"
-msgstr ""
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr ""
+msgstr "Özellikler:"
 
 #: src/Properties_Renderer.py:45
 #: src/renderer.py:98
 msgid "Physical Volume"
-msgstr ""
+msgstr "Fiziksel Hacim"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:97
 msgid "Logical Volume"
-msgstr ""
+msgstr "Mantıksal Hacim"
 
 #: src/Properties_Renderer.py:47
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Atanmamış Hacim"
 
 #: src/Properties_Renderer.py:48
 #: src/renderer.py:104
@@ -1034,7 +1053,7 @@ msgstr ""
 #: src/Properties_Renderer.py:51
 #: src/renderer.py:99
 msgid "Volume Group"
-msgstr ""
+msgstr "Hacimsel Grup"
 
 #. Step offset size for lower labels
 #: src/renderer.py:94
@@ -1045,7 +1064,7 @@ msgstr ""
 
 #: src/renderer.py:95
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Hiç Hacim Seçilmedi"
 
 #: src/renderer.py:96
 msgid ""
@@ -1056,20 +1075,20 @@ msgstr ""
 #: src/renderer.py:100
 #: src/Volume_Tab_View.py:44
 msgid "Logical View"
-msgstr ""
+msgstr "Mantıksal Görünüm"
 
 #: src/renderer.py:101
 #: src/Volume_Tab_View.py:43
 msgid "Physical View"
-msgstr ""
+msgstr "Fiziksel Görünüm"
 
 #: src/renderer.py:102
 msgid "Unallocated"
-msgstr ""
+msgstr "Kullanılmayan"
 
 #: src/renderer.py:103
 msgid "Uninitialized"
-msgstr ""
+msgstr "İlklendirilmeyen"
 
 #: src/renderer.py:105
 msgid "extents"
@@ -1077,11 +1096,11 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
-msgstr ""
+msgstr "Hacimsel Gruplar"
 
 #: src/Volume_Tab_View.py:41
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Atanmamış Hacimler"
 
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
