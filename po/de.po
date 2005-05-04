@@ -3,13 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Eduard Pech <kongretkrassescheissendreck@simstim.net>, 2004.
+# Marcus Glöckner <mgloeckner@gmail.com>, 2005.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-15 23:56+0200\n"
-"Last-Translator: Ronny Buchmann <ronny-vlug@vlugnet.org>\n"
+"PO-Revision-Date: 2005-05-04 22:03+0200\n"
+"Last-Translator: Marcus Gloeckner <mgloeckner@gmail.com>\n"
 "Language-Team: de <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -155,19 +157,23 @@ msgstr "Die Erstellung des Einhängepunkt %s ist unerwartet fehlgeschlagen."
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Diese Verwendungsmöglichkeit ist in dieser Version noch nicht eingebaut"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr ""
+"Die Anzahl der physikalischen Datenträger in dieser Datenträgergruppe \n"
+"hat das Maximum erreicht."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr ""
+"Die Anzahl der logischen Datenträger in dieser Datenträgergruppe \n"
+"hat das Maximum erreicht."
 
 #: src/InputController.py:131
 msgid ""
@@ -180,6 +186,8 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
+"Es gibt ein Problem mit dem Wert im Feld Größe. Der Wert sollte aus \n"
+"Zahlen bestehen ohne Buchstaben oder andersartigen Symbolen."
 
 #: src/InputController.py:135
 #, python-format
@@ -188,6 +196,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"DRINGENDE WARNUNG: Der logische Datenträger %s hat ein %s Dateisystem und dieses\n"
+"ist gerade in %s eingehängt.Sind Sie absolut sicher, dass Sie die Daten dieses\n"
+"eingehängten Dateisystems verwerfen möchten?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
