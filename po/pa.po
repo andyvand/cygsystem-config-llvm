@@ -32,9 +32,9 @@ msgid ""
 "  Caught exception: %s\n"
 msgstr ""
 "\n"
-"  ਗਰਾਫਿਕਲ ਵਾਤਾਵਰਣ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਹੈ। ਇਸ ਦਾ ਸੰਭਵ ਕਾਰਨ ਹੈ ਕਿ ਸੰਦ\n"
-"  ਇੱਕ ਗਰਾਫਿਕਲ ਵਾਤਾਵਰਣ ਵਿੱਚ ਚਲਾਇਆ ਨਹੀਂ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਜਾਂ ਤਾਂ\n"
-"  ਆਪਣਾ ਗਰਾਫਿਕਲ ਇੰਟਰਫੇਸ ਸ਼ੁਰੂ ਕਰੋ ਜਾਂ ਆਪਣਾ ਦਰਿਸ਼ ਮੁੱਲ ਨਿਰਧਾਰਿਤ ਕਰੋ।\n"
+"  ਗਰਾਫੀਕਲ ਵਾਤਾਵਰਣ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਹੈ। ਇਸ ਦਾ ਸੰਭਵ ਕਾਰਨ ਹੈ ਕਿ ਸੰਦ\n"
+"  ਇੱਕ ਗਰਾਫੀਕਲ ਵਾਤਾਵਰਣ ਵਿੱਚ ਚਲਾਇਆ ਨਹੀਂ ਗਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਜਾਂ ਤਾਂ\n"
+"  ਆਪਣਾ ਗਰਾਫੀਕਲ ਇੰਟਰਫੇਸ ਸ਼ੁਰੂ ਕਰੋ ਜਾਂ ਆਪਣਾ ਦਰਿਸ਼ ਮੁੱਲ ਨਿਰਧਾਰਿਤ ਕਰੋ।\n"
 "                                                                               \n"
 "  ਆਇਆ ਅਪਵਾਦ: %s\n"
 
@@ -121,13 +121,12 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s ਨਾਂ ਨਾਲ ਇੱਕ ਵਾਲੀਅਮ ਸਮੂਹ ਮੌਜੂਦ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਵੱਖਰਾ ਨਾਂ ਚੁਣੋ।"
 
 #: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
-msgstr "ਇੱਕ ਨਵੇਂ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ ਲਈ ਇੱਕ ਨਾਂ ਦਿਉ"
+msgstr "ਇੱਕ ਨਵੇਂ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ ਲਈ ਇੱਕ ਨਾਂ ਦਿਓ"
 
 #: src/InputController.py:119
 msgid "A Name must be provided for the new Volume Group"
@@ -135,14 +134,13 @@ msgstr "ਇੱਕ ਨਵੇਂ ਵਾਲੀਅਮ ਸਮੂਹ ਲਈ ਇੱਕ 
 
 #: src/InputController.py:121
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr "ਨਿਰਧਾਰਿਤ ਮਾਊਟ ਸਥਿਤੀ, %s, ਮੌਜੂਦ ਨਹੀਂ ਹੈ। ਕੀ ਤੁਸੀਂ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "ਨਿਰਧਾਰਿਤ ਮਾਊਂਟ ਸਥਿਤੀ, %s, ਮੌਜੂਦ ਨਹੀਂ ਹੈ। ਕੀ ਤੁਸੀਂ ਬਣਾਓਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/InputController.py:123
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr "ਮਾਊਟ ਸਥਿਤੀ %s ਦਾ ਨਿਰਮਾਣ ਕਰਨ ਵਿੱਚ ਅਸਧਾਰਨ ਅਸਫਲਤਾ ਹੈ।"
+msgstr "ਮਾਊਂਟ ਸਥਿਤੀ %s ਦਾ ਨਿਰਮਾਣ ਕਰਨ ਵਿੱਚ ਅਸਧਾਰਨ ਅਸਫਲਤਾ ਹੈ।"
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
@@ -161,8 +159,7 @@ msgid ""
 msgstr "ਇਸ ਵਾਲੀਅਮ ਸਮੂਹ ਵਿੱਚ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ ਦੀ ਗਿਣਤੀ ਆਪਣੀ ਅਧਿਕਤਮ ਹੱਦ ਤੱਕ ਅੱਪੜ ਗਈ ਹੈ।"
 
 #: src/InputController.py:131
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "ਮਾਡਲ ਫੈਕਟਰੀ ਵਿੱਚ ਅਣਜਾਣੀ ਕਿਸਮ ਅਨੁਵਾਦ ਗਲਤੀ ਆਈ ਹੈ। ਕੰਮ ਮੁਕੰਮਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਹੈ।"
 
 #: src/InputController.py:133
@@ -181,8 +178,8 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"ਵੱਡੀ ਸਾਵਧਾਨੀ: ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ %s ਕੋਲ ਇੱਕ %s ਫਾਇਲ ਸਿਸਟਮ ਹੈ ਅਤੇ ਇਸ ਨੂੰ %s ਥਾਂ ਤੇ ਮਾਊਟ "
-"ਕੀਤਾ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਮਾਊਟ ਫਾਇਲ ਸਿਸਟਮ ਤੇ ਮੌਜੂਦ ਡਾਟੇ ਨੂੰ ਹਟਾਉਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?"
+"ਵੱਡੀ ਸਾਵਧਾਨੀ: ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ %s ਕੋਲ ਇੱਕ %s ਫਾਇਲ ਸਿਸਟਮ ਹੈ ਅਤੇ ਇਸ ਨੂੰ %s ਥਾਂ ਤੇ ਮਾਊਂਟ "
+"ਕੀਤਾ ਹੈ। ਕੀ ਤੁਸੀਂ ਇਸ ਮਾਊਂਟ ਫਾਇਲ ਸਿਸਟਮ ਤੇ ਮੌਜੂਦ ਡਾਟੇ ਨੂੰ ਹਟਾਉਣ ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹੋ?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -217,7 +214,7 @@ msgid ""
 "The size requested for the new Logical Volume exceeds the available free "
 "space on Volume Group %s. The available space is: "
 msgstr ""
-"ਨਵੇਂ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ ਲਈ ਲੋੜੀਦਾ ਆਕਾਰ ਵਾਲੀਅਮ ਸਮੂਹ %s ਤੇ ਉਪਲੱਬਧ ਥਾਂ ਤੋਂ ਵੱਧ ਗਿਆ ਹੈ। ਉਪਲੱਬਧ ਥਾਂ "
+"ਨਵੇਂ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ ਲਈ ਲੋੜੀਂਦਾ ਆਕਾਰ ਵਾਲੀਅਮ ਸਮੂਹ %s ਤੇ ਉਪਲੱਬਧ ਥਾਂ ਤੋਂ ਵੱਧ ਗਿਆ ਹੈ। ਉਪਲੱਬਧ ਥਾਂ "
 "ਹੈ:"
 
 #: src/InputController.py:147
@@ -265,14 +262,13 @@ msgid ""
 "Volume."
 msgstr ""
 "%s ਨਾਂ ਦੇ ਭੌਤਿਕ ਵਾਲੀਅਮ, ਜਿਸ ਨੂੰ ਤੁਸੀਂ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਦੇ ਭਾਗਾਂ ਵਿੱਚ ਸਰਗਰਮ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ "
-"ਉਪੱਰ ਡਾਟਾ ਮੌਜੂਦ ਹੈ। ਕਿਉਕਿ ਇਹ ਵਾਲੀਅਮ ਸਮੂਹ ਵਿੱਚ ਇੱਕਲਾ ਭੌਤਿਕ ਵਾਲੀਅਮ ਹੈ, ਇਸਕਰਕੇ ਡਾਟਾ ਭੇਜਣ "
+"ਉਪੱਰ ਡਾਟਾ ਮੌਜੂਦ ਹੈ। ਕਿਉਕਿ ਇਹ ਵਾਲੀਅਮ ਸਮੂਹ ਵਿੱਚ ਇੱਕਲਾ ਭੌਤਿਕ ਵਾਲੀਅਮ ਹੈ, ਇਸ ਕਰਕੇ ਡਾਟਾ ਭੇਜਣ "
 "ਲਈ ਕੋਈ ਥਾਂ ਨਹੀਂ ਹੈ। ਇਸ ਕਰਕੇ ਇਸ ਨੂੰ ਹਟਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਨਵਾਂ ਭੌਤਿਕ ਵਾਲੀਅਮ ਸ਼ਾਮਿਲ ਕਰਨ ਜਾਂ ਇਸ "
 "ਭੌਤਿਕ ਵਾਲੀਅਮ ਨਾਲ ਜੁੜੇ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮਾਂ ਨੂੰ ਹਟਾਉਣ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਦੀ ਹੈ।"
 
 #: src/InputController.py:159
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "ਕੀ ਤੁਸੀਂ %s ਨੂੰ %s ਵਾਲੀਅਮ ਸਮੂਹ ਤੋਂ ਹਟਾਉਣ ਲਈ ਸਹਿਮਤ ਹੋ?"
 
 #: src/InputController.py:160
@@ -483,11 +479,11 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "ਨਵਾਂ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ\n"
-"ਬਣਾਉ"
+"ਬਣਾਓ"
 
 #: src/lvui.glade.h:18
 msgid "Create New LV"
-msgstr "ਨਵਾਂ LV ਬਣਾਉ"
+msgstr "ਨਵਾਂ LV ਬਣਾਓ"
 
 #: src/lvui.glade.h:19
 msgid "Create a New Logical Volume"
@@ -499,7 +495,7 @@ msgid ""
 "Volume Group"
 msgstr ""
 "ਨਵਾਂ ਵਾਲੀਅਮ ਸਮੂਹ\n"
-"ਬਣਾਉ"
+"ਬਣਾਓ"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -587,7 +583,7 @@ msgstr ""
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "ਮਾਊਟ ਸਥਿਤੀ (ਜੇਕਰ ਖਾਲੀ ਹੋਇਆ ਤਾਂ LV ਮਾਊਟ ਨਹੀਂ ਹੋਵੇਗਾ):"
+msgstr "ਮਾਊਂਟ ਸਥਿਤੀ (ਜੇਕਰ ਖਾਲੀ ਹੋਇਆ ਤਾਂ LV ਮਾਊਂਟ ਨਹੀਂ ਹੋਵੇਗਾ):"
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
@@ -702,89 +698,67 @@ msgstr "ext3"
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgextend ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgextend ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvremove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvremove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
-"vgcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "vgcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgreduce ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgreduce ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvmove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "umount ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:26
 #, python-format
-msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvmove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/CommandHandler.py:27
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "umount ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #. first set up lvcreate args
@@ -809,7 +783,7 @@ msgstr "ਰੇਖੀ ਮਿਲਾਨ"
 
 #: src/lvm_model.py:40
 msgid "Unmounted"
-msgstr "ਨਾ-ਮਾਊਟ"
+msgstr "ਨਾ-ਮਾਊਂਟ"
 
 #: src/lvm_model.py:41
 msgid "No File System"
@@ -881,7 +855,7 @@ msgstr "ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ ਆਕਾਰ:   "
 
 #: src/lvm_model.py:69
 msgid "Number of Segments:   "
-msgstr "ਸਿਗਮਿਟਾਂ ਦੀ ਗਿਣਤੀ:   "
+msgstr "ਸਿਗਮਿੰਟਾਂ ਦੀ ਗਿਣਤੀ:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Stripes:   "
@@ -905,7 +879,7 @@ msgstr "ਆਕਾਰ:   "
 
 #: src/lvm_model.py:77
 msgid "Mount Point:   "
-msgstr "ਮਾਊਟ ਸਥਿਤੀ:   "
+msgstr "ਮਾਊਂਟ ਸਥਿਤੀ:   "
 
 #: src/lvm_model.py:78
 msgid "File System:   "
@@ -929,7 +903,7 @@ msgstr "ਖਾਲੀ ਥਾਂ:   "
 
 #: src/lvm_model.py:84
 msgid "Total Physical Extents:   "
-msgstr "ਕੁੱਲ਼ ਭੌਤਿਕ ਐਕਸ਼ਟੈਂਟ:    "
+msgstr "ਕੁੱਲ ਭੌਤਿਕ ਐਕਸ਼ਟੈਂਟ:    "
 
 #: src/lvm_model.py:85
 msgid "Allocated Physical Extents:   "
@@ -1073,8 +1047,7 @@ msgstr "PV UUID:   "
 msgid ""
 "Are you certain that you wish to initialize disk entity %s? All data will be "
 "lost on this device/partition."
-msgstr ""
-"ਕੀ ਤੁਸੀਂ ਡਿਸਕ ਇੰਦਰਾਜ਼ %s ਨੂੰ ਸ਼ੁਰੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਇਸ ਜੰਤਰ/ਭਾਗ ਤੇ ਮੌਜੂਦ ਸਭ ਡਾਟਾ ਖਤਮ ਹੋ ਜਾਵੇਗਾ।"
+msgstr "ਕੀ ਤੁਸੀਂ ਡਿਸਕ ਇੰਦਰਾਜ਼ %s ਨੂੰ ਸ਼ੁਰੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ? ਇਸ ਜੰਤਰ/ਭਾਗ ਤੇ ਮੌਜੂਦ ਸਭ ਡਾਟਾ ਖਤਮ ਹੋ ਜਾਵੇਗਾ।"
 
 #: src/lvmui_constants.py:40
 msgid "Free"
@@ -1197,3 +1170,4 @@ msgstr "ਨਾ-ਜਾਰੀ ਵਾਲੀਅਮ"
 #: src/Volume_Tab_View.py:42
 msgid "Uninitialized Entities"
 msgstr "ਨਾ-ਸ਼ੁਰੂ ਇੰਦਰਾਜ਼"
+
