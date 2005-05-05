@@ -62,6 +62,7 @@ ABOUT_VERSION=_("%s %s") % ('system-config-lvm',VERSION)
 class baselvm:
   def __init__(self, glade_xml, app):
 
+    #Need to suppress the spewing of file descriptor errors to terminal
     os.environ["LVM_SUPPRESS_FD_WARNINGS"] = "1"
  
     self.lvmm = lvm_model()
