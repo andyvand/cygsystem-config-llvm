@@ -51,6 +51,10 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Thu May 05 2005 Jim Parsons <jparsons@redhat.com> 0.9.26-1.0
+  - Fix for bz156957
+* Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.25-1.0
+  - Version bump.
 * Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.24-1.0
   - Changed permissions on Icon file.
 * Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.23-1.0
