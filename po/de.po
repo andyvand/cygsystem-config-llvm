@@ -5,12 +5,11 @@
 # Eduard Pech <kongretkrassescheissendreck@simstim.net>, 2004.
 # Marcus Glöckner <mgloeckner@gmail.com>, 2005.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-05-04 22:03+0200\n"
+"PO-Revision-Date: 2005-05-10 20:43+0200\n"
 "Last-Translator: Marcus Gloeckner <mgloeckner@gmail.com>\n"
 "Language-Team: de <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -179,6 +178,8 @@ msgstr ""
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
+"Fehler - Umwandlung eines undefinierten Typs in Model-Factory. Die Anwendung konnte\n"
+"nicht beendet werden."
 
 #: src/InputController.py:133
 msgid ""
@@ -287,6 +288,12 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
+"Der physische Datenträger %s, welchen Sie zu entfernen wünschen, beinhaltet Daten \n"
+"von aktiven logischen Datenträgern. Da es der einzige physische Datenträger\n"
+"in der Datenträgergruppe ist, können die Daten nicht verschoben werden. Es wird\n"
+"empfohlen ein neuen physischen Datenträger hinzuzufügen, bevor dieser entfernt\n"
+"wird, oder die auf diesem physischen Datenträger befindlichen logischen \n"
+"Datenträger zu entfernen."
 
 #: src/InputController.py:159
 #, python-format
@@ -302,6 +309,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"Beim Entfernen des physischen Datenträgers %s aus der Datenträgergruppe %s, wird\n"
+"diese Datenträgergruppe leer und damit automatisch entfernt. Möchten Sie fortfahren?"
 
 #: src/InputController.py:161
 #, python-format
@@ -311,14 +320,15 @@ msgstr ""
 "möchten?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Das Fassungsvermögen der Datenträgergruppe %s reicht nicht für die Daten auf "
-"%s"
+"Das Fassungsvermögen der Datenträgergruppe %s reicht nicht für die Daten auf %s.\n"
+"Eine mögliche Lösung wäre, einen zusätzlichen physischen Datenträger zur \n"
+"Datenträgergruppe hinzuzufügen."
 
 #: src/InputController.py:163
 msgid ""
@@ -327,6 +337,11 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"Das dm-mirror Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
+"Kernel unterstützt nicht das dm-mirror Target. Wenn das Modul unterstützt\n"
+"wird versuchen Sie \"modeprobe dm-mirror\" auszuführen. Anderenfalls sind\n"
+"Operationen, die das Verschieben von Daten auf physische Datenträger\n"
+"vorraussetzen, nicht möglich."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -536,10 +551,9 @@ msgstr ""
 "erweitern"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
 msgstr ""
-"Datenträgengruppe\n"
+"Datenträgergruppe \n"
 "erweitern"
 
 #: src/lvui.glade.h:27
@@ -727,82 +741,108 @@ msgstr "Ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"vgextent\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"vgextend\" fehlgeschlagen. Anweisung versuchte: \"%s\" \n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"pvcreate\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"pvcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\" \n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"pvcreate\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"lvcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"pvremove\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"pvremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"lvremove\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"lvremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"pvremove\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"vgremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"vgcreate\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"vgcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "Anweisung \"vgcreate\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"vgchange\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"vgreduce\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"vgreduce\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"pvmove\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"pvmove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"umount\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"umount\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Anweisung \"pvmove\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"mkfs\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "Anweisung \"umount\" fehlgeschlagen bei: \"%s\""
+msgstr ""
+"Anweisung \"mount\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
+"System-Fehlermeldung: %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1100,46 +1140,43 @@ msgstr "Frei"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
 msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
 msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
 msgstr "ReiserFS"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "CramFS"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
