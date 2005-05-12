@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-05-09 20:19+0100\n"
+"PO-Revision-Date: 2005-05-12 19:36+0100\n"
 "Last-Translator: Philippe Villiers <philippe.villiers@wanadoo.fr>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -233,7 +233,7 @@ msgstr "Etes-vous absolument sûr de vouloir supprimer %s du gestionnaire de Vol
 #: src/InputController.py:158
 #, python-format
 msgid "The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume."
-msgstr ""
+msgstr "Le Volume Physique nommé %s, que vous voulez supprimer, contient des données de Volume(s) Logique(s) mappées sur son étendue . Puisque c'est le seul Volume Physique dans le Groupe de Volumes, il n'y a aucun endroit où déplacer les données. L'action recommandée est soit d'ajouter un nouveau Volume Physique avant de supprimer celui-là, ou de supprimer les Volumes Logiques qui sont associés à ce Volume Physique."
 
 #: src/InputController.py:159
 #, python-format
