@@ -3,7 +3,7 @@ import string
 from gtk import TRUE, FALSE
 from CommandError import CommandError
 from lvm_model import lvm_model
-import rhpl.executil
+from execute import execWithCapture, execWithCaptureErrorStatus
 
 from lvmui_constants import *
 
@@ -63,7 +63,7 @@ class CommandHandler:
     arglist.append(vgname)
     cmd_str = ' '.join(arglist)
 
-    result_string,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/lvcreate",arglist)
+    result_string,err,res = execWithCaptureErrorStatus("/usr/sbin/lvcreate",arglist)
     if res != 0:
       raise CommandError('FATAL', LVCREATE_FAILURE % (cmd_str,err))
 
@@ -81,7 +81,7 @@ class CommandHandler:
       args.append(fs_type)
       args.append(lvpath)
       cmdstr = ' '.join(args)
-      o,e,r = rhpl.executil.execWithCaptureErrorStatus("/sbin/mkfs",args)
+      o,e,r = execWithCaptureErrorStatus("/sbin/mkfs",args)
       if r != 0:
         raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
 
@@ -93,7 +93,7 @@ class CommandHandler:
         cmd_args.append(lvpath)
         cmd_args.append(mnt_point)
         cmdstr = ' '.join(cmd_args)
-        out,err,res = rhpl.executil.execWithCaptureErrorStatus("/bin/mount",cmd_args)
+        out,err,res = execWithCaptureErrorStatus("/bin/mount",cmd_args)
         if res != 0:
           raise CommandError('FATAL', MNTCREATE_FAILURE % (cmdstr,err))
 
@@ -106,7 +106,7 @@ class CommandHandler:
     command_args.append("2")
     command_args.append(entity)
     commandstring = ' '.join(command_args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvcreate",command_args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/pvcreate",command_args)
     if res != 0:
       raise CommandError('FATAL', PVCREATE_FAILURE % (commandstring,err))
 
@@ -116,7 +116,7 @@ class CommandHandler:
     args.append(vg.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgextend",args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgextend",args)
     if res != 0:
       raise CommandError('FATAL', VGEXTEND_FAILURE % (cmdstr,err))
 
@@ -142,7 +142,7 @@ class CommandHandler:
     args.append(name.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgcreate",args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgcreate",args)
     if res != 0:
       raise CommandError('FATAL', VGCREATE_FAILURE % (cmdstr,err))
 
@@ -153,7 +153,7 @@ class CommandHandler:
     args.append("n")
     args.append(vgname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgchange",args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgchange",args)
     if res != 0:
       raise CommandError('FATAL', VGCHANGE_FAILURE % (cmdstr,err))
       return
@@ -163,7 +163,7 @@ class CommandHandler:
     args_list.append("/usr/sbin/vgremove")
     args_list.append(vgname)
     cmdstring = ' '.join(args)
-    outs,errs,result = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgremove",args_list)
+    outs,errs,result = execWithCaptureErrorStatus("/usr/sbin/vgremove",args_list)
     if result != 0:
       raise CommandError('FATAL', VGREMOVE_FAILURE % (cmdstring,errs))
 
@@ -172,7 +172,7 @@ class CommandHandler:
     args.append("/usr/sbin/pvremove")
     args.append(pvname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvremove",args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/pvremove",args)
     if res != 0:
       raise CommandError('FATAL', PVREMOVE_FAILURE % (cmdstr,err))
 
@@ -182,7 +182,7 @@ class CommandHandler:
     args.append("--force")
     args.append(lvname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/lvremove",args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/lvremove",args)
     if res != 0:
       raise CommandError('FATAL', LVREMOVE_FAILURE % (cmdstr,err))
 
@@ -191,7 +191,7 @@ class CommandHandler:
     args.append("/bin/umount")
     args.append(lvname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/bin/umount",args)
+    out,err,res = execWithCaptureErrorStatus("/bin/umount",args)
     if res != 0:
       raise CommandError('FATAL', LV_UMOUNT_FAILURE % (cmdstr,err))
 
@@ -201,7 +201,7 @@ class CommandHandler:
     args.append(vg.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/vgreduce",args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgreduce",args)
     if res != 0:
       raise CommandError('FATAL', VGREDUCE_FAILURE % (cmdstr,err))
 
@@ -210,7 +210,7 @@ class CommandHandler:
     args.append("/usr/sbin/pvmove")
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = rhpl.executil.execWithCaptureErrorStatus("/usr/sbin/pvmove",args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/pvmove",args)
     if res != 0:
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr,err))
 
@@ -221,7 +221,7 @@ class CommandHandler:
     arglist = list()
     arglist.append("/bin/cat")
     arglist.append("/proc/mounts")
-    result  = rhpl.executil.execWithCapture("/bin/cat", arglist)
+    result  = execWithCapture("/bin/cat", arglist)
     textlines = result.splitlines()
     for textline in textlines:
       text_words = textline.split()
@@ -237,7 +237,7 @@ class CommandHandler:
     arglist = list()
     arglist.append("/sbin/dmsetup")
     arglist.append("targets")
-    result  = rhpl.executil.execWithCapture("/sbin/dmsetup", arglist)
+    result  = execWithCapture("/sbin/dmsetup", arglist)
     textlines = result.splitlines()
     for textline in textlines:
       text_words = textline.split()

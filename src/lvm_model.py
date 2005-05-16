@@ -8,7 +8,7 @@ from PhysicalVolume import PhysicalVolume
 from LogicalVolume import LogicalVolume
 from VolumeGroup import VolumeGroup
 from ExtentSegment import ExtentSegment
-import rhpl.executil
+from execute import execWithCapture, execWithCaptureErrorStatus
 import gettext
 _ = gettext.gettext
 
@@ -139,7 +139,7 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -157,7 +157,7 @@ class lvm_model:
     arg_list = list()
     arg_list.append("/sbin/fdisk")
     arg_list.append("-l")
-    result  = rhpl.executil.execWithCapture("/sbin/fdisk", arg_list)
+    result = execWithCapture("/sbin/fdisk", arg_list)
     textlines = result.splitlines()
 
     #At this point, all of the visible partitions initialized for LVM usage
@@ -207,7 +207,7 @@ class lvm_model:
     swaparg_list = list()
     swaparg_list.append("/bin/cat")
     swaparg_list.append("/proc/swaps")
-    result  = rhpl.executil.execWithCapture("/bin/cat", swaparg_list)
+    result  = execWithCapture("/bin/cat", swaparg_list)
     textlines = result.splitlines()
     for pe in pelist:
       path = pe.get_path().strip()
@@ -234,7 +234,7 @@ class lvm_model:
     arglist.append("+pv_pe_count,pv_pe_alloc_count")
     arglist.append(pathname)
                                                                                 
-    line = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    line = execWithCapture("/usr/sbin/lvm",arglist)
     if (line == None) or (len(line) < 1):
       ###FIXME - Throw exception here, if no result is returned
       return None
@@ -268,7 +268,7 @@ class lvm_model:
     arglist.append("-o")
     arglist.append("+pv_pe_count,pv_pe_alloc_count")
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -311,7 +311,7 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
                                                                                 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       line.strip()
@@ -344,7 +344,7 @@ class lvm_model:
     arglist.append(",")
     arglist.append(pathname)
  
-    line = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    line = execWithCapture("/usr/sbin/lvm",arglist)
     if (line == None) or (len(line) < 1):
       ###FIXME - Throw exception here, if no result is returned
       return None
@@ -372,7 +372,7 @@ class lvm_model:
     arglist.append(",")
     arglist.append(vgname)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -397,7 +397,7 @@ class lvm_model:
     vg_arglist.append("+vg_free_count")
     vg_arglist.append(vg_name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",vg_arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",vg_arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -415,7 +415,7 @@ class lvm_model:
     arglist.append("/usr/sbin/lvdisplay") #lvs does not give path info
     arglist.append("-c")
                                                                                 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvdisplay",arglist)
+    result_string = execWithCapture("/usr/sbin/lvdisplay",arglist)
     lines = result_string.splitlines()
     #The procedure below does the following:
     #The output of the command is examined line by line for a volume 
@@ -478,7 +478,7 @@ class lvm_model:
     arglist.append("vg_free,vg_free_count")
     arglist.append(vg_name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
 
     if (lines[0].find("not found")) >= 0:
@@ -501,7 +501,7 @@ class lvm_model:
     arglist.append("max_lv,lv_count,max_pv,pv_count")
     arglist.append(vg_name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
 
     words = result_string.split(",")
 
@@ -533,7 +533,7 @@ class lvm_model:
     arglist.append(VGS_OPTION_STRING)
     arglist.append(name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(VG_NAME)
@@ -592,7 +592,7 @@ class lvm_model:
     arglist = list()
     arglist.append("/sbin/fdisk")
     arglist.append("-l")
-    result  = rhpl.executil.execWithCapture("/sbin/fdisk", arglist)
+    result  = execWithCapture("/sbin/fdisk", arglist)
     textlines = result.splitlines()
     #First determine partition type
     for textline in textlines:
@@ -611,7 +611,7 @@ class lvm_model:
     #Now determine size
     arglist = list()
     arglist.append("/usr/sbin/lvmdiskscan")
-    result  = rhpl.executil.execWithCapture("/usr/sbin/lvmdiskscan", arglist)
+    result  = execWithCapture("/usr/sbin/lvmdiskscan", arglist)
     textlines = result.splitlines()
     for textline in textlines:
       text_words = textline.split()
@@ -633,7 +633,7 @@ class lvm_model:
     arglist = list()
     arglist.append("/bin/cat")
     arglist.append("/proc/mounts")
-    result  = rhpl.executil.execWithCapture("/bin/cat", arglist)
+    result  = execWithCapture("/bin/cat", arglist)
     textlines = result.splitlines()
     for textline in textlines:
       text_words = textline.split()
@@ -647,7 +647,7 @@ class lvm_model:
     arglist = list()
     arglist.append("/bin/cat")
     arglist.append("/etc/mtab")
-    result,err,code  = rhpl.executil.execWithCaptureErrorStatus("/bin/cat", arglist)
+    result,err,code  = execWithCaptureErrorStatus("/bin/cat", arglist)
     if code == 0:
       textlines = result.splitlines()
       for textline in textlines:
@@ -670,7 +670,7 @@ class lvm_model:
     arglist.append("/usr/bin/file")
     arglist.append("-s")
     arglist.append(path)
-    result = rhpl.executil.execWithCapture("/usr/bin/file", arglist)
+    result = execWithCapture("/usr/bin/file", arglist)
     words = result.split()
     if len(words) < 3:  #No file system
       filesys_type = NO_FILESYSTEM
@@ -705,7 +705,7 @@ class lvm_model:
     arglist.append(LVS_OPTION_STRING)
     arglist.append(path)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(LV_NAME)
@@ -743,7 +743,7 @@ class lvm_model:
     arglist.append(PVS_OPTION_STRING)
     arglist.append(path)
     
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(PV_NAME)
@@ -827,7 +827,7 @@ class lvm_model:
       arglist.append("/usr/sbin/lvdisplay")
       arglist.append("-m")
       arglist.append(path)
-      result_string = rhpl.executil.execWithCapture("/usr/sbin/lvdisplay",arglist)
+      result_string = execWithCapture("/usr/sbin/lvdisplay",arglist)
       ##For ease of maintenance, here is an explanation of what is
       ##going on here...the lvmdisplay command is run above for
       ##each Logical Volume in the pv's volumegroup. The command

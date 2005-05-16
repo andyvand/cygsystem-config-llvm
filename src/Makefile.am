@@ -14,6 +14,7 @@ ViewableVolume.py \
 VolumeGroup.py \
 Volume.py \
 Volume_Tab_View.py \
+execute.py	\
 pixmaps/UV.xpm	\
 pixmaps/VG.xpm	\
 pixmaps/LV.xpm	\
@@ -55,6 +56,7 @@ install-exec-local:
 	install -m 0640 $(srcdir)/VolumeGroup.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Volume.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Volume_Tab_View.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/execute.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/pixmaps/PV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/LV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/UV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/

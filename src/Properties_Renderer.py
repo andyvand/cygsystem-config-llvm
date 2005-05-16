@@ -11,7 +11,6 @@ import signal
 import gobject
 import pango
 import string
-import rhpl.executil
 import os
 from gtk import TRUE, FALSE
 from lvmui_constants import *

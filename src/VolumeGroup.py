@@ -3,7 +3,6 @@
 import os
 import string
 from gtk import TRUE, FALSE
-import rhpl.executil
 from Volume import Volume
 
 class VolumeGroup(Volume):

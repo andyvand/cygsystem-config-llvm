@@ -4,7 +4,6 @@ import os
 import string
 from gtk import TRUE, FALSE
 from lvmui_constants import *
-import rhpl.executil
 from Volume import Volume
 
 class LogicalVolume(Volume):

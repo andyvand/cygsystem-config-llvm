@@ -14,7 +14,6 @@ import signal
 import gobject
 import pango
 import string
-import rhpl.executil
 import os
 import gettext 
 _ = gettext.gettext

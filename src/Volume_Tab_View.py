@@ -8,7 +8,6 @@ import operator
 import signal
 import gobject
 import string
-import rhpl.executil
 import os
 from gtk import TRUE, FALSE
 from renderer import volume_renderer
