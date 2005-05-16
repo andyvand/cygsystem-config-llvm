@@ -1,18 +1,21 @@
+# translation of da.po to Danish
 # Danish translation of system-config-lvm
 # This file is distributed under the same license as the system-config-lvm package.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004.
+# Keld Simonsen <keld@dkuug.dk>, 2005.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-lvm\n"
+"Project-Id-Version: da\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-23 17:59+0200\n"
-"Last-Translator: Martin Willemoes Hansen <mwh@sysrq.dk>\n"
+"PO-Revision-Date: 2005-05-16 12:58+0200\n"
+"Last-Translator: Keld Simonsen <keld@dkuug.dk>\n"
 "Language-Team: Danish <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Report-Msgid-Bugs-To: \n"
+"X-Generator: KBabel 1.0.2\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
@@ -117,10 +120,8 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
-"Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
 
 #: src/InputController.py:117
 msgid "A Name must be provided for the new Logical Volume"
@@ -132,8 +133,7 @@ msgstr "Et navn skal angives for den nye delarkivgruppe"
 
 #: src/InputController.py:121
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Det angivne monteringspunkt %s, findes ikke. Vil du oprette det?"
 
 #: src/InputController.py:123
@@ -143,24 +143,23 @@ msgstr "Oprettelsen af monteringspunktet %s mislykkedes uventet."
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Denne facilitet er endnu ikke implementeret i denne version"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Antallet af fysiske delafsnit i denne delafsnitsgruppe har nået sin maksimumsgrænse."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Antallet af fysiske delafsnit i denne delafsnitsgruppe har nået sin minimumsgrænse."
 
 #: src/InputController.py:131
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgstr "Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
 
 #: src/InputController.py:133
 msgid ""
@@ -168,6 +167,9 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
+"Der er et problem med værdien indtastet i Størrelse-feltet.Værdien "
+"bør være en numerisk værdi uden alfabetiske tegn eller symboler af nogen "
+"anden slags."
 
 #: src/InputController.py:135
 #, python-format
@@ -176,6 +178,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"STOR ADVARSEL: Delafsnitsgruppe %s har et %s-filsystem på sig og er for øjeblikket "
+"monteret på %s. Er du absolut sikker på at du ønsker at smide dataene "
+"på dette mounterede filsystem væk?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -264,11 +269,16 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
+"Det fysiske delafsnit med navnet %s, som du ønsker at fjerne, har data fra aktive "
+"logiske delafsnit liggende på dets udvidelser. Fordi det er det eneste fysiske "
+"delafsnit i delafsnitsgruppen, så er der ikke noget sted som data kan flyttes til. Anbefalet "
+"fremgangsmåde er enten at tilføje et nyt fysisk delafsnit før fjernelse af det nuværende, eller "
+"ellers fjerne de logiske delafsnit som er tilknyttet dette fysiske  "
+"delafsnit."
 
 #: src/InputController.py:159
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Er du helt sikker på at du vil fjerne %s fra delarkivgruppen %s?"
 
 #: src/InputController.py:160
@@ -277,6 +287,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"Fjernelse af fysisk delafsnit %s fra delafsnitsgruppen %s vil gøre delafsnitsgruppen "
+"tom, og den vi så også blive fjernet. Ønsker du at fortsætte?"
 
 #: src/InputController.py:161
 #, python-format
@@ -284,14 +296,15 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "Er du helt sikker på at du vil fjerne det logiske delarkiv %s?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
 "Delarkivgruppen %s har ikke tilstrækkeligt med plads for at flytte de data "
-"som er lagrede på %s"
+"som er lagrede på %s. En mulig løsning kunne være at tilføje endnu et "
+"fysisk delarkiv til delarkiv-gruppen."
 
 #: src/InputController.py:163
 msgid ""
@@ -300,6 +313,10 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"Dm-mirror-modulet er enten ikke indlæst i din kerne, eller din kerne "
+"understøtter ikke dm-mirror-målet. Hvis det er understøttet, så prøv at køre "
+"\"modprobe dm-mirror\". Ellers vil handlinger, der kræver flytning af data på "
+"fysiske udvidelser, være utilgængelige."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
@@ -509,11 +526,8 @@ msgstr ""
 "logisk delarkiv"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
-"Udvid\n"
-"delarkivgruppe"
+msgstr "Udvid delarkivgruppe"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -695,82 +709,69 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgextend-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgextend-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\" - Systemets fejlbesked: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\" - Systemets fejlbesked: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\" - Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgreduce-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgreduce-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "umount-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "umount-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "umount-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\""
+#, python-format
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "umount-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets fejlbesked : %s"
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1069,46 +1070,43 @@ msgstr "Ledigt"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1199,3 +1197,4 @@ msgstr "Ikke klargjorte entiteter"
 
 #~ msgid "dialog1"
 #~ msgstr "dialog1"
+
