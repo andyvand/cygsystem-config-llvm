@@ -173,13 +173,13 @@ class Volume_Tab_View:
 
     if pvname_val == name_selection:
       self.treeview.expand_to_path(path)
-      selection.select_range(path, path)
+      selection.select_path(path)
       self.found_selection = TRUE #prevents vgname selection in multiple places
 
     if lvname_val == name_selection:
       if vgname == None:
         self.treeview.expand_to_path(path)
-        selection.select_range(path, path)
+        selection.select_path(path)
         self.found_selection = TRUE #prevents LVs with same name in diff VGs 
                                     #from both being selected 
       else:
@@ -189,7 +189,7 @@ class Volume_Tab_View:
         result = name_string.find(vgname)
         if result != (-1):
           self.treeview.expand_to_path(path)
-          selection.select_range(path, path)
+          selection.select_path(path)
           self.found_selection = TRUE  
         else:
           return
