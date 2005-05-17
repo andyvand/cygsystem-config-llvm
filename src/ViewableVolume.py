@@ -13,7 +13,6 @@ __author__ = 'Jim Parsons (jparsons@redhat.com)'
 
 import string
 import pango
-from gtk import TRUE,FALSE
 
 from Volume import Volume
 
@@ -122,4 +121,4 @@ class ViewableVolume:
 
   def clear_extent_selections(self):
     for e in self.viewable_extents:
-      e.set_is_selected(FALSE)
+      e.set_is_selected(False)

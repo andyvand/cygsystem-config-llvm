@@ -2,7 +2,6 @@ import string
 import pango
 import gettext
 _ = gettext.gettext
-from gtk import TRUE, FALSE
 
 from ExtentSegment import ExtentSegment
 
@@ -54,9 +53,9 @@ class ViewableExtent:
     name = ename.strip()
     nm = self.extent.get_name().strip()
     if nm == name:
-      return TRUE
+      return True
     else:
-      return FALSE 
+      return False 
 
   #def get_horizontal_layout(self, size):
   #  pc = self.pango_context

@@ -4,7 +4,6 @@
 __author__ = 'Jim Parsons (jparsons@redhat.com)'
 
 
-from gtk import TRUE, FALSE
 import string
 import os
 import stat
@@ -244,9 +243,9 @@ class InputController:
     max_physical_volumes = 256
     max_logical_volumes = 256
     phys_extent_size = 8
-    phys_extent_units_meg = TRUE
-    autobackup = TRUE
-    resizable = TRUE
+    phys_extent_units_meg = True
+    autobackup = True
+    resizable = True
 
     selection = self.treeview.get_selection()
     model,iter = selection.get_selected()
@@ -267,7 +266,7 @@ class InputController:
     Name_request = proposed_name
 
     max_pvs_field = self.new_vg_max_pvs.get_text()
-    if max_pvs_field.isalnum() == FALSE:
+    if max_pvs_field.isalnum() == False:
       self.errorMessage(NUMBERS_ONLY_MAX_PVS)
       self.new_vg_max_pvs.set_text(str(MAX_PHYSICAL_VOLS))
       return
@@ -280,7 +279,7 @@ class InputController:
       max_physical_volumes = max_pvs
 
     max_lvs_field = self.new_vg_max_lvs.get_text()
-    if max_lvs_field.isalnum() == FALSE:
+    if max_lvs_field.isalnum() == False:
       self.errorMessage(NUMBERS_ONLY_MAX_LVS)
       self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
       return
@@ -315,20 +314,20 @@ class InputController:
     self.new_vg_name.set_text("")
     self.new_vg_max_pvs.set_text(str(MAX_PHYSICAL_VOLS))
     self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
-    self.new_vg_radio_meg.set_active(TRUE)
+    self.new_vg_radio_meg.set_active(True)
     self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
 
   def change_new_vg_radio(self, button):
     menu = self.new_vg_extent_size.get_menu()
     items = menu.get_children()
     #We don't want to offer the 2 and 4 options for kilo's - min size is 8k
-    if self.new_vg_radio_meg.get_active() == TRUE:
-      items[0].set_sensitive(TRUE)
-      items[1].set_sensitive(TRUE)
+    if self.new_vg_radio_meg.get_active() == True:
+      items[0].set_sensitive(True)
+      items[1].set_sensitive(True)
       self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
     else:
-      items[0].set_sensitive(FALSE)
-      items[1].set_sensitive(FALSE)
+      items[0].set_sensitive(False)
+      items[1].set_sensitive(False)
       self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_KILO_IDX)
 
   def on_pv_rm(self, button):
@@ -350,11 +349,11 @@ class InputController:
     #  2a) If there are more than one PV in the VG, just vgreduce away the PV
     #  2b) If the PV is the only one, then vgremove the VG
     #
-    mapped_lvs = TRUE
-    solo_pv = FALSE
-    reset_tree = FALSE
+    mapped_lvs = True
+    solo_pv = False
+    reset_tree = False
     if pvname == None:
-      reset_tree = TRUE #This says that tree reset will not be handled by caller
+      reset_tree = True #This says that tree reset will not be handled by caller
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
       name = model.get_value(iter, PATH_COL)
@@ -368,24 +367,24 @@ class InputController:
     total,free,alloc = pv.get_extent_values()
     pv_list = self.model_factory.query_PVs_for_VG(vgname)
     if len(pv_list) <= 1: #This PV is the only one in the VG
-      solo_pv = TRUE
+      solo_pv = True
     else:
-      solo_pv = FALSE
+      solo_pv = False
 
     if len(extent_list) == 1: #There should always be at least one extent seg
       #We now know either the entire PV is used by one LV, or else it is
       #an unutilized PV. If the latter, we can just vgreduce it away 
       seg_name = extent_list[0].get_name()
       if (seg_name == FREE) or (seg_name == UNUSED):
-        mapped_lvs = FALSE
+        mapped_lvs = False
       else:
-        mapped_lvs = TRUE
+        mapped_lvs = True
     else:
-      mapped_lvs = TRUE
+      mapped_lvs = True
 
     #Cases:
-    if mapped_lvs == FALSE:
-      if solo_pv == TRUE:
+    if mapped_lvs == False:
+      if solo_pv == True:
         #call vgremove
         retval = self.warningMessage(CONFIRM_VG_REMOVE % (pvname,vgname))
         if (retval == gtk.RESPONSE_NO):
@@ -396,7 +395,7 @@ class InputController:
           self.errorMessage(e.getMessage())
           return
 
-      else: #solo_pv is FALSE, more than one PV...
+      else: #solo_pv is False, more than one PV...
         retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
         if (retval == gtk.RESPONSE_NO):
           return
@@ -407,14 +406,14 @@ class InputController:
           return
     else:
       #Two cases here: if solo_pv, bail, else check for size needed
-      if solo_pv == TRUE:
+      if solo_pv == True:
         self.errorMessage(SOLO_PV_IN_VG % pvname)
         return
       else: #There are additional PVs. We need to check space 
         size, ext_count = self.model_factory.get_free_space_on_VG(vgname, "m")
         actual_free_exts = int(ext_count) - free
         if alloc <= actual_free_exts:
-          if self.command_handler.is_dm_mirror_loaded() == FALSE:
+          if self.command_handler.is_dm_mirror_loaded() == False:
             self.errorMessage(NO_DM_MIRROR)
             return
           retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
@@ -437,7 +436,7 @@ class InputController:
           return
 
 
-    if reset_tree == TRUE:
+    if reset_tree == True:
       args = list()
       args.append(vgname)
       apply(self.reset_tree_model, args)
@@ -448,9 +447,9 @@ class InputController:
     self.remove_lv()
 
   def remove_lv(self, lvname=None):
-    reset_tree = FALSE
+    reset_tree = False
     if lvname == None:
-      reset_tree = TRUE
+      reset_tree = True
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
       name = model.get_value(iter, PATH_COL)
@@ -465,7 +464,7 @@ class InputController:
       is_mounted,mnt_point,filesys = self.command_handler.is_lv_mounted(lvname)
 
 
-    if is_mounted == TRUE:
+    if is_mounted == True:
       retval = self.warningMessage(MOUNTED_WARNING % (lvname,filesys,mnt_point))
       if (retval == gtk.RESPONSE_NO):
         return
@@ -485,7 +484,7 @@ class InputController:
     #args = list()
     #args.append(lvname)
     #apply(self.reset_tree_model, args)
-    if reset_tree == TRUE:
+    if reset_tree == True:
       apply(self.reset_tree_model)
 
   def on_rm_select_lvs(self, button):
@@ -496,7 +495,7 @@ class InputController:
       return 
     #need to check if section is 'unused'
     for item in self.section_list:
-      if item.is_vol_utilized == FALSE:
+      if item.is_vol_utilized == False:
         continue
       lvname = item.get_path().strip()
       self.remove_lv(lvname)
@@ -608,7 +607,7 @@ class InputController:
     self.new_lv_size_unit.set_history(EXTENT_IDX)
 
     #set radiobutton group to linear
-    self.new_lv_linear_radio.set_active(TRUE) 
+    self.new_lv_linear_radio.set_active(True) 
     self.new_lv_stripe_size.set_history(DEFAULT_STRIPE_SIZE_IDX)
     self.new_lv_stripe_spinner.set_value(2.0)
 
@@ -648,14 +647,14 @@ class InputController:
     VG_Name = ""
     Size_request = 0
     Unit_index = (-1)
-    Striped = FALSE
+    Striped = False
     Stripe_size = 64
     Num_stripes = 2
-    Make_filesystem = FALSE
+    Make_filesystem = False
     FS_type = ""
-    Mount_filesystem = FALSE
+    Mount_filesystem = False
     Mount_point = ""
-    FSTAB_entry = FALSE
+    FSTAB_entry = False
     
     #Validation Ladder:
     #Name must be unique for this VG
@@ -736,8 +735,8 @@ class InputController:
 
 
     #Handle stripe request
-    if self.new_lv_striped_radio.get_active() == TRUE:
-      Striped = TRUE
+    if self.new_lv_striped_radio.get_active() == True:
+      Striped = True
       num_stripes_str = str(self.new_lv_stripe_spinner.get_text())
       if num_stripes_str.isalnum():
         Num_stripes = int(num_stripes_str)
@@ -754,13 +753,13 @@ class InputController:
     fs_idx = self.new_lv_fs_menu.get_history()
     desired_fs_type = self.new_lv_fs_menu.get_children()[0].get()
     if fs_idx > 0:
-      Make_filesystem = TRUE
+      Make_filesystem = True
       #FS_type = FILE_SYSTEM_TYPE_LIST[fs_idx] 
       FS_type = FS_HASH[desired_fs_type] 
       if self.new_lv_mnt_point.get_text() != "":
-        Mount_filesystem = TRUE
+        Mount_filesystem = True
         Mount_point = self.new_lv_mnt_point.get_text()
-        if os.path.exists(Mount_point) == FALSE:  ###stat mnt point
+        if os.path.exists(Mount_point) == False:  ###stat mnt point
           rc = self.infoMessage(BAD_MNT_POINT % Mount_point)
           if (rc == gtk.RESPONSE_YES):  #create mount point
             try:
@@ -780,16 +779,16 @@ class InputController:
     new_lv_command_set[NEW_LV_UNIT_ARG] = Unit_index
     new_lv_command_set[NEW_LV_SIZE_ARG] = Size_request
     new_lv_command_set[NEW_LV_IS_STRIPED_ARG] = Striped
-    if Striped == TRUE:
+    if Striped == True:
       new_lv_command_set[NEW_LV_STRIPE_SIZE_ARG] = Stripe_size
       new_lv_command_set[NEW_LV_NUM_STRIPES_ARG] = Num_stripes
     new_lv_command_set[NEW_LV_MAKE_FS_ARG] = Make_filesystem
-    if Make_filesystem == TRUE:
+    if Make_filesystem == True:
       new_lv_command_set[NEW_LV_FS_TYPE_ARG] = FS_type
     new_lv_command_set[NEW_LV_MAKE_MNT_POINT_ARG] = Mount_filesystem
-    if Mount_filesystem == TRUE:
+    if Mount_filesystem == True:
       new_lv_command_set[NEW_LV_MNT_POINT_ARG] = Mount_point
-      if FSTAB_entry == TRUE:
+      if FSTAB_entry == True:
         new_lv_command_set[NEW_FSTAB_ARG] = FSTAB_entry
     
     try:    
@@ -915,7 +914,7 @@ class InputController:
         pv_list = self.model_factory.query_PVs_for_VG(vgname)
         if len(pv_list) < 2:  #striping is not an option
           self.errorMessage(CANT_STRIPE_MESSAGE)
-          self.new_lv_linear_radio.set_active(TRUE)
+          self.new_lv_linear_radio.set_active(True)
           return
 
     self.new_lv_stripe_spinner.set_sensitive(val)
@@ -969,7 +968,7 @@ class InputController:
 
   def add_pv_to_vg_delete_event(self, *args):
     self.add_pv_to_vg_dlg.hide()
-    return gtk.TRUE
+    return True
 
   def on_ok_add_pv_to_vg(self, button):
     selection = self.treeview.get_selection()
@@ -1095,7 +1094,7 @@ class InputController:
 
   def extend_vg_delete_event(self, *args):
     self.extend_vg_form.hide()
-    return gtk.TRUE
+    return True
     
 
   def rebuild_extend_vg_tree(self):
@@ -1130,7 +1129,7 @@ class InputController:
 
   def new_vg_delete_event(self, *args):
     self.new_vg_dlg.hide()
-    return gtk.TRUE
+    return True
 
   def setup_misc_widgets(self):
     self.remove_unalloc_pv = self.glade_xml.get_widget('remove_unalloc_pv')

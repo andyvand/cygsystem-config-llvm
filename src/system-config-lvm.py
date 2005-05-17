@@ -14,7 +14,6 @@ import select
 import signal
 import string
 import os
-from gtk import TRUE, FALSE
 
 PROGNAME = "system-config-lvm"
 VERSION = "@VERSION@"

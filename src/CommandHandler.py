@@ -1,6 +1,5 @@
 import os
 import string
-from gtk import TRUE, FALSE
 from CommandError import CommandError
 from lvm_model import lvm_model
 from execute import execWithCapture, execWithCaptureErrorStatus
@@ -52,7 +51,7 @@ class CommandHandler:
       elif cmd_args_dict[NEW_LV_UNIT_ARG] == GIGABYTE_IDX:
         arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "g")
 
-    if cmd_args_dict[NEW_LV_IS_STRIPED_ARG] == TRUE:
+    if cmd_args_dict[NEW_LV_IS_STRIPED_ARG] == True:
       arglist.append("-i")
       arglist.append(str(cmd_args_dict[NEW_LV_NUM_STRIPES_ARG]))
       arglist.append("-I")
@@ -71,7 +70,7 @@ class CommandHandler:
     ###next command
 
     #Now make filesystem if necessary
-    if cmd_args_dict[NEW_LV_MAKE_FS_ARG] == TRUE:
+    if cmd_args_dict[NEW_LV_MAKE_FS_ARG] == True:
       lvpath = model_factory.get_logical_volume_path(lvname,vgname)
 
       fs_type = cmd_args_dict[NEW_LV_FS_TYPE_ARG] 
@@ -85,7 +84,7 @@ class CommandHandler:
       if r != 0:
         raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
 
-      if cmd_args_dict[NEW_LV_MAKE_MNT_POINT_ARG] == TRUE:
+      if cmd_args_dict[NEW_LV_MAKE_MNT_POINT_ARG] == True:
         mnt_point =  cmd_args_dict[NEW_LV_MNT_POINT_ARG]
 
         cmd_args = list()
@@ -215,7 +214,7 @@ class CommandHandler:
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr,err))
 
   def is_lv_mounted(self, lvname):
-    is_mounted = FALSE
+    is_mounted = False
     mount_point = ""
     filesys = ""
     arglist = list()
@@ -227,7 +226,7 @@ class CommandHandler:
       text_words = textline.split()
       possible_path = text_words[0].strip()
       if possible_path == lvname:
-        is_mounted = TRUE
+        is_mounted = True
         mount_point = text_words[1]
         filesys = text_words[2]
         break
@@ -243,8 +242,8 @@ class CommandHandler:
       text_words = textline.split()
       possible_target = text_words[0].strip()
       if possible_target == "mirror":
-        return TRUE
+        return True
 
-    return FALSE
+    return False
 
       

@@ -12,7 +12,6 @@ import gobject
 import pango
 import string
 import os
-from gtk import TRUE, FALSE
 from lvmui_constants import *
 import stat
 import gettext

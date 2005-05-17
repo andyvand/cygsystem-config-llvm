@@ -9,7 +9,6 @@ import signal
 import gobject
 import string
 import os
-from gtk import TRUE, FALSE
 from renderer import volume_renderer
 from Properties_Renderer import Properties_Renderer
 from lvm_model import lvm_model
@@ -53,7 +52,7 @@ class Volume_Tab_View:
     self.width = 0
     self.height = 0
     self.glade_xml = glade_xml
-    self.found_selection = FALSE  #sentinel for foreach loop
+    self.found_selection = False  #sentinel for foreach loop
 
     ##Set up list structure
     self.treeview = self.glade_xml.get_widget('treeview1')
@@ -63,7 +62,7 @@ class Volume_Tab_View:
                                     gobject.TYPE_STRING,
                                     gobject.TYPE_STRING)
     self.treeview.set_model(self.treemodel)
-    self.treeview.set_headers_visible(FALSE)
+    self.treeview.set_headers_visible(False)
 
     self.input_controller = InputController(self.reset_tree_model,
                                             self.treeview, 
@@ -137,7 +136,7 @@ class Volume_Tab_View:
     self.prepare_tree()
     if len(args) != 0:
       model = self.treeview.get_model()
-      self.found_selection = FALSE
+      self.found_selection = False
       model.foreach(self.check_tree_items, args)
       
 
@@ -145,7 +144,7 @@ class Volume_Tab_View:
     name_selection_argss = list()
     for a in args:
       name_selection_argss.append(a)
-    if self.found_selection == TRUE:
+    if self.found_selection == True:
       return
 
     name_selection_args = name_selection_argss[0]
@@ -173,14 +172,14 @@ class Volume_Tab_View:
 
     if pvname_val == name_selection:
       self.treeview.expand_to_path(path)
+      self.found_selection = True #prevents vgname selection in multiple places
       selection.select_path(path)
-      self.found_selection = TRUE #prevents vgname selection in multiple places
 
     if lvname_val == name_selection:
       if vgname == None:
         self.treeview.expand_to_path(path)
+        self.found_selection = True #prevents LVs with same name in diff VGs 
         selection.select_path(path)
-        self.found_selection = TRUE #prevents LVs with same name in diff VGs 
                                     #from both being selected 
       else:
         #get parent path in model
@@ -189,8 +188,8 @@ class Volume_Tab_View:
         result = name_string.find(vgname)
         if result != (-1):
           self.treeview.expand_to_path(path)
+          self.found_selection = True  
           selection.select_path(path)
-          self.found_selection = TRUE  
         else:
           return
       
@@ -242,7 +241,7 @@ class Volume_Tab_View:
                           PATH_COL, lv.get_path(),
                           SIMPLE_LV_NAME_COL, lv.get_name())
       #Expand if there are entries 
-      self.treeview.expand_row(treemodel.get_path(vg_iter),FALSE)
+      self.treeview.expand_row(treemodel.get_path(vg_iter),False)
 
     unalloc_list = self.model_factory.query_unallocated()
     if len(unalloc_list) > 0:
@@ -302,7 +301,7 @@ class Volume_Tab_View:
       self.vr.render(pv_list, 0)
       vg_data = self.model_factory.get_data_for_VG(vg_name)
       self.lr.render_to_layout_area(vg_data, vg_name, type)
-      self.treeview.expand_row(treepath, FALSE)
+      self.treeview.expand_row(treepath, False)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.phys_vol_view_panel.show()
@@ -314,7 +313,7 @@ class Volume_Tab_View:
       self.vr.render(lv_list, 2)
       vg_data = self.model_factory.get_data_for_VG(vg_name)
       self.lr.render_to_layout_area(vg_data, vg_name, type)
-      self.treeview.expand_row(treepath, FALSE)
+      self.treeview.expand_row(treepath, False)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.show_log_vol_view_panel(lv_list)
@@ -326,7 +325,7 @@ class Volume_Tab_View:
       vg_data = self.model_factory.get_data_for_VG(vg_name)
       self.lr.render_to_layout_area(vg_data, vg_name, type)
       self.clear_all_buttonpanels()
-      self.treeview.expand_row(treepath, FALSE)
+      self.treeview.expand_row(treepath, False)
       self.input_controller.clear_highlighted_sections()
       self.vr.render_dual(pv_list, lv_list)
     elif type == PHYS_TYPE:
@@ -378,7 +377,7 @@ class Volume_Tab_View:
 
   def on_scroll_event(self, *args):
     self.on_tree_selection_changed(None)
-    return TRUE  
+    return True  
 
   def on_mouse_button_press(self, widget, event, *args):
     selection = self.treeview.get_selection()
@@ -415,20 +414,20 @@ class Volume_Tab_View:
     selection = treeview.get_selection()
     model, iter = selection.get_selected()
 #    if model.iter_parent(iter) == None:  #Top level
-    return TRUE
+    return True
 #    else:
-#    return FALSE
+#    return False
 
   def show_log_vol_view_panel(self,lv_list):
     #This is a wrapper for self.log_vol_view_panel.show()
     #If the VG has no LVs, then a proxy LV is returned as an 'Unused' LV.
     #We do not want to allow the deletion of this unused LV.
     #So we'll gray out the button.
-    self.on_rm_select_lvs_button.set_sensitive(TRUE)
+    self.on_rm_select_lvs_button.set_sensitive(True)
     x = len(lv_list)
     if x == 1:
-      if lv_list[0].is_vol_utilized() == FALSE:
-        self.on_rm_select_lvs_button.set_sensitive(FALSE)
+      if lv_list[0].is_vol_utilized() == False:
+        self.on_rm_select_lvs_button.set_sensitive(False)
 
     self.log_vol_view_panel.show()
 

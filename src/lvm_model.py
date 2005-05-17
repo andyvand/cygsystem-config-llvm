@@ -1,7 +1,6 @@
 import os
 import sys
 import string
-from gtk import TRUE, FALSE
 from lvmui_constants import *
 from Volume import Volume
 from PhysicalVolume import PhysicalVolume
@@ -144,9 +143,9 @@ class lvm_model:
     for line in lines:
       words = line.split(",")
       if words[2] == "":  #No entry in column 3 means not initialized
-        initialized = FALSE
+        initialized = False
       else:
-        initialized = TRUE
+        initialized = True
       pv = PhysicalVolume(words[0],words[1], words[2], words[3], words[4], words[5],initialized,0,0)
       if initialized:
         pelist.append(pv)
@@ -245,7 +244,7 @@ class lvm_model:
                         words[P_ATTR_COL],
                         words[P_SIZE_COL],
                         words[P_FREE_COL],
-                        TRUE,
+                        True,
                         words[P_PE_COUNT_COL],
                         words[P_PE_ALLOC_COL])
 
@@ -278,7 +277,7 @@ class lvm_model:
                           words[P_ATTR_COL], 
                           words[P_SIZE_COL], 
                           words[P_FREE_COL],
-                          TRUE, 
+                          True, 
                           words[P_PE_COUNT_COL], 
                           words[P_PE_ALLOC_COL])
 
@@ -354,7 +353,7 @@ class lvm_model:
                         words[L_VG_NAME_COL],
                         words[L_ATTR_COL],
                         words[L_SIZE_COL],
-                        TRUE)
+                        True)
 
     return lv
 
@@ -402,7 +401,7 @@ class lvm_model:
     for line in lines:
       words = line.split(",")
       if int(words[7].strip()) > 0: #Checks for free extents
-       lv = LogicalVolume(UNUSED, None, vg_name,None, words[6], FALSE)
+       lv = LogicalVolume(UNUSED, None, vg_name,None, words[6], False)
        lvlist.append(lv)
 
     return lvlist
@@ -787,14 +786,14 @@ class lvm_model:
     vgname = pv.get_vg_name().strip()
     if vgname == "":
       total,free,alloc = pv.get_extent_values()
-      es = ExtentSegment(FREE,0,total,FALSE)
+      es = ExtentSegment(FREE,0,total,False)
       es.set_annotation(UNUSED_SPACE)
       pv.add_extent_segment(es)
       return 
 
     if vgname == None:
       total,free,alloc = pv.get_extent_values()
-      es = ExtentSegment(FREE,0,total,FALSE)
+      es = ExtentSegment(FREE,0,total,False)
       es.set_annotation(UNUSED_SPACE)
       pv.add_extent_segment(es)
       return 
@@ -803,15 +802,15 @@ class lvm_model:
     lvlist = self.query_LVs_for_VG(vgname)
     #if lvlist is empty, add one extent_segment for the empty space, then return
     if len(lvlist) == 1:  #Could be an 'unused' section or fully used section
-      if lvlist[0].is_vol_utilized == FALSE: 
+      if lvlist[0].is_vol_utilized == False: 
         total,free,alloc = pv.get_extent_values()
-        es = ExtentSegment(FREE,0,total,FALSE)
+        es = ExtentSegment(FREE,0,total,False)
         es.set_annotation(UNUSED_SPACE)
         pv.add_extent_segment(es)
         return 
       else:
         total,free,alloc = pv.get_extent_values()
-        es = ExtentSegment(lvlist[0].get_name(),0,total,TRUE)
+        es = ExtentSegment(lvlist[0].get_name(),0,total,True)
         pv.add_extent_segment(es)
         return 
         
@@ -820,7 +819,7 @@ class lvm_model:
     #of them, sort them, and make sure it is contiguous
 
     for lv in lvlist:
-      if lv.is_vol_utilized() == FALSE:
+      if lv.is_vol_utilized() == False:
         continue
       path = lv.get_path()
       arglist = list()
@@ -877,7 +876,7 @@ class lvm_model:
           start = int(words[SEG_START_COL])
           end = int(words[SEG_END_COL])
           span = end - start + 1
-          extent = ExtentSegment(lv.get_name(), start, span, TRUE)
+          extent = ExtentSegment(lv.get_name(), start, span, True)
           #Now let's determine if this segment is striped or linear,
           #and note this in the new extent...
           typestring = lines[i - 1]
@@ -911,7 +910,7 @@ class lvm_model:
         name_next = next.get_name()
         if name == name_next:
           if current.get_annotation() == next.get_annotation():
-            extent = ExtentSegment(name_next,st,(sz + sz_next),TRUE)
+            extent = ExtentSegment(name_next,st,(sz + sz_next),True)
             extent.set_annotation(current.get_annotation())
             extentlist.insert(k,extent)
             extentlist.remove(current)
@@ -928,9 +927,9 @@ class lvm_model:
     ##This is set up as a double loop because inserting a new val
     ##in a list probably hoses the loop iterator, so to be safe,
     ##the for loop iterator is recreated after each list insertion
-    need_to_continue = TRUE
-    while need_to_continue == TRUE:
-      need_to_continue = FALSE
+    need_to_continue = True
+    while need_to_continue == True:
+      need_to_continue = False
       for j in range(0, len(extentlist) - 1):
         st,sz = extentlist[j].get_start_size()
         st_next,sz_next = extentlist[j + 1].get_start_size()
@@ -939,17 +938,17 @@ class lvm_model:
         else:
           new_st = st + sz
           new_sz = st_next - new_st
-          ex = ExtentSegment(FREE, new_st, new_sz, FALSE)
+          ex = ExtentSegment(FREE, new_st, new_sz, False)
           ex.set_annotation(UNUSED_SPACE)
           extentlist.insert(0, ex)
           extentlist.sort(self.sortMe)
-          need_to_continue = TRUE
+          need_to_continue = True
           break
 
     #Add final free segment if necessary
     total,free,alloc = pv.get_extent_values()
     if total == free:  #Nothing in this PV is used...
-      ex = ExtentSegment(FREE, 0, free, FALSE)
+      ex = ExtentSegment(FREE, 0, free, False)
       ex.set_annotation(UNUSED_SPACE)
       extentlist.append(ex)
     else:
@@ -957,7 +956,7 @@ class lvm_model:
       if (st + sz) != total:
         new_start = st + sz
         new_size = total - new_start
-        ex = ExtentSegment(FREE, new_start, new_size, FALSE)
+        ex = ExtentSegment(FREE, new_start, new_size, False)
         ex.set_annotation(UNUSED_SPACE)
         extentlist.append(ex)
     

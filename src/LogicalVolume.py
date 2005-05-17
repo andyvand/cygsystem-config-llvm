@@ -2,12 +2,11 @@
 
 import os
 import string
-from gtk import TRUE, FALSE
 from lvmui_constants import *
 from Volume import Volume
 
 class LogicalVolume(Volume):
-  def __init__(self, name, path, vg, attr, lsize, used=TRUE):
+  def __init__(self, name, path, vg, attr, lsize, used=True):
     Volume.__init__(self)
     self.name = name
     self.path = path

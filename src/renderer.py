@@ -22,7 +22,6 @@ from Volume import Volume
 from ViewableVolume import ViewableVolume
 from ViewableExtent import ViewableExtent
 from ExtentSegment import ExtentSegment
-from gtk import TRUE, FALSE
 from lvmui_constants import *
 ### gettext first, then import gtk (exception prints gettext "_") ###
 try:
@@ -163,7 +162,7 @@ class volume_renderer:
     self.divide_volume(self.viewable_vols)
     for vv in self.viewable_vols:
       if vv.get_volume().get_name() == name:
-        vv.set_is_selected(TRUE)
+        vv.set_is_selected(True)
 
     self.do_render()
 
@@ -490,19 +489,19 @@ class volume_renderer:
 
     if event.button == 1:
       section = self.retrieve_section(x, y)
-      if self.viewable_vols[section].get_volume().is_vol_utilized() == FALSE:
+      if self.viewable_vols[section].get_volume().is_vol_utilized() == False:
         return None
-      if self.viewable_vols[section].get_is_selected() == TRUE:
-        self.viewable_vols[section].set_is_selected(FALSE)
+      if self.viewable_vols[section].get_is_selected() == True:
+        self.viewable_vols[section].set_is_selected(False)
       else:
-        self.viewable_vols[section].set_is_selected(TRUE)
+        self.viewable_vols[section].set_is_selected(True)
       #self.highlight_this_section(section)
 
       self.rerender() 
       #return updated list of selected sections
       return_list = list()
       for vvol in self.viewable_vols:
-        if vvol.get_is_selected() == TRUE:  
+        if vvol.get_is_selected() == True:  
           return_list.append(vvol.get_volume())
       if len(return_list) > 0:
         return return_list
@@ -528,20 +527,20 @@ class volume_renderer:
       vol,section = self.dual_retrieve_section(x, y)
       if vol == PHYSICAL_VIEW:
         #if self.p_viewable_vols[section].get_is_selected() == TRUE:
-        #  self.p_viewable_vols[section].set_is_selected(FALSE)
+        #  self.p_viewable_vols[section].set_is_selected(False)
         #else:
         #  self.p_viewable_vols[section].set_is_selected(TRUE)
         return    ##PV View is not currently selectable
       elif vol == LOGICAL_VIEW:
         #If selected, de-select and clear extent pixmap
-        if self.l_viewable_vols[section].get_is_selected() == TRUE:
-          self.l_viewable_vols[section].set_is_selected(FALSE)
+        if self.l_viewable_vols[section].get_is_selected() == True:
+          self.l_viewable_vols[section].set_is_selected(False)
         else:
           #clear all selections, and make selected one true, and 
           #write out fresh extent pixmap 
           for vol in self.l_viewable_vols:
-            vol.set_is_selected(FALSE)
-          self.l_viewable_vols[section].set_is_selected(TRUE)
+            vol.set_is_selected(False)
+          self.l_viewable_vols[section].set_is_selected(True)
       else:
         return  #section not found
 
@@ -562,10 +561,10 @@ class volume_renderer:
       extent = self.retrieve_extent(x, y)
       #vol = self.viewable_vols[section]
       viewable_extents = self.viewable_volume.get_viewable_extents()
-      if viewable_extents[extent].get_is_selected() == TRUE:
-        viewable_extents[extent].set_is_selected(FALSE)
+      if viewable_extents[extent].get_is_selected() == True:
+        viewable_extents[extent].set_is_selected(False)
       else:
-        viewable_extents[extent].set_is_selected(TRUE)
+        viewable_extents[extent].set_is_selected(True)
       #self.highlight_this_section(section)
       self.do_single_render() 
 
@@ -633,7 +632,7 @@ class volume_renderer:
     self.set_color("white")
     vvol = self.viewable_vols[section]
     start = vvol.get_start()
-    vvol.set_selected = TRUE
+    vvol.set_selected = True
     span = vvol.get_span() - 1
     pixmap = self.main_pixmap
     for i in range(0, Y_BOUND, 2):
@@ -651,7 +650,7 @@ class volume_renderer:
     self.set_color("white")
     vvol = self.p_viewable_vols[section]
     start = vvol.get_start()
-    vvol.set_selected = TRUE
+    vvol.set_selected = True
     span = vvol.get_span() - 1
     pixmap = self.p_main_pixmap
     for i in range(0, Y_BOUND_DUAL, 2):
@@ -669,7 +668,7 @@ class volume_renderer:
     self.set_color("white")
     vvol = self.l_viewable_vols[section]
     start = vvol.get_start()
-    vvol.set_selected = TRUE
+    vvol.set_selected = True
     span = vvol.get_span() - 1
     pixmap = self.l_main_pixmap
     for i in range(0, Y_BOUND_DUAL, 2):
@@ -691,7 +690,7 @@ class volume_renderer:
       vexlist = pvvol.get_viewable_extents()
       for vex in vexlist:
         if vex.check_name(lv_name):
-          vex.set_is_selected(TRUE)
+          vex.set_is_selected(True)
           for j in range(0, Y_BOUND_DUAL, 2):
             vexstart,vexspan = vex.get_start_span()
             x_small_offset = self.dual_ellipse_hashtable[j] 
@@ -712,7 +711,7 @@ class volume_renderer:
     self.set_color("white")
     vext = viewable_extents[extent]
     start = vext.get_start_pixel()
-    vext.set_selected = TRUE
+    vext.set_selected = True
     span = vext.get_span() - 1
     for i in range(0, Y_BOUND_SINGLE, 2):
       x_small_offset = self.single_vol_ellipse_hashtable[i]
@@ -725,7 +724,7 @@ class volume_renderer:
     i = (-1)
     for vols in self.viewable_vols:
       i = i + 1
-      if vols.get_is_selected() == TRUE:
+      if vols.get_is_selected() == True:
         self.highlight_this_section(i)
 
   def draw_dual_highlighted_sections(self):
@@ -736,13 +735,13 @@ class volume_renderer:
     i = (-1)
     for vols in self.p_viewable_vols:
       i = i + 1
-      if vols.get_is_selected() == TRUE:
+      if vols.get_is_selected() == True:
         self.highlight_this_dual_p_section(i)
 
     i = (-1)
     for vols in self.l_viewable_vols:
       i = i + 1
-      if vols.get_is_selected() == TRUE:
+      if vols.get_is_selected() == True:
         self.highlight_this_dual_l_section(i)
 
   def draw_highlighted_extents(self, single_vol_pixmap):
@@ -750,7 +749,7 @@ class volume_renderer:
     i = (-1)
     for extent in viewable_extents:
       i = i + 1
-      if extent.get_is_selected() == TRUE:
+      if extent.get_is_selected() == True:
         self.highlight_this_extent(i,single_vol_pixmap)
 
   def draw_arcs(self, pixmap):
@@ -799,7 +798,7 @@ class volume_renderer:
         max_y = yval
     label_pixmap = gtk.gdk.Pixmap(self.main_window, px, max_y + 2)
     self.set_color_to_BG_color()
-    label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, px, max_y + 2)
+    label_pixmap.draw_rectangle(self.gc, True, 0, 0, px, max_y + 2)
 
     self.set_color("black")
 
@@ -835,7 +834,7 @@ class volume_renderer:
 
     side_label_pixmap = gtk.gdk.Pixmap(self.main_window, xval, py)
     self.set_color_to_BG_color()
-    side_label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, xval, py)
+    side_label_pixmap.draw_rectangle(self.gc, True, 0, 0, xval, py)
     self.set_color("black")
     side_label_pixmap.draw_layout(self.gc, 0,0, layout)
     little_y_offset = operator.div((py - yval),2)
@@ -893,7 +892,7 @@ class volume_renderer:
       
     side_label_pixmap = gtk.gdk.Pixmap(self.main_window, xval, py)
     self.set_color_to_BG_color()
-    side_label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, xval, py)
+    side_label_pixmap.draw_rectangle(self.gc, True, 0, 0, xval, py)
     self.set_color("black")
     side_label_pixmap.draw_layout(self.gc, 0,0, layout)
     little_y_offset = operator.div((py - yval),2)
@@ -918,7 +917,7 @@ class volume_renderer:
       max_y = yval
     label_pixmap = gtk.gdk.Pixmap(self.main_window, px, max_y + 2)
     self.set_color_to_BG_color()
-    label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, px, max_y + 2)
+    label_pixmap.draw_rectangle(self.gc, True, 0, 0, px, max_y + 2)
 
     self.set_color("black")
 
@@ -940,7 +939,7 @@ class volume_renderer:
     x_padded = px + 30
     bottom_label_pixmap = gtk.gdk.Pixmap(self.main_window, x_padded, label_height)
     self.set_color_to_BG_color()
-    bottom_label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, x_padded, label_height)
+    bottom_label_pixmap.draw_rectangle(self.gc, True, 0, 0, x_padded, label_height)
     self.set_color("black")
 
     offset_counter = 1
@@ -982,7 +981,7 @@ class volume_renderer:
     lx,ly = layout.get_pixel_size()
     legend_pixmap = gtk.gdk.Pixmap(self.main_window, lx, ly + 25)
     self.set_color_to_BG_color()
-    legend_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, lx, ly + 25)
+    legend_pixmap.draw_rectangle(self.gc, True, 0, 0, lx, ly + 25)
     self.set_color(color)
     legend_pixmap.draw_line(self.gc, LABEL_NUDGE_FACTOR,
                                      0,
@@ -1024,7 +1023,7 @@ class volume_renderer:
         max_y = yval
     p_label_pixmap = gtk.gdk.Pixmap(self.main_window, px, max_y + 2)
     self.set_color_to_BG_color()
-    p_label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, px, max_y + 2)
+    p_label_pixmap.draw_rectangle(self.gc, True, 0, 0, px, max_y + 2)
 
     self.set_color("black")
 
@@ -1050,7 +1049,7 @@ class volume_renderer:
         max_y = yval
     l_label_pixmap = gtk.gdk.Pixmap(self.main_window, lx, max_y + 2)
     self.set_color_to_BG_color()
-    l_label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, lx, max_y + 2)
+    l_label_pixmap.draw_rectangle(self.gc, True, 0, 0, lx, max_y + 2)
 
     self.set_color("black")
 
@@ -1091,8 +1090,8 @@ class volume_renderer:
     side_label_pixmap_l = gtk.gdk.Pixmap(self.main_window, xval, py)
     side_label_pixmap_p = gtk.gdk.Pixmap(self.main_window, xval, py)
     self.set_color_to_BG_color()
-    side_label_pixmap_l.draw_rectangle(self.gc, TRUE, 0, 0, xval, py)
-    side_label_pixmap_p.draw_rectangle(self.gc, TRUE, 0, 0, xval, py)
+    side_label_pixmap_l.draw_rectangle(self.gc, True, 0, 0, xval, py)
+    side_label_pixmap_p.draw_rectangle(self.gc, True, 0, 0, xval, py)
     self.set_color("black")
     side_label_pixmap_l.draw_layout(self.gc, 0,0, layout_l)
     side_label_pixmap_p.draw_layout(self.gc, 0,0, layout_p)
@@ -1123,14 +1122,14 @@ class volume_renderer:
     x_padded = x + 30
     p_extent_label_pixmap = gtk.gdk.Pixmap(self.main_window, x_padded, (EXTENT_LABEL_OFFSET * 4))
     self.set_color_to_BG_color()
-    p_extent_label_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, x_padded, (EXTENT_LABEL_OFFSET * 4))
+    p_extent_label_pixmap.draw_rectangle(self.gc, True, 0, 0, x_padded, (EXTENT_LABEL_OFFSET * 4))
     self.set_color("black")
 
     offset_counter = 1
     for vvol in self.p_viewable_vols:
       vexlist = vvol.get_viewable_extents()
       for vex in vexlist:
-        if vex.get_is_selected() == TRUE:
+        if vex.get_is_selected() == True:
           layout = vex.get_horizontal_layout(7)
           start,span = vex.get_start_span()
           span_div_2 = int(operator.div(span,2))
@@ -1272,7 +1271,7 @@ class volume_renderer:
     b = style.bg[gtk.STATE_NORMAL].blue
                                                                                 
     self.gc.set_foreground(gtk.gdk.colormap_get_system().alloc_color(r,g,b, 1,1))
-    self.label_layout_pixmap.draw_rectangle(self.gc, TRUE, 0, 0, LABEL_X, LABEL_Y) 
+    self.label_layout_pixmap.draw_rectangle(self.gc, True, 0, 0, LABEL_X, LABEL_Y) 
 
   ##################################################
   ###Color setter section

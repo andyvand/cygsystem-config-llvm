@@ -5,7 +5,6 @@ __author__ = 'Jim Parsons (jparsons@redhat.com)'
 
 import os
 import string
-from gtk import TRUE, FALSE
 from lvmui_constants import *
 
 class Volume:
@@ -13,7 +12,7 @@ class Volume:
     self.name = ""
     self.size = 0.0  #This is a floating point number
     self.size_string = "0.0M" #This is a rep of size with unit initial appended
-    self.is_utilized = TRUE
+    self.is_utilized = True
     self.type = UNINITIALIZED_TYPE
     self.extent_segment_list = list()
 

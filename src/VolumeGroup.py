@@ -2,7 +2,6 @@
 
 import os
 import string
-from gtk import TRUE, FALSE
 from Volume import Volume
 
 class VolumeGroup(Volume):
@@ -13,5 +12,5 @@ class VolumeGroup(Volume):
     self.size = float(lsize)
     self.size_string = self.build_size_string(self.size)
     self.attr = attr
-    self.is_utilized = TRUE
+    self.is_utilized = True
 
