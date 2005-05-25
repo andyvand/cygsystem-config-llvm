@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-04-24 22:35+0800\n"
+"PO-Revision-Date: 2005-05-25 20:47+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -308,23 +308,24 @@ msgstr ""
 "baru"
 
 #: src/lvui.glade.h:22
-#, fuzzy
 msgid ""
 "Extend\n"
 "Volume Group"
-msgstr "nama kumpulan tak dah %s"
+msgstr ""
+"Lebihkan\n"
+"Kumpulan Volum"
 
 #: src/lvui.glade.h:24
-#, fuzzy
 msgid ""
 "Extend \n"
 "Logical Volume"
-msgstr "Buat Volum Logikal"
+msgstr ""
+"Lebihkan \n"
+"Volum Logikal"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr "Nama Kumpulan _Volum:"
+msgstr "Lebihkan Kumpulan Volum"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -339,9 +340,8 @@ msgid "Gigabytes"
 msgstr "Gigabyte"
 
 #: src/lvui.glade.h:30
-#, fuzzy
 msgid "Initialize Entity"
-msgstr "Jenis Entiti"
+msgstr "Mulakan Entiti"
 
 #: src/lvui.glade.h:31
 #: src/lvmui_constants.py:51
@@ -361,9 +361,8 @@ msgid "Linear"
 msgstr "Linear"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Logical Volume Management"
-msgstr "Menetapkan Pengurusan Volum Logikal: "
+msgstr "Pengurusan Volum Logikal"
 
 #: src/lvui.glade.h:36
 #, fuzzy
@@ -429,7 +428,7 @@ msgstr "Tiada sistemfail"
 #: src/lvui.glade.h:49
 #, fuzzy
 msgid "Number of Stripes: "
-msgstr "nombor kumpulan"
+msgstr "Medan Jumlah Stripe"
 
 #: src/lvui.glade.h:50
 #, fuzzy
@@ -485,7 +484,7 @@ msgstr "Saiz:"
 #: src/lvui.glade.h:64
 #, fuzzy
 msgid "Stripe Size:"
-msgstr "saiz blok"
+msgstr "Medan Saiz Stripe"
 
 #: src/lvui.glade.h:65
 msgid "Striped"
@@ -582,13 +581,14 @@ msgstr ""
 #. first set up lvcreate args
 #: src/lvm_model.py:35
 #: src/lvmui_constants.py:39
+#, fuzzy
 msgid "Unused"
-msgstr ""
+msgstr "Ruang tidak digunakan pada %s"
 
 #: src/lvm_model.py:36
 #, fuzzy
 msgid "Unused Space"
-msgstr "Ruang Diperlukan"
+msgstr "Ruang tidak digunakan pada %s"
 
 #. Translator - Linear mapping is another way of saying 'Not Striped' :-)
 #: src/lvm_model.py:39
@@ -693,12 +693,12 @@ msgstr "nombor kumpulan"
 #: src/lvm_model.py:70
 #, fuzzy
 msgid "Number of Stripes:   "
-msgstr "nombor kumpulan"
+msgstr "Medan Jumlah Stripe"
 
 #: src/lvm_model.py:71
 #, fuzzy
 msgid "Stripe Size:   "
-msgstr "saiz blok"
+msgstr "Medan Saiz Stripe"
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
