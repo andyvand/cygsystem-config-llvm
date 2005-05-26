@@ -51,6 +51,10 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Thu May 26 2005 Jim Parsons <jparsons@redhat.com> 0.9.33-1.0
+  - Version bump for rhel
+* Thu May 26 2005 Jim Parsons <jparsons@redhat.com> 0.9.32-1.0
+  - Fix for 158872; x86_64 pam file path
 * Mon May 23 2005 Jim Parsons <jparsons@redhat.com> 0.9.31-1.0
   - Version bump for RHEL4
 * Mon May 23 2005 Jim Parsons <jparsons@redhat.com> 0.9.30-1.0
