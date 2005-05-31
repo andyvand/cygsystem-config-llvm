@@ -6,6 +6,7 @@ __author__ = 'Jim Parsons (jparsons@redhat.com)'
 
 import string
 import os
+import re
 import stat
 import os.path
 import gobject
@@ -357,12 +358,18 @@ class InputController:
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
       name = model.get_value(iter, PATH_COL)
-      pvname = name.strip()
-
+      pvname = name
+    pvname = pvname.strip()
+    
     ###FIX This method call needs to be handled for exception
-    pv = self.model_factory.get_PV(pvname)
+    pv = None
+    for p in self.model_factory.query_PVs():
+        if p.get_path() == pvname:
+            pv = p
+            break
+    #pv = self.model_factory.get_PV(pvname)
     extent_list = pv.get_extent_segments()
-
+    
     vgname = pv.get_vg_name().strip()
     total,free,alloc = pv.get_extent_values()
     pv_list = self.model_factory.query_PVs_for_VG(vgname)
@@ -922,29 +929,60 @@ class InputController:
     self.new_lv_num_stripes_label.set_sensitive(val)
     self.new_lv_stripe_size_label.set_sensitive(val)
     self.new_lv_kilobytes_label.set_sensitive(val)
-      
-                                                                                
+    
+    
   def on_init_entity(self, button):
-    selection = self.treeview.get_selection()
-    model,iter = selection.get_selected()
-    name = model.get_value(iter, PATH_COL)
-    #message = INIT_ENTITY_1 + name + INIT_ENTITY_2
-    message = INIT_ENTITY % name 
-    rc = self.warningMessage(message)
-    if (rc == gtk.RESPONSE_NO):
-      return
-
-    try:
-      self.command_handler.initialize_entity(name)
-    except CommandError, e:
-      self.errorMessage(e.getMessage())
-      return
-
-    args = list()
-    args.append(name.strip())
-    apply(self.reset_tree_model, args)
-                                                                                
-
+      selection = self.treeview.get_selection()
+      model,iter = selection.get_selected()
+      name = model.get_value(iter, PATH_COL)
+      pv = model.get_value(iter, OBJ_COL)
+      if self.initialize_entity(pv) == None:
+          return
+      apply(self.reset_tree_model, [name.strip()])
+      
+  def initialize_entity(self, pv):
+      path = pv.get_path()
+      mountPoint = self.model_factory.getMountPoint(path)
+      doFormat = False
+      message = ''
+      if mountPoint == None:
+          if pv.needsFormat():
+              if pv.wholeDevice():
+                  message = INIT_ENTITY % path
+              else:
+                  # disabled until fdisk_wrapper gets into reliable shape
+                  #doFormat = True
+                  #message = INIT_ENTITY_FREE_SPACE % (pv.get_volume_size_string(), path)
+                  return None
+          else:
+              message = INIT_ENTITY % path
+      else:
+          message = INIT_ENTITY_MOUNTED % (path, mountPoint, path)
+      rc = self.warningMessage(message)
+      if (rc == gtk.RESPONSE_NO):
+          return None
+      if pv.needsFormat() and pv.wholeDevice():
+          dialog = self.glade_xml.get_widget('whole_device_format_choice')
+          label = self.glade_xml.get_widget('whole_device_format_choice_label')
+          label.set_text(INIT_ENTITY_DEVICE_CHOICE % path) 
+          rc = dialog.run()
+          dialog.hide()
+          if rc == gtk.RESPONSE_YES:
+              doFormat = True
+          elif rc == gtk.RESPONSE_NO:
+              doFormat = False
+          else:
+              return None
+          
+      try:
+          if doFormat:
+              path = self.model_factory.partition_UV(pv)
+          self.command_handler.initialize_entity(path)
+      except CommandError, e:
+          self.errorMessage(e.getMessage())
+          return None
+      return path
+  
   def on_add_pv_to_vg(self, button):
     model = self.add_pv_to_vg_treeview.get_model()
     if model != None:
@@ -1020,7 +1058,8 @@ class InputController:
     model = gtk.ListStore (gobject.TYPE_STRING,
                            gobject.TYPE_STRING,
                            gobject.TYPE_STRING,
-                           gobject.TYPE_INT)
+                           gobject.TYPE_INT,
+                           gobject.TYPE_PYOBJECT)
 
     self.extend_vg_tree.set_model(model)
     renderer1 = gtk.CellRendererText()
@@ -1054,8 +1093,8 @@ class InputController:
   def on_ok_extend_vg(self, button):
     selection = self.extend_vg_tree.get_selection()
     if selection == None:
-      self.extend_vg_form.hide() #cancel opp if OK clicked w/o selection
-
+        self.extend_vg_form.hide() #cancel opp if OK clicked w/o selection
+    
     model,iter = selection.get_selected()
     entity_name = model.get_value(iter, NAME_COL).strip()
     entity_type = model.get_value(iter, VOL_TYPE_COL)
@@ -1065,33 +1104,27 @@ class InputController:
     main_model,main_iter = main_selection.get_selected()
     main_path = main_model.get_path(main_iter)
     vgname = main_model.get_value(main_iter,PATH_COL).strip()
-
+    
     if entity_type == UNINIT_VOL:  #First, initialize if necessary
-      warn_message = INIT_ENTITY % entity_name
-      rc = self.warningMessage(warn_message)
-      if (rc == gtk.RESPONSE_NO):
+      entity = model.get_value(iter, OBJ_COL)
+      entity_name = self.initialize_entity(entity)
+      if entity_name == None:
         return
-
-      try:
-        self.command_handler.initialize_entity(entity_name)
-      except CommandError, e:
-        self.errorMessage(e.getMessage())
-        return
-
+    
     try:
       self.command_handler.add_unalloc_to_vg(entity_name, vgname)
     except CommandError, e:
       self.errorMessage(e.getMessage())
       return 
-
+    
     self.extend_vg_form.hide()
     apply(self.reset_tree_model)
     self.treeview.expand_to_path(main_path)
-
+    
     
   def on_cancel_extend_vg(self, button):
     self.extend_vg_form.hide()
-
+  
   def extend_vg_delete_event(self, *args):
     self.extend_vg_form.hide()
     return True
@@ -1111,17 +1144,20 @@ class InputController:
         model.set(iter, NAME_COL, vol.get_path(),
                         SIZE_COL, vol.get_volume_size_string(),
                         PATH_COL, uv_string,
-                        VOL_TYPE_COL, UNALLOC_VOL)
+                        VOL_TYPE_COL, UNALLOC_VOL,
+                        OBJ_COL, vol)
 
     uninitialized_list = self.model_factory.query_uninitialized()
     if len(uninitialized_list) > 0:
       for item in uninitialized_list:
-        iter = model.append()
-        model.set(iter, NAME_COL, item.get_path(),
-                        SIZE_COL, item.get_volume_size_string(),
-                        PATH_COL, iv_string,
-                        VOL_TYPE_COL,UNINIT_VOL)
-
+        if item.initializable:
+          iter = model.append()
+          model.set(iter, NAME_COL, item.get_path(),
+                          SIZE_COL, item.get_volume_size_string(),
+                          PATH_COL, iv_string,
+                          VOL_TYPE_COL,UNINIT_VOL,
+                          OBJ_COL, item)
+          
     selection = self.treeview.get_selection()
     main_model,iter_val = selection.get_selected()
     vgname = main_model.get_value(iter_val, PATH_COL)

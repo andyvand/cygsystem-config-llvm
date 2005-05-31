@@ -15,8 +15,13 @@ NAME_COL = 0
 TYPE_COL = 1
 PATH_COL = 2
 SIMPLE_LV_NAME_COL = 3
+OBJ_COL = 4
 
-INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
+#INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
+INIT_ENTITY=_("All data on disk entity %s will be lost! Are you certain that you wish to initialize it?")
+INIT_ENTITY_MOUNTED=_("Disk entity %s contains data of folder %s. All data in it will be lost! Are you certain that you wish to initialize disk entity %s?")
+INIT_ENTITY_FREE_SPACE=_("Are you certain that you wish to initialize %s of free space on disk %s?")
+INIT_ENTITY_DEVICE_CHOICE=_("You are about to initialize unpartitioned disk %s. It is advisable, although not required, to create a partition on it. Do you want to create a single partition encompassing the whole drive? Choosing No will initialize unpartitioned disk.")
 
 NEW_LV_NAME_ARG = 0
 NEW_LV_VGNAME_ARG = 1
@@ -38,6 +43,7 @@ KILOBYTE_IDX = 3
 
 UNUSED=_("Unused")
 FREE=_("Free")
+FREE_SPACE=_("Free space")
 
 GIG_SUFFIX=_("G")
 MEG_SUFFIX=_("M")

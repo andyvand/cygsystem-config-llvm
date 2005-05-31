@@ -2,7 +2,7 @@ import os
 import string
 from CommandError import CommandError
 from lvm_model import lvm_model
-from execute import execWithCapture, execWithCaptureErrorStatus
+from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
 
 from lvmui_constants import *
 

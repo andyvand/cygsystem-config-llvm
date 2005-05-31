@@ -60,7 +60,8 @@ class Volume_Tab_View:
     self.treemodel = gtk.TreeStore (gobject.TYPE_STRING,
                                     gobject.TYPE_INT,
                                     gobject.TYPE_STRING,
-                                    gobject.TYPE_STRING)
+                                    gobject.TYPE_STRING,
+                                    gobject.TYPE_PYOBJECT)
     self.treeview.set_model(self.treemodel)
     self.treeview.set_headers_visible(False)
 
@@ -159,17 +160,17 @@ class Volume_Tab_View:
     #LVs have a special model column.
     nv = model.get_value(iter, PATH_COL)
     lvn = model.get_value(iter, SIMPLE_LV_NAME_COL)
-
+    
     if nv != None:
       pvname_val = nv.strip()
     else:
       pvname_val = nv
-
+    
     if lvn != None:
       lvname_val = lvn.strip()
     else:
       lvname_val = lvn
-
+    
     if pvname_val == name_selection:
       self.treeview.expand_to_path(path)
       self.found_selection = True #prevents vgname selection in multiple places
@@ -180,7 +181,6 @@ class Volume_Tab_View:
         self.treeview.expand_to_path(path)
         self.found_selection = True #prevents LVs with same name in diff VGs 
         selection.select_path(path)
-                                    #from both being selected 
       else:
         #get parent path in model
         parent_iter = model.iter_parent(iter)
@@ -198,6 +198,8 @@ class Volume_Tab_View:
     treemodel = self.treeview.get_model()
     treemodel.clear()
 
+    self.model_factory.reload()
+    
     vg_list = self.model_factory.query_VGs()
     if len(vg_list) > 0:
       vg_iter = treemodel.append(None)
@@ -228,7 +230,8 @@ class Volume_Tab_View:
           treemodel.set(iter, 
                         NAME_COL, phys_string, 
                         TYPE_COL, PHYS_TYPE,
-                        PATH_COL, pv.get_path())
+                        PATH_COL, pv.get_path(),
+                        OBJ_COL, pv)
 
         lv_list = self.model_factory.query_LVs_for_VG(vg_name)
         for lv in lv_list:
@@ -254,7 +257,8 @@ class Volume_Tab_View:
         p_string = "<span foreground=\"#ED1C2A\">" + item.get_name() + "</span>"
         treemodel.set(iter, NAME_COL, p_string, 
                             TYPE_COL, UNALLOCATED_TYPE,
-                            PATH_COL, item.get_path())
+                            PATH_COL, item.get_path(),
+                            OBJ_COL, item)
 
     uninit_list = self.model_factory.query_uninitialized()
     if len(uninit_list) > 0:
@@ -266,7 +270,8 @@ class Volume_Tab_View:
         iter = treemodel.append(uninitialized_iter)
         treemodel.set(iter, NAME_COL, item.get_name(), 
                             TYPE_COL, UNINITIALIZED_TYPE,
-                            PATH_COL, item.get_path())
+                            PATH_COL, item.get_path(),
+                            OBJ_COL, item)
 
     #self.treeview.expand_all()
     self.clear_all_buttonpanels()
@@ -328,16 +333,6 @@ class Volume_Tab_View:
       self.treeview.expand_row(treepath, False)
       self.input_controller.clear_highlighted_sections()
       self.vr.render_dual(pv_list, lv_list)
-    elif type == PHYS_TYPE:
-      pathname = model.get_value(iter, PATH_COL)
-      pv_name = pathname.strip()
-      pv = self.model_factory.get_PV(pv_name)
-      pv_data = self.model_factory.get_data_for_PV(pv_name)
-      self.lr.render_to_layout_area(pv_data, pv_name, type)
-      self.input_controller.clear_highlighted_sections()
-      self.clear_all_buttonpanels()
-      self.phys_panel.show()
-      self.vr.render_single_volume(pv, type) 
     elif type == LOG_TYPE:
       pathname = model.get_value(iter, PATH_COL)
       lv_name = pathname.strip()
@@ -347,26 +342,66 @@ class Volume_Tab_View:
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.log_panel.show()
-      self.vr.render_single_volume(lv, type) 
-    elif type == UNALLOCATED_TYPE:
-      pathname = model.get_value(iter, PATH_COL)
-      pv_name = pathname.strip()
-      pv = self.model_factory.get_PV(pv_name)
+      self.vr.render_single_volume(lv, type)
+    elif type == PHYS_TYPE:
+      #pathname = model.get_value(iter, PATH_COL)
+      #pv_name = pathname.strip()
+      #pv = self.model_factory.get_PV(pv_name)
+      #pv_data = self.model_factory.get_data_for_PV(pv_name)
+      #self.lr.render_to_layout_area(pv_data, pv_name, type)
+      #self.input_controller.clear_highlighted_sections()
+      #self.clear_all_buttonpanels()
+      #self.phys_panel.show()
+      #self.vr.render_single_volume(pv, type)
+      
+      pv = model.get_value(iter, OBJ_COL)
+      self.lr.render_to_layout_area(pv.getProperties(), pv.get_path(), type)
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.phys_panel.show()
       self.vr.render_single_volume(pv, type) 
-      pv_data = self.model_factory.get_data_for_PV(pv_name)
-      self.lr.render_to_layout_area(pv_data, pv_name, type)
+    elif type == UNALLOCATED_TYPE:
+      #pathname = model.get_value(iter, PATH_COL)
+      #pv_name = pathname.strip()
+      #pv = self.model_factory.get_PV(pv_name)
+      #self.vr.render_single_volume(pv, type) 
+      #pv_data = self.model_factory.get_data_for_PV(pv_name)
+      #self.lr.render_to_layout_area(pv_data, pv_name, type)
+      #self.input_controller.clear_highlighted_sections()
+      #self.clear_all_buttonpanels()
+      #self.unalloc_panel.show()
+      
+      pv = model.get_value(iter, OBJ_COL)
+      self.vr.render_single_volume(pv, type) 
+      self.lr.render_to_layout_area(pv.getProperties(),
+                                    pv.get_path(),
+                                    type)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.unalloc_panel.show()
     elif type == UNINITIALIZED_TYPE:
-      pathname = model.get_value(iter, PATH_COL)
-      uv_name = pathname.strip()
-      uv = self.model_factory.get_UV(uv_name)
-      uv_data = self.model_factory.get_data_for_UV(uv_name)
-      self.lr.render_to_layout_area(uv_data, uv_name, type)
+      #pathname = model.get_value(iter, PATH_COL)
+      #uv_name = pathname.strip()
+      #uv = self.model_factory.get_UV(uv_name)
+      #uv_data = self.model_factory.get_data_for_UV(uv_name)
+      #self.lr.render_to_layout_area(uv_data, uv_name, type)
+      #self.vr.render_single_volume(uv, type) 
+      #self.input_controller.clear_highlighted_sections()
+      #self.clear_all_buttonpanels()
+      #self.uninit_panel.show()
+      
+      uv = model.get_value(iter, OBJ_COL)
       self.vr.render_single_volume(uv, type) 
+      self.lr.render_to_layout_area(uv.getProperties(),
+                                    uv.get_path(),
+                                    type)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
+      button = self.input_controller.init_entity_button
+      if uv.initializable:
+          button.set_sensitive(True)
+      else:
+          button.set_sensitive(False)
       self.uninit_panel.show()
     else:
       self.input_controller.clear_highlighted_sections()

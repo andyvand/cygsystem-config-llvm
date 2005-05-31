@@ -14,6 +14,8 @@ ViewableVolume.py \
 VolumeGroup.py \
 Volume.py \
 Volume_Tab_View.py \
+fdisk_wrapper.py \
+FDiskModel.py \
 execute.py	\
 pixmaps/UV.xpm	\
 pixmaps/VG.xpm	\
@@ -56,6 +58,8 @@ install-exec-local:
 	install -m 0640 $(srcdir)/VolumeGroup.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Volume.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Volume_Tab_View.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/fdisk_wrapper.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/FDiskModel.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/execute.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/pixmaps/PV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/LV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/

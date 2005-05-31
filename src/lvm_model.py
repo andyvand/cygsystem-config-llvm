@@ -1,13 +1,15 @@
 import os
 import sys
 import string
+import re
 from lvmui_constants import *
 from Volume import Volume
 from PhysicalVolume import PhysicalVolume
 from LogicalVolume import LogicalVolume
 from VolumeGroup import VolumeGroup
 from ExtentSegment import ExtentSegment
-from execute import execWithCapture, execWithCaptureErrorStatus
+from FDiskModel import *
+from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
 import gettext
 _ = gettext.gettext
 
@@ -85,6 +87,12 @@ PV_PE_ALLOC_COUNT=_("Allocated Physical Extents:   ")
 PV_ATTR=_("Attributes:   ")
 PV_UUID=_("PV UUID:   ")
 
+NOT_INITIALIZABLE=_("Not initializable:   ")
+EXTENDED_PARTITION=_("Extended partition")
+SWAP_IN_USE=_("Swap in use")
+FOREIGN_BOOT_PARTITION=_("Foreign boot partition")
+AUTOPARTITION_FAILURE=_("Autopartition failure")
+
 VG_NAME_IDX = 0
 VG_SYSID_IDX = 1
 VG_FMT_IDX = 2
@@ -122,9 +130,135 @@ PV_UUID_IDX = 8
 
 class lvm_model:
   def __init__(self):
-    pass
+    self.__fdisk_model = FDiskModel()
+    self.__PVs = list()
+    self.reload()
 
-  def query_PEs(self):
+  def reload(self):
+    self.__PVs = self.__query_partitions()
+    # load other data
+    
+  def __query_partitions(self):
+    parts = dict() # PVs on a partition
+    segs = list() # PVs on free space
+    # get partitions from hard drives
+    self.__fdisk_model.reload()
+    devs = self.__fdisk_model.getDevices()
+    for devname in devs:
+      self.__query_partitions2(devname, devs[devname], parts, segs)
+    # disable swap partitions if in use
+    result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/swaps'])
+    lines = result.splitlines()
+    for line in lines:
+      swap = line.split()[0]
+      if swap in parts:
+        parts[swap].initializable = False
+        parts[swap].getProperties().append(NOT_INITIALIZABLE)
+        parts[swap].getProperties().append(SWAP_IN_USE)
+      for seg in segs:
+        # swap could be a whole drive
+        if swap == seg.get_path():
+          seg.name = seg.extract_name(seg.get_path())
+          seg.initializable = False
+          seg.getProperties().append(NOT_INITIALIZABLE)
+          seg.getProperties().append(SWAP_IN_USE)
+    # disable bootable partitions only if EXTended FS NOT on it (bootable flag is used by windows only)
+    for path in parts:
+      partition = parts[path].getPartition()[1]
+      if partition.bootable:
+        fs = self.getFS(path)
+        if re.match('.*ext[23].*', fs, re.I):
+          # EXTended FS on it
+          pass
+        else:
+          # some other filesystem on it
+          parts[path].initializable = False
+          parts[path].getProperties().append(NOT_INITIALIZABLE)
+          parts[path].getProperties().append(FOREIGN_BOOT_PARTITION)
+    # disable unformated space, unless whole drive
+    for seg in segs:
+      if not seg.wholeDevice():
+        # fdisk_wrapper not tested enough, so use it only on unpartitioned drives
+        seg.initializable = False
+        seg.getProperties().append(NOT_INITIALIZABLE)
+        seg.getProperties().append(_("Partition manually"))
+    # merge parts with PVs
+    for pv in self.__query_PVs():
+      # assign unpartitioned drives, to PVs, if already used by LVM
+      for seg in segs[:]:
+        if seg.getPartition()[0] == pv.get_path():
+          pv.setPartition(seg.getPartition())
+          pv.name = pv.extract_name(pv.get_path()) # overwrite Free Space label
+          segs.remove(seg)
+          parts[pv.get_path()] = pv
+      # merge
+      path = pv.get_path()
+      if path in parts:
+        pv.setPartition(parts[path].getPartition())
+      else:
+        # pv is not a partition, eg. loop device, or LV
+        pass
+      parts[path] = pv
+    # create return list
+    pvs_list = list()
+    for part in parts:
+      pvs_list.append(parts[part])
+    for seg in segs:
+      pvs_list.append(seg)
+    # set properties
+    for pv in pvs_list:
+      self.__set_PV_props(pv)
+    # all done
+    return pvs_list
+  def __query_partitions2(self, devname, segs, part_dictionary, seg_list):
+    for seg in segs:
+      if seg.id in ID_EXTENDS:
+        self.__query_partitions2(devname, seg.children, part_dictionary, seg_list)
+      # create pv
+      pv = PhysicalVolume('/nothing', '', '', '', 0, 0, False, 0, 0)
+      pv.setPartition((devname, seg))
+      if seg.id == ID_EMPTY:
+        seg_list.append(pv)
+      else:
+        if seg.id in ID_EXTENDS:
+          # initialization of extended partition wipes all logical partitions !!!
+          pv.initializable = False
+          pv.getProperties().append(NOT_INITIALIZABLE)
+          pv.getProperties().append(EXTENDED_PARTITION)
+        part_dictionary[pv.get_path()] = pv
+  def __query_PVs(self):
+    pvlist = list()
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
+    arglist.append("pvs")
+    arglist.append("--nosuffix")
+    arglist.append("--noheadings")
+    arglist.append("--units")
+    arglist.append("g")
+    arglist.append("--separator")
+    arglist.append(",")
+    arglist.append("-o")
+    arglist.append("+pv_pe_count,pv_pe_alloc_count")
+    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    lines = result_string.splitlines()
+    for line in lines:
+      words = line.split(",")
+      pv = PhysicalVolume(words[P_NAME_COL],
+                          words[P_VG_NAME_COL],
+                          words[P_FMT_COL], 
+                          words[P_ATTR_COL], 
+                          words[P_SIZE_COL], 
+                          words[P_FREE_COL],
+                          True,
+                          words[P_PE_COUNT_COL], 
+                          words[P_PE_ALLOC_COL])
+      if pv.get_type() == PHYS_TYPE:
+        #Add extent segments
+        self.get_extents_for_PV(pv)
+      pvlist.append(pv)
+    return pvlist
+  
+  def query_partitions_old(self):
     pelist = list()
     uncertainlist = list()
     arglist = list()
@@ -137,7 +271,6 @@ class lvm_model:
     arglist.append("g")
     arglist.append("--separator")
     arglist.append(",")
-
     result_string = execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
@@ -196,7 +329,7 @@ class lvm_model:
             item.set_volume_size(float(adj_sz_str) / 1000000.0) 
             pelist.append(item)
             break
-
+    
     ##There needs to be one last check made on those PEs which have 
     ##passed the test so far. It is possible that a partition set up
     ##for swap may not have the partition ID for swap. The definitive
@@ -218,8 +351,8 @@ class lvm_model:
 
 
     return pelist
-
-  def get_PV(self,pathname):
+  
+  def get_PV_old(self,pathname):
     arglist = list()
     arglist.append("/usr/sbin/lvm")
     arglist.append("pvs")
@@ -253,41 +386,32 @@ class lvm_model:
       self.get_extents_for_PV(pv)
     return pv
 
+  def query_uninitialized(self):
+    #parts_list = self.query_partitions()
+    uninit_list = list()
+    #for part in parts_list:
+    for part in self.__PVs:
+      if part.get_type() == UNINITIALIZED_TYPE:
+        uninit_list.append(part)
+    return uninit_list
+  
+  def query_unallocated(self):
+    #pv_list = self.query_PVs()
+    unalloc_list = list()
+    #for pv in pv_list:
+    for pv in self.__PVs:
+      if pv.get_type() == UNALLOCATED_TYPE:
+        unalloc_list.append(pv)
+    return unalloc_list
+  
   def query_PVs(self):
-    pvlist = list()
-    arglist = list()
-    arglist.append("/usr/sbin/lvm")
-    arglist.append("pvs")
-    arglist.append("--nosuffix")
-    arglist.append("--noheadings")
-    arglist.append("--units")
-    arglist.append("g")
-    arglist.append("--separator")
-    arglist.append(",")
-    arglist.append("-o")
-    arglist.append("+pv_pe_count,pv_pe_alloc_count")
-
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
-    lines = result_string.splitlines()
-    for line in lines:
-      words = line.split(",")
-      pv = PhysicalVolume(words[P_NAME_COL],
-                          words[P_VG_NAME_COL],
-                          words[P_FMT_COL], 
-                          words[P_ATTR_COL], 
-                          words[P_SIZE_COL], 
-                          words[P_FREE_COL],
-                          True, 
-                          words[P_PE_COUNT_COL], 
-                          words[P_PE_ALLOC_COL])
-
+    pv_list = list()
+    for pv in self.__PVs:
       if pv.get_type() == PHYS_TYPE:
-        #Add extent segments
-        self.get_extents_for_PV(pv)
-
-      pvlist.append(pv)
-    return pvlist
-
+        pv_list.append(pv)
+    return pv_list
+  
+  
   def query_PVs_for_VG(self, vg_name):
     name = vg_name.strip()
     hotlist = list()
@@ -436,32 +560,31 @@ class lvm_model:
     ###FIXME Raise exception here because true path is not being returned,
     ###But rather the lname arg is being returned.
     return lv_name
-
-  def query_uninitialized(self):
-    pe_list = self.query_PEs()
-    uninit_list = list()
-    for pe in pe_list:
-      if pe.get_type() == UNINITIALIZED_TYPE:
-        uninit_list.append(pe)
-
-    return uninit_list
-
-  def get_UV(self, pathname):
+  
+  
+  
+  def get_UV_old(self, pathname):
     uv_list = self.query_uninitialized()
     for uv in uv_list:
       uvpath = uv.get_path().strip()
       if uvpath == pathname:
-        return(uv) 
-
-  def query_unallocated(self):
-    pv_list = self.query_PVs()
-    unalloc_list = list()
-    for pv in pv_list:
-      if pv.get_type() == UNALLOCATED_TYPE:
-        unalloc_list.append(pv)
-
-    return unalloc_list
-
+        return uv
+  
+  def partition_UV(self, pv):
+    if pv.needsFormat():
+      try:
+        (devname, seg) = pv.getPartition()
+        part = Partition(seg.beg, seg.end, ID_LINUX_LVM, None, False, seg.sectorSize)
+        part_num = self.__fdisk_model.add(devname, part)
+        print part_num
+        self.__fdisk_model.saveTable(devname)
+        new_part = self.__fdisk_model.getPartition(devname, part_num)
+        pv.setPartition((devname, new_part))
+      except FDiskErr:
+        self.__fdiskModel.reloadDisc(devname)
+        raise CommandError('FATAL', AUTOPARTITION_FAILURE % devname)
+    return pv.get_path()
+  
   def get_free_space_on_VG(self, vgname, unit):
     vg_name = vgname.strip()
     arglist = list()
@@ -582,7 +705,8 @@ class lvm_model:
       
     return text_list
 
-  def get_data_for_UV(self, p):
+  
+  def get_data_for_UV_old(self, p):
     partition_type = ""
     is_mounted = ""
     filesys_type = ""
@@ -726,10 +850,16 @@ class lvm_model:
     text_list.append(LV_UUID)
     text_list.append(words[LV_UUID_IDX])
 
+    mount_point = self.getMountPoint(path)
+    if mount_point == None:
+      mount_point = UNMOUNTED
+    text_list.append(UV_MOUNT_POINT)
+    text_list.append(mount_point)    
+    
     return text_list
-                                                                                
-
-  def get_data_for_PV(self, p):
+  
+  
+  def get_data_for_PV_old(self, p):
     path = p.strip()
     text_list = list()
     arglist = list()
@@ -771,8 +901,77 @@ class lvm_model:
     text_list.append(words[PV_UUID_IDX])
                                                                                 
     return text_list
- 
 
+  def __set_PV_props(self, pv):
+    # anything that is in, place to the end
+    end = pv.getProperties()
+    text_list = list()
+    pv.setProperties(text_list)
+    path = pv.get_path()
+    
+    if pv.get_type() == UNINITIALIZED_TYPE:
+      # size
+      size_string = pv.get_volume_size_string()
+      text_list.append(UV_SIZE)
+      text_list.append(size_string)
+      # partition type
+      part = pv.getPartition()[1]
+      partition_type = PARTITION_IDs[part.id]
+      if part.id != ID_EMPTY:
+        partition_type = partition_type + ' (' + str(hex(part.id)) + ')'
+      text_list.append(UV_PARTITION_TYPE)
+      text_list.append(partition_type)
+      # mount point
+      mountPoint = self.getMountPoint(path)
+      if mountPoint == None:
+        mountPoint = UNMOUNTED
+      text_list.append(UV_MOUNT_POINT)
+      text_list.append(mountPoint)
+      # filesystem
+      text_list.append(UV_FILESYSTEM)
+      text_list.append(self.getFS(path))
+    else: # UNALLOCATED_TYPE || PHYS_TYPE
+      arglist = list()
+      arglist.append("/usr/sbin/lvm")
+      arglist.append("pvs")
+      arglist.append("--noheadings")
+      arglist.append("--separator")
+      arglist.append(",")
+      arglist.append("-o")
+      arglist.append(PVS_OPTION_STRING)
+      arglist.append(path)
+      result_string = execWithCapture("/usr/sbin/lvm",arglist)
+      lines = result_string.splitlines()
+      words = lines[0].split(",")
+      text_list.append(PV_NAME)
+      text_list.append(words[PV_NAME_IDX])
+      if words[PV_VG_NAME_IDX] == "":
+        text_list.append(VG_NAME)
+        text_list.append("---")
+      else:
+        text_list.append(VG_NAME)
+        text_list.append(words[PV_VG_NAME_IDX])
+      text_list.append(PV_SIZE)
+      text_list.append(words[PV_SIZE_IDX])
+      text_list.append(PV_USED)
+      text_list.append(words[PV_USED_IDX])
+      text_list.append(PV_FREE)
+      text_list.append(words[PV_FREE_IDX])
+      text_list.append(PV_PE_COUNT)
+      text_list.append(words[PV_PE_COUNT_IDX])
+      text_list.append(PV_PE_ALLOC_COUNT)
+      text_list.append(words[PV_PE_ALLOC_COUNT_IDX])
+      text_list.append(PV_ATTR)
+      text_list.append(words[PV_ATTR_IDX])
+      text_list.append(PV_UUID)
+      text_list.append(words[PV_UUID_IDX])
+      
+    # append old props
+    for prop in end:
+      text_list.append(prop)
+      
+      
+      
   ###This method adds complete/contiguous extent lists to PVs -- no holes
   def get_extents_for_PV(self, pv ):
     extentlist = list()
@@ -973,4 +1172,70 @@ class lvm_model:
     else:
       return (-1)
 
+  
 
+    
+  def getFS(self, path):
+    path_list = list()
+    for pv in self.__PVs:
+      if pv.get_path() == path:
+        path_list.append(pv)
+    if len(path_list) == 0:
+      # nothing on a drive, maybe a LV, or a loopback device
+      pass
+    elif len(path_list) == 1:
+      if path_list[0].getPartition() == None:
+        # nothing on a drive, maybe a LV, or a loopback device
+        pass
+      # either a partition, a drive or free space
+      if path_list[0].getPartition()[1].id == ID_EMPTY:
+        # drive or free space
+        # fixme - drive could have a filesystem on it
+        return NO_FILESYSTEM
+      else: 
+        # partition
+        pass
+    else:
+      # free space
+      return NO_FILESYSTEM
+    
+    filesys = NO_FILESYSTEM
+    result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', path])
+    words = result.split()
+    if len(words) < 3:  #No file system
+      filesys = NO_FILESYSTEM
+    elif words[2].strip() == "rev":
+      filesys = words[4]
+    else:
+      filesys = words[2]
+    return filesys
+  
+  def getMountPoint(self, path):
+    mount_point = None
+    result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/mounts'])
+    textlines = result.splitlines()
+    for textline in textlines:
+      text_words = textline.split()
+      possible_path = text_words[0]
+      if possible_path == path:
+        mount_point = text_words[1]
+        break
+    #It is still possible for a partition to be mounted without being in
+    #/proc/mounts...this is often true of the root partition
+    arglist = list()
+    arglist.append("/bin/cat")
+    arglist.append("/etc/mtab")
+    result,err,code  = execWithCaptureErrorStatus("/bin/cat", arglist)
+    if code == 0:
+      textlines = result.splitlines()
+      for textline in textlines:
+        text_words = textline.split()
+        possible_path = text_words[0]
+        if possible_path == path:
+          if text_words[1].strip() == "/":
+            mount_point = "/   (Root Partition)"
+          else:
+            mount_point = text_words[1]
+          break
+    ### TODO: it is also possible for LV to be mounted as /dev/mapper/VG-LV
+    return mount_point
