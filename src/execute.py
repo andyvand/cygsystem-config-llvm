@@ -17,3 +17,10 @@ def execWithCaptureErrorStatus(bin, args):
         for arg in args[1:]:
             command = command + ' ' + arg
     return rhpl.executil.execWithCaptureErrorStatus(BASH_PATH, [BASH_PATH, '-c', command])
+
+def execWithCaptureStatus(bin, args):
+    command = 'LANG=C ' + bin
+    if len(args) > 0:
+        for arg in args[1:]:
+            command = command + ' ' + arg
+    return rhpl.executil.execWithCaptureStatus(BASH_PATH, [BASH_PATH, '-c', command])
