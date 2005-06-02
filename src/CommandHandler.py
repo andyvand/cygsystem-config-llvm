@@ -233,8 +233,7 @@ class CommandHandler:
     if data[0] != None:
       args.append(data[0])
     cmdstr = ' '.join(args)
-    #out, err, res = execWithCaptureErrorStatusProgress("/usr/sbin/pvmove", args, _("Please wait while data is being migrated"))
-    out, err, res = execWithCaptureErrorStatus("/usr/sbin/pvmove", args)
+    out, err, res = execWithCaptureErrorStatusProgress("/usr/sbin/pvmove", args, _("Please wait while data is being migrated"))
     if res != 0:
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
     
