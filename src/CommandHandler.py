@@ -2,7 +2,8 @@ import os
 import string
 from CommandError import CommandError
 from lvm_model import lvm_model
-from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
+from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
+from ForkedCommand import *
 
 from lvmui_constants import *
 
@@ -204,15 +205,39 @@ class CommandHandler:
     if res != 0:
       raise CommandError('FATAL', VGREDUCE_FAILURE % (cmdstr,err))
 
-  def move_pv(self, pv):
+  # data = [pv to migrate to, policy (0 - inherit, 1 - normal, 2 - contiguous, 3 - anywhere), lv to migrate from]
+  # extents = [(from, to), ...]
+  def move_pv(self, pv, extents_from, data):
     args = list()
     args.append("/usr/sbin/pvmove")
-    args.append(pv.strip())
+    # policy
+    if data[1] != None:
+      if data[1] == 0:
+        args.append('--alloc inherit')
+      elif data[1] == 1:
+        args.append('--alloc normal')
+      elif data[1] == 2:
+        args.append('--alloc contiguous')
+      elif data[1] == 3:
+        args.append('--alloc anywhere')
+    # lv to migrate from
+    if data[2] != None:
+      args.append('--name ' + data[2])
+    # pv to migrate from
+    pv_from = pv.strip()
+    for ext in extents_from:
+      from_size = ext.get_start_size()
+      pv_from = pv_from + ':' + str(from_size[0]) + '-' + str(from_size[0] + from_size[1] - 1)
+    args.append(pv_from)
+    # pv to migrate to
+    if data[0] != None:
+      args.append(data[0])
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/pvmove",args)
+    #out, err, res = execWithCaptureErrorStatusProgress("/usr/sbin/pvmove", args, _("Please wait while data is being migrated"))
+    out, err, res = execWithCaptureErrorStatus("/usr/sbin/pvmove", args)
     if res != 0:
-      raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr,err))
-
+      raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
+    
   def is_lv_mounted(self, lvname):
     is_mounted = False
     mount_point = ""

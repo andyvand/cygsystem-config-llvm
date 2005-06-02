@@ -8,7 +8,7 @@ from Volume import Volume
 class LogicalVolume(Volume):
   def __init__(self, name, path, vg, attr, lsize, used=True):
     Volume.__init__(self)
-    self.name = name
+    self.name = name.strip()
     self.path = path
     self.vg = vg
     self.size = float(lsize)

@@ -15,9 +15,12 @@ import signal
 import string
 import os
 
-PROGNAME = "system-config-lvm"
+from lvmui_constants import PROGNAME, INSTALLDIR
+
+#PROGNAME = "system-config-lvm"
+#INSTALLDIR="/usr/share/system-config-lvm"
 VERSION = "@VERSION@"
-INSTALLDIR="/usr/share/system-config-lvm"
+
 
 ### gettext ("_") must come before import gtk ###
 import gettext

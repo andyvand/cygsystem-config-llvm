@@ -1,6 +1,11 @@
 import gettext
 _ = gettext.gettext
 
+
+PROGNAME = "system-config-lvm"
+INSTALLDIR="/usr/share/system-config-lvm"
+
+
 ###Types of views to render
 UNSELECTABLE_TYPE = 0
 VG_TYPE = 1

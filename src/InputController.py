@@ -210,7 +210,7 @@ class InputController:
     self.setup_new_lv_form()
     self.setup_extend_vg_form()
     self.setup_misc_widgets()
-
+    
   ##################
   ##This form adds a new VG
   def setup_new_vg_form(self):
@@ -420,6 +420,129 @@ class InputController:
         size, ext_count = self.model_factory.get_free_space_on_VG(vgname, "m")
         actual_free_exts = int(ext_count) - free
         if alloc <= actual_free_exts:
+            if self.command_handler.is_dm_mirror_loaded() == False:
+                self.errorMessage(NO_DM_MIRROR)
+                return
+            retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
+            if (retval == gtk.RESPONSE_NO):
+                return
+
+            # remove unused from extent_list
+            for ext in extent_list[:]:
+                if ext.is_utilized() == False:
+                    extent_list.remove(ext)
+            dlg = self.migrate_exts_dlg(True, pv, extent_list)
+            if dlg == None:
+                return
+            try:
+                self.command_handler.move_pv(pv.get_path(), extent_list, dlg.get_data())
+            except CommandError, e:
+                self.errorMessage(e.getMessage())
+                return
+            try:
+                self.command_handler.reduce_vg(vgname, pvname)
+            except CommandError, e:
+                self.errorMessage(e.getMessage())
+                return
+            
+        else:
+            self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
+            return
+        
+        
+    if reset_tree == True:
+      args = list()
+      args.append(vgname)
+      apply(self.reset_tree_model, args)
+    else:
+      return vgname
+  
+  def remove_pv_old(self, pvname=None):
+    #The following cases must be considered in this method:
+    #1) a PV is to be removed that has extents mapped to an LV:
+    #  1a) if there are other PVs, call pvmove on the PV to migrate the 
+    #      data to other  PVs in the VG
+    #      i) If there is sufficient room, pvmove the extents, then vgreduce
+    #      ii) If there is not room, inform the user to add more storage and
+    #           try again later
+    #  1b) If there are not other PVs, state that either more PVs must
+    #      be added so that the in use extents can be migrated, or else
+    #      present a list of LVs that must be removed in order to 
+    #      remove the PV
+    #2) a PV is to be removed that has NO LVs mapped to its extents:
+    #  2a) If there are more than one PV in the VG, just vgreduce away the PV
+    #  2b) If the PV is the only one, then vgremove the VG
+    #
+    mapped_lvs = True
+    solo_pv = False
+    reset_tree = False
+    if pvname == None:
+      reset_tree = True #This says that tree reset will not be handled by caller
+      selection = self.treeview.get_selection()
+      model, iter = selection.get_selected()
+      name = model.get_value(iter, PATH_COL)
+      pvname = name
+    pvname = pvname.strip()
+    
+    ###FIX This method call needs to be handled for exception
+    pv = None
+    for p in self.model_factory.query_PVs():
+        if p.get_path() == pvname:
+            pv = p
+            break
+    #pv = self.model_factory.get_PV(pvname)
+    extent_list = pv.get_extent_segments()
+    
+    vgname = pv.get_vg_name().strip()
+    total,free,alloc = pv.get_extent_values()
+    pv_list = self.model_factory.query_PVs_for_VG(vgname)
+    if len(pv_list) <= 1: #This PV is the only one in the VG
+      solo_pv = True
+    else:
+      solo_pv = False
+
+    if len(extent_list) == 1: #There should always be at least one extent seg
+      #We now know either the entire PV is used by one LV, or else it is
+      #an unutilized PV. If the latter, we can just vgreduce it away 
+      seg_name = extent_list[0].get_name()
+      if (seg_name == FREE) or (seg_name == UNUSED):
+        mapped_lvs = False
+      else:
+        mapped_lvs = True
+    else:
+      mapped_lvs = True
+
+    #Cases:
+    if mapped_lvs == False:
+      if solo_pv == True:
+        #call vgremove
+        retval = self.warningMessage(CONFIRM_VG_REMOVE % (pvname,vgname))
+        if (retval == gtk.RESPONSE_NO):
+          return
+        try:
+          self.command_handler.remove_vg(vgname)
+        except CommandError, e:
+          self.errorMessage(e.getMessage())
+          return
+
+      else: #solo_pv is False, more than one PV...
+        retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
+        if (retval == gtk.RESPONSE_NO):
+          return
+        try:
+          self.command_handler.reduce_vg(vgname, pvname)
+        except CommandError, e:
+          self.errorMessage(e.getMessage())
+          return
+    else:
+      #Two cases here: if solo_pv, bail, else check for size needed
+      if solo_pv == True:
+        self.errorMessage(SOLO_PV_IN_VG % pvname)
+        return
+      else: #There are additional PVs. We need to check space 
+        size, ext_count = self.model_factory.get_free_space_on_VG(vgname, "m")
+        actual_free_exts = int(ext_count) - free
+        if alloc <= actual_free_exts:
           if self.command_handler.is_dm_mirror_loaded() == False:
             self.errorMessage(NO_DM_MIRROR)
             return
@@ -517,7 +640,7 @@ class InputController:
   def on_rm_select_pvs(self, button):
     if self.section_list == None:
       return
-    #need tto check if list > 0
+    #need to check if list > 0
     if len(self.section_list) == 0:
       return 
     selection = self.treeview.get_selection()
@@ -1201,9 +1324,56 @@ class InputController:
       apply(self.reset_tree_model)
 
   def on_migrate_exts(self, button):
-    retval = self.simpleInfoMessage(NOT_IMPLEMENTED)
-    return
+      selection = self.treeview.get_selection()
+      model, iter = selection.get_selected()
+      pv = model.get_value(iter, OBJ_COL)
 
+      # get selected extents
+      if self.section_list == None:
+          self.simpleInfoMessage(_("Select some extents first"))
+          return
+      if len(self.section_list) == 0:
+          self.simpleInfoMessage(_("Select some extents first"))
+          return
+      extents_from = self.section_list[:]
+      
+      # dialog
+      dlg = self.migrate_exts_dlg(False, pv, extents_from)
+      if dlg == None:
+          apply(self.reset_tree_model, [pv.get_path()])
+          return
+      try:
+          self.command_handler.move_pv(pv.get_path(), extents_from, dlg.get_data())
+      except CommandError, e:
+          self.errorMessage(e.getMessage())
+      apply(self.reset_tree_model, [pv.get_path()])
+      return
+      
+  # exts - [(from, to), ...]
+  # remove - whether this is migrate or remove operation
+  def migrate_exts_dlg(self, removal, pv, exts):
+      vg_name = pv.get_vg_name()
+      pvs = dict()
+      needed_extents = 0
+      for ext in exts:
+          needed_extents = needed_extents + ext.get_start_size()[1]
+      free_extents = 0
+      for p in self.model_factory.query_PVs_for_VG(vg_name):
+          if pv.get_path() != p.get_path():
+              if p.get_extent_values()[1] >= needed_extents:
+                  pvs[p.get_path()] = p
+              free_extents = free_extents + p.get_extent_values()[1]
+      if needed_extents > free_extents:
+          self.errorMessage(_("There is not enough free extents to perform migration to. Add more physical volumes."))
+          return None
+      lvs = dict()
+      for ext in exts:
+          lvs[ext.get_name()] = None
+      dlg = MigrateDialog(not removal, pvs.keys(), lvs.keys())
+      if not dlg.run():
+          return None
+      return dlg
+  
   def on_extend_lv(self, button):
     retval = self.simpleInfoMessage(NOT_IMPLEMENTED)
     return
@@ -1269,3 +1439,79 @@ class InputController:
     self.section_type = UNSELECTABLE_TYPE
     self.section_list = None
                            
+
+class MigrateDialog:
+    
+    def __init__(self, migrate, pvs, lvs):
+        gladepath = 'migrate_extents.glade'
+        if not os.path.exists(gladepath):
+            gladepath = "%s/%s" % (INSTALLDIR, gladepath)
+        gtk.glade.bindtextdomain(PROGNAME)
+        self.glade_xml = gtk.glade.XML (gladepath, domain=PROGNAME)
+        
+        # fill out lv selection combobox
+        self.lv_combo = gtk.combo_box_new_text()
+        self.glade_xml.get_widget('lv_selection_container').pack_end(self.lv_combo)
+        self.lv_combo.show()
+        for lv in lvs:
+            self.lv_combo.append_text(lv)
+        model = self.lv_combo.get_model()
+        iter = model.get_iter_first()
+        self.lv_combo.set_active_iter(iter)
+        
+        # fill out pv selection combobox
+        pv_selection_container = self.glade_xml.get_widget('pv_selection_container')
+        self.pv_combo = gtk.combo_box_new_text()
+        pv_selection_container.pack_end(self.pv_combo)
+        self.pv_combo.show()
+        if len(pvs) != 0:
+            for p in pvs:
+                self.pv_combo.append_text(p)
+            model = self.pv_combo.get_model()
+            iter = model.get_iter_first()
+            self.pv_combo.set_active_iter(iter)
+        else:
+            pv_selection_container.hide()
+        
+        self.dlg = self.glade_xml.get_widget('dialog1')
+        msg_label = self.glade_xml.get_widget('msg_label')
+        self.dlg.set_title(_("Migrate extents"))
+        if migrate:
+            msg_label.hide()
+        else:
+            # remove
+            self.glade_xml.get_widget('lv_selection_container').hide()
+
+    def run(self):
+        rc = self.dlg.run()
+        self.dlg.hide()
+        return rc == gtk.RESPONSE_OK
+
+    # return [pv to migrate to, policy (0 - inherit, 1 - normal, 2 - contiguous, 3 - anywhere), lv to migrate from]
+    def get_data(self):
+        ret = []
+
+        # migrate extents to
+        if self.glade_xml.get_widget('radiobutton3').get_active() == True:
+            iter = self.pv_combo.get_active_iter()
+            ret.append(self.pv_combo.get_model().get_value(iter, 0))
+        else:
+            ret.append(None)
+        
+        if self.glade_xml.get_widget('radiobutton4').get_active() == True:
+            ret.append(0)
+        elif self.glade_xml.get_widget('radiobutton5').get_active() == True:
+            ret.append(1)
+        elif self.glade_xml.get_widget('radiobutton6').get_active() == True:
+            ret.append(2)
+        else:
+            ret.append(3)
+        
+        # lv to migrate from
+        if self.glade_xml.get_widget('checkbutton1').get_active() == True:
+            iter = self.lv_combo.get_active_iter()
+            ret.append(self.lv_combo.get_model().get_value(iter, 0))
+        else:
+            ret.append(None)    
+
+        return ret

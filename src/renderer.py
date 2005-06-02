@@ -564,10 +564,21 @@ class volume_renderer:
       if viewable_extents[extent].get_is_selected() == True:
         viewable_extents[extent].set_is_selected(False)
       else:
-        viewable_extents[extent].set_is_selected(True)
+        if viewable_extents[extent].extent.is_utilized() == True:
+            viewable_extents[extent].set_is_selected(True)
       #self.highlight_this_section(section)
       self.do_single_render() 
-
+      
+      # return selected extents
+      return_list = list()
+      for ext in self.viewable_volume.get_viewable_extents():
+          if ext.get_is_selected() == True:  
+              return_list.append(ext.extent)
+      if len(return_list) > 0:
+          return return_list
+      else:
+          return None
+      
   def retrieve_section(self, xval, yval):
     #x = xval - X_PIXMAP_OFFSET + X_BOUND_RADIUS
     x = xval - X_PIXMAP_OFFSET

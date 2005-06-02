@@ -430,8 +430,8 @@ class Volume_Tab_View:
       result = self.vr.highlight_section_persist(event)
       self.input_controller.register_highlighted_sections(VG_LOG_TYPE, result)
     elif type == PHYS_TYPE:
-      self.vr.single_highlight_extent_persist(event)
-      #return
+      result = self.vr.single_highlight_extent_persist(event)
+      self.input_controller.register_highlighted_sections(PHYS_TYPE, result)
     elif type == LOG_TYPE:
       return
     elif type == UNALLOCATED_TYPE:
