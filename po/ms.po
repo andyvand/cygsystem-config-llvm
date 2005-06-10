@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-05-25 20:47+0800\n"
+"PO-Revision-Date: 2005-06-10 22:08+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -365,19 +365,16 @@ msgid "Logical Volume Management"
 msgstr "Pengurusan Volum Logikal"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Manage Volumes"
-msgstr "Volum Logikal:"
+msgstr "Urus Volum"
 
 #: src/lvui.glade.h:37
-#, fuzzy
 msgid "Maximum Logical Volumes: "
-msgstr "Buat Volum Logikal"
+msgstr "Volum Logikal Maksimum:"
 
 #: src/lvui.glade.h:38
-#, fuzzy
 msgid "Maximum Physical Volumes: "
-msgstr "Tidak cukup volum fizikal"
+msgstr "Volum Fizikal Maksimum:"
 
 #: src/lvui.glade.h:39
 msgid "Meg"
@@ -399,14 +396,12 @@ msgid "Mount point (If blank, LV will not be mounted):"
 msgstr ""
 
 #: src/lvui.glade.h:44
-#, fuzzy
 msgid "Name for Volume Group: "
-msgstr "Nama Kumpulan Volum Tidak Sah"
+msgstr "Nama untuk Kumpulan Volum:"
 
 #: src/lvui.glade.h:45
-#, fuzzy
 msgid "Name for new LV:"
-msgstr "Isi nama kumpulan baru:"
+msgstr "Nama untuk LV baru:"
 
 #: src/lvui.glade.h:46
 #, fuzzy
@@ -440,7 +435,9 @@ msgstr "Kepastian Perubahan Lanjutan Fizikal"
 msgid ""
 "Remove \n"
 "Logical Volume"
-msgstr "Buat Volum Logikal"
+msgstr ""
+"Lebihkan \n"
+"Volum Logikal"
 
 #: src/lvui.glade.h:53
 msgid ""
@@ -583,7 +580,7 @@ msgstr ""
 #: src/lvmui_constants.py:39
 #, fuzzy
 msgid "Unused"
-msgstr "Ruang tidak digunakan pada %s"
+msgstr "Tidak digunakan"
 
 #: src/lvm_model.py:36
 #, fuzzy
