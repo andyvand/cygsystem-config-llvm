@@ -3,6 +3,7 @@ import locale
 import time
 import gtk
 import os, sys
+import select
 
 
 ERROR_MESSAGE =_("An error has occurred while running a system command. Please check logs for details.") 
@@ -10,18 +11,11 @@ ERROR_MESSAGE =_("An error has occurred while running a system command. Please c
 BASH_PATH='/bin/bash'
 
 def execWithCapture(bin, args):
-    command = 'LANG=C ' + bin
-    if len(args) > 0:
-        for arg in args[1:]:
-            command = command + ' ' + arg
-    return rhpl.executil.execWithCapture(BASH_PATH, [BASH_PATH, '-c', command])
+    return execWithCaptureErrorStatus(bin, args)[0]
 
 def execWithCaptureStatus(bin, args):
-    command = 'LANG=C ' + bin
-    if len(args) > 0:
-        for arg in args[1:]:
-            command = command + ' ' + arg
-    return rhpl.executil.execWithCaptureStatus(BASH_PATH, [BASH_PATH, '-c', command])
+    res = execWithCaptureErrorStatus(bin, args)
+    return res[0], res[2]
 
 def execWithCaptureErrorStatus(bin, args):
     command = 'LANG=C ' + bin
@@ -60,7 +54,6 @@ class ForkedCommand:
         
         # This pipe is for the parent process to receive
         # the result of the system call in the child process.
-        self.fd_read_ctl, self.fd_write_ctl = os.pipe()
         self.fd_read_out, self.fd_write_out = os.pipe()
         self.fd_read_err, self.fd_write_err = os.pipe()
         
@@ -72,16 +65,20 @@ class ForkedCommand:
             
         if (self.child_pid != 0):
             # parent process
+            os.close(self.fd_write_out)
+            os.close(self.fd_write_err)
+            
             return self.showDialog(self.message)
         else:
             # child process
+
+            os.close(self.fd_read_out)
+            os.close(self.fd_read_err)
+            
             out, err, res = execWithCaptureErrorStatus(self.bin, self.args)
             # let parent process know result of system call through IPC
-            ctl = str(len(out)) + ',' + str(len(err))
-            os.write(self.fd_write_ctl, ctl)
             os.write(self.fd_write_out, out)
             os.write(self.fd_write_err, err)
-            os.close(self.fd_write_ctl)
             os.close(self.fd_write_out)
             os.close(self.fd_write_err)
             
@@ -113,11 +110,22 @@ class ForkedCommand:
         self.be_patient_dialog.destroy()
         
         # child has finished, collect data
-        ctl = os.read(self.fd_read_ctl, 100000)
-        ctl_words = ctl.strip().split(',')
-        out = os.read(self.fd_read_out, int(ctl_words[0]))
-        err = os.read(self.fd_read_err, int(ctl_words[1]))
-        os.close(self.fd_read_ctl)
+        out = ''
+        err = ''
+        in_list = [self.fd_read_out, self.fd_read_err]
+        while len(in_list) != 0:
+            i,o,e = select.select(in_list, [], [])
+            for fd in i:
+                if fd == self.fd_read_out:
+                    s = os.read(self.fd_read_out, 1000)
+                    if s == '':
+                        in_list.remove(self.fd_read_out)
+                    out = out + s
+                if fd == self.fd_read_err:
+                    s = os.read(self.fd_read_err, 1000)
+                    if s == '':
+                        in_list.remove(self.fd_read_err)
+                    err = err + s
         os.close(self.fd_read_out)
         os.close(self.fd_read_err)
         

@@ -14,6 +14,9 @@ from lvm_model import lvm_model
 from CommandHandler import CommandHandler
 from lvmui_constants import *
 from CommandError import CommandError
+import Fstab
+
+import Filesystem
 import gettext
 _ = gettext.gettext
 
@@ -128,11 +131,17 @@ EXCEEDED_MAX_PVS=_("The number of Physical Volumes in this Volume Group has reac
 
 EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reached its maximum limit.")
 
+NOT_ENOUGH_SPACE_FOR_NEW_LV=_("Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group.")
+
 TYPE_CONVERSION_ERROR=_("Undefined type conversion error in model factory. Unable to complete task.")
 
 NUMERIC_CONVERSION_ERROR=_("There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind.")
 
 MOUNTED_WARNING=_("BIG WARNING: Logical Volume %s has an %s file system on it and is currently mounted on %s. Are you absolutely certain that you wish to discard the data on this mounted filesystem?")
+
+UNMOUNT_PROMPT=_("Logical Volume %s is currently mounted on %s. In order to complete request, it has to be unmounted. Are you sure you want it unmounted?")
+
+
 
 ###TRANSLATOR: An extent below is an abstract unit of storage. The size
 ###of an extent is user-definable.
@@ -141,6 +150,14 @@ REMAINING_SPACE_MEGABYTES=_("%s megabytes")
 REMAINING_SPACE_KILOBYTES=_("%s kilobytes")
 REMAINING_SPACE_GIGABYTES=_("%s gigabytes")
 REMAINING_SPACE_EXTENTS=_("%s extents")
+
+REMAINING_SPACE_VG=_("Free space in Volume Group: ")
+REMAINING_SPACE_AFTER=_("Remaining free space:\n")
+
+EXTENTS=_("Extents")
+GIGABYTES=_("Gigabytes")
+MEGABYTES=_("Megabytes")
+KILOBYTES=_("Kilobytes")
 
 EXCEEDS_FREE_SPACE=_("The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: ")
 
@@ -604,7 +621,9 @@ class InputController:
       except CommandError, e:
         self.errorMessage(e.getMessage())
         return
-
+    
+    Fstab.remove(lvname, mnt_point)
+    
     try:
       self.command_handler.remove_lv(lvname)
     except CommandError, e:
@@ -694,21 +713,35 @@ class InputController:
     self.prep_new_lv_dlg()
 
   def on_new_lv(self, button):
-    main_selection = self.treeview.get_selection()
-    main_model,main_iter = main_selection.get_selected()
-    main_path = main_model.get_path(main_iter)
-    vgname = main_model.get_value(main_iter,PATH_COL).strip()
-    try:
-      max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
-    except ValueError, e:
-      self.errorMessage(TYPE_CONVERSION_ERROR % e)
+      main_selection = self.treeview.get_selection()
+      main_model,main_iter = main_selection.get_selected()
+      main_path = main_model.get_path(main_iter)
+      vgname = main_model.get_value(main_iter,PATH_COL).strip()
+      try:
+          max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
+      except ValueError, e:
+          self.errorMessage(TYPE_CONVERSION_ERROR % e)
+          return
+      if max_lvs == lvs:
+          self.errorMessage(EXCEEDED_MAX_LVS)
+          return
+      
+      free_space,free_extents = self.model_factory.get_free_space_on_VG(vgname,"m")
+      if int(free_extents) == 0:
+          self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vgname)
+          return
+      
+      vg = self.model_factory.get_VG(vgname)
+      dlg = LV_edit_props(None, vg, self.model_factory, self.command_handler)
+      dlg.run()
+      
+      args = list()
+      args.append(vg.get_name().strip())
+      apply(self.reset_tree_model, args)
       return
-    if max_lvs == lvs:
-      self.errorMessage(EXCEEDED_MAX_LVS)
-      return
-
-    self.prep_new_lv_dlg()
-    self.new_lv_dlg.show()
+      
+      self.prep_new_lv_dlg()
+      self.new_lv_dlg.show()
 
   def prep_new_lv_dlg(self):
     self.use_remaining = 0
@@ -735,12 +768,12 @@ class InputController:
     self.new_lv_name.set_text("")
     self.new_lv_size.set_text("")
     self.new_lv_size_unit.set_history(EXTENT_IDX)
-
+    
     #set radiobutton group to linear
     self.new_lv_linear_radio.set_active(True) 
     self.new_lv_stripe_size.set_history(DEFAULT_STRIPE_SIZE_IDX)
     self.new_lv_stripe_spinner.set_value(2.0)
-
+    
     #set up filesystem menu
     self.prep_filesystem_menu()
 
@@ -816,13 +849,13 @@ class InputController:
       self.errorMessage(NUMERIC_CONVERSION_ERROR % e)
       self.new_lv_size.set_text("")
       return
-
+  
     #Now we have an integer representation of our size field,
     #and a floating point rep
     #Normalize size depending on size_unit index
     Unit_index = self.new_lv_size_unit.get_history()
     Size_request = 0
-
+    
     if self.use_remaining > 0: #This means the 'use remaining space button' used
       Unit_index = EXTENT_IDX
       Size_request = self.use_remaining
@@ -834,7 +867,7 @@ class InputController:
           self.new_lv_size.set_text("")
           return
         Size_request = int_proposed_size
-
+      
       elif Unit_index == MEGABYTE_IDX:
           normalized_size = float_proposed_size * MEGA_MULTIPLIER
           if float(self.free_space_bytes) < normalized_size:
@@ -1043,10 +1076,10 @@ class InputController:
         vgname = model.get_value(iter, PATH_COL).strip()
         pv_list = self.model_factory.query_PVs_for_VG(vgname)
         if len(pv_list) < 2:  #striping is not an option
-          self.errorMessage(CANT_STRIPE_MESSAGE)
-          self.new_lv_linear_radio.set_active(True)
-          return
-
+            self.errorMessage(CANT_STRIPE_MESSAGE)
+            self.new_lv_linear_radio.set_active(True)
+            return
+        
     self.new_lv_stripe_spinner.set_sensitive(val)
     self.new_lv_stripe_size.set_sensitive(val)
     self.new_lv_num_stripes_label.set_sensitive(val)
@@ -1303,8 +1336,8 @@ class InputController:
     self.on_rm_select_pvs_button.connect("clicked",self.on_rm_select_pvs)
     self.migrate_exts_button = self.glade_xml.get_widget('button27')
     self.migrate_exts_button.connect("clicked",self.on_migrate_exts)
-    self.extend_lv_button = self.glade_xml.get_widget('button31')
-    self.extend_lv_button.connect("clicked",self.on_extend_lv)
+    self.edit_lv_button = self.glade_xml.get_widget('button35')
+    self.edit_lv_button.connect("clicked",self.on_edit_lv)
 
   def on_remove_unalloc_pv(self, button):
     selection = self.treeview.get_selection()
@@ -1327,7 +1360,7 @@ class InputController:
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
       pv = model.get_value(iter, OBJ_COL)
-
+      
       # get selected extents
       if self.section_list == None:
           self.simpleInfoMessage(_("Select some extents first"))
@@ -1348,9 +1381,8 @@ class InputController:
           self.errorMessage(e.getMessage())
       apply(self.reset_tree_model, [pv.get_path()])
       return
-      
-  # exts - [(from, to), ...]
-  # remove - whether this is migrate or remove operation
+  
+  # remove - whether this is a migration or a removal operation
   def migrate_exts_dlg(self, removal, pv, exts):
       vg_name = pv.get_vg_name()
       pvs = dict()
@@ -1374,11 +1406,22 @@ class InputController:
           return None
       return dlg
   
-  def on_extend_lv(self, button):
-    retval = self.simpleInfoMessage(NOT_IMPLEMENTED)
-    return
-
-
+  def on_edit_lv(self, button):
+      selection = self.treeview.get_selection()
+      model, iter = selection.get_selected()
+      lv_path = model.get_value(iter, PATH_COL)
+      lv = self.model_factory.get_LV(lv_path)
+      vg_name = lv.get_vg_name()
+      vg = self.model_factory.get_VG(vg_name)
+      dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler)
+      dlg.run()
+      
+      args = list()
+      #args.append(Name_request)
+      args.append(vg.get_name().strip())
+      apply(self.reset_tree_model, args)
+      
+      
   #######################################################
   ###Convenience Dialogs
                                                                                 
@@ -1515,3 +1558,609 @@ class MigrateDialog:
             ret.append(None)    
 
         return ret
+
+
+
+class LV_edit_props:
+    
+    # set lv to None if new lv is to be created
+    def __init__(self, lv, vg, model_factory, command_handler):
+        if lv == None:
+            self.new = True
+        else:
+            self.new = False
+        self.lv = lv
+        self.vg = vg
+        self.model_factory = model_factory
+        self.command_handler = command_handler
+        
+        # available filesystems
+        self.filesystems = dict()
+        fss = Filesystem.get_filesystems()
+        self.fs_none = fss[0]
+        for fs in fss:
+            self.filesystems[fs.name] = fs
+        if self.new:
+            self.fs = self.fs_none
+            self.mount_point = ''
+            self.mount = False
+            self.mount_at_reboot = False
+        else:
+            self.fs = Filesystem.get_fs(lv.get_path())
+            if self.fs.name == self.fs_none.name:
+                self.fs = self.fs_none
+            self.filesystems[self.fs.name] = self.fs
+            self.mount_point = self.model_factory.getMountPoint(lv.get_path())
+            self.mountpoint_at_reboot = Fstab.get_mountpoint(lv.get_path().strip())
+            if self.mount_point == None:
+                if self.mountpoint_at_reboot == None:
+                    self.mount_point = ''
+                else:
+                    self.mount_point = self.mountpoint_at_reboot
+                self.mount = False
+            else:
+                self.mount = True
+            self.mount_at_reboot = (self.mountpoint_at_reboot != None)
+        
+        gladepath = 'lv_edit_props.glade'
+        if not os.path.exists(gladepath):
+            gladepath = "%s/%s" % (INSTALLDIR, gladepath)
+        gtk.glade.bindtextdomain(PROGNAME)
+        self.glade_xml = gtk.glade.XML (gladepath, domain=PROGNAME)
+        self.dlg = self.glade_xml.get_widget('dialog1')
+        
+        self.size_units_combo = gtk.combo_box_new_text()
+        self.glade_xml.get_widget('size_units_container').pack_end(self.size_units_combo)
+        self.size_units_combo.show()
+        
+        self.filesys_combo = gtk.combo_box_new_text()
+        self.glade_xml.get_widget('filesys_container').pack_start(self.filesys_combo)
+        self.filesys_combo.show()
+        self.fs_config_button = gtk.Button(_("Options"))
+        self.glade_xml.get_widget('filesys_container').pack_end(self.fs_config_button)
+        #self.fs_config_button.show()
+        self.fs_config_button.hide()
+        
+    
+    def run(self):
+        self.setup_dlg()
+        while True:
+            rc = self.dlg.run()
+            if rc == gtk.RESPONSE_REJECT:
+                self.setup_dlg()
+                continue
+            elif rc == gtk.RESPONSE_OK:
+                try:
+                    if self.apply() == True:
+                        break
+                except CommandError, e:
+                    self.errorMessage(e.getMessage())
+                    break
+            else:
+                break
+        self.dlg.hide()
+        
+    def setup_dlg(self):
+        # title
+        if self.new:
+            self.dlg.set_title(_("Create New Logical Volume"))
+        else:
+            self.dlg.set_title(_("Edit Logical Volume"))
+        
+        # lv name
+        self.name_entry = self.glade_xml.get_widget('lv_name')
+        if self.new:
+            self.name_entry.set_text('')
+        else:
+            self.name_entry.set_text(self.lv.name)
+        
+        # revert button
+        if self.new:
+            self.glade_xml.get_widget('revert_button').hide()
+        else:
+            self.glade_xml.get_widget('revert_button').show()
+        
+        # lv properties
+        stripe_size_combo = self.glade_xml.get_widget('stripe_size')
+        model = stripe_size_combo.get_model()
+        iter = model.get_iter_first()
+        stripe_size_combo.set_active_iter(iter)
+        if self.new:
+            self.glade_xml.get_widget('stripes_container').set_sensitive(False)
+            stripe_size_combo = self.glade_xml.get_widget('stripe_size')
+            model = stripe_size_combo.get_model()
+            iter = model.get_iter_first()
+            stripe_size_combo.set_active_iter(iter)
+            max_stripes = len(self.model_factory.query_PVs_for_VG(self.vg.get_name()))
+            if max_stripes > 8:
+                max_stripes = 8
+            self.glade_xml.get_widget('stripes_num').set_range(2, max_stripes)
+            self.glade_xml.get_widget('stripes_num').set_update_policy(gtk.UPDATE_IF_VALID)
+        else:
+            self.glade_xml.get_widget('linear_striped_container').hide()
+        
+        # filesystem
+        self.glade_xml.get_widget('filesys_container').remove(self.filesys_combo)
+        self.filesys_combo = gtk.combo_box_new_text()
+        self.glade_xml.get_widget('filesys_container').pack_start(self.filesys_combo)
+        self.filesys_combo.show()
+        self.filesys_combo.append_text(self.fs.name)
+        for filesys in self.filesystems:
+            if (self.fs.name != filesys) and self.filesystems[filesys].creatable:
+                self.filesys_combo.append_text(filesys)
+        model = self.filesys_combo.get_model()
+        iter = model.get_iter_first()
+        self.filesys_combo.set_active_iter(iter)
+        if self.fs == self.fs_none:
+            self.change_fs_notified = True
+        else:
+            self.change_fs_notified = False
+        self.filesys_show_hide(False)
+        self.mountpoint_entry = self.glade_xml.get_widget('mount_point')
+        if self.new:
+            self.mountpoint_entry.set_text('')
+        else:
+            self.mountpoint_entry.set_text(self.mount_point)
+        self.glade_xml.get_widget('mount').set_active(self.mount)
+        self.glade_xml.get_widget('mount_at_reboot').set_active(self.mount_at_reboot)
+        self.on_mount_changed(None)
+        
+        # size
+        self.size_scale = self.glade_xml.get_widget('size_scale')
+        self.size_entry = self.glade_xml.get_widget('size_entry')
+        self.glade_xml.get_widget('size_units_container').remove(self.size_units_combo)
+        self.size_units_combo = gtk.combo_box_new_text()
+        self.glade_xml.get_widget('size_units_container').pack_end(self.size_units_combo)
+        self.size_units_combo.show()
+        for unit in [EXTENTS, GIGABYTES, MEGABYTES, KILOBYTES]:
+            self.size_units_combo.append_text(unit)
+        model = self.size_units_combo.get_model()
+        iter = model.get_iter_first()
+        self.size_units_combo.set_active_iter(iter)
+        # in extents
+        self.extent_size = self.vg.extent_size_bytes
+        self.size_lower = 1
+        if self.new:
+            self.size = 0
+        else:
+            self.size = self.lv.size_extents
+        self.size_upper = self.vg.free_extents + self.size
+        #self.size_new = self.size
+        self.set_size_new(self.size)
+        self.update_size_limits()
+        if self.new:
+            self.glade_xml.get_widget('free_space_label').show()
+        
+        # events
+        self.fs_config_button.connect('clicked', self.on_fs_config)
+        self.filesys_combo.connect('changed', self.on_fs_change)
+        self.size_units_combo.connect('changed', self.on_units_change)
+        self.size_scale.connect('value-changed', self.on_size_change_scale)
+        self.size_entry.connect('focus-out-event', self.on_size_change_entry)
+        self.glade_xml.get_widget('linear').connect('clicked', self.on_linear_changed)
+        self.glade_xml.get_widget('striped').connect('clicked', self.on_striped_changed)
+        self.glade_xml.get_widget('mount').connect('clicked', self.on_mount_changed)
+        self.glade_xml.get_widget('mount_at_reboot').connect('clicked', self.on_mount_changed)
+        self.glade_xml.get_widget('use_remaining_button').connect('clicked', self.on_use_remaining)
+        
+        
+    def on_linear_changed(self, obj):
+        self.glade_xml.get_widget('stripes_container').set_sensitive(False)
+    def on_striped_changed(self, obj):
+        pv_list = self.model_factory.query_PVs_for_VG(self.vg.get_name())
+        if len(pv_list) < 2:  #striping is not an option
+            self.errorMessage(CANT_STRIPE_MESSAGE)
+            self.glade_xml.get_widget('linear').set_active(True)
+            return
+        else:
+            self.glade_xml.get_widget('stripes_container').set_sensitive(True)
+    
+    def on_mount_changed(self, obj):
+        m1 = self.glade_xml.get_widget('mount').get_active()
+        m2 = self.glade_xml.get_widget('mount_at_reboot').get_active()
+        if m1 or m2:
+            self.mountpoint_entry.set_sensitive(True)
+        else:
+            self.mountpoint_entry.set_sensitive(False)
+    
+    def on_fs_config(self, button):
+        pass
+    
+    def on_fs_change(self, obj):
+        self.filesys_show_hide()
+        self.update_size_limits()
+        
+    def filesys_show_hide(self, show_message=True):
+        iter = self.filesys_combo.get_active_iter()
+        filesys = self.filesystems[self.filesys_combo.get_model().get_value(iter, 0)]
+        
+        if not (self.change_fs_notified) and show_message:
+            self.infoMessage(_("Change of filesystem will destroy all data on " + self.lv.get_path()))
+            self.change_fs_notified = True
+        
+        if filesys.editable:
+            self.fs_config_button.set_sensitive(True)
+        else:
+            self.fs_config_button.set_sensitive(False)
+        
+        if filesys.mountable:
+            self.glade_xml.get_widget('mountpoint_container').set_sensitive(True)
+            self.glade_xml.get_widget('mount_container').set_sensitive(True)
+        else:
+            self.glade_xml.get_widget('mount').set_active(False)
+            self.glade_xml.get_widget('mount_at_reboot').set_active(False)
+            self.glade_xml.get_widget('mountpoint_container').set_sensitive(False)
+            self.glade_xml.get_widget('mount_container').set_sensitive(False)
+            
+            
+    def update_size_limits(self):
+        iter = self.filesys_combo.get_active_iter()
+        filesys = self.filesystems[self.filesys_combo.get_model().get_value(iter, 0)]
+        
+        self.size_lower = 1
+        self.size_upper = self.vg.free_extents + self.size
+        
+        as_new = self.new
+        fs_change = not (filesys == self.fs)
+        if fs_change:
+            as_new = True
+        
+        if as_new:
+            self.glade_xml.get_widget('fs_not_resizable').hide()
+            self.size_scale.set_sensitive(True)
+            self.size_entry.set_sensitive(True)
+            self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
+        else:
+            if not (filesys.extendable_online or filesys.extendable_offline):
+                self.size_upper = self.size
+            if not (filesys.reducible_online or filesys.reducible_offline):
+                self.size_lower = self.size
+            
+            resizable = (filesys.extendable_online or filesys.extendable_offline or filesys.reducible_online or filesys.reducible_offline)
+            if resizable:
+                self.glade_xml.get_widget('fs_not_resizable').hide()
+                self.size_scale.set_sensitive(True)
+                self.size_entry.set_sensitive(True)
+                self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
+            else:
+                self.glade_xml.get_widget('fs_not_resizable').show()
+                self.size_scale.set_sensitive(False)
+                self.size_entry.set_sensitive(False)
+                self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
+                
+                # set old size value
+                self.size_entry.set_text(str(self.__get_num(self.size)))
+                self.on_size_change_entry(None, None)
+                
+        if self.size_lower < self.size_upper:
+            self.glade_xml.get_widget('size_scale_container').set_sensitive(True)
+        else:
+            self.glade_xml.get_widget('size_scale_container').set_sensitive(False)
+        
+        # update values to be within limits
+        self.on_size_change_entry(None, None)
+        self.change_size_units()
+        
+    def on_units_change(self, obj):
+        self.change_size_units()
+        
+    def change_size_units(self):
+        iter = self.size_units_combo.get_active_iter()
+        units = self.size_units_combo.get_model().get_value(iter, 0)
+        
+        lower = self.__get_num(self.size_lower)
+        upper = self.__get_num(self.size_upper)
+        size = self.__get_num(self.size_new)
+        
+        size_beg_label = self.glade_xml.get_widget('size_beg')
+        size_beg_label.set_text(str(lower))
+        size_end_label = self.glade_xml.get_widget('size_end')
+        size_end_label.set_text(str(upper))
+        
+        if self.size_lower < self.size_upper:
+            self.size_scale.set_range(lower, upper)
+            self.size_scale.set_value(size)
+        
+        self.size_entry.set_text(str(size))
+        
+        string = REMAINING_SPACE_VG + str(self.__get_num(self.vg.free_extents)) + ' ' + units
+        self.glade_xml.get_widget('free_space_label').set_text(string)
+        self.update_remaining_space_label()
+        
+    def update_remaining_space_label(self):
+        iter = self.size_units_combo.get_active_iter()
+        units = self.size_units_combo.get_model().get_value(iter, 0)
+        rem = self.vg.free_extents + self.size - self.size_new
+        string = REMAINING_SPACE_AFTER + str(self.__get_num(rem)) + ' ' + units
+        self.glade_xml.get_widget('remaining_space_label').set_text(string)
+    
+    def on_use_remaining(self, obj):
+        self.set_size_new(self.size_upper)
+        self.update_remaining_space_label()
+    def on_size_change_scale(self, obj):
+        size = self.size_scale.get_value()
+        self.set_size_new(self.__get_extents(size))
+        self.update_remaining_space_label()
+    def on_size_change_entry(self, obj1, obj2):
+        size_text = self.size_entry.get_text()
+        size_float = 0.0
+        try:  ##In case gibberish is entered into the size field...
+            size_float = float(size_text)
+        except ValueError, e:
+            self.size_entry.set_text(str(self.__get_num(self.size_new)))
+            return False
+        size_upper = self.__get_num(self.size_upper)
+        size_lower = self.__get_num(self.size_lower)
+        if size_float > size_upper:
+            size_float = size_upper
+        elif size_float < size_lower:
+            size_float = size_lower
+        else:
+            size_float_exts = self.__get_extents(size_float)
+            size_float = self.__get_num(size_float_exts)
+        self.size_new = self.__get_extents(size_float)
+        self.size_entry.set_text(str(size_float))
+        self.size_scale.set_value(size_float)
+        self.update_remaining_space_label()
+        return False
+    def set_size_new(self, exts):
+        self.size_entry.set_text(str(self.__get_num(exts)))
+        self.on_size_change_entry(None, None)
+    def __get_extents(self, num):
+        iter = self.size_units_combo.get_active_iter()
+        units = self.size_units_combo.get_model().get_value(iter, 0)
+        if units == EXTENTS:
+            return int(num)
+        elif units == GIGABYTES:
+            num = int(num * 1024 * 1024 * 1024 / self.extent_size)
+        elif units == MEGABYTES:
+            num = int(num * 1024 * 1024 / self.extent_size)
+        elif units == KILOBYTES:
+            num = int(num * 1024 / self.extent_size)
+        if num < 1:
+            num = 1
+        return num
+    def __get_num(self, extents):
+        iter = self.size_units_combo.get_active_iter()
+        units = self.size_units_combo.get_model().get_value(iter, 0)
+        if units == EXTENTS:
+            return int(extents)
+        elif units == GIGABYTES:
+            val = extents * self.extent_size / 1024.0 / 1024.0 / 1024.0
+        elif units == MEGABYTES:
+            val = extents * self.extent_size / 1024.0 / 1024.0
+        elif units == KILOBYTES:
+            val = extents * self.extent_size / 1024.0
+        string = '%.2f' % float(val)
+        return float(string)
+    
+    def apply(self):
+        name_new = self.name_entry.get_text().strip()
+        size_new = int(self.size_new) # in extents
+        
+        iter = self.filesys_combo.get_active_iter()
+        filesys_new = self.filesystems[self.filesys_combo.get_model().get_value(iter, 0)]
+        
+        if filesys_new.mountable:
+            mount_new = self.glade_xml.get_widget('mount').get_active()
+            mount_at_reboot_new = self.glade_xml.get_widget('mount_at_reboot').get_active()
+            mountpoint_new = self.mountpoint_entry.get_text().strip()
+        else:
+            mount_new = False
+            mount_at_reboot_new = False 
+            mountpoint_new = ''
+        
+        striped = self.glade_xml.get_widget('striped').get_active()
+        stripe_size_combo = self.glade_xml.get_widget('stripe_size')
+        iter = stripe_size_combo.get_active_iter()
+        stripe_size = int(stripe_size_combo.get_model().get_value(iter, 0))
+        stripes_num = int(self.glade_xml.get_widget('stripes_num').get_value_as_int())
+        
+        # TODO
+        fs_options_changed = False
+        
+        
+        # validation Ladder
+        # Name must be unique for this VG
+        if name_new == '':
+            self.errorMessage(MUST_PROVIDE_NAME)
+            return False
+        for lv in self.model_factory.query_LVs_for_VG(self.vg.get_name()):
+            if lv.get_name() == name_new:
+                if not self.new:
+                    if self.lv.get_name() == name_new:
+                        continue
+                self.name_entry.select_region(0, (-1))
+                self.errorMessage(NON_UNIQUE_NAME % name_new)
+                return False
+        # check mountpoint
+        if mount_new or mount_at_reboot_new:
+            if mountpoint_new == '':
+                self.errorMessage(_("Please specify mount point"))
+                return False
+            # create folder if it doesn't exist
+            if os.path.exists(mountpoint_new) == False:  ###stat mnt point
+                rc = self.questionMessage(BAD_MNT_POINT % mountpoint_new)
+                if (rc == gtk.RESPONSE_YES):  #create mount point
+                    try:
+                        os.mkdir(mountpoint_new)
+                    except OSError, e:
+                        self.errorMessage(BAD_MNT_CREATION % mountpoint_new)
+                        self.mountpoint_entry.set_text('')
+                        return False
+                else:
+                    self.mountpoint_entry.select_region(0, (-1))
+                    return False
+        
+        # action
+        if self.new:
+            ### new LV ###
+            
+            # create LV
+            new_lv_command_set = {}
+            new_lv_command_set[NEW_LV_NAME_ARG] = name_new
+            new_lv_command_set[NEW_LV_VGNAME_ARG] = self.vg.get_name()
+            new_lv_command_set[NEW_LV_UNIT_ARG] = EXTENT_IDX
+            new_lv_command_set[NEW_LV_SIZE_ARG] = size_new
+            new_lv_command_set[NEW_LV_IS_STRIPED_ARG] = striped
+            if striped == True:
+                new_lv_command_set[NEW_LV_STRIPE_SIZE_ARG] = stripe_size
+                new_lv_command_set[NEW_LV_NUM_STRIPES_ARG] = stripes_num
+            new_lv_command_set[NEW_LV_MAKE_FS_ARG] = False
+            self.command_handler.new_lv(new_lv_command_set)
+            
+            lv_path = self.model_factory.get_logical_volume_path(name_new, self.vg.get_name())
+            
+            # make filesystem
+            filesys_new.create(lv_path)
+            
+            # mount
+            if mount_new:
+                self.command_handler.mount(lv_path, mountpoint_new)
+            if mount_at_reboot_new:
+                Fstab.add(lv_path, mountpoint_new, filesys_new.name)
+        else:
+            ### edit LV ###
+            
+            rename = name_new != self.lv.get_name().strip()
+            filesys_change = (filesys_new != self.fs)
+            
+            resize = (size_new != self.size)
+            extend = (size_new > self.size)
+            reduce = (size_new < self.size)
+            
+            mounted = self.mount
+            unmount = False
+            unmount_prompt = True
+            if rename or filesys_change or mount_new == False:
+                unmount = True
+            if filesys_change:
+                retval = self.warningMessage(_("fixme: dataloss warning"))
+                if (retval == gtk.RESPONSE_NO):
+                    return False
+                unmount_prompt = False
+            else:
+                if extend and mounted and (not filesys_new.extendable_online):
+                    unmount = True
+                if reduce and mounted and (not filesys_new.reducible_online):
+                    unmount = True
+            
+            # unmount if needed
+            if unmount and mounted:
+                if unmount_prompt:
+                    retval = self.warningMessage(UNMOUNT_PROMPT % (self.lv.get_path(), self.mount_point))
+                    if (retval == gtk.RESPONSE_NO):
+                        return False
+                self.command_handler.unmount_lv(self.lv.get_path())
+                mounted = False
+            
+            # rename
+            if rename:
+                self.command_handler.rename_lv(self.vg.get_name(), self.lv.get_name(), name_new)
+            lv_path = self.model_factory.get_logical_volume_path(name_new, self.vg.get_name())
+            
+            # resize lv
+            if resize:
+                if not filesys_change:
+                    # resize lv and filesystem
+                    if size_new > self.size:
+                        # resize LV first
+                        self.command_handler.extend_lv(lv_path, size_new)
+                        # resize FS
+                        if mounted:
+                            if filesys_new.extendable_online:
+                                filesys_new.extend_online(lv_path)
+                            else:
+                                self.command_handler.unmount_lv(self.lv.get_path())
+                                mounted = False
+                                filesys_new.extend_offline(lv_path)
+                        else:
+                            filesys_new.extend_offline(lv_path)
+                    else:
+                        # resize FS first
+                        new_size_bytes = size_new * self.extent_size
+                        if mounted:
+                            if filesys_new.reducible_online:
+                                filesys_new.reduce_online(lv_path, new_size_bytes)
+                            else:
+                                self.command_handler.unmount_lv(self.lv.get_path())
+                                mounted = False
+                                filesys_new.reduce_offline(lv_path, new_size_bytes)
+                        else:
+                            filesys_new.reduce_offline(lv_path, new_size_bytes)
+                        # resize LV
+                        self.command_handler.reduce_lv(lv_path, size_new)
+                else:
+                    # resize LV only
+                    if size_new > self.size:
+                        self.command_handler.extend_lv(lv_path, size_new)
+                    else:
+                        self.command_handler.reduce_lv(lv_path, size_new)
+            
+            # fs options
+            if fs_options_changed and not filesys_change:
+                filesys_new.change_options(lv_path)
+            
+            # change FS
+            if filesys_change:
+                filesys_new.create(lv_path)
+            
+            # mount
+            if mount_new and not mounted:
+                self.command_handler.mount(lv_path, mountpoint_new)
+            # remove old fstab entry
+            Fstab.remove(self.lv.get_path().strip(), self.mount_point)
+            if mount_at_reboot_new:
+                # add new entry
+                Fstab.add(lv_path, mountpoint_new, filesys_new.name)
+                
+        return True
+    
+    def errorMessage(self, message):
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+                                message)
+        dlg.show_all()
+        rc = dlg.run()
+        dlg.destroy()
+        return rc
+    
+    def infoMessage(self, message):
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
+                                message)
+        dlg.show_all()
+        rc = dlg.run()
+        dlg.destroy()
+        return rc
+    
+    def questionMessage(self, message):
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_YES_NO,
+                                message)
+        dlg.show_all()
+        rc = dlg.run()
+        dlg.destroy()
+        if (rc == gtk.RESPONSE_NO):
+            return gtk.RESPONSE_NO
+        if (rc == gtk.RESPONSE_DELETE_EVENT):
+            return gtk.RESPONSE_NO
+        if (rc == gtk.RESPONSE_CLOSE):
+            return gtk.RESPONSE_NO
+        if (rc == gtk.RESPONSE_CANCEL):
+            return gtk.RESPONSE_NO
+        return rc
+
+    def warningMessage(self, message):
+        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_YES_NO,
+                                message)
+        dlg.show_all()
+        rc = dlg.run()
+        dlg.destroy()
+        if (rc == gtk.RESPONSE_NO):
+            return gtk.RESPONSE_NO
+        if (rc == gtk.RESPONSE_DELETE_EVENT):
+            return gtk.RESPONSE_NO
+        if (rc == gtk.RESPONSE_CLOSE):
+            return gtk.RESPONSE_NO
+        if (rc == gtk.RESPONSE_CANCEL):
+            return gtk.RESPONSE_NO
+        
+        return rc

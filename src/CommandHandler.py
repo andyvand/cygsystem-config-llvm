@@ -25,6 +25,8 @@ PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\" - System Erro
 LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\" - System Error Message: %s")
 FSCREATE_FAILURE=_("mkfs command failed. Command attempted: \"%s\" - System Error Message: %s")
 MNTCREATE_FAILURE=_("mount command failed. Command Attempted: %s  - System Error Message: \"%s\"")
+LVRESIZE_FAILURE=_("lvresize command failed. Command attempted: \"%s\" - System Error Message: %s")
+LVRENAME_FAILURE=_("lvrename command failed. Command attempted: \"%s\" - System Error Message: %s")
 
 class CommandHandler:
 
@@ -84,20 +86,46 @@ class CommandHandler:
       o,e,r = execWithCaptureErrorStatus("/sbin/mkfs",args)
       if r != 0:
         raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
-
+      
       if cmd_args_dict[NEW_LV_MAKE_MNT_POINT_ARG] == True:
         mnt_point =  cmd_args_dict[NEW_LV_MNT_POINT_ARG]
-
-        cmd_args = list()
-        cmd_args.append("/bin/mount")
-        cmd_args.append(lvpath)
-        cmd_args.append(mnt_point)
-        cmdstr = ' '.join(cmd_args)
-        out,err,res = execWithCaptureErrorStatus("/bin/mount",cmd_args)
-        if res != 0:
-          raise CommandError('FATAL', MNTCREATE_FAILURE % (cmdstr,err))
-
-
+        self.mount(lvpath, mnt_point)
+        
+  def reduce_lv(self, lvpath, new_size_extents): 
+    cmd_args = list()
+    cmd_args.append('/usr/sbin/lvreduce')
+    cmd_args.append('-f')
+    cmd_args.append('-l')
+    cmd_args.append(str(new_size_extents))
+    cmd_args.append(lvpath)
+    cmdstr = ' '.join(cmd_args)
+    out,err,res = execWithCaptureErrorStatusProgress('/usr/sbin/lvreduce', cmd_args,
+                                                     _("Please wait while volume is being resized"))
+    if res != 0:
+      raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
+  
+  def extend_lv(self, lvpath, new_size_extents): 
+    cmd_args = list()
+    cmd_args.append('/usr/sbin/lvextend')
+    cmd_args.append('-l')
+    cmd_args.append(str(new_size_extents))
+    cmd_args.append(lvpath)
+    cmdstr = ' '.join(cmd_args)
+    out,err,res = execWithCaptureErrorStatusProgress('/usr/sbin/lvextend', cmd_args,
+                                                     _("Please wait while volume is being resized"))
+    if res != 0:
+      raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
+    
+  def mount(self, dev_path, mnt_point): 
+    cmd_args = list()
+    cmd_args.append("/bin/mount")
+    cmd_args.append(dev_path)
+    cmd_args.append(mnt_point)
+    cmdstr = ' '.join(cmd_args)
+    out,err,res = execWithCaptureErrorStatus("/bin/mount",cmd_args)
+    if res != 0:
+      raise CommandError('FATAL', MNTCREATE_FAILURE % (cmdstr,err))
+  
   def initialize_entity(self, ent):
     entity = ent.strip()
     command_args = list()
@@ -185,7 +213,18 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatus("/usr/sbin/lvremove",args)
     if res != 0:
       raise CommandError('FATAL', LVREMOVE_FAILURE % (cmdstr,err))
-
+  
+  def rename_lv(self, vgname, lvname_old, lvname_new):
+    args = list()
+    args.append("/usr/sbin/lvrename")
+    args.append(vgname)
+    args.append(lvname_old)
+    args.append(lvname_new)
+    cmdstr = ' '.join(args)
+    out,err,res = execWithCaptureErrorStatus("/usr/sbin/lvrename",args)
+    if res != 0:
+      raise CommandError('FATAL', LVRENAME_FAILURE % (cmdstr,err))
+  
   def unmount_lv(self, lvname):
     args = list()
     args.append("/bin/umount")

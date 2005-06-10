@@ -39,7 +39,6 @@ UNUSED_SPACE=_("Unused Space")
 #Translator - Linear mapping is another way of saying 'Not Striped' :-)
 LINEAR_MAPPING=_("Linear Mapping")
 UNMOUNTED=_("Unmounted")
-NO_FILESYSTEM=_("No File System")
 SEG_START_COL = 2
 SEG_END_COL = 4
 GIG=1000000000.00
@@ -439,10 +438,18 @@ class lvm_model:
     for line in lines:
       line.strip()
       words = line.split(",")
-      vg = VolumeGroup(words[0], words[4], words[5])
+      ext_size, free_exts = self.__get_extent_size_bytes_and_free(words[0])
+      vg = VolumeGroup(words[0], words[4], words[5], ext_size, free_exts)
       vglist.append(vg)
     return vglist
-
+  def __get_extent_size_bytes_and_free(self, vgname):
+    arglist = ["/usr/sbin/lvm", 'vgs', '--noheadings', '--nosuffix', '--units', 'b']
+    arglist.append('-o')
+    arglist.append('vg_extent_size,vg_free_count')
+    arglist.append(vgname)
+    result = execWithCapture("/usr/sbin/lvm", arglist).split()
+    return int(result[0]), int(result[1])
+    
   def get_VG(self, vgname):
     vg_name = vgname.strip()
     vglist = self.query_VGs()
@@ -479,8 +486,21 @@ class lvm_model:
                         words[L_SIZE_COL],
                         True)
 
+    # get size in extents
+    arglist = ['/usr/sbin/lvm', 'lvs', '--nosuffix', '--noheadings']
+    arglist.append('--units')
+    arglist.append('b')
+    arglist.append('-o')
+    arglist.append('vg_extent_size,lv_size')
+    arglist.append(pathname)
+    line = execWithCapture("/usr/sbin/lvm",arglist)
+    if (line == None) or (len(line) < 1):
+      ###FIXME - Throw exception here, if no result is returned
+      return None
+    words = line.strip().split(' ')
+    lv.size_extents = int(words[1]) / int(words[0])
     return lv
-
+  
   def query_LVs_for_VG(self, vg_name):
     lvlist = list()
     arglist = list()
@@ -537,7 +557,7 @@ class lvm_model:
     vg_name = vgname.strip()
     arglist.append("/usr/sbin/lvdisplay") #lvs does not give path info
     arglist.append("-c")
-                                                                                
+    
     result_string = execWithCapture("/usr/sbin/lvdisplay",arglist)
     lines = result_string.splitlines()
     #The procedure below does the following:
@@ -1200,7 +1220,7 @@ class lvm_model:
       return NO_FILESYSTEM
     
     filesys = NO_FILESYSTEM
-    result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', path])
+    result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
     words = result.split()
     if len(words) < 3:  #No file system
       filesys = NO_FILESYSTEM
