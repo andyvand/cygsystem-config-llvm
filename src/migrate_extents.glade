@@ -278,7 +278,7 @@ Select extents' destination and migration policy.</property>
 			  <property name="visible">True</property>
 			  <property name="tooltip" translatable="yes">New extents are adjacent to existing ones</property>
 			  <property name="can_focus">True</property>
-			  <property name="label" translatable="yes">Contiguous - not fully implemented</property>
+			  <property name="label" translatable="yes">Contiguous</property>
 			  <property name="use_underline">True</property>
 			  <property name="relief">GTK_RELIEF_NORMAL</property>
 			  <property name="focus_on_click">True</property>
@@ -296,7 +296,6 @@ Select extents' destination and migration policy.</property>
 
 		      <child>
 			<widget class="GtkRadioButton" id="radiobutton7">
-			  <property name="visible">True</property>
 			  <property name="sensitive">False</property>
 			  <property name="tooltip" translatable="yes">Migrate anywhere even if that reduces performace</property>
 			  <property name="can_focus">True</property>
