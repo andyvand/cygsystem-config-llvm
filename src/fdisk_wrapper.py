@@ -1,6 +1,7 @@
 
 import os, sys
-from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
+from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
+#from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
 import re
 import copy
 
@@ -339,20 +340,20 @@ class FDisk:
         file.close()
         os.chmod(TMP_FILE_COMMAND, 0700)
         print 'commiting partitions to disk ' + devname
-
+        
         if len(self.getPartitions(devname)) == 0:
             # no existing partitions, write
-            out, ret = execWithCaptureStatus(TMP_FILE_COMMAND, [TMP_FILE_COMMAND])
+            out, ret = execWithCaptureStatusProgress(TMP_FILE_COMMAND, [TMP_FILE_COMMAND])
             print out, ret
         else:
             # there is something on drive, ignore for now
             print 'joking :)'
             print 'for now'
-            
+        
         os.remove(TMP_FILE_COMMAND)
         os.remove(TMP_FILE_INPUT)
-        
-        
+    
+
 class BlockDevice:
     
     def __init__(self, devpath):
