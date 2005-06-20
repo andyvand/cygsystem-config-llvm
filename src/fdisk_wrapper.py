@@ -343,7 +343,7 @@ class FDisk:
         
         if len(self.getPartitions(devname)) == 0:
             # no existing partitions, write
-            out, ret = execWithCaptureStatusProgress(TMP_FILE_COMMAND, [TMP_FILE_COMMAND])
+            out, ret = execWithCaptureStatusProgress(TMP_FILE_COMMAND, [TMP_FILE_COMMAND], _("Please wait while partition is being created"))
             print out, ret
         else:
             # there is something on drive, ignore for now
