@@ -196,7 +196,8 @@ class DisplayView:
         for pv in pv_list:
             selectable = pv.is_utilized
             cyl = Subcylinder(self.pv_cyl_gen, 1, 2, selectable, int(pv.get_volume_size()))
-            label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>" 
+            #label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>"
+            label = pv.get_name()
             cyl.set_label_upper(label)
             self.display.append_right(cyl)
             self.display.append_right(Separator())
@@ -246,7 +247,8 @@ class DisplayView:
         for lv in lv_list:
             selectable = lv.is_utilized
             cyl = Subcylinder(self.lv_cyl_gen, 1, 2, selectable, lv.size_extents)
-            label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>" 
+            #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
+            label = lv.get_name()
             cyl.set_label_upper(label)
             self.display.append_right(cyl)
             self.display.append_right(Separator())
@@ -280,7 +282,8 @@ class DisplayView:
         lv_cyls_dir = {}
         lv_cyls = []
         for lv in lv_list:
-            label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
+            #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
+            label = lv.get_name()
             cyl = None
             if lv.is_utilized:
                 cyl = Subcylinder(self.lv_cyl_gen, 1, 2, True)
@@ -298,7 +301,8 @@ class DisplayView:
         for pv in pv_list:
             #pv_cyl = Subcylinder(self.pv_cyl_gen, 1, 2, True)
             pv_cyl = Subcylinder(self.pv_cyl_gen, 1, 2, False)
-            label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>" 
+            #label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>"
+            label = pv.get_name()
             pv_cyl.set_label_upper(label)
             pv_cyls.append(pv_cyl)
             # set up helper display
