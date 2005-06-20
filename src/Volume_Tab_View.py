@@ -9,10 +9,7 @@ import signal
 import gobject
 import string
 import os
-from renderer import volume_renderer
-
-from renderer_new import *
-
+from renderer import DisplayView
 from Properties_Renderer import Properties_Renderer
 from lvm_model import lvm_model
 from InputController import InputController
