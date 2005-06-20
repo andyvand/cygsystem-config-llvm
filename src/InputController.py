@@ -951,9 +951,9 @@ class InputController:
     return rc
                                                                                 
   def register_highlighted_sections(self, section_type, section_list):
-    self.section_type = section_type
-    self.section_list = section_list
-
+      self.section_type = section_type
+      self.section_list = section_list
+      
   def clear_highlighted_sections(self):
     self.section_type = UNSELECTABLE_TYPE
     self.section_list = None

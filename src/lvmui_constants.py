@@ -3,7 +3,25 @@ _ = gettext.gettext
 
 
 PROGNAME = "system-config-lvm"
-INSTALLDIR="/usr/share/system-config-lvm"
+INSTALLDIR="/usr/share/system-config-lvm/"
+
+LVM_PATH="/usr/sbin/"
+LVM_BIN_PATH = LVM_PATH + 'lvm'
+LVMDISKSCAN_BIN_PATH = LVM_PATH + 'lvmdiskscan'
+LVDISPLAY_BIN_PATH = LVM_PATH + 'lvdisplay'
+LVCREATE_BIN_PATH = LVM_PATH + 'lvcreate'
+LVRENAME_BIN_PATH = LVM_PATH + 'lvrename'
+LVEXTEND_BIN_PATH = LVM_PATH + 'lvextend'
+LVREDUCE_BIN_PATH = LVM_PATH + 'lvreduce'
+LVREMOVE_BIN_PATH = LVM_PATH + 'lvremove'
+PVCREATE_BIN_PATH = LVM_PATH + 'pvcreate'
+PVREMOVE_BIN_PATH = LVM_PATH + 'pvremove'
+PVMOVE_BIN_PATH = LVM_PATH + 'pvmove'
+VGCREATE_BIN_PATH = LVM_PATH + 'vgcreate'
+VGCHANGE_BIN_PATH = LVM_PATH + 'vgchange'
+VGEXTEND_BIN_PATH = LVM_PATH + 'vgextend'
+VGREDUCE_BIN_PATH = LVM_PATH + 'vgreduce'
+VGREMOVE_BIN_PATH = LVM_PATH + 'vgremove'
 
 
 ###Types of views to render

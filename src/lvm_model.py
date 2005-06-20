@@ -228,7 +228,7 @@ class lvm_model:
   def __query_PVs(self):
     pvlist = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("pvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -238,7 +238,7 @@ class lvm_model:
     arglist.append(",")
     arglist.append("-o")
     arglist.append("+pv_pe_count,pv_pe_alloc_count")
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -257,134 +257,6 @@ class lvm_model:
       pvlist.append(pv)
     return pvlist
   
-  def query_partitions_old(self):
-    pelist = list()
-    uncertainlist = list()
-    arglist = list()
-    arglist.append("/usr/sbin/lvm")
-    arglist.append("pvs")
-    arglist.append("-a")
-    arglist.append("--nosuffix")
-    arglist.append("--noheadings")
-    arglist.append("--units")
-    arglist.append("g")
-    arglist.append("--separator")
-    arglist.append(",")
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
-    lines = result_string.splitlines()
-    for line in lines:
-      words = line.split(",")
-      if words[2] == "":  #No entry in column 3 means not initialized
-        initialized = False
-      else:
-        initialized = True
-      pv = PhysicalVolume(words[0],words[1], words[2], words[3], words[4], words[5],initialized,0,0)
-      if initialized:
-        pelist.append(pv)
-      else:
-        uncertainlist.append(pv)
-      #try and determine sizes and if vol is swap or extended
-
-    arg_list = list()
-    arg_list.append("/sbin/fdisk")
-    arg_list.append("-l")
-    result = execWithCapture("/sbin/fdisk", arg_list)
-    textlines = result.splitlines()
-
-    #At this point, all of the visible partitions initialized for LVM usage
-    #are listed in pelist. There are, however, usually other
-    #partitions that are either uninitialized or not to be included in a list
-    #that allows initialization for lvm, such as swap partitions.
-    #this code examines the uncertain list and moves appropriate
-    #physical extents to the pelist.
-
-    for item in uncertainlist:
-      p = item.get_path()
-      path = p.strip()
-      for textline in textlines:
-        if textline == "":
-          continue
-        text_words = textline.split()
-        simple_text = text_words[0].strip()
-        if simple_text == path:
-          #fdisk 2.12 with the -l switch produces 7 columns
-          #column 2 is Boot, and signifies a boot partition if there
-          #is an asterisk in this column. If there is not, this column
-          #holds white space, hence the length of non-boot partitions
-          #will always be 6, and boot partitions will be 7
-          cols = len(text_words)
-          if cols == 7:  #A boot partition or swap partition
-            break;
-          if text_words[cols - 2] == "83":
-            sz_str = text_words[cols - 3]
-            val = sz_str.find("+")
-            if val >= 0:  #There is a '+' at end of string...
-              adj_sz_str = sz_str[:val]  #strip plus sign
-            else:
-              adj_sz_str = sz_str
-            #item.set_volume_size(float(adj_sz_str) / GIG)
-            ###FIX need to be smarter about size conversions here
-            ###FIX use lvmdiskscan here
-            item.set_volume_size(float(adj_sz_str) / 1000000.0) 
-            pelist.append(item)
-            break
-    
-    ##There needs to be one last check made on those PEs which have 
-    ##passed the test so far. It is possible that a partition set up
-    ##for swap may not have the partition ID for swap. The definitive
-    ##source for swap partitions is /proc/swaps, so we will cat this
-    ##file and remove any devices from pelist that are entered in 
-    ##that file
-    swaparg_list = list()
-    swaparg_list.append("/bin/cat")
-    swaparg_list.append("/proc/swaps")
-    result  = execWithCapture("/bin/cat", swaparg_list)
-    textlines = result.splitlines()
-    for pe in pelist:
-      path = pe.get_path().strip()
-      for textline in textlines:
-        swap_words = textline.split()
-        swap_path = swap_words[0].strip()
-        if swap_path == path:
-          pelist.remove(pe) #Found it in the swap list
-
-
-    return pelist
-  
-  def get_PV_old(self,pathname):
-    arglist = list()
-    arglist.append("/usr/sbin/lvm")
-    arglist.append("pvs")
-    arglist.append("--nosuffix")
-    arglist.append("--noheadings")
-    arglist.append("--units")
-    arglist.append("g")
-    arglist.append("--separator")
-    arglist.append(",")
-    arglist.append("-o")
-    arglist.append("+pv_pe_count,pv_pe_alloc_count")
-    arglist.append(pathname)
-                                                                                
-    line = execWithCapture("/usr/sbin/lvm",arglist)
-    if (line == None) or (len(line) < 1):
-      ###FIXME - Throw exception here, if no result is returned
-      return None
-    words = line.split(",")
-    pv = PhysicalVolume(words[P_NAME_COL],
-                        words[P_VG_NAME_COL],
-                        words[P_FMT_COL],
-                        words[P_ATTR_COL],
-                        words[P_SIZE_COL],
-                        words[P_FREE_COL],
-                        True,
-                        words[P_PE_COUNT_COL],
-                        words[P_PE_ALLOC_COL])
-
-    if pv.get_type() == PHYS_TYPE:
-      #Add extent segments
-      self.get_extents_for_PV(pv)
-    return pv
-
   def query_uninitialized(self):
     #parts_list = self.query_partitions()
     uninit_list = list()
@@ -424,7 +296,7 @@ class lvm_model:
   def query_VGs(self):
     vglist = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -433,21 +305,22 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
                                                                                 
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     for line in lines:
       line.strip()
       words = line.split(",")
       ext_size, free_exts = self.__get_extent_size_bytes_and_free(words[0])
       vg = VolumeGroup(words[0], words[4], words[5], ext_size, free_exts)
+      vg.setProperties(self.get_data_for_VG(vg.get_name()))
       vglist.append(vg)
     return vglist
   def __get_extent_size_bytes_and_free(self, vgname):
-    arglist = ["/usr/sbin/lvm", 'vgs', '--noheadings', '--nosuffix', '--units', 'b']
+    arglist = [LVM_BIN_PATH, 'vgs', '--noheadings', '--nosuffix', '--units', 'b']
     arglist.append('-o')
     arglist.append('vg_extent_size,vg_free_count')
     arglist.append(vgname)
-    result = execWithCapture("/usr/sbin/lvm", arglist).split()
+    result = execWithCapture(LVM_BIN_PATH, arglist).split()
     return int(result[0]), int(result[1])
     
   def get_VG(self, vgname):
@@ -464,7 +337,7 @@ class lvm_model:
 
   def get_LV(self,pathname):
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("lvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -474,26 +347,29 @@ class lvm_model:
     arglist.append(",")
     arglist.append(pathname)
  
-    line = execWithCapture("/usr/sbin/lvm",arglist)
+    line = execWithCapture(LVM_BIN_PATH,arglist)
     if (line == None) or (len(line) < 1):
       ###FIXME - Throw exception here, if no result is returned
       return None
     words = line.split(",")
     lv = LogicalVolume(words[L_NAME_COL],
-                        pathname,
-                        words[L_VG_NAME_COL],
-                        words[L_ATTR_COL],
-                        words[L_SIZE_COL],
-                        True)
-
+                       pathname,
+                       words[L_VG_NAME_COL],
+                       words[L_ATTR_COL],
+                       words[L_SIZE_COL],
+                       True)
+    
+    # set renderable properties
+    lv.setProperties(self.get_data_for_LV(lv.get_path()))
+    
     # get size in extents
-    arglist = ['/usr/sbin/lvm', 'lvs', '--nosuffix', '--noheadings']
+    arglist = [LVM_BIN_PATH, 'lvs', '--nosuffix', '--noheadings']
     arglist.append('--units')
     arglist.append('b')
     arglist.append('-o')
     arglist.append('vg_extent_size,lv_size')
     arglist.append(pathname)
-    line = execWithCapture("/usr/sbin/lvm",arglist)
+    line = execWithCapture(LVM_BIN_PATH,arglist)
     if (line == None) or (len(line) < 1):
       ###FIXME - Throw exception here, if no result is returned
       return None
@@ -505,7 +381,7 @@ class lvm_model:
     lvlist = list()
     arglist = list()
     vgname = vg_name.strip()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("lvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -515,20 +391,20 @@ class lvm_model:
     arglist.append(",")
     arglist.append(vgname)
 
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
       name = words[0].strip()
       path = self.get_logical_volume_path(name, vgname)
-      lv = LogicalVolume(name, path, words[1],words[2], words[3])
+      lv = self.get_LV(path)
       lvlist.append(lv)
 
     #Now check if there is free space in Volume Group with name vg_name.
     #If there is free space, add an LV marked as 'unused' for that available
     # space, so that it can be rendered properly
     vg_arglist = list()
-    vg_arglist.append("/usr/sbin/lvm")
+    vg_arglist.append(LVM_BIN_PATH)
     vg_arglist.append("vgs")
     vg_arglist.append("--nosuffix")
     vg_arglist.append("--noheadings")
@@ -540,25 +416,27 @@ class lvm_model:
     vg_arglist.append("+vg_free_count")
     vg_arglist.append(vg_name)
 
-    result_string = execWithCapture("/usr/sbin/lvm",vg_arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,vg_arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
-      if int(words[7].strip()) > 0: #Checks for free extents
-       lv = LogicalVolume(UNUSED, None, vg_name,None, words[6], False)
-       lvlist.append(lv)
-
+      free_extents = int(words[7].strip())
+      if free_extents > 0: #Checks for free extents
+        lv = LogicalVolume(UNUSED, None, vg_name,None, words[6], False)
+        lv.size_extents = free_extents
+        lvlist.append(lv)
+    
     return lvlist
-
+  
   def get_logical_volume_path(self, lname, vgname):
     lvlist = list()
     arglist = list()
     lv_name = lname.strip()
     vg_name = vgname.strip()
-    arglist.append("/usr/sbin/lvdisplay") #lvs does not give path info
+    arglist.append(LVDISPLAY_BIN_PATH) #lvs does not give path info
     arglist.append("-c")
     
-    result_string = execWithCapture("/usr/sbin/lvdisplay",arglist)
+    result_string = execWithCapture(LVDISPLAY_BIN_PATH,arglist)
     lines = result_string.splitlines()
     #The procedure below does the following:
     #The output of the command is examined line by line for a volume 
@@ -583,13 +461,6 @@ class lvm_model:
   
   
   
-  def get_UV_old(self, pathname):
-    uv_list = self.query_uninitialized()
-    for uv in uv_list:
-      uvpath = uv.get_path().strip()
-      if uvpath == pathname:
-        return uv
-  
   def partition_UV(self, pv):
     if pv.needsFormat():
       try:
@@ -608,7 +479,7 @@ class lvm_model:
   def get_free_space_on_VG(self, vgname, unit):
     vg_name = vgname.strip()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -620,7 +491,7 @@ class lvm_model:
     arglist.append("vg_free,vg_free_count")
     arglist.append(vg_name)
 
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
 
     if (lines[0].find("not found")) >= 0:
@@ -633,7 +504,7 @@ class lvm_model:
   def get_max_LVs_PVs_on_VG(self, vgname):
     vg_name = vgname.strip()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -643,7 +514,7 @@ class lvm_model:
     arglist.append("max_lv,lv_count,max_pv,pv_count")
     arglist.append(vg_name)
 
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,arglist)
 
     words = result_string.split(",")
 
@@ -663,7 +534,7 @@ class lvm_model:
     name = vgname.strip()
     text_list = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -675,7 +546,7 @@ class lvm_model:
     arglist.append(VGS_OPTION_STRING)
     arglist.append(name)
 
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(VG_NAME)
@@ -726,120 +597,11 @@ class lvm_model:
     return text_list
 
   
-  def get_data_for_UV_old(self, p):
-    partition_type = ""
-    is_mounted = ""
-    filesys_type = ""
-    size_string = ""
-    path = p.strip()
-    arglist = list()
-    arglist.append("/sbin/fdisk")
-    arglist.append("-l")
-    result  = execWithCapture("/sbin/fdisk", arglist)
-    textlines = result.splitlines()
-    #First determine partition type
-    for textline in textlines:
-      if textline == "":
-        continue
-      text_words = textline.split()
-      possible_path = text_words[0].strip()
-      if possible_path == path:
-        cols = len(text_words)
-        if text_words[cols - 2] == "83":
-          partition_type = "Linux Partition"
-        else:
-          partition_type = text_words[cols - 2]
-        break
-
-    #Now determine size
-    arglist = list()
-    arglist.append("/usr/sbin/lvmdiskscan")
-    result  = execWithCapture("/usr/sbin/lvmdiskscan", arglist)
-    textlines = result.splitlines()
-    for textline in textlines:
-      text_words = textline.split()
-      possible_path = text_words[0].strip()
-      #If we find our path, we need to extract the size info from line
-      #Size info resides between two square brackets
-      #Here is a typical output line from lvmdiskscan:
-      #  /dev/sda10 [      784.39 MB] LVM physical volume
-      if possible_path == path:
-        start_idx = textline.find("[")
-        start_idx = start_idx + 1   #loose '['
-        first_part = textline[start_idx:]
-        end_idx = first_part.find("]")
-        final_part = first_part[:end_idx]
-        size_string = final_part.strip()
-        break
-
-    #Next, check if partition is mounted
-    arglist = list()
-    arglist.append("/bin/cat")
-    arglist.append("/proc/mounts")
-    result  = execWithCapture("/bin/cat", arglist)
-    textlines = result.splitlines()
-    for textline in textlines:
-      text_words = textline.split()
-      possible_path = text_words[0].strip()
-      if possible_path == path:
-        is_mounted = text_words[1]
-        break
-
-    #It is still possible for a partition to be mounted without being in
-    #/proc/mounts...this is often true of the root partition
-    arglist = list()
-    arglist.append("/bin/cat")
-    arglist.append("/etc/mtab")
-    result,err,code  = execWithCaptureErrorStatus("/bin/cat", arglist)
-    if code == 0:
-      textlines = result.splitlines()
-      for textline in textlines:
-        text_words = textline.split()
-        possible_path = text_words[0].strip()
-        if possible_path == path:
-          if text_words[1].strip() == "/":
-            mntpnt = "/   (Root Partition)"
-          else:
-            mntpnt = text_words[1]
-          is_mounted = mntpnt
-          break
-
-    if is_mounted == "":
-      is_mounted = UNMOUNTED
-
-
-    #Finally, check for file system
-    arglist = list()
-    arglist.append("/usr/bin/file")
-    arglist.append("-s")
-    arglist.append(path)
-    result = execWithCapture("/usr/bin/file", arglist)
-    words = result.split()
-    if len(words) < 3:  #No file system
-      filesys_type = NO_FILESYSTEM
-    elif words[2].strip() == "rev":
-      filesys_type = words[4]
-    else:
-      filesys_type = words[2]
-
-    #Finish up by returning data
-    textlist = list()
-    textlist.append(UV_SIZE)
-    textlist.append(size_string)
-    textlist.append(UV_PARTITION_TYPE)
-    textlist.append(partition_type)
-    textlist.append(UV_FILESYSTEM)
-    textlist.append(filesys_type)
-    textlist.append(UV_MOUNT_POINT)
-    textlist.append(is_mounted)
-
-    return textlist
-   
   def get_data_for_LV(self, p):
     path = p.strip()
     text_list = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append(LVM_BIN_PATH)
     arglist.append("lvs")
     arglist.append("--noheadings")
     arglist.append("--separator")
@@ -848,7 +610,7 @@ class lvm_model:
     arglist.append(LVS_OPTION_STRING)
     arglist.append(path)
 
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(LV_NAME)
@@ -879,49 +641,6 @@ class lvm_model:
     return text_list
   
   
-  def get_data_for_PV_old(self, p):
-    path = p.strip()
-    text_list = list()
-    arglist = list()
-    arglist.append("/usr/sbin/lvm")
-    arglist.append("pvs")
-    arglist.append("--noheadings")
-    arglist.append("--separator")
-    arglist.append(",")
-    arglist.append("-o")
-    arglist.append(PVS_OPTION_STRING)
-    arglist.append(path)
-    
-    result_string = execWithCapture("/usr/sbin/lvm",arglist)
-    lines = result_string.splitlines()
-    words = lines[0].split(",")
-    text_list.append(PV_NAME)
-    text_list.append(words[PV_NAME_IDX])
-
-    if words[PV_VG_NAME_IDX] == "":
-      text_list.append(VG_NAME)
-      text_list.append("---")
-    else:
-      text_list.append(VG_NAME)
-      text_list.append(words[PV_VG_NAME_IDX])
-
-    text_list.append(PV_SIZE)
-    text_list.append(words[PV_SIZE_IDX])
-    text_list.append(PV_USED)
-    text_list.append(words[PV_USED_IDX])
-    text_list.append(PV_FREE)
-    text_list.append(words[PV_FREE_IDX])
-    text_list.append(PV_PE_COUNT)
-    text_list.append(words[PV_PE_COUNT_IDX])
-    text_list.append(PV_PE_ALLOC_COUNT)
-    text_list.append(words[PV_PE_ALLOC_COUNT_IDX])
-    text_list.append(PV_ATTR)
-    text_list.append(words[PV_ATTR_IDX])
-    text_list.append(PV_UUID)
-    text_list.append(words[PV_UUID_IDX])
-                                                                                
-    return text_list
-
   def __set_PV_props(self, pv):
     # anything that is in, place to the end
     end = pv.getProperties()
@@ -952,7 +671,7 @@ class lvm_model:
       text_list.append(self.getFS(path))
     else: # UNALLOCATED_TYPE || PHYS_TYPE
       arglist = list()
-      arglist.append("/usr/sbin/lvm")
+      arglist.append(LVM_BIN_PATH)
       arglist.append("pvs")
       arglist.append("--noheadings")
       arglist.append("--separator")
@@ -960,7 +679,7 @@ class lvm_model:
       arglist.append("-o")
       arglist.append(PVS_OPTION_STRING)
       arglist.append(path)
-      result_string = execWithCapture("/usr/sbin/lvm",arglist)
+      result_string = execWithCapture(LVM_BIN_PATH,arglist)
       lines = result_string.splitlines()
       words = lines[0].split(",")
       text_list.append(PV_NAME)
@@ -1021,7 +740,7 @@ class lvm_model:
     lvlist = self.query_LVs_for_VG(vgname)
     #if lvlist is empty, add one extent_segment for the empty space, then return
     if len(lvlist) == 1:  #Could be an 'unused' section or fully used section
-      if lvlist[0].is_vol_utilized == False: 
+      if lvlist[0].is_vol_utilized() == False:
         total,free,alloc = pv.get_extent_values()
         es = ExtentSegment(FREE,0,total,False)
         es.set_annotation(UNUSED_SPACE)
@@ -1032,7 +751,7 @@ class lvm_model:
         es = ExtentSegment(lvlist[0].get_name(),0,total,True)
         pv.add_extent_segment(es)
         return 
-        
+    
     #The cases above all result in one extent segment per PV.
     #When a PV has multiple extent segments, we must build a list
     #of them, sort them, and make sure it is contiguous
@@ -1042,10 +761,10 @@ class lvm_model:
         continue
       path = lv.get_path()
       arglist = list()
-      arglist.append("/usr/sbin/lvdisplay")
+      arglist.append(LVDISPLAY_BIN_PATH)
       arglist.append("-m")
       arglist.append(path)
-      result_string = execWithCapture("/usr/sbin/lvdisplay",arglist)
+      result_string = execWithCapture(LVDISPLAY_BIN_PATH,arglist)
       ##For ease of maintenance, here is an explanation of what is
       ##going on here...the lvmdisplay command is run above for
       ##each Logical Volume in the pv's volumegroup. The command

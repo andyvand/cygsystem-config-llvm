@@ -3,7 +3,6 @@ import string
 from CommandError import CommandError
 from lvm_model import lvm_model
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
-from ForkedCommand import *
 
 from lvmui_constants import *
 
@@ -38,7 +37,7 @@ class CommandHandler:
     #first set up lvcreate args
 
     arglist = list()
-    arglist.append("/usr/sbin/lvcreate")
+    arglist.append(LVCREATE_BIN_PATH)
     arglist.append("-n")
     lvname = cmd_args_dict[NEW_LV_NAME_ARG]
     arglist.append(lvname)
@@ -65,7 +64,7 @@ class CommandHandler:
     arglist.append(vgname)
     cmd_str = ' '.join(arglist)
 
-    result_string,err,res = execWithCaptureErrorStatus("/usr/sbin/lvcreate",arglist)
+    result_string,err,res = execWithCaptureErrorStatus(LVCREATE_BIN_PATH,arglist)
     if res != 0:
       raise CommandError('FATAL', LVCREATE_FAILURE % (cmd_str,err))
 
@@ -93,25 +92,25 @@ class CommandHandler:
         
   def reduce_lv(self, lvpath, new_size_extents): 
     cmd_args = list()
-    cmd_args.append('/usr/sbin/lvreduce')
+    cmd_args.append(LVREDUCE_BIN_PATH)
     cmd_args.append('-f')
     cmd_args.append('-l')
     cmd_args.append(str(new_size_extents))
     cmd_args.append(lvpath)
     cmdstr = ' '.join(cmd_args)
-    out,err,res = execWithCaptureErrorStatusProgress('/usr/sbin/lvreduce', cmd_args,
+    out,err,res = execWithCaptureErrorStatusProgress(LVREDUCE_BIN_PATH, cmd_args,
                                                      _("Please wait while volume is being resized"))
     if res != 0:
       raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
   
   def extend_lv(self, lvpath, new_size_extents): 
     cmd_args = list()
-    cmd_args.append('/usr/sbin/lvextend')
+    cmd_args.append(LVEXTEND_BIN_PATH)
     cmd_args.append('-l')
     cmd_args.append(str(new_size_extents))
     cmd_args.append(lvpath)
     cmdstr = ' '.join(cmd_args)
-    out,err,res = execWithCaptureErrorStatusProgress('/usr/sbin/lvextend', cmd_args,
+    out,err,res = execWithCaptureErrorStatusProgress(LVEXTEND_BIN_PATH, cmd_args,
                                                      _("Please wait while volume is being resized"))
     if res != 0:
       raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
@@ -129,22 +128,22 @@ class CommandHandler:
   def initialize_entity(self, ent):
     entity = ent.strip()
     command_args = list()
-    command_args.append("/usr/sbin/pvcreate")
+    command_args.append(PVCREATE_BIN_PATH)
     command_args.append("-M")
     command_args.append("2")
     command_args.append(entity)
     commandstring = ' '.join(command_args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/pvcreate",command_args)
+    out,err,res = execWithCaptureErrorStatus(PVCREATE_BIN_PATH,command_args)
     if res != 0:
       raise CommandError('FATAL', PVCREATE_FAILURE % (commandstring,err))
 
   def add_unalloc_to_vg(self, pv, vg):
     args = list()
-    args.append("/usr/sbin/vgextend")
+    args.append(VGEXTEND_BIN_PATH)
     args.append(vg.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgextend",args)
+    out,err,res = execWithCaptureErrorStatus(VGEXTEND_BIN_PATH,args)
     if res != 0:
       raise CommandError('FATAL', VGEXTEND_FAILURE % (cmdstr,err))
 
@@ -159,7 +158,7 @@ class CommandHandler:
     size_arg = extent_size + units_arg
     
     args = list()
-    args.append("/usr/sbin/vgcreate")
+    args.append(VGCREATE_BIN_PATH)
     args.append("-M2")
     args.append("-l")
     args.append(max_log)
@@ -170,58 +169,58 @@ class CommandHandler:
     args.append(name.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgcreate",args)
+    out,err,res = execWithCaptureErrorStatus(VGCREATE_BIN_PATH,args)
     if res != 0:
       raise CommandError('FATAL', VGCREATE_FAILURE % (cmdstr,err))
 
   def remove_vg(self, vgname):
     args = list()
-    args.append("/usr/sbin/vgchange")
+    args.append(VGCHANGE_BIN_PATH)
     args.append("-a")
     args.append("n")
     args.append(vgname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgchange",args)
+    out,err,res = execWithCaptureErrorStatus(VGCHANGE_BIN_PATH,args)
     if res != 0:
       raise CommandError('FATAL', VGCHANGE_FAILURE % (cmdstr,err))
       return
 
-    commandstring = "/usr/sbin/vgremove " + vgname
+    commandstring = VGREMOVE_BIN_PATH + " " + vgname
     args_list = list()
-    args_list.append("/usr/sbin/vgremove")
+    args_list.append(VGREMOVE_BIN_PATH)
     args_list.append(vgname)
     cmdstring = ' '.join(args)
-    outs,errs,result = execWithCaptureErrorStatus("/usr/sbin/vgremove",args_list)
+    outs,errs,result = execWithCaptureErrorStatus(VGREMOVE_BIN_PATH,args_list)
     if result != 0:
       raise CommandError('FATAL', VGREMOVE_FAILURE % (cmdstring,errs))
 
   def remove_pv(self, pvname):
     args = list()
-    args.append("/usr/sbin/pvremove")
+    args.append(PVREMOVE_BIN_PATH)
     args.append(pvname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/pvremove",args)
+    out,err,res = execWithCaptureErrorStatus(PVREMOVE_BIN_PATH,args)
     if res != 0:
       raise CommandError('FATAL', PVREMOVE_FAILURE % (cmdstr,err))
 
   def remove_lv(self, lvname):
     args = list()
-    args.append("/usr/sbin/lvremove")
+    args.append(LVREMOVE_BIN_PATH)
     args.append("--force")
     args.append(lvname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/lvremove",args)
+    out,err,res = execWithCaptureErrorStatus(LVREMOVE_BIN_PATH,args)
     if res != 0:
       raise CommandError('FATAL', LVREMOVE_FAILURE % (cmdstr,err))
   
   def rename_lv(self, vgname, lvname_old, lvname_new):
     args = list()
-    args.append("/usr/sbin/lvrename")
+    args.append(LVRENAME_BIN_PATH)
     args.append(vgname)
     args.append(lvname_old)
     args.append(lvname_new)
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/lvrename",args)
+    out,err,res = execWithCaptureErrorStatus(LVRENAME_BIN_PATH,args)
     if res != 0:
       raise CommandError('FATAL', LVRENAME_FAILURE % (cmdstr,err))
   
@@ -236,11 +235,11 @@ class CommandHandler:
 
   def reduce_vg(self, vg, pv):
     args = list()
-    args.append("/usr/sbin/vgreduce")
+    args.append(VGREDUCE_BIN_PATH)
     args.append(vg.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/usr/sbin/vgreduce",args)
+    out,err,res = execWithCaptureErrorStatus(VGREDUCE_BIN_PATH,args)
     if res != 0:
       raise CommandError('FATAL', VGREDUCE_FAILURE % (cmdstr,err))
 
@@ -248,7 +247,7 @@ class CommandHandler:
   # extents = [(from, to), ...]
   def move_pv(self, pv, extents_from, data):
     args = list()
-    args.append("/usr/sbin/pvmove")
+    args.append(PVMOVE_BIN_PATH)
     # policy
     if data[1] != None:
       if data[1] == 0:
@@ -272,7 +271,7 @@ class CommandHandler:
     if data[0] != None:
       args.append(data[0])
     cmdstr = ' '.join(args)
-    out, err, res = execWithCaptureErrorStatusProgress("/usr/sbin/pvmove", args, _("Please wait while data is being migrated"))
+    out, err, res = execWithCaptureErrorStatusProgress(PVMOVE_BIN_PATH, args, _("Please wait while data is being migrated"))
     if res != 0:
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
     

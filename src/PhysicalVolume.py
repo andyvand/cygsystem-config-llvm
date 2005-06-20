@@ -34,7 +34,6 @@ class PhysicalVolume(Volume):
     # general properties
     self.devname = None
     self.part = None
-    self.properties = list()
     self.initializable = True
     
   def extract_name(self, path):
@@ -66,12 +65,7 @@ class PhysicalVolume(Volume):
     self.part = part
   def getPartition(self):
     return (self.devname, self.part)
-
-  def setProperties(self, dictionary):
-    self.properties = dictionary
-  def getProperties(self):
-    return self.properties
-
+  
   def needsFormat(self):
     if self.part == None:
       return False

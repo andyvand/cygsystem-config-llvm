@@ -12,8 +12,9 @@ class LogicalVolume(Volume):
     self.path = path
     self.vg = vg
     self.size = float(lsize)
+    self.size_extents = 0
     self.attr = attr
-    self.is_utilized = used
+    self.set_is_vol_utilized(used)
     self.set_type(LOG_TYPE)
 
   def get_path(self):

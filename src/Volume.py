@@ -15,7 +15,9 @@ class Volume:
     self.is_utilized = True
     self.type = UNINITIALIZED_TYPE
     self.extent_segment_list = list()
-
+    
+    self.properties = []
+    
   def get_name(self):
     return self.name
 
@@ -38,6 +40,11 @@ class Volume:
     """   
     self.is_utilized = is_utilized
 
+  def setProperties(self, dictionary):
+    self.properties = dictionary
+  def getProperties(self):
+    return self.properties
+  
   def get_extent_segments(self):
     return self.extent_segment_list
 

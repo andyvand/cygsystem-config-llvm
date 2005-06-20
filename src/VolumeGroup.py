@@ -3,12 +3,11 @@
 import os
 import string
 from Volume import Volume
+from lvmui_constants import VG_TYPE
+
 
 class VolumeGroup(Volume):
-  def __init__(self, name, attr, lsize):
-    VolumeGroup.__init__(self, name, attr, lsize, 0, 0)
-  
-  def __init__(self, name, attr, lsize, extent_size, free_extents):
+  def __init__(self, name, attr, lsize, extent_size=0, free_extents=0):
     Volume.__init__(self)
     self.name = name
     self.vg = name 
@@ -18,3 +17,4 @@ class VolumeGroup(Volume):
     self.is_utilized = True
     self.extent_size_bytes = extent_size # bytes
     self.free_extents = free_extents
+    self.set_type(VG_TYPE)

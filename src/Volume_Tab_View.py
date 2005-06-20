@@ -1,5 +1,5 @@
 #!/usr/bin/python
-                                                                                
+
 import sys
 import types
 import select
@@ -10,6 +10,9 @@ import gobject
 import string
 import os
 from renderer import volume_renderer
+
+from renderer_new import *
+
 from Properties_Renderer import Properties_Renderer
 from lvm_model import lvm_model
 from InputController import InputController
@@ -69,42 +72,36 @@ class Volume_Tab_View:
                                             self.treeview, 
                                             self.model_factory, 
                                             self.glade_xml)
-                                                                                 
+    
     #Change Listener
     selection = self.treeview.get_selection()
     selection.connect('changed', self.on_tree_selection_changed)
 
     #self.treeview.connect('expand-collapse-cursor-row',self.on_row_expand_collapse)
     #self.treeview.connect('row-collapsed',self.on_row_expand_collapse)
-                                                                                
+    
     self.icon_ellipse_hashtable = {}
-                                                                                
+    
     renderer1 = gtk.CellRendererText()
     column1 = gtk.TreeViewColumn("Volumes",renderer1,markup=0)
     self.treeview.append_column(column1)
-                                                                                
+    
     #Time to set up draw area
-    self.pixmap = self.glade_xml.get_widget('drawingarea1')
-    self.props_layout_area = self.glade_xml.get_widget('drawingarea3')
-    self.scroller = self.glade_xml.get_widget('scrolledwindow4')
-    self.scroller.connect('scroll-event', self.on_scroll_event)
-    self.layout_pixmap = self.glade_xml.get_widget('drawingarea3')
-    color = gtk.gdk.colormap_get_system().alloc_color("white", 1,1)
-    self.layout_pixmap.modify_bg(gtk.STATE_NORMAL, color) 
-    self.pixmap.modify_bg(gtk.STATE_NORMAL, color) 
-    self.vr = volume_renderer(self.pixmap, self.pixmap.window)
-    self.lr = Properties_Renderer(self.layout_pixmap, self.layout_pixmap.window)
-
-    self.pixmap.connect('expose-event', self.on_expose_event)
-    self.pixmap.connect('scroll-event', self.on_scroll_event)
-    self.pixmap.connect('size-allocate', self.on_size_allocate)
-    self.pixmap.add_events(gtk.gdk.POINTER_MOTION_MASK)
-    self.pixmap.add_events(gtk.gdk.BUTTON_PRESS_MASK)
-    self.pixmap.connect("motion_notify_event",self.on_motion_event)
-    #self.pixmap.connect("button_press_event",self.vr.highlight_section_persist)
-    self.pixmap.connect("button_press_event",self.on_mouse_button_press)
-    self.props_layout_area.connect('expose-event', self.on_props_expose_event)
-
+    window1 = self.glade_xml.get_widget("drawingarea1")
+    window1.set_size_request(700, 500)
+    window2 = self.glade_xml.get_widget("drawingarea2")
+    window2.set_size_request(700, 500)
+    window3 = self.glade_xml.get_widget("drawingarea3")
+    window3.set_size_request(700, 500)
+    window4 = self.glade_xml.get_widget("drawingarea4")
+    window4.set_size_request(700, 500)
+    
+    pr_upper = Properties_Renderer(window3, window3.window)
+    #pr_lower = Properties_Renderer(window4, window4.window)
+    self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, None, None)
+    #self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, window2, pr_lower)
+    
+    
     #############################
     ##Highly experimental
     self.box = self.glade_xml.get_widget('vbox12')
@@ -123,10 +120,6 @@ class Volume_Tab_View:
     self.log_panel.hide()
 
     
-
-
-                                                                                
-    self.gc = self.pixmap.window.new_gc()
     self.prepare_tree()
                                                                                 
   def reset_tree_model(self, *in_args):
@@ -275,24 +268,12 @@ class Volume_Tab_View:
 
     #self.treeview.expand_all()
     self.clear_all_buttonpanels()
-
-  def on_expose_event(self,widget,event):
-    self.on_tree_selection_changed(None)
-
-  def on_props_expose_event(self, widget, event):
-    self.lr.do_render()
-
-  def on_size_allocate(self, widget, allocation):
-    #self.width = allocation.width
-    #self.height = allocation.height
-    pass
-
-
+  
   def on_tree_selection_changed(self, *args):
     selection = self.treeview.get_selection()
     model,iter = selection.get_selected()
     if iter == None:
-      self.vr.render_noselection()
+      self.display_view.render_no_selection()
       return
 
     treepath = model.get_path(iter)
@@ -303,98 +284,55 @@ class Volume_Tab_View:
       nme = model.get_value(parent_iter, NAME_COL)
       vg_name = nme.strip()
       pv_list = self.model_factory.query_PVs_for_VG(vg_name)
-      self.vr.render(pv_list, 0)
-      vg_data = self.model_factory.get_data_for_VG(vg_name)
-      self.lr.render_to_layout_area(vg_data, vg_name, type)
+      vg = self.model_factory.get_VG(vg_name)
       self.treeview.expand_row(treepath, False)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.phys_vol_view_panel.show()
+      self.display_view.render_pvs(vg, pv_list)
     elif type == VG_LOG_TYPE:
       parent_iter = model.iter_parent(iter)
       nme = model.get_value(parent_iter, NAME_COL)
       vg_name = nme.strip()
       lv_list = self.model_factory.query_LVs_for_VG(vg_name)
-      self.vr.render(lv_list, 2)
-      vg_data = self.model_factory.get_data_for_VG(vg_name)
-      self.lr.render_to_layout_area(vg_data, vg_name, type)
+      vg = self.model_factory.get_VG(vg_name)
       self.treeview.expand_row(treepath, False)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.show_log_vol_view_panel(lv_list)
+      self.display_view.render_lvs(vg, lv_list)
     elif type == VG_TYPE:
       nme = model.get_value(iter, NAME_COL)
       vg_name = nme.strip()
       lv_list = self.model_factory.query_LVs_for_VG(vg_name)
       pv_list = self.model_factory.query_PVs_for_VG(vg_name)
-      vg_data = self.model_factory.get_data_for_VG(vg_name)
-      self.lr.render_to_layout_area(vg_data, vg_name, type)
+      vg = self.model_factory.get_VG(vg_name)
       self.clear_all_buttonpanels()
       self.treeview.expand_row(treepath, False)
       self.input_controller.clear_highlighted_sections()
-      self.vr.render_dual(pv_list, lv_list)
+      self.display_view.render_vg(vg, lv_list, pv_list)
     elif type == LOG_TYPE:
       pathname = model.get_value(iter, PATH_COL)
       lv_name = pathname.strip()
       lv = self.model_factory.get_LV(lv_name)
-      lv_data = self.model_factory.get_data_for_LV(lv_name)
-      self.lr.render_to_layout_area(lv_data, lv_name, type)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.log_panel.show()
-      self.vr.render_single_volume(lv, type)
+      self.display_view.render_lv(lv)
     elif type == PHYS_TYPE:
-      #pathname = model.get_value(iter, PATH_COL)
-      #pv_name = pathname.strip()
-      #pv = self.model_factory.get_PV(pv_name)
-      #pv_data = self.model_factory.get_data_for_PV(pv_name)
-      #self.lr.render_to_layout_area(pv_data, pv_name, type)
-      #self.input_controller.clear_highlighted_sections()
-      #self.clear_all_buttonpanels()
-      #self.phys_panel.show()
-      #self.vr.render_single_volume(pv, type)
-      
       pv = model.get_value(iter, OBJ_COL)
-      self.lr.render_to_layout_area(pv.getProperties(), pv.get_path(), type)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.phys_panel.show()
-      self.vr.render_single_volume(pv, type) 
+      self.display_view.render_pv(pv)
     elif type == UNALLOCATED_TYPE:
-      #pathname = model.get_value(iter, PATH_COL)
-      #pv_name = pathname.strip()
-      #pv = self.model_factory.get_PV(pv_name)
-      #self.vr.render_single_volume(pv, type) 
-      #pv_data = self.model_factory.get_data_for_PV(pv_name)
-      #self.lr.render_to_layout_area(pv_data, pv_name, type)
-      #self.input_controller.clear_highlighted_sections()
-      #self.clear_all_buttonpanels()
-      #self.unalloc_panel.show()
-      
       pv = model.get_value(iter, OBJ_COL)
-      self.vr.render_single_volume(pv, type) 
-      self.lr.render_to_layout_area(pv.getProperties(),
-                                    pv.get_path(),
-                                    type)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.unalloc_panel.show()
+      self.display_view.render_unalloc_pv(pv)
     elif type == UNINITIALIZED_TYPE:
-      #pathname = model.get_value(iter, PATH_COL)
-      #uv_name = pathname.strip()
-      #uv = self.model_factory.get_UV(uv_name)
-      #uv_data = self.model_factory.get_data_for_UV(uv_name)
-      #self.lr.render_to_layout_area(uv_data, uv_name, type)
-      #self.vr.render_single_volume(uv, type) 
-      #self.input_controller.clear_highlighted_sections()
-      #self.clear_all_buttonpanels()
-      #self.uninit_panel.show()
-      
       uv = model.get_value(iter, OBJ_COL)
-      self.vr.render_single_volume(uv, type) 
-      self.lr.render_to_layout_area(uv.getProperties(),
-                                    uv.get_path(),
-                                    type)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       button = self.input_controller.init_entity_button
@@ -403,47 +341,12 @@ class Volume_Tab_View:
       else:
           button.set_sensitive(False)
       self.uninit_panel.show()
+      self.display_view.render_uninit_pv(uv)
     else:
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
-      self.vr.render_noselection()
-      self.lr.clear_layout_area()
-      
-
-  def on_scroll_event(self, *args):
-    self.on_tree_selection_changed(None)
-    return True  
-
-  def on_mouse_button_press(self, widget, event, *args):
-    selection = self.treeview.get_selection()
-    model,iter = selection.get_selected()
-    if iter == None:
-      return
-
-    type = model.get_value(iter, TYPE_COL)
-    if type == VG_TYPE:
-      self.vr.dual_highlight_section_persist(event)
-    elif type == VG_PHYS_TYPE:
-      result = self.vr.highlight_section_persist(event)
-      self.input_controller.register_highlighted_sections(VG_PHYS_TYPE, result)
-    elif type == VG_LOG_TYPE:
-      result = self.vr.highlight_section_persist(event)
-      self.input_controller.register_highlighted_sections(VG_LOG_TYPE, result)
-    elif type == PHYS_TYPE:
-      result = self.vr.single_highlight_extent_persist(event)
-      self.input_controller.register_highlighted_sections(PHYS_TYPE, result)
-    elif type == LOG_TYPE:
-      return
-    elif type == UNALLOCATED_TYPE:
-      return
-    elif type == UNINITIALIZED_TYPE:
-      return
-
-  def on_motion_event(self, widget, event, *args):
-    return
-    layout = self.vr.highlight_section(widget, event, *args)
-    self.lr.render_selection(layout)
-
+      self.display_view.render_no_selection()
+  
   def on_row_expand_collapse(self, treeview, logical,expand, openall, *params):
     treeview.get_model()
     selection = treeview.get_selection()
