@@ -52,18 +52,21 @@ class CommandHandler:
         arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "m")
       elif cmd_args_dict[NEW_LV_UNIT_ARG] == GIGABYTE_IDX:
         arglist.append(str(cmd_args_dict[NEW_LV_SIZE_ARG]) + "g")
-
-    if cmd_args_dict[NEW_LV_IS_STRIPED_ARG] == True:
-      arglist.append("-i")
-      arglist.append(str(cmd_args_dict[NEW_LV_NUM_STRIPES_ARG]))
-      arglist.append("-I")
-      arglist.append(str(cmd_args_dict[NEW_LV_STRIPE_SIZE_ARG]))
-
-    #MUST be last arg for this command block
-    vgname = cmd_args_dict[NEW_LV_VGNAME_ARG]
-    arglist.append(vgname)
+    
+    if cmd_args_dict[NEW_LV_SNAPSHOT]:
+      arglist.append("-s")
+      arglist.append(cmd_args_dict[NEW_LV_SNAPSHOT_ORIGIN])
+    else:
+      if cmd_args_dict[NEW_LV_IS_STRIPED_ARG] == True:
+        arglist.append("-i")
+        arglist.append(str(cmd_args_dict[NEW_LV_NUM_STRIPES_ARG]))
+        arglist.append("-I")
+        arglist.append(str(cmd_args_dict[NEW_LV_STRIPE_SIZE_ARG]))
+      vgname = cmd_args_dict[NEW_LV_VGNAME_ARG]
+      arglist.append(vgname)
+      
     cmd_str = ' '.join(arglist)
-
+    
     result_string,err,res = execWithCaptureErrorStatus(LVCREATE_BIN_PATH,arglist)
     if res != 0:
       raise CommandError('FATAL', LVCREATE_FAILURE % (cmd_str,err))

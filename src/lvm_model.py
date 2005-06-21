@@ -346,7 +346,7 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
     arglist.append(pathname)
- 
+    
     line = execWithCapture(LVM_BIN_PATH,arglist)
     if (line == None) or (len(line) < 1):
       ###FIXME - Throw exception here, if no result is returned
@@ -359,8 +359,28 @@ class lvm_model:
                        words[L_SIZE_COL],
                        True)
     
+    lv.set_has_snapshots(words[L_ATTR_COL][0] == 'o')
+    if words[L_ATTR_COL][0] == 's':
+      # snapshot
+      arglist = list()
+      arglist.append(LVM_BIN_PATH)
+      arglist.append("lvs")
+      arglist.append("--nosuffix")
+      arglist.append("--noheadings")
+      arglist.append("--separator")
+      arglist.append(",")
+      arglist.append('-o')
+      arglist.append("origin,snap_percent")
+      arglist.append(lv.get_path())
+      line = execWithCapture(LVM_BIN_PATH,arglist)
+      if (line == None) or (len(line) < 1):
+        ###FIXME - Throw exception here, if no result is returned
+        return None
+      words = line.split(',')
+      lv.set_snapshot_origin(words[0].strip(), float(words[1]))
+    
     # set renderable properties
-    lv.setProperties(self.get_data_for_LV(lv.get_path()))
+    lv.setProperties(self.get_data_for_LV(lv))
     
     # get size in extents
     arglist = [LVM_BIN_PATH, 'lvs', '--nosuffix', '--noheadings']
@@ -390,7 +410,7 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
     arglist.append(vgname)
-
+    
     result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     for line in lines:
@@ -399,7 +419,19 @@ class lvm_model:
       path = self.get_logical_volume_path(name, vgname)
       lv = self.get_LV(path)
       lvlist.append(lv)
-
+    
+    # link snapshots
+    snapshots = []
+    for lv in lvlist:
+      if lv.get_snapshot_origin() != None:
+        snapshots.append(lv)
+    for snap in snapshots:
+      # find origin
+      for orig in lvlist:
+        if orig.get_name().strip() == snap.get_snapshot_origin():
+          snap.set_snapshot_origin(orig, snap.get_snapshot_usage())
+          orig.add_snapshot(snap)
+    
     #Now check if there is free space in Volume Group with name vg_name.
     #If there is free space, add an LV marked as 'unused' for that available
     # space, so that it can be rendered properly
@@ -415,7 +447,7 @@ class lvm_model:
     vg_arglist.append("-o")
     vg_arglist.append("+vg_free_count")
     vg_arglist.append(vg_name)
-
+    
     result_string = execWithCapture(LVM_BIN_PATH,vg_arglist)
     lines = result_string.splitlines()
     for line in lines:
@@ -597,8 +629,8 @@ class lvm_model:
     return text_list
 
   
-  def get_data_for_LV(self, p):
-    path = p.strip()
+  def get_data_for_LV(self, lv):
+    path = lv.get_path().strip()
     text_list = list()
     arglist = list()
     arglist.append(LVM_BIN_PATH)
@@ -609,19 +641,28 @@ class lvm_model:
     arglist.append("-o")
     arglist.append(LVS_OPTION_STRING)
     arglist.append(path)
-
+    
     result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(LV_NAME)
     text_list.append(words[LV_NAME_IDX])
+    if lv.get_has_snapshots():
+      text_list.append(_("Has snapshot:  "))
+      text_list.append(_("True"))
+    if lv.get_snapshot_origin() != None:
+      text_list.append(_("Snapshot origin:  "))
+      text_list.append(lv.get_snapshot_origin())
     text_list.append(VG_NAME)
     text_list.append(words[LV_VG_NAME_IDX])
     text_list.append(LV_SIZE)
     text_list.append(words[LV_SIZE_IDX])
+    if lv.get_snapshot_origin() != None:
+      text_list.append(_("Snapshot usage:  "))
+      text_list.append(str(lv.get_snapshot_usage()) + ' %')
     text_list.append(LV_SEG_COUNT)
     text_list.append(words[LV_SEG_COUNT_IDX])
-
+    
     if int(words[LV_STRIPE_COUNT_IDX]) > 1:
       text_list.append(LV_STRIPE_COUNT)
       text_list.append(words[LV_STRIPE_COUNT_IDX])
@@ -631,7 +672,7 @@ class lvm_model:
     text_list.append(words[LV_ATTR_IDX])
     text_list.append(LV_UUID)
     text_list.append(words[LV_UUID_IDX])
-
+    
     mount_point = self.getMountPoint(path)
     if mount_point == None:
       mount_point = UNMOUNTED

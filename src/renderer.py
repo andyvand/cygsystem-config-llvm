@@ -197,7 +197,7 @@ class DisplayView:
             selectable = pv.is_utilized
             cyl = Subcylinder(self.pv_cyl_gen, 1, 2, selectable, int(pv.get_volume_size()))
             #label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>"
-            label = pv.get_name()
+            label = "<span size=\"8000\">" + pv.get_name() + "</span>"
             cyl.set_label_upper(label)
             self.display.append_right(cyl)
             self.display.append_right(Separator())
@@ -244,11 +244,12 @@ class DisplayView:
         label = line1 + line2 + line3
         self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.lv_cyl_gen))
+        lv_cyls_dir = {}
         for lv in lv_list:
             selectable = lv.is_utilized
-            cyl = Subcylinder(self.lv_cyl_gen, 1, 2, selectable, lv.size_extents)
+            cyl = Subcylinder(self.lv_cyl_gen, 1, 0, selectable, lv.size_extents)
             #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
-            label = lv.get_name()
+            label = "<span size=\"8000\">" + lv.get_name() + "</span>"
             cyl.set_label_upper(label)
             self.display.append_right(cyl)
             self.display.append_right(Separator())
@@ -256,6 +257,19 @@ class DisplayView:
             cyl.add_object(CYL_ID_VOLUME, lv)
             cyl.add_object(CYL_ID_FUNCTION, DisplayView.render_lv)
             cyl.add_object(CYL_ID_ARGS, [lv])
+            lv_cyls_dir[lv.get_name()] = cyl
+        
+        # set up snapshot highlighting
+        for orig in lv_list:
+            snaps = orig.get_snapshots()
+            for snap in snaps:
+                orig_cyl = lv_cyls_dir[orig.get_name()]
+                snap_cyl = lv_cyls_dir[snap.get_name()]
+                orig_cyl.add_highlightable(snap_cyl)
+                snap_cyl.add_highlightable(orig_cyl)
+                label_snap = "<span size=\"8000\">" + _("Snapshot of ") + orig.get_name() + "</span>"
+                snap_cyl.set_label_lower(label_snap, False, True, True)
+        
         self.draw()
     
     def render_vg(self, vg, lv_list, pv_list):
@@ -283,26 +297,41 @@ class DisplayView:
         lv_cyls = []
         for lv in lv_list:
             #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
-            label = lv.get_name()
+            label = "<span size=\"8000\">" + lv.get_name() + "</span>"
             cyl = None
             if lv.is_utilized:
-                cyl = Subcylinder(self.lv_cyl_gen, 1, 2, True)
+                cyl = Subcylinder(self.lv_cyl_gen, 1, 0, True)
                 lv_cyls_dir[lv.get_name()] = cyl
             else:
-                cyl = Subcylinder(self.lv_cyl_gen, 1, 2, False, lv.size_extents)
+                cyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, lv.size_extents)
             cyl.set_label_upper(label)
             lv_cyls.append(cyl)
             # set up helper display
             cyl.add_object(CYL_ID_VOLUME, lv)
             cyl.add_object(CYL_ID_FUNCTION, DisplayView.render_lv)
             cyl.add_object(CYL_ID_ARGS, [lv])
-            
+        
+        # set up snapshot highlighting
+        for orig in lv_list:
+            orig_cyl = None
+            snaps = orig.get_snapshots()
+            if len(snaps) != 0:
+                orig_cyl = lv_cyls_dir[orig.get_name()]
+                label_orig = "<span size=\"8000\">" + _("Origin") + "</span>"
+                orig_cyl.set_label_lower(label_orig, False, True, True)
+            for snap in snaps:
+                snap_cyl = lv_cyls_dir[snap.get_name()]
+                orig_cyl.add_highlightable(snap_cyl)
+                snap_cyl.add_highlightable(orig_cyl)
+                label_snap = "<span size=\"8000\">" + _("Snapshot") + "</span>"
+                snap_cyl.set_label_lower(label_snap, False, True, True)
+        
         pv_cyls = []
         for pv in pv_list:
             #pv_cyl = Subcylinder(self.pv_cyl_gen, 1, 2, True)
             pv_cyl = Subcylinder(self.pv_cyl_gen, 1, 2, False)
             #label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>"
-            label = pv.get_name()
+            label = "<span size=\"8000\">" + pv.get_name() + "</span>"
             pv_cyl.set_label_upper(label)
             pv_cyls.append(pv_cyl)
             # set up helper display

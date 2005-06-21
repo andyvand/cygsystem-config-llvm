@@ -103,6 +103,11 @@ EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reach
 
 NOT_ENOUGH_SPACE_FOR_NEW_LV=_("Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 
+ALREADY_A_SNAPSHOT=_("A snapshot of a snapshot is not supported.")
+
+CANNOT_REMOVE_UNDER_SNAPSHOT=_("Logical volume %s is under a snapshot %s. Please remove the snapshot first.")
+CANNOT_REMOVE_UNDER_SNAPSHOTS=_("Logical volume %s is under snapshots: %s. Please remove snapshots first.")
+
 TYPE_CONVERSION_ERROR=_("Undefined type conversion error in model factory. Unable to complete task.")
 
 NUMERIC_CONVERSION_ERROR=_("There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind.")
@@ -458,7 +463,25 @@ class InputController:
       model, iter = selection.get_selected()
       name = model.get_value(iter, PATH_COL)
       lvname = name.strip()
-
+    
+    lv = self.model_factory.get_LV(lvname)
+    # get lvs with snapshot info, will go away :)
+    lvs = self.model_factory.query_LVs_for_VG(lv.get_vg_name())
+    for t in lvs:
+        if t.get_name().strip() == lv.get_name().strip():
+            lv = t
+            break
+    if lv.get_has_snapshots():
+        snapshots = lv.get_snapshots()
+        if len(snapshots) == 1:
+            self.errorMessage(CANNOT_REMOVE_UNDER_SNAPSHOT % (lv.get_name(), snapshots[0].get_name()))
+        else:
+            snaps_str = snapshots[0].get_name()
+            for snap in snapshots[1:]:
+                snaps_str = snaps_str + ', ' + snap.get_name()
+            self.errorMessage(CANNOT_REMOVE_UNDER_SNAPSHOTS % (lv.get_name(), snaps_str))
+        return
+    
     retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
     if (retval == gtk.RESPONSE_NO):
       return
@@ -814,6 +837,8 @@ class InputController:
     self.migrate_exts_button.connect("clicked",self.on_migrate_exts)
     self.edit_lv_button = self.glade_xml.get_widget('button35')
     self.edit_lv_button.connect("clicked",self.on_edit_lv)
+    self.create_snapshot_button = self.glade_xml.get_widget('create_snapshot_button')
+    self.create_snapshot_button.connect("clicked",self.on_create_snapshot)
 
   def on_remove_unalloc_pv(self, button):
     selection = self.treeview.get_selection()
@@ -885,8 +910,7 @@ class InputController:
   def on_edit_lv(self, button):
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
-      lv_path = model.get_value(iter, PATH_COL)
-      lv = self.model_factory.get_LV(lv_path)
+      lv = model.get_value(iter, OBJ_COL)
       vg_name = lv.get_vg_name()
       vg = self.model_factory.get_VG(vg_name)
       dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler)
@@ -896,11 +920,46 @@ class InputController:
       #args.append(Name_request)
       args.append(vg.get_name().strip())
       apply(self.reset_tree_model, args)
+  
+  def on_create_snapshot(self, button):
+      selection = self.treeview.get_selection()
+      model, iter = selection.get_selected()
+      lv = model.get_value(iter, OBJ_COL)
+      vg = self.model_factory.get_VG(lv.get_vg_name())
+      vgname = vg.get_name()
+      try:
+          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
+      except ValueError, e:
+          self.errorMessage(TYPE_CONVERSION_ERROR % e)
+          return
+      if max_lvs == lvs:
+          self.errorMessage(EXCEEDED_MAX_LVS)
+          return
+      
+      # checks
+      free_space,free_extents = self.model_factory.get_free_space_on_VG(vgname,"m")
+      if int(free_extents) == 0:
+          self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vgname)
+          return
+      if lv.get_snapshot_origin() != None:
+          # already a snapshot
+          self.errorMessage(ALREADY_A_SNAPSHOT)
+          return
       
       
+      dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler, True)
+      dlg.run()
+      
+      args = list()
+      #args.append(Name_request)
+      args.append(vg.get_name().strip())
+      apply(self.reset_tree_model, args)
+      
+  
+  
   #######################################################
   ###Convenience Dialogs
-                                                                                
+  
   def warningMessage(self, message):
     dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_YES_NO,
                             message)
@@ -1040,11 +1099,16 @@ class MigrateDialog:
 class LV_edit_props:
     
     # set lv to None if new lv is to be created
-    def __init__(self, lv, vg, model_factory, command_handler):
+    def __init__(self, lv, vg, model_factory, command_handler, snapshot=False):
+        self.snapshot = snapshot
         if lv == None:
             self.new = True
+            self.snapshot = False
         else:
-            self.new = False
+            if self.snapshot:
+                self.new = True
+            else:
+                self.new = False
         self.lv = lv
         self.vg = vg
         self.model_factory = model_factory
@@ -1057,7 +1121,10 @@ class LV_edit_props:
         for fs in fss:
             self.filesystems[fs.name] = fs
         if self.new:
-            self.fs = self.fs_none
+            if self.snapshot:
+                self.fs = Filesystem.get_fs(self.lv.get_path())
+            else:
+                self.fs = self.fs_none
             self.mount_point = ''
             self.mount = False
             self.mount_at_reboot = False
@@ -1119,9 +1186,15 @@ class LV_edit_props:
     def setup_dlg(self):
         # title
         if self.new:
-            self.dlg.set_title(_("Create New Logical Volume"))
+            if self.snapshot:
+                self.dlg.set_title(_("Create A Snapshot of ") + self.lv.get_name())
+            else:
+                self.dlg.set_title(_("Create New Logical Volume"))
         else:
-            self.dlg.set_title(_("Edit Logical Volume"))
+            if self.lv.get_snapshot_origin() != None:
+                self.dlg.set_title(_("Edit ") + self.lv.get_name() + _(", a Snapshot of ") + self.lv.get_snapshot_origin().get_name())
+            else:
+                self.dlg.set_title(_("Edit Logical Volume"))
         
         # lv name
         self.name_entry = self.glade_xml.get_widget('lv_name')
@@ -1142,7 +1215,7 @@ class LV_edit_props:
         model = stripe_size_combo.get_model()
         iter = model.get_iter_first()
         stripe_size_combo.set_active_iter(iter)
-        if self.new:
+        if self.new and not self.snapshot:
             self.glade_xml.get_widget('stripes_container').set_sensitive(False)
             stripe_size_combo = self.glade_xml.get_widget('stripe_size')
             model = stripe_size_combo.get_model()
@@ -1173,6 +1246,11 @@ class LV_edit_props:
         else:
             self.change_fs_notified = False
         self.filesys_show_hide(False)
+        if self.snapshot:
+            self.glade_xml.get_widget('filesys_container').set_sensitive(False)
+        elif not self.new:
+            if self.lv.get_snapshot_origin() != None:
+                self.glade_xml.get_widget('filesys_container').set_sensitive(False)
         self.mountpoint_entry = self.glade_xml.get_widget('mount_point')
         if self.new:
             self.mountpoint_entry.set_text('')
@@ -1484,12 +1562,16 @@ class LV_edit_props:
                 new_lv_command_set[NEW_LV_STRIPE_SIZE_ARG] = stripe_size
                 new_lv_command_set[NEW_LV_NUM_STRIPES_ARG] = stripes_num
             new_lv_command_set[NEW_LV_MAKE_FS_ARG] = False
+            new_lv_command_set[NEW_LV_SNAPSHOT] = self.snapshot
+            if self.snapshot:
+                new_lv_command_set[NEW_LV_SNAPSHOT_ORIGIN] = self.lv.get_path().strip()
             self.command_handler.new_lv(new_lv_command_set)
             
             lv_path = self.model_factory.get_logical_volume_path(name_new, self.vg.get_name())
             
             # make filesystem
-            filesys_new.create(lv_path)
+            if not self.snapshot:
+                filesys_new.create(lv_path)
             
             # mount
             if mount_new:
@@ -1501,6 +1583,8 @@ class LV_edit_props:
             
             rename = name_new != self.lv.get_name().strip()
             filesys_change = (filesys_new != self.fs)
+            
+            snapshot = self.lv.get_snapshot_origin()
             
             resize = (size_new != self.size)
             extend = (size_new > self.size)
@@ -1517,10 +1601,11 @@ class LV_edit_props:
                     return False
                 unmount_prompt = False
             else:
-                if extend and mounted and (not filesys_new.extendable_online):
-                    unmount = True
-                if reduce and mounted and (not filesys_new.reducible_online):
-                    unmount = True
+                if not snapshot:
+                    if extend and mounted and (not filesys_new.extendable_online):
+                        unmount = True
+                    if reduce and mounted and (not filesys_new.reducible_online):
+                        unmount = True
             
             # unmount if needed
             if unmount and mounted:
@@ -1538,7 +1623,13 @@ class LV_edit_props:
             
             # resize lv
             if resize:
-                if not filesys_change:
+                if filesys_change or snapshot:
+                    # resize LV only
+                    if size_new > self.size:
+                        self.command_handler.extend_lv(lv_path, size_new)
+                    else:
+                        self.command_handler.reduce_lv(lv_path, size_new)
+                else:
                     # resize lv and filesystem
                     if size_new > self.size:
                         # resize LV first
@@ -1566,12 +1657,6 @@ class LV_edit_props:
                         else:
                             filesys_new.reduce_offline(lv_path, new_size_bytes)
                         # resize LV
-                        self.command_handler.reduce_lv(lv_path, size_new)
-                else:
-                    # resize LV only
-                    if size_new > self.size:
-                        self.command_handler.extend_lv(lv_path, size_new)
-                    else:
                         self.command_handler.reduce_lv(lv_path, size_new)
             
             # fs options

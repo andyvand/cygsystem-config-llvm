@@ -202,7 +202,7 @@ class Volume_Tab_View:
         treemodel.set(vg_child_iter, NAME_COL, vg_name, 
                                      TYPE_COL, VG_TYPE,
                                      PATH_COL, vg_name)
-
+        
         phys_iter = treemodel.append(vg_child_iter)
         log_iter = treemodel.append(vg_child_iter)
         pview_string = vg_name + "<span foreground=\"#ED1C2A\"><i>  " + PHYSICAL_VIEW + "</i></span>"
@@ -222,7 +222,7 @@ class Volume_Tab_View:
                         TYPE_COL, PHYS_TYPE,
                         PATH_COL, pv.get_path(),
                         OBJ_COL, pv)
-
+        
         lv_list = self.model_factory.query_LVs_for_VG(vg_name)
         for lv in lv_list:
           if lv.is_vol_utilized():
@@ -232,7 +232,8 @@ class Volume_Tab_View:
                           NAME_COL, log_string, 
                           TYPE_COL, LOG_TYPE,
                           PATH_COL, lv.get_path(),
-                          SIMPLE_LV_NAME_COL, lv.get_name())
+                          SIMPLE_LV_NAME_COL, lv.get_name(),
+                          OBJ_COL, lv)
       #Expand if there are entries 
       self.treeview.expand_row(treemodel.get_path(vg_iter),False)
 
@@ -309,9 +310,7 @@ class Volume_Tab_View:
       self.input_controller.clear_highlighted_sections()
       self.display_view.render_vg(vg, lv_list, pv_list)
     elif type == LOG_TYPE:
-      pathname = model.get_value(iter, PATH_COL)
-      lv_name = pathname.strip()
-      lv = self.model_factory.get_LV(lv_name)
+      lv = model.get_value(iter, OBJ_COL)
       self.input_controller.clear_highlighted_sections()
       self.clear_all_buttonpanels()
       self.log_panel.show()
