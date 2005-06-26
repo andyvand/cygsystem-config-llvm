@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-06-26 13:12+0200\n"
+"PO-Revision-Date: 2005-06-26 13:21+0200\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -591,7 +591,7 @@ msgstr "Mount point (Se in bianco il VL non sarà montato)"
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
-msgstr "Nome per il Gruppo di Volume: "
+msgstr "Nome del Gruppo di Volume: "
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
@@ -1125,7 +1125,7 @@ msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
-msgstr "Proprietà di"
+msgstr "Proprietà"
 
 #: src/Properties_Renderer.py:45 src/renderer.py:98
 msgid "Physical Volume"
