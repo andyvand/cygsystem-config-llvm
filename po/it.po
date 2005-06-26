@@ -5,22 +5,21 @@
 # translation of it.po to
 # translation of system-config-lvm.po to
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER.
 # Lorenzo Stobbione <lorenzo.stobbione@clsengineering.it>, 2004.
 # Francesco Tombolini <tombo@adamantio.net>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-02-19 12:23+0100\n"
+"PO-Revision-Date: 2005-06-26 13:12+0200\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Report-Msgid-Bugs-To: \n"
-"X-Generator: KBabel 1.9.1\n"
+"Content-Transfer-Encoding: 8bit"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
@@ -604,7 +603,7 @@ msgstr "Nuovo Gruppo di Volume"
 
 #: src/lvui.glade.h:47
 msgid "New Volume Group Form"
-msgstr "Modello per Nuovo Gruppo di Volume"
+msgstr "Finestra di dialogo Nuovo Gruppo di Volume"
 
 #. File System Types
 #: src/lvui.glade.h:48 src/lvmui_constants.py:48
