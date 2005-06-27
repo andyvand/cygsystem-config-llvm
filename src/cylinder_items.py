@@ -220,8 +220,11 @@ class CylinderItem(Widget):
 
 class Separator(CylinderItem):
     
-    def __init__(self, width=1):
+    def __init__(self, width=1, cyl_gen=None, pattern_id=0):
         CylinderItem.__init__(self, False, width)
+        
+        self.cyl_gen = cyl_gen
+        self.pattern_id = pattern_id
 
     def get_width(self):
         # no ratio adjustment
@@ -229,6 +232,13 @@ class Separator(CylinderItem):
     
     def get_smallest_selectable_width(self):
         return 0
+    
+    def draw(self, dc, gc, (x, y)):
+        if self.cyl_gen == None:
+            return
+        cyl_pix = self.cyl_gen.get_pattern(self.pattern_id, dc, self.get_width(), self.height)
+        dc.draw_pixbuf(gc, cyl_pix, 0, 0, x, y)
+    
 
 class End(CylinderItem):
     
@@ -722,9 +732,8 @@ class CylinderGenerator:
         self.pixbuf = gtk.gdk.pixbuf_new_from_file(pixmap_path)
         self.end_color = end_color
         
-        
+    
     def get_cyl(self, dc, width, height):
-        
         y_radius = height / 2
         (ellipse_table, x_radius) = get_ellipse_table(y_radius)
         
@@ -832,6 +841,32 @@ class CylinderGenerator:
         
         return pixbuf
     
+    def __get_pattern3(self, dc, width, height):
+        gc = dc.new_gc()
+        colormap = dc.get_colormap()
+        gc.foreground = colormap.alloc_color(0, 0, 0)
+        
+        cyl_pixbuf = self.get_cyl(dc, width, height)
+        
+        pixmap_width = cyl_pixbuf.get_width()
+        pixmap = gtk.gdk.Pixmap(dc, pixmap_width, height)
+        pixmap.draw_rectangle(gc, True, 0, 0, pixmap_width, height)
+        pixmap.draw_pixbuf(gc, cyl_pixbuf, 0, 0, 0, 0, -1, -1)
+        
+        for y in range(0, height, 6):
+            for x in range(0, pixmap_width):
+                pixmap.draw_point(gc, x, y)
+                pixmap.draw_point(gc, x, y+1)
+                pixmap.draw_point(gc, x, y+2)
+        
+        # get pixbuf from pixmap in order to add alpha channel
+        pixbuf = cyl_pixbuf.get_from_drawable(pixmap, pixmap.get_colormap(), 0, 0, 0, 0, pixmap_width, height)
+        
+        # add alpha channel
+        pixbuf = pixbuf.add_alpha(True, chr(0), chr(0), chr(0))
+        
+        return pixbuf
+    
     def get_pattern(self, pattern_id, dc, width, height):
         if pattern_id == 0:
             return self.__get_pattern0(dc, width, height)
@@ -839,6 +874,8 @@ class CylinderGenerator:
             return self.__get_pattern1(dc, width, height)
         elif pattern_id == 2:
             return self.__get_pattern2(dc, width, height)
+        elif pattern_id == 3:
+            return self.__get_pattern3(dc, width, height)
         else:
             raise 'INVALID PATTERN ID'
     

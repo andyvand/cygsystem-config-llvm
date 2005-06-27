@@ -242,94 +242,94 @@ class InputController:
     phys_extent_units_meg = True
     autobackup = True
     resizable = True
-
+    
     selection = self.treeview.get_selection()
     model,iter = selection.get_selected()
-    pv_name = model.get_value(iter, PATH_COL)
-
+    pv = model.get_value(iter, OBJ_COL)
+    
     proposed_name = self.new_vg_name.get_text().strip()
     if proposed_name == "":
-      self.errorMessage(MUST_PROVIDE_VG_NAME)
-      return
-
-    #Now check for unique name
-    vg_list = self.model_factory.query_VGs()
-    for vg in vg_list:
-      if vg.get_name().strip() == proposed_name:
-        self.new_vg_name.select_region(0, (-1))
-        self.errorMessage(NON_UNIQUE_VG_NAME % proposed_name)
+        self.errorMessage(MUST_PROVIDE_VG_NAME)
         return
+    
+    #Now check for unique name
+    vg_list = self.model_factory.get_VGs()
+    for vg in vg_list:
+        if vg.get_name() == proposed_name:
+            self.new_vg_name.select_region(0, (-1))
+            self.errorMessage(NON_UNIQUE_VG_NAME % proposed_name)
+            return
     Name_request = proposed_name
-
+    
     max_pvs_field = self.new_vg_max_pvs.get_text()
     if max_pvs_field.isalnum() == False:
-      self.errorMessage(NUMBERS_ONLY_MAX_PVS)
-      self.new_vg_max_pvs.set_text(str(MAX_PHYSICAL_VOLS))
-      return
-    else:
-      max_pvs = int(max_pvs_field)
-      if (max_pvs < 1) or (max_pvs > MAX_PHYSICAL_VOLS):
         self.errorMessage(NUMBERS_ONLY_MAX_PVS)
         self.new_vg_max_pvs.set_text(str(MAX_PHYSICAL_VOLS))
         return
-      max_physical_volumes = max_pvs
-
+    else:
+        max_pvs = int(max_pvs_field)
+        if (max_pvs < 1) or (max_pvs > MAX_PHYSICAL_VOLS):
+            self.errorMessage(NUMBERS_ONLY_MAX_PVS)
+            self.new_vg_max_pvs.set_text(str(MAX_PHYSICAL_VOLS))
+            return
+        max_physical_volumes = max_pvs
+    
     max_lvs_field = self.new_vg_max_lvs.get_text()
     if max_lvs_field.isalnum() == False:
-      self.errorMessage(NUMBERS_ONLY_MAX_LVS)
-      self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
-      return
-    else:
-      max_lvs = int(max_lvs_field)
-      if (max_lvs < 1) or (max_lvs > MAX_LOGICAL_VOLS):
         self.errorMessage(NUMBERS_ONLY_MAX_LVS)
         self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
         return
-      max_logical_volumes = max_lvs
-
+    else:
+        max_lvs = int(max_lvs_field)
+        if (max_lvs < 1) or (max_lvs > MAX_LOGICAL_VOLS):
+            self.errorMessage(NUMBERS_ONLY_MAX_LVS)
+            self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
+            return
+        max_logical_volumes = max_lvs
+    
     extent_idx = self.new_vg_extent_size.get_history()
     phys_extent_units_meg =  self.new_vg_radio_meg.get_active()
 
     try:
-      self.command_handler.create_new_vg(Name_request,
-                                         str(max_physical_volumes),
-                                         str(max_logical_volumes),
-                                         ACCEPTABLE_EXTENT_SIZES[extent_idx],
-                                         phys_extent_units_meg,
-                                         pv_name)
+        self.command_handler.create_new_vg(Name_request,
+                                           str(max_physical_volumes),
+                                           str(max_logical_volumes),
+                                           ACCEPTABLE_EXTENT_SIZES[extent_idx],
+                                           phys_extent_units_meg,
+                                           pv.get_path())
     except CommandError, e:
-      self.errorMessage(e.getMessage())
-
+        self.errorMessage(e.getMessage())
+    
     self.new_vg_dlg.hide()
-
+    
     args = list()
-    args.append(pv_name.strip())
+    args.append(pv.get_path())
     apply(self.reset_tree_model, args)
-
+  
   def prep_new_vg_dlg(self):
-    self.new_vg_name.set_text("")
-    self.new_vg_max_pvs.set_text(str(MAX_PHYSICAL_VOLS))
-    self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
-    self.new_vg_radio_meg.set_active(True)
-    self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
+      self.new_vg_name.set_text("")
+      self.new_vg_max_pvs.set_text(str(MAX_PHYSICAL_VOLS))
+      self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
+      self.new_vg_radio_meg.set_active(True)
+      self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
 
   def change_new_vg_radio(self, button):
-    menu = self.new_vg_extent_size.get_menu()
-    items = menu.get_children()
-    #We don't want to offer the 2 and 4 options for kilo's - min size is 8k
-    if self.new_vg_radio_meg.get_active() == True:
-      items[0].set_sensitive(True)
-      items[1].set_sensitive(True)
-      self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
-    else:
-      items[0].set_sensitive(False)
-      items[1].set_sensitive(False)
-      self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_KILO_IDX)
-
+      menu = self.new_vg_extent_size.get_menu()
+      items = menu.get_children()
+      #We don't want to offer the 2 and 4 options for kilo's - min size is 8k
+      if self.new_vg_radio_meg.get_active() == True:
+          items[0].set_sensitive(True)
+          items[1].set_sensitive(True)
+          self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
+      else:
+          items[0].set_sensitive(False)
+          items[1].set_sensitive(False)
+          self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_KILO_IDX)
+  
   def on_pv_rm(self, button):
-    self.remove_pv()
+      self.remove_pv()
 
-  def remove_pv(self, pvname=None):
+  def remove_pv(self, pv=None):
     #The following cases must be considered in this method:
     #1) a PV is to be removed that has extents mapped to an LV:
     #  1a) if there are other PVs, call pvmove on the PV to migrate the 
@@ -348,130 +348,109 @@ class InputController:
     mapped_lvs = True
     solo_pv = False
     reset_tree = False
-    if pvname == None:
-      reset_tree = True #This says that tree reset will not be handled by caller
-      selection = self.treeview.get_selection()
-      model, iter = selection.get_selected()
-      name = model.get_value(iter, PATH_COL)
-      pvname = name
-    pvname = pvname.strip()
+    if pv == None:
+        reset_tree = True #This says that tree reset will not be handled by caller
+        selection = self.treeview.get_selection()
+        model, iter = selection.get_selected()
+        pv = model.get_value(iter, OBJ_COL)
     
-    ###FIX This method call needs to be handled for exception
-    pv = None
-    for p in self.model_factory.query_PVs():
-        if p.get_path() == pvname:
-            pv = p
-            break
-    #pv = self.model_factory.get_PV(pvname)
-    extent_list = pv.get_extent_segments()
+    vg = pv.get_vg()
     
-    vgname = pv.get_vg_name().strip()
-    total,free,alloc = pv.get_extent_values()
-    pv_list = self.model_factory.query_PVs_for_VG(vgname)
+    total, alloc, free = pv.get_extent_total_used_free()
+    pv_list = vg.get_pvs().values()
     if len(pv_list) <= 1: #This PV is the only one in the VG
-      solo_pv = True
+        solo_pv = True
     else:
-      solo_pv = False
-
+        solo_pv = False
+    
+    extent_list = pv.get_extent_blocks()[:] # copy
     if len(extent_list) == 1: #There should always be at least one extent seg
-      #We now know either the entire PV is used by one LV, or else it is
-      #an unutilized PV. If the latter, we can just vgreduce it away 
-      seg_name = extent_list[0].get_name()
-      if (seg_name == FREE) or (seg_name == UNUSED):
-        mapped_lvs = False
-      else:
-        mapped_lvs = True
+        #We now know either the entire PV is used by one LV, or else it is
+        #an unutilized PV. If the latter, we can just vgreduce it away 
+        #if (seg_name == FREE) or (seg_name == UNUSED):
+        if extent_list[0].get_lv().is_used():
+            mapped_lvs = True
+        else:
+            mapped_lvs = False
     else:
-      mapped_lvs = True
-
+        mapped_lvs = True
+    
     #Cases:
     if mapped_lvs == False:
-      if solo_pv == True:
-        #call vgremove
-        retval = self.warningMessage(CONFIRM_VG_REMOVE % (pvname,vgname))
-        if (retval == gtk.RESPONSE_NO):
-          return
-        try:
-          self.command_handler.remove_vg(vgname)
-        except CommandError, e:
-          self.errorMessage(e.getMessage())
-          return
-
-      else: #solo_pv is False, more than one PV...
-        retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
-        if (retval == gtk.RESPONSE_NO):
-          return
-        try:
-          self.command_handler.reduce_vg(vgname, pvname)
-        except CommandError, e:
-          self.errorMessage(e.getMessage())
-          return
-    else:
-      #Two cases here: if solo_pv, bail, else check for size needed
-      if solo_pv == True:
-        self.errorMessage(SOLO_PV_IN_VG % pvname)
-        return
-      else: #There are additional PVs. We need to check space 
-        size, ext_count = self.model_factory.get_free_space_on_VG(vgname, "m")
-        actual_free_exts = int(ext_count) - free
-        if alloc <= actual_free_exts:
-            if self.command_handler.is_dm_mirror_loaded() == False:
-                self.errorMessage(NO_DM_MIRROR)
-                return
-            retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pvname,vgname))
+        if solo_pv:
+            #call vgremove
+            retval = self.warningMessage(CONFIRM_VG_REMOVE % (pv.get_path(),vg.get_name()))
             if (retval == gtk.RESPONSE_NO):
                 return
-
-            # remove unused from extent_list
-            for ext in extent_list[:]:
-                if ext.is_utilized() == False:
-                    extent_list.remove(ext)
-            dlg = self.migrate_exts_dlg(True, pv, extent_list)
-            if dlg == None:
-                return
             try:
-                self.command_handler.move_pv(pv.get_path(), extent_list, dlg.get_data())
+                self.command_handler.remove_vg(vg.get_name())
             except CommandError, e:
                 self.errorMessage(e.getMessage())
                 return
+        else: #solo_pv is False, more than one PV...
+            retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pv.get_path(),vg.get_name()))
+            if (retval == gtk.RESPONSE_NO):
+                return
             try:
-                self.command_handler.reduce_vg(vgname, pvname)
+                self.command_handler.reduce_vg(vg.get_name(), pv.get_path())
             except CommandError, e:
                 self.errorMessage(e.getMessage())
                 return
-            
-        else:
-            self.errorMessage(NOT_ENOUGH_SPACE_VG % (vgname,pvname))
-            return
-        
-        
-    if reset_tree == True:
-      args = list()
-      args.append(vgname)
-      apply(self.reset_tree_model, args)
     else:
-      return vgname
+        #Two cases here: if solo_pv, bail, else check for size needed
+        if solo_pv:
+            self.errorMessage(SOLO_PV_IN_VG % pv.get_path())
+            return
+        else: #There are additional PVs. We need to check space 
+            ext_total, ext_used, ext_free = vg.get_extent_total_used_free()
+            actual_free_exts = ext_free - free
+            if alloc <= actual_free_exts:
+                if self.command_handler.is_dm_mirror_loaded() == False:
+                    self.errorMessage(NO_DM_MIRROR)
+                    return
+                retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pv.get_path(),vg.get_name()))
+                if (retval == gtk.RESPONSE_NO):
+                    return
+                
+                # remove unused from extent_list
+                for ext in extent_list[:]:
+                    if ext.get_lv().is_used() == False:
+                        extent_list.remove(ext)
+                dlg = self.migrate_exts_dlg(True, pv, extent_list)
+                if dlg == None:
+                    return
+                try:
+                    self.command_handler.move_pv(pv.get_path(), extent_list, dlg.get_data())
+                except CommandError, e:
+                    self.errorMessage(e.getMessage())
+                    return
+                try:
+                    self.command_handler.reduce_vg(vg.get_name(), pv.get_path())
+                except CommandError, e:
+                    self.errorMessage(e.getMessage())
+                    return
+                
+            else:
+                self.errorMessage(NOT_ENOUGH_SPACE_VG % (vg.get_name(),pv.get_path()))
+                return
+    
+    if reset_tree == True:
+        args = list()
+        args.append(vg.get_name())
+        apply(self.reset_tree_model, args)
   
   def on_lv_rm(self, button):
     self.remove_lv()
-
-  def remove_lv(self, lvname=None):
+  
+  def remove_lv(self, lv=None):
     reset_tree = False
-    if lvname == None:
-      reset_tree = True
-      selection = self.treeview.get_selection()
-      model, iter = selection.get_selected()
-      name = model.get_value(iter, PATH_COL)
-      lvname = name.strip()
+    if lv == None:
+        reset_tree = True
+        selection = self.treeview.get_selection()
+        model, iter = selection.get_selected()
+        lv = model.get_value(iter, OBJ_COL)
     
-    lv = self.model_factory.get_LV(lvname)
-    # get lvs with snapshot info, will go away :)
-    lvs = self.model_factory.query_LVs_for_VG(lv.get_vg_name())
-    for t in lvs:
-        if t.get_name().strip() == lv.get_name().strip():
-            lv = t
-            break
-    if lv.get_has_snapshots():
+    if lv.has_snapshots():
         snapshots = lv.get_snapshots()
         if len(snapshots) == 1:
             self.errorMessage(CANNOT_REMOVE_UNDER_SNAPSHOT % (lv.get_name(), snapshots[0].get_name()))
@@ -482,88 +461,94 @@ class InputController:
             self.errorMessage(CANNOT_REMOVE_UNDER_SNAPSHOTS % (lv.get_name(), snaps_str))
         return
     
-    retval = self.warningMessage(CONFIRM_LV_REMOVE % lvname)
+    retval = self.warningMessage(CONFIRM_LV_REMOVE % lv.get_name())
     if (retval == gtk.RESPONSE_NO):
-      return
-
-    else:
-      #Check if LV is mounted -- if so, unmount
-      is_mounted,mnt_point,filesys = self.command_handler.is_lv_mounted(lvname)
-
-
-    if is_mounted == True:
-      retval = self.warningMessage(MOUNTED_WARNING % (lvname,filesys,mnt_point))
-      if (retval == gtk.RESPONSE_NO):
         return
-
-      try:
-        self.command_handler.unmount_lv(lvname)
-      except CommandError, e:
+  
+    else:
+        #Check if LV is mounted -- if so, unmount
+        is_mounted, mnt_point, filesys = self.command_handler.is_lv_mounted(lv.get_path())
+    
+    
+    if is_mounted:
+        retval = self.warningMessage(MOUNTED_WARNING % (lv.get_name(),filesys,mnt_point))
+        if (retval == gtk.RESPONSE_NO):
+            return
+        
+        try:
+            self.command_handler.unmount_lv(lv.get_path())
+        except CommandError, e:
+            self.errorMessage(e.getMessage())
+            return
+        
+    Fstab.remove(lv.get_path(), mnt_point)
+    
+    try:
+        self.command_handler.remove_lv(lv.get_path())
+    except CommandError, e:
         self.errorMessage(e.getMessage())
         return
     
-    Fstab.remove(lvname, mnt_point)
-    
-    try:
-      self.command_handler.remove_lv(lvname)
-    except CommandError, e:
-      self.errorMessage(e.getMessage())
-      return
-
     #args = list()
     #args.append(lvname)
     #apply(self.reset_tree_model, args)
-    if reset_tree == True:
-      apply(self.reset_tree_model)
-
+    if reset_tree:
+        apply(self.reset_tree_model)
+  
   def on_rm_select_lvs(self, button):
     if self.section_list == None:
-      return
+        return
     #check if list > 0
     if len(self.section_list) == 0:
-      return 
-    #need to check if section is 'unused'
-    for item in self.section_list:
-      if item.is_vol_utilized == False:
-        continue
-      lvname = item.get_path().strip()
-      self.remove_lv(lvname)
-
-
-      #args = list()
-      #args.append(lvname)
-      #apply(self.reset_tree_model, args)
+        return
+    
+    lvs_to_remove = self.section_list[:]
+    vgname = lvs_to_remove[0].get_vg().get_name()
+    # remove snapshots first
+    for lv in lvs_to_remove[:]:
+        if lv.is_snapshot():
+            self.remove_lv(lv)
+            lvs_to_remove.remove(lv)
+    self.model_factory.reload() # reload lvm data
+    vg = self.model_factory.get_VG(vgname)
+    # remove other lvs
+    for lv in lvs_to_remove:
+        self.remove_lv(vg.get_lvs()[lv.get_name()])
+    
     self.clear_highlighted_sections()
     apply(self.reset_tree_model)
-
+  
   def on_rm_select_pvs(self, button):
-    if self.section_list == None:
-      return
-    #need to check if list > 0
-    if len(self.section_list) == 0:
-      return 
-    selection = self.treeview.get_selection()
-    model,iter = selection.get_selected()
-    vgname = model.get_value(iter, PATH_COL).strip()
-    #need to check if section is 'unused'
-    for item in self.section_list:
-      pvname = item.get_path().strip()
-      self.remove_pv(pvname)
-
-    self.clear_highlighted_sections()
-    args = list()
-    args.append(vgname)
-    apply(self.reset_tree_model,args)
-    #apply(self.reset_tree_model)
-
-    
+      if self.section_list == None:
+          return
+      #need to check if list > 0
+      if len(self.section_list) == 0:
+          return
+      
+      for pv in self.section_list:
+          # need to reload lvm data
+          pvpath = pv.get_path()
+          vgname = pv.get_vg().get_name()
+          pv_to_remove = self.model_factory.get_VG(vgname).get_pvs()[pvpath]
+          self.remove_pv(pv_to_remove)
+          self.model_factory.reload()
+      
+      selection = self.treeview.get_selection()
+      model,iter = selection.get_selected()
+      vg = model.get_value(iter, OBJ_COL)
+      
+      self.clear_highlighted_sections()
+      args = list()
+      args.append(vg.get_name())
+      apply(self.reset_tree_model,args)
+  
   def on_new_lv(self, button):
       main_selection = self.treeview.get_selection()
-      main_model,main_iter = main_selection.get_selected()
+      main_model, main_iter = main_selection.get_selected()
       main_path = main_model.get_path(main_iter)
-      vgname = main_model.get_value(main_iter,PATH_COL).strip()
+      vg = main_model.get_value(main_iter, OBJ_COL)
       try:
-          max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
+          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vg.get_name())
       except ValueError, e:
           self.errorMessage(TYPE_CONVERSION_ERROR % e)
           return
@@ -571,30 +556,26 @@ class InputController:
           self.errorMessage(EXCEEDED_MAX_LVS)
           return
       
-      free_space,free_extents = self.model_factory.get_free_space_on_VG(vgname,"m")
-      if int(free_extents) == 0:
-          self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vgname)
+      total_exts, used_exts, free_exts = vg.get_extent_total_used_free()
+      if free_exts == 0:
+          self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vg.get_name())
           return
       
-      vg = self.model_factory.get_VG(vgname)
       dlg = LV_edit_props(None, vg, self.model_factory, self.command_handler)
       dlg.run()
       
       args = list()
-      args.append(vg.get_name().strip())
+      args.append(vg.get_name())
       apply(self.reset_tree_model, args)
-      return
   
-    
   def on_init_entity(self, button):
       selection = self.treeview.get_selection()
       model,iter = selection.get_selected()
-      name = model.get_value(iter, PATH_COL)
       pv = model.get_value(iter, OBJ_COL)
       if self.initialize_entity(pv) == None:
           return
-      apply(self.reset_tree_model, [name.strip()])
-      
+      apply(self.reset_tree_model, [pv.get_path()])
+  
   def initialize_entity(self, pv):
       path = pv.get_path()
       mountPoint = self.model_factory.getMountPoint(path)
@@ -639,224 +620,218 @@ class InputController:
       return path
   
   def on_add_pv_to_vg(self, button):
-    model = self.add_pv_to_vg_treeview.get_model()
-    if model != None:
-      model.clear()
-
-    vg_list = self.model_factory.query_VGs()
-    if len(vg_list) > 0:
-      for item in vg_list:
-        iter = model.append()
-        model.set(iter, NAME_COL, item.get_name(), 
-                        SIZE_COL, item.get_volume_size_string())
-    
-    selection = self.treeview.get_selection()
-    main_model, iter_val = selection.get_selected()
-    pname = main_model.get_value(iter_val, PATH_COL)
-    pathname = pname.strip()
-    label_string = ADD_PV_TO_VG_LABEL % pathname
-    self.add_pv_to_vg_label.set_text(label_string)
-    self.add_pv_to_vg_treeview.set_model(model)
-    self.add_pv_to_vg_dlg.show()
-
+      model = self.add_pv_to_vg_treeview.get_model()
+      if model != None:
+          model.clear()
+      
+      vg_list = self.model_factory.get_VGs()
+      if len(vg_list) > 0:
+          for vg in vg_list:
+              iter = model.append()
+              model.set(iter,
+                        NAME_COL, vg.get_name(),
+                        SIZE_COL, vg.get_size_total_used_free_string()[0])
+      
+      selection = self.treeview.get_selection()
+      main_model, iter_val = selection.get_selected()
+      pv = main_model.get_value(iter_val, OBJ_COL)
+      label_string = ADD_PV_TO_VG_LABEL % pv.get_path()
+      self.add_pv_to_vg_label.set_text(label_string)
+      self.add_pv_to_vg_treeview.set_model(model)
+      self.add_pv_to_vg_dlg.show()
+  
   def add_pv_to_vg_delete_event(self, *args):
-    self.add_pv_to_vg_dlg.hide()
-    return True
-
-  def on_ok_add_pv_to_vg(self, button):
-    selection = self.treeview.get_selection()
-    main_model, iter_val = selection.get_selected()
-    pname = main_model.get_value(iter_val, PATH_COL)
-    pathname = pname.strip()
-
-    selection = self.add_pv_to_vg_treeview.get_selection()
-    model, iter = selection.get_selected()
-    name = model.get_value(iter, NAME_COL)
-    vgname = name.strip()
-
-    #Check if this VG allows an Additional PV
-    try:
-      max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
-    except ValueError, e:
-      self.errorMessage(TYPE_CONVERSION_ERROR % e)
-      return
-    if max_pvs == pvs:
-      self.errorMessage(EXCEEDED_MAX_PVS)
       self.add_pv_to_vg_dlg.hide()
-      return
-
-    try:
-      self.command_handler.add_unalloc_to_vg(pathname, vgname)
-    except CommandError, e:
-      self.errorMessage(e.getMessage())
-      return
-
-    args = list()
-    args.append(pathname)
-    apply(self.reset_tree_model, args)
-
-    self.add_pv_to_vg_dlg.hide()
-
+      return True
+  
+  def on_ok_add_pv_to_vg(self, button):
+      selection = self.treeview.get_selection()
+      main_model, iter_val = selection.get_selected()
+      pv = main_model.get_value(iter_val, OBJ_COL)
+      
+      selection = self.add_pv_to_vg_treeview.get_selection()
+      model, iter = selection.get_selected()
+      vgname = model.get_value(iter, NAME_COL)
+      
+      #Check if this VG allows an Additional PV
+      try:
+          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
+      except ValueError, e:
+          self.errorMessage(TYPE_CONVERSION_ERROR % e)
+          return
+      if max_pvs == pvs:
+          self.errorMessage(EXCEEDED_MAX_PVS)
+          self.add_pv_to_vg_dlg.hide()
+          return
+      
+      try:
+          self.command_handler.add_unalloc_to_vg(pv.get_path(), vgname)
+      except CommandError, e:
+          self.errorMessage(e.getMessage())
+          return
+      
+      args = list()
+      args.append(pv.get_path())
+      apply(self.reset_tree_model, args)
+      
+      self.add_pv_to_vg_dlg.hide()
+  
   def on_cancel_add_pv_to_vg(self,button):
-    self.add_pv_to_vg_dlg.hide()
-
+      self.add_pv_to_vg_dlg.hide()
+  
+  
   def setup_extend_vg_form(self):
-    self.on_extend_vg_button = self.glade_xml.get_widget('on_extend_vg_button')
-    self.on_extend_vg_button.connect("clicked",self.on_extend_vg)
-    self.extend_vg_form = self.glade_xml.get_widget('extend_vg_form')
-    self.extend_vg_form.connect("delete_event",self.extend_vg_delete_event)
-    self.extend_vg_tree = self.glade_xml.get_widget('extend_vg_tree')
-    self.extend_vg_label = self.glade_xml.get_widget('extend_vg_label')
-    self.glade_xml.get_widget('on_ok_extend_vg').connect('clicked', self.on_ok_extend_vg)
-    self.glade_xml.get_widget('on_cancel_extend_vg').connect('clicked',self.on_cancel_extend_vg)
-    #set up columns for tree
-    model = gtk.ListStore (gobject.TYPE_STRING,
-                           gobject.TYPE_STRING,
-                           gobject.TYPE_STRING,
-                           gobject.TYPE_INT,
-                           gobject.TYPE_PYOBJECT)
-
-    self.extend_vg_tree.set_model(model)
-    renderer1 = gtk.CellRendererText()
-    column1 = gtk.TreeViewColumn(ENTITY_NAME,renderer1, text=0)
-    self.extend_vg_tree.append_column(column1)
-    renderer2 = gtk.CellRendererText()
-    column2 = gtk.TreeViewColumn(ENTITY_SIZE,renderer2, text=1)
-    self.extend_vg_tree.append_column(column2)
-    renderer3 = gtk.CellRendererText()
-    column3 = gtk.TreeViewColumn(ENTITY_TYPE,renderer3, markup=2)
-    self.extend_vg_tree.append_column(column3)
-
-
+      self.on_extend_vg_button = self.glade_xml.get_widget('on_extend_vg_button')
+      self.on_extend_vg_button.connect("clicked",self.on_extend_vg)
+      self.extend_vg_form = self.glade_xml.get_widget('extend_vg_form')
+      self.extend_vg_form.connect("delete_event",self.extend_vg_delete_event)
+      self.extend_vg_tree = self.glade_xml.get_widget('extend_vg_tree')
+      self.extend_vg_label = self.glade_xml.get_widget('extend_vg_label')
+      self.glade_xml.get_widget('on_ok_extend_vg').connect('clicked', self.on_ok_extend_vg)
+      self.glade_xml.get_widget('on_cancel_extend_vg').connect('clicked',self.on_cancel_extend_vg)
+      #set up columns for tree
+      model = gtk.ListStore (gobject.TYPE_STRING,
+                             gobject.TYPE_STRING,
+                             gobject.TYPE_STRING,
+                             gobject.TYPE_INT,
+                             gobject.TYPE_PYOBJECT)
+      
+      self.extend_vg_tree.set_model(model)
+      renderer1 = gtk.CellRendererText()
+      column1 = gtk.TreeViewColumn(ENTITY_NAME,renderer1, text=0)
+      self.extend_vg_tree.append_column(column1)
+      renderer2 = gtk.CellRendererText()
+      column2 = gtk.TreeViewColumn(ENTITY_SIZE,renderer2, text=1)
+      self.extend_vg_tree.append_column(column2)
+      renderer3 = gtk.CellRendererText()
+      column3 = gtk.TreeViewColumn(ENTITY_TYPE,renderer3, markup=2)
+      self.extend_vg_tree.append_column(column3)
+  
   def on_extend_vg(self, button):
-    main_selection = self.treeview.get_selection()
-    main_model,main_iter = main_selection.get_selected()
-    main_path = main_model.get_path(main_iter)
-    vgname = main_model.get_value(main_iter,PATH_COL).strip()
-    try:
-      max_lvs,lvs,max_pvs,pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
-    except ValueError, e:
-      self.errorMessage(TYPE_CONVERSION_ERROR % e)
-      return
-    if max_pvs == pvs:
-      self.errorMessage(EXCEEDED_MAX_PVS)
-      return
-
-    self.rebuild_extend_vg_tree()
-    self.extend_vg_form.show()
-
+      main_selection = self.treeview.get_selection()
+      main_model,main_iter = main_selection.get_selected()
+      main_path = main_model.get_path(main_iter)
+      vg = main_model.get_value(main_iter, OBJ_COL)
+      try:
+          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vg.get_name())
+      except ValueError, e:
+          self.errorMessage(TYPE_CONVERSION_ERROR % e)
+          return
+      if max_pvs == pvs:
+          self.errorMessage(EXCEEDED_MAX_PVS)
+          return
+      
+      self.rebuild_extend_vg_tree()
+      self.extend_vg_form.show()
+  
   def on_ok_extend_vg(self, button):
-    selection = self.extend_vg_tree.get_selection()
-    if selection == None:
-        self.extend_vg_form.hide() #cancel opp if OK clicked w/o selection
-    
-    model,iter = selection.get_selected()
-    entity_name = model.get_value(iter, NAME_COL).strip()
-    entity_type = model.get_value(iter, VOL_TYPE_COL)
-    
-    #Now get name of VG to be extended...
-    main_selection = self.treeview.get_selection()
-    main_model,main_iter = main_selection.get_selected()
-    main_path = main_model.get_path(main_iter)
-    vgname = main_model.get_value(main_iter,PATH_COL).strip()
-    
-    if entity_type == UNINIT_VOL:  #First, initialize if necessary
-      entity = model.get_value(iter, OBJ_COL)
-      entity_name = self.initialize_entity(entity)
-      if entity_name == None:
-        return
-    
-    try:
-      self.command_handler.add_unalloc_to_vg(entity_name, vgname)
-    except CommandError, e:
-      self.errorMessage(e.getMessage())
-      return 
-    
-    self.extend_vg_form.hide()
-    apply(self.reset_tree_model)
-    self.treeview.expand_to_path(main_path)
-    
-    
+      selection = self.extend_vg_tree.get_selection()
+      if selection == None:
+          self.extend_vg_form.hide() #cancel opp if OK clicked w/o selection
+      
+      model, iter = selection.get_selected()
+      entity_path = model.get_value(iter, NAME_COL)
+      entity_type = model.get_value(iter, VOL_TYPE_COL)
+      
+      #Now get name of VG to be extended...
+      main_selection = self.treeview.get_selection()
+      main_model,main_iter = main_selection.get_selected()
+      main_path = main_model.get_path(main_iter)
+      vg = main_model.get_value(main_iter, OBJ_COL)
+      
+      if entity_type == UNINIT_VOL:  #First, initialize if necessary
+          entity = model.get_value(iter, OBJ_COL)
+          entity_path = self.initialize_entity(entity)
+          if entity_path == None:
+              return
+      
+      try:
+          self.command_handler.add_unalloc_to_vg(entity_path, vg.get_name())
+      except CommandError, e:
+          self.errorMessage(e.getMessage())
+          return 
+      
+      self.extend_vg_form.hide()
+      apply(self.reset_tree_model)
+      self.treeview.expand_to_path(main_path)
+  
   def on_cancel_extend_vg(self, button):
-    self.extend_vg_form.hide()
+      self.extend_vg_form.hide()
   
   def extend_vg_delete_event(self, *args):
-    self.extend_vg_form.hide()
-    return True
-    
-
+      self.extend_vg_form.hide()
+      return True
+  
   def rebuild_extend_vg_tree(self):
     uv_string = "<span foreground=\"#ED1C2A\"><b>" + UNALLOCATED_PV + "</b></span>"
     iv_string = "<span foreground=\"#BBBBBB\"><b>" + UNINIT_DE + "</b></span>"
     model = self.extend_vg_tree.get_model()
     if model != None:
-      model.clear()
-
+        model.clear()
+    
     unallocated_vols = self.model_factory.query_unallocated()
-    if len(unallocated_vols) > 0:
-      for vol in unallocated_vols:
+    for vol in unallocated_vols:
         iter = model.append()
-        model.set(iter, NAME_COL, vol.get_path(),
-                        SIZE_COL, vol.get_volume_size_string(),
-                        PATH_COL, uv_string,
-                        VOL_TYPE_COL, UNALLOC_VOL,
-                        OBJ_COL, vol)
-
+        model.set(iter,
+                  NAME_COL, vol.get_path(),
+                  SIZE_COL, vol.get_size_total_string(),
+                  PATH_COL, uv_string,
+                  VOL_TYPE_COL, UNALLOC_VOL,
+                  OBJ_COL, vol)
+    
     uninitialized_list = self.model_factory.query_uninitialized()
-    if len(uninitialized_list) > 0:
-      for item in uninitialized_list:
+    for item in uninitialized_list:
         if item.initializable:
-          iter = model.append()
-          model.set(iter, NAME_COL, item.get_path(),
-                          SIZE_COL, item.get_volume_size_string(),
-                          PATH_COL, iv_string,
-                          VOL_TYPE_COL,UNINIT_VOL,
-                          OBJ_COL, item)
-          
+            iter = model.append()
+            model.set(iter,
+                      NAME_COL, item.get_path(),
+                      SIZE_COL, item.get_size_total_string(),
+                      PATH_COL, iv_string,
+                      VOL_TYPE_COL,UNINIT_VOL,
+                      OBJ_COL, item)
+    
     selection = self.treeview.get_selection()
-    main_model,iter_val = selection.get_selected()
-    vgname = main_model.get_value(iter_val, PATH_COL)
-    self.extend_vg_label.set_text(ADD_VG_LABEL % vgname)
-
+    main_model, iter_val = selection.get_selected()
+    vg = main_model.get_value(iter_val, OBJ_COL)
+    self.extend_vg_label.set_text(ADD_VG_LABEL % vg.get_name())
+  
   def new_vg_delete_event(self, *args):
     self.new_vg_dlg.hide()
     return True
-
+  
   def setup_misc_widgets(self):
-    self.remove_unalloc_pv = self.glade_xml.get_widget('remove_unalloc_pv')
-    self.remove_unalloc_pv.connect("clicked",self.on_remove_unalloc_pv)
-    self.on_pv_rm_button = self.glade_xml.get_widget('on_pv_rm_button')
-    self.on_pv_rm_button.connect("clicked",self.on_pv_rm)
-    self.on_lv_rm_button = self.glade_xml.get_widget('on_lv_rm_button')
-    self.on_lv_rm_button.connect("clicked",self.on_lv_rm)
-    self.on_rm_select_lvs_button = self.glade_xml.get_widget('on_rm_select_lvs')
-    self.on_rm_select_lvs_button.connect("clicked",self.on_rm_select_lvs)
-    self.on_rm_select_pvs_button = self.glade_xml.get_widget('on_rm_select_pvs')
-    self.on_rm_select_pvs_button.connect("clicked",self.on_rm_select_pvs)
-    self.migrate_exts_button = self.glade_xml.get_widget('button27')
-    self.migrate_exts_button.connect("clicked",self.on_migrate_exts)
-    self.edit_lv_button = self.glade_xml.get_widget('button35')
-    self.edit_lv_button.connect("clicked",self.on_edit_lv)
-    self.create_snapshot_button = self.glade_xml.get_widget('create_snapshot_button')
-    self.create_snapshot_button.connect("clicked",self.on_create_snapshot)
-
+      self.remove_unalloc_pv = self.glade_xml.get_widget('remove_unalloc_pv')
+      self.remove_unalloc_pv.connect("clicked",self.on_remove_unalloc_pv)
+      self.on_pv_rm_button = self.glade_xml.get_widget('on_pv_rm_button')
+      self.on_pv_rm_button.connect("clicked",self.on_pv_rm)
+      self.on_lv_rm_button = self.glade_xml.get_widget('on_lv_rm_button')
+      self.on_lv_rm_button.connect("clicked",self.on_lv_rm)
+      self.on_rm_select_lvs_button = self.glade_xml.get_widget('on_rm_select_lvs')
+      self.on_rm_select_lvs_button.connect("clicked",self.on_rm_select_lvs)
+      self.on_rm_select_pvs_button = self.glade_xml.get_widget('on_rm_select_pvs')
+      self.on_rm_select_pvs_button.connect("clicked",self.on_rm_select_pvs)
+      self.migrate_exts_button = self.glade_xml.get_widget('button27')
+      self.migrate_exts_button.connect("clicked",self.on_migrate_exts)
+      self.edit_lv_button = self.glade_xml.get_widget('button35')
+      self.edit_lv_button.connect("clicked",self.on_edit_lv)
+      self.create_snapshot_button = self.glade_xml.get_widget('create_snapshot_button')
+      self.create_snapshot_button.connect("clicked",self.on_create_snapshot)
+  
   def on_remove_unalloc_pv(self, button):
-    selection = self.treeview.get_selection()
-    model, iter = selection.get_selected()
-    name = model.get_value(iter, PATH_COL)
-    pvname = name.strip()
-    retval = self.warningMessage(CONFIRM_PVREMOVE % pvname)
-    if (retval == gtk.RESPONSE_NO):
-      return
-
-    else:
-      try:
-        self.command_handler.remove_pv(pvname)
-      except CommandError, e:
-        self.errorMessage(e.getMessage())
-        return
-      apply(self.reset_tree_model)
-
+      selection = self.treeview.get_selection()
+      model, iter = selection.get_selected()
+      pv = model.get_value(iter, OBJ_COL)
+      retval = self.warningMessage(CONFIRM_PVREMOVE % pv.get_path())
+      if (retval == gtk.RESPONSE_NO):
+          return
+      else:
+          try:
+              self.command_handler.remove_pv(pv.get_path())
+          except CommandError, e:
+              self.errorMessage(e.getMessage())
+              return
+          apply(self.reset_tree_model)
+  
   def on_migrate_exts(self, button):
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
@@ -883,26 +858,28 @@ class InputController:
       apply(self.reset_tree_model, [pv.get_path()])
       return
   
-  # remove - whether this is a migration or a removal operation
+  # removal - whether this is a migration or a removal operation
   def migrate_exts_dlg(self, removal, pv, exts):
-      vg_name = pv.get_vg_name()
-      pvs = dict()
+      vg = pv.get_vg()
       needed_extents = 0
       for ext in exts:
           needed_extents = needed_extents + ext.get_start_size()[1]
       free_extents = 0
-      for p in self.model_factory.query_PVs_for_VG(vg_name):
-          if pv.get_path() != p.get_path():
-              if p.get_extent_values()[1] >= needed_extents:
-                  pvs[p.get_path()] = p
-              free_extents = free_extents + p.get_extent_values()[1]
+      pvs = []
+      for p in vg.get_pvs().values():
+          if pv != p:
+              p_free_exts = p.get_extent_total_used_free()[2]
+              if p_free_exts >= needed_extents:
+                  pvs.append(p)
+              free_extents = free_extents + p_free_exts
       if needed_extents > free_extents:
           self.errorMessage(_("There is not enough free extents to perform migration to. Add more physical volumes."))
           return None
-      lvs = dict()
+      lvs = {}
       for ext in exts:
-          lvs[ext.get_name()] = None
-      dlg = MigrateDialog(not removal, pvs.keys(), lvs.keys())
+          lv = ext.get_lv()
+          lvs[lv] = lv
+      dlg = MigrateDialog(not removal, pvs, lvs.values())
       if not dlg.run():
           return None
       return dlg
@@ -911,8 +888,7 @@ class InputController:
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
       lv = model.get_value(iter, OBJ_COL)
-      vg_name = lv.get_vg_name()
-      vg = self.model_factory.get_VG(vg_name)
+      vg = lv.get_vg()
       dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler)
       dlg.run()
       
@@ -925,7 +901,7 @@ class InputController:
       selection = self.treeview.get_selection()
       model, iter = selection.get_selected()
       lv = model.get_value(iter, OBJ_COL)
-      vg = self.model_factory.get_VG(lv.get_vg_name())
+      vg = lv.get_vg()
       vgname = vg.get_name()
       try:
           max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
@@ -937,22 +913,20 @@ class InputController:
           return
       
       # checks
-      free_space,free_extents = self.model_factory.get_free_space_on_VG(vgname,"m")
-      if int(free_extents) == 0:
+      t_exts, u_exts, f_exts = vg.get_extent_total_used_free()
+      if f_exts == 0:
           self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vgname)
           return
-      if lv.get_snapshot_origin() != None:
-          # already a snapshot
+      if lv.is_snapshot():
           self.errorMessage(ALREADY_A_SNAPSHOT)
           return
-      
       
       dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler, True)
       dlg.run()
       
       args = list()
       #args.append(Name_request)
-      args.append(vg.get_name().strip())
+      args.append(vg.get_name())
       apply(self.reset_tree_model, args)
       
   
@@ -961,62 +935,71 @@ class InputController:
   ###Convenience Dialogs
   
   def warningMessage(self, message):
-    dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_YES_NO,
-                            message)
-    dlg.show_all()
-    rc = dlg.run()
-    dlg.destroy()
-    if (rc == gtk.RESPONSE_NO):
-      return gtk.RESPONSE_NO
-    if (rc == gtk.RESPONSE_DELETE_EVENT):
-      return gtk.RESPONSE_NO
-    if (rc == gtk.RESPONSE_CLOSE):
-      return gtk.RESPONSE_NO
-    if (rc == gtk.RESPONSE_CANCEL):
-      return gtk.RESPONSE_NO
- 
-    return rc
-                                                                                
+      dlg = gtk.MessageDialog(None, 0,
+                              gtk.MESSAGE_WARNING,
+                              gtk.BUTTONS_YES_NO,
+                              message)
+      dlg.show_all()
+      rc = dlg.run()
+      dlg.destroy()
+      if (rc == gtk.RESPONSE_NO):
+          return gtk.RESPONSE_NO
+      elif (rc == gtk.RESPONSE_DELETE_EVENT):
+          return gtk.RESPONSE_NO
+      elif (rc == gtk.RESPONSE_CLOSE):
+          return gtk.RESPONSE_NO
+      elif (rc == gtk.RESPONSE_CANCEL):
+          return gtk.RESPONSE_NO
+      else:
+          return rc
+  
   def errorMessage(self, message):
-    dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
-                            message)
-    dlg.show_all()
-    rc = dlg.run()
-    dlg.destroy()
-    return rc
-                                                                                
+      dlg = gtk.MessageDialog(None, 0,
+                              gtk.MESSAGE_ERROR,
+                              gtk.BUTTONS_OK,
+                              message)
+      dlg.show_all()
+      rc = dlg.run()
+      dlg.destroy()
+      return rc
+  
   def infoMessage(self, message):
-    dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_YES_NO,
-                            message)
-    dlg.show_all()
-    rc = dlg.run()
-    dlg.destroy()
-    return rc
-                                                                                
+      dlg = gtk.MessageDialog(None, 0,
+                              gtk.MESSAGE_INFO,
+                              gtk.BUTTONS_YES_NO,
+                              message)
+      dlg.show_all()
+      rc = dlg.run()
+      dlg.destroy()
+      return rc
+  
   def simpleInfoMessage(self, message):
-    dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
-                            message)
-    dlg.show_all()
-    rc = dlg.run()
-    dlg.destroy()
-    if (rc == gtk.RESPONSE_NO):
-      return gtk.RESPONSE_NO
-    if (rc == gtk.RESPONSE_DELETE_EVENT):
-      return gtk.RESPONSE_NO
-    if (rc == gtk.RESPONSE_CLOSE):
-      return gtk.RESPONSE_NO
-    if (rc == gtk.RESPONSE_CANCEL):
-      return gtk.RESPONSE_NO
-    return rc
-                                                                                
+      dlg = gtk.MessageDialog(None, 0,
+                              gtk.MESSAGE_INFO,
+                              gtk.BUTTONS_OK,
+                              message)
+      dlg.show_all()
+      rc = dlg.run()
+      dlg.destroy()
+      if (rc == gtk.RESPONSE_NO):
+          return gtk.RESPONSE_NO
+      elif (rc == gtk.RESPONSE_DELETE_EVENT):
+          return gtk.RESPONSE_NO
+      elif (rc == gtk.RESPONSE_CLOSE):
+          return gtk.RESPONSE_NO
+      elif (rc == gtk.RESPONSE_CANCEL):
+          return gtk.RESPONSE_NO
+      else:
+          return rc
+  
   def register_highlighted_sections(self, section_type, section_list):
       self.section_type = section_type
       self.section_list = section_list
-      
+  
   def clear_highlighted_sections(self):
-    self.section_type = UNSELECTABLE_TYPE
-    self.section_list = None
-                           
+      self.section_type = UNSELECTABLE_TYPE
+      self.section_list = None
+  
 
 class MigrateDialog:
     
@@ -1032,7 +1015,7 @@ class MigrateDialog:
         self.glade_xml.get_widget('lv_selection_container').pack_end(self.lv_combo)
         self.lv_combo.show()
         for lv in lvs:
-            self.lv_combo.append_text(lv)
+            self.lv_combo.append_text(lv.get_name())
         model = self.lv_combo.get_model()
         iter = model.get_iter_first()
         self.lv_combo.set_active_iter(iter)
@@ -1044,7 +1027,7 @@ class MigrateDialog:
         self.pv_combo.show()
         if len(pvs) != 0:
             for p in pvs:
-                self.pv_combo.append_text(p)
+                self.pv_combo.append_text(p.get_path())
             model = self.pv_combo.get_model()
             iter = model.get_iter_first()
             self.pv_combo.set_active_iter(iter)
@@ -1059,16 +1042,16 @@ class MigrateDialog:
         else:
             # remove
             self.glade_xml.get_widget('lv_selection_container').hide()
-
+        
     def run(self):
         rc = self.dlg.run()
         self.dlg.hide()
         return rc == gtk.RESPONSE_OK
-
+    
     # return [pv to migrate to, policy (0 - inherit, 1 - normal, 2 - contiguous, 3 - anywhere), lv to migrate from]
     def get_data(self):
         ret = []
-
+        
         # migrate extents to
         if self.glade_xml.get_widget('radiobutton3').get_active() == True:
             iter = self.pv_combo.get_active_iter()
@@ -1091,7 +1074,7 @@ class MigrateDialog:
             ret.append(self.lv_combo.get_model().get_value(iter, 0))
         else:
             ret.append(None)    
-
+        
         return ret
 
 
@@ -1191,8 +1174,8 @@ class LV_edit_props:
             else:
                 self.dlg.set_title(_("Create New Logical Volume"))
         else:
-            if self.lv.get_snapshot_origin() != None:
-                self.dlg.set_title(_("Edit ") + self.lv.get_name() + _(", a Snapshot of ") + self.lv.get_snapshot_origin().get_name())
+            if self.lv.is_snapshot():
+                self.dlg.set_title(_("Edit ") + self.lv.get_name() + _(", a Snapshot of ") + self.lv.get_snapshot_info()[0].get_name())
             else:
                 self.dlg.set_title(_("Edit Logical Volume"))
         
@@ -1201,7 +1184,7 @@ class LV_edit_props:
         if self.new:
             self.name_entry.set_text('')
         else:
-            self.name_entry.set_text(self.lv.name)
+            self.name_entry.set_text(self.lv.get_name())
         
         # revert button
         if self.new:
@@ -1221,7 +1204,7 @@ class LV_edit_props:
             model = stripe_size_combo.get_model()
             iter = model.get_iter_first()
             stripe_size_combo.set_active_iter(iter)
-            max_stripes = len(self.model_factory.query_PVs_for_VG(self.vg.get_name()))
+            max_stripes = len(self.vg.get_pvs())
             if max_stripes > 8:
                 max_stripes = 8
             self.glade_xml.get_widget('stripes_num').set_range(2, max_stripes)
@@ -1249,7 +1232,7 @@ class LV_edit_props:
         if self.snapshot:
             self.glade_xml.get_widget('filesys_container').set_sensitive(False)
         elif not self.new:
-            if self.lv.get_snapshot_origin() != None:
+            if self.lv.is_snapshot():
                 self.glade_xml.get_widget('filesys_container').set_sensitive(False)
         self.mountpoint_entry = self.glade_xml.get_widget('mount_point')
         if self.new:
@@ -1273,13 +1256,13 @@ class LV_edit_props:
         iter = model.get_iter_first()
         self.size_units_combo.set_active_iter(iter)
         # in extents
-        self.extent_size = self.vg.extent_size_bytes
+        self.extent_size = self.vg.get_extent_size()
         self.size_lower = 1
         if self.new:
             self.size = 0
         else:
-            self.size = self.lv.size_extents
-        self.size_upper = self.vg.free_extents + self.size
+            self.size = self.lv.get_extent_total_used_free()[0]
+        self.size_upper = self.vg.get_extent_total_used_free()[2] + self.size
         #self.size_new = self.size
         self.set_size_new(self.size)
         self.update_size_limits()
@@ -1302,7 +1285,7 @@ class LV_edit_props:
     def on_linear_changed(self, obj):
         self.glade_xml.get_widget('stripes_container').set_sensitive(False)
     def on_striped_changed(self, obj):
-        pv_list = self.model_factory.query_PVs_for_VG(self.vg.get_name())
+        pv_list = self.vg.get_pvs()
         if len(pv_list) < 2:  #striping is not an option
             self.errorMessage(CANT_STRIPE_MESSAGE)
             self.glade_xml.get_widget('linear').set_active(True)
@@ -1324,7 +1307,7 @@ class LV_edit_props:
     def on_fs_change(self, obj):
         self.filesys_show_hide()
         self.update_size_limits()
-        
+    
     def filesys_show_hide(self, show_message=True):
         iter = self.filesys_combo.get_active_iter()
         filesys = self.filesystems[self.filesys_combo.get_model().get_value(iter, 0)]
@@ -1418,14 +1401,14 @@ class LV_edit_props:
         
         self.size_entry.set_text(str(size))
         
-        string = REMAINING_SPACE_VG + str(self.__get_num(self.vg.free_extents)) + ' ' + units
+        string = REMAINING_SPACE_VG + str(self.__get_num(self.vg.get_extent_total_used_free()[2])) + ' ' + units
         self.glade_xml.get_widget('free_space_label').set_text(string)
         self.update_remaining_space_label()
         
     def update_remaining_space_label(self):
         iter = self.size_units_combo.get_active_iter()
         units = self.size_units_combo.get_model().get_value(iter, 0)
-        rem = self.vg.free_extents + self.size - self.size_new
+        rem = self.vg.get_extent_total_used_free()[2] + self.size - self.size_new
         string = REMAINING_SPACE_AFTER + str(self.__get_num(rem)) + ' ' + units
         self.glade_xml.get_widget('remaining_space_label').set_text(string)
     
@@ -1520,7 +1503,7 @@ class LV_edit_props:
         if name_new == '':
             self.errorMessage(MUST_PROVIDE_NAME)
             return False
-        for lv in self.model_factory.query_LVs_for_VG(self.vg.get_name()):
+        for lv in self.vg.get_lvs().values():
             if lv.get_name() == name_new:
                 if not self.new:
                     if self.lv.get_name() == name_new:
@@ -1564,7 +1547,7 @@ class LV_edit_props:
             new_lv_command_set[NEW_LV_MAKE_FS_ARG] = False
             new_lv_command_set[NEW_LV_SNAPSHOT] = self.snapshot
             if self.snapshot:
-                new_lv_command_set[NEW_LV_SNAPSHOT_ORIGIN] = self.lv.get_path().strip()
+                new_lv_command_set[NEW_LV_SNAPSHOT_ORIGIN] = self.lv.get_path()
             self.command_handler.new_lv(new_lv_command_set)
             
             lv_path = self.model_factory.get_logical_volume_path(name_new, self.vg.get_name())
@@ -1581,10 +1564,12 @@ class LV_edit_props:
         else:
             ### edit LV ###
             
-            rename = name_new != self.lv.get_name().strip()
+            rename = name_new != self.lv.get_name()
             filesys_change = (filesys_new != self.fs)
             
-            snapshot = self.lv.get_snapshot_origin()
+            snapshot = None
+            if self.lv.is_snapshot():
+                snapshot = self.lv.get_snapshot_info()[0]
             
             resize = (size_new != self.size)
             extend = (size_new > self.size)
@@ -1671,7 +1656,7 @@ class LV_edit_props:
             if mount_new and not mounted:
                 self.command_handler.mount(lv_path, mountpoint_new)
             # remove old fstab entry
-            Fstab.remove(self.lv.get_path().strip(), self.mount_point)
+            Fstab.remove(self.lv.get_path(), self.mount_point)
             if mount_at_reboot_new:
                 # add new entry
                 Fstab.add(lv_path, mountpoint_new, filesys_new.name)
@@ -1679,7 +1664,8 @@ class LV_edit_props:
         return True
     
     def errorMessage(self, message):
-        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
                                 message)
         dlg.show_all()
         rc = dlg.run()
@@ -1687,7 +1673,8 @@ class LV_edit_props:
         return rc
     
     def infoMessage(self, message):
-        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
                                 message)
         dlg.show_all()
         rc = dlg.run()
@@ -1695,34 +1682,37 @@ class LV_edit_props:
         return rc
     
     def questionMessage(self, message):
-        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_INFO, gtk.BUTTONS_YES_NO,
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_INFO, gtk.BUTTONS_YES_NO,
                                 message)
         dlg.show_all()
         rc = dlg.run()
         dlg.destroy()
         if (rc == gtk.RESPONSE_NO):
             return gtk.RESPONSE_NO
-        if (rc == gtk.RESPONSE_DELETE_EVENT):
+        elif (rc == gtk.RESPONSE_DELETE_EVENT):
             return gtk.RESPONSE_NO
-        if (rc == gtk.RESPONSE_CLOSE):
+        elif (rc == gtk.RESPONSE_CLOSE):
             return gtk.RESPONSE_NO
-        if (rc == gtk.RESPONSE_CANCEL):
+        elif (rc == gtk.RESPONSE_CANCEL):
             return gtk.RESPONSE_NO
-        return rc
-
+        else:
+            return rc
+    
     def warningMessage(self, message):
-        dlg = gtk.MessageDialog(None, 0, gtk.MESSAGE_WARNING, gtk.BUTTONS_YES_NO,
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_WARNING, gtk.BUTTONS_YES_NO,
                                 message)
         dlg.show_all()
         rc = dlg.run()
         dlg.destroy()
         if (rc == gtk.RESPONSE_NO):
             return gtk.RESPONSE_NO
-        if (rc == gtk.RESPONSE_DELETE_EVENT):
+        elif (rc == gtk.RESPONSE_DELETE_EVENT):
             return gtk.RESPONSE_NO
-        if (rc == gtk.RESPONSE_CLOSE):
+        elif (rc == gtk.RESPONSE_CLOSE):
             return gtk.RESPONSE_NO
-        if (rc == gtk.RESPONSE_CANCEL):
+        elif (rc == gtk.RESPONSE_CANCEL):
             return gtk.RESPONSE_NO
-        
-        return rc
+        else:
+            return rc

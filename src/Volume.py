@@ -1,76 +1,101 @@
-"""This is the base class for PhysicalVolume
-   and LogicalVolume. 
-"""
-__author__ = 'Jim Parsons (jparsons@redhat.com)'
 
 import os
 import string
 from lvmui_constants import *
 
+
 class Volume:
-  def __init__(self):
-    self.name = ""
-    self.size = 0.0  #This is a floating point number
-    self.size_string = "0.0M" #This is a rep of size with unit initial appended
-    self.is_utilized = True
-    self.type = UNINITIALIZED_TYPE
-    self.extent_segment_list = list()
+
+  def __init__(self, name, paths, used, attrs):
+    self.set_name(name)
+    self.paths = paths
+    self.set_vg(None)
+    self.set_used(used)
+    self.set_attr(attrs)
     
-    self.properties = []
+    self.set_properties([])
     
+    self.set_extent_size(0)
+    self.total_extents = None
+    self.allocated_extents = None
+    self.free_extents = None
+    
+  
+  def set_name(self, name):
+    self.name = name.strip()
   def get_name(self):
     return self.name
-
-  def get_volume_size(self):
-    return self.size
-
-  def set_volume_size(self, sz):
-    self.size = sz
-    self.size_string = self.build_size_string(self.size)
-
-  def get_volume_size_string(self):
-    return self.size_string
-
-  def is_vol_utilized(self):
-    return self.is_utilized
-
-  def set_is_vol_utilized(self, is_utilized):
-    """This method is used to set whether or not a volume
-    represents free space in a Volume Group.
-    """   
-    self.is_utilized = is_utilized
-
-  def setProperties(self, dictionary):
-    self.properties = dictionary
-  def getProperties(self):
+  
+  def set_extent_size(self, size): # in bytes
+    self.extent_size = int(size)
+  def get_extent_size(self): # bytes
+    return self.extent_size
+  
+  def set_extent_count(self, total, used):
+    self.total_extents = int(total)
+    self.allocated_extents = int(used)
+    self.free_extents = self.total_extents - self.allocated_extents
+  def get_extent_total_used_free(self):
+    return self.total_extents, self.allocated_extents, self.free_extents
+  
+  def get_size_total_used_free_string(self):
+    total, used, free = self.get_extent_total_used_free()
+    total = self.__build_size_string(total)
+    used = self.__build_size_string(used)
+    free = self.__build_size_string(free)
+    return total, used, free
+  
+  def get_size_total_string(self):
+    return self.get_size_total_used_free_string()[0]
+  
+  def add_path(self, path):
+    self.paths.append(path.strip())
+  def get_paths(self):
+    return self.paths
+  def get_path(self): # return main path
+    if len(self.get_paths()) == 0:
+      return None
+    else:
+      return self.get_paths()[0]
+  
+  def set_vg(self, vg):
+    self.vg = vg
+  def get_vg(self):
+    return self.vg
+  
+  def set_used(self, bool):
+    self.used = bool
+  def is_used(self):
+    return self.used
+  
+  def set_attr(self, attr):
+    self.attr = attr
+  def get_attr(self):
+    return self.attr
+  
+  def set_properties(self, props_list):
+    self.properties = props_list
+  def add_property(self, prop_key, prop):
+    self.properties.append(prop_key)
+    self.properties.append(prop)
+  def get_properties(self):
     return self.properties
   
-  def get_extent_segments(self):
-    return self.extent_segment_list
-
-  def add_extent_segment(self, extent_segment):
-    self.extent_segment_list.append(extent_segment)
-
-  def set_type(self, type):
-    self.type = type
-
-  def get_type(self):
-    return self.type
-
-  def build_size_string(self, size):
-    #incoming size is a string representation in gig. we need to evaluate
-    #it and append an appropriate unit suffix.
-    fsize = size
-    if fsize > 1.0:
-      return "%.2f"%fsize + GIG_SUFFIX
+  
+  def __build_size_string(self, extents):
+    if extents == None:
+      return '0' + BYTE_SUFFIX
+    
+    size_bytes = self.get_extent_size() * extents
+    size_kilos = size_bytes / 1024.0
+    size_megas = size_kilos / 1024.0
+    size_gigs = size_megas / 1024.0
+    
+    if size_gigs > 1.0:
+      return "%.2f" % size_gigs + GIG_SUFFIX
+    elif size_megas > 1.0:
+      return "%.2f" % size_megas + MEG_SUFFIX
+    elif size_kilos > 1.0:
+      return "%.2f" % size_kilos + KILO_SUFFIX
     else:
-      fsize = fsize * 1000.0  #move unit into meg range
-      if fsize > 1.0:
-        return "%.2f"%fsize + MEG_SUFFIX
-      else:
-        fsize = fsize * 1000.0  #move unit into kilo range
-        if fsize > 1.0:
-          return "%.2f"%fsize + KILO_SUFFIX
-        else:
-          return "%.2f"%fsize + BYTE_SUFFIX
-
+      return str(size_bytes) + BYTE_SUFFIX

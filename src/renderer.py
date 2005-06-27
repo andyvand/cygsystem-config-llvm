@@ -10,6 +10,7 @@ from cylinder_items import *
 
 from lvmui_constants import *
 
+from Segment import STRIPED_SEGMENT_ID, LINEAR_SEGMENT_ID, UNUSED_SEGMENT_ID, MIRROR_SEGMENT_ID
 
 
 GRADIENT_PV = "#ED1C2A"
@@ -106,7 +107,7 @@ class DisplayView:
         self.type = PHYS_TYPE
         
         # display properties
-        self.pr.render_to_layout_area(pv.getProperties(), pv.get_path(), PHYS_TYPE)
+        self.pr.render_to_layout_area(pv.get_properties(), pv.get_path(), PHYS_TYPE)
         
         # display cylinder
         line1 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><b>" + PHYSICAL_VOL_STR + "</b></span>\n"
@@ -114,15 +115,16 @@ class DisplayView:
         label = line1 + line2
         self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.pv_cyl_gen))
-        # TODO: sort them
-        for extent in pv.get_extent_segments():
-            if extent.is_utilized():
+        for extent in pv.get_extent_blocks():
+            if extent.get_lv().is_used():
                 cyl = Subcylinder(self.pv_cyl_gen, 1, 1, True, extent.get_start_size()[1])
             else:
                 cyl = Subcylinder(self.pv_cyl_gen, 1, 1, False, extent.get_start_size()[1])
             label = "<span size=\"7000\">"
-            label = label + extent.get_name() + '\n'
-            label = label + extent.get_annotation() + '\n'
+            label = label + extent.get_lv().get_name() + '\n'
+            annotation = extent.get_annotation()
+            if annotation != '':
+                label = label + annotation + '\n'
             label = label + str(extent.get_start_size()[1]) + ' extents'
             label = label + "</span>"
             cyl.set_label_lower(label)
@@ -142,7 +144,7 @@ class DisplayView:
         self.type = None
         
         # display properties
-        self.pr.render_to_layout_area(pv.getProperties(), pv.get_path(), UNALLOCATED_TYPE)
+        self.pr.render_to_layout_area(pv.get_properties(), pv.get_path(), UNALLOCATED_TYPE)
         
         # display cylinder
         line1 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><b>" + UNALLOCATED_STR + "</b></span>"
@@ -163,7 +165,7 @@ class DisplayView:
         self.type = None
         
         # display properties
-        self.pr.render_to_layout_area(pv.getProperties(), pv.get_path(), UNINITIALIZED_TYPE)
+        self.pr.render_to_layout_area(pv.get_properties(), pv.get_path(), UNINITIALIZED_TYPE)
         
         # display cylinder
         line1 = "<span size=\"8000\"><b>" + UNINITIALIZED_STR + "</b></span>\n"
@@ -176,26 +178,28 @@ class DisplayView:
         self.display.append_right(cyl)
         self.draw()
     
-    def render_pvs(self, vg, pv_list):
+    def render_pvs(self, pv_list):
         if self.dvH != None:
             self.dvH.render_no_selection()
             self.dvH_selectable = True
         
         self.type = VG_PHYS_TYPE
         
+        vg = pv_list[0].get_vg()
+        
         # display properties
-        self.pr.render_to_layout_area(vg.getProperties(), vg.get_name(), VG_PHYS_TYPE)
+        self.pr.render_to_layout_area(vg.get_properties(), vg.get_name(), VG_PHYS_TYPE)
         
         # display cylinder
         line1 = "<span size=\"7000\"><b>" + VOLUME_GRP_STR + "</b></span>\n"
-        line2 = "<span size=\"7000\"><b>" + pv_list[0].get_vg_name() + "</b></span>\n"
+        line2 = "<span size=\"7000\"><b>" + vg.get_name() + "</b></span>\n"
         line3 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><i>" + PHYSICAL_VIEW_STR + "</i></span>" 
         label = line1 + line2 + line3
         self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.pv_cyl_gen))
         for pv in pv_list:
-            selectable = pv.is_utilized
-            cyl = Subcylinder(self.pv_cyl_gen, 1, 2, selectable, int(pv.get_volume_size()))
+            selectable = pv.is_used()
+            cyl = Subcylinder(self.pv_cyl_gen, 1, 2, selectable, pv.get_extent_total_used_free()[0])
             #label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>"
             label = "<span size=\"8000\">" + pv.get_name() + "</span>"
             cyl.set_label_upper(label)
@@ -215,7 +219,7 @@ class DisplayView:
         self.type = None
         
         # display properties
-        self.pr.render_to_layout_area(lv.getProperties(), lv.get_path(), LOG_TYPE)
+        self.pr.render_to_layout_area(lv.get_properties(), lv.get_path(), LOG_TYPE)
         
         # display cylinder
         line1 = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\"><b>" + LOGICAL_VOL_STR + "</b></span>\n"
@@ -223,31 +227,43 @@ class DisplayView:
         label = line1 + line2
         self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.lv_cyl_gen))
-        cyl = Subcylinder(self.lv_cyl_gen, 1, 1, False, 1)
+        cyl = Subcylinder(self.lv_cyl_gen, 1, 1, False, lv.get_extent_total_used_free()[0])
         self.display.append_right(cyl)
         self.draw()
     
-    def render_lvs(self, vg, lv_list):
+    def render_lvs(self, lv_list):
         if self.dvH != None:
             self.dvH.render_no_selection()
             self.dvH_selectable = True
         
         self.type = VG_LOG_TYPE
         
+        vg = lv_list[0].get_vg()
+        
+        # place unused space to the end
+        for lv in lv_list:
+            if lv.is_used():
+                continue
+            else:
+                lv_list.remove(lv)
+                lv_list.append(lv)
+                break
+        
         # display properties
-        self.pr.render_to_layout_area(vg.getProperties(), vg.get_name(), VG_LOG_TYPE)
+        self.pr.render_to_layout_area(vg.get_properties(), vg.get_name(), VG_LOG_TYPE)
         
         # display cylinder
         line1 = "<span size=\"7000\"><b>" + VOLUME_GRP_STR + "</b></span>\n"
-        line2 = "<span size=\"7000\"><b>" + lv_list[0].get_vg_name() + "</b></span>\n"
+        line2 = "<span size=\"7000\"><b>" + vg.get_name() + "</b></span>\n"
         line3 = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\"><i>" + LOGICAL_VIEW_STR + "</i></span>" 
         label = line1 + line2 + line3
         self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.lv_cyl_gen))
         lv_cyls_dir = {}
         for lv in lv_list:
-            selectable = lv.is_utilized
-            cyl = Subcylinder(self.lv_cyl_gen, 1, 0, selectable, lv.size_extents)
+            selectable = lv.is_used()
+            cyl = None
+            cyl = Subcylinder(self.lv_cyl_gen, 1, 0, selectable, lv.get_extent_total_used_free()[0])
             #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
             label = "<span size=\"8000\">" + lv.get_name() + "</span>"
             cyl.set_label_upper(label)
@@ -272,23 +288,35 @@ class DisplayView:
         
         self.draw()
     
-    def render_vg(self, vg, lv_list, pv_list):
+    def render_vg(self, vg):
         if self.dvH != None:
             self.dvH.render_no_selection()
             self.dvH_selectable = True
         
         self.type = None
         
+        pv_list = vg.get_pvs().values()
+        lv_list = vg.get_lvs().values()
+        
+        # place unused space to the end
+        for lv in lv_list:
+            if lv.is_used():
+                continue
+            else:
+                lv_list.remove(lv)
+                lv_list.append(lv)
+                break
+        
         # display properties
-        self.pr.render_to_layout_area(vg.getProperties(), vg.get_name(), VG_TYPE)
+        self.pr.render_to_layout_area(vg.get_properties(), vg.get_name(), VG_TYPE)
         
         # display cylinder
         line1 = "<span size=\"7000\"><b>" + VOLUME_GRP_STR + "</b></span>\n"
-        line2 = "<span size=\"7000\"><b>" + lv_list[0].get_vg_name() + "</b></span>\n"
+        line2 = "<span size=\"7000\"><b>" + vg.get_name() + "</b></span>\n"
         line3 = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\"><i>" + LOGICAL_VIEW_STR + "</i></span>" 
         label_upper = line1 + line2 + line3
         line1 = "<span size=\"7000\"><b>" + VOLUME_GRP_STR + "</b></span>\n"
-        line2 = "<span size=\"7000\"><b>" + pv_list[0].get_vg_name() + "</b></span>\n"
+        line2 = "<span size=\"7000\"><b>" + vg.get_name() + "</b></span>\n"
         line3 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><i>" + PHYSICAL_VIEW_STR + "</i></span>" 
         label_lower = line1 + line2 + line3
         self.display = DoubleCylinder(Y_OFFSET, '', label_upper, label_lower, 5, WIDTH_MULTIPLE, HEIGHT_DUAL)
@@ -298,14 +326,24 @@ class DisplayView:
         for lv in lv_list:
             #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
             label = "<span size=\"8000\">" + lv.get_name() + "</span>"
-            cyl = None
-            if lv.is_utilized:
-                cyl = Subcylinder(self.lv_cyl_gen, 1, 0, True)
-                lv_cyls_dir[lv.get_name()] = cyl
-            else:
-                cyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, lv.size_extents)
+            #cyl = Subcylinder(self.lv_cyl_gen, 1, 0, lv.is_used())
+            cyl = Subcylinder(self.lv_cyl_gen, 1, 0, True)
+            lv_cyls_dir[lv] = cyl
             cyl.set_label_upper(label)
             lv_cyls.append(cyl)
+            for seg in lv.get_segments():
+                type = seg.get_type()
+                if type == STRIPED_SEGMENT_ID:
+                    for stripe in seg.get_stripes().values():
+                        subcyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, stripe.get_start_size()[1])
+                        lv_cyls_dir[stripe] = subcyl
+                        cyl.children.append(subcyl)
+                elif type == LINEAR_SEGMENT_ID  or type == UNUSED_SEGMENT_ID:
+                    extent = seg.get_extent_block()
+                    subcyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, extent.get_start_size()[1])
+                    lv_cyls_dir[extent] = subcyl
+                    cyl.children.append(subcyl)
+            
             # set up helper display
             cyl.add_object(CYL_ID_VOLUME, lv)
             cyl.add_object(CYL_ID_FUNCTION, DisplayView.render_lv)
@@ -313,18 +351,16 @@ class DisplayView:
         
         # set up snapshot highlighting
         for orig in lv_list:
-            orig_cyl = None
-            snaps = orig.get_snapshots()
-            if len(snaps) != 0:
-                orig_cyl = lv_cyls_dir[orig.get_name()]
+            if orig.has_snapshots():
+                orig_cyl = lv_cyls_dir[orig]
                 label_orig = "<span size=\"8000\">" + _("Origin") + "</span>"
-                orig_cyl.set_label_lower(label_orig, False, True, True)
-            for snap in snaps:
-                snap_cyl = lv_cyls_dir[snap.get_name()]
-                orig_cyl.add_highlightable(snap_cyl)
-                snap_cyl.add_highlightable(orig_cyl)
-                label_snap = "<span size=\"8000\">" + _("Snapshot") + "</span>"
-                snap_cyl.set_label_lower(label_snap, False, True, True)
+                orig_cyl.set_label_lower(label_orig, False, False, True)
+                for snap in orig.get_snapshots():
+                    snap_cyl = lv_cyls_dir[snap]
+                    orig_cyl.add_highlightable(snap_cyl)
+                    snap_cyl.add_highlightable(orig_cyl)
+                    label_snap = "<span size=\"8000\">" + _("Snapshot") + "</span>"
+                    snap_cyl.set_label_lower(label_snap, False, True, True)
         
         pv_cyls = []
         for pv in pv_list:
@@ -338,19 +374,18 @@ class DisplayView:
             pv_cyl.add_object(CYL_ID_VOLUME, pv)
             pv_cyl.add_object(CYL_ID_FUNCTION, DisplayView.render_pv)
             pv_cyl.add_object(CYL_ID_ARGS, [pv])
-            exts = pv.get_extent_segments()
-            for ext in exts:
+            for ext in pv.get_extent_blocks():
                 width = ext.get_start_size()[1]
                 ext_cyl_p = Subcylinder(self.pv_cyl_gen, 1, 2, False, width)
                 label = "<span size=\"7000\">"
-                label = label + ext.get_annotation() + '\n'
-                label = label + str(ext.get_start_size()[1]) + ' extents'
+                annotation = ext.get_annotation()
+                if annotation != '':
+                    label = label + annotation + '\n'
+                label = label + str(width) + ' extents'
                 label = label + "</span>"
                 ext_cyl_p.set_label_lower(label, False, False, True)
-                if ext.is_utilized():
-                    ext_cyl_l = Subcylinder(self.lv_cyl_gen, 1, 2, False, width)
-                    ext_cyl_l.add_highlightable(ext_cyl_p)
-                    lv_cyls_dir[ext.get_name()].children.append(ext_cyl_l)
+                ext_cyl_l = lv_cyls_dir[ext]
+                ext_cyl_l.add_highlightable(ext_cyl_p)
                 pv_cyl.children.append(ext_cyl_p)
         
         self.display.append_right(True, End(self.lv_cyl_gen))
