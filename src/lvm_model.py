@@ -501,9 +501,10 @@ class lvm_model:
           lv_unused.add_segment(segment)
           continue
         # fill in gaps
-        ext_list = pv.get_extent_blocks()[:]
+        ext_list = pv.get_extent_blocks()
         start1, size1 = 0, 0
-        for i in range(0, len(ext_list)):
+        i = 0
+        while i != (len(ext_list) - 1):
           start2, size2 = ext_list[i].get_start_size()
           if (start1 + size1) == start2:
             start1, size1 = start2, size2
@@ -516,6 +517,8 @@ class lvm_model:
             extent = ExtentBlock(pv, lv_unused, start_new, size_new)
             segment.set_extent_block(extent)
             lv_unused.add_segment(segment)
+            start1, size1 = ext_list[i].get_start_size()
+          i = i + 1
         # add last one
         ext_list = pv.get_extent_blocks()
         last_ext = ext_list[len(ext_list) - 1]
