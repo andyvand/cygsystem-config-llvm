@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-06-10 22:08+0800\n"
+"PO-Revision-Date: 2005-07-01 01:39+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -404,31 +404,26 @@ msgid "Name for new LV:"
 msgstr "Nama untuk LV baru:"
 
 #: src/lvui.glade.h:46
-#, fuzzy
 msgid "New Volume Group"
-msgstr "Nama Kumpulan _Volum:"
+msgstr "Kumpulan Volum Baru"
 
 #: src/lvui.glade.h:47
-#, fuzzy
 msgid "New Volume Group Form"
-msgstr "Nama Kumpulan Volum Tidak Sah"
+msgstr "Borang Kumpulan Volum Baru"
 
 #. File System Types
 #: src/lvui.glade.h:48
 #: src/lvmui_constants.py:48
-#, fuzzy
 msgid "No Filesystem"
-msgstr "Tiada sistemfail"
+msgstr "Tiada Sistemfail"
 
 #: src/lvui.glade.h:49
-#, fuzzy
 msgid "Number of Stripes: "
-msgstr "Medan Jumlah Stripe"
+msgstr "Jumlah Stripe:"
 
 #: src/lvui.glade.h:50
-#, fuzzy
 msgid "Physical Extent Size: "
-msgstr "Kepastian Perubahan Lanjutan Fizikal"
+msgstr "Saiz Extent Fizikal:"
 
 #: src/lvui.glade.h:51
 #, fuzzy
@@ -657,7 +652,7 @@ msgstr "Tidak cukup volum fizikal"
 #: src/lvm_model.py:62
 #, fuzzy
 msgid "Number of Physical Volumes:   "
-msgstr "Tidak cukup volum fizikal"
+msgstr "Volum Fizikal Maksimum:"
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
@@ -666,7 +661,7 @@ msgstr ""
 #: src/lvm_model.py:64
 #, fuzzy
 msgid "Number of Logical Volumes:   "
-msgstr "Buat Volum Logikal"
+msgstr "Volum Logikal Maksimum:"
 
 #: src/lvm_model.py:65
 msgid "VG UUID:   "
