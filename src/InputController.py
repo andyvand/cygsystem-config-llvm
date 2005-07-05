@@ -1524,9 +1524,9 @@ class LV_edit_props:
         rem = self.size_upper - self.size_new
         rem_vg = self.vg.get_extent_total_used_free()[2]
         if self.glade_xml.get_widget('enable_mirroring').get_active():
-            rem_vg = rem_vg - self.size_new * 2 - 1
+            rem_vg = rem_vg + (self.size - self.size_new) * 2 - 1
         else:
-            rem_vg = rem_vg - self.size_new
+            rem_vg = rem_vg - self.size_new + self.size
         string_vg = REMAINING_SPACE_VG + str(self.__get_num(rem_vg)) + ' ' + units
         self.glade_xml.get_widget('free_space_label').set_text(string_vg)
         string = REMAINING_SPACE_AFTER + str(self.__get_num(rem)) + ' ' + units

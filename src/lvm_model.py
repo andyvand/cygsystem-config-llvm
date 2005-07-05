@@ -173,11 +173,11 @@ class lvm_model:
     
     
     # debugging
-    for vg in self.__VGs.values():
-      vg.print_out()
-    print '\n\nAll PVs'
-    for pv in self.__PVs:
-      pv.print_out('')
+    #for vg in self.__VGs.values():
+    #  vg.print_out()
+    #print '\n\nAll PVs'
+    #for pv in self.__PVs:
+    #  pv.print_out('')
     #sys.exit(0)
     
     if dlg != None:
