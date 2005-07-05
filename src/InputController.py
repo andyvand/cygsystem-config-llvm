@@ -15,8 +15,11 @@ from CommandHandler import CommandHandler
 from lvmui_constants import *
 from CommandError import CommandError
 import Fstab
-
 import Filesystem
+from Segment import STRIPED_SEGMENT_ID
+from ExtentBlock import ExtentBlock
+from WaitMsg import WaitMsg
+
 import gettext
 _ = gettext.gettext
 
@@ -126,8 +129,8 @@ REMAINING_SPACE_KILOBYTES=_("%s kilobytes")
 REMAINING_SPACE_GIGABYTES=_("%s gigabytes")
 REMAINING_SPACE_EXTENTS=_("%s extents")
 
-REMAINING_SPACE_VG=_("Free space in Volume Group: ")
-REMAINING_SPACE_AFTER=_("Remaining free space:\n")
+REMAINING_SPACE_VG=_("Remaining free space in Volume Group:\n")
+REMAINING_SPACE_AFTER=_("Remaining space for this LV:\n")
 
 EXTENTS=_("Extents")
 GIGABYTES=_("Gigabytes")
@@ -328,7 +331,7 @@ class InputController:
   
   def on_pv_rm(self, button):
       self.remove_pv()
-
+  
   def remove_pv(self, pv=None):
     #The following cases must be considered in this method:
     #1) a PV is to be removed that has extents mapped to an LV:
@@ -419,8 +422,11 @@ class InputController:
                 dlg = self.migrate_exts_dlg(True, pv, extent_list)
                 if dlg == None:
                     return
+                exts_structs = []
+                for ext in extent_list:
+                    exts_structs.append(ext.get_start_size())
                 try:
-                    self.command_handler.move_pv(pv.get_path(), extent_list, dlg.get_data())
+                    self.command_handler.move_pv(pv.get_path(), exts_structs, dlg.get_data())
                 except CommandError, e:
                     self.errorMessage(e.getMessage())
                     return
@@ -505,11 +511,14 @@ class InputController:
     lvs_to_remove = self.section_list[:]
     vgname = lvs_to_remove[0].get_vg().get_name()
     # remove snapshots first
+    reload_lvm = False
     for lv in lvs_to_remove[:]:
         if lv.is_snapshot():
             self.remove_lv(lv)
             lvs_to_remove.remove(lv)
-    self.model_factory.reload() # reload lvm data
+            reload_lvm = True
+    if reload_lvm:
+        self.model_factory.reload(WaitMsg(WAIT_MESSAGE))
     vg = self.model_factory.get_VG(vgname)
     # remove other lvs
     for lv in lvs_to_remove:
@@ -526,12 +535,12 @@ class InputController:
           return
       
       for pv in self.section_list:
-          # need to reload lvm data
           pvpath = pv.get_path()
           vgname = pv.get_vg().get_name()
           pv_to_remove = self.model_factory.get_VG(vgname).get_pvs()[pvpath]
           self.remove_pv(pv_to_remove)
-          self.model_factory.reload()
+          # remove_pv migrates extents -> need to reload lvm data
+          self.model_factory.reload(WaitMsg(WAIT_MESSAGE))
       
       selection = self.treeview.get_selection()
       model,iter = selection.get_selected()
@@ -547,12 +556,7 @@ class InputController:
       main_model, main_iter = main_selection.get_selected()
       main_path = main_model.get_path(main_iter)
       vg = main_model.get_value(main_iter, OBJ_COL)
-      try:
-          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vg.get_name())
-      except ValueError, e:
-          self.errorMessage(TYPE_CONVERSION_ERROR % e)
-          return
-      if max_lvs == lvs:
+      if len(vg.get_lvs().values()) == vg.get_max_lvs():
           self.errorMessage(EXCEEDED_MAX_LVS)
           return
       
@@ -653,13 +657,10 @@ class InputController:
       model, iter = selection.get_selected()
       vgname = model.get_value(iter, NAME_COL)
       
+      vg = self.model_factory.get_VG(vgname)
+      
       #Check if this VG allows an Additional PV
-      try:
-          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
-      except ValueError, e:
-          self.errorMessage(TYPE_CONVERSION_ERROR % e)
-          return
-      if max_pvs == pvs:
+      if vg.get_max_pvs() == len(vg.get_pvs().values()):
           self.errorMessage(EXCEEDED_MAX_PVS)
           self.add_pv_to_vg_dlg.hide()
           return
@@ -712,12 +713,7 @@ class InputController:
       main_model,main_iter = main_selection.get_selected()
       main_path = main_model.get_path(main_iter)
       vg = main_model.get_value(main_iter, OBJ_COL)
-      try:
-          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vg.get_name())
-      except ValueError, e:
-          self.errorMessage(TYPE_CONVERSION_ERROR % e)
-          return
-      if max_pvs == pvs:
+      if vg.get_max_pvs() == len(vg.get_pvs().values()):
           self.errorMessage(EXCEEDED_MAX_PVS)
           return
       
@@ -851,8 +847,11 @@ class InputController:
       if dlg == None:
           apply(self.reset_tree_model, [pv.get_path()])
           return
+      exts_from_structs = []
+      for ext in extents_from:
+          exts_from_structs.append(ext.get_start_size())
       try:
-          self.command_handler.move_pv(pv.get_path(), extents_from, dlg.get_data())
+          self.command_handler.move_pv(pv.get_path(), exts_from_structs, dlg.get_data())
       except CommandError, e:
           self.errorMessage(e.getMessage())
       apply(self.reset_tree_model, [pv.get_path()])
@@ -864,6 +863,12 @@ class InputController:
       needed_extents = 0
       for ext in exts:
           needed_extents = needed_extents + ext.get_start_size()[1]
+          if ext.get_lv().is_mirror_log or ext.get_lv().is_mirror_image:
+              # not movable :(
+              self.errorMessage('fixme: unable to move extents belonging to mirrors')
+              return None
+          # TODO: handle other non-movable extents
+          
       free_extents = 0
       pvs = []
       for p in vg.get_pvs().values():
@@ -902,20 +907,14 @@ class InputController:
       model, iter = selection.get_selected()
       lv = model.get_value(iter, OBJ_COL)
       vg = lv.get_vg()
-      vgname = vg.get_name()
-      try:
-          max_lvs, lvs, max_pvs, pvs = self.model_factory.get_max_LVs_PVs_on_VG(vgname)
-      except ValueError, e:
-          self.errorMessage(TYPE_CONVERSION_ERROR % e)
-          return
-      if max_lvs == lvs:
+      if vg.get_max_lvs() == len(vg.get_lvs().values()):
           self.errorMessage(EXCEEDED_MAX_LVS)
           return
       
       # checks
       t_exts, u_exts, f_exts = vg.get_extent_total_used_free()
       if f_exts == 0:
-          self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vgname)
+          self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vg.get_name())
           return
       if lv.is_snapshot():
           self.errorMessage(ALREADY_A_SNAPSHOT)
@@ -999,7 +998,8 @@ class InputController:
   def clear_highlighted_sections(self):
       self.section_type = UNSELECTABLE_TYPE
       self.section_list = None
-  
+      
+    
 
 class MigrateDialog:
     
@@ -1106,6 +1106,7 @@ class LV_edit_props:
         if self.new:
             if self.snapshot:
                 self.fs = Filesystem.get_fs(self.lv.get_path())
+                self.filesystems[self.fs.name] = self.fs    
             else:
                 self.fs = self.fs_none
             self.mount_point = ''
@@ -1175,7 +1176,7 @@ class LV_edit_props:
                 self.dlg.set_title(_("Create New Logical Volume"))
         else:
             if self.lv.is_snapshot():
-                self.dlg.set_title(_("Edit ") + self.lv.get_name() + _(", a Snapshot of ") + self.lv.get_snapshot_info()[0].get_name())
+                self.dlg.set_title(_("fixme: Edit ") + self.lv.get_name() + _(", a Snapshot of ") + self.lv.get_snapshot_info()[0].get_name())
             else:
                 self.dlg.set_title(_("Edit Logical Volume"))
         
@@ -1198,19 +1199,27 @@ class LV_edit_props:
         model = stripe_size_combo.get_model()
         iter = model.get_iter_first()
         stripe_size_combo.set_active_iter(iter)
-        if self.new and not self.snapshot:
-            self.glade_xml.get_widget('stripes_container').set_sensitive(False)
-            stripe_size_combo = self.glade_xml.get_widget('stripe_size')
-            model = stripe_size_combo.get_model()
-            iter = model.get_iter_first()
-            stripe_size_combo.set_active_iter(iter)
-            max_stripes = len(self.vg.get_pvs())
-            if max_stripes > 8:
-                max_stripes = 8
-            self.glade_xml.get_widget('stripes_num').set_range(2, max_stripes)
-            self.glade_xml.get_widget('stripes_num').set_update_policy(gtk.UPDATE_IF_VALID)
+        if self.new:
+            if self.snapshot:
+                self.glade_xml.get_widget('lv_properties_frame').hide()
+            else:
+                self.glade_xml.get_widget('stripes_container').set_sensitive(False)
+                stripe_size_combo = self.glade_xml.get_widget('stripe_size')
+                model = stripe_size_combo.get_model()
+                iter = model.get_iter_first()
+                stripe_size_combo.set_active_iter(iter)
+                max_stripes = len(self.vg.get_pvs())
+                if max_stripes > 8:
+                    max_stripes = 8
+                self.glade_xml.get_widget('stripes_num').set_range(2, max_stripes)
+                self.glade_xml.get_widget('stripes_num').set_update_policy(gtk.UPDATE_IF_VALID)
         else:
-            self.glade_xml.get_widget('linear_striped_container').hide()
+            if self.lv.is_snapshot():
+                self.glade_xml.get_widget('lv_properties_frame').hide()
+            else:
+                self.glade_xml.get_widget('linear').hide()
+                self.glade_xml.get_widget('striped').hide()
+                self.glade_xml.get_widget('stripes_container').hide()
         
         # filesystem
         self.glade_xml.get_widget('filesys_container').remove(self.filesys_combo)
@@ -1263,11 +1272,17 @@ class LV_edit_props:
         else:
             self.size = self.lv.get_extent_total_used_free()[0]
         self.size_upper = self.vg.get_extent_total_used_free()[2] + self.size
-        #self.size_new = self.size
         self.set_size_new(self.size)
         self.update_size_limits()
+        self.change_size_units()
+        
+        # mirroring
         if self.new:
-            self.glade_xml.get_widget('free_space_label').show()
+            self.glade_xml.get_widget('enable_mirroring').set_active(False)
+        else:
+            self.glade_xml.get_widget('enable_mirroring').set_active(self.lv.is_mirrored())
+        # set up mirror limits
+        self.on_enable_mirroring(None)
         
         # events
         self.fs_config_button.connect('clicked', self.on_fs_config)
@@ -1276,6 +1291,7 @@ class LV_edit_props:
         self.size_scale.connect('value-changed', self.on_size_change_scale)
         self.size_entry.connect('focus-out-event', self.on_size_change_entry)
         self.glade_xml.get_widget('linear').connect('clicked', self.on_linear_changed)
+        self.glade_xml.get_widget('enable_mirroring').connect('clicked', self.on_enable_mirroring)
         self.glade_xml.get_widget('striped').connect('clicked', self.on_striped_changed)
         self.glade_xml.get_widget('mount').connect('clicked', self.on_mount_changed)
         self.glade_xml.get_widget('mount_at_reboot').connect('clicked', self.on_mount_changed)
@@ -1283,8 +1299,16 @@ class LV_edit_props:
         
         
     def on_linear_changed(self, obj):
-        self.glade_xml.get_widget('stripes_container').set_sensitive(False)
+        if self.glade_xml.get_widget('linear').get_active() == False:
+            self.glade_xml.get_widget('enable_mirroring').set_active(False)
+            self.glade_xml.get_widget('enable_mirroring').set_sensitive(False)
+            return
+        else:
+            self.glade_xml.get_widget('stripes_container').set_sensitive(False)
+            self.glade_xml.get_widget('enable_mirroring').set_sensitive(True)
     def on_striped_changed(self, obj):
+        if self.glade_xml.get_widget('striped').get_active() == False:
+            return
         pv_list = self.vg.get_pvs()
         if len(pv_list) < 2:  #striping is not an option
             self.errorMessage(CANT_STRIPE_MESSAGE)
@@ -1292,6 +1316,79 @@ class LV_edit_props:
             return
         else:
             self.glade_xml.get_widget('stripes_container').set_sensitive(True)
+    def on_enable_mirroring(self, obj):
+        if self.glade_xml.get_widget('enable_mirroring').get_active() == False:
+            self.update_size_limits()
+            return
+        # check if lv is striped - no mirroring
+        if not self.new:
+            for seg in self.lv.get_segments():
+                if seg.get_type() == STRIPED_SEGMENT_ID:
+                    self.errorMessage('fixme: Striped LVs cannot be mirrored')
+                    self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                    return
+        max_mirror_size = self.__get_max_mirror_data()[0]
+        if max_mirror_size != 0:
+            if self.size_new > max_mirror_size:
+                if self.new:
+                    self.infoMessage('fixme: size changed to fit')
+                else:
+                    self.errorMessage('fixme: not enough room for mirroring. Reduce size of LV to at most ' + str(self.__get_num(max_mirror_size)) + ', or add some PVs')
+                    self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                    return
+            self.update_size_limits(max_mirror_size)
+        else:
+            self.errorMessage('FIXME: mirroring unavailable')
+            self.glade_xml.get_widget('enable_mirroring').set_active(False)
+            return
+    
+    def __get_max_mirror_data(self):
+        # copy pvs into dir
+        free_list = []
+        for pv in self.vg.get_pvs().values():
+            free_extents = pv.get_extent_total_used_free()[2]
+            # add extents of current LV
+            if not self.new:
+                if self.lv.is_mirrored():
+                    lvs_to_match = self.lv.get_segments()[0].get_images()
+                else:
+                    lvs_to_match = [self.lv]
+                for ext in pv.get_extent_blocks():
+                    if ext.get_lv() in lvs_to_match:
+                        free_extents = free_extents + ext.get_start_size()[1]
+            if free_extents != 0:
+                free_list.append((free_extents, pv))
+        
+        if len(free_list) < 3:
+            return 0
+        
+        # sort
+        for i in range(len(free_list) - 1, 0, -1):
+            for j in range(0, i):
+                if free_list[j][0] < free_list[j + 1][0]:
+                    tmp = free_list[j + 1]
+                    free_list[j + 1] = free_list[j]
+                    free_list[j] = tmp
+        # remove smallest one for log
+        free_list.pop(len(free_list) - 1)
+        
+        buck1, s1 = [free_list[0][1]], free_list[0][0]
+        buck2, s2 = [free_list[1][1]], free_list[1][0]
+        for t in free_list[2:]:
+            if s1 < s2:
+                s1 = s1 + t[0]
+                buck1.append(t[1])
+            else:
+                s2 = s2 + t[0]
+                buck2.append(t[1])
+        
+        max_m_size = 0
+        if s1 < s2:
+            max_m_size = s1
+        else:
+            max_m_size = s2
+        
+        return max_m_size, buck1, buck2
     
     def on_mount_changed(self, obj):
         m1 = self.glade_xml.get_widget('mount').get_active()
@@ -1306,7 +1403,10 @@ class LV_edit_props:
     
     def on_fs_change(self, obj):
         self.filesys_show_hide()
-        self.update_size_limits()
+        if self.new:
+            self.on_mirrored_changed(None)
+        else:
+            self.on_enable_mirroring(None)
     
     def filesys_show_hide(self, show_message=True):
         iter = self.filesys_combo.get_active_iter()
@@ -1329,14 +1429,26 @@ class LV_edit_props:
             self.glade_xml.get_widget('mount_at_reboot').set_active(False)
             self.glade_xml.get_widget('mountpoint_container').set_sensitive(False)
             self.glade_xml.get_widget('mount_container').set_sensitive(False)
-            
-            
-    def update_size_limits(self):
+        
+    
+    def update_size_limits(self, upper=None):
         iter = self.filesys_combo.get_active_iter()
         filesys = self.filesystems[self.filesys_combo.get_model().get_value(iter, 0)]
         
+        if not self.new:
+            if self.lv.has_snapshots():
+                self.glade_xml.get_widget('origin_not_resizable').show()
+                self.glade_xml.get_widget('free_space_label').hide()
+                self.size_scale.set_sensitive(False)
+                self.size_entry.set_sensitive(False)
+                self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
+                return
+        
         self.size_lower = 1
-        self.size_upper = self.vg.free_extents + self.size
+        if upper == None:
+            self.size_upper = self.vg.get_extent_total_used_free()[2] + self.size
+        else:
+            self.size_upper = upper
         
         as_new = self.new
         fs_change = not (filesys == self.fs)
@@ -1345,6 +1457,7 @@ class LV_edit_props:
         
         if as_new:
             self.glade_xml.get_widget('fs_not_resizable').hide()
+            self.glade_xml.get_widget('free_space_label').show()
             self.size_scale.set_sensitive(True)
             self.size_entry.set_sensitive(True)
             self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
@@ -1357,11 +1470,13 @@ class LV_edit_props:
             resizable = (filesys.extendable_online or filesys.extendable_offline or filesys.reducible_online or filesys.reducible_offline)
             if resizable:
                 self.glade_xml.get_widget('fs_not_resizable').hide()
+                self.glade_xml.get_widget('free_space_label').show()
                 self.size_scale.set_sensitive(True)
                 self.size_entry.set_sensitive(True)
                 self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
             else:
                 self.glade_xml.get_widget('fs_not_resizable').show()
+                self.glade_xml.get_widget('free_space_label').hide()
                 self.size_scale.set_sensitive(False)
                 self.size_entry.set_sensitive(False)
                 self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
@@ -1378,10 +1493,10 @@ class LV_edit_props:
         # update values to be within limits
         self.on_size_change_entry(None, None)
         self.change_size_units()
-        
+    
     def on_units_change(self, obj):
         self.change_size_units()
-        
+    
     def change_size_units(self):
         iter = self.size_units_combo.get_active_iter()
         units = self.size_units_combo.get_model().get_value(iter, 0)
@@ -1401,14 +1516,19 @@ class LV_edit_props:
         
         self.size_entry.set_text(str(size))
         
-        string = REMAINING_SPACE_VG + str(self.__get_num(self.vg.get_extent_total_used_free()[2])) + ' ' + units
-        self.glade_xml.get_widget('free_space_label').set_text(string)
         self.update_remaining_space_label()
-        
+    
     def update_remaining_space_label(self):
         iter = self.size_units_combo.get_active_iter()
         units = self.size_units_combo.get_model().get_value(iter, 0)
-        rem = self.vg.get_extent_total_used_free()[2] + self.size - self.size_new
+        rem = self.size_upper - self.size_new
+        rem_vg = self.vg.get_extent_total_used_free()[2]
+        if self.glade_xml.get_widget('enable_mirroring').get_active():
+            rem_vg = rem_vg - self.size_new * 2 - 1
+        else:
+            rem_vg = rem_vg - self.size_new
+        string_vg = REMAINING_SPACE_VG + str(self.__get_num(rem_vg)) + ' ' + units
+        self.glade_xml.get_widget('free_space_label').set_text(string_vg)
         string = REMAINING_SPACE_AFTER + str(self.__get_num(rem)) + ' ' + units
         self.glade_xml.get_widget('remaining_space_label').set_text(string)
     
@@ -1488,6 +1608,7 @@ class LV_edit_props:
             mount_at_reboot_new = False 
             mountpoint_new = ''
         
+        mirrored_new = self.glade_xml.get_widget('enable_mirroring').get_active()
         striped = self.glade_xml.get_widget('striped').get_active()
         stripe_size_combo = self.glade_xml.get_widget('stripe_size')
         iter = stripe_size_combo.get_active_iter()
@@ -1541,6 +1662,7 @@ class LV_edit_props:
             new_lv_command_set[NEW_LV_UNIT_ARG] = EXTENT_IDX
             new_lv_command_set[NEW_LV_SIZE_ARG] = size_new
             new_lv_command_set[NEW_LV_IS_STRIPED_ARG] = striped
+            new_lv_command_set[NEW_LV_MIRRORING] = mirrored_new
             if striped == True:
                 new_lv_command_set[NEW_LV_STRIPE_SIZE_ARG] = stripe_size
                 new_lv_command_set[NEW_LV_NUM_STRIPES_ARG] = stripes_num
@@ -1575,10 +1697,26 @@ class LV_edit_props:
             extend = (size_new > self.size)
             reduce = (size_new < self.size)
             
+            # remove mirror if not needed anymore
+            if self.lv.is_mirrored() and not mirrored_new:
+                self.command_handler.remove_mirroring(self.lv.get_path())
+            
+            # DEBUGING: check if resizing is posible
+            if extend:
+                if self.command_handler.extend_lv(self.lv.get_path(), size_new, True) == False:
+                    retval = self.infoMessage(_("fixme: resizing not posible"))
+                    return False
+            elif reduce:
+                if self.command_handler.reduce_lv(self.lv.get_path(), size_new, True) == False:
+                    retval = self.infoMessage(_("fixme: resizing not posible"))
+                    return False
+            
             mounted = self.mount
             unmount = False
             unmount_prompt = True
             if rename or filesys_change or mount_new == False:
+                unmount = True
+            if resize and self.lv.is_mirrored():
                 unmount = True
             if filesys_change:
                 retval = self.warningMessage(_("fixme: dataloss warning"))
@@ -1605,6 +1743,7 @@ class LV_edit_props:
             if rename:
                 self.command_handler.rename_lv(self.vg.get_name(), self.lv.get_name(), name_new)
             lv_path = self.model_factory.get_logical_volume_path(name_new, self.vg.get_name())
+            lv_path_old = self.lv.get_path()
             
             # resize lv
             if resize:
@@ -1644,6 +1783,22 @@ class LV_edit_props:
                         # resize LV
                         self.command_handler.reduce_lv(lv_path, size_new)
             
+            
+            # add mirror if needed
+            if not self.lv.is_mirrored() and mirrored_new:
+                # first reload lvm_data so that resizing info is known
+                self.model_factory.reload(WaitMsg(WAIT_MESSAGE))
+                self.lv = self.model_factory.get_VG(self.lv.get_vg().get_name()).get_lvs()[name_new]
+                # make room for mirror (free some pvs of main image's extents)
+                if self.__make_room_for_mirror(self.lv, lv_path) == False:
+                    # migration not performed, continue process with no mirroring
+                    self.infoMessage('fixme: Mirror not created.')
+                else:
+                    # create mirror
+                    self.infoMessage('fixme: add mirror not implemented yet, will be at u2')
+                    #self.command_handler.add_mirroring(self.lv.get_path())
+                    pass
+            
             # fs options
             if fs_options_changed and not filesys_change:
                 filesys_new.change_options(lv_path)
@@ -1656,12 +1811,101 @@ class LV_edit_props:
             if mount_new and not mounted:
                 self.command_handler.mount(lv_path, mountpoint_new)
             # remove old fstab entry
-            Fstab.remove(self.lv.get_path(), self.mount_point)
+            Fstab.remove(lv_path_old, self.mount_point)
             if mount_at_reboot_new:
                 # add new entry
                 Fstab.add(lv_path, mountpoint_new, filesys_new.name)
                 
         return True
+    
+    
+    def __make_room_for_mirror(self, lv, lvpath):
+        structs = self.__get_structs_for_ext_migration(lv)
+        
+        # first check if any extent needs to be migrated
+        t, bucket1, bucket2 = self.__get_max_mirror_data()
+        tmp_list = bucket1[:]
+        for pv in bucket2:
+            tmp_list.append(pv)
+        free_extents_on_free_pvs = 0
+        for pv in tmp_list:
+            used_by_lv = False
+            for ext in pv.get_extent_blocks():
+                if ext.get_lv() == lv:
+                    used_by_lv = True
+                    break
+            if not used_by_lv:
+                free_extents_on_free_pvs = free_extents_on_free_pvs + pv.get_extent_total_used_free()[2]
+        if free_extents_on_free_pvs >= lv.get_extent_total_used_free()[1]:
+            return True
+        
+        # extents need moving :(
+        string = ''
+        for struct in structs:
+            string = string + '\n' + struct[0].get_path()
+            string = string + ':' + str(struct[1]) + '-' + str(struct[1] + struct[2] - 1)
+            string = string + '   -> ' + struct[3].get_path()
+        rc = self.questionMessage('fixme: In order to add mirroring, some extents need to migrate. \n' + string + '\nDo you want to migrate extents?')
+        if rc == gtk.RESPONSE_YES:
+            for struct in structs:
+                pv_from = struct[0]
+                ext_start = struct[1]
+                size = struct[2]
+                pv_to = struct[3]
+                self.command_handler.move_pv(pv_from.get_path(), 
+                                             [(ext_start, size)],
+                                             [pv_to.get_path(), None, lvpath])
+            return True
+        else:
+            return False
+    
+    # return [[pv_from, ext_start, size, pv_to], ...]
+    def __get_structs_for_ext_migration(self, lv):
+        t, bucket1, bucket2 = self.__get_max_mirror_data()
+        
+        # pick bucket to move lv to
+        if self.__get_extent_count_in_bucket(lv, bucket1) < self.__get_extent_count_in_bucket(lv, bucket2):
+            bucket_from = bucket1
+            bucket_to = bucket2
+        else:
+            bucket_from = bucket2
+            bucket_to = bucket1
+        
+        structs = []
+        bucket_to_i = 0
+        pv_to = bucket_to[bucket_to_i]
+        free_exts = pv_to.get_extent_total_used_free()[2]
+        for pv_from in bucket_from:
+            for ext_block in pv_from.get_extent_blocks():
+                if ext_block.get_lv() != lv:
+                    continue
+                block_start, block_size = ext_block.get_start_size()
+                while block_size != 0:
+                    if block_size >= free_exts:
+                        structs.append([pv_from, block_start, free_exts, pv_to])
+                        block_start = block_start + free_exts
+                        block_size = block_size - free_exts
+                        # get next pv_to from bucket_to
+                        bucket_to_i = bucket_to_i + 1
+                        if bucket_to_i == len(bucket_to):
+                            # should be done
+                            return structs
+                        pv_to = bucket_to[bucket_to_i]
+                        free_exts = pv_to.get_extent_total_used_free()[2]
+                    else:
+                        structs.append([pv_from, block_start, block_size, pv_to])
+                        block_start = block_start + block_size
+                        block_size = block_size - block_size
+                        free_exts = free_exts - block_size
+        return structs
+    
+    def __get_extent_count_in_bucket(self, lv, bucket_pvs):
+        ext_count = 0
+        for pv in bucket_pvs:
+            for ext_block in pv.get_extent_blocks():
+                if ext_block.get_lv() == lv:
+                    ext_count = ext_count + ext_block.get_start_size()[1]
+        return ext_count
     
     def errorMessage(self, message):
         dlg = gtk.MessageDialog(None, 0,

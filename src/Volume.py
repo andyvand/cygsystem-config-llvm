@@ -6,12 +6,13 @@ from lvmui_constants import *
 
 class Volume:
 
-  def __init__(self, name, paths, used, attrs):
+  def __init__(self, name, path, used, attrs, uuid):
     self.set_name(name)
-    self.paths = paths
+    self.set_path(path)
     self.set_vg(None)
     self.set_used(used)
     self.set_attr(attrs)
+    self.set_uuid(uuid)
     
     self.set_properties([])
     
@@ -25,6 +26,11 @@ class Volume:
     self.name = name.strip()
   def get_name(self):
     return self.name
+  
+  def set_uuid(self, uuid):
+    self.uuid = uuid
+  def get_uuid(self):
+    return self.uuid
   
   def set_extent_size(self, size): # in bytes
     self.extent_size = int(size)
@@ -48,15 +54,10 @@ class Volume:
   def get_size_total_string(self):
     return self.get_size_total_used_free_string()[0]
   
-  def add_path(self, path):
-    self.paths.append(path.strip())
-  def get_paths(self):
-    return self.paths
-  def get_path(self): # return main path
-    if len(self.get_paths()) == 0:
-      return None
-    else:
-      return self.get_paths()[0]
+  def set_path(self, path):
+    self.path = path
+  def get_path(self):
+    return self.path
   
   def set_vg(self, vg):
     self.vg = vg

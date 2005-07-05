@@ -10,6 +10,8 @@ LVM_BIN_PATH = LVM_PATH + 'lvm'
 LVMDISKSCAN_BIN_PATH = LVM_PATH + 'lvmdiskscan'
 LVDISPLAY_BIN_PATH = LVM_PATH + 'lvdisplay'
 LVCREATE_BIN_PATH = LVM_PATH + 'lvcreate'
+LVCHANGE_BIN_PATH = LVM_PATH + 'lvchange'
+LVCONVERT_BIN_PATH = LVM_PATH + 'lvconvert'
 LVRENAME_BIN_PATH = LVM_PATH + 'lvrename'
 LVEXTEND_BIN_PATH = LVM_PATH + 'lvextend'
 LVREDUCE_BIN_PATH = LVM_PATH + 'lvreduce'
@@ -46,6 +48,10 @@ INIT_ENTITY_MOUNTED=_("Disk entity %s contains data of folder %s. All data in it
 INIT_ENTITY_FREE_SPACE=_("Are you certain that you wish to initialize %s of free space on disk %s?")
 INIT_ENTITY_DEVICE_CHOICE=_("You are about to initialize unpartitioned disk %s. It is advisable, although not required, to create a partition on it. Do you want to create a single partition encompassing the whole drive? Choosing No will initialize unpartitioned disk.")
 
+WAIT_MESSAGE='fixme: wait message'
+
+MIRROR_LOG=_("Mirror Log")
+
 NEW_LV_NAME_ARG = 0
 NEW_LV_VGNAME_ARG = 1
 NEW_LV_SIZE_ARG = 2
@@ -59,6 +65,7 @@ NEW_LV_MAKE_MNT_POINT_ARG = 9
 NEW_LV_MNT_POINT_ARG = 10
 NEW_LV_SNAPSHOT = 11
 NEW_LV_SNAPSHOT_ORIGIN = 12
+NEW_LV_MIRRORING = 13
 
 EXTENT_IDX = 0
 GIGABYTE_IDX = 1
@@ -68,6 +75,8 @@ KILOBYTE_IDX = 3
 UNUSED=_("Unused")
 FREE=_("Free")
 FREE_SPACE=_("Free space")
+
+UNPARTITIONED_SPACE=_("Unpartitioned space")
 
 GIG_SUFFIX=_("G")
 MEG_SUFFIX=_("M")

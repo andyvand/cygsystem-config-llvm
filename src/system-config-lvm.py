@@ -76,7 +76,8 @@ class baselvm:
     self.glade_xml.signal_autoconnect(
       {
         "on_quit1_activate" : self.quit,
-        "on_about1_activate" : self.on_about
+        "on_about1_activate" : self.on_about,
+        "on_reload_lvm_activate" : self.on_reload
       }
     )
                                                                                 
@@ -96,11 +97,13 @@ class baselvm:
         ) ### end dialog
         dialog.set_title (FORMALNAME)
         dialog.show()
-                                                                                
-                                                                                
-                                                                                
+        
+  
+  def on_reload(self, *args):
+      self.volume_tab_view.reset_tree_model([])
+  
   def quit(self, *args):
-    gtk.main_quit()
+      gtk.main_quit()
 
 
 

@@ -26,7 +26,7 @@ class FDiskModel:
         self.__devices[devname].reload()
         self.__notifyViews()
     
-    # returns {devname : [Segment1, Segment2, Segment3, ...]}
+    # returns {devname : [Segment1, Segment2, Segment3, ...], ...}
     def getDevices(self):
         data = dict()
         for devname in self.__devices:

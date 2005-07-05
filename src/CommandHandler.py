@@ -26,12 +26,15 @@ FSCREATE_FAILURE=_("mkfs command failed. Command attempted: \"%s\" - System Erro
 MNTCREATE_FAILURE=_("mount command failed. Command Attempted: %s  - System Error Message: \"%s\"")
 LVRESIZE_FAILURE=_("lvresize command failed. Command attempted: \"%s\" - System Error Message: %s")
 LVRENAME_FAILURE=_("lvrename command failed. Command attempted: \"%s\" - System Error Message: %s")
+LVCHANGE_FAILURE=_("lvchange command failed. Command attempted: \"%s\" - System Error Message: %s")
+LVCONVERT_FAILURE=_("lvconvert command failed. Command attempted: \"%s\" - System Error Message: %s")
+
 
 class CommandHandler:
-
+  
   def __init__(self):
     pass
-
+  
   def new_lv(self, cmd_args_dict):
     model_factory = lvm_model()
     #first set up lvcreate args
@@ -57,6 +60,8 @@ class CommandHandler:
       arglist.append("-s")
       arglist.append(cmd_args_dict[NEW_LV_SNAPSHOT_ORIGIN])
     else:
+      if cmd_args_dict[NEW_LV_MIRRORING]:
+        arglist.append("-m1")
       if cmd_args_dict[NEW_LV_IS_STRIPED_ARG] == True:
         arglist.append("-i")
         arglist.append(str(cmd_args_dict[NEW_LV_NUM_STRIPES_ARG]))
@@ -64,7 +69,7 @@ class CommandHandler:
         arglist.append(str(cmd_args_dict[NEW_LV_STRIPE_SIZE_ARG]))
       vgname = cmd_args_dict[NEW_LV_VGNAME_ARG]
       arglist.append(vgname)
-      
+    
     cmd_str = ' '.join(arglist)
     
     result_string,err,res = execWithCaptureErrorStatus(LVCREATE_BIN_PATH,arglist)
@@ -93,31 +98,82 @@ class CommandHandler:
         mnt_point =  cmd_args_dict[NEW_LV_MNT_POINT_ARG]
         self.mount(lvpath, mnt_point)
         
-  def reduce_lv(self, lvpath, new_size_extents): 
+  def reduce_lv(self, lvpath, new_size_extents, test=False): 
     cmd_args = list()
     cmd_args.append(LVREDUCE_BIN_PATH)
+    if test:
+      cmd_args.append('--test')
     cmd_args.append('-f')
     cmd_args.append('-l')
     cmd_args.append(str(new_size_extents))
     cmd_args.append(lvpath)
     cmdstr = ' '.join(cmd_args)
+    
+    if test:
+      out,err,res = execWithCaptureErrorStatus(LVREDUCE_BIN_PATH, cmd_args)
+      return (res == 0)
     out,err,res = execWithCaptureErrorStatusProgress(LVREDUCE_BIN_PATH, cmd_args,
                                                      _("Please wait while volume is being resized"))
     if res != 0:
       raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
   
-  def extend_lv(self, lvpath, new_size_extents): 
+  def extend_lv(self, lvpath, new_size_extents, test=False): 
     cmd_args = list()
     cmd_args.append(LVEXTEND_BIN_PATH)
+    if test:
+      cmd_args.append('--test')
     cmd_args.append('-l')
     cmd_args.append(str(new_size_extents))
     cmd_args.append(lvpath)
     cmdstr = ' '.join(cmd_args)
+    if test:
+      out,err,res = execWithCaptureErrorStatus(LVEXTEND_BIN_PATH, cmd_args)
+      return (res == 0)
     out,err,res = execWithCaptureErrorStatusProgress(LVEXTEND_BIN_PATH, cmd_args,
                                                      _("Please wait while volume is being resized"))
     if res != 0:
       raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
-    
+  
+  def activate_lv(self, lvpath):
+    cmd_args = list()
+    cmd_args.append(LVCHANGE_BIN_PATH)
+    cmd_args.append('-ay')
+    cmd_args.append(lvpath)
+    cmdstr = ' '.join(cmd_args)
+    out,err,res = execWithCaptureErrorStatus(LVCHANGE_BIN_PATH, cmd_args)
+    if res != 0:
+      raise CommandError('FATAL', LVCHANGE_FAILURE % (cmdstr,err))
+  
+  def deactivate_lv(self, lvpath):
+    cmd_args = list()
+    cmd_args.append(LVCHANGE_BIN_PATH)
+    cmd_args.append('-an')
+    cmd_args.append(lvpath)
+    cmdstr = ' '.join(cmd_args)
+    out,err,res = execWithCaptureErrorStatus(LVCHANGE_BIN_PATH, cmd_args)
+    if res != 0:
+      raise CommandError('FATAL', LVCHANGE_FAILURE % (cmdstr,err))
+  
+  def add_mirroring(self, lvpath):
+    cmd_args = list()
+    cmd_args.append(LVCONVERT_BIN_PATH)
+    cmd_args.append('-m1')
+    cmd_args.append(lvpath)
+    cmdstr = ' '.join(cmd_args)
+    out,err,res = execWithCaptureErrorStatus(LVCONVERT_BIN_PATH, cmd_args)
+    if res != 0:
+      raise CommandError('FATAL', LVCONVERT_FAILURE % (cmdstr,err))
+  
+  def remove_mirroring(self, lvpath):
+    cmd_args = list()
+    cmd_args.append(LVCONVERT_BIN_PATH)
+    cmd_args.append('-m0')
+    cmd_args.append(lvpath)
+    cmdstr = ' '.join(cmd_args)
+    out,err,res = execWithCaptureErrorStatus(LVCONVERT_BIN_PATH, cmd_args)
+    if res != 0:
+      raise CommandError('FATAL', LVCONVERT_FAILURE % (cmdstr,err))
+  
   def mount(self, dev_path, mnt_point): 
     cmd_args = list()
     cmd_args.append("/bin/mount")
@@ -246,8 +302,8 @@ class CommandHandler:
     if res != 0:
       raise CommandError('FATAL', VGREDUCE_FAILURE % (cmdstr,err))
 
-  # data = [pv to migrate to, policy (0 - inherit, 1 - normal, 2 - contiguous, 3 - anywhere), lv to migrate from]
-  # extents = [(from, to), ...]
+  # data = [pv to migrate to, policy (0 - inherit, 1 - normal, 2 - contiguous, 3 - anywhere), lv_path to migrate from]
+  # extents_from = [(start, size), ...]
   def move_pv(self, pv, extents_from, data):
     args = list()
     args.append(PVMOVE_BIN_PATH)
@@ -266,9 +322,8 @@ class CommandHandler:
       args.append('--name ' + data[2])
     # pv to migrate from
     pv_from = pv.strip()
-    for ext in extents_from:
-      from_size = ext.get_start_size()
-      pv_from = pv_from + ':' + str(from_size[0]) + '-' + str(from_size[0] + from_size[1] - 1)
+    for (start, size) in extents_from:
+      pv_from = pv_from + ':' + str(start) + '-' + str(start + size - 1)
     args.append(pv_from)
     # pv to migrate to
     if data[0] != None:

@@ -9,15 +9,20 @@ from Segment import MIRROR_SEGMENT_ID
 
 class LogicalVolume(Volume):
   
-  def __init__(self, name, paths, used, attrs):
-    Volume.__init__(self, name, paths, used, attrs)
+  def __init__(self, name, path, used, attrs, uuid):
+    Volume.__init__(self, name, path, used, attrs, uuid)
     
     self.segments = []
     
     self.snapshot_origin = None
     self.snapshot_usage = 0
-    
     self.snapshots = []
+    
+    self.set_mirror_log()
+    self.is_mirror_log = False
+    self.is_mirror_image = False
+    
+    
   
   def add_segment(self, segment):
     self.segments.append(segment)
@@ -50,15 +55,25 @@ class LogicalVolume(Volume):
   def get_snapshots(self):
     return self.snapshots
   
-  def is_mirror(self):
+  def is_mirrored(self):
     if len(self.segments) == 1:
       if self.segments[0].get_type() == MIRROR_SEGMENT_ID:
         return True
     return False
   
+  def set_mirror_log(self, log=None):
+    self.mirror_log = log
+    if log != None and log.__class__ == self.__class__:
+      log.is_mirror_log = True
+      log.set_name(self.get_name())
+      for seg in log.get_segments():
+        extent = seg.get_extent_block()
+        extent.set_annotation(MIRROR_LOG)
+  def get_mirror_log(self):
+    return self.mirror_log
   
   def print_out(self, padding):
-    print padding + 'LV: ' + self.get_name() + ' ' + str(self.get_extent_total_used_free()[1])
+    print padding + 'LV: ' + self.get_name() + ' ' + str(self.get_path()) + ' ' + str(self.get_extent_total_used_free()[1])
     if self.is_snapshot():
       info = self.get_snapshot_info()
       print padding + 'snapshot origin(' + info[0].get_name() + ')'

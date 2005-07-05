@@ -35,7 +35,7 @@ class StripedSegment(Segment):
   def __init__(self, stripe_size, start, size): # logical range
     Segment.__init__(self, STRIPED_SEGMENT_ID, start, size)
     
-    self.stripe_size = 0 # bytes
+    self.stripe_size = stripe_size # bytes
     self.stripes = {}
     
   
@@ -45,6 +45,8 @@ class StripedSegment(Segment):
   def get_stripes(self):
     return self.stripes
   
+  def get_stripe_size(self):
+    return self.stripe_size
   
   def print_out(self, padding):
     Segment.print_out(self, padding + 'striped: ')
@@ -98,6 +100,7 @@ class MirroredSegment(Segment):
     
   
   def add_image(self, image_lv):
+    image_lv.is_mirror_image = True
     image_num = len(self.image_lvs)
     self.image_lvs.append(image_lv)
     # set annotations

@@ -7,15 +7,23 @@ from Volume import Volume
 
 
 class VolumeGroup(Volume):
-  def __init__(self, name, attr, extent_size, extents_total, extents_free):
-    Volume.__init__(self, name, [], True, attr)
+  def __init__(self, name, attr, extent_size, extents_total, extents_free, pvs_max, lvs_max):
+    Volume.__init__(self, name, [], True, attr, None)
     
     self.set_extent_size(extent_size)
     self.set_extent_count(extents_total, extents_total - extents_free)
     
     self.lvs = {}
     self.pvs = {}
+  
+    self.max_pvs = pvs_max
+    self.max_lvs = lvs_max
     
+  
+  def get_max_lvs(self):
+    return self.max_lvs
+  def get_max_pvs(self):
+    return self.max_pvs
   
   def add_lv(self, lv):
     lv.set_vg(self)

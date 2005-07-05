@@ -37,7 +37,7 @@
 		<widget class="GtkMenu" id="file1_menu">
 
 		  <child>
-		    <widget class="GtkMenuItem" id="separator1">
+		    <widget class="GtkSeparatorMenuItem" id="separator1">
 		      <property name="visible">True</property>
 		    </widget>
 		  </child>
@@ -47,6 +47,28 @@
 		      <property name="visible">True</property>
 		      <property name="stock_item">GNOMEUIINFO_MENU_EXIT_ITEM</property>
 		      <signal name="activate" handler="on_quit1_activate" last_modification_time="Mon, 01 Nov 2004 14:53:41 GMT"/>
+		    </widget>
+		  </child>
+		</widget>
+	      </child>
+	    </widget>
+	  </child>
+
+	  <child>
+	    <widget class="GtkMenuItem" id="tools1">
+	      <property name="visible">True</property>
+	      <property name="label" translatable="yes">_Tools</property>
+	      <property name="use_underline">True</property>
+
+	      <child>
+		<widget class="GtkMenu" id="tools1_menu">
+
+		  <child>
+		    <widget class="GtkMenuItem" id="reload_lvm">
+		      <property name="visible">True</property>
+		      <property name="label" translatable="yes">_Reload</property>
+		      <property name="use_underline">True</property>
+		      <signal name="activate" handler="on_reload_lvm_activate" last_modification_time="Wed, 29 Jun 2005 17:50:56 GMT"/>
 		    </widget>
 		  </child>
 		</widget>
@@ -542,7 +564,7 @@ Logical Volume</property>
 			</widget>
 			<packing>
 			  <property name="padding">0</property>
-			  <property name="expand">True</property>
+			  <property name="expand">False</property>
 			  <property name="fill">True</property>
 			</packing>
 		      </child>

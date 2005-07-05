@@ -14,6 +14,7 @@ from LogicalVolume import *
 from VolumeGroup import *
 from Segment import *
 from ExtentBlock import *
+from Multipath import Multipath
 
 
 #Column names for PVS calls
@@ -107,16 +108,6 @@ MAX_LV_IDX = 11
 LV_COUNT_IDX = 12
 VG_UUID_IDX = 13
 
-LVS_OPTION_STRING="lv_name,vg_name,lv_size,seg_count,stripes,stripesize,lv_attr,lv_uuid"
-LV_NAME_IDX = 0
-LV_VG_NAME_IDX = 1
-LV_SIZE_IDX = 2
-LV_SEG_COUNT_IDX = 3
-LV_STRIPE_COUNT_IDX = 4
-LV_STRIPE_SIZE_IDX = 5
-LV_ATTR_IDX = 6
-LV_UUID_IDX = 7
-
 PV_NAME_IDX = 0
 PV_VG_NAME_IDX = 1
 PV_SIZE_IDX = 2
@@ -141,50 +132,98 @@ class lvm_model:
     self.__fdisk_model = FDiskModel()
     self.__VGs = {}
     self.__PVs = []
-    self.reload()
   
-  def reload(self):
+  def reload(self, dlg = None):
+    if dlg != None:
+      dlg.show()
+    
     # first query VolumeGroups
     self.__VGs = {}
     for vg in self.__query_VGs():
       self.__VGs[vg.get_name()] = vg
     
+    if dlg != None:
+      dlg.refresh()
+    
     # then query PVs
     self.__PVs = self.__query_partitions()
+    
+    if dlg != None:
+      dlg.refresh()
     
     # then query LVs
     self.__query_LVs()
     
+    if dlg != None:
+      dlg.refresh()
+    
     # then link all together
     self.__link_snapshots()
+    self.__link_mirrors()
     
+    # set up LVs properties (has to come after link_mirrors)
     for vg in self.__VGs.values():
       for lv in vg.get_lvs().values():
         if lv.is_used():
-          lv.set_properties(self.get_data_for_LV(lv))
+          lv.set_properties(self.__get_data_for_LV(lv))
+          if dlg != None:
+            dlg.refresh()
     
     self.__add_unused_space()
     
     
     # debugging
-    #for vg in self.__VGs.values():
-    #  vg.print_out()
+    for vg in self.__VGs.values():
+      vg.print_out()
+    print '\n\nAll PVs'
+    for pv in self.__PVs:
+      pv.print_out('')
     #sys.exit(0)
     
-  
+    if dlg != None:
+      dlg.hide()
+    
   def __query_partitions(self):
-    parts = dict() # PVs on a partition
-    segs = list() # PVs on free space
+    parts = {} # PVs on a partition
+    segs = []  # PVs on free space
     # get partitions from hard drives
     self.__fdisk_model.reload()
     devs = self.__fdisk_model.getDevices()
+    # multipathing
+    multipath_obj = Multipath()
+    multipath_data = multipath_obj.get_multipath_data()
+    for multipath in multipath_data:
+      segments = []
+      for path in multipath_data[multipath]:
+        if path in devs:
+          segments = devs[path]
+          devs.pop(path)
+      devs[multipath] = segments
     for devname in devs:
       self.__query_partitions2(devname, devs[devname], parts, segs)
+    for pv in parts.values()[:]:
+      devname = pv.getPartition()[0]
+      if devname in multipath_data:
+        parts.pop(pv.get_path())
+        pv.removeDevname(devname)
+        for path in multipath_data[devname]:
+          pv.addDevname(path)
+      for path in pv.get_paths():
+        parts[path] = pv
+    for pv in segs:
+      devname = pv.getPartition()[0]
+      if devname in multipath_data:
+        pv.removeDevname(devname)
+        for path in multipath_data[devname]:
+          pv.addDevname(path)
     # disable swap partitions if in use
     result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/swaps'])
     lines = result.splitlines()
     for line in lines:
       swap = line.split()[0]
+      for multipath in multipath_data:
+        if swap in multipath_data[multipath]:
+          swap = multipath
       if swap in parts:
         parts[swap].initializable = False
         parts[swap].add_property(NOT_INITIALIZABLE, SWAP_IN_USE)
@@ -216,23 +255,29 @@ class lvm_model:
     for pv in self.__query_PVs():
       # assign unpartitioned drives, to PVs, if already used by LVM
       for seg in segs[:]:
-        if seg.getPartition()[0] == pv.get_path():
+        if pv.get_path() in seg.get_paths():
           pv.setPartition(seg.getPartition())
-          pv.name = pv.extract_name(pv.get_path()) # overwrite Free Space label
+          for devname in seg.getDevnames():
+            pv.addDevname(devname)
+          pv.set_name(pv.extract_name(pv.get_path())) # overwrite Free Space label
           segs.remove(seg)
-          parts[pv.get_path()] = pv
       # merge
-      path = pv.get_paths()[0]
+      path = pv.get_path()
       if path in parts:
-        pv.setPartition(parts[path].getPartition())
+        old_pv = parts[path]
+        pv.setPartition(old_pv.getPartition())
+        for devname in old_pv.getDevnames():
+          pv.addDevname(devname)
       else:
         # pv is not a partition, eg. loop device, or LV
         pass
-      parts[path] = pv
+      for path in pv.get_paths():
+        parts[path] = pv
     # create return list
     pvs_list = list()
-    for part in parts:
-      pvs_list.append(parts[part])
+    for part in parts.values():
+      if part not in pvs_list:
+        pvs_list.append(part)
     for seg in segs:
       pvs_list.append(seg)
     # set properties
@@ -254,7 +299,7 @@ class lvm_model:
           # initialization of extended partition wipes all logical partitions !!!
           pv.initializable = False
           pv.add_property(NOT_INITIALIZABLE, EXTENDED_PARTITION)
-        part_dictionary[pv.get_paths()[0]] = pv
+        part_dictionary[pv.get_path()] = pv
   def __query_PVs(self):
     pvlist = list()
     arglist = list()
@@ -271,17 +316,18 @@ class lvm_model:
     result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     for line in lines:
+      line = line.strip()
       words = line.split(",")
       path = words[P_NAME_COL]
       pv = PhysicalVolume(path, 
-                              words[P_FMT_COL], 
-                              words[P_ATTR_COL], 
-                              words[P_SIZE_COL], 
-                              words[P_FREE_COL],
-                              True,
-                              words[P_PE_COUNT_COL], 
-                              words[P_PE_ALLOC_COL])
-      pv.add_path(path)
+                          words[P_FMT_COL], 
+                          words[P_ATTR_COL], 
+                          words[P_SIZE_COL], 
+                          words[P_FREE_COL],
+                          True,
+                          words[P_PE_COUNT_COL], 
+                          words[P_PE_ALLOC_COL])
+      pv.set_path(path)
       vgname = words[P_VG_NAME_COL]
       if vgname == '':
         pv.set_vg(None)
@@ -340,15 +386,18 @@ class lvm_model:
     result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
     for line in lines:
-      line.strip()
+      line = line.strip()
       words = line.split(",")
       
       extent_size = int(words[3])
       extents_total = int(words[2]) / extent_size
       extents_free = int(words[4])
       
-      vg = VolumeGroup(words[0], words[1], extent_size, extents_total, extents_free)
-      vg.set_properties(self.get_data_for_VG(vg.get_name()))
+      vgname = words[0].strip()
+      max_lvs, lvs, max_pvs, pvs = self.__get_max_LVs_PVs_on_VG(vgname)
+      
+      vg = VolumeGroup(vgname, words[1], extent_size, extents_total, extents_free, max_pvs, max_lvs)
+      vg.set_properties(self.__get_data_for_VG(vg.get_name()))
       vglist.append(vg)
     return vglist
   
@@ -364,7 +413,7 @@ class lvm_model:
     return pv.get_vg()
   
   def __query_LVs(self):
-    LVS_OPTION_STRING="lv_name,vg_name,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size"
+    LVS_OPTION_STRING="lv_name,vg_name,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size,lv_uuid,mirror_log"
     LV_NAME_IDX         = 0
     LV_VG_NAME_IDX      = 1
     LV_STRIPE_SIZE_IDX  = 2
@@ -377,6 +426,8 @@ class lvm_model:
     LV_SEG_SIZE_IDX     = 9
     LV_EXTENT_SIZE_IDX  = 10
     LV_SIZE_IDX         = 11
+    LV_UUID_IDX         = 12
+    LV_MIRROR_LOG_IDX   = 13
     
     arglist = list()
     arglist.append(LVM_BIN_PATH)
@@ -395,14 +446,17 @@ class lvm_model:
     result_string = execWithCapture(LVM_BIN_PATH, arglist)
     lines = result_string.splitlines()
     for line in lines:
+      line = line.strip()
       words = line.split(';')
       vgname = words[LV_VG_NAME_IDX].strip()
       attrs = words[LV_ATTR_IDX].strip()
+      uuid = words[LV_UUID_IDX].strip()
       extent_size = int(words[LV_EXTENT_SIZE_IDX])
       seg_start = int(words[LV_SEG_START_IDX]) / extent_size
       lv_size = int(words[LV_SIZE_IDX]) / extent_size
       seg_size = int(words[LV_SEG_SIZE_IDX]) / extent_size
       devices = words[LV_DEVICES_IDX]
+      mirror_log = words[LV_MIRROR_LOG_IDX].strip()
       
       lvname = words[LV_NAME_IDX].strip()
       # remove [] if there (used to mark hidden lvs)
@@ -413,14 +467,23 @@ class lvm_model:
       vg_lvs = vg.get_lvs()
       lv = None
       if lvname not in vg_lvs:
-        lv = LogicalVolume(lvname, [self.get_logical_volume_path(lvname, vg.get_name())], True, attrs)
+        lv = LogicalVolume(lvname, self.get_logical_volume_path(lvname, vg.get_name()), True, attrs, uuid)
         lv.set_extent_count(lv_size, lv_size)
         vg.add_lv(lv)
       lv = vg_lvs[lvname]
       
       segment = None
       devs = devices.split(',')
-      if len(devs) == 1:
+      if attrs[0] == 'm':
+        # mirrored LV
+        lv.set_mirror_log(mirror_log) # tmp, will get replaced with real one at __link_mirrors()
+        segment = MirroredSegment(seg_start, seg_size)
+        images = devs
+        for image_name in images:
+          idx = image_name.find('(')
+          image_lv = LogicalVolume(image_name[:idx], None, True, None, None) # tmp, will get replaced with real one at __link_mirrors()
+          segment.add_image(image_lv)
+      elif len(devs) == 1:
         # linear segment
         segment = LinearSegment(seg_start, seg_size)
         idx = devs[0].find('(')
@@ -428,14 +491,14 @@ class lvm_model:
         ph_ext_beg = int(devs[0][idx+1:len(devs[0])-1])
         pv = None
         for pv_t in self.__PVs:
-          if pv_t.get_paths()[0] == pvpath:
+          if pv_t.get_path() == pvpath:
             pv = pv_t
             break
         extent_block = ExtentBlock(pv, lv, ph_ext_beg, seg_size)
         segment.set_extent_block(extent_block)
       else:
         # striped segment
-        stripe_size = int(words[LV_STRIPE_SIZE_IDX]) / extent_size
+        stripe_size = int(words[LV_STRIPE_SIZE_IDX])
         segment = StripedSegment(stripe_size, seg_start, seg_size)
         stripe_id = 0
         for stripe in devs:
@@ -444,7 +507,7 @@ class lvm_model:
           ph_ext_beg = int(stripe[idx+1:len(stripe)-1])
           pv = None
           for pv_t in self.__PVs:
-            if pv_t.get_paths()[0] == pvpath:
+            if pv_t.get_path() == pvpath:
               pv = pv_t
               break
           extent_block = ExtentBlock(pv, lv, ph_ext_beg, seg_size/len(devs))
@@ -457,10 +520,10 @@ class lvm_model:
       if origin != '':
         # snapshot
         usage = float(words[LV_SNAP_PERCENT_IDX].strip())
-        lv.set_snapshot_info(origin, usage) # set name for now, real LV will get set later
+        lv.set_snapshot_info(origin, usage) # set name for now, real LV will get set at __link_snapshots()
       
     # all LVs created  
-    
+  
   def __link_snapshots(self):
     for vgname in self.__VGs:
       vg = self.__VGs[vgname]
@@ -476,6 +539,33 @@ class lvm_model:
         snap.set_snapshot_info(origin, snap.get_snapshot_info()[1]) # real object as origin
         origin.add_snapshot(snap)
     
+  def __link_mirrors(self):
+    for vgname in self.__VGs:
+      vg = self.__VGs[vgname]
+      lv_names = vg.get_lvs().keys()[:]
+      for lvname in lv_names:
+        if vg.get_lvs().has_key(lvname):
+          lv = vg.get_lvs()[lvname]
+          if lv.is_mirrored():
+            # replace tmp lvs with real one
+            # log
+            log_lv = vg.get_lvs()[lv.get_mirror_log()]
+            vg.get_lvs().pop(log_lv.get_name()) # remove log_lv from vg
+            lv.set_mirror_log(log_lv)
+            # images
+            segment = lv.get_segments()[0]
+            images_tmp = segment.get_images()[:] # copy
+            segment.clear_images()
+            for image_lv_tmp in images_tmp:
+              # get real LV
+              image_lv_real = vg.get_lvs()[image_lv_tmp.get_name()]
+              # remove image_lv_real from vg
+              vg.get_lvs().pop(image_lv_real.get_name())
+              # rename it to mirror_name
+              image_lv_real.set_name(lvname)
+              # add it to the segment
+              segment.add_image(image_lv_real)
+    
   
   def __add_unused_space(self):
     #Now check if there is free space in Volume Groups
@@ -483,7 +573,7 @@ class lvm_model:
     for vg in self.__VGs.values():
       if vg.get_extent_total_used_free()[2] == 0:
         continue
-      lv_unused = LogicalVolume(UNUSED_SPACE, [], False, None)
+      lv_unused = LogicalVolume(UNUSED_SPACE, None, False, None, None)
       lv_unused.set_extent_count(vg.get_extent_total_used_free()[2], vg.get_extent_total_used_free()[2])
       vg.add_lv(lv_unused)
       segment_offset = 0
@@ -550,6 +640,7 @@ class lvm_model:
     #If the volume group name matches, check if the LV name can be found 
     #within the first column string. If so, the column[0] string is the path.
     for line in lines:
+      line = line.strip()
       words = line.split(":")
       vgnm = words[LV_VGNAME_COL].strip()
       if vgnm == vg_name:
@@ -569,18 +660,31 @@ class lvm_model:
     if pv.needsFormat():
       try:
         (devname, seg) = pv.getPartition()
+        fdisk_devname = None
+        fdisk_devnames = self.__fdisk_model.getDevices().keys()
+        if devname in fdisk_devnames:
+          fdisk_devname = devname
+        else:
+          # if pv has multipath info, devname doesn't have to be known to FDiskModel
+          # so find device it does :)
+          multipath_object = Multipath()
+          multipath_data = Multipath.get_multipath_data()
+          # devname should be a multipath access point
+          for path in multipath_data[devname]:
+            if path in fdisk_devnames:
+              fdisk_devname = path
         part = Partition(seg.beg, seg.end, ID_LINUX_LVM, None, False, seg.sectorSize)
-        part_num = self.__fdisk_model.add(devname, part)
+        part_num = self.__fdisk_model.add(fdisk_devname, part)
         print part_num
-        self.__fdisk_model.saveTable(devname)
-        new_part = self.__fdisk_model.getPartition(devname, part_num)
+        self.__fdisk_model.saveTable(fdisk_devname)
+        new_part = self.__fdisk_model.getPartition(fdisk_devname, part_num)
         pv.setPartition((devname, new_part))
       except FDiskErr:
-        self.__fdiskModel.reloadDisc(devname)
+        self.__fdiskModel.reload()
         raise CommandError('FATAL', AUTOPARTITION_FAILURE % devname)
-    return pv.get_paths()[0]
+    return pv.get_path()
   
-  def get_max_LVs_PVs_on_VG(self, vgname):
+  def __get_max_LVs_PVs_on_VG(self, vgname):
     vg_name = vgname.strip()
     arglist = list()
     arglist.append(LVM_BIN_PATH)
@@ -609,7 +713,7 @@ class lvm_model:
     pvs = int(words[3])
     return max_lvs,lvs,max_pvs,pvs
   
-  def get_data_for_VG(self, vgname):
+  def __get_data_for_VG(self, vgname):
     name = vgname.strip()
     text_list = list()
     arglist = list()
@@ -627,7 +731,7 @@ class lvm_model:
 
     result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
-    words = lines[0].split(",")
+    words = lines[0].strip().split(",")
     text_list.append(VG_NAME)
     text_list.append(words[VG_NAME_IDX])
     text_list.append(VG_SYSID)
@@ -675,53 +779,47 @@ class lvm_model:
       
     return text_list
   
-  def get_data_for_LV(self, lv):
-    path = lv.get_path()
+  def __get_data_for_LV(self, lv):
     text_list = list()
-    arglist = list()
-    arglist.append(LVM_BIN_PATH)
-    arglist.append("lvs")
-    arglist.append("--noheadings")
-    arglist.append("--separator")
-    arglist.append(",")
-    if LVS_HAS_ALL_OPTION:
-      arglist.append("--all")
-    arglist.append("-o")
-    arglist.append(LVS_OPTION_STRING)
-    arglist.append(path)
     
-    result_string = execWithCapture(LVM_BIN_PATH,arglist)
-    lines = result_string.splitlines()
-    words = lines[0].split(",")
     text_list.append(LV_NAME)
-    text_list.append(words[LV_NAME_IDX])
+    text_list.append(lv.get_name())
+    if lv.is_mirrored():
+      text_list.append(_("Number of mirror images:  "))
+      text_list.append(str(len(lv.get_segments()[0].get_images())-1))
     if lv.has_snapshots():
-      text_list.append(_("Has snapshot:  "))
-      text_list.append(_("True"))
+      text_list.append(_("Snapshots:  "))
+      string = lv.get_snapshots()[0].get_name()
+      for snap in lv.get_snapshots()[1:]:
+        string = string + ', ' + snap.get_name()
+      text_list.append(string)
     if lv.is_snapshot():
       text_list.append(_("Snapshot origin:  "))
       text_list.append(lv.get_snapshot_info()[0].get_name())
     text_list.append(VG_NAME)
-    text_list.append(words[LV_VG_NAME_IDX])
+    text_list.append(lv.get_vg().get_name())
     text_list.append(LV_SIZE)
-    text_list.append(words[LV_SIZE_IDX])
+    text_list.append(lv.get_size_total_string())
     if lv.is_snapshot():
       text_list.append(_("Snapshot usage:  "))
       text_list.append(str(lv.get_snapshot_info()[1]) + '%')
     text_list.append(LV_SEG_COUNT)
-    text_list.append(words[LV_SEG_COUNT_IDX])
+    text_list.append(str(len(lv.get_segments())))
     
-    if int(words[LV_STRIPE_COUNT_IDX]) > 1:
+    segment0 = lv.get_segments()[0]
+    if segment0.get_type() == STRIPED_SEGMENT_ID:
+      # striped
       text_list.append(LV_STRIPE_COUNT)
-      text_list.append(words[LV_STRIPE_COUNT_IDX])
+      text_list.append(str(len(segment0.get_stripes().values())))
       text_list.append(LV_STRIPE_SIZE)
-      text_list.append(words[LV_STRIPE_SIZE_IDX])
-    text_list.append(LV_ATTR)
-    text_list.append(words[LV_ATTR_IDX])
-    text_list.append(LV_UUID)
-    text_list.append(words[LV_UUID_IDX])
+      text_list.append(str(segment0.get_stripe_size()/1024) + KILO_SUFFIX)
     
-    mount_point = self.getMountPoint(path)
+    text_list.append(LV_ATTR)
+    text_list.append(lv.get_attr())
+    text_list.append(LV_UUID)
+    text_list.append(lv.get_uuid())
+    
+    mount_point = self.getMountPoint(lv.get_path())
     if mount_point == None:
       mount_point = UNMOUNTED
     text_list.append(UV_MOUNT_POINT)
@@ -729,18 +827,16 @@ class lvm_model:
     
     return text_list
   
-  
   def __set_PV_props(self, pv):
     # anything that is in, place to the end
     end = pv.get_properties()
     text_list = list()
     pv.set_properties(text_list)
-    path = pv.get_paths()[0]
+    path = pv.get_path()
     
     if pv.get_type() == UNINITIALIZED_TYPE:
       # size
-      #size_string = pv.get_volume_size_string()
-      size_string = str(pv.size) + 'extents'
+      size_string = pv.get_size_total_string()
       text_list.append(UV_SIZE)
       text_list.append(size_string)
       # partition type
@@ -771,7 +867,7 @@ class lvm_model:
       arglist.append(path)
       result_string = execWithCapture(LVM_BIN_PATH,arglist)
       lines = result_string.splitlines()
-      words = lines[0].split(",")
+      words = lines[0].strip().split(",")
       text_list.append(PV_NAME)
       text_list.append(words[PV_NAME_IDX])
       if words[PV_VG_NAME_IDX] == "":

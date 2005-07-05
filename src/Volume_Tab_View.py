@@ -14,6 +14,8 @@ from Properties_Renderer import Properties_Renderer
 from lvm_model import lvm_model
 from InputController import InputController
 from lvmui_constants import *
+from WaitMsg import WaitMsg
+
 import stat
 import gettext
 _ = gettext.gettext
@@ -115,7 +117,6 @@ class Volume_Tab_View:
     self.phys_panel.hide()
     self.log_panel = self.glade_xml.get_widget('log_panel')
     self.log_panel.hide()
-
     
     self.prepare_tree()
                                                                                 
@@ -182,13 +183,12 @@ class Volume_Tab_View:
           selection.select_path(path)
         else:
           return
-      
-
+  
   def prepare_tree(self):
     treemodel = self.treeview.get_model()
     treemodel.clear()
     
-    self.model_factory.reload()
+    self.model_factory.reload(WaitMsg(WAIT_MESSAGE))
     
     vg_list = self.model_factory.get_VGs()
     if len(vg_list) > 0:
@@ -221,15 +221,36 @@ class Volume_Tab_View:
                           OBJ_COL, vg)
             
             pv_list = vg.get_pvs().values()
-            for pv in pv_list:
+            grouped_dir, ungrouped_list = self.__group_by_device(pv_list)
+            for main_dev in grouped_dir:
+                dev_iter = treemodel.append(phys_iter)
+                pvs = grouped_dir[main_dev]
+                devnames = pvs[0].getDevnames()
+                devnames_str = devnames[0]
+                for devname in devnames[1:]:
+                    devnames_str = devnames_str + ', ' + devname
+                if len(devnames_str.split()) > 1:
+                    devnames_str = '[' + devnames_str + ']'
+                treemodel.set(dev_iter, 
+                              NAME_COL, devnames_str, 
+                              TYPE_COL, UNSELECTABLE_TYPE)
+                for pv in pvs:
+                    iter = treemodel.append(dev_iter)
+                    phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_name() + "</span>"
+                    treemodel.set(iter, 
+                                  NAME_COL, phys_string, 
+                                  TYPE_COL, PHYS_TYPE, 
+                                  PATH_COL, pv.get_path(), 
+                                  OBJ_COL, pv)
+            for pv in ungrouped_list:
                 iter = treemodel.append(phys_iter)
                 phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_name() + "</span>"
                 treemodel.set(iter, 
                               NAME_COL, phys_string, 
-                              TYPE_COL, PHYS_TYPE,
-                              PATH_COL, pv.get_path(),
+                              TYPE_COL, PHYS_TYPE, 
+                              PATH_COL, pv.get_path(), 
                               OBJ_COL, pv)
-                
+            
             lv_list = vg.get_lvs().values()
             for lv in lv_list:
                 if lv.is_used():
@@ -252,32 +273,87 @@ class Volume_Tab_View:
         treemodel.set(unallocated_iter,
                       NAME_COL, unalloc_string, 
                       TYPE_COL, UNSELECTABLE_TYPE)
-        for item in unalloc_list:
+        grouped_dir, ungrouped_list = self.__group_by_device(unalloc_list)
+        for main_dev in grouped_dir:
+            dev_iter = treemodel.append(unallocated_iter)
+            pvs = grouped_dir[main_dev]
+            devnames = pvs[0].getDevnames()
+            devnames_str = devnames[0]
+            for devname in devnames[1:]:
+                devnames_str = devnames_str + ', ' + devname
+            if len(devnames_str.split()) > 1:
+                devnames_str = '[' + devnames_str + ']'
+            treemodel.set(dev_iter, 
+                          NAME_COL, devnames_str, 
+                          TYPE_COL, UNSELECTABLE_TYPE)
+            for pv in pvs:
+                iter = treemodel.append(dev_iter)
+                phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_name() + "</span>"
+                treemodel.set(iter, 
+                              NAME_COL, phys_string, 
+                              TYPE_COL, UNALLOCATED_TYPE, 
+                              PATH_COL, pv.get_path(), 
+                              OBJ_COL, pv)
+        for pv in ungrouped_list:
             iter = treemodel.append(unallocated_iter)
-            p_string = "<span foreground=\"#ED1C2A\">" + item.get_name() + "</span>"
-            treemodel.set(iter,
-                          NAME_COL, p_string, 
-                          TYPE_COL, UNALLOCATED_TYPE,
-                          PATH_COL, item.get_path(),
-                          OBJ_COL, item)
-            
+            phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_path() + "</span>"
+            treemodel.set(iter, 
+                          NAME_COL, phys_string, 
+                          TYPE_COL, UNALLOCATED_TYPE, 
+                          PATH_COL, pv.get_path(), 
+                          OBJ_COL, pv)
+    
     uninit_list = self.model_factory.query_uninitialized()
     if len(uninit_list) > 0:
         uninitialized_iter = treemodel.append(None)
         uninit_string = "<span size=\"11000\"><b>" + UNINITIALIZED_ENTITIES + "</b></span>"
-        treemodel.set(uninitialized_iter,
+        treemodel.set(uninitialized_iter, 
                       NAME_COL, uninit_string, 
                       TYPE_COL, UNSELECTABLE_TYPE)
-        for item in uninit_list:
+        grouped_dir, ungrouped_list = self.__group_by_device(uninit_list)
+        for main_dev in grouped_dir:
+            dev_iter = treemodel.append(uninitialized_iter)
+            pvs = grouped_dir[main_dev]
+            devnames = pvs[0].getDevnames()
+            devnames_str = devnames[0]
+            for devname in devnames[1:]:
+                devnames_str = devnames_str + ', ' + devname
+            if len(devnames_str.split()) > 1:
+                devnames_str = '[' + devnames_str + ']'
+            treemodel.set(dev_iter,
+                          NAME_COL, devnames_str, 
+                          TYPE_COL, UNSELECTABLE_TYPE)
+            for pv in grouped_dir[main_dev]:
+                iter = treemodel.append(dev_iter)
+                treemodel.set(iter, 
+                              NAME_COL, pv.get_name(), 
+                              TYPE_COL, UNINITIALIZED_TYPE, 
+                              PATH_COL, pv.get_path(), 
+                              OBJ_COL, pv)
+        for pv in ungrouped_list:
             iter = treemodel.append(uninitialized_iter)
-            treemodel.set(iter,
-                          NAME_COL, item.get_name(), 
-                          TYPE_COL, UNINITIALIZED_TYPE,
-                          PATH_COL, item.get_path(),
-                          OBJ_COL, item)
-            
+            treemodel.set(iter, 
+                          NAME_COL, pv.get_path(), 
+                          TYPE_COL, UNINITIALIZED_TYPE, 
+                          PATH_COL, pv.get_path(), 
+                          OBJ_COL, pv)
+    
     #self.treeview.expand_all()
     self.clear_all_buttonpanels()
+  
+  # returns {main_dev : [pv1, pv2, ...], ...}
+  def __group_by_device(self, pvlist):
+      grouped = {}
+      ungrouped = []
+      for pv in pvlist:
+          if len(pv.getDevnames()) == 0:
+              ungrouped.append(pv)
+              continue
+          if pv.getDevnames()[0] in grouped.keys():
+              grouped[pv.getDevnames()[0]].append(pv)
+          else:
+              grouped[pv.getDevnames()[0]] = [pv]
+      return grouped, ungrouped
   
   def on_tree_selection_changed(self, *args):
     selection = self.treeview.get_selection()
@@ -287,10 +363,10 @@ class Volume_Tab_View:
         return
     
     treepath = model.get_path(iter)
+    self.treeview.expand_row(treepath, False)
     
     type = model.get_value(iter, TYPE_COL)
     if type == VG_PHYS_TYPE:
-        self.treeview.expand_row(treepath, False)
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
         self.phys_vol_view_panel.show()
@@ -299,7 +375,6 @@ class Volume_Tab_View:
         pv_list = vg.get_pvs().values()
         self.display_view.render_pvs(pv_list)
     elif type == VG_LOG_TYPE:
-        self.treeview.expand_row(treepath, False)
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
         
@@ -309,7 +384,6 @@ class Volume_Tab_View:
         self.display_view.render_lvs(lv_list)
     elif type == VG_TYPE:
         self.clear_all_buttonpanels()
-        self.treeview.expand_row(treepath, False)
         self.input_controller.clear_highlighted_sections()
         
         vg = model.get_value(iter, OBJ_COL)

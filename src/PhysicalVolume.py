@@ -10,7 +10,7 @@ from Volume import Volume
 
 class PhysicalVolume(Volume):
   def __init__(self, name, fmt, attr, psize, pfree, initialized, total, alloc):
-    Volume.__init__(self, name, [], initialized, attr)
+    Volume.__init__(self, name, None, initialized, attr, None)
     
     # pv properties
     self.size = float(psize) #This is in gigabytes
@@ -27,7 +27,7 @@ class PhysicalVolume(Volume):
     self.type = UNINITIALIZED_TYPE
     
     # general properties
-    self.devname = None
+    self.devnames = []
     self.part = None
     self.initializable = True
     
@@ -37,6 +37,29 @@ class PhysicalVolume(Volume):
       size = self.get_size_total_used_free_string()[0]
     else:
       return "%.2f" % self.size + GIG_SUFFIX
+  
+  def get_description(self, fullpath=True, long_descr=True):
+    if fullpath:
+      ret_str = self.get_path()
+    else:
+      ret_str = self.extract_name(self.get_path())
+    if long_descr:
+      upper_limit = len(self.get_paths())
+    else:
+      upper_limit = 2
+    for path in self.get_paths()[1:upper_limit]:
+      if fullpath:
+        ret_str = ret_str + ',\n' + path
+      else:
+        ret_str = ret_str + ',\n' + self.extract_name(path)
+    if upper_limit < len(self.get_paths()):
+      ret_str = ret_str + ', ...'
+    
+    if self.part != None:
+      if self.part.id == ID_EMPTY and not self.wholeDevice():
+        ret_str = UNPARTITIONED_SPACE + _(" on") + '\n' + ret_str
+    
+    return ret_str
   
   def get_type(self):
     return self.type
@@ -70,27 +93,56 @@ class PhysicalVolume(Volume):
     else:
       self.type = PHYS_TYPE
   
-  def setPartition(self, (devname, part)):
-    devname = devname.strip()
-    if part.id == ID_EMPTY:
-      path = devname
-      self.add_path(path)
-      self.set_name(self.extract_name(path) + ' ' + FREE_SPACE)
+  def get_paths(self):
+    volume_path = Volume.get_path(self)
+    part = self.part
+    if part == None:
+      return [volume_path]
+    paths = []
+    if volume_path != None:
+      paths.append(volume_path)
+    for devname in self.devnames:
+      if part.id == ID_EMPTY:
+        path = devname
+      else:
+        path = devname + str(part.num)
+      if path not in paths:
+        paths.append(path)
+    return paths
+  def get_path(self): # return main path
+    if len(self.get_paths()) == 0:
+      return None
     else:
-      path = devname + str(part.num)
-      self.add_path(path)
-      self.set_name(self.extract_name(path))
-    #self.set_volume_size(part.getSizeBytes()/1024.0/1024/1024)
-    self.devname = devname
+      return self.get_paths()[0]
+  
+  def getDevnames(self):
+    return self.devnames
+  def addDevname(self, devname):
+    devname = devname.strip()
+    if devname not in self.devnames:
+      self.devnames.append(devname)
+  def removeDevname(self, devname):
+    if devname in self.devnames:
+      self.devnames.pop(self.devnames.index(devname))
+  
+  def setPartition(self, (devname, part)):
+    self.size = part.getSizeBytes()/1024.0/1024/1024
     self.part = part
+    self.addDevname(devname)
+    if part.id == ID_EMPTY:
+      self.set_name(UNPARTITIONED_SPACE)
+    else:
+      self.set_name(_("Partition  %s") % str(part.num))
+    
+    
   def getPartition(self):
-    return (self.devname, self.part)
+    return (self.getDevnames()[0], self.part)
   
   def needsFormat(self):
     if self.part == None:
       return False
     return self.part.id == ID_EMPTY
-
+  
   def wholeDevice(self): # part occupies whole device
     if self.part == None:
       return False
@@ -99,7 +151,9 @@ class PhysicalVolume(Volume):
   
   
   def print_out(self, padding):
-    print padding + 'PV: ' + self.get_name()
+    print padding + 'PV: ' + self.get_name() + ' paths: ' + str(self.get_paths()) + ' devices: ' + str(self.getDevnames())
     print padding + 'extents:'
+    if len(self.get_extent_blocks()) == 0:
+      print padding + '  None'
     for extent in self.get_extent_blocks():
       extent.print_out(padding + '  ')

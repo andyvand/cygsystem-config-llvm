@@ -21,11 +21,12 @@ GRADIENT_UV = "#404040"
 
 HEIGHT_SINGLE = 100
 HEIGHT_DUAL = 50
-WIDTH_SINGLE = 200
+#WIDTH_SINGLE = 200
+WIDTH_SINGLE = 250
 WIDTH_MULTIPLE = 300
 SMALLEST_SELECTABLE_WIDTH = 4
 
-Y_OFFSET = 80
+Y_OFFSET = 125
 
 
 #UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
@@ -107,16 +108,16 @@ class DisplayView:
         self.type = PHYS_TYPE
         
         # display properties
-        self.pr.render_to_layout_area(pv.get_properties(), pv.get_path(), PHYS_TYPE)
+        self.pr.render_to_layout_area(pv.get_properties(), pv.get_description(), PHYS_TYPE)
         
         # display cylinder
         line1 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><b>" + PHYSICAL_VOL_STR + "</b></span>\n"
-        line2 = "<span size=\"8000\"><b>" + pv.get_path() + "</b></span>"
+        line2 = "<span size=\"8000\"><b>" + pv.get_description() + "</b></span>"
         label = line1 + line2
         self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.pv_cyl_gen))
         for extent in pv.get_extent_blocks():
-            if extent.get_lv().is_used():
+            if extent.get_lv().is_used() and not extent.get_lv().is_mirror_log:
                 cyl = Subcylinder(self.pv_cyl_gen, 1, 1, True, extent.get_start_size()[1])
             else:
                 cyl = Subcylinder(self.pv_cyl_gen, 1, 1, False, extent.get_start_size()[1])
@@ -144,12 +145,12 @@ class DisplayView:
         self.type = None
         
         # display properties
-        self.pr.render_to_layout_area(pv.get_properties(), pv.get_path(), UNALLOCATED_TYPE)
+        self.pr.render_to_layout_area(pv.get_properties(), pv.get_description(), UNALLOCATED_TYPE)
         
         # display cylinder
         line1 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><b>" + UNALLOCATED_STR + "</b></span>"
         line2 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><b>" + PHYSICAL_VOL_STR + "</b></span>"
-        line3 = "<span size=\"8000\"><b>" + pv.get_path() + "</b></span>"
+        line3 = "<span size=\"8000\"><b>" + pv.get_description() + "</b></span>"
         label = line1 + "\n" + line2 + "\n" + line3
         self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.pv_cyl_gen))
@@ -165,12 +166,12 @@ class DisplayView:
         self.type = None
         
         # display properties
-        self.pr.render_to_layout_area(pv.get_properties(), pv.get_path(), UNINITIALIZED_TYPE)
+        self.pr.render_to_layout_area(pv.get_properties(), pv.get_description(), UNINITIALIZED_TYPE)
         
         # display cylinder
         line1 = "<span size=\"8000\"><b>" + UNINITIALIZED_STR + "</b></span>\n"
         line2 = "<span size=\"8000\"><b>" + DISK_ENTITY_STR + "</b></span>\n"
-        line3 = "<span size=\"8000\"><b>" + pv.get_path() + "</b></span>"
+        line3 = "<span size=\"8000\"><b>" + pv.get_description() + "</b></span>"
         label = line1 + line2 + line3
         self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.uv_cyl_gen))
@@ -201,7 +202,7 @@ class DisplayView:
             selectable = pv.is_used()
             cyl = Subcylinder(self.pv_cyl_gen, 1, 2, selectable, pv.get_extent_total_used_free()[0])
             #label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>"
-            label = "<span size=\"8000\">" + pv.get_name() + "</span>"
+            label = "<span size=\"8000\">" + pv.get_description(False, False) + "</span>"
             cyl.set_label_upper(label)
             self.display.append_right(cyl)
             self.display.append_right(Separator())
@@ -263,7 +264,26 @@ class DisplayView:
         for lv in lv_list:
             selectable = lv.is_used()
             cyl = None
-            cyl = Subcylinder(self.lv_cyl_gen, 1, 0, selectable, lv.get_extent_total_used_free()[0])
+            if lv.get_segments()[0].get_type() == MIRROR_SEGMENT_ID:
+                cyl = Subcylinder(self.lv_cyl_gen, 1, 0, selectable)
+                image_lv_cyls = []
+                for image_lv in lv.get_segments()[0].get_images():
+                    image_lv_cyl = Subcylinder(self.lv_cyl_gen, 1, 0, False)
+                    label_mirror = "<span size=\"8000\">" + image_lv.get_segments()[0].get_extent_block().get_annotation() + "</span>"
+                    image_lv_cyl.set_label_lower(label_mirror, False, True, False)
+                    image_lv_cyls.append(image_lv_cyl)
+                    for seg in image_lv.get_segments():
+                        # mirror should have linear mapping only
+                        extent = seg.get_extent_block()
+                        subcyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, extent.get_start_size()[1])
+                        image_lv_cyl.children.append(subcyl)
+                if len(image_lv_cyls) != 0:
+                    cyl.children.append(image_lv_cyls[0])
+                for image_lv_cyl in image_lv_cyls[1:]:
+                    cyl.children.append(Separator(1, self.lv_cyl_gen, 3))
+                    cyl.children.append(image_lv_cyl)
+            else:
+                cyl = Subcylinder(self.lv_cyl_gen, 1, 0, selectable, lv.get_extent_total_used_free()[0])
             #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
             label = "<span size=\"8000\">" + lv.get_name() + "</span>"
             cyl.set_label_upper(label)
@@ -343,11 +363,43 @@ class DisplayView:
                     subcyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, extent.get_start_size()[1])
                     lv_cyls_dir[extent] = subcyl
                     cyl.children.append(subcyl)
+                elif type == MIRROR_SEGMENT_ID:
+                    image_lv_cyls = []
+                    for image_lv in seg.get_images():
+                        image_lv_cyl = Subcylinder(self.lv_cyl_gen, 1, 0, False)
+                        label_mirror = "<span size=\"8000\">" + image_lv.get_segments()[0].get_extent_block().get_annotation() + "</span>"
+                        image_lv_cyl.set_label_lower(label_mirror, False, True, False)
+                        image_lv_cyls.append(image_lv_cyl)
+                        lv_cyls_dir[image_lv] = image_lv_cyl
+                        for seg2 in image_lv.get_segments():
+                            # mirror should have linear mapping only
+                            extent = seg2.get_extent_block()
+                            subcyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, extent.get_start_size()[1])
+                            lv_cyls_dir[extent] = subcyl
+                            image_lv_cyl.children.append(subcyl)
+                    if len(image_lv_cyls) != 0:
+                        cyl.children.append(image_lv_cyls[0])
+                    for image_lv_cyl in image_lv_cyls[1:]:
+                        cyl.children.append(Separator(1, self.lv_cyl_gen, 3))
+                        cyl.children.append(image_lv_cyl)
+                else:
+                    print 'Error: render_vg(): invalid segment type'
+            
+            # set up mirroring log
+            if lv.is_mirrored():
+                log_lv = lv.get_mirror_log()
+                for seg2 in log_lv.get_segments():
+                    # log should have linear mapping only
+                    extent = seg2.get_extent_block()
+                    subcyl = Subcylinder(self.lv_cyl_gen, 1, 0, False, extent.get_start_size()[1])
+                    lv_cyls_dir[extent] = subcyl
+                    cyl.children.append(subcyl)
             
             # set up helper display
             cyl.add_object(CYL_ID_VOLUME, lv)
             cyl.add_object(CYL_ID_FUNCTION, DisplayView.render_lv)
             cyl.add_object(CYL_ID_ARGS, [lv])
+            
         
         # set up snapshot highlighting
         for orig in lv_list:
@@ -367,7 +419,7 @@ class DisplayView:
             #pv_cyl = Subcylinder(self.pv_cyl_gen, 1, 2, True)
             pv_cyl = Subcylinder(self.pv_cyl_gen, 1, 2, False)
             #label = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\">" + pv.get_name() + "</span>"
-            label = "<span size=\"8000\">" + pv.get_name() + "</span>"
+            label = "<span size=\"8000\">" + pv.get_description(False, False) + "</span>"
             pv_cyl.set_label_upper(label)
             pv_cyls.append(pv_cyl)
             # set up helper display
