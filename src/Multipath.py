@@ -17,18 +17,8 @@ class Multipath:
     def __init__(self):
         pass
     
-    
-    def get_multipath_data(self):
-        #return self.get_multipath_data()
-        
-        # for testing purposes, return arbitrary values
-        d = {}
-        d['/dev/test_multipath'] = ['/dev/hda', '/dev/hde'] #, '/dev/hdb', '/dev/hdm']
-        #d['/dev/mapper/testmultipath_2'] = ['/dev/sda', '/dev/sdb']
-        return d
-    
     # {multipath_access_path:[dev1, dev2, ...], ... }
-    def get_multipath_data_2(self):
+    def get_multipath_data(self):
         multipath_data = {}
         
         dmsetup_lines = None
