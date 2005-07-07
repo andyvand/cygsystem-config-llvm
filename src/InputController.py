@@ -1116,6 +1116,8 @@ class LV_edit_props:
             self.fs = Filesystem.get_fs(lv.get_path())
             if self.fs.name == self.fs_none.name:
                 self.fs = self.fs_none
+            else:
+                self.filesystems.pop(self.fs_none.name)
             self.filesystems[self.fs.name] = self.fs
             self.mount_point = self.model_factory.getMountPoint(lv.get_path())
             self.mountpoint_at_reboot = Fstab.get_mountpoint(lv.get_path().strip())
@@ -1328,19 +1330,20 @@ class LV_edit_props:
                     self.glade_xml.get_widget('enable_mirroring').set_active(False)
                     return
         max_mirror_size = self.__get_max_mirror_data()[0]
-        if max_mirror_size != 0:
-            if self.size_new > max_mirror_size:
-                if self.new:
-                    self.infoMessage('fixme: size changed to fit')
-                else:
-                    self.errorMessage('fixme: not enough room for mirroring. Reduce size of LV to at most ' + str(self.__get_num(max_mirror_size)) + ', or add some PVs')
-                    self.glade_xml.get_widget('enable_mirroring').set_active(False)
-                    return
-            self.update_size_limits(max_mirror_size)
-        else:
+        if max_mirror_size == 0:
             self.errorMessage('FIXME: mirroring unavailable')
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
             return
+        
+        if self.size_new > max_mirror_size:
+            if self.new:
+                self.infoMessage('fixme: size changed to fit')
+            else:
+                self.errorMessage('fixme: not enough room for mirroring. Reduce size of LV to at most ' + str(self.__get_num(max_mirror_size)) + ', or add some PVs')
+                self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                return
+        self.update_size_limits(max_mirror_size)
+        
     
     def __get_max_mirror_data(self):
         # copy pvs into dir
@@ -1360,7 +1363,7 @@ class LV_edit_props:
                 free_list.append((free_extents, pv))
         
         if len(free_list) < 3:
-            return 0
+            return 0, [], []
         
         # sort
         for i in range(len(free_list) - 1, 0, -1):
