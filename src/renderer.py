@@ -117,8 +117,11 @@ class DisplayView:
         self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
         self.display.append_right(End(self.pv_cyl_gen))
         for extent in pv.get_extent_blocks():
-            if extent.get_lv().is_used() and not extent.get_lv().is_mirror_log:
-                cyl = Subcylinder(self.pv_cyl_gen, 1, 1, True, extent.get_start_size()[1])
+            if extent.get_lv().is_used():
+                if extent.get_lv().is_mirror_log:
+                    cyl = UnselectableSubcylinder('fixme: mirror_log unmigratable', self.pv_cyl_gen, 1, extent.get_start_size()[1])
+                else:
+                    cyl = Subcylinder(self.pv_cyl_gen, 1, 1, True, extent.get_start_size()[1])
             else:
                 cyl = Subcylinder(self.pv_cyl_gen, 1, 1, False, extent.get_start_size()[1])
             label = "<span size=\"7000\">"
