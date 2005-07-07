@@ -907,6 +907,47 @@ class DoubleCylinder:
         gc.line_style = back
     
 
+
+
+class UnselectableSubcylinder(Subcylinder):
+    
+    def __init__(self, 
+                 popup_message=None, 
+                 cyl_gen=None, 
+                 highlightedPattern=None, 
+                 width=0):
+        Subcylinder.__init__(self, 
+                             cyl_gen, 
+                             None, 
+                             highlightedPattern, 
+                             False, 
+                             width)
+        
+        self.message = popup_message
+        
+    
+    def click(self, (x, y), leftClick): # local coordinates
+        if x < self.get_width():
+            if leftClick:
+                # left click handling
+                if self.message != None:
+                    dlg = gtk.MessageDialog(None, 0, 
+                                            gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, 
+                                            self.message)
+                    dlg.show_all()
+                    rc = dlg.run()
+                    dlg.destroy()
+            else:
+                # right click handling
+                pass
+        return None
+    
+
+
+
+
+
+
 class CylinderGenerator:
     
     def __init__(self, pixmap_path, end_color):
