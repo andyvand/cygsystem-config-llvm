@@ -48,7 +48,7 @@ INIT_ENTITY_MOUNTED=_("Disk entity %s contains data of folder %s. All data in it
 INIT_ENTITY_FREE_SPACE=_("Are you certain that you wish to initialize %s of free space on disk %s?")
 INIT_ENTITY_DEVICE_CHOICE=_("You are about to initialize unpartitioned disk %s. It is advisable, although not required, to create a partition on it. Do you want to create a single partition encompassing the whole drive? Choosing No will initialize unpartitioned disk.")
 
-WAIT_MESSAGE='fixme: wait message'
+RELOAD_LVM_MESSAGE=_("Reloading LVM Data")
 
 MIRROR_LOG=_("Mirror Log")
 
