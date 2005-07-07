@@ -72,13 +72,14 @@ class CommandHandler:
     
     cmd_str = ' '.join(arglist)
     
-    result_string,err,res = execWithCaptureErrorStatus(LVCREATE_BIN_PATH,arglist)
+    result_string,err,res = execWithCaptureErrorStatusProgress(LVCREATE_BIN_PATH, arglist, 
+                                                               _("Creating Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVCREATE_FAILURE % (cmd_str,err))
-
-
+    
+    
     ###next command
-
+    
     #Now make filesystem if necessary
     if cmd_args_dict[NEW_LV_MAKE_FS_ARG] == True:
       lvpath = model_factory.get_logical_volume_path(lvname,vgname)
@@ -113,7 +114,7 @@ class CommandHandler:
       out,err,res = execWithCaptureErrorStatus(LVREDUCE_BIN_PATH, cmd_args)
       return (res == 0)
     out,err,res = execWithCaptureErrorStatusProgress(LVREDUCE_BIN_PATH, cmd_args,
-                                                     _("Please wait while volume is being resized"))
+                                                     _("Resizing Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
   
@@ -130,7 +131,7 @@ class CommandHandler:
       out,err,res = execWithCaptureErrorStatus(LVEXTEND_BIN_PATH, cmd_args)
       return (res == 0)
     out,err,res = execWithCaptureErrorStatusProgress(LVEXTEND_BIN_PATH, cmd_args,
-                                                     _("Please wait while volume is being resized"))
+                                                     _("Resizing Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
   
@@ -160,7 +161,8 @@ class CommandHandler:
     cmd_args.append('-m1')
     cmd_args.append(lvpath)
     cmdstr = ' '.join(cmd_args)
-    out,err,res = execWithCaptureErrorStatus(LVCONVERT_BIN_PATH, cmd_args)
+    out,err,res = execWithCaptureErrorStatusProgress(LVCONVERT_BIN_PATH, cmd_args,
+                                                     _("Adding Mirror to Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVCONVERT_FAILURE % (cmdstr,err))
   
@@ -170,7 +172,8 @@ class CommandHandler:
     cmd_args.append('-m0')
     cmd_args.append(lvpath)
     cmdstr = ' '.join(cmd_args)
-    out,err,res = execWithCaptureErrorStatus(LVCONVERT_BIN_PATH, cmd_args)
+    out,err,res = execWithCaptureErrorStatusProgress(LVCONVERT_BIN_PATH, cmd_args,
+                                                     _("Removing Mirror from Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVCONVERT_FAILURE % (cmdstr,err))
   
@@ -192,7 +195,8 @@ class CommandHandler:
     command_args.append("2")
     command_args.append(entity)
     commandstring = ' '.join(command_args)
-    out,err,res = execWithCaptureErrorStatus(PVCREATE_BIN_PATH,command_args)
+    out,err,res = execWithCaptureErrorStatusProgress(PVCREATE_BIN_PATH,command_args,
+                                                     _("Initializing Physical Volume"))
     if res != 0:
       raise CommandError('FATAL', PVCREATE_FAILURE % (commandstring,err))
 
@@ -202,7 +206,8 @@ class CommandHandler:
     args.append(vg.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus(VGEXTEND_BIN_PATH,args)
+    out,err,res = execWithCaptureErrorStatusProgress(VGEXTEND_BIN_PATH, args, 
+                                                     _("Adding Physical Volume to Volume Group"))
     if res != 0:
       raise CommandError('FATAL', VGEXTEND_FAILURE % (cmdstr,err))
 
@@ -228,7 +233,8 @@ class CommandHandler:
     args.append(name.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus(VGCREATE_BIN_PATH,args)
+    out,err,res = execWithCaptureErrorStatusProgress(VGCREATE_BIN_PATH, args, 
+                                                     _("Creating Volume Group"))
     if res != 0:
       raise CommandError('FATAL', VGCREATE_FAILURE % (cmdstr,err))
 
@@ -249,7 +255,8 @@ class CommandHandler:
     args_list.append(VGREMOVE_BIN_PATH)
     args_list.append(vgname)
     cmdstring = ' '.join(args)
-    outs,errs,result = execWithCaptureErrorStatus(VGREMOVE_BIN_PATH,args_list)
+    outs,errs,result = execWithCaptureErrorStatusProgress(VGREMOVE_BIN_PATH,args_list,
+                                                          _("Removing Volume Group"))
     if result != 0:
       raise CommandError('FATAL', VGREMOVE_FAILURE % (cmdstring,errs))
 
@@ -258,7 +265,8 @@ class CommandHandler:
     args.append(PVREMOVE_BIN_PATH)
     args.append(pvname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus(PVREMOVE_BIN_PATH,args)
+    out,err,res = execWithCaptureErrorStatusProgress(PVREMOVE_BIN_PATH,args,
+                                                     _("Removing Physical Volume"))
     if res != 0:
       raise CommandError('FATAL', PVREMOVE_FAILURE % (cmdstr,err))
 
@@ -268,7 +276,8 @@ class CommandHandler:
     args.append("--force")
     args.append(lvname.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus(LVREMOVE_BIN_PATH,args)
+    out,err,res = execWithCaptureErrorStatusProgress(LVREMOVE_BIN_PATH,args,
+                                                     _("Removing Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVREMOVE_FAILURE % (cmdstr,err))
   
@@ -279,7 +288,8 @@ class CommandHandler:
     args.append(lvname_old)
     args.append(lvname_new)
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus(LVRENAME_BIN_PATH,args)
+    out,err,res = execWithCaptureErrorStatusProgress(LVRENAME_BIN_PATH,args,
+                                                     _("Renaming Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVRENAME_FAILURE % (cmdstr,err))
   
@@ -298,7 +308,8 @@ class CommandHandler:
     args.append(vg.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus(VGREDUCE_BIN_PATH,args)
+    out,err,res = execWithCaptureErrorStatusProgress(VGREDUCE_BIN_PATH,args,
+                                                     _("Removing Physical Volume from Volume Group"))
     if res != 0:
       raise CommandError('FATAL', VGREDUCE_FAILURE % (cmdstr,err))
 
@@ -329,7 +340,8 @@ class CommandHandler:
     if data[0] != None:
       args.append(data[0])
     cmdstr = ' '.join(args)
-    out, err, res = execWithCaptureErrorStatusProgress(PVMOVE_BIN_PATH, args, _("Please wait while data is being migrated"))
+    out, err, res = execWithCaptureErrorStatusProgress(PVMOVE_BIN_PATH, args,
+                                                       _("Migrating Extents"))
     if res != 0:
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
     
@@ -363,7 +375,5 @@ class CommandHandler:
       possible_target = text_words[0].strip()
       if possible_target == "mirror":
         return True
-
-    return False
-
       
+    return False
