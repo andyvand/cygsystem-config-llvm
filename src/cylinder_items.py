@@ -313,8 +313,8 @@ class Subcylinder(CylinderItem, Highlight):
         else:
             # right click handling
             return selection
-        
     
+
 class SingleCylinder:
     
     def __init__(self,
@@ -337,6 +337,8 @@ class SingleCylinder:
         
         self.name = name
         self.label = label
+        
+        self.label_to_cyl_distance = 10
         
     
     def get_selection(self):
@@ -402,11 +404,53 @@ class SingleCylinder:
     def set_height(self, height):
         self.height = height
         self.cyl.set_height(height)
+        
+    
+    def minimum_pixmap_dimension(self, da):
+        # cylinder dimension
+        cyl_dim = (2 * get_ellipse_table(self.height/2)[1] + self.cyl.get_width(), self.height)
+        
+        # labels dimensions
+        # main
+        layout = da.create_pango_layout('')
+        layout.set_markup(self.label)
+        main_label_dim = layout.get_pixel_size()
+        # upper
+        upper_label_dim = draw_cyl_labels_upper(da, None, None,
+                                                self.cyl.get_labels_upper(),
+                                                0, 0,
+                                                False)
+        # lower
+        lower_label_dim = draw_cyl_labels_lower(da, None, None,
+                                                self.cyl.get_labels_lower(), 
+                                                0, 0, 
+                                                self.height, 
+                                                False)
+        # width
+        max_cyl_w = cyl_dim[0]
+        if upper_label_dim[0] > max_cyl_w:
+            max_cyl_w = upper_label_dim[0]
+        if lower_label_dim[0] > max_cyl_w:
+            max_cyl_w = lower_label_dim[0]
+        width = main_label_dim[0] + self.label_to_cyl_distance + max_cyl_w
+        # height
+        height = upper_label_dim[1] + cyl_dim[1] + lower_label_dim[1]
+        if main_label_dim[1] > height:
+            height = mail_label_dim[1]
+        
+        return width, height, upper_label_dim[1]
     
     def draw(self, da, gc, (x, y)):
         dc = da.window
         (w, h) = dc.get_size()
         pixmap = gtk.gdk.Pixmap(dc, w, h) # buffer
+        
+        # adjust y for upper label height
+        upper_label_height = draw_cyl_labels_upper(da, None, None,
+                                                   self.cyl.get_labels_upper(),
+                                                   0, 0,
+                                                   False)[1]
+        y = y + upper_label_height
         
         # clear
         front = gc.foreground
@@ -423,10 +467,12 @@ class SingleCylinder:
         layout = da.create_pango_layout('')
         layout.set_markup(self.label)
         label_w, label_h = layout.get_pixel_size()
-        pixmap.draw_layout(gc, x, y+(self.height-label_h)/2, layout)
+        pixmap.draw_layout(gc, 
+                           x, y + (self.height-label_h)/2, 
+                           layout)
         
         # draw cylinder
-        x = x + label_w + get_ellipse_table(self.height/2)[1] + 10
+        x = x + label_w + get_ellipse_table(self.height/2)[1] + self.label_to_cyl_distance
         self.cyl.draw(pixmap, gc, (x, y))
         self.cyl_drawn_at = (x, y)
         
@@ -441,7 +487,7 @@ class SingleCylinder:
         # double buffering
         dc.draw_drawable(gc, pixmap, 0, 0, 0, 0, w, h)
         
-def draw_cyl_labels_upper(da, pixmap, gc, labels, x, y):
+def draw_cyl_labels_upper(da, pixmap, gc, labels, x, y, draw=True):
         # sort
         labels_t = labels
         labels = []
@@ -452,6 +498,8 @@ def draw_cyl_labels_upper(da, pixmap, gc, labels, x, y):
                     largest = label
             labels_t.remove(largest)
             labels.append(largest)
+        
+        width_total, height_total = 0, 0 # dimensions of encompasing rectangle
         
         X_boundry = 1000000 # used for offset adjustment
         offset_default = 0
@@ -472,17 +520,29 @@ def draw_cyl_labels_upper(da, pixmap, gc, labels, x, y):
                 offset = offset_default
             Y3 = Y2 - offset - label_h / 2
             X_boundry = X2
-            pixmap.draw_line(gc, X1, Y1, X2, Y2)
-            pixmap.draw_line(gc, X2, Y2, X3, Y3)
+            if draw:
+                pixmap.draw_line(gc, X1, Y1, X2, Y2)
+                pixmap.draw_line(gc, X2, Y2, X3, Y3)
             X_lay = X2 + 2
             Y_lay = Y3 - label_h/2
-            back = gc.foreground
-            gc.foreground = gc.background
-            pixmap.draw_rectangle(gc, True, X_lay, Y_lay, label_w, label_h)
-            gc.foreground = back
-            pixmap.draw_layout(gc, X_lay, Y_lay, layout)
-
-def draw_cyl_labels_lower(da, pixmap, gc, labels, x, y, cyl_height):
+            if draw:
+                backup = gc.foreground
+                gc.foreground = gc.background
+                pixmap.draw_rectangle(gc, True, X_lay, Y_lay, label_w, label_h)
+                gc.foreground = backup
+                pixmap.draw_layout(gc, X_lay, Y_lay, layout)
+                
+            # calculate dimension of encompasing rectangle
+            max_w_tmp = X_lay + label_w - x
+            max_h_tmp = y - Y_lay
+            if max_w_tmp > width_total:
+                width_total= max_w_tmp
+            if max_h_tmp > height_total:
+                height_total= max_h_tmp
+            
+        return width_total, height_total
+    
+def draw_cyl_labels_lower(da, pixmap, gc, labels, x, y, cyl_height, draw=True):
         # sort
         labels_t = labels
         labels = []
@@ -493,6 +553,8 @@ def draw_cyl_labels_lower(da, pixmap, gc, labels, x, y, cyl_height):
                     largest = label
             labels_t.remove(largest)
             labels.append(largest)
+        
+        width_total, height_total = 0, 0 # dimensions of encompasing rectangle
         
         X_boundry = 1000000 # used for offset adjustment
         height = int(cyl_height * 5 / 8)
@@ -515,15 +577,28 @@ def draw_cyl_labels_lower(da, pixmap, gc, labels, x, y, cyl_height):
             Y2 = Y2 + offset
             Y3 = Y2
             X_boundry = X1
-            pixmap.draw_line(gc, X1, Y1, X2, Y2)
-            pixmap.draw_line(gc, X2, Y2, X3, Y3)
+            if draw:
+                pixmap.draw_line(gc, X1, Y1, X2, Y2)
+                pixmap.draw_line(gc, X2, Y2, X3, Y3)
             X_lay = X2 + 2
             Y_lay = Y2 - label_h
-            back = gc.foreground
-            gc.foreground = gc.background
-            pixmap.draw_rectangle(gc, True, X_lay, Y_lay, label_w, label_h)
-            gc.foreground = back
-            pixmap.draw_layout(gc, X_lay, Y_lay, layout)
+            if draw:
+                back = gc.foreground
+                gc.foreground = gc.background
+                pixmap.draw_rectangle(gc, True, X_lay, Y_lay, label_w, label_h)
+                gc.foreground = back
+                pixmap.draw_layout(gc, X_lay, Y_lay, layout)
+            
+            # calculate dimension of encompasing rectangle
+            max_w_tmp = X2 - x
+            max_h_tmp = Y2 - (cyl_height + y)
+            if max_w_tmp > width_total:
+                width_total = max_w_tmp
+            if max_h_tmp > height_total:
+                height_total = max_h_tmp
+            
+        return width_total, height_total
+    
         
 
 class DoubleCylinder:
@@ -550,6 +625,7 @@ class DoubleCylinder:
         self.smallest_clickable_width = smallest_clickable_width
         
         self.distance = distance
+        self.label_to_cyl_distance = 10
         
         self.selection = None
         
@@ -612,25 +688,101 @@ class DoubleCylinder:
         
         
         # adjust width
-        cyl.set_ratio(1)
-        width = cyl.get_width()
+        self.cyl_upper.set_ratio(1)
+        self.cyl_lower.set_ratio(1)
+        width = self.cyl_upper.get_width()
         if width == 0:
             return
         else:
-            cyl.set_ratio(float(self.width)/width)
+            self.cyl_upper.set_ratio(float(self.width)/width)
+            self.cyl_lower.set_ratio(float(self.width)/width)
         
-        smallest = cyl.get_smallest_selectable_width()
+        # make sure smallest selectable is is at least self.smallest_clickable_width
+        smallest = self.__get_smallest_selectable_width()
         if smallest == 0:
             return
         elif smallest < self.smallest_clickable_width:
-            cyl.set_ratio(1)
-            smallest = cyl.get_smallest_selectable_width()
-            cyl.set_ratio(self.smallest_clickable_width/float(smallest))
+            self.cyl_upper.set_ratio(1)
+            self.cyl_lower.set_ratio(1)
+            smallest = self.__get_smallest_selectable_width()
+            ratio = self.smallest_clickable_width/float(smallest)
+            self.cyl_upper.set_ratio(ratio)
+            self.cyl_lower.set_ratio(ratio)
+            
+    def __get_smallest_selectable_width(self):
+        smallest_upper = self.cyl_upper.get_smallest_selectable_width()
+        smallest_lower = self.cyl_lower.get_smallest_selectable_width()
+        if smallest_upper == 0 or smallest_lower == 0:
+            if smallest_upper == 0:
+                smallest = smallest_lower
+            else:
+                smallest = smallest_upper
+        else:
+            if smallest_upper < smallest_lower:
+                smallest = smallest_upper
+            else:
+                smallest = smallest_lower
+        return smallest
     
     def set_height(self, height):
         self.height = height
         self.cyl_upper.set_height(height)
         self.cyl_lower.set_height(height)
+        
+    
+    def minimum_pixmap_dimension(self, da):
+        # cylinder dimension
+        cyl_dim = (2 * get_ellipse_table(self.height/2)[1] + self.cyl_upper.get_width(), self.height)
+        
+        # labels dimensions
+        # main
+        layout = da.create_pango_layout('')
+        layout.set_markup(self.label_upper)
+        main_label_dim = layout.get_pixel_size()
+        layout = da.create_pango_layout('')
+        layout.set_markup(self.label_lower)
+        if layout.get_pixel_size()[0] > main_label_dim[0]:
+            main_label_dim = layout.get_pixel_size()
+        # upper cylinder
+        up_cyl_up_label_dim = draw_cyl_labels_upper(da, None, None,
+                                                    self.cyl_upper.get_labels_upper(),
+                                                    0, 0,
+                                                    False)
+        up_cyl_low_label_dim = draw_cyl_labels_lower(da, None, None,
+                                                     self.cyl_upper.get_labels_lower(), 
+                                                     0, 0, 
+                                                     self.height, 
+                                                     False)
+        # lower cylinder
+        low_cyl_up_label_dim = draw_cyl_labels_upper(da, None, None,
+                                                     self.cyl_lower.get_labels_upper(),
+                                                     0, 0,
+                                                     False)
+        low_cyl_low_label_dim = draw_cyl_labels_lower(da, None, None,
+                                                      self.cyl_lower.get_labels_lower(), 
+                                                      0, 0, 
+                                                      self.height, 
+                                                      False)
+        
+        # width
+        max_cyl_w = cyl_dim[0]
+        if up_cyl_up_label_dim[0] > max_cyl_w:
+            max_cyl_w = up_cyl_up_label_dim[0]
+        if up_cyl_low_label_dim[0] > max_cyl_w:
+            max_cyl_w = up_cyl_low_label_dim[0]
+        if low_cyl_up_label_dim[0] > max_cyl_w:
+            max_cyl_w = low_cyl_up_label_dim[0]
+        if low_cyl_low_label_dim[0] > max_cyl_w:
+            max_cyl_w = low_cyl_low_label_dim[0]
+        width = main_label_dim[0] + self.label_to_cyl_distance + max_cyl_w
+        # height
+        distance = self.distance
+        auto_distance = up_cyl_low_label_dim[1] + self.label_to_cyl_distance + low_cyl_up_label_dim[1] 
+        if auto_distance > distance:
+            distance = auto_distance
+        height = up_cyl_up_label_dim[1] + 2 * cyl_dim[1] + distance + low_cyl_low_label_dim[1]
+        
+        return width, height, up_cyl_up_label_dim[1]
     
     def draw(self, da, gc, (x, y)):
         dc = da.window
@@ -642,6 +794,35 @@ class DoubleCylinder:
         gc.foreground = gc.background
         pixmap.draw_rectangle(gc, True, 0, 0, w, h)
         gc.foreground = front
+        
+        # labels dimensions
+        up_cyl_up_label_dim = draw_cyl_labels_upper(da, None, None,
+                                                    self.cyl_upper.get_labels_upper(),
+                                                    0, 0,
+                                                    False)
+        up_cyl_low_label_dim = draw_cyl_labels_lower(da, None, None,
+                                                     self.cyl_upper.get_labels_lower(), 
+                                                     0, 0, 
+                                                     self.height, 
+                                                     False)
+        low_cyl_up_label_dim = draw_cyl_labels_upper(da, None, None,
+                                                     self.cyl_lower.get_labels_upper(),
+                                                     0, 0,
+                                                     False)
+        low_cyl_low_label_dim = draw_cyl_labels_lower(da, None, None,
+                                                      self.cyl_lower.get_labels_lower(), 
+                                                      0, 0, 
+                                                      self.height, 
+                                                      False)
+        
+        # calculate distance
+        distance = self.distance
+        auto_distance = up_cyl_low_label_dim[1] + self.label_to_cyl_distance + low_cyl_up_label_dim[1] 
+        if auto_distance > distance:
+            distance = auto_distance
+        
+        # adjust y for upper label height
+        y = y + up_cyl_up_label_dim[1]
         
         # draw name
         #layout = da.create_pango_layout(self.name)
@@ -660,18 +841,18 @@ class DoubleCylinder:
         label_w, label_h = layout.get_pixel_size()
         pixmap.draw_layout(gc,
                            x,
-                           y + self.height + self.distance + (self.height - label_h)/2,
+                           y + self.height + distance + (self.height - label_h)/2,
                            layout)
         if label_w > max_label_w:
             max_label_w = label_w
         
         # draw upper cylinder
-        x = x + max_label_w + get_ellipse_table(self.height/2)[1] + 10
+        x = x + max_label_w + get_ellipse_table(self.height/2)[1] + self.label_to_cyl_distance
         self.cyl_upper.draw(pixmap, gc, (x, y))
         self.cyl_upper_drawn_at = (x, y)
         # draw lower cylinder
-        self.cyl_lower.draw(pixmap, gc, (x, y + self.height + self.distance))
-        self.cyl_lower_drawn_at = (x, y + self.height + self.distance)
+        self.cyl_lower.draw(pixmap, gc, (x, y + self.height + distance))
+        self.cyl_lower_drawn_at = (x, y + self.height + distance)
         
         # draw mapping lines
         self.draw_mappings(pixmap, gc)

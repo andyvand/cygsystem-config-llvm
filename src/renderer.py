@@ -57,7 +57,7 @@ CYL_ID_ARGS = 2
 class DisplayView:
     
     def __init__(self,
-                 register_selections_fcn, # to get absolete with rightclick
+                 register_selections_fcn, 
                  da1, # drawing area
                  properties_renderer1, 
                  da2=None, 
@@ -504,7 +504,10 @@ class DisplayView:
     
     def draw(self):
         if self.display != None:
-            self.display.draw(self.da, self.gc, (10, Y_OFFSET))
+            w, h, u_label_h = self.display.minimum_pixmap_dimension(self.da)
+            self.da.set_size_request(w+20, h+20)
+            y_offset = Y_OFFSET - u_label_h
+            self.display.draw(self.da, self.gc, (10, y_offset))
         else:
             # clear pixmap
             pixmap = self.da.window
