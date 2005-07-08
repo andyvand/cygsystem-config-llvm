@@ -25,20 +25,20 @@ def execWithCaptureErrorStatus(bin, args):
 
 
 def execWithCaptureProgress(bin, args, message):
-    forked = ForkedCommand(bin, args, message)
+    forked = ForkedCommandProgress(bin, args, message)
     return forked.run()[0]
 
 def execWithCaptureStatusProgress(bin, args, message):
-    forked = ForkedCommand(bin, args, message)
+    forked = ForkedCommandProgress(bin, args, message)
     res = forked.run()
     return res[0], res[2]
 
 def execWithCaptureErrorStatusProgress(bin, args, message):
-    forked = ForkedCommand(bin, args, message)
+    forked = ForkedCommandProgress(bin, args, message)
     return forked.run()
 
 
-class ForkedCommand:
+class ForkedCommandProgress:
     def __init__(self, bin, args, message):
         self.child_pid = None
         self.pbar_timer = 0
@@ -145,6 +145,82 @@ class ForkedCommand:
             # child still alive
             self.pbar.pulse()
             return True
+
+
+
+
+class ForkedCommand:
+    def __init__(self, bin, args):
+        self.child_pid = None
+        
+        self.bin = bin
+        self.args = args
+        
+        # This pipe is for the parent process to receive
+        # the result of the system call in the child process.
+        self.fd_read_out, self.fd_write_out = os.pipe()
+        self.fd_read_err, self.fd_write_err = os.pipe()
+        
+    def fork(self):
+        try:
+            self.child_pid = os.fork()
+        except OSError:
+            sys.exit("Unable to fork!!!")
+        
+        if (self.child_pid != 0):
+            # parent process
+            os.close(self.fd_write_out)
+            os.close(self.fd_write_err)
+        else:
+            # child process
+            os.close(self.fd_read_out)
+            os.close(self.fd_read_err)
+            
+            out, err, res = execWithCaptureErrorStatus(self.bin, self.args)
+            # let parent process know result of system call through IPC
+            os.write(self.fd_write_out, out)
+            os.write(self.fd_write_err, err)
+            os.close(self.fd_write_out)
+            os.close(self.fd_write_err)
+            
+            os._exit(res)
+            
+    def get_stdout_stderr_status(self):
+        (reaped, status) = os.waitpid(self.child_pid, os.WNOHANG)
+        
+        if reaped != self.child_pid:
+            # child still alive
+            return None, None, None
+        
+        # child exited
+        if os.WIFEXITED(status):
+            ret_status = os.WEXITSTATUS(status)
+            retval = ret_status
+        else:
+            retval = 255
+        # collect data
+        in_list = [self.fd_read_out, self.fd_read_err]
+        out = ''
+        err = ''
+        while len(in_list) != 0:
+            i,o,e = select.select(in_list, [], [])
+            for fd in i:
+                if fd == self.fd_read_out:
+                    s = os.read(self.fd_read_out, 1000)
+                    if s == '':
+                        in_list.remove(self.fd_read_out)
+                    out = out + s
+                if fd == self.fd_read_err:
+                    s = os.read(self.fd_read_err, 1000)
+                    if s == '':
+                        in_list.remove(self.fd_read_err)
+                    err = err + s
+        os.close(self.fd_read_out)
+        os.close(self.fd_read_err)
+        
+        return out, err, retval
+    
+
 
 
 # to be moved back into rhpl when time arrives
