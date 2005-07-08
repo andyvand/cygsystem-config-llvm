@@ -350,7 +350,7 @@ class Volume_Tab_View:
       grouped = {}
       ungrouped = []
       for pv in pvlist:
-          if len(pv.getDevnames()) == 0:
+          if len(pv.getDevnames()) == 0 or pv.wholeDevice():
               ungrouped.append(pv)
               continue
           if pv.getDevnames()[0] in grouped.keys():
