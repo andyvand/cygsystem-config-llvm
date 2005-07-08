@@ -163,23 +163,21 @@ class InputController:
     self.treeview = treeview
     self.model_factory = model_factory
     self.glade_xml = glade_xml
-
+    
     self.command_handler = CommandHandler()
     self.section_list = list()
     self.section_type = UNSELECTABLE_TYPE
-    self.use_remaining = 0 #This global :( is used as a flag for the new lv form
-    self.loaded_field = 0  #This one too
-
+    
     self.setup_dialogs()
-
+  
   def setup_dialogs(self):
     self.init_entity_button = self.glade_xml.get_widget('uninit_button')
     self.init_entity_button.connect("clicked", self.on_init_entity)
-
+    
     self.setup_new_vg_form()
     #self.setup_pv_rm_migrate()
     #self.setup_pv_rm()
-
+    
     ###################
     ##This form adds an unallocated PV to a VG
     self.add_pv_to_vg_dlg = self.glade_xml.get_widget('add_pv_to_vg_form')
@@ -928,8 +926,8 @@ class InputController:
       args.append(vg.get_name())
       apply(self.reset_tree_model, args)
       
-  
-  
+      
+      
   #######################################################
   ###Convenience Dialogs
   
@@ -1963,3 +1961,5 @@ class LV_edit_props:
             return gtk.RESPONSE_NO
         else:
             return rc
+
+        
