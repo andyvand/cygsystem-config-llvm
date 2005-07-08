@@ -866,7 +866,7 @@ class InputController:
               self.errorMessage('fixme: unable to move extents belonging to mirrors')
               return None
           # TODO: handle other non-movable extents
-          
+      
       free_extents = 0
       pvs = []
       for p in vg.get_pvs().values():
@@ -1012,6 +1012,7 @@ class MigrateDialog:
         self.lv_combo = gtk.combo_box_new_text()
         self.glade_xml.get_widget('lv_selection_container').pack_end(self.lv_combo)
         self.lv_combo.show()
+        self.lv_combo.set_active(False)
         for lv in lvs:
             self.lv_combo.append_text(lv.get_name())
         model = self.lv_combo.get_model()
@@ -1023,6 +1024,7 @@ class MigrateDialog:
         self.pv_combo = gtk.combo_box_new_text()
         pv_selection_container.pack_end(self.pv_combo)
         self.pv_combo.show()
+        self.pv_combo.set_active(False)
         if len(pvs) != 0:
             for p in pvs:
                 self.pv_combo.append_text(p.get_path())
@@ -1041,6 +1043,23 @@ class MigrateDialog:
             # remove
             self.glade_xml.get_widget('lv_selection_container').hide()
         
+        # events
+        self.glade_xml.get_widget('choose_pv_radio').connect('clicked', self.on_choose_pv_radio)
+        self.glade_xml.get_widget('choose_lv_check').connect('clicked', self.on_choose_lv_check)
+        
+    
+    def on_choose_pv_radio(self, obj1):
+        if self.glade_xml.get_widget('choose_pv_radio').get_active():
+            self.pv_combo.set_active(True)
+        else:
+            self.pv_combo.set_active(False)
+    
+    def on_choose_lv_check(self, obj1):
+        if self.glade_xml.get_widget('choose_lv_check').get_active():
+            self.lv_combo.set_active(True)
+        else:
+            self.lv_combo.set_active(False)
+    
     def run(self):
         rc = self.dlg.run()
         self.dlg.hide()
@@ -1051,23 +1070,23 @@ class MigrateDialog:
         ret = []
         
         # migrate extents to
-        if self.glade_xml.get_widget('radiobutton3').get_active() == True:
+        if self.glade_xml.get_widget('choose_pv_radio').get_active() == True:
             iter = self.pv_combo.get_active_iter()
             ret.append(self.pv_combo.get_model().get_value(iter, 0))
         else:
             ret.append(None)
         
-        if self.glade_xml.get_widget('radiobutton4').get_active() == True:
+        if self.glade_xml.get_widget('radiobutton4').get_active():
             ret.append(0)
-        elif self.glade_xml.get_widget('radiobutton5').get_active() == True:
+        elif self.glade_xml.get_widget('radiobutton5').get_active():
             ret.append(1)
-        elif self.glade_xml.get_widget('radiobutton6').get_active() == True:
+        elif self.glade_xml.get_widget('radiobutton6').get_active():
             ret.append(2)
         else:
             ret.append(3)
         
         # lv to migrate from
-        if self.glade_xml.get_widget('checkbutton1').get_active() == True:
+        if self.glade_xml.get_widget('choose_lv_check').get_active():
             iter = self.lv_combo.get_active_iter()
             ret.append(self.lv_combo.get_model().get_value(iter, 0))
         else:
