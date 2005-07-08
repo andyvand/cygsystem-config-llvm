@@ -15,6 +15,7 @@ from lvm_model import lvm_model
 from InputController import InputController
 from lvmui_constants import *
 from WaitMsg import WaitMsg
+from execute import ForkedCommand
 
 import stat
 import gettext
@@ -100,6 +101,8 @@ class Volume_Tab_View:
     self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, None, None)
     #self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, window2, pr_lower)
     
+    # set up mirror copy progress
+    self.mirror_sync_progress = MirrorSyncProgress(self.glade_xml.get_widget('messages_vbox'))
     
     #############################
     ##Highly experimental
@@ -189,6 +192,7 @@ class Volume_Tab_View:
     treemodel.clear()
     
     self.model_factory.reload(WaitMsg(RELOAD_LVM_MESSAGE))
+    self.mirror_sync_progress.initiate()
     
     vg_list = self.model_factory.get_VGs()
     if len(vg_list) > 0:
@@ -454,3 +458,82 @@ class Volume_Tab_View:
     self.log_panel.hide()
     self.phys_panel.hide()
 
+
+
+class MirrorSyncProgress:
+    def __init__(self, vbox):
+        self.vbox = vbox
+        
+        # {name : [hbox, progressbar], ...}
+        self.progress_bars = {}
+        
+        self.timer = 0
+        
+        self.forked_command = None
+        
+    
+    def initiate(self):
+        # return if timer is already ticking
+        if self.timer != 0:
+            return
+        if self.crank():
+            # set up timer to call crank
+            self.timer = gtk.timeout_add(1000, self.crank)
+    
+    def crank(self):
+        # initiate lvprobe if not initiated
+        if self.forked_command == None:
+            args = [LVM_BIN_PATH, 'lvs', '--noheadings', '--separator', '\";\"', '-o', 'lv_name,vg_name,lv_attr,copy_percent,move_pv']
+            self.forked_command = ForkedCommand(LVM_BIN_PATH, args)
+            self.forked_command.fork()
+        
+        # get lv data if completed
+        out, err, status = self.forked_command.get_stdout_stderr_status()
+        if out == None:
+            # not done yet
+            return True
+        else:
+            # command completed
+            self.forked_command = None
+            
+            # find mirrors and copy percent
+            mirrors = {}
+            lines = out.splitlines()
+            for line in lines:
+                words = line.strip().split(';')
+                lvname = words[0]
+                vgname = words[1]
+                lvattrs = words[2]
+                copy_percent = words[3]
+                if lvattrs[0] == 'm':
+                    percent = float(copy_percent)
+                    if percent != float('100.00'):
+                        mirrors[vgname + '/' + lvname] = percent
+            
+            # add new lvs
+            for name in mirrors:
+                if name not in self.progress_bars:
+                    progress = gtk.ProgressBar()
+                    progress.set_text(_("%s mirror synchronisation ") % name)
+                    progress.set_fraction(mirrors[name]/100.0)
+                    hbox = gtk.HBox()
+                    hbox.pack_end(progress)
+                    self.vbox.pack_start(hbox)
+                    self.progress_bars[name] = [hbox, progress]
+            # remove completed or renamed lvs
+            for name in self.progress_bars.keys()[:]:
+                if name not in mirrors:
+                    self.vbox.remove(self.progress_bars[name][0])
+                    self.progress_bars.pop(name)
+            
+            self.vbox.show_all()
+            # update progress bars
+            for name in self.progress_bars:
+                self.progress_bars[name][1].set_fraction(mirrors[name]/100.0)
+                
+            # stop timer if all done
+            if len(self.progress_bars.keys()) == 0:
+                self.timer = 0
+                return False
+            else:
+                return True
