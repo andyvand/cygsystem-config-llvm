@@ -13,18 +13,28 @@ FSRESIZE_FAILURE=_("Resize of filesystem failed. Command attempted: \"%s\" - Sys
 def get_fs(path):
     filesys_name = None
     result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
-    words = result.split()
-    if len(words) < 3:  #No file system
-        return NoFS()
-    elif words[2].strip() == "rev":
-        filesys_name = words[4]
+    
+    if 'ext3' in result:
+        return ext3()
+    elif 'ext2' in result:
+        return ext2()
+    elif 'FAT (12 bit)' in result:
+        return Unknown('vfat12')
+    elif 'FAT (16 bit)' in result:
+        return Unknown('vfat16')
+    elif 'FAT (32 bit)' in result:
+        return Unknown('vfat32')
+    elif 'Minix' in result or 'minix' in result:
+        return Unknown('minix')
+    elif 'XFS' in result:
+        return Unknown('xfs')
+    elif 'swap' in result:
+        filesys = Unknown('swap')
+        filesys.mountable = False
+        return filesys
     else:
-        filesys_name = words[2]
-    for fs in get_filesystems():
-        if filesys_name == fs.name:
-            return fs
-    return Unknown(filesys_name)
-
+        return NoFS()
+    
 
 def get_filesystems():
     return [NoFS(), ext2(), ext3()]
