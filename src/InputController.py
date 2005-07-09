@@ -614,7 +614,13 @@ class InputController:
           
       try:
           if doFormat:
+              # format
+              devpath = path
               path = self.model_factory.partition_UV(pv)
+              # tell kernel to reread new table
+              if self.command_handler.reread_partition_table(devpath) == False:
+                  print 'fixme: reboot required'
+                  sys.exit(1)
           self.command_handler.initialize_entity(path)
       except CommandError, e:
           self.errorMessage(e.getMessage())

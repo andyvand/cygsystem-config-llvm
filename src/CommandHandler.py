@@ -377,3 +377,10 @@ class CommandHandler:
         return True
       
     return False
+
+  def reread_partition_table(self, devpath):
+    BLOCKDEV_BIN = '/sbin/blockdev'
+    args = [BLOCKDEV_BIN, '--rereadpt', devpath]
+    out, err, status = execWithCaptureErrorStatus(BLOCKDEV_BIN, args)
+    print status
+    return (status == 0)
