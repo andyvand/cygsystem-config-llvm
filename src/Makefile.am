@@ -7,7 +7,10 @@ Properties_Renderer.py \
 renderer.py \
 Volume_Tab_View.py \
 fdisk_wrapper.py \
-FDiskModel.py	\
+parted_wrapper.py \
+Partition.py	\
+BlockDevice.py	\
+BlockDeviceModel.py	\
 Filesystem.py	\
 Fstab.py	\
 execute.py	\
@@ -56,7 +59,10 @@ install-exec-local:
 	install -m 0640 $(srcdir)/renderer.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Volume_Tab_View.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/fdisk_wrapper.py  $(DESTDIR)$(pkgdatadir)/
-	install -m 0640 $(srcdir)/FDiskModel.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/parted_wrapper.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/Partition.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/BlockDevice.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/BlockDeviceModel.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Filesystem.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Fstab.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/execute.py  $(DESTDIR)$(pkgdatadir)/

@@ -1,13 +1,14 @@
 
 import fdisk_wrapper
-from fdisk_wrapper import Segment, Partition
-from fdisk_wrapper import FDiskErr, FDiskErr_occupied, FDiskErr_cannotFit, FDiskErr_extended, FDiskErr_num, FDiskErr_partFormat
-from fdisk_wrapper import ID_EMPTY, ID_EXTENDS, ID_SWAPS
-from fdisk_wrapper import PARTITION_IDs
-from fdisk_wrapper import ID_LINUX_LVM
+from Partition import ID_EMPTY, ID_UNKNOWN
+from Partition import ID_EXTENDS, ID_SWAPS
+from Partition import PARTITION_IDs
+from Partition import ID_LINUX_LVM
+
+from BlockDevice import *
 
 
-class FDiskModel:
+class BlockDeviceModel:
     
     def __init__(self):
         self.__views = dict()
@@ -15,7 +16,7 @@ class FDiskModel:
         self.__devices = dict()
         fd = fdisk_wrapper.FDisk()
         for devname in fd.getDeviceNames():
-            bd = fdisk_wrapper.BlockDevice(devname)
+            bd = BlockDevice(devname)
             self.__devices[devname] = bd
     
     def reload(self):
@@ -32,7 +33,7 @@ class FDiskModel:
         for devname in self.__devices:
             data[devname] = self.getDevice(devname)
         return data
-
+    
     # returns [Segment1, Segment2, Segment3, ...]
     def getDevice(self, devname):
         return self.__devices[devname].getSegments()
@@ -73,13 +74,13 @@ class FDiskModel:
     def remove(self, devname, partnum):
         self.__devices[devname].remove(partnum)
         self.__notifyViews()
-        
+    
     ### commit changes to disk !!! ###
     def saveTable(self, devname):
         self.__devices[devname].saveTable()
         self.reloadDisk(devname)
         self.__notifyViews()
-        
+    
     def renumberExtends(self, devname):
         self.__devices[devname].renumberExtends()
         self.__notifyViews()
@@ -90,14 +91,14 @@ class FDiskModel:
     def printDevicesDebug(self):
         for devname in self.__devices:
             self.__devices[devname].printout()
-            
+    
     def printDevices(self):
         devs = self.getDevices()
         for dev in devs:
             print 'device:', dev
             for part in devs[dev]:
                 part.printout()
-        
+    
     # will call obj.funct(self.getDevices()) on any changes
     def registerView(self, obj, funct):
         self.__views[obj] = funct

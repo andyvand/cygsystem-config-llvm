@@ -4,7 +4,7 @@ import sys
 import string
 import re
 from lvmui_constants import *
-from FDiskModel import *
+from BlockDeviceModel import *
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
 import gettext
 _ = gettext.gettext
@@ -129,7 +129,7 @@ if status == 0:
 class lvm_model:
   
   def __init__(self):
-    self.__fdisk_model = FDiskModel()
+    self.__block_device_model = BlockDeviceModel()
     self.__VGs = {}
     self.__PVs = []
   
@@ -187,8 +187,8 @@ class lvm_model:
     parts = {} # PVs on a partition
     segs = []  # PVs on free space
     # get partitions from hard drives
-    self.__fdisk_model.reload()
-    devs = self.__fdisk_model.getDevices()
+    self.__block_device_model.reload()
+    devs = self.__block_device_model.getDevices()
     # multipathing
     multipath_obj = Multipath()
     multipath_data = multipath_obj.get_multipath_data()
@@ -661,11 +661,11 @@ class lvm_model:
       try:
         (devname, seg) = pv.getPartition()
         fdisk_devname = None
-        fdisk_devnames = self.__fdisk_model.getDevices().keys()
+        fdisk_devnames = self.__block_device_model.getDevices().keys()
         if devname in fdisk_devnames:
           fdisk_devname = devname
         else:
-          # if pv has multipath info, devname doesn't have to be known to FDiskModel
+          # if pv has multipath info, devname doesn't have to be known to BlockDeviceModel
           # so find device it does :)
           multipath_object = Multipath()
           multipath_data = Multipath.get_multipath_data()
@@ -674,13 +674,13 @@ class lvm_model:
             if path in fdisk_devnames:
               fdisk_devname = path
         part = Partition(seg.beg, seg.end, ID_LINUX_LVM, None, False, seg.sectorSize)
-        part_num = self.__fdisk_model.add(fdisk_devname, part)
+        part_num = self.__block_device_model.add(fdisk_devname, part)
         print part_num
-        self.__fdisk_model.saveTable(fdisk_devname)
-        new_part = self.__fdisk_model.getPartition(fdisk_devname, part_num)
+        self.__block_device_model.saveTable(fdisk_devname)
+        new_part = self.__block_device_model.getPartition(fdisk_devname, part_num)
         pv.setPartition((devname, new_part))
-      except FDiskErr:
-        self.__fdiskModel.reload()
+      except BlockDeviceErr:
+        self.__block_device_model.reload()
         raise CommandError('FATAL', AUTOPARTITION_FAILURE % devname)
     return pv.get_path()
   
@@ -842,7 +842,7 @@ class lvm_model:
       # partition type
       part = pv.getPartition()[1]
       partition_type = PARTITION_IDs[part.id]
-      if part.id != ID_EMPTY:
+      if part.id != ID_EMPTY and part.id != ID_UNKNOWN:
         partition_type = partition_type + ' (' + str(hex(part.id)) + ')'
       text_list.append(UV_PARTITION_TYPE)
       text_list.append(partition_type)
