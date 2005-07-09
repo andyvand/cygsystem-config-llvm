@@ -16,6 +16,9 @@ from Segment import *
 from ExtentBlock import *
 from Multipath import Multipath
 
+import Filesystem
+
+
 
 #Column names for PVS calls
 P_NAME_COL=0
@@ -920,16 +923,12 @@ class lvm_model:
       # free space
       return NO_FILESYSTEM
     
-    filesys = NO_FILESYSTEM
-    result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
-    words = result.split()
-    if len(words) < 3:  #No file system
-      filesys = NO_FILESYSTEM
-    elif words[2].strip() == "rev":
-      filesys = words[4]
+    
+    filesys = Filesystem.get_fs(path)
+    if filesys.name == Filesystem.get_filesystems()[0]:
+      return NO_FILESYSTEM
     else:
-      filesys = words[2]
-    return filesys
+      return filesys.name
   
   def getMountPoint(self, path):
     mount_point = None
