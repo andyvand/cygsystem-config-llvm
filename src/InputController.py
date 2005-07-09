@@ -1429,10 +1429,9 @@ class LV_edit_props:
     
     def on_fs_change(self, obj):
         self.filesys_show_hide()
-        if self.new:
-            self.on_mirrored_changed(None)
-        else:
-            self.on_enable_mirroring(None)
+        # go thru on_enable_mirroring() to get to update_size_limits,
+        # that in turn disables resizing if fs doesn't support that
+        self.on_enable_mirroring(None)
     
     def filesys_show_hide(self, show_message=True):
         iter = self.filesys_combo.get_active_iter()
