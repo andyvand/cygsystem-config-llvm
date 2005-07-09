@@ -22,7 +22,6 @@ VGCHANGE_FAILURE=_("vgchange command failed. Command attempted: \"%s\" - System 
 VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s")
 PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\" - System Error Message: %s")
 LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\" - System Error Message: %s")
-FSCREATE_FAILURE=_("mkfs command failed. Command attempted: \"%s\" - System Error Message: %s")
 MNTCREATE_FAILURE=_("mount command failed. Command Attempted: %s  - System Error Message: \"%s\"")
 LVRESIZE_FAILURE=_("lvresize command failed. Command attempted: \"%s\" - System Error Message: %s")
 LVRENAME_FAILURE=_("lvrename command failed. Command attempted: \"%s\" - System Error Message: %s")
@@ -71,34 +70,11 @@ class CommandHandler:
       arglist.append(vgname)
     
     cmd_str = ' '.join(arglist)
-    
-    result_string,err,res = execWithCaptureErrorStatusProgress(LVCREATE_BIN_PATH, arglist, 
+    result_string,err,res = execWithCaptureErrorStatusProgress(LVCREATE_BIN_PATH, arglist,
                                                                _("Creating Logical Volume"))
     if res != 0:
       raise CommandError('FATAL', LVCREATE_FAILURE % (cmd_str,err))
-    
-    
-    ###next command
-    
-    #Now make filesystem if necessary
-    if cmd_args_dict[NEW_LV_MAKE_FS_ARG] == True:
-      lvpath = model_factory.get_logical_volume_path(lvname,vgname)
-
-      fs_type = cmd_args_dict[NEW_LV_FS_TYPE_ARG] 
-      args = list()
-      args.append("/sbin/mkfs")
-      args.append("-t")
-      args.append(fs_type)
-      args.append(lvpath)
-      cmdstr = ' '.join(args)
-      o,e,r = execWithCaptureErrorStatus("/sbin/mkfs",args)
-      if r != 0:
-        raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
-      
-      if cmd_args_dict[NEW_LV_MAKE_MNT_POINT_ARG] == True:
-        mnt_point =  cmd_args_dict[NEW_LV_MNT_POINT_ARG]
-        self.mount(lvpath, mnt_point)
-        
+  
   def reduce_lv(self, lvpath, new_size_extents, test=False): 
     cmd_args = list()
     cmd_args.append(LVREDUCE_BIN_PATH)

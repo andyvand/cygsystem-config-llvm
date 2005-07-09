@@ -1691,7 +1691,6 @@ class LV_edit_props:
             if striped == True:
                 new_lv_command_set[NEW_LV_STRIPE_SIZE_ARG] = stripe_size
                 new_lv_command_set[NEW_LV_NUM_STRIPES_ARG] = stripes_num
-            new_lv_command_set[NEW_LV_MAKE_FS_ARG] = False
             new_lv_command_set[NEW_LV_SNAPSHOT] = self.snapshot
             if self.snapshot:
                 new_lv_command_set[NEW_LV_SNAPSHOT_ORIGIN] = self.lv.get_path()

@@ -1,11 +1,11 @@
 
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
 from CommandError import *
-from CommandHandler import FSCREATE_FAILURE
 
 
 CREATING_FS=_("Please wait while filesystem is being created")
 RESIZING_FS=_("Please wait while filesystem is being resized")
+FSCREATE_FAILURE=_("Creation of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 FSRESIZE_FAILURE=_("Resize of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 
 
@@ -27,7 +27,7 @@ def get_fs(path):
 
 
 def get_filesystems():
-    return [NoFS(), ext3(), ext2()]
+    return [NoFS(), ext2(), ext3()]
 
 
 class Filesystem:
