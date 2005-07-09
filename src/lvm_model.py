@@ -826,7 +826,9 @@ class lvm_model:
     if mount_point == None:
       mount_point = UNMOUNTED
     text_list.append(UV_MOUNT_POINT)
-    text_list.append(mount_point)    
+    text_list.append(mount_point)
+    text_list.append(UV_FILESYSTEM)
+    text_list.append(self.getFS(lv.get_path()))
     
     return text_list
   
@@ -925,7 +927,7 @@ class lvm_model:
     
     
     filesys = Filesystem.get_fs(path)
-    if filesys.name == Filesystem.get_filesystems()[0]:
+    if filesys.name == Filesystem.get_filesystems()[0].name:
       return NO_FILESYSTEM
     else:
       return filesys.name
