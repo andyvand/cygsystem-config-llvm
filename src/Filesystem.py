@@ -1,4 +1,6 @@
 
+import re
+
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
 from CommandError import *
 
@@ -14,21 +16,21 @@ def get_fs(path):
     filesys_name = None
     result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
     
-    if 'ext3' in result:
+    if re.search('ext3', result, re.I):
         return ext3()
-    elif 'ext2' in result:
+    elif re.search('ext2', result, re.I):
         return ext2()
-    elif 'FAT (12 bit)' in result:
+    elif re.search('FAT \(12 bit\)', result, re.I):
         return Unknown('vfat12')
-    elif 'FAT (16 bit)' in result:
+    elif re.search('FAT \(16 bit\)', result, re.I):
         return Unknown('vfat16')
-    elif 'FAT (32 bit)' in result:
+    elif re.search('FAT \(32 bit\)', result, re.I):
         return Unknown('vfat32')
-    elif 'Minix' in result or 'minix' in result:
+    elif re.search('minix', result, re.I):
         return Unknown('minix')
-    elif 'XFS' in result:
+    elif re.search('xfs', result, re.I):
         return Unknown('xfs')
-    elif 'swap' in result:
+    elif re.search('swap', result, re.I):
         filesys = Unknown('swap')
         filesys.mountable = False
         return filesys
