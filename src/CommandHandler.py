@@ -291,7 +291,7 @@ class CommandHandler:
 
   # data = [pv to migrate to, policy (0 - inherit, 1 - normal, 2 - contiguous, 3 - anywhere), lv_path to migrate from]
   # extents_from = [(start, size), ...]
-  def move_pv(self, pv, extents_from, data):
+  def move_pv(self, pv, extents_from, data, background=False):
     args = list()
     args.append(PVMOVE_BIN_PATH)
     # policy
@@ -315,10 +315,14 @@ class CommandHandler:
     # pv to migrate to
     if data[0] != None:
       args.append(data[0])
-    cmdstr = ' '.join(args)
-    out, err, res = execWithCaptureErrorStatusProgress(PVMOVE_BIN_PATH, args,
-                                                       _("Migrating Extents"))
+    if background:
+      args.append('--background')
+      out, err, res = execWithCaptureErrorStatus(PVMOVE_BIN_PATH, args)
+    else:
+      out, err, res = execWithCaptureErrorStatusProgress(PVMOVE_BIN_PATH, args,
+                                                         _("Migrating Extents"))
     if res != 0:
+      cmdstr = ' '.join(args)
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
     
   def is_lv_mounted(self, lvname):
@@ -338,8 +342,8 @@ class CommandHandler:
         mount_point = text_words[1]
         filesys = text_words[2]
         break
-    return is_mounted,mount_point,filesys
-
+    return is_mounted, mount_point, filesys
+  
   def is_dm_mirror_loaded(self):
     arglist = list()
     arglist.append("/sbin/dmsetup")
