@@ -257,7 +257,6 @@
 			  <child>
 			    <widget class="GtkHBox" id="uninit_panel">
 			      <property name="height_request">26</property>
-			      <property name="visible">True</property>
 			      <property name="homogeneous">False</property>
 			      <property name="spacing">0</property>
 
@@ -289,7 +288,6 @@
 			    <widget class="GtkHBox" id="unalloc_panel">
 			      <property name="border_width">4</property>
 			      <property name="height_request">50</property>
-			      <property name="visible">True</property>
 			      <property name="homogeneous">False</property>
 			      <property name="spacing">4</property>
 

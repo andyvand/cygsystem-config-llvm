@@ -324,7 +324,19 @@ class CommandHandler:
     if res != 0:
       cmdstr = ' '.join(args)
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
-    
+  
+  def complete_pvmove(self, background=False):
+    args = [PVMOVE_BIN_PATH]
+    if background:
+      args.append('--background')
+      out, err, res = execWithCaptureErrorStatus(PVMOVE_BIN_PATH, args)
+    else:
+      out, err, res = execWithCaptureErrorStatusProgress(PVMOVE_BIN_PATH, args,
+                                                         _("Completing Extent Migration"))
+    if res != 0:
+      cmdstr = ' '.join(args)
+      raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
+  
   def is_lv_mounted(self, lvname):
     is_mounted = False
     mount_point = ""

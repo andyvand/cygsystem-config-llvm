@@ -169,6 +169,10 @@ class InputController:
     self.section_type = UNSELECTABLE_TYPE
     
     self.setup_dialogs()
+    
+    # check if pvmove is in progress
+    if self.model_factory.pvmove_in_progress():
+        self.command_handler.complete_pvmove()
   
   def setup_dialogs(self):
     self.init_entity_button = self.glade_xml.get_widget('uninit_button')

@@ -627,6 +627,24 @@ class lvm_model:
           lv_unused.add_segment(segment)
     
   
+  def pvmove_in_progress(self):
+    LVS_OPTION_STRING="move_pv"
+    arglist = list()
+    arglist.append(LVM_BIN_PATH)
+    arglist.append("lvs")
+    arglist.append("--noheadings")
+    arglist.append("-o")
+    arglist.append('move_pv')
+    if LVS_HAS_ALL_OPTION:
+      arglist.append("--all")
+    
+    result_string = execWithCapture(LVM_BIN_PATH, arglist)
+    lines = result_string.splitlines()
+    for line in lines:
+      if line.strip() != '':
+        return True
+    return False
+  
   def get_logical_volume_path(self, lname, vgname):
     lvlist = list()
     arglist = list()

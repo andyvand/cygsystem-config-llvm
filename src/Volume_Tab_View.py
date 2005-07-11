@@ -76,7 +76,7 @@ class Volume_Tab_View:
     #Change Listener
     selection = self.treeview.get_selection()
     selection.connect('changed', self.on_tree_selection_changed)
-
+    
     #self.treeview.connect('expand-collapse-cursor-row',self.on_row_expand_collapse)
     #self.treeview.connect('row-collapsed',self.on_row_expand_collapse)
     
@@ -103,6 +103,7 @@ class Volume_Tab_View:
     
     # set up mirror copy progress
     self.mirror_sync_progress = MirrorSyncProgress(self.glade_xml.get_widget('messages_vbox'))
+    
     
     #############################
     ##Highly experimental
