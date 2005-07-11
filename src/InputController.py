@@ -1022,7 +1022,7 @@ class MigrateDialog:
         self.lv_combo = gtk.combo_box_new_text()
         self.glade_xml.get_widget('lv_selection_container').pack_end(self.lv_combo)
         self.lv_combo.show()
-        self.lv_combo.set_active(False)
+        self.lv_combo.set_sensitive(False)
         for lv in lvs:
             self.lv_combo.append_text(lv.get_name())
         model = self.lv_combo.get_model()
@@ -1034,7 +1034,7 @@ class MigrateDialog:
         self.pv_combo = gtk.combo_box_new_text()
         pv_selection_container.pack_end(self.pv_combo)
         self.pv_combo.show()
-        self.pv_combo.set_active(False)
+        self.pv_combo.set_sensitive(False)
         if len(pvs) != 0:
             for p in pvs:
                 self.pv_combo.append_text(p.get_path())
@@ -1060,15 +1060,15 @@ class MigrateDialog:
     
     def on_choose_pv_radio(self, obj1):
         if self.glade_xml.get_widget('choose_pv_radio').get_active():
-            self.pv_combo.set_active(True)
+            self.pv_combo.set_sensitive(True)
         else:
-            self.pv_combo.set_active(False)
+            self.pv_combo.set_sensitive(False)
     
     def on_choose_lv_check(self, obj1):
         if self.glade_xml.get_widget('choose_lv_check').get_active():
-            self.lv_combo.set_active(True)
+            self.lv_combo.set_sensitive(True)
         else:
-            self.lv_combo.set_active(False)
+            self.lv_combo.set_sensitive(False)
     
     def run(self):
         rc = self.dlg.run()
