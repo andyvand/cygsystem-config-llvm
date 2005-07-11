@@ -203,7 +203,7 @@ class InputController:
     renderer2 = gtk.CellRendererText()
     column2 = gtk.TreeViewColumn("Size",renderer2, text=1)
     self.add_pv_to_vg_treeview.append_column(column2)
-
+    
     # new lv button
     self.new_lv_button = self.glade_xml.get_widget('new_lv_button')
     self.new_lv_button.connect("clicked",self.on_new_lv)
@@ -603,6 +603,14 @@ class InputController:
       rc = self.warningMessage(message)
       if (rc == gtk.RESPONSE_NO):
           return None
+      
+      if mountPoint != None:
+          try:
+              self.command_handler.unmount_lv(path)
+          except CommandError, e:
+              self.errorMessage(e.getMessage())
+              return None
+      
       if pv.needsFormat() and pv.wholeDevice():
           dialog = self.glade_xml.get_widget('whole_device_format_choice')
           label = self.glade_xml.get_widget('whole_device_format_choice_label')
@@ -615,7 +623,7 @@ class InputController:
               doFormat = False
           else:
               return None
-          
+      
       try:
           if doFormat:
               # format
