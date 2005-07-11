@@ -17,6 +17,7 @@ from ExtentBlock import *
 from Multipath import Multipath
 
 import Filesystem
+import Fstab
 
 
 
@@ -79,6 +80,7 @@ LV_UUID=_("LV UUID:   ")
 UV_PARTITION_TYPE=_("Partition Type:   ")
 UV_SIZE=_("Size:   ")
 UV_MOUNT_POINT=_("Mount Point:   ")
+UV_MOUNTPOINT_AT_REBOOT=_("Mount Point at Reboot:   ")
 UV_FILESYSTEM=_("File System:   ")
 
 PV_NAME=_("Physical Volume Name:   ")
@@ -827,6 +829,8 @@ class lvm_model:
       mount_point = UNMOUNTED
     text_list.append(UV_MOUNT_POINT)
     text_list.append(mount_point)
+    text_list.append(UV_MOUNTPOINT_AT_REBOOT)
+    text_list.append(str(Fstab.get_mountpoint(lv.get_path())))
     text_list.append(UV_FILESYSTEM)
     text_list.append(self.getFS(lv.get_path()))
     
@@ -852,11 +856,34 @@ class lvm_model:
       text_list.append(UV_PARTITION_TYPE)
       text_list.append(partition_type)
       # mount point
-      mountPoint = self.getMountPoint(path)
-      if mountPoint == None:
-        mountPoint = UNMOUNTED
+      mountPoints = []
+      for path in pv.get_paths():
+        mountPoint = self.getMountPoint(path)
+        if mountPoint != None:
+          mountPoints.append(mountPoint)
+      if len(mountPoints) == 0:
+        mountPoints = UNMOUNTED
+      else:
+        mount_list = mountPoints
+        mountPoints = mount_list[0]
+        for mountPoint in mount_list[1:]:
+          mountPoints = mountPoints + ', ' + mountPoint
       text_list.append(UV_MOUNT_POINT)
-      text_list.append(mountPoint)
+      text_list.append(mountPoints)
+      fstabMountPoints = []
+      for path in pv.get_paths():
+        mountPoint = Fstab.get_mountpoint(path)
+        if mountPoint != None:
+          fstabMountPoints.append(mountPoint)
+      if len(fstabMountPoints) == 0:
+        fstabMountPoints = _("None")
+      else:
+        mount_list = fstabMountPoints
+        fstabMountPoints = mount_list[0]
+        for mountPoint in mount_list[1:]:
+          fstabMountPoints = fstabMountPoints + ', ' + mountPoint
+      text_list.append(UV_MOUNTPOINT_AT_REBOOT)
+      text_list.append(fstabMountPoints)
       # filesystem
       text_list.append(UV_FILESYSTEM)
       text_list.append(self.getFS(path))

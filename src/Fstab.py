@@ -65,6 +65,9 @@ def __remove(dev_path, mnt_point):
 
 
 def get_mountpoint(dev_path):
+    if dev_path == None:
+        return None
+    
     fstab = open(FSTAB, 'r')
     lines = fstab.readlines()
     fstab.close()
