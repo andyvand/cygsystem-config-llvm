@@ -15,6 +15,11 @@ class WaitMsg:
         self.dlg.set_modal(True)
         self.dlg.show_now()
         self.displayed = True
+        
+        # change cursor
+        cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)
+        self.dlg.get_root_window().set_cursor(cursor)
+        
         self.refresh()
         self.refresh()
         self.refresh()
@@ -23,6 +28,11 @@ class WaitMsg:
         if self.displayed:
             self.dlg.destroy()
             self.displayed = False
+            
+            # revert cursor
+            cursor = gtk.gdk.Cursor(gtk.gdk.LEFT_PTR)
+            self.dlg.get_root_window().set_cursor(cursor)
+            
         self.refresh()
     
     def refresh(self):

@@ -69,7 +69,7 @@ class ForkedCommandProgress:
             return self.showDialog(self.message)
         else:
             # child process
-
+            
             os.close(self.fd_read_out)
             os.close(self.fd_read_err)
             
@@ -102,10 +102,19 @@ class ForkedCommandProgress:
         #Start bouncing progress bar
         self.pbar_timer = gtk.timeout_add(100, self.progress_bar_timeout)
         
+        # change cursor
+        cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)
+        self.be_patient_dialog.get_root_window().set_cursor(cursor)
+        
+        # display dialog
         self.be_patient_dialog.show_all()
         while self.be_patient_dialog.run() == gtk.RESPONSE_DELETE_EVENT:
             pass
         self.be_patient_dialog.destroy()
+        
+        # revert cursor
+        cursor = gtk.gdk.Cursor(gtk.gdk.LEFT_PTR)
+        self.be_patient_dialog.get_root_window().set_cursor(cursor)
         
         # child has finished, collect data
         out = ''
