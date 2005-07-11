@@ -242,7 +242,7 @@ class lvm_model:
     for path in parts:
       partition = parts[path].getPartition()[1]
       if partition.bootable:
-        fs = self.getFS(path)
+        fs = self.__getFS(path)
         if re.match('.*ext[23].*', fs, re.I):
           # EXTended FS on it
           pass
@@ -832,7 +832,7 @@ class lvm_model:
     text_list.append(UV_MOUNTPOINT_AT_REBOOT)
     text_list.append(str(Fstab.get_mountpoint(lv.get_path())))
     text_list.append(UV_FILESYSTEM)
-    text_list.append(self.getFS(lv.get_path()))
+    text_list.append(self.__getFS(lv.get_path()))
     
     return text_list
   
@@ -886,7 +886,7 @@ class lvm_model:
       text_list.append(fstabMountPoints)
       # filesystem
       text_list.append(UV_FILESYSTEM)
-      text_list.append(self.getFS(path))
+      text_list.append(self.__getFS(path))
     else: # UNALLOCATED_TYPE || PHYS_TYPE
       arglist = list()
       arglist.append(LVM_BIN_PATH)
@@ -928,7 +928,7 @@ class lvm_model:
       text_list.append(prop)
     
   
-  def getFS(self, path):
+  def __getFS(self, path):
     path_list = list()
     for pv in self.__PVs:
       if pv.get_path() == path:
