@@ -20,6 +20,8 @@ from Segment import STRIPED_SEGMENT_ID
 from ExtentBlock import ExtentBlock
 from WaitMsg import WaitMsg
 
+import PhysicalVolume
+
 import gettext
 _ = gettext.gettext
 
@@ -582,6 +584,24 @@ class InputController:
           return
       apply(self.reset_tree_model, [pv.get_path()])
   
+  def on_init_entity_from_menu(self, obj, dlg=None):
+      if dlg == None:
+          dlg = self.glade_xml.get_widget("init_block_device_dlg")
+      rc = dlg.run()
+      dlg.hide()
+      if rc == gtk.RESPONSE_APPLY:
+          path = self.glade_xml.get_widget("init_block_device_dlg_path").get_text().strip()
+          pv = PhysicalVolume.PhysicalVolume(path, None, None, 0, 0, False, 0, 0)
+          pv.set_path(path)
+          self.glade_xml.get_widget("init_block_device_dlg_path").set_text('')
+          if self.initialize_entity(pv) == None:
+              self.glade_xml.get_widget("init_block_device_dlg_path").set_text(path)
+              self.on_init_entity_from_menu(None, dlg)
+          else:
+              apply(self.reset_tree_model, [pv.get_path()])
+      else:
+          self.glade_xml.get_widget("init_block_device_dlg_path").set_text('')
+  
   def initialize_entity(self, pv):
       path = pv.get_path()
       mountPoint = self.model_factory.getMountPoint(path)
@@ -828,6 +848,10 @@ class InputController:
       self.edit_lv_button.connect("clicked",self.on_edit_lv)
       self.create_snapshot_button = self.glade_xml.get_widget('create_snapshot_button')
       self.create_snapshot_button.connect("clicked",self.on_create_snapshot)
+      
+      # misc events
+      self.glade_xml.get_widget("initialize_block_device1").connect('activate', self.on_init_entity_from_menu)
+      
   
   def on_remove_unalloc_pv(self, button):
       selection = self.treeview.get_selection()
