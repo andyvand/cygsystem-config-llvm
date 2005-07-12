@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-07-01 01:39+0800\n"
+"PO-Revision-Date: 2005-07-13 01:46+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -426,12 +426,11 @@ msgid "Physical Extent Size: "
 msgstr "Saiz Extent Fizikal:"
 
 #: src/lvui.glade.h:51
-#, fuzzy
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
-"Lebihkan \n"
+"Buang \n"
 "Volum Logikal"
 
 #: src/lvui.glade.h:53
@@ -453,38 +452,37 @@ msgid ""
 msgstr ""
 
 #: src/lvui.glade.h:59
-#, fuzzy
 msgid ""
 "Remove volume \n"
 "from LVM"
-msgstr "Buat Kumpulan Volum LVM"
+msgstr ""
+"Buang volum \n"
+"dari LVM"
 
 #: src/lvui.glade.h:61
-#, fuzzy
 msgid "Select a Volume Group to add this PV to:"
-msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
+msgstr "Pilih Kumpulan Volum untuk menambah PV ini:"
 
 #: src/lvui.glade.h:62
-#, fuzzy
 msgid "Select a disk entity to add to Volume Group:"
-msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
+msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum:"
 
 #: src/lvui.glade.h:63
 msgid "Size:"
 msgstr "Saiz:"
 
 #: src/lvui.glade.h:64
-#, fuzzy
 msgid "Stripe Size:"
-msgstr "Medan Saiz Stripe"
+msgstr "Saiz Stripe:"
 
 #: src/lvui.glade.h:65
 msgid "Striped"
 msgstr "Jaluran"
 
 #: src/lvui.glade.h:66
+#, fuzzy
 msgid "Unused space on VG1:"
-msgstr ""
+msgstr "Isi semua ruang yang belum digunakan pada cakera"
 
 #: src/lvui.glade.h:67
 #, fuzzy
@@ -642,7 +640,7 @@ msgstr "The Free Software Foundation"
 #: src/lvm_model.py:60
 #, fuzzy
 msgid "Extent Size:   "
-msgstr "saiz blok"
+msgstr "Saiz Extent Fizikal:"
 
 #: src/lvm_model.py:61
 #, fuzzy
@@ -685,7 +683,7 @@ msgstr "nombor kumpulan"
 #: src/lvm_model.py:70
 #, fuzzy
 msgid "Number of Stripes:   "
-msgstr "Medan Jumlah Stripe"
+msgstr "Jumlah Stripe:"
 
 #: src/lvm_model.py:71
 #, fuzzy
@@ -723,7 +721,7 @@ msgstr "Nama Volum _Logikal:"
 #: src/lvm_model.py:81
 #, fuzzy
 msgid "Physical Volume Size:   "
-msgstr "Volum Fizikal LVM"
+msgstr "Saiz Extent Fizikal:"
 
 #: src/lvm_model.py:82
 msgid "Space Used:   "
