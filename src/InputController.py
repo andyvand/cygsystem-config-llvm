@@ -92,9 +92,9 @@ NON_UNIQUE_NAME=_("A Logical Volume with the name %s already exists in this Volu
 
 NON_UNIQUE_VG_NAME=_("A Volume Group with the name %s already exists. Please choose a unique name.")
 
-MUST_PROVIDE_NAME=_("A Name must be provided for the new Logical Volume")
+MUST_PROVIDE_NAME=_("A Name must be provided for new Logical Volume")
 
-MUST_PROVIDE_VG_NAME=_("A Name must be provided for the new Volume Group")
+MUST_PROVIDE_VG_NAME=_("A Name must be provided for new Volume Group")
 
 BAD_MNT_POINT=_("The specified mount point, %s, does not exist. Do you wish to create it?")
 
@@ -1358,7 +1358,7 @@ class LV_edit_props:
         self.glade_xml.get_widget('mount_at_reboot').connect('clicked', self.on_mount_changed)
         self.glade_xml.get_widget('use_remaining_button').connect('clicked', self.on_use_remaining)
         
-        
+    
     def on_linear_changed(self, obj):
         if self.glade_xml.get_widget('linear').get_active() == False:
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
