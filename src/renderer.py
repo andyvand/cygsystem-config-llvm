@@ -568,8 +568,10 @@ class DisplayView:
     def draw(self):
         if self.display != None:
             w, h, u_label_h = self.display.minimum_pixmap_dimension(self.da)
-            self.da.set_size_request(w+20, h+20)
             y_offset = Y_OFFSET - u_label_h
+            if y_offset < 0:
+                y_offset = 0
+            self.da.set_size_request(w+20, h+y_offset+20)
             self.display.draw(self.da, self.gc, (10, y_offset))
         else:
             # clear pixmap
