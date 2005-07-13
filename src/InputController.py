@@ -373,8 +373,8 @@ class InputController:
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), snapshots_string, pv.get_path())
             if error_message != None:
                 self.errorMessage(error_message)
-                return
-            
+                return False
+    
     #The following cases must be considered in this method:
     #1) a PV is to be removed that has extents mapped to an LV:
     #  1a) if there are other PVs, call pvmove on the PV to migrate the 
@@ -416,36 +416,36 @@ class InputController:
             #call vgremove
             retval = self.warningMessage(CONFIRM_VG_REMOVE % (pv.get_path(),vg.get_name()))
             if (retval == gtk.RESPONSE_NO):
-                return
+                return False
             try:
                 self.command_handler.remove_vg(vg.get_name())
             except CommandError, e:
                 self.errorMessage(e.getMessage())
-                return
+                return False
         else: #solo_pv is False, more than one PV...
             retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pv.get_path(),vg.get_name()))
             if (retval == gtk.RESPONSE_NO):
-                return
+                return False
             try:
                 self.command_handler.reduce_vg(vg.get_name(), pv.get_path())
             except CommandError, e:
                 self.errorMessage(e.getMessage())
-                return
+                return False
     else:
         #Two cases here: if solo_pv, bail, else check for size needed
         if solo_pv:
             self.errorMessage(SOLO_PV_IN_VG % pv.get_path())
-            return
+            return False
         else: #There are additional PVs. We need to check space 
             ext_total, ext_used, ext_free = vg.get_extent_total_used_free()
             actual_free_exts = ext_free - free
             if alloc <= actual_free_exts:
                 if self.command_handler.is_dm_mirror_loaded() == False:
                     self.errorMessage(NO_DM_MIRROR)
-                    return
+                    return False
                 retval = self.warningMessage(CONFIRM_PV_VG_REMOVE % (pv.get_path(),vg.get_name()))
                 if (retval == gtk.RESPONSE_NO):
-                    return
+                    return False
                 
                 # remove unused from extent_list
                 for ext in extent_list[:]:
@@ -453,7 +453,7 @@ class InputController:
                         extent_list.remove(ext)
                 dlg = self.migrate_exts_dlg(True, pv, extent_list)
                 if dlg == None:
-                    return
+                    return False
                 exts_structs = []
                 for ext in extent_list:
                     exts_structs.append(ext.get_start_size())
@@ -461,21 +461,23 @@ class InputController:
                     self.command_handler.move_pv(pv.get_path(), exts_structs, dlg.get_data())
                 except CommandError, e:
                     self.errorMessage(e.getMessage())
-                    return
+                    return True
                 try:
                     self.command_handler.reduce_vg(vg.get_name(), pv.get_path())
                 except CommandError, e:
                     self.errorMessage(e.getMessage())
-                    return
+                    return True
                 
             else:
                 self.errorMessage(NOT_ENOUGH_SPACE_VG % (vg.get_name(),pv.get_path()))
-                return
+                return False
     
     if reset_tree == True:
         args = list()
         args.append(vg.get_name())
         apply(self.reset_tree_model, args)
+    
+    return True
   
   def on_lv_rm(self, button):
     self.remove_lv()
@@ -570,9 +572,9 @@ class InputController:
           pvpath = pv.get_path()
           vgname = pv.get_vg().get_name()
           pv_to_remove = self.model_factory.get_VG(vgname).get_pvs()[pvpath]
-          self.remove_pv(pv_to_remove)
-          # remove_pv migrates extents -> need to reload lvm data
-          self.model_factory.reload(WaitMsg(RELOAD_LVM_MESSAGE))
+          if self.remove_pv(pv_to_remove):
+              # remove_pv migrates extents -> need to reload lvm data
+              self.model_factory.reload(WaitMsg(RELOAD_LVM_MESSAGE))
       
       selection = self.treeview.get_selection()
       model,iter = selection.get_selected()
