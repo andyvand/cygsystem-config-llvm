@@ -182,9 +182,16 @@ class DisplayView:
         self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, self.height)
         self.display.append_right(End(self.pv_cyl_gen))
         for extent in pv.get_extent_blocks():
-            if extent.get_lv().is_used():
-                if extent.get_lv().is_mirror_log:
+            extents_lv = extent.get_lv()
+            if extents_lv.is_used():
+                if extents_lv.is_mirror_log:
                     cyl = UnselectableSubcylinder('fixme: mirror_log unmigratable', self.pv_cyl_gen, 1, extent.get_start_size()[1])
+                elif extents_lv.is_mirror_image:
+                    cyl = UnselectableSubcylinder('fixme: mirror_image unmigratable', self.pv_cyl_gen, 1, extent.get_start_size()[1])
+                elif extents_lv.is_snapshot():
+                    cyl = UnselectableSubcylinder('fixme: snapshot unmigratable', self.pv_cyl_gen, 1, extent.get_start_size()[1])
+                elif extents_lv.has_snapshots():
+                    cyl = UnselectableSubcylinder('fixme: snapshot origin unmigratable', self.pv_cyl_gen, 1, extent.get_start_size()[1])
                 else:
                     cyl = Subcylinder(self.pv_cyl_gen, 1, 1, True, extent.get_start_size()[1])
             else:

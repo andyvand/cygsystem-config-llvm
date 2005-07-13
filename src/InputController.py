@@ -337,6 +337,44 @@ class InputController:
       self.remove_pv()
   
   def remove_pv(self, pv=None):
+    mapped_lvs = True
+    solo_pv = False
+    reset_tree = False
+    if pv == None:
+        reset_tree = True #This says that tree reset will not be handled by caller
+        selection = self.treeview.get_selection()
+        model, iter = selection.get_selected()
+        pv = model.get_value(iter, OBJ_COL)
+    vg = pv.get_vg()
+    
+    # first check if all extents can be migrated
+    for extent in pv.get_extent_blocks():
+        extents_lv = extent.get_lv()
+        if extents_lv.is_used():
+            error_message = None
+            if extents_lv.is_mirror_log:
+                error_message = _("fixme: %s contains extents belonging to mirror log of LV %s. Mirrored LVs are not migratable, so %s is not removable")
+                error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
+            elif extents_lv.is_mirror_image:
+                error_message = _("fixme: %s contains extents belonging to mirror image of LV %s. Mirrored LVs are not migratable, so %s is not removable")
+                error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
+            elif extents_lv.is_snapshot():
+                error_message = _("fixme: %s contains extents belonging to %s, a snapshot of %s. Snapshots are not migratable, so %s is not removable")
+                error_message = error_message % (pv.get_path(), extents_lv.get_name(), extents_lv.get_snapshot_info()[0].get_name(), pv.get_path())
+            elif extents_lv.has_snapshots():
+                snapshots = extents_lv.get_snapshots()
+                if len(snapshots) == 1:
+                    error_message = _("fixme: %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not migratable, so %s is not removable")
+                else:
+                    error_message = _("fixme: %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not migratable, so %s is not removable")
+                snapshots_string = snapshots[0].get_name()
+                for snap in snapshots[1:]:
+                    snapshot_string = snapshot_string + ', ' + snap.get_name()
+                error_message = error_message % (pv.get_path(), extents_lv.get_name(), snapshots_string, pv.get_path())
+            if error_message != None:
+                self.errorMessage(error_message)
+                return
+            
     #The following cases must be considered in this method:
     #1) a PV is to be removed that has extents mapped to an LV:
     #  1a) if there are other PVs, call pvmove on the PV to migrate the 
@@ -352,16 +390,6 @@ class InputController:
     #  2a) If there are more than one PV in the VG, just vgreduce away the PV
     #  2b) If the PV is the only one, then vgremove the VG
     #
-    mapped_lvs = True
-    solo_pv = False
-    reset_tree = False
-    if pv == None:
-        reset_tree = True #This says that tree reset will not be handled by caller
-        selection = self.treeview.get_selection()
-        model, iter = selection.get_selected()
-        pv = model.get_value(iter, OBJ_COL)
-    
-    vg = pv.get_vg()
     
     total, alloc, free = pv.get_extent_total_used_free()
     pv_list = vg.get_pvs().values()
@@ -903,11 +931,6 @@ class InputController:
       needed_extents = 0
       for ext in exts:
           needed_extents = needed_extents + ext.get_start_size()[1]
-          if ext.get_lv().is_mirror_log or ext.get_lv().is_mirror_image:
-              # not movable :(
-              self.errorMessage('fixme: unable to move extents belonging to mirrors')
-              return None
-          # TODO: handle other non-movable extents
       
       free_extents = 0
       pvs = []
