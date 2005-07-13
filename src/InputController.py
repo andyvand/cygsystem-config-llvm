@@ -1430,10 +1430,13 @@ class LV_edit_props:
                 self.size_entry.select_region(0, (-1))
                 self.size_entry.grab_focus()
             else:
-                self.errorMessage('fixme: not enough room for mirroring. Reduce size of LV to at most ' + str(self.__get_num(max_mirror_size)) + ', or add some PVs')
-                self.glade_xml.get_widget('enable_mirroring').set_active(False)
-                self.size_entry.select_region(0, (-1))
-                self.size_entry.grab_focus()
+                if self.lv.is_mirrored() == False:
+                    self.errorMessage('fixme: not enough room for mirroring. Reduce size of LV to at most ' + str(self.__get_num(max_mirror_size)) + ', or add some PVs')
+                    self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                    self.size_entry.select_region(0, (-1))
+                    self.size_entry.grab_focus()
+                else:
+                    self.update_size_limits()
                 return
         else:
             self.update_size_limits(max_mirror_size)
@@ -1540,6 +1543,21 @@ class LV_edit_props:
                 self.size_entry.set_sensitive(False)
                 self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
                 return
+            elif self.lv.is_mirrored():
+                if self.glade_xml.get_widget('enable_mirroring').get_active():
+                    self.glade_xml.get_widget('mirror_not_resizable').show()
+                    self.glade_xml.get_widget('free_space_label').hide()
+                    self.size_scale.set_sensitive(False)
+                    self.size_entry.set_sensitive(False)
+                    self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
+                    self.set_size_new(self.size)
+                    return
+                else:
+                    self.glade_xml.get_widget('mirror_not_resizable').hide()
+                    self.glade_xml.get_widget('free_space_label').show()
+                    self.size_scale.set_sensitive(True)
+                    self.size_entry.set_sensitive(True)
+                    self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
         
         self.size_lower = 1
         if upper == None:
