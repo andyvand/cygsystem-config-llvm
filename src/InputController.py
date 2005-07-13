@@ -1396,12 +1396,18 @@ class LV_edit_props:
         
         if self.size_new > max_mirror_size:
             if self.new:
+                self.update_size_limits(max_mirror_size)
                 self.infoMessage('fixme: size changed to fit')
+                self.size_entry.select_region(0, (-1))
+                self.size_entry.grab_focus()
             else:
                 self.errorMessage('fixme: not enough room for mirroring. Reduce size of LV to at most ' + str(self.__get_num(max_mirror_size)) + ', or add some PVs')
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                self.size_entry.select_region(0, (-1))
+                self.size_entry.grab_focus()
                 return
-        self.update_size_limits(max_mirror_size)
+        else:
+            self.update_size_limits(max_mirror_size)
         
     
     def __get_max_mirror_data(self):
@@ -1434,6 +1440,7 @@ class LV_edit_props:
         # remove smallest one for log
         free_list.pop(len(free_list) - 1)
         
+        # place pvs into buckets of similar size
         buck1, s1 = [free_list[0][1]], free_list[0][0]
         buck2, s2 = [free_list[1][1]], free_list[1][0]
         for t in free_list[2:]:
@@ -1585,7 +1592,8 @@ class LV_edit_props:
         rem = self.size_upper - self.size_new
         rem_vg = self.vg.get_extent_total_used_free()[2]
         if self.glade_xml.get_widget('enable_mirroring').get_active():
-            rem_vg = rem_vg + (self.size - self.size_new) * 2 - 1
+            mirror_log_size = 1
+            rem_vg = rem_vg + (self.size - self.size_new) * 2 - mirror_log_size
         else:
             rem_vg = rem_vg - self.size_new + self.size
         string_vg = REMAINING_SPACE_VG + str(self.__get_num(rem_vg)) + ' ' + units
@@ -1762,14 +1770,14 @@ class LV_edit_props:
                 self.command_handler.remove_mirroring(self.lv.get_path())
             
             # DEBUGING: check if resizing is posible
-            if extend:
-                if self.command_handler.extend_lv(self.lv.get_path(), size_new, True) == False:
-                    retval = self.infoMessage(_("fixme: resizing not posible"))
-                    return False
-            elif reduce:
-                if self.command_handler.reduce_lv(self.lv.get_path(), size_new, True) == False:
-                    retval = self.infoMessage(_("fixme: resizing not posible"))
-                    return False
+            #if extend:
+            #    if self.command_handler.extend_lv(self.lv.get_path(), size_new, True) == False:
+            #        retval = self.infoMessage(_("fixme: resizing not posible"))
+            #        return False
+            #elif reduce:
+            #    if self.command_handler.reduce_lv(self.lv.get_path(), size_new, True) == False:
+            #        retval = self.infoMessage(_("fixme: resizing not posible"))
+            #        return False
             
             mounted = self.mount
             unmount = False
