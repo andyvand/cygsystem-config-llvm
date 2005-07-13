@@ -67,7 +67,7 @@ class Volume_Tab_View:
                                     gobject.TYPE_PYOBJECT)
     self.treeview.set_model(self.treemodel)
     self.treeview.set_headers_visible(False)
-
+    
     self.input_controller = InputController(self.reset_tree_model,
                                             self.treeview, 
                                             self.model_factory, 
@@ -86,6 +86,7 @@ class Volume_Tab_View:
     column1 = gtk.TreeViewColumn("Volumes",renderer1,markup=0)
     self.treeview.append_column(column1)
     
+    
     #Time to set up draw area
     window1 = self.glade_xml.get_widget("drawingarea1")
     window1.set_size_request(700, 500)
@@ -100,6 +101,13 @@ class Volume_Tab_View:
     #pr_lower = Properties_Renderer(window4, window4.window)
     self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, None, None)
     #self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, window2, pr_lower)
+    
+    self.glade_xml.get_widget('best_fit_button').connect('clicked', self.on_best_fit)
+    self.glade_xml.get_widget('zoom_in_button').connect('clicked', self.on_zoom_in)
+    self.glade_xml.get_widget('zoom_out_button').connect('clicked', self.on_zoom_out)
+    self.glade_xml.get_widget('viewport1').connect('size-allocate', self.on_resize_drawing_area)
+    self.on_best_fit(None)
+    self.glade_xml.get_widget('zoom_box').set_sensitive(False)
     
     # set up mirror copy progress
     self.mirror_sync_progress = MirrorSyncProgress(self.glade_xml.get_widget('messages_vbox'))
@@ -364,7 +372,9 @@ class Volume_Tab_View:
     selection = self.treeview.get_selection()
     model,iter = selection.get_selected()
     if iter == None:
+        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
         self.display_view.render_no_selection()
+        self.display_view.draw()
         return
     
     treepath = model.get_path(iter)
@@ -379,6 +389,8 @@ class Volume_Tab_View:
         vg = model.get_value(iter, OBJ_COL)
         pv_list = vg.get_pvs().values()
         self.display_view.render_pvs(pv_list)
+        self.on_best_fit(None)
+        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
     elif type == VG_LOG_TYPE:
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
@@ -387,12 +399,16 @@ class Volume_Tab_View:
         lv_list = vg.get_lvs().values()
         self.show_log_vol_view_panel(lv_list)
         self.display_view.render_lvs(lv_list)
+        self.on_best_fit(None)
+        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
     elif type == VG_TYPE:
         self.clear_all_buttonpanels()
         self.input_controller.clear_highlighted_sections()
         
         vg = model.get_value(iter, OBJ_COL)
         self.display_view.render_vg(vg)
+        self.on_best_fit(None)
+        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
     elif type == LOG_TYPE:
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
@@ -400,6 +416,8 @@ class Volume_Tab_View:
         
         lv = model.get_value(iter, OBJ_COL)
         self.display_view.render_lv(lv)
+        self.on_best_fit(None)
+        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
     elif type == PHYS_TYPE:
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
@@ -407,6 +425,8 @@ class Volume_Tab_View:
         
         pv = model.get_value(iter, OBJ_COL)
         self.display_view.render_pv(pv)
+        self.on_best_fit(None)
+        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
     elif type == UNALLOCATED_TYPE:
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
@@ -414,6 +434,8 @@ class Volume_Tab_View:
         
         pv = model.get_value(iter, OBJ_COL)
         self.display_view.render_unalloc_pv(pv)
+        self.on_best_fit(None)
+        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
     elif type == UNINITIALIZED_TYPE:
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
@@ -426,10 +448,14 @@ class Volume_Tab_View:
             button.set_sensitive(False)
         self.uninit_panel.show()
         self.display_view.render_uninit_pv(uv)
+        self.on_best_fit(None)
+        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
     else:
         self.input_controller.clear_highlighted_sections()
         self.clear_all_buttonpanels()
         self.display_view.render_no_selection()
+        self.display_view.draw()
+        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
   
   def on_row_expand_collapse(self, treeview, logical,expand, openall, *params):
     treeview.get_model()
@@ -452,14 +478,40 @@ class Volume_Tab_View:
     self.log_vol_view_panel.show()
   
   def clear_all_buttonpanels(self):
-    self.unalloc_panel.hide()
-    self.uninit_panel.hide()
-    self.log_vol_view_panel.hide()
-    self.phys_vol_view_panel.hide()
-    self.log_panel.hide()
-    self.phys_panel.hide()
-
-
+      self.unalloc_panel.hide()
+      self.uninit_panel.hide()
+      self.log_vol_view_panel.hide()
+      self.phys_vol_view_panel.hide()
+      self.log_panel.hide()
+      self.phys_panel.hide()
+      
+  
+  def on_best_fit(self, obj):
+      self.on_resize_drawing_area(None, None)
+      self.__set_zoom_buttons(self.display_view.set_best_fit())
+      self.display_view.draw()
+  
+  def on_zoom_in(self, obj):
+      self.__set_zoom_buttons(self.display_view.zoom_in())
+      self.display_view.draw()
+  
+  def on_zoom_out(self, obj):
+      self.__set_zoom_buttons(self.display_view.zoom_out())
+      self.display_view.draw()
+  
+  def __set_zoom_buttons(self, (z_in, z_out)):
+      if z_in:
+          self.glade_xml.get_widget('zoom_in_button').set_sensitive(True)
+      else:
+          self.glade_xml.get_widget('zoom_in_button').set_sensitive(False)
+      if z_out:
+          self.glade_xml.get_widget('zoom_out_button').set_sensitive(True)
+      else:
+          self.glade_xml.get_widget('zoom_out_button').set_sensitive(False)
+  
+  def on_resize_drawing_area(self, obj1, obj2):
+      self.display_view.set_visible_size(self.glade_xml.get_widget('viewport1').window.get_size())
+  
 
 class MirrorSyncProgress:
     def __init__(self, vbox):

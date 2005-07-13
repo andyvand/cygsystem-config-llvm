@@ -93,12 +93,76 @@ class DisplayView:
         self.uv_cyl_gen = CylinderGenerator(INSTALLDIR + '/pixmaps/UV.xpm', uv_color)
         self.vg_cyl_gen = CylinderGenerator(INSTALLDIR + '/pixmaps/VG.xpm', vg_color)
         
-        
         # to be removed when right clicking gets implemented
         self.type = None
         self.register_selections_fcn = register_selections_fcn
         
+        self.set_visible_size((50, 50))
         
+        self.height = None
+        
+    
+    def zoom_in(self):
+        if self.display == None:
+            return (False, False)
+        
+        w_old = self.display.get_width()
+        w_new = w_old * 1.5
+        h_old = self.display.get_height()
+        h_new = h_old + 2
+        
+        self.display.set_width(w_new)
+        self.display.set_height(h_new)
+        
+        return (True, True)
+    
+    def zoom_out(self):
+        if self.display == None:
+            return (False, False)
+        
+        w_old = self.display.get_width()
+        w_new = w_old * 0.5
+        h_old = self.display.get_height()
+        h_new = h_old - 2
+        
+        self.display.set_width(w_new)
+        self.display.set_height(h_new)
+        
+        pix_w, nothing1, nothing2 = self.display.minimum_pixmap_dimension(self.da)
+        
+        if pix_w <= self.get_visible_size()[0]:
+            self.set_best_fit()
+            return (True, False)
+        
+        return (True, True)
+    
+    def set_best_fit(self):
+        if self.display == None:
+            return (False, False)
+        
+        self.display.respect_smallest_selectable_width(False)
+        
+        vis_w, vis_h = self.get_visible_size()
+        pix_w, pix_h, u_label_h = self.display.minimum_pixmap_dimension(self.da)
+        
+        while pix_w+20 > 1.01 * vis_w or pix_w+20 < 0.98 * vis_w:
+            cyl_w = self.display.get_width()
+            if pix_w+20 > 1.01 * vis_w:
+                new_width = cyl_w * 0.8
+            else:
+                new_width = cyl_w * 1.2
+            self.display.set_width(new_width)
+            pix_w, pix_h, u_label_h = self.display.minimum_pixmap_dimension(self.da)
+            
+        self.display.set_height(self.height)
+        
+        return (True, False)
+    
+    def set_visible_size(self, (width, height)):
+        self.visible_size = (width, height)
+    def get_visible_size(self):
+        return self.visible_size
+    
     
     def render_pv(self, pv):
         if self.dvH != None:
@@ -106,6 +170,7 @@ class DisplayView:
             self.dvH_selectable = True
         
         self.type = PHYS_TYPE
+        self.height = HEIGHT_SINGLE
         
         # display properties
         self.pr.render_to_layout_area(pv.get_properties(), pv.get_description(), PHYS_TYPE)
@@ -114,7 +179,7 @@ class DisplayView:
         line1 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><b>" + PHYSICAL_VOL_STR + "</b></span>\n"
         line2 = "<span size=\"8000\"><b>" + pv.get_description() + "</b></span>"
         label = line1 + line2
-        self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
+        self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, self.height)
         self.display.append_right(End(self.pv_cyl_gen))
         for extent in pv.get_extent_blocks():
             if extent.get_lv().is_used():
@@ -138,7 +203,6 @@ class DisplayView:
             cyl.add_object(CYL_ID_VOLUME, extent)
             cyl.add_object(CYL_ID_FUNCTION, DisplayView.render_ext)
             cyl.add_object(CYL_ID_ARGS, [extent])
-        self.draw()
     
     def render_unalloc_pv(self, pv):
         if self.dvH != None:
@@ -146,6 +210,7 @@ class DisplayView:
             self.dvH_selectable = False
         
         self.type = None
+        self.height = HEIGHT_SINGLE
         
         # display properties
         self.pr.render_to_layout_area(pv.get_properties(), pv.get_description(), UNALLOCATED_TYPE)
@@ -155,11 +220,10 @@ class DisplayView:
         line2 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><b>" + PHYSICAL_VOL_STR + "</b></span>"
         line3 = "<span size=\"8000\"><b>" + pv.get_description() + "</b></span>"
         label = line1 + "\n" + line2 + "\n" + line3
-        self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, HEIGHT_SINGLE)
+        self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, self.height)
         self.display.append_right(End(self.pv_cyl_gen))
         cyl = Subcylinder(self.pv_cyl_gen, 1, 1, False, 1)
         self.display.append_right(cyl)
-        self.draw()
     
     def render_uninit_pv(self, pv):
         if self.dvH != None:
@@ -167,6 +231,7 @@ class DisplayView:
             self.dvH_selectable = False
         
         self.type = None
+        self.height = HEIGHT_SINGLE
         
         # display properties
         self.pr.render_to_layout_area(pv.get_properties(), pv.get_description(), UNINITIALIZED_TYPE)
@@ -176,11 +241,10 @@ class DisplayView:
         line2 = "<span size=\"8000\"><b>" + DISK_ENTITY_STR + "</b></span>\n"
         line3 = "<span size=\"8000\"><b>" + pv.get_description() + "</b></span>"
         label = line1 + line2 + line3
-        self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, HEIGHT_SINGLE)
+        self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, self.height)
         self.display.append_right(End(self.uv_cyl_gen))
         cyl = Subcylinder(self.uv_cyl_gen, 1, 1, False, 1)
         self.display.append_right(cyl)
-        self.draw()
     
     def render_pvs(self, pv_list):
         if self.dvH != None:
@@ -188,6 +252,7 @@ class DisplayView:
             self.dvH_selectable = True
         
         self.type = VG_PHYS_TYPE
+        self.height = HEIGHT_SINGLE
         
         vg = pv_list[0].get_vg()
         
@@ -199,7 +264,7 @@ class DisplayView:
         line2 = "<span size=\"7000\"><b>" + vg.get_name() + "</b></span>\n"
         line3 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><i>" + PHYSICAL_VIEW_STR + "</i></span>" 
         label = line1 + line2 + line3
-        self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
+        self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, self.height)
         self.display.append_right(End(self.pv_cyl_gen))
         for pv in pv_list:
             selectable = pv.is_used()
@@ -213,7 +278,6 @@ class DisplayView:
             cyl.add_object(CYL_ID_VOLUME, pv)
             cyl.add_object(CYL_ID_FUNCTION, DisplayView.render_pv)
             cyl.add_object(CYL_ID_ARGS, [pv])
-        self.draw()
     
     def render_lv(self, lv):
         if self.dvH != None:
@@ -221,6 +285,7 @@ class DisplayView:
             self.dvH_selectable = False
         
         self.type = None
+        self.height = HEIGHT_SINGLE
         
         # display properties
         self.pr.render_to_layout_area(lv.get_properties(), lv.get_path(), LOG_TYPE)
@@ -229,11 +294,10 @@ class DisplayView:
         line1 = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\"><b>" + LOGICAL_VOL_STR + "</b></span>\n"
         line2 = "<span size=\"8000\"><b>" + lv.get_path() + "</b></span>"
         label = line1 + line2
-        self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, HEIGHT_SINGLE)
+        self.display = SingleCylinder(True, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_SINGLE, self.height)
         self.display.append_right(End(self.lv_cyl_gen))
         cyl = Subcylinder(self.lv_cyl_gen, 1, 1, False, lv.get_extent_total_used_free()[0])
         self.display.append_right(cyl)
-        self.draw()
     
     def render_lvs(self, lv_list):
         if self.dvH != None:
@@ -241,6 +305,7 @@ class DisplayView:
             self.dvH_selectable = True
         
         self.type = VG_LOG_TYPE
+        self.height = HEIGHT_SINGLE
         
         vg = lv_list[0].get_vg()
         
@@ -261,7 +326,7 @@ class DisplayView:
         line2 = "<span size=\"7000\"><b>" + vg.get_name() + "</b></span>\n"
         line3 = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\"><i>" + LOGICAL_VIEW_STR + "</i></span>" 
         label = line1 + line2 + line3
-        self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, HEIGHT_SINGLE)
+        self.display = SingleCylinder(False, '', label, SMALLEST_SELECTABLE_WIDTH, WIDTH_MULTIPLE, self.height)
         self.display.append_right(End(self.lv_cyl_gen))
         lv_cyls_dir = {}
         for lv in lv_list:
@@ -308,8 +373,6 @@ class DisplayView:
                 snap_cyl.add_highlightable(orig_cyl)
                 label_snap = "<span size=\"8000\">" + _("Snapshot of ") + orig.get_name() + "</span>"
                 snap_cyl.set_label_lower(label_snap, False, True, True)
-        
-        self.draw()
     
     def render_vg(self, vg):
         if self.dvH != None:
@@ -317,6 +380,7 @@ class DisplayView:
             self.dvH_selectable = True
         
         self.type = None
+        self.height = HEIGHT_DUAL
         
         pv_list = vg.get_pvs().values()
         lv_list = vg.get_lvs().values()
@@ -342,7 +406,7 @@ class DisplayView:
         line2 = "<span size=\"7000\"><b>" + vg.get_name() + "</b></span>\n"
         line3 = "<span foreground=\"" + GRADIENT_PV + "\" size=\"8000\"><i>" + PHYSICAL_VIEW_STR + "</i></span>" 
         label_lower = line1 + line2 + line3
-        self.display = DoubleCylinder(Y_OFFSET, '', label_upper, label_lower, 5, WIDTH_MULTIPLE, HEIGHT_DUAL)
+        self.display = DoubleCylinder(Y_OFFSET, '', label_upper, label_lower, 5, WIDTH_MULTIPLE, self.height)
         
         lv_cyls_dir = {}
         lv_cyls = []
@@ -452,8 +516,6 @@ class DisplayView:
         for pv_cyl in pv_cyls:
             self.display.append_right(False, pv_cyl)
             self.display.append_right(False, Separator())
-        
-        self.draw()
     
     def render_ext(self, ext):
         # TODO: implement extent view
@@ -491,8 +553,6 @@ class DisplayView:
         # set up message
         self.message = txt
         self.display = None
-        # draw
-        self.draw()
         # render helper
         if self.dvH != None:
             self.dvH.render_none()
