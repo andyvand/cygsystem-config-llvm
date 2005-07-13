@@ -1909,15 +1909,20 @@ class LV_edit_props:
                         # resize LV first
                         self.command_handler.extend_lv(lv_path, size_new)
                         # resize FS
-                        if mounted:
-                            if filesys_new.extendable_online:
-                                filesys_new.extend_online(lv_path)
+                        try:
+                            if mounted:
+                                if filesys_new.extendable_online:
+                                    filesys_new.extend_online(lv_path)
+                                else:
+                                    self.command_handler.unmount_lv(self.lv.get_path())
+                                    mounted = False
+                                    filesys_new.extend_offline(lv_path)
                             else:
-                                self.command_handler.unmount_lv(self.lv.get_path())
-                                mounted = False
                                 filesys_new.extend_offline(lv_path)
-                        else:
-                            filesys_new.extend_offline(lv_path)
+                        except:
+                            # revert LV size
+                            self.command_handler.reduce_lv(lv_path, self.size)
+                            raise
                     else:
                         # resize FS first
                         new_size_bytes = size_new * self.extent_size
