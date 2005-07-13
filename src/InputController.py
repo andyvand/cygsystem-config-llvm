@@ -1388,6 +1388,12 @@ class LV_edit_props:
                     self.errorMessage('fixme: Striped LVs cannot be mirrored')
                     self.glade_xml.get_widget('enable_mirroring').set_active(False)
                     return
+        # check if lv is origin - no mirroring
+        if not self.new:
+            if self.lv.has_snapshots():
+                self.errorMessage('FIXME: LVs under snapshots cannot be mirrored yet')
+                self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                return
         max_mirror_size = self.__get_max_mirror_data()[0]
         if max_mirror_size == 0:
             self.errorMessage('FIXME: mirroring unavailable')
