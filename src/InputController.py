@@ -1689,16 +1689,43 @@ class LV_edit_props:
         
         
         # validation Ladder
-        # Name must be unique for this VG
+        # name
         if name_new == '':
             self.errorMessage(MUST_PROVIDE_NAME)
             return False
+        # illegal characters
+        invalid_lvname_message = ''
+        if re.match('snapshot', name_new) or re.match('pvmove', name_new):
+            invalid_lvname_message = _("fixme: Names begining with \"snapshot\" or \"pvmove\" are reserved keywords")
+        elif re.search('_mlog', name_new) or re.search('_mimage', name_new):
+            invalid_lvname_message = _("fixme: Names containing \"_mlog\" or \"_mimage\" are reserved keywords")
+        elif name_new[0] == '-':
+            invalid_lvname_message = _("fixme: Names begining with a \"-\" are invalid")
+        elif name_new == '.' or name_new == '..':
+            invalid_lvname_message = _("fixme: Name can be neither \".\" nor \"..\"")
+        else:
+            for t in name_new:
+                if t in string.ascii_letters + string.digits + '._-+':
+                    continue
+                elif t in string.whitespace:
+                    invalid_lvname_message = _("fixme: Whitespaces are not allowed in LV names")
+                    break
+                else:
+                    invalid_lvname_message = _("fixme: Invalid character \"%s\" in LV name") % t
+                    break
+        if invalid_lvname_message != '':
+            self.errorMessage(invalid_lvname_message)
+            self.name_entry.select_region(0, (-1))
+            self.name_entry.grab_focus()
+            return False
+        # Name must be unique for this VG
         for lv in self.vg.get_lvs().values():
             if lv.get_name() == name_new:
                 if not self.new:
                     if self.lv.get_name() == name_new:
                         continue
                 self.name_entry.select_region(0, (-1))
+                self.name_entry.grab_focus()
                 self.errorMessage(NON_UNIQUE_NAME % name_new)
                 return False
         # check mountpoint
