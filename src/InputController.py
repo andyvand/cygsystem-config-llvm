@@ -1542,6 +1542,7 @@ class LV_edit_props:
                 self.size_scale.set_sensitive(False)
                 self.size_entry.set_sensitive(False)
                 self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
+                self.glade_xml.get_widget('remaining_space_label').hide()
                 return
             elif self.lv.is_mirrored():
                 if self.glade_xml.get_widget('enable_mirroring').get_active():
@@ -1550,6 +1551,7 @@ class LV_edit_props:
                     self.size_scale.set_sensitive(False)
                     self.size_entry.set_sensitive(False)
                     self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
+                    self.glade_xml.get_widget('remaining_space_label').hide()
                     self.set_size_new(self.size)
                     return
                 else:
@@ -1558,6 +1560,7 @@ class LV_edit_props:
                     self.size_scale.set_sensitive(True)
                     self.size_entry.set_sensitive(True)
                     self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
+                    self.glade_xml.get_widget('remaining_space_label').show()
         
         self.size_lower = 1
         if upper == None:
@@ -1576,6 +1579,7 @@ class LV_edit_props:
             self.size_scale.set_sensitive(True)
             self.size_entry.set_sensitive(True)
             self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
+            self.glade_xml.get_widget('remaining_space_label').show()
         else:
             if not (filesys.extendable_online or filesys.extendable_offline):
                 self.size_upper = self.size
@@ -1589,12 +1593,14 @@ class LV_edit_props:
                 self.size_scale.set_sensitive(True)
                 self.size_entry.set_sensitive(True)
                 self.glade_xml.get_widget('use_remaining_button').set_sensitive(True)
+                self.glade_xml.get_widget('remaining_space_label').show()
             else:
                 self.glade_xml.get_widget('fs_not_resizable').show()
                 self.glade_xml.get_widget('free_space_label').hide()
                 self.size_scale.set_sensitive(False)
                 self.size_entry.set_sensitive(False)
                 self.glade_xml.get_widget('use_remaining_button').set_sensitive(False)
+                self.glade_xml.get_widget('remaining_space_label').hide()
                 
                 # set old size value
                 self.size_entry.set_text(str(self.__get_num(self.size)))
