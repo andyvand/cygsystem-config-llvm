@@ -39,6 +39,7 @@ def get_fs(path):
     
 
 def get_filesystems():
+    # TODO: detect available filesystems
     return [NoFS(), ext2(), ext3()]
 
 
