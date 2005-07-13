@@ -5,10 +5,12 @@ from execute import execWithCapture, execWithCaptureErrorStatus, execWithCapture
 from CommandError import *
 
 
-CREATING_FS=_("Please wait while filesystem is being created")
-RESIZING_FS=_("Please wait while filesystem is being resized")
+CREATING_FS=_("Creating %s filesystem")
+RESIZING_FS=_("Resizing %s filesystem")
+CHECKING_FS=_("Checking %s filesystem")
 FSCREATE_FAILURE=_("Creation of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 FSRESIZE_FAILURE=_("Resize of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
+FSCHECK_FAILURE=_("Check of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 
 
 
@@ -103,7 +105,8 @@ class ext3(Filesystem):
         args.append('ext3')
         args.append(path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress("/sbin/mkfs", args, CREATING_FS)
+        msg = CREATING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress("/sbin/mkfs", args, msg)
         if r != 0:
             raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
     
@@ -112,7 +115,8 @@ class ext3(Filesystem):
         args.append('/usr/sbin/ext2online')
         args.append(dev_path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/usr/sbin/ext2online', args, RESIZING_FS)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/usr/sbin/ext2online', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
     
@@ -128,15 +132,17 @@ class ext3(Filesystem):
         args.append('-p') # repair fs
         args.append(dev_path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, RESIZING_FS)
+        msg = CHECKING_FS % self.name
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, msg)
         if not (r==0 or r==1):
-            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+            raise CommandError('FATAL', FSCHECK_FAILURE % (cmdstr,e))
         
         args = list()
         args.append('/sbin/resize2fs')
         args.append(dev_path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, RESIZING_FS)
+        msg = RESIZING_FS % self.name
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
         
@@ -148,9 +154,10 @@ class ext3(Filesystem):
         args.append('-p') # repair fs
         args.append(dev_path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, RESIZING_FS)
+        msg = CHECKING_FS % self.name
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, msg)
         if not (r==0 or r==1):
-            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+            raise CommandError('FATAL', FSCHECK_FAILURE % (cmdstr,e))
         
         new_size_kb = new_size_bytes / 1024
         args = list()
@@ -158,7 +165,8 @@ class ext3(Filesystem):
         args.append(dev_path)
         args.append(str(new_size_kb) + 'K')
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, RESIZING_FS)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
         
@@ -175,7 +183,8 @@ class ext2(Filesystem):
         args.append('ext2')
         args.append(path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress("/sbin/mkfs", args, CREATING_FS)
+        msg = CREATING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress("/sbin/mkfs", args, msg)
         if r != 0:
             raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
     
@@ -195,15 +204,17 @@ class ext2(Filesystem):
         args.append('-p') # repair fs
         args.append(dev_path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, RESIZING_FS)
+        msg = CHECKING_FS % self.name
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, msg)
         if not (r==0 or r==1):
-            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+            raise CommandError('FATAL', FSCHECK_FAILURE % (cmdstr,e))
         
         args = list()
         args.append('/sbin/resize2fs')
         args.append(dev_path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, RESIZING_FS)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
         
@@ -215,9 +226,10 @@ class ext2(Filesystem):
         args.append('-p') # repair fs
         args.append(dev_path)
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, RESIZING_FS)
+        msg = CHECKING_FS % self.name
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/e2fsck', args, msg)
         if not (r==0 or r==1):
-            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+            raise CommandError('FATAL', FSCHECK_FAILURE % (cmdstr,e))
         
         new_size_kb = new_size_bytes / 1024
         args = list()
@@ -225,6 +237,7 @@ class ext2(Filesystem):
         args.append(dev_path)
         args.append(str(new_size_kb) + 'K')
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, RESIZING_FS)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
