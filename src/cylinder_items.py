@@ -328,7 +328,6 @@ class SingleCylinder:
         self.cyl = Subcylinder()
         self.cyl_drawn_at = (0, 0)
         
-        self.smallest_clickable_width = smallest_clickable_width
         self.width = width
         self.height = height
         
@@ -340,6 +339,13 @@ class SingleCylinder:
         
         self.label_to_cyl_distance = 10
         
+        self.smallest_clickable_width = smallest_clickable_width
+        self.respect_smallest_selectable_width(True)
+        
+    
+    def respect_smallest_selectable_width(self, bool):
+        self.respect_selectable_width = bool
+        self.__adjust_width()
     
     def get_selection(self):
         return self.selection
@@ -384,7 +390,9 @@ class SingleCylinder:
         self.cyl.children.append(child)
         self.cyl.set_height(self.height)
         
-        # adjust width
+        self.__adjust_width()
+    
+    def __adjust_width(self):
         self.cyl.set_ratio(1)
         width = self.cyl.get_width()
         if width == 0:
@@ -392,19 +400,29 @@ class SingleCylinder:
         else:
             self.cyl.set_ratio(float(self.width)/width)
         
-        smallest = self.cyl.get_smallest_selectable_width()
-        if smallest == 0:
-            return
-        elif smallest < self.smallest_clickable_width:
-            self.cyl.set_ratio(1)
+        if self.respect_selectable_width:
             smallest = self.cyl.get_smallest_selectable_width()
-            self.cyl.set_ratio(self.smallest_clickable_width/float(smallest))
+            if smallest == 0:
+                return
+            elif smallest < self.smallest_clickable_width:
+                self.cyl.set_ratio(1)
+                smallest = self.cyl.get_smallest_selectable_width()
+                self.cyl.set_ratio(self.smallest_clickable_width/float(smallest))
         
     
     def set_height(self, height):
         self.height = height
         self.cyl.set_height(height)
-        
+    def get_height(self):
+        return self.height
+    
+    def set_width(self, width):
+        self.width = width
+        self.__adjust_width()
+    def get_width(self):
+        return self.width
+    def get_adjusted_width(self):
+        return self.cyl.get_width()
     
     def minimum_pixmap_dimension(self, da):
         # cylinder dimension
@@ -620,10 +638,6 @@ class DoubleCylinder:
         self.label_upper = label_upper
         self.label_lower = label_lower
         
-        self.width = width
-        self.height = height
-        self.smallest_clickable_width = smallest_clickable_width
-        
         self.distance = distance
         self.label_to_cyl_distance = 10
         
@@ -631,6 +645,15 @@ class DoubleCylinder:
         
         self.name = name
         
+        self.width = width
+        self.height = height
+        self.smallest_clickable_width = smallest_clickable_width
+        self.respect_smallest_selectable_width(True)
+        
+    
+    def respect_smallest_selectable_width(self, bool):
+        self.respect_selectable_width = bool
+        self.__adjust_width()
     
     def get_selection(self):
         if self.selection == None:
@@ -686,8 +709,9 @@ class DoubleCylinder:
         cyl.children.append(child)
         cyl.set_height(self.height)
         
-        
-        # adjust width
+        self.__adjust_width()
+    
+    def __adjust_width(self):
         self.cyl_upper.set_ratio(1)
         self.cyl_lower.set_ratio(1)
         width = self.cyl_upper.get_width()
@@ -697,17 +721,18 @@ class DoubleCylinder:
             self.cyl_upper.set_ratio(float(self.width)/width)
             self.cyl_lower.set_ratio(float(self.width)/width)
         
-        # make sure smallest selectable is is at least self.smallest_clickable_width
-        smallest = self.__get_smallest_selectable_width()
-        if smallest == 0:
-            return
-        elif smallest < self.smallest_clickable_width:
-            self.cyl_upper.set_ratio(1)
-            self.cyl_lower.set_ratio(1)
+        if self.respect_selectable_width:
+            # make sure smallest selectable width is at least self.smallest_clickable_width
             smallest = self.__get_smallest_selectable_width()
-            ratio = self.smallest_clickable_width/float(smallest)
-            self.cyl_upper.set_ratio(ratio)
-            self.cyl_lower.set_ratio(ratio)
+            if smallest == 0:
+                return
+            elif smallest < self.smallest_clickable_width:
+                self.cyl_upper.set_ratio(1)
+                self.cyl_lower.set_ratio(1)
+                smallest = self.__get_smallest_selectable_width()
+                ratio = self.smallest_clickable_width/float(smallest)
+                self.cyl_upper.set_ratio(ratio)
+                self.cyl_lower.set_ratio(ratio)
             
     def __get_smallest_selectable_width(self):
         smallest_upper = self.cyl_upper.get_smallest_selectable_width()
@@ -728,7 +753,16 @@ class DoubleCylinder:
         self.height = height
         self.cyl_upper.set_height(height)
         self.cyl_lower.set_height(height)
-        
+    def get_height(self):
+        return self.height
+    
+    def set_width(self, width):
+        self.width = width
+        self.__adjust_width()
+    def get_width(self):
+        return self.width
+    def get_adjusted_width(self):
+        return self.cyl_upper.get_width()
     
     def minimum_pixmap_dimension(self, da):
         # cylinder dimension
