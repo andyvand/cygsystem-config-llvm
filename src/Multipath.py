@@ -59,11 +59,32 @@ class Multipath:
             if len(line) == 0:
                 continue
             words = line.split()
-            
             if 'multipath' not in words:
                 continue
             
-            origin = '/dev/mapper/' + words[0].rstrip(':')
+            # get origin
+            args = list()
+            args.append(DMSETUP_BIN)
+            args.append('ls')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus(DMSETUP_BIN, args)
+            if r != 0:
+                raise CommandError('FATAL', DMSETUP_FAILURE % (cmdstr, e))
+            origin = None
+            origin_name = words[0].rstrip(':')
+            for or_line in o.splitlines():
+                or_words = or_line.split()
+                if or_words[0] == origin_name:
+                    major = or_words[1].strip('(').strip(',')
+                    minor = or_words[2].strip(')')
+                    for l in block_devices:
+                        if l[1] == major and l[2] == minor:
+                            origin = l[0]
+                            break
+                    break
+            if origin == None:
+                origin = '/dev/mapper/' + origin_name
+            
             devices = []
             for word in words[1:]:
                 if ':' in word:
