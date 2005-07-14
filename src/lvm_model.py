@@ -285,6 +285,14 @@ class lvm_model:
         pvs_list.append(part)
     for seg in segs:
       pvs_list.append(seg)
+    # disable initialization of multipathed devices (for now)
+    for pv in pvs_list:
+      if len(pv.get_paths()) > 1:
+        if pv.get_type() == UNINITIALIZED_TYPE:
+          pv.add_property(NOT_INITIALIZABLE, _("Multipathed device"))
+          if pv.initializable:
+            pv.initializable = False
+            pv.add_property(_("Note:   "), _("Initialize manually"))
     # set properties
     for pv in pvs_list:
       self.__set_PV_props(pv)
