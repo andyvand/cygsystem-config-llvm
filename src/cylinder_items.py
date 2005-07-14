@@ -174,10 +174,22 @@ class CylinderItem(Widget):
             width = width + child.get_width()
         return width
     
+    def get_adjustable_width(self): # get width that is adjustable by ratio
+        if self.width != 0:
+            # end_node
+            adjustable_width = int(self.width * self.ratio)
+            return adjustable_width
+        adjustable_width = 0
+        for child in self.children:
+            adjustable_width = adjustable_width + child.get_adjustable_width()
+        return adjustable_width
+    
     def set_ratio(self, ratio):
         self.ratio = ratio
         for child in self.children:
             child.set_ratio(ratio)
+    def get_ratio(self):
+        return self.ratio
     
     def click(self, (x, y), leftClick):
         if x > self.get_width():
@@ -225,10 +237,13 @@ class Separator(CylinderItem):
         
         self.cyl_gen = cyl_gen
         self.pattern_id = pattern_id
-
+    
     def get_width(self):
         # no ratio adjustment
         return self.width
+    
+    def get_adjustable_width(self):
+        return 0
     
     def get_smallest_selectable_width(self):
         return 0
@@ -714,26 +729,26 @@ class DoubleCylinder:
     def __adjust_width(self):
         self.cyl_upper.set_ratio(1)
         self.cyl_lower.set_ratio(1)
-        width = self.cyl_upper.get_width()
-        if width == 0:
+        up_w = self.cyl_upper.get_width()
+        lo_w = self.cyl_lower.get_width()
+        if up_w == 0 or lo_w == 0:
             return
-        else:
-            self.cyl_upper.set_ratio(float(self.width)/width)
-            self.cyl_lower.set_ratio(float(self.width)/width)
+        up_w_adj = self.cyl_upper.get_adjustable_width()
+        lo_w_adj = self.cyl_lower.get_adjustable_width()
+        self.cyl_upper.set_ratio(float(self.width-(up_w-up_w_adj))/up_w_adj)
+        self.cyl_lower.set_ratio(float(self.width-(lo_w-lo_w_adj))/lo_w_adj)
         
         if self.respect_selectable_width:
             # make sure smallest selectable width is at least self.smallest_clickable_width
             smallest = self.__get_smallest_selectable_width()
-            if smallest == 0:
-                return
-            elif smallest < self.smallest_clickable_width:
+            if smallest < self.smallest_clickable_width:
                 self.cyl_upper.set_ratio(1)
                 self.cyl_lower.set_ratio(1)
                 smallest = self.__get_smallest_selectable_width()
                 ratio = self.smallest_clickable_width/float(smallest)
                 self.cyl_upper.set_ratio(ratio)
                 self.cyl_lower.set_ratio(ratio)
-            
+    
     def __get_smallest_selectable_width(self):
         smallest_upper = self.cyl_upper.get_smallest_selectable_width()
         smallest_lower = self.cyl_lower.get_smallest_selectable_width()
