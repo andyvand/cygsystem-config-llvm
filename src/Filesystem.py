@@ -8,9 +8,11 @@ from CommandError import *
 CREATING_FS=_("Creating %s filesystem")
 RESIZING_FS=_("Resizing %s filesystem")
 CHECKING_FS=_("Checking %s filesystem")
+UPGRADING_FS=_("Upgrading %s filesystem to %s")
 FSCREATE_FAILURE=_("Creation of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 FSRESIZE_FAILURE=_("Resize of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 FSCHECK_FAILURE=_("Check of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
+FSUPGRADE_FAILURE=_("Upgrade of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 
 
 
@@ -59,7 +61,9 @@ class Filesystem:
         self.reducible_online = reducible_online
         self.reducible_offline = reducible_offline
         
+        self.upgradable = False
         
+    
     def create(self, path):
         pass
     
@@ -80,10 +84,10 @@ class Filesystem:
     def change_options(self, devpath):
         pass
     
-    
+
 class NoFS(Filesystem):
     def __init__(self):
-        Filesystem.__init__(self, _('None'), True, False, False,
+        Filesystem.__init__(self, _('None'), True, False, False, 
                             False, True, False, True)
         
         
@@ -175,7 +179,9 @@ class ext2(Filesystem):
     def __init__(self):
         Filesystem.__init__(self, 'ext2', True, True, True,
                             False, True, False, True)
+        self.upgradable = True
         
+    
     def create(self, path):
         args = list()
         args.append("/sbin/mkfs")
@@ -241,3 +247,13 @@ class ext2(Filesystem):
         o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+    
+    def upgrade(self, dev_path):
+        args = ['/sbin/tune2fs']
+        args.append('-j')
+        args.append(dev_path)
+        cmdstr = ' '.join(args)
+        msg = UPGRADING_FS % (self.name, ext3().name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/tune2fs', args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSUPGRADE_FAILURE % (cmdstr,e))
