@@ -1911,11 +1911,22 @@ class LV_edit_props:
                                 if self.fs.extendable_online:
                                     self.fs.extend_online(lv_path)
                                 else:
-                                    self.command_handler.unmount_lv(self.lv.get_path())
+                                    self.command_handler.unmount_lv(lv_path)
                                     mounted = False
                                     self.fs.extend_offline(lv_path)
                             else:
-                                self.fs.extend_offline(lv_path)
+                                if self.fs.extendable_offline:
+                                    self.fs.extend_offline(lv_path)
+                                else:
+                                    # mount temporarily
+                                    tmp_mountpoint = '/tmp/tmp_mountpoint'
+                                    while os.access(tmp_mountpoint, os.F_OK):
+                                        tmp_mountpoint = tmp_mountpoint + '1'
+                                    os.mkdir(tmp_mountpoint)
+                                    self.command_handler.mount(lv_path, tmp_mountpoint)
+                                    self.fs.extend_online(lv_path)
+                                    self.command_handler.unmount(tmp_mountpoint)
+                                    os.rmdir(tmp_mountpoint)
                         except:
                             # revert LV size
                             self.command_handler.reduce_lv(lv_path, self.size)
@@ -1927,11 +1938,22 @@ class LV_edit_props:
                             if self.fs.reducible_online:
                                 self.fs.reduce_online(lv_path, new_size_bytes)
                             else:
-                                self.command_handler.unmount_lv(self.lv.get_path())
+                                self.command_handler.unmount_lv(lv_path)
                                 mounted = False
                                 self.fs.reduce_offline(lv_path, new_size_bytes)
                         else:
-                            self.fs.reduce_offline(lv_path, new_size_bytes)
+                            if self.fs.reducible_offline:
+                                self.fs.reduce_offline(lv_path, new_size_bytes)
+                            else:
+                                # mount temporarily
+                                tmp_mountpoint = '/tmp/tmp_mountpoint'
+                                while os.access(tmp_mountpoint, os.F_OK):
+                                    tmp_mountpoint = tmp_mountpoint + '1'
+                                os.mkdir(tmp_mountpoint)
+                                self.command_handler.mount(lv_path, tmp_mountpoint)
+                                self.fs.reduce_online(lv_path, new_size_bytes)
+                                self.command_handler.unmount(tmp_mountpoint)
+                                os.rmdir(tmp_mountpoint)
                         # resize LV
                         self.command_handler.reduce_lv(lv_path, size_new)
             
