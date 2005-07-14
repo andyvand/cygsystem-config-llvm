@@ -211,6 +211,7 @@ class lvm_model:
       if devname in multipath_data:
         parts.pop(pv.get_path())
         pv.removeDevname(devname)
+        pv.setMultipath(devname)
         for path in multipath_data[devname]:
           pv.addDevname(path)
       for path in pv.get_paths():
@@ -219,6 +220,7 @@ class lvm_model:
       devname = pv.getPartition()[0]
       if devname in multipath_data:
         pv.removeDevname(devname)
+        pv.setMultipath(devname)
         for path in multipath_data[devname]:
           pv.addDevname(path)
     # disable swap partitions if in use
@@ -260,8 +262,9 @@ class lvm_model:
     for pv in self.__query_PVs():
       # assign unpartitioned drives, to PVs, if already used by LVM
       for seg in segs[:]:
-        if pv.get_path() in seg.get_paths():
+        if pv.get_path() in seg.get_paths() or pv.get_path() == seg.getMultipath():
           pv.setPartition(seg.getPartition())
+          pv.setMultipath(seg.getMultipath())
           for devname in seg.getDevnames():
             pv.addDevname(devname)
           pv.set_name(pv.extract_name(pv.get_path())) # overwrite Free Space label
@@ -271,6 +274,7 @@ class lvm_model:
       if path in parts:
         old_pv = parts[path]
         pv.setPartition(old_pv.getPartition())
+        pv.setMultipath(old_pv.getMultipath())
         for devname in old_pv.getDevnames():
           pv.addDevname(devname)
       else:

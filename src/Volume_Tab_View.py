@@ -242,8 +242,8 @@ class Volume_Tab_View:
                 devnames_str = devnames[0]
                 for devname in devnames[1:]:
                     devnames_str = devnames_str + ', ' + devname
-                if len(devnames_str.split()) > 1:
-                    devnames_str = '[' + devnames_str + ']'
+                if len(devnames) > 1:
+                    devnames_str = str(pvs[0].getMultipath()) + ' [' + devnames_str + ']'
                 treemodel.set(dev_iter, 
                               NAME_COL, devnames_str, 
                               TYPE_COL, UNSELECTABLE_TYPE)
@@ -294,8 +294,8 @@ class Volume_Tab_View:
             devnames_str = devnames[0]
             for devname in devnames[1:]:
                 devnames_str = devnames_str + ', ' + devname
-            if len(devnames_str.split()) > 1:
-                devnames_str = '[' + devnames_str + ']'
+            if len(devnames) > 1:
+                devnames_str = str(pvs[0].getMultipath()) + ' [' + devnames_str + ']'
             treemodel.set(dev_iter, 
                           NAME_COL, devnames_str, 
                           TYPE_COL, UNSELECTABLE_TYPE)
@@ -331,8 +331,8 @@ class Volume_Tab_View:
             devnames_str = devnames[0]
             for devname in devnames[1:]:
                 devnames_str = devnames_str + ', ' + devname
-            if len(devnames_str.split()) > 1:
-                devnames_str = '[' + devnames_str + ']'
+            if len(devnames) > 1:
+                devnames_str = str(pvs[0].getMultipath()) + ' [' + devnames_str + ']'
             treemodel.set(dev_iter,
                           NAME_COL, devnames_str, 
                           TYPE_COL, UNSELECTABLE_TYPE)

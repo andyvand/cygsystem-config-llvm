@@ -31,6 +31,8 @@ class PhysicalVolume(Volume):
     self.part = None
     self.initializable = True
     
+    self.setMultipath(None)
+    
   
   def get_size_total_string(self):
     if self.get_type() == PHYS_TYPE:
@@ -125,6 +127,11 @@ class PhysicalVolume(Volume):
     if devname in self.devnames:
       self.devnames.pop(self.devnames.index(devname))
   
+  def setMultipath(self, multipath):
+    self.multipath = multipath
+  def getMultipath(self):
+    return self.multipath
+  
   def setPartition(self, (devname, part)):
     self.size = part.getSizeBytes()/1024.0/1024/1024
     self.part = part
@@ -151,7 +158,7 @@ class PhysicalVolume(Volume):
   
   
   def print_out(self, padding):
-    print padding + 'PV: ' + self.get_name() + ' paths: ' + str(self.get_paths()) + ' devices: ' + str(self.getDevnames())
+    print padding + 'PV: ' + self.get_name() + ' paths: ' + str(self.get_paths()) + ' devices: ' + str(self.getDevnames()) + ' multipath ' + str(self.getMultipath())
     print padding + 'extents:'
     if len(self.get_extent_blocks()) == 0:
       print padding + '  None'
