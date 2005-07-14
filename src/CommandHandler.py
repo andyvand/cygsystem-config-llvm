@@ -21,7 +21,7 @@ VGCREATE_FAILURE=_("vgcreate command failed. Command attempted: \"%s\" - System 
 VGCHANGE_FAILURE=_("vgchange command failed. Command attempted: \"%s\" - System Error Message %s")
 VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s")
 PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\" - System Error Message: %s")
-LV_UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\" - System Error Message: %s")
+UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\" - System Error Message: %s")
 MNTCREATE_FAILURE=_("mount command failed. Command Attempted: %s  - System Error Message: \"%s\"")
 LVRESIZE_FAILURE=_("lvresize command failed. Command attempted: \"%s\" - System Error Message: %s")
 LVRENAME_FAILURE=_("lvrename command failed. Command attempted: \"%s\" - System Error Message: %s")
@@ -269,15 +269,17 @@ class CommandHandler:
     if res != 0:
       raise CommandError('FATAL', LVRENAME_FAILURE % (cmdstr,err))
   
-  def unmount_lv(self, lvname):
-    args = list()
-    args.append("/bin/umount")
-    args.append(lvname.strip())
+  def unmount(self, mountpoint):
+    args = ['/bin/umount']
+    args.append(mountpoint)
     cmdstr = ' '.join(args)
     out,err,res = execWithCaptureErrorStatus("/bin/umount",args)
     if res != 0:
-      raise CommandError('FATAL', LV_UMOUNT_FAILURE % (cmdstr,err))
-
+      raise CommandError('FATAL', UMOUNT_FAILURE % (cmdstr,err))
+  
+  def unmount_lv(self, lvname):
+    self.umount(lvname.strip())
+  
   def reduce_vg(self, vg, pv):
     args = list()
     args.append(VGREDUCE_BIN_PATH)
