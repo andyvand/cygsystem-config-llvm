@@ -86,10 +86,8 @@ class Properties_Renderer:
     desc = pc.get_font_description()
     desc.set_size(BIG_HEADER_SIZE)
     pc.set_font_description(desc)
-    header_layout = pango.Layout(pc)
-
+    
     layout_string1 = "<span size=\"12000\">" +PROPERTIES_STR + "</span>\n"
-
     if type == PHYS_TYPE:
       layout_string2 = "<span size=\"12000\">" + PHYSICAL_VOLUME_STR + "</span>\n"
       layout_string3 = "<span foreground=\"#ED1C2A\" size=\"12000\"><b>" + name + "</b></span>"
@@ -113,29 +111,22 @@ class Properties_Renderer:
       layout_string2 = "<span size=\"12000\">" + VOLUMEGROUP_STR + "</span>\n"
       layout_string3 = "<span foreground=\"#43A2FF\" size=\"12000\"><b>" + name + "</b></span>"
     layout_string = layout_string1 + layout_string2 + layout_string3
-    attr,text,a = pango.parse_markup(layout_string, u'_')
-    header_layout.set_attributes(attr)
-    header_layout.set_text(text)
+    
+    header_layout = self.area.create_pango_layout('')
+    header_layout.set_markup(layout_string)
     self.layout_list.append(header_layout)
-    
-    
-
+  
   def prepare_prop_layout(self, prop_list,type):
     pc = self.pango_context
     desc = pc.get_font_description()
     desc.set_size(PROPERTY_SIZE)
     pc.set_font_description(desc)
     
-    prop_layout = pango.Layout(pc)
-    
     text_str = self.prepare_props_list(prop_list, type)
-    props_layout = pango.Layout(self.pango_context)
-    attr,text,a = pango.parse_markup(text_str, u'_')
-    props_layout.set_attributes(attr)
-    props_layout.set_text(text)
+    props_layout = self.area.create_pango_layout('')
+    props_layout.set_markup(text_str)
     self.layout_list.append(props_layout)
-
-
+  
   def clear_layout_pixmap(self):
     self.set_color("white")
     self.layout_pixmap.draw_rectangle(self.gc, True, 0, 0, -1, -1)
@@ -187,6 +178,7 @@ class Properties_Renderer:
     return text_str
   
   def do_render(self):
+    self.clear_layout_pixmap()
     self.set_color("black")
     y_offset = 0
     for layout in self.layout_list:
