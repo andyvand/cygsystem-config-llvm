@@ -1,5 +1,6 @@
 
 import re
+import os
 
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
 from CommandError import *
@@ -39,12 +40,34 @@ def get_fs(path):
         filesys.mountable = False
         return filesys
     else:
+        # check if GFS
+        if os.access('/sbin/gfs_tool', os.F_OK):
+            args = ['/sbin/gfs_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
+            if r == 0:
+                if 'lock_nolock' in o:
+                    return gfs_local()
+                elif 'lock_dlm' in o or 'lock_gulm' in o:
+                    return gfs_clustered()
+        
         return NoFS()
     
 
 def get_filesystems():
-    # TODO: detect available filesystems
-    return [NoFS(), ext2(), ext3()]
+    fss = [NoFS()] # NoFS has to be first
+    
+    if os.access('/sbin/mkfs.ext2', os.F_OK):
+        fss.append(ext2())
+    if os.access('/sbin/mkfs.ext3', os.F_OK):
+        fss.append(ext3())
+    if os.access('/sbin/gfs_mkfs', os.F_OK):
+        fss.append(gfs_local())
+    
+    return fss
 
 
 class Filesystem:
@@ -257,3 +280,60 @@ class ext2(Filesystem):
         o,e,r = execWithCaptureErrorStatusProgress('/sbin/tune2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSUPGRADE_FAILURE % (cmdstr,e))
+    
+
+class gfs_local(Filesystem):
+    def __init__(self):
+        mountable = True
+        # check if mountable
+        args = list()
+        args.append('/sbin/modprobe')
+        args.append('gfs')
+        cmdstr = ' '.join(args)
+        o,e,r = execWithCaptureErrorStatus('/sbin/modprobe', args)
+        if r != 0:
+            mountable = False
+        Filesystem.__init__(self, _("GFS (local)"), True, False, mountable, 
+                            True, False, False, False)
+        
+    
+    def create(self, path):
+        MKFS_GFS_BIN='/sbin/gfs_mkfs'
+        args = [MKFS_GFS_BIN]
+        args.append('-j')
+        args.append('1')
+        args.append('-p')
+        args.append('lock_nolock')
+        args.append('-O')
+        args.append(path)
+        cmdstr = ' '.join(args)
+        msg = CREATING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress(MKFS_GFS_BIN, args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
+    
+    def extend_online(self, dev_path):
+        args = ['/sbin/gfs_grow']
+        args.append(dev_path)
+        cmdstr = ' '.join(args)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/gfs_grow', args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+    
+
+class gfs_clustered(Filesystem):
+    def __init__(self):
+        mountable = True
+        # check if mountable
+        args = list()
+        args.append('/sbin/modprobe')
+        args.append('gfs')
+        cmdstr = ' '.join(args)
+        o,e,r = execWithCaptureErrorStatus('/sbin/modprobe', args)
+        if r != 0:
+            mountable = False
+        Filesystem.__init__(self, _("GFS (clustered)"), False, False, mountable, 
+                            False, False, False, False)
+        
+    
