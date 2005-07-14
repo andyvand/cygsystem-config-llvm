@@ -1319,11 +1319,7 @@ class LV_edit_props:
         model = self.filesys_combo.get_model()
         iter = model.get_iter_first()
         self.filesys_combo.set_active_iter(iter)
-        if self.fs == self.fs_none:
-            self.change_fs_notified = True
-        else:
-            self.change_fs_notified = False
-        self.filesys_show_hide(False)
+        self.filesys_show_hide()
         if self.snapshot:
             self.glade_xml.get_widget('filesys_container').set_sensitive(False)
         elif not self.new:
@@ -1510,13 +1506,9 @@ class LV_edit_props:
         # that in turn disables resizing if fs doesn't support that
         self.on_enable_mirroring(None)
     
-    def filesys_show_hide(self, show_message=True):
+    def filesys_show_hide(self):
         iter = self.filesys_combo.get_active_iter()
         filesys = self.filesystems[self.filesys_combo.get_model().get_value(iter, 0)]
-        
-        if not (self.change_fs_notified) and show_message:
-            self.infoMessage(_("Change of filesystem will destroy all data on " + self.lv.get_path()))
-            self.change_fs_notified = True
         
         if filesys.editable:
             self.fs_config_button.set_sensitive(True)
@@ -1838,6 +1830,11 @@ class LV_edit_props:
             
             rename = name_new != self.lv.get_name()
             filesys_change = (filesys_new != self.fs)
+            ext2_to_ext3 = (filesys_new.name == Filesystem.ext3().name) and (self.fs.name == Filesystem.ext2().name)
+            if ext2_to_ext3:
+                retval = self.questionMessage(_("fixme: Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"))
+                if (retval == gtk.RESPONSE_NO):
+                    ext2_to_ext3 = False
             
             snapshot = None
             if self.lv.is_snapshot():
@@ -1868,16 +1865,16 @@ class LV_edit_props:
                 unmount = True
             if resize and self.lv.is_mirrored():
                 unmount = True
-            if filesys_change:
-                retval = self.warningMessage(_("fixme: dataloss warning"))
+            if filesys_change and self.fs.name!=self.fs_none.name and not ext2_to_ext3:
+                retval = self.warningMessage(_("Change of filesystem will destroy all data on Logical Volume! Are you sure you want to proceed?"))
                 if (retval == gtk.RESPONSE_NO):
                     return False
                 unmount_prompt = False
             else:
                 if not snapshot:
-                    if extend and mounted and (not filesys_new.extendable_online):
+                    if extend and mounted and (not self.fs.extendable_online):
                         unmount = True
-                    if reduce and mounted and (not filesys_new.reducible_online):
+                    if reduce and mounted and (not self.fs.reducible_online):
                         unmount = True
             
             # unmount if needed
@@ -1897,7 +1894,7 @@ class LV_edit_props:
             
             # resize lv
             if resize:
-                if filesys_change or snapshot:
+                if (filesys_change and not ext2_to_ext3) or snapshot:
                     # resize LV only
                     if size_new > self.size:
                         self.command_handler.extend_lv(lv_path, size_new)
@@ -1911,14 +1908,14 @@ class LV_edit_props:
                         # resize FS
                         try:
                             if mounted:
-                                if filesys_new.extendable_online:
-                                    filesys_new.extend_online(lv_path)
+                                if self.fs.extendable_online:
+                                    self.fs.extend_online(lv_path)
                                 else:
                                     self.command_handler.unmount_lv(self.lv.get_path())
                                     mounted = False
-                                    filesys_new.extend_offline(lv_path)
+                                    self.fs.extend_offline(lv_path)
                             else:
-                                filesys_new.extend_offline(lv_path)
+                                self.fs.extend_offline(lv_path)
                         except:
                             # revert LV size
                             self.command_handler.reduce_lv(lv_path, self.size)
@@ -1927,14 +1924,14 @@ class LV_edit_props:
                         # resize FS first
                         new_size_bytes = size_new * self.extent_size
                         if mounted:
-                            if filesys_new.reducible_online:
-                                filesys_new.reduce_online(lv_path, new_size_bytes)
+                            if self.fs.reducible_online:
+                                self.fs.reduce_online(lv_path, new_size_bytes)
                             else:
                                 self.command_handler.unmount_lv(self.lv.get_path())
                                 mounted = False
-                                filesys_new.reduce_offline(lv_path, new_size_bytes)
+                                self.fs.reduce_offline(lv_path, new_size_bytes)
                         else:
-                            filesys_new.reduce_offline(lv_path, new_size_bytes)
+                            self.fs.reduce_offline(lv_path, new_size_bytes)
                         # resize LV
                         self.command_handler.reduce_lv(lv_path, size_new)
             
@@ -1956,11 +1953,14 @@ class LV_edit_props:
             
             # fs options
             if fs_options_changed and not filesys_change:
-                filesys_new.change_options(lv_path)
+                self.fs.change_options(lv_path)
             
             # change FS
             if filesys_change:
-                filesys_new.create(lv_path)
+                if ext2_to_ext3:
+                    self.fs.upgrade(lv_path)
+                else:
+                    filesys_new.create(lv_path)
             
             # mount
             if mount_new and not mounted:
