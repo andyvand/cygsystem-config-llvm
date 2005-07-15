@@ -1,7 +1,6 @@
 """This class represents the primary controller interface
    for the LVM UI application.
 """
-__author__ = 'Jim Parsons (jparsons@redhat.com)'
 
 
 import string

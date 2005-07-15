@@ -6,7 +6,6 @@
    interface in a graphical user interface.
 
 """
-__author__ = 'Jim Parsons (jparsons@redhat.com)'
  
 import sys
 import types
@@ -87,7 +86,8 @@ class baselvm:
             '', ### Don't specify version - already in ABOUT_VERSION
             _("Copyright (c) 2004 Red Hat, Inc. All rights reserved."),
             _("This software is licensed under the terms of the GPL."),
-            [ 'Jim Parsons (system-config-lvm) <jparsons at redhat.com>',
+            [ 'Stanko Kupcevic (system-config-lvm) <kupcevic at redhat.com>',
+              'Jim Parsons (system-config-lvm) <jparsons at redhat.com>',
               'Alasdair Kergon (LVM2 Maintainer) <agk at redhat.com>',
               'Heinz Mauelshagen (LVM Maintainer) <mauelshagen at redhat.com>',
               '',
