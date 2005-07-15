@@ -130,6 +130,9 @@ out, status = execWithCaptureStatus(LVM_BIN_PATH, [LVM_BIN_PATH, 'lvs', '--all']
 if status == 0:
   LVS_HAS_ALL_OPTION = True
 
+LVS_HAS_MIRROR_OPTIONS = False
+LVS_HAS_MIRROR_OPTIONS = LVS_HAS_ALL_OPTION
+
 
 class lvm_model:
   
@@ -430,7 +433,10 @@ class lvm_model:
     return pv.get_vg()
   
   def __query_LVs(self):
-    LVS_OPTION_STRING="lv_name,vg_name,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size,lv_uuid,mirror_log"
+    if LVS_HAS_MIRROR_OPTIONS:
+      LVS_OPTION_STRING="lv_name,vg_name,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size,mirror_log"
+    else:
+      LVS_OPTION_STRING="lv_name,vg_name,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size"
     LV_NAME_IDX         = 0
     LV_VG_NAME_IDX      = 1
     LV_STRIPE_SIZE_IDX  = 2
@@ -443,8 +449,7 @@ class lvm_model:
     LV_SEG_SIZE_IDX     = 9
     LV_EXTENT_SIZE_IDX  = 10
     LV_SIZE_IDX         = 11
-    LV_UUID_IDX         = 12
-    LV_MIRROR_LOG_IDX   = 13
+    LV_MIRROR_LOG_IDX   = 12
     
     arglist = list()
     arglist.append(LVM_BIN_PATH)
@@ -459,9 +464,9 @@ class lvm_model:
     arglist.append(LVS_OPTION_STRING)
     if LVS_HAS_ALL_OPTION:
       arglist.append("--all")
-    
     result_string = execWithCapture(LVM_BIN_PATH, arglist)
     lines = result_string.splitlines()
+    
     for line in lines:
       line = line.strip()
       words = line.split(';')
@@ -473,7 +478,8 @@ class lvm_model:
       lv_size = int(words[LV_SIZE_IDX]) / extent_size
       seg_size = int(words[LV_SEG_SIZE_IDX]) / extent_size
       devices = words[LV_DEVICES_IDX]
-      mirror_log = words[LV_MIRROR_LOG_IDX].strip()
+      if LVS_HAS_MIRROR_OPTIONS:
+        mirror_log = words[LV_MIRROR_LOG_IDX].strip()
       
       lvname = words[LV_NAME_IDX].strip()
       # remove [] if there (used to mark hidden lvs)
@@ -530,7 +536,7 @@ class lvm_model:
           extent_block = ExtentBlock(pv, lv, ph_ext_beg, seg_size/len(devs))
           segment.add_stripe(stripe_id, extent_block)
           stripe_id = stripe_id + 1
-          
+      
       lv.add_segment(segment)
       
       origin = words[LV_SNAP_ORIGIN_IDX].strip()
