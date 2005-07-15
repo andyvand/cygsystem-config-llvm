@@ -673,7 +673,7 @@ class InputController:
       
       if mountPoint != None:
           try:
-              self.command_handler.unmount_lv(path)
+              self.command_handler.unmount(mountPoint)
           except CommandError, e:
               self.errorMessage(e.getMessage())
               return None
@@ -1908,7 +1908,7 @@ class LV_edit_props:
                     retval = self.warningMessage(UNMOUNT_PROMPT % (self.lv.get_path(), self.mount_point))
                     if (retval == gtk.RESPONSE_NO):
                         return False
-                self.command_handler.unmount_lv(self.lv.get_path())
+                self.command_handler.unmount(self.mount_point)
                 mounted = False
             
             # rename
@@ -1936,7 +1936,7 @@ class LV_edit_props:
                                 if self.fs.extendable_online:
                                     self.fs.extend_online(lv_path)
                                 else:
-                                    self.command_handler.unmount_lv(lv_path)
+                                    self.command_handler.unmount(self.mount_point)
                                     mounted = False
                                     self.fs.extend_offline(lv_path)
                             else:
@@ -1963,7 +1963,7 @@ class LV_edit_props:
                             if self.fs.reducible_online:
                                 self.fs.reduce_online(lv_path, new_size_bytes)
                             else:
-                                self.command_handler.unmount_lv(lv_path)
+                                self.command_handler.unmount(self.mount_point)
                                 mounted = False
                                 self.fs.reduce_offline(lv_path, new_size_bytes)
                         else:

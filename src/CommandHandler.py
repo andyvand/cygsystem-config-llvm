@@ -273,12 +273,12 @@ class CommandHandler:
     args = ['/bin/umount']
     args.append(mountpoint)
     cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatus("/bin/umount",args)
+    out,err,res = execWithCaptureErrorStatus("/bin/umount", args)
     if res != 0:
-      raise CommandError('FATAL', UMOUNT_FAILURE % (cmdstr,err))
-  
-  def unmount_lv(self, lvname):
-    self.unmount(lvname.strip())
+      raise CommandError('FATAL', UMOUNT_FAILURE % (cmdstr, err))
+    # unmount all with mountpoint
+    while res == 0:
+      out,err,res = execWithCaptureErrorStatus("/bin/umount", args)
   
   def reduce_vg(self, vg, pv):
     args = list()
@@ -338,25 +338,6 @@ class CommandHandler:
     if res != 0:
       cmdstr = ' '.join(args)
       raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
-  
-  def is_lv_mounted(self, lvname):
-    is_mounted = False
-    mount_point = ""
-    filesys = ""
-    arglist = list()
-    arglist.append("/bin/cat")
-    arglist.append("/proc/mounts")
-    result  = execWithCapture("/bin/cat", arglist)
-    textlines = result.splitlines()
-    for textline in textlines:
-      text_words = textline.split()
-      possible_path = text_words[0].strip()
-      if possible_path == lvname:
-        is_mounted = True
-        mount_point = text_words[1]
-        filesys = text_words[2]
-        break
-    return is_mounted, mount_point, filesys
   
   def is_dm_mirror_loaded(self):
     arglist = list()
