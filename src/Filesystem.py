@@ -107,6 +107,9 @@ class Filesystem:
     def change_options(self, devpath):
         pass
     
+    def get_label(self, devpath):
+        return None
+    
 
 class NoFS(Filesystem):
     def __init__(self):
@@ -196,11 +199,28 @@ class ext3(Filesystem):
         o,e,r = execWithCaptureErrorStatusProgress('/sbin/resize2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
-        
-        
+    
+    def get_label(self, devpath):
+        args = ['/sbin/tune2fs']
+        args.append('-l')
+        args.append(devpath)
+        o, r = execWithCaptureStatus('/sbin/tune2fs', args)
+        if r == 0:
+            lines = o.splitlines()
+            for line in lines:
+                if re.search('volume name', line, re.I):
+                    words = line.split()
+                    label = words[len(words) - 1]
+                    if re.match('<none>', label, re.I):
+                        return None
+                    else:
+                        return label
+        return None
+    
+
 class ext2(Filesystem):
     def __init__(self):
-        Filesystem.__init__(self, 'ext2', True, True, True,
+        Filesystem.__init__(self, 'ext2', True, True, True, 
                             False, True, False, True)
         self.upgradable = True
         
@@ -280,6 +300,23 @@ class ext2(Filesystem):
         o,e,r = execWithCaptureErrorStatusProgress('/sbin/tune2fs', args, msg)
         if r != 0:
             raise CommandError('FATAL', FSUPGRADE_FAILURE % (cmdstr,e))
+    
+    def get_label(self, devpath):
+        args = ['/sbin/tune2fs']
+        args.append('-l')
+        args.append(devpath)
+        o, r = execWithCaptureStatus('/sbin/tune2fs', args)
+        if r == 0:
+            lines = o.splitlines()
+            for line in lines:
+                if re.search('volume name', line, re.I):
+                    words = line.split()
+                    label = words[len(words) - 1]
+                    if re.match('<none>', label, re.I):
+                        return None
+                    else:
+                        return label
+        return None
     
 
 class gfs_local(Filesystem):
