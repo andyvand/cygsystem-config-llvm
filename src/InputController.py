@@ -521,7 +521,7 @@ class InputController:
             self.errorMessage(e.getMessage())
             return
         
-    Fstab.remove(lv.get_path(), mnt_point)
+    Fstab.remove(mnt_point)
     
     try:
         self.command_handler.remove_lv(lv.get_path())
@@ -1988,7 +1988,7 @@ class LV_edit_props:
             if mount_new and not mounted:
                 self.command_handler.mount(lv_path, mountpoint_new)
             # remove old fstab entry
-            Fstab.remove(lv_path_old, self.mount_point)
+            Fstab.remove(self.mount_point)
             if mount_at_reboot_new:
                 # add new entry
                 Fstab.add(lv_path, mountpoint_new, filesys_new.name)
