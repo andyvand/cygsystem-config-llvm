@@ -696,10 +696,13 @@ class InputController:
               # format
               devpath = path
               path = self.model_factory.partition_UV(pv)
-              # tell kernel to reread new table
+              # tell kernel to reread new partition table
               if self.command_handler.reread_partition_table(devpath) == False:
-                  print 'fixme: reboot required'
-                  sys.exit(1)
+                  message = RESTART_COMPUTER % pv.getDevnames()[0]
+                  self.errorMessage(message)
+                  self.errorMessage(_("Initialization of %s failed") % pv.getDevnames()[0])
+                  return None
+              
           self.command_handler.initialize_entity(path)
       except CommandError, e:
           self.errorMessage(e.getMessage())

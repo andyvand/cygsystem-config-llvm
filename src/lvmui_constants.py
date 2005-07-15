@@ -51,6 +51,10 @@ INIT_ENTITY_DEVICE_CHOICE=_("You are about to initialize unpartitioned disk %s. 
 
 RELOAD_LVM_MESSAGE=_("Reloading LVM Data")
 
+
+RESTART_COMPUTER=_("Changes will take effect after computer is restarted. If device %s is used, before restart, data corruption WILL occur. It is advisable to restart your computer.")
+
+
 MIRROR_LOG=_("Mirror Log")
 
 NEW_LV_NAME_ARG = 0
