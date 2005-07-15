@@ -935,7 +935,6 @@ class InputController:
       # dialog
       dlg = self.migrate_exts_dlg(False, pv, extents_from)
       if dlg == None:
-          apply(self.reset_tree_model, [pv.get_path()])
           return
       exts_from_structs = []
       for ext in extents_from:
