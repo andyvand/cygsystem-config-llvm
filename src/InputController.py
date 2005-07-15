@@ -154,9 +154,14 @@ CONFIRM_PVREMOVE=_("Are you quite certain that you wish to remove %s from Logica
 SOLO_PV_IN_VG=_("The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume.") 
 CONFIRM_PV_VG_REMOVE=_("Are you quite certain that you wish to remove %s from the %s Volume Group?")
 CONFIRM_VG_REMOVE=_("Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?")
-CONFIRM_LV_REMOVE=_("Are you quite certain that you wish to remove the Logical Volume %s?")
 NOT_ENOUGH_SPACE_VG=_("Volume Group %s does not have enough space to move the data stored on %s. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 NO_DM_MIRROR=_("The dm-mirror module is either not loaded in your kernel, or your kernel does not support the dm-mirror target. If it is supported, try running \"modprobe dm-mirror\". Otherwise, operations that require moving data on Physical Extents are unavailable.")
+
+CONFIRM_LV_REMOVE=_("Are you quite certain that you wish to remove logical volume %s?")
+CONFIRM_LV_REMOVE_FILESYSTEM=_("Logical volume %s contains %s filesystem. All data on it will be lost! Are you quite certain that you wish to remove logical volume %s?")
+CONFIRM_LV_REMOVE_MOUNTED=_("Logical volume %s contains data of folder %s. All data in it will be lost! Are you quite certain that you wish to remove logical volume %s?")
+
+
 ###########################################################
 class InputController:
   def __init__(self, reset_tree_model, treeview, model_factory, glade_xml):
@@ -500,28 +505,36 @@ class InputController:
             self.errorMessage(CANNOT_REMOVE_UNDER_SNAPSHOTS % (lv.get_name(), snaps_str))
         return
     
-    retval = self.warningMessage(CONFIRM_LV_REMOVE % lv.get_name())
-    if (retval == gtk.RESPONSE_NO):
-        return
-  
+    mountpoint = self.model_factory.getMountPoint(lv.get_path())
+    fs = Filesystem.get_fs(lv.get_path())
+    if fs.name == Filesystem.get_filesystems()[0].name:
+        fs = None
+    fstab_mountpoint = Fstab.get_mountpoint(lv.get_path())
+    
+    # prompt for confirmation
+    message = None
+    if mountpoint == None:
+        if fs == None:
+            message = CONFIRM_LV_REMOVE % lv.get_name()
+        else:
+            message = CONFIRM_LV_REMOVE_FILESYSTEM % (lv.get_name(), fs.name, lv.get_name())
     else:
-        #Check if LV is mounted -- if so, unmount
-        is_mounted, mnt_point, filesys = self.command_handler.is_lv_mounted(lv.get_path())
+        message = CONFIRM_LV_REMOVE_MOUNTED % (lv.get_name(), mountpoint, lv.get_name())
+    retval = self.warningMessage(message)
+    if retval == gtk.RESPONSE_NO:
+        return
     
-    
-    if is_mounted:
-        retval = self.warningMessage(MOUNTED_WARNING % (lv.get_name(),filesys,mnt_point))
-        if (retval == gtk.RESPONSE_NO):
-            return
-        
+    # unmount and remove from fstab
+    if mountpoint != None:
         try:
-            self.command_handler.unmount_lv(lv.get_path())
+            self.command_handler.unmount(mountpoint)
         except CommandError, e:
             self.errorMessage(e.getMessage())
             return
-        
-    Fstab.remove(mnt_point)
+    if fstab_mountpoint != None:
+        Fstab.remove(fstab_mountpoint)
     
+    # finally remove lv
     try:
         self.command_handler.remove_lv(lv.get_path())
     except CommandError, e:
