@@ -638,16 +638,20 @@ class InputController:
       doFormat = False
       message = ''
       if mountPoint == None:
-          if pv.needsFormat():
-              if pv.wholeDevice():
-                  message = INIT_ENTITY % path
+          fs = Filesystem.get_fs(path)
+          if fs.name == Filesystem.get_filesystems()[0].name:
+              fs = None
+          if fs == None:
+              if pv.needsFormat():
+                  if pv.wholeDevice():
+                      message = INIT_ENTITY % path
               else:
                   # disabled until fdisk_wrapper gets into reliable shape
                   #doFormat = True
                   #message = INIT_ENTITY_FREE_SPACE % (pv.get_volume_size_string(), path)
                   return None
           else:
-              message = INIT_ENTITY % path
+              message = INIT_ENTITY_FILESYSTEM % (path, fs.name, path)
       else:
           message = INIT_ENTITY_MOUNTED % (path, mountPoint, path)
       rc = self.warningMessage(message)
