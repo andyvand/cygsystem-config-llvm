@@ -2,6 +2,11 @@
 import sys
 import os
 
+import Filesystem
+
+from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
+
+
 DEVICE = 0
 MOUNTPOINT = 1
 FSTYPE = 2
@@ -20,18 +25,18 @@ def add(dev_path, mnt_point, fstype, options='defaults', dump='1', fsck='2'):
     line = dev_path + '\t\t' + mnt_point + '\t\t' + fstype + '\t' + options
     line = line + '\t' + dump + ' ' + fsck + '\n'
     
-    fstab = __remove(dev_path, mnt_point)
+    fstab = __remove(mnt_point)
     fstab.write(line)
     fstab.close()
     
     os.rename(FSTAB_TMP, FSTAB)
     
-def remove(dev_path, mnt_point):
-    fstab = __remove(dev_path, mnt_point)
+def remove(mnt_point):
+    fstab = __remove(mnt_point)
     fstab.close()
     os.rename(FSTAB_TMP, FSTAB)
     
-def __remove(dev_path, mnt_point):
+def __remove(mnt_point):
     fstab = open(FSTAB, 'r')
     lines = fstab.readlines()
     fstab.close()
@@ -55,7 +60,7 @@ def __remove(dev_path, mnt_point):
             fstab_new.write(line + '\n')
             continue
         
-        if (words[DEVICE] == dev_path) and (words[MOUNTPOINT] == mnt_point):
+        if words[MOUNTPOINT] == mnt_point:
             # line needs to be removed
             pass
         else:
@@ -68,10 +73,15 @@ def get_mountpoint(dev_path):
     if dev_path == None:
         return None
     
+    paths = [dev_path]
+    __follow_links_to_target(dev_path, paths)
+    label = Filesystem.get_fs(dev_path).get_label(dev_path)
+    if label != None:
+        paths.append('LABEL=' + label)
+    
     fstab = open(FSTAB, 'r')
     lines = fstab.readlines()
     fstab.close()
-    
     for line in lines:
         line = line.strip().rstrip('\n')
         words = line.split(' ')
@@ -87,8 +97,17 @@ def get_mountpoint(dev_path):
         if words[0] == '#':
             continue
         
-        if words[DEVICE] == dev_path:
+        if words[DEVICE] in paths:
             # line present
             return words[MOUNTPOINT]
-
+    
     return None
+
+def __follow_links_to_target(path, paths):
+    o, s = execWithCaptureStatus('/bin/ls', ['/bin/ls', '-l', path])
+    if s == 0:
+        words = o.strip().split()
+        if words[0][0] == 'l':
+            target = words[len(words) - 1]
+            paths.append(target)
+            __follow_links_to_target(target, paths)
