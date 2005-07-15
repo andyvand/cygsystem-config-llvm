@@ -599,7 +599,8 @@ class InputController:
           return
       
       dlg = LV_edit_props(None, vg, self.model_factory, self.command_handler)
-      dlg.run()
+      if dlg.run() == False:
+          return
       
       args = list()
       args.append(vg.get_name())
@@ -959,7 +960,8 @@ class InputController:
       lv = model.get_value(iter, OBJ_COL)
       vg = lv.get_vg()
       dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler)
-      dlg.run()
+      if dlg.run() == False:
+          return
       
       args = list()
       #args.append(Name_request)
@@ -985,7 +987,8 @@ class InputController:
           return
       
       dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler, True)
-      dlg.run()
+      if dlg.run() == False:
+          return
       
       args = list()
       #args.append(Name_request)
@@ -1235,6 +1238,8 @@ class LV_edit_props:
         
     
     def run(self):
+        need_reload = False
+        
         self.setup_dlg()
         while True:
             rc = self.dlg.run()
@@ -1244,14 +1249,18 @@ class LV_edit_props:
             elif rc == gtk.RESPONSE_OK:
                 try:
                     if self.apply() == True:
+                        need_reload = True
                         break
                 except CommandError, e:
                     self.errorMessage(e.getMessage())
+                    need_reload = True
                     break
             else:
                 break
         self.dlg.hide()
         
+        return need_reload
+    
     def setup_dlg(self):
         # title
         if self.new:
