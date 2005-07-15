@@ -857,6 +857,9 @@ class lvm_model:
     mount_point = self.getMountPoint(lv.get_path())
     if mount_point == None:
       mount_point = UNMOUNTED
+    else:
+      if mount_point == '/':
+        mount_point = _("/   Root Filesystem")
     text_list.append(UV_MOUNT_POINT)
     text_list.append(mount_point)
     text_list.append(UV_MOUNTPOINT_AT_REBOOT)
@@ -890,6 +893,8 @@ class lvm_model:
       for path in pv.get_paths():
         mountPoint = self.getMountPoint(path)
         if mountPoint != None:
+          if mountPoint == '/':
+            mountPoint = _("/   Root Filesystem")
           mountPoints.append(mountPoint)
       if len(mountPoints) == 0:
         mountPoints = UNMOUNTED
@@ -990,31 +995,24 @@ class lvm_model:
       return filesys.name
   
   def getMountPoint(self, path):
-    mount_point = None
-    result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/mounts'])
-    textlines = result.splitlines()
-    for textline in textlines:
-      text_words = textline.split()
-      possible_path = text_words[0]
-      if possible_path == path:
-        mount_point = text_words[1]
-        break
-    #It is still possible for a partition to be mounted without being in
-    #/proc/mounts...this is often true of the root partition
-    arglist = list()
-    arglist.append("/bin/cat")
-    arglist.append("/etc/mtab")
-    result,err,code  = execWithCaptureErrorStatus("/bin/cat", arglist)
-    if code == 0:
-      textlines = result.splitlines()
-      for textline in textlines:
-        text_words = textline.split()
-        possible_path = text_words[0]
-        if possible_path == path:
-          if text_words[1].strip() == "/":
-            mount_point = "/   (Root Partition)"
-          else:
-            mount_point = text_words[1]
-          break
-    ### TODO: it is also possible for LV to be mounted as /dev/mapper/VG-LV
-    return mount_point
+    # follow links
+    paths = [path]
+    self.__follow_links_to_target(path, paths)
+    
+    result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/mounts', '/etc/mtab'])
+    lines = result.splitlines()
+    for line in lines:
+      words = line.split()
+      possible_path = words[0]
+      if possible_path in paths:
+        return words[1]
+    return None
+  
+  def __follow_links_to_target(self, path, paths):
+    o, s = execWithCaptureStatus('/bin/ls', ['/bin/ls', '-l', path])
+    if s == 0:
+      words = o.strip().split()
+      if words[0][0] == 'l':
+        target = words[len(words) - 1]
+        paths.append(target)
+        self.__follow_links_to_target(target, paths)
