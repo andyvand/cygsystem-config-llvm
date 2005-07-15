@@ -278,7 +278,7 @@ class CommandHandler:
       raise CommandError('FATAL', UMOUNT_FAILURE % (cmdstr,err))
   
   def unmount_lv(self, lvname):
-    self.umount(lvname.strip())
+    self.unmount(lvname.strip())
   
   def reduce_vg(self, vg, pv):
     args = list()
