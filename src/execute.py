@@ -298,6 +298,7 @@ def __execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdi
     os.close(read)
     os.close(read_err)
     
+    status = -1
     try:
         (pid, status) = os.waitpid(childpid, 0)
     except OSError, (errno, msg):
