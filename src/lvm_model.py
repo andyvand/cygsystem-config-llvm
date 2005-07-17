@@ -1022,3 +1022,6 @@ class lvm_model:
         target = words[len(words) - 1]
         paths.append(target)
         self.__follow_links_to_target(target, paths)
+
+  def is_mirroring_supported(self):
+    return LVS_HAS_MIRROR_OPTIONS

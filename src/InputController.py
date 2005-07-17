@@ -1433,6 +1433,11 @@ class LV_edit_props:
         if self.glade_xml.get_widget('enable_mirroring').get_active() == False:
             self.update_size_limits()
             return
+        # is mirroring supported by lvm version in use?
+        if self.model_factory.is_mirroring_supported() == False:
+            self.errorMessage(_("Underlying LVM doesn't support mirroring"))
+            self.glade_xml.get_widget('enable_mirroring').set_active(False)
+            return
         # check if lv is striped - no mirroring
         if not self.new:
             for seg in self.lv.get_segments():
