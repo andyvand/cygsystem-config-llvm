@@ -156,6 +156,7 @@ CONFIRM_PV_VG_REMOVE=_("Are you quite certain that you wish to remove %s from th
 CONFIRM_VG_REMOVE=_("Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?")
 NOT_ENOUGH_SPACE_VG=_("Volume Group %s does not have enough space to move the data stored on %s. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 NO_DM_MIRROR=_("The dm-mirror module is either not loaded in your kernel, or your kernel does not support the dm-mirror target. If it is supported, try running \"modprobe dm-mirror\". Otherwise, operations that require moving data on Physical Extents are unavailable.")
+NO_DM_SNAPSHOT=_("The dm-snapshot module is either not loaded in your kernel, or your kernel does not support the dm-snapshot target. If it is supported, try running \"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable.")
 
 CONFIRM_LV_REMOVE=_("Are you quite certain that you wish to remove logical volume %s?")
 CONFIRM_LV_REMOVE_FILESYSTEM=_("Logical volume %s contains %s filesystem. All data on it will be lost! Are you quite certain that you wish to remove logical volume %s?")
@@ -997,6 +998,9 @@ class InputController:
           return
       
       # checks
+      if self.command_handler.is_dm_snapshot_loaded() == False:
+          self.errorMessage(NO_DM_SNAPSHOT)
+          return
       t_exts, u_exts, f_exts = vg.get_extent_total_used_free()
       if f_exts == 0:
           self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vg.get_name())

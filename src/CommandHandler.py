@@ -352,7 +352,33 @@ class CommandHandler:
         return True
       
     return False
-
+  
+  def is_dm_mirror_loaded(self):
+    arglist = list()
+    arglist.append("/sbin/dmsetup")
+    arglist.append("targets")
+    result  = execWithCapture("/sbin/dmsetup", arglist)
+    textlines = result.splitlines()
+    for textline in textlines:
+      text_words = textline.split()
+      possible_target = text_words[0].strip()
+      if possible_target == "mirror":
+        return True
+    return False
+  
+  def is_dm_snapshot_loaded(self):
+    arglist = list()
+    arglist.append("/sbin/dmsetup")
+    arglist.append("targets")
+    result  = execWithCapture("/sbin/dmsetup", arglist)
+    textlines = result.splitlines()
+    for textline in textlines:
+      text_words = textline.split()
+      possible_target = text_words[0].strip()
+      if possible_target == "snapshot":
+        return True
+    return False
+  
   def reread_partition_table(self, devpath):
     BLOCKDEV_BIN = '/sbin/blockdev'
     args = [BLOCKDEV_BIN, '--rereadpt', devpath]
