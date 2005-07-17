@@ -1288,12 +1288,13 @@ class LV_edit_props:
         # title
         if self.new:
             if self.snapshot:
-                self.dlg.set_title(_("Create A Snapshot of ") + self.lv.get_name())
+                self.dlg.set_title(_("Create A Snapshot of %s") % self.lv.get_name())
             else:
                 self.dlg.set_title(_("Create New Logical Volume"))
         else:
             if self.lv.is_snapshot():
-                self.dlg.set_title(_("fixme: Edit ") + self.lv.get_name() + _(", a Snapshot of ") + self.lv.get_snapshot_info()[0].get_name())
+                message = _("Edit %s, a Snapshot of %s")
+                self.dlg.set_title(message % (self.lv.get_name(), self.lv.get_snapshot_info()[0].get_name()))
             else:
                 self.dlg.set_title(_("Edit Logical Volume"))
         
@@ -1442,7 +1443,7 @@ class LV_edit_props:
         if not self.new:
             for seg in self.lv.get_segments():
                 if seg.get_type() == STRIPED_SEGMENT_ID:
-                    self.errorMessage('fixme: Striped LVs cannot be mirrored')
+                    self.errorMessage(_("Striped LVs cannot be mirrored"))
                     self.glade_xml.get_widget('enable_mirroring').set_active(False)
                     return
         # check if lv is origin - no mirroring
