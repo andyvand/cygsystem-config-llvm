@@ -1,11 +1,16 @@
 import gettext
 _ = gettext.gettext
-
+import os
 
 PROGNAME = "system-config-lvm"
 INSTALLDIR="/usr/share/system-config-lvm/"
 
+
+
 LVM_PATH="/usr/sbin/"
+LVMDISKSCAN_BIN_PATH = LVM_PATH + 'lvmdiskscan'
+if os.access(LVMDISKSCAN_BIN_PATH, os.F_OK) == False:
+    LVM_PATH="/sbin/"
 LVM_BIN_PATH = LVM_PATH + 'lvm'
 LVMDISKSCAN_BIN_PATH = LVM_PATH + 'lvmdiskscan'
 LVDISPLAY_BIN_PATH = LVM_PATH + 'lvdisplay'
