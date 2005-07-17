@@ -1,5 +1,6 @@
 import locale
 import time
+import gobject
 import gtk
 import os, sys
 import select
@@ -100,7 +101,7 @@ class ForkedCommandProgress:
         self.pbar.show()
         
         #Start bouncing progress bar
-        self.pbar_timer = gtk.timeout_add(100, self.progress_bar_timeout)
+        self.pbar_timer = gobject.timeout_add(100, self.progress_bar_timeout)
         
         # change cursor
         cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)

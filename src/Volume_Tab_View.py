@@ -23,6 +23,7 @@ _ = gettext.gettext
 
 ### gettext first, then import gtk (exception prints gettext "_") ###
 try:
+    import gobject
     import gtk
     import gtk.glade
 except RuntimeError, e:
@@ -531,7 +532,7 @@ class MirrorSyncProgress:
             return
         if self.crank():
             # set up timer to call crank
-            self.timer = gtk.timeout_add(1000, self.crank)
+            self.timer = gobject.timeout_add(1000, self.crank)
     
     def crank(self):
         # initiate lvprobe if not initiated
