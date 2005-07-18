@@ -35,6 +35,10 @@ def get_fs(path):
         return Unknown('minix')
     elif re.search('xfs', result, re.I):
         return Unknown('xfs')
+    elif re.search('jfs', result, re.I):
+        return Unknown('jfs')
+    elif re.search('raiserfs', result, re.I):
+        return Unknown('raiserfs')
     elif re.search('swap', result, re.I):
         filesys = Unknown('swap')
         filesys.mountable = False
