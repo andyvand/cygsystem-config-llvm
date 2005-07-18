@@ -321,15 +321,15 @@ class ext2(Filesystem):
 
 class gfs_local(Filesystem):
     def __init__(self):
-        mountable = True
+        mountable = False
         # check if mountable
         args = list()
-        args.append('/sbin/modprobe')
-        args.append('gfs')
+        args.append('/bin/cat')
+        args.append('/proc/filesystems')
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatus('/sbin/modprobe', args)
-        if r != 0:
-            mountable = False
+        out = execWithCapture('/bin/cat', args)
+        if re.search('gfs', out, re.I):
+            mountable = True
         Filesystem.__init__(self, _("GFS (local)"), True, False, mountable, 
                             True, False, False, False)
         
@@ -361,15 +361,15 @@ class gfs_local(Filesystem):
 
 class gfs_clustered(Filesystem):
     def __init__(self):
-        mountable = True
+        mountable = False
         # check if mountable
         args = list()
-        args.append('/sbin/modprobe')
-        args.append('gfs')
+        args.append('/bin/cat')
+        args.append('/proc/filesystems')
         cmdstr = ' '.join(args)
-        o,e,r = execWithCaptureErrorStatus('/sbin/modprobe', args)
-        if r != 0:
-            mountable = False
+        out = execWithCapture('/bin/cat', args)
+        if re.search('gfs', out, re.I):
+            mountable = True
         Filesystem.__init__(self, _("GFS (clustered)"), False, False, mountable, 
                             False, False, False, False)
         
