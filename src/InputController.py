@@ -83,7 +83,7 @@ ENTITY_TYPE=_("Entity Type")
 
 UNALLOCATED_PV=_("Unallocated Physical Volume")
 UNINIT_DE=_("Uninitialized Disk Entity") 
-ADD_VG_LABEL=_("Select a disk entity to add to the %s Volume Group:")
+ADD_VG_LABEL=_("Select disk entities to add to the %s Volume Group:")
 
 CANT_STRIPE_MESSAGE=_("A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement.")
 
@@ -101,9 +101,11 @@ BAD_MNT_CREATION=_("The creation of mount point %s unexpectedly failed.")
 
 NOT_IMPLEMENTED=_("This capability is not yet implemented in this version")
 
+EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reached its maximum limit.")
+
 EXCEEDED_MAX_PVS=_("The number of Physical Volumes in this Volume Group has reached its maximum limit.")
 
-EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reached its maximum limit.")
+EXCEEDING_MAX_PVS=_("At most %s Physical Volumes can be added to this Volume Group before the limit has been reached.")
 
 NOT_ENOUGH_SPACE_FOR_NEW_LV=_("Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 
@@ -794,6 +796,8 @@ class InputController:
       renderer3 = gtk.CellRendererText()
       column3 = gtk.TreeViewColumn(ENTITY_TYPE,renderer3, markup=2)
       self.extend_vg_tree.append_column(column3)
+      # set up multiselection
+      self.extend_vg_tree.get_selection().set_mode(gtk.SELECTION_MULTIPLE)
   
   def on_extend_vg(self, button):
       main_selection = self.treeview.get_selection()
@@ -812,27 +816,35 @@ class InputController:
       if selection == None:
           self.extend_vg_form.hide() #cancel opp if OK clicked w/o selection
       
-      model, iter = selection.get_selected()
-      entity_path = model.get_value(iter, NAME_COL)
-      entity_type = model.get_value(iter, VOL_TYPE_COL)
-      
       #Now get name of VG to be extended...
       main_selection = self.treeview.get_selection()
       main_model,main_iter = main_selection.get_selected()
       main_path = main_model.get_path(main_iter)
       vg = main_model.get_value(main_iter, OBJ_COL)
       
-      if entity_type == UNINIT_VOL:  #First, initialize if necessary
-          entity = model.get_value(iter, OBJ_COL)
-          entity_path = self.initialize_entity(entity)
-          if entity_path == None:
-              return
+      # handle selections
+      model, treepathlist = selection.get_selected_rows()
       
-      try:
-          self.command_handler.add_unalloc_to_vg(entity_path, vg.get_name())
-      except CommandError, e:
-          self.errorMessage(e.getMessage())
-          return 
+      # check if pvs can be added to vg
+      max_addable_pvs = vg.get_max_pvs() - len(vg.get_pvs().values())
+      if max_addable_pvs < len(treepathlist):
+          self.errorMessage(EXCEEDING_MAX_PVS % max_addable_pvs)
+          return
+      
+      for treepath in treepathlist:
+          iter = model.get_iter(treepath)
+          entity_path = model.get_value(iter, NAME_COL)
+          entity_type = model.get_value(iter, VOL_TYPE_COL)
+          if entity_type == UNINIT_VOL:  #First, initialize if necessary
+              entity = model.get_value(iter, OBJ_COL)
+              entity_path = self.initialize_entity(entity)
+              if entity_path == None:
+                  continue
+          try:
+              self.command_handler.add_unalloc_to_vg(entity_path, vg.get_name())
+          except CommandError, e:
+              self.errorMessage(e.getMessage())
+              continue
       
       self.extend_vg_form.hide()
       apply(self.reset_tree_model)
