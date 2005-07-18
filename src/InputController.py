@@ -1648,8 +1648,7 @@ class LV_edit_props:
                 self.glade_xml.get_widget('remaining_space_label').hide()
                 
                 # set old size value
-                self.size_entry.set_text(str(self.__get_num(self.size)))
-                self.on_size_change_entry(None, None)
+                self.set_size_new(self.size)
                 
         if self.size_lower < self.size_upper:
             self.glade_xml.get_widget('size_scale_container').set_sensitive(True)
@@ -1657,19 +1656,14 @@ class LV_edit_props:
             self.glade_xml.get_widget('size_scale_container').set_sensitive(False)
         
         # update values to be within limits
-        self.on_size_change_entry(None, None)
-        self.change_size_units()
+        self.set_size_new(self.size_new)
     
     def on_units_change(self, obj):
         self.change_size_units()
     
     def change_size_units(self):
-        iter = self.size_units_combo.get_active_iter()
-        units = self.size_units_combo.get_model().get_value(iter, 0)
-        
         lower = self.__get_num(self.size_lower)
         upper = self.__get_num(self.size_upper)
-        size = self.__get_num(self.size_new)
         
         size_beg_label = self.glade_xml.get_widget('size_beg')
         size_beg_label.set_text(str(lower))
@@ -1677,12 +1671,10 @@ class LV_edit_props:
         size_end_label.set_text(str(upper))
         
         if self.size_lower < self.size_upper:
+            self.user_changing_scale = False
             self.size_scale.set_range(lower, upper)
-            self.size_scale.set_value(size)
         
-        self.size_entry.set_text(str(size))
-        
-        self.update_remaining_space_label()
+        self.set_size_new(self.size_new)
     
     def update_remaining_space_label(self):
         iter = self.size_units_combo.get_active_iter()
@@ -1701,11 +1693,18 @@ class LV_edit_props:
     
     def on_use_remaining(self, obj):
         self.set_size_new(self.size_upper)
-        self.update_remaining_space_label()
+    
+    def set_size_scale_value(self, val):
+        # this function has to be called when changing scale values programatically
+        # scale.value-changed event is triggered even when set_value() is called
+        self.user_changing_scale = False
+        self.size_scale.set_value(val)
     def on_size_change_scale(self, obj):
-        size = self.size_scale.get_value()
-        self.set_size_new(self.__get_extents(size))
-        self.update_remaining_space_label()
+        if self.user_changing_scale:
+            size = self.size_scale.get_value()
+            self.set_size_new(self.__get_extents(size))
+        else:
+            self.user_changing_scale = True
     def on_size_change_entry(self, obj1, obj2):
         size_text = self.size_entry.get_text()
         size_float = 0.0
@@ -1714,23 +1713,19 @@ class LV_edit_props:
         except ValueError, e:
             self.size_entry.set_text(str(self.__get_num(self.size_new)))
             return False
-        size_upper = self.__get_num(self.size_upper)
-        size_lower = self.__get_num(self.size_lower)
-        if size_float > size_upper:
-            size_float = size_upper
-        elif size_float < size_lower:
-            size_float = size_lower
-        else:
-            size_float_exts = self.__get_extents(size_float)
-            size_float = self.__get_num(size_float_exts)
-        self.size_new = self.__get_extents(size_float)
-        self.size_entry.set_text(str(size_float))
-        self.size_scale.set_value(size_float)
-        self.update_remaining_space_label()
+        self.set_size_new(self.__get_extents(size_float))
         return False
     def set_size_new(self, exts):
-        self.size_entry.set_text(str(self.__get_num(exts)))
-        self.on_size_change_entry(None, None)
+        size = exts
+        if size > self.size_upper:
+            size = self.size_upper
+        elif size < self.size_lower:
+            size = self.size_lower
+        self.size_new = size
+        size_units = self.__get_num(size)
+        self.size_entry.set_text(str(size_units))
+        self.set_size_scale_value(size_units)
+        self.update_remaining_space_label()
     def __get_extents(self, num):
         iter = self.size_units_combo.get_active_iter()
         units = self.size_units_combo.get_model().get_value(iter, 0)
