@@ -360,20 +360,20 @@ class InputController:
         if extents_lv.is_used():
             error_message = None
             if extents_lv.is_mirror_log:
-                error_message = _("fixme: %s contains extents belonging to mirror log of LV %s. Mirrored LVs are not migratable, so %s is not removable")
+                error_message = _("PV %s contains extents belonging to mirror log of LV %s. Mirrored LVs are not migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
             elif extents_lv.is_mirror_image:
-                error_message = _("fixme: %s contains extents belonging to mirror image of LV %s. Mirrored LVs are not migratable, so %s is not removable")
+                error_message = _("PV %s contains extents belonging to mirror image of LV %s. Mirrored LVs are not migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
             elif extents_lv.is_snapshot():
-                error_message = _("fixme: %s contains extents belonging to %s, a snapshot of %s. Snapshots are not migratable, so %s is not removable")
+                error_message = _("PV %s contains extents belonging to %s, a snapshot of %s. Snapshots are not migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), extents_lv.get_snapshot_info()[0].get_name(), pv.get_path())
             elif extents_lv.has_snapshots():
                 snapshots = extents_lv.get_snapshots()
                 if len(snapshots) == 1:
-                    error_message = _("fixme: %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not migratable, so %s is not removable")
+                    error_message = _("PV %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not migratable, so %s is not removable.")
                 else:
-                    error_message = _("fixme: %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not migratable, so %s is not removable")
+                    error_message = _("PV %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not migratable, so %s is not removable.")
                 snapshots_string = snapshots[0].get_name()
                 for snap in snapshots[1:]:
                     snapshot_string = snapshot_string + ', ' + snap.get_name()
@@ -1457,30 +1457,34 @@ class LV_edit_props:
         if not self.new:
             for seg in self.lv.get_segments():
                 if seg.get_type() == STRIPED_SEGMENT_ID:
-                    self.errorMessage(_("Striped LVs cannot be mirrored"))
+                    self.errorMessage(_("Striped LVs cannot be mirrored."))
                     self.glade_xml.get_widget('enable_mirroring').set_active(False)
                     return
         # check if lv is origin - no mirroring
         if not self.new:
             if self.lv.has_snapshots():
-                self.errorMessage('FIXME: LVs under snapshots cannot be mirrored yet')
+                self.errorMessage(_("LVs under snapshots cannot be mirrored yet."))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 return
         max_mirror_size = self.__get_max_mirror_data()[0]
         if max_mirror_size == 0:
-            self.errorMessage('FIXME: mirroring unavailable')
+            self.errorMessage(_("There has to be an empty space on at least three Physical Volumes to enable mirroring"))
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
             return
         
         if self.size_new > max_mirror_size:
             if self.new:
                 self.update_size_limits(max_mirror_size)
-                self.infoMessage('fixme: size changed to fit')
+                self.infoMessage(_("Size of Logical Volume has been adjusted to the maximum available size."))
                 self.size_entry.select_region(0, (-1))
                 self.size_entry.grab_focus()
             else:
                 if self.lv.is_mirrored() == False:
-                    self.errorMessage('fixme: not enough room for mirroring. Reduce size of LV to at most ' + str(self.__get_num(max_mirror_size)) + ', or add some PVs')
+                    message = _("There is not enough free space to add mirroring. Reduce size of Logical Volume to at most %s, or add Physical Volumes.")
+                    iter = self.size_units_combo.get_active_iter()
+                    units = self.size_units_combo.get_model().get_value(iter, 0)
+                    reduce_to_string = str(self.__get_num(max_mirror_size)) + ' ' + units
+                    self.errorMessage(message % reduce_to_string)
                     self.glade_xml.get_widget('enable_mirroring').set_active(False)
                     self.size_entry.select_region(0, (-1))
                     self.size_entry.grab_focus()
@@ -1656,6 +1660,7 @@ class LV_edit_props:
             self.glade_xml.get_widget('size_scale_container').set_sensitive(False)
         
         # update values to be within limits
+        self.change_size_units()
         self.set_size_new(self.size_new)
     
     def on_units_change(self, obj):
@@ -1781,22 +1786,22 @@ class LV_edit_props:
         # illegal characters
         invalid_lvname_message = ''
         if re.match('snapshot', name_new) or re.match('pvmove', name_new):
-            invalid_lvname_message = _("fixme: Names begining with \"snapshot\" or \"pvmove\" are reserved keywords")
+            invalid_lvname_message = _("Names begining with \"snapshot\" or \"pvmove\" are reserved keywords.")
         elif re.search('_mlog', name_new) or re.search('_mimage', name_new):
-            invalid_lvname_message = _("fixme: Names containing \"_mlog\" or \"_mimage\" are reserved keywords")
+            invalid_lvname_message = _("Names containing \"_mlog\" or \"_mimage\" are reserved keywords.")
         elif name_new[0] == '-':
-            invalid_lvname_message = _("fixme: Names begining with a \"-\" are invalid")
+            invalid_lvname_message = _("Names begining with a \"-\" are invalid")
         elif name_new == '.' or name_new == '..':
-            invalid_lvname_message = _("fixme: Name can be neither \".\" nor \"..\"")
+            invalid_lvname_message = _("Name can be neither \".\" nor \"..\"")
         else:
             for t in name_new:
                 if t in string.ascii_letters + string.digits + '._-+':
                     continue
                 elif t in string.whitespace:
-                    invalid_lvname_message = _("fixme: Whitespaces are not allowed in LV names")
+                    invalid_lvname_message = _("Whitespaces are not allowed in LV names")
                     break
                 else:
-                    invalid_lvname_message = _("fixme: Invalid character \"%s\" in LV name") % t
+                    invalid_lvname_message = _("Invalid character \"%s\" in LV name") % t
                     break
         if invalid_lvname_message != '':
             self.errorMessage(invalid_lvname_message)
@@ -1870,7 +1875,7 @@ class LV_edit_props:
             filesys_change = (filesys_new != self.fs)
             ext2_to_ext3 = (filesys_new.name == Filesystem.ext3().name) and (self.fs.name == Filesystem.ext2().name)
             if ext2_to_ext3:
-                retval = self.questionMessage(_("fixme: Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"))
+                retval = self.questionMessage(_("Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"))
                 if (retval == gtk.RESPONSE_NO):
                     ext2_to_ext3 = False
             
@@ -2004,10 +2009,10 @@ class LV_edit_props:
                 # make room for mirror (free some pvs of main image's extents)
                 if self.__make_room_for_mirror(self.lv, lv_path) == False:
                     # migration not performed, continue process with no mirroring
-                    self.infoMessage('fixme: Mirror not created.')
+                    self.infoMessage(_("Mirror not created. Completing remaining tasks."))
                 else:
                     # create mirror
-                    self.infoMessage('fixme: add mirror not implemented yet, will be at u2')
+                    self.infoMessage('fixme: addition of mirror not implemented yet, should be ready for U2, I hope :). Completing remaining tasks.')
                     #self.command_handler.add_mirroring(self.lv.get_path())
                     pass
             
@@ -2060,7 +2065,7 @@ class LV_edit_props:
             string = string + '\n' + struct[0].get_path()
             string = string + ':' + str(struct[1]) + '-' + str(struct[1] + struct[2] - 1)
             string = string + '   -> ' + struct[3].get_path()
-        rc = self.questionMessage('fixme: In order to add mirroring, some extents need to migrate. \n' + string + '\nDo you want to migrate extents?')
+        rc = self.questionMessage(_("In order to add mirroring, some extents need to be migrated.") + '\n' + string + '\n' + _("Do you want to migrate specified extents?"))
         if rc == gtk.RESPONSE_YES:
             for struct in structs:
                 pv_from = struct[0]
