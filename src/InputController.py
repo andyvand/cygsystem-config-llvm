@@ -49,7 +49,7 @@ UNINIT_VOL = 1
 
 ###TRANSLATOR: The string below is seen when adding a new Physical
 ###Volume to an existing Volume Group.
-ADD_PV_TO_VG_LABEL=("Select a Volume Group to add %s to:")
+ADD_PV_TO_VG_LABEL=_("Select a Volume Group to add %s to:")
 
 MEGA_MULTIPLIER = 1000000.0
 GIGA_MULTIPLIER = 1000000000.0
@@ -105,7 +105,7 @@ EXCEEDED_MAX_LVS=_("The number of Logical Volumes in this Volume Group has reach
 
 EXCEEDED_MAX_PVS=_("The number of Physical Volumes in this Volume Group has reached its maximum limit.")
 
-EXCEEDING_MAX_PVS=_("At most %s Physical Volumes can be added to this Volume Group before the limit has been reached.")
+EXCEEDING_MAX_PVS=_("At most %s Physical Volumes can be added to this Volume Group before the limit is reached.")
 
 NOT_ENOUGH_SPACE_FOR_NEW_LV=_("Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 
@@ -115,8 +115,6 @@ CANNOT_REMOVE_UNDER_SNAPSHOT=_("Logical volume %s is under a snapshot %s. Please
 CANNOT_REMOVE_UNDER_SNAPSHOTS=_("Logical volume %s is under snapshots: %s. Please remove snapshots first.")
 
 TYPE_CONVERSION_ERROR=_("Undefined type conversion error in model factory. Unable to complete task.")
-
-NUMERIC_CONVERSION_ERROR=_("There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind.")
 
 MOUNTED_WARNING=_("BIG WARNING: Logical Volume %s has an %s file system on it and is currently mounted on %s. Are you absolutely certain that you wish to discard the data on this mounted filesystem?")
 
@@ -140,20 +138,13 @@ GIGABYTES=_("Gigabytes")
 MEGABYTES=_("Megabytes")
 KILOBYTES=_("Kilobytes")
 
-EXCEEDS_FREE_SPACE=_("The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: ")
-
 NUMBERS_ONLY=_("The %s should only contain number values")
-NUMBERS_ONLY_MAX_PVS=_("The  Maximum Physical Volumes field should contain only integer values between 1 and 256")
-NUMBERS_ONLY_MAX_LVS=_("The  Maximum Logical Volumes field should contain only integer values between 1 and 256")
-
-###TRANSLATOR: Striping writes data to multiple physical devices 
-###concurrently, with the objective being redundance and/or speed
-STRIPE_SIZE_FIELD=_("Stripe Size field")
-NUM_STRIPES_FIELD=_("Number of Stripes field")
+NUMBERS_ONLY_MAX_PVS=_("The Maximum Physical Volumes field should contain only integer values between 1 and 256")
+NUMBERS_ONLY_MAX_LVS=_("The Maximum Logical Volumes field should contain only integer values between 1 and 256")
 
 CONFIRM_PVREMOVE=_("Are you quite certain that you wish to remove %s from Logical Volume Management?")
 
-SOLO_PV_IN_VG=_("The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume.") 
+SOLO_PV_IN_VG=_("The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data to. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume.") 
 CONFIRM_PV_VG_REMOVE=_("Are you quite certain that you wish to remove %s from the %s Volume Group?")
 CONFIRM_VG_REMOVE=_("Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?")
 NOT_ENOUGH_SPACE_VG=_("Volume Group %s does not have enough space to move the data stored on %s. A possible solution would be to add an additional Physical Volume to the Volume Group.")
@@ -1468,14 +1459,14 @@ class LV_edit_props:
                 return
         max_mirror_size = self.__get_max_mirror_data()[0]
         if max_mirror_size == 0:
-            self.errorMessage(_("There has to be an empty space on at least three Physical Volumes to enable mirroring"))
+            self.errorMessage(_("There has to be free space on at least three Physical Volumes to enable mirroring"))
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
             return
         
         if self.size_new > max_mirror_size:
             if self.new:
                 self.update_size_limits(max_mirror_size)
-                self.infoMessage(_("Size of Logical Volume has been adjusted to the maximum available size."))
+                self.infoMessage(_("Size of Logical Volume has been adjusted to the maximum available size for mirrors."))
                 self.size_entry.select_region(0, (-1))
                 self.size_entry.grab_focus()
             else:

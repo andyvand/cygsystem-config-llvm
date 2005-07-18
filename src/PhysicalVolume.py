@@ -59,7 +59,7 @@ class PhysicalVolume(Volume):
     
     if self.part != None:
       if self.part.id == ID_EMPTY and not self.wholeDevice():
-        ret_str = UNPARTITIONED_SPACE + _(" on") + '\n' + ret_str
+        ret_str = UNPARTITIONED_SPACE_ON % ('\n' + ret_str)
     
     return ret_str
   

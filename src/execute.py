@@ -6,8 +6,6 @@ import os, sys
 import select
 
 
-ERROR_MESSAGE =_("An error has occurred while running a system command. Please check logs for details.") 
-
 BASH_PATH='/bin/bash'
 
 def execWithCapture(bin, args):

@@ -81,6 +81,7 @@ FREE=_("Free")
 FREE_SPACE=_("Free space")
 
 UNPARTITIONED_SPACE=_("Unpartitioned space")
+UNPARTITIONED_SPACE_ON=_("Unpartitioned space on %s")
 
 GIG_SUFFIX=_("G")
 MEG_SUFFIX=_("M")
