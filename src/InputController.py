@@ -661,11 +661,13 @@ class InputController:
               if pv.needsFormat():
                   if pv.wholeDevice():
                       message = INIT_ENTITY % path
+                  else:
+                      # disabled until fdisk_wrapper gets into reliable shape
+                      # doFormat = True
+                      # message = INIT_ENTITY_FREE_SPACE % (pv.get_volume_size_string(), path)
+                      return None
               else:
-                  # disabled until fdisk_wrapper gets into reliable shape
-                  #doFormat = True
-                  #message = INIT_ENTITY_FREE_SPACE % (pv.get_volume_size_string(), path)
-                  return None
+                  message = INIT_ENTITY % path
           else:
               message = INIT_ENTITY_FILESYSTEM % (path, fs.name, path)
       else:
