@@ -1416,7 +1416,7 @@ class LV_edit_props:
         self.fs_config_button.connect('clicked', self.on_fs_config)
         self.filesys_combo.connect('changed', self.on_fs_change)
         self.size_units_combo.connect('changed', self.on_units_change)
-        self.size_scale.connect('value-changed', self.on_size_change_scale)
+        self.size_scale.connect('adjust-bounds', self.on_size_change_scale)
         self.size_entry.connect('focus-out-event', self.on_size_change_entry)
         self.glade_xml.get_widget('linear').connect('clicked', self.on_linear_changed)
         self.glade_xml.get_widget('enable_mirroring').connect('clicked', self.on_enable_mirroring)
@@ -1671,7 +1671,6 @@ class LV_edit_props:
         size_end_label.set_text(str(upper))
         
         if self.size_lower < self.size_upper:
-            self.user_changing_scale = False
             self.size_scale.set_range(lower, upper)
         
         self.set_size_new(self.size_new)
@@ -1694,17 +1693,10 @@ class LV_edit_props:
     def on_use_remaining(self, obj):
         self.set_size_new(self.size_upper)
     
-    def set_size_scale_value(self, val):
-        # this function has to be called when changing scale values programatically
-        # scale.value-changed event is triggered even when set_value() is called
-        self.user_changing_scale = False
-        self.size_scale.set_value(val)
-    def on_size_change_scale(self, obj):
-        if self.user_changing_scale:
-            size = self.size_scale.get_value()
-            self.set_size_new(self.__get_extents(size))
-        else:
-            self.user_changing_scale = True
+    def on_size_change_scale(self, obj1, obj2):
+        size = self.size_scale.get_value()
+        self.set_size_new(self.__get_extents(size))
+    
     def on_size_change_entry(self, obj1, obj2):
         size_text = self.size_entry.get_text()
         size_float = 0.0
@@ -1724,7 +1716,7 @@ class LV_edit_props:
         self.size_new = size
         size_units = self.__get_num(size)
         self.size_entry.set_text(str(size_units))
-        self.set_size_scale_value(size_units)
+        self.size_scale.set_value(size_units)
         self.update_remaining_space_label()
     def __get_extents(self, num):
         iter = self.size_units_combo.get_active_iter()
