@@ -196,10 +196,10 @@ class CylinderItem(Widget):
             return None
         
         if self.selectable and leftClick and self.left_clickable:
-            print 'left clicked'
+            #print 'left clicked'
             return self
         if self.right_clickable and not leftClick:
-            print 'right clicked'
+            #print 'right clicked'
             return self
         
         # propagate click

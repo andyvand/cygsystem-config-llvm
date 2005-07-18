@@ -180,7 +180,7 @@ class FDisk:
         file = open(TMP_FILE_INPUT, 'w')
         for command in commands:
             file.write(command + '\n')
-            print command
+            #print command
         file.flush()
         file.close()
         TMP_FILE_COMMAND = TMP_FILE + '_command'
@@ -190,16 +190,17 @@ class FDisk:
         file.flush()
         file.close()
         os.chmod(TMP_FILE_COMMAND, 0700)
-        print 'commiting partitions to disk ' + devname
+        #print 'commiting partitions to disk ' + devname
         
         if len(self.getPartitions(devname)) == 0:
             # no existing partitions, write
             out, ret = execWithCaptureStatusProgress(TMP_FILE_COMMAND, [TMP_FILE_COMMAND], _("Please wait while partition is being created"))
-            print out, ret
+            #print out, ret
         else:
             # there is something on drive, ignore for now
-            print 'joking :)'
-            print 'for now'
+            #print 'joking :)'
+            #print 'for now'
+            pass
         
         os.remove(TMP_FILE_COMMAND)
         os.remove(TMP_FILE_INPUT)
