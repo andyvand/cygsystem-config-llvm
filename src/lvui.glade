@@ -181,7 +181,7 @@
 		      <property name="headers_visible">True</property>
 		      <property name="rules_hint">False</property>
 		      <property name="reorderable">False</property>
-		      <property name="enable_search">True</property>
+		      <property name="enable_search">False</property>
 		    </widget>
 		  </child>
 		</widget>
@@ -1400,7 +1400,7 @@ Logical Volume</property>
 		  <property name="headers_visible">True</property>
 		  <property name="rules_hint">False</property>
 		  <property name="reorderable">False</property>
-		  <property name="enable_search">True</property>
+		  <property name="enable_search">False</property>
 		</widget>
 	      </child>
 	    </widget>
@@ -1490,7 +1490,7 @@ Logical Volume</property>
 	  <child>
 	    <widget class="GtkLabel" id="extend_vg_label">
 	      <property name="visible">True</property>
-	      <property name="label" translatable="yes">Select a disk entity to add to Volume Group:</property>
+	      <property name="label" translatable="yes">extend vg message:</property>
 	      <property name="use_underline">False</property>
 	      <property name="use_markup">False</property>
 	      <property name="justify">GTK_JUSTIFY_LEFT</property>
@@ -1535,7 +1535,7 @@ Logical Volume</property>
 		  <property name="headers_visible">True</property>
 		  <property name="rules_hint">False</property>
 		  <property name="reorderable">False</property>
-		  <property name="enable_search">True</property>
+		  <property name="enable_search">False</property>
 		</widget>
 	      </child>
 	    </widget>
