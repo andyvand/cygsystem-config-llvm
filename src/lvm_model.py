@@ -868,8 +868,12 @@ class lvm_model:
         mount_point = _("/   Root Filesystem")
     text_list.append(UV_MOUNT_POINT)
     text_list.append(mount_point)
+    
+    mountpoint_at_reboot = Fstab.get_mountpoint(lv.get_path())
+    if mountpoint_at_reboot == '/':
+      mountpoint_at_reboot = _("/   Root Filesystem")
     text_list.append(UV_MOUNTPOINT_AT_REBOOT)
-    text_list.append(str(Fstab.get_mountpoint(lv.get_path())))
+    text_list.append(str(mountpoint_at_reboot))
     text_list.append(UV_FILESYSTEM)
     text_list.append(self.__getFS(lv.get_path()))
     
@@ -915,6 +919,8 @@ class lvm_model:
       for path in pv.get_paths():
         mountPoint = Fstab.get_mountpoint(path)
         if mountPoint != None:
+          if mountPoint == '/':
+            mountPoint = _("/   Root Filesystem")
           fstabMountPoints.append(mountPoint)
       if len(fstabMountPoints) == 0:
         fstabMountPoints = _("None")
