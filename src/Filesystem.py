@@ -335,7 +335,7 @@ class gfs_local(Filesystem):
         if re.search('gfs', out, re.I):
             mountable = True
         Filesystem.__init__(self, _("GFS (local)"), True, False, mountable, 
-                            True, False, False, False)
+                            True and mountable, False, False, False)
         
     
     def create(self, path):
