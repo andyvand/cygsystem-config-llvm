@@ -1443,6 +1443,7 @@ class LV_edit_props:
         if self.model_factory.is_mirroring_supported() == False:
             self.errorMessage(_("Underlying LVM doesn't support mirroring"))
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
+            self.update_size_limits()
             return
         # check if lv is striped - no mirroring
         if not self.new:
@@ -1450,17 +1451,20 @@ class LV_edit_props:
                 if seg.get_type() == STRIPED_SEGMENT_ID:
                     self.errorMessage(_("Striped LVs cannot be mirrored."))
                     self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                    self.update_size_limits()
                     return
         # check if lv is origin - no mirroring
         if not self.new:
             if self.lv.has_snapshots():
                 self.errorMessage(_("LVs under snapshots cannot be mirrored yet."))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                self.update_size_limits()
                 return
         max_mirror_size = self.__get_max_mirror_data()[0]
         if max_mirror_size == 0:
             self.errorMessage(_("There has to be free space on at least three Physical Volumes to enable mirroring"))
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
+            self.update_size_limits()
             return
         
         if self.size_new > max_mirror_size:
@@ -1481,10 +1485,8 @@ class LV_edit_props:
                     self.size_entry.grab_focus()
                 else:
                     self.update_size_limits()
-                return
         else:
             self.update_size_limits(max_mirror_size)
-        
     
     def __get_max_mirror_data(self):
         # copy pvs into dir
@@ -1574,8 +1576,14 @@ class LV_edit_props:
     def update_size_limits(self, upper=None):
         iter = self.filesys_combo.get_active_iter()
         filesys = self.filesystems[self.filesys_combo.get_model().get_value(iter, 0)]
+        fs_resizable = (filesys.extendable_online or filesys.extendable_offline or filesys.reducible_online or filesys.reducible_offline)
         
         if not self.new:
+            if fs_resizable:
+                self.glade_xml.get_widget('fs_not_resizable').hide()
+            else:
+                self.glade_xml.get_widget('fs_not_resizable').show()
+            
             if self.lv.has_snapshots():
                 self.glade_xml.get_widget('origin_not_resizable').show()
                 self.glade_xml.get_widget('free_space_label').hide()
@@ -1626,8 +1634,7 @@ class LV_edit_props:
             if not (filesys.reducible_online or filesys.reducible_offline):
                 self.size_lower = self.size
             
-            resizable = (filesys.extendable_online or filesys.extendable_offline or filesys.reducible_online or filesys.reducible_offline)
-            if resizable:
+            if fs_resizable:
                 self.glade_xml.get_widget('fs_not_resizable').hide()
                 self.glade_xml.get_widget('free_space_label').show()
                 self.size_scale.set_sensitive(True)
