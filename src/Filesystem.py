@@ -45,7 +45,7 @@ def get_fs(path):
 
 def get_filesystems():
     # NoFS has to be first
-    return [NoFS(), ext2(), ext3(), gfs_local(), gfs_clustered()]
+    return [NoFS(), ext3(), ext2(), gfs2_local(), gfs2_clustered(), gfs_local(), gfs_clustered()]
 
 
 class Filesystem:
@@ -343,6 +343,77 @@ class ext2(Filesystem):
         return None
     
 
+class gfs2_local(Filesystem):
+    def __init__(self):
+        creatable = self.check_path('/sbin/gfs2_mkfs')
+        mountable = self.check_mountable('gfs2', 'gfs2')
+        extendable_online = self.check_path('/sbin/gfs2_grow')
+        
+        Filesystem.__init__(self, _("GFS2 (local)"), creatable, False, mountable, 
+                            extendable_online, False, False, False)
+        
+    
+    def probe(self, path):
+        if self.check_path('/sbin/gfs2_tool'):
+            args = ['/sbin/gfs2_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs2_tool', args)
+            if r == 0:
+                if 'lock_nolock' in o:
+                    return True
+        return False
+    
+    def create(self, path):
+        MKFS_GFS_BIN='/sbin/gfs2_mkfs'
+        args = [MKFS_GFS_BIN]
+        args.append('-j')
+        args.append('1')
+        args.append('-p')
+        args.append('lock_nolock')
+        args.append('-O')
+        args.append(path)
+        cmdstr = ' '.join(args)
+        msg = CREATING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress(MKFS_GFS_BIN, args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
+    
+    def extend_online(self, dev_path):
+        args = ['/sbin/gfs2_grow']
+        args.append(dev_path)
+        cmdstr = ' '.join(args)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/gfs2_grow', args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+    
+
+class gfs2_clustered(Filesystem):
+    def __init__(self):
+        creatable = False
+        mountable = self.check_mountable('gfs2', 'gfs2')
+        
+        Filesystem.__init__(self, _("GFS2 (clustered)"), creatable, False, mountable, 
+                            False, False, False, False)
+        
+    
+    def probe(self, path):
+        if self.check_path('/sbin/gfs2_tool'):
+            args = ['/sbin/gfs2_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs2_tool', args)
+            if r == 0:
+                if 'lock_dlm' in o or 'lock_gulm' in o:
+                    return True
+        return False
+    
+
 class gfs_local(Filesystem):
     def __init__(self):
         creatable = self.check_path('/sbin/gfs_mkfs')
@@ -412,4 +483,5 @@ class gfs_clustered(Filesystem):
                 if 'lock_dlm' in o or 'lock_gulm' in o:
                     return True
         return False
+
     
