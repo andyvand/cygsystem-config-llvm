@@ -18,14 +18,12 @@ FSUPGRADE_FAILURE=_("Upgrade of filesystem failed. Command attempted: \"%s\" - S
 
 
 def get_fs(path):
-    filesys_name = None
-    result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
+    for fs in get_filesystems():
+        if fs.probe(path):
+            return fs
     
-    if re.search('ext3', result, re.I):
-        return ext3()
-    elif re.search('ext2', result, re.I):
-        return ext2()
-    elif re.search('FAT \(12 bit\)', result, re.I):
+    result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
+    if re.search('FAT \(12 bit\)', result, re.I):
         return Unknown('vfat12')
     elif re.search('FAT \(16 bit\)', result, re.I):
         return Unknown('vfat16')
@@ -40,38 +38,14 @@ def get_fs(path):
     elif re.search('raiserfs', result, re.I):
         return Unknown('raiserfs')
     elif re.search('swap', result, re.I):
-        filesys = Unknown('swap')
-        filesys.mountable = False
-        return filesys
+        return Unknown('swap')
     else:
-        # check if GFS
-        if os.access('/sbin/gfs_tool', os.F_OK):
-            args = ['/sbin/gfs_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('proto')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
-            if r == 0:
-                if 'lock_nolock' in o:
-                    return gfs_local()
-                elif 'lock_dlm' in o or 'lock_gulm' in o:
-                    return gfs_clustered()
-        
         return NoFS()
     
 
 def get_filesystems():
-    fss = [NoFS()] # NoFS has to be first
-    
-    if os.access('/sbin/mkfs.ext2', os.F_OK):
-        fss.append(ext2())
-    if os.access('/sbin/mkfs.ext3', os.F_OK):
-        fss.append(ext3())
-    if os.access('/sbin/gfs_mkfs', os.F_OK):
-        fss.append(gfs_local())
-    
-    return fss
+    # NoFS has to be first
+    return [NoFS(), ext2(), ext3(), gfs_local(), gfs_clustered()]
 
 
 class Filesystem:
@@ -83,9 +57,9 @@ class Filesystem:
         self.editable = editable
         self.mountable = mountable
         
-        self.extendable_online = extendable_online
+        self.extendable_online = extendable_online and mountable
         self.extendable_offline = extendable_offline
-        self.reducible_online = reducible_online
+        self.reducible_online = reducible_online and mountable
         self.reducible_offline = reducible_offline
         
         self.upgradable = False
@@ -114,24 +88,61 @@ class Filesystem:
     def get_label(self, devpath):
         return None
     
+    def probe(self, path):
+        return False
+    
+    
+    def check_mountable(self, name, module):
+        mountable = False
+        out = execWithCapture('/bin/cat', ['/bin/cat', '/proc/filesystems'])
+        if re.search(name, out, re.I):
+            mountable = True
+        if mountable == False:
+            out, status = execWithCaptureStatus('/bin/modprobe', ['/bin/modprobe', '-n', module])
+            if status == 0:
+                mountable = True
+        return mountable
+    
+    def check_path(self, path):
+        if os.access(path, os.F_OK):
+            return True
+        else:
+            return False
+    def check_paths(self, paths):
+        for path in paths:
+            if self.check_path(path) == False:
+                return False
+        return True
+    
 
 class NoFS(Filesystem):
     def __init__(self):
         Filesystem.__init__(self, _('None'), True, False, False, 
-                            False, True, False, True)
+                            True, True, True, True)
         
-        
+
 class Unknown(Filesystem):
-    def __init__(self, name = _('Unknown filesystem')):
-        Filesystem.__init__(self, name, False, False, True,
+    def __init__(self, name=_('Unknown filesystem'), mountable=False):
+        Filesystem.__init__(self, name, False, False, mountable,
                             False, False, False, False)
         
         
 class ext3(Filesystem):
     def __init__(self):
-        Filesystem.__init__(self, 'ext3', True, True, True,
-                            True, True, False, True)
+        creatable = self.check_path('/sbin/mkfs.ext3')
+        mountable = self.check_mountable('ext3', 'ext3')
+        resize_offline = self.check_paths(['/sbin/e2fsck', '/sbin/resize2fs'])
+        extend_online = self.check_path('/usr/sbin/ext2online')
         
+        Filesystem.__init__(self, 'ext3', creatable, True, mountable, 
+                            extend_online, resize_offline, False, resize_offline)
+        
+    
+    def probe(self, path):
+        result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
+        if re.search('ext3', result, re.I):
+            return True
+    
     def create(self, path):
         args = list()
         args.append("/sbin/mkfs")
@@ -224,10 +235,19 @@ class ext3(Filesystem):
 
 class ext2(Filesystem):
     def __init__(self):
-        Filesystem.__init__(self, 'ext2', True, True, True, 
-                            False, True, False, True)
+        creatable = self.check_path('/sbin/mkfs.ext2')
+        mountable = self.check_mountable('ext2', 'ext2')
+        resize_offline = self.check_paths(['/sbin/e2fsck', '/sbin/resize2fs'])
+        
+        Filesystem.__init__(self, 'ext2', creatable, True, mountable, 
+                            False, resize_offline, False, resize_offline)
         self.upgradable = True
         
+    
+    def probe(self, path):
+        result = execWithCapture("/usr/bin/file", ['/usr/bin/file', '-s', '-L', path])
+        if re.search('ext2', result, re.I):
+            return True
     
     def create(self, path):
         args = list()
@@ -325,18 +345,26 @@ class ext2(Filesystem):
 
 class gfs_local(Filesystem):
     def __init__(self):
-        mountable = False
-        # check if mountable
-        args = list()
-        args.append('/bin/cat')
-        args.append('/proc/filesystems')
-        cmdstr = ' '.join(args)
-        out = execWithCapture('/bin/cat', args)
-        if re.search('gfs', out, re.I):
-            mountable = True
-        Filesystem.__init__(self, _("GFS (local)"), True, False, mountable, 
-                            True and mountable, False, False, False)
+        creatable = self.check_path('/sbin/gfs_mkfs')
+        mountable = self.check_mountable('gfs', 'gfs')
+        extendable_online = self.check_path('/sbin/gfs_grow')
         
+        Filesystem.__init__(self, _("GFS (local)"), creatable, False, mountable, 
+                            extendable_online, False, False, False)
+        
+    
+    def probe(self, path):
+        if self.check_path('/sbin/gfs_tool'):
+            args = ['/sbin/gfs_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
+            if r == 0:
+                if 'lock_nolock' in o:
+                    return True
+        return False
     
     def create(self, path):
         MKFS_GFS_BIN='/sbin/gfs_mkfs'
@@ -365,16 +393,23 @@ class gfs_local(Filesystem):
 
 class gfs_clustered(Filesystem):
     def __init__(self):
-        mountable = False
-        # check if mountable
-        args = list()
-        args.append('/bin/cat')
-        args.append('/proc/filesystems')
-        cmdstr = ' '.join(args)
-        out = execWithCapture('/bin/cat', args)
-        if re.search('gfs', out, re.I):
-            mountable = True
-        Filesystem.__init__(self, _("GFS (clustered)"), False, False, mountable, 
+        creatable = False
+        mountable = self.check_mountable('gfs', 'gfs')
+        
+        Filesystem.__init__(self, _("GFS (clustered)"), creatable, False, mountable, 
                             False, False, False, False)
         
+    
+    def probe(self, path):
+        if self.check_path('/sbin/gfs_tool'):
+            args = ['/sbin/gfs_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
+            if r == 0:
+                if 'lock_dlm' in o or 'lock_gulm' in o:
+                    return True
+        return False
     
