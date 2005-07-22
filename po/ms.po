@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-07-13 01:46+0800\n"
+"PO-Revision-Date: 2005-07-23 02:06+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -438,12 +438,16 @@ msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Buang Volum\n"
+"Logikal Dipilih"
 
 #: src/lvui.glade.h:55
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Buang Volum\n"
+"Fizikal Dipilih"
 
 #: src/lvui.glade.h:57
 msgid ""
@@ -480,14 +484,12 @@ msgid "Striped"
 msgstr "Jaluran"
 
 #: src/lvui.glade.h:66
-#, fuzzy
 msgid "Unused space on VG1:"
-msgstr "Isi semua ruang yang belum digunakan pada cakera"
+msgstr "Ruang belum diguna pada VG1:"
 
 #: src/lvui.glade.h:67
-#, fuzzy
 msgid "Use Remaining Space"
-msgstr "Ruang tidak mencukupi"
+msgstr "Guna Ruang Yang Tinggal"
 
 #: src/lvui.glade.h:68
 #: src/lvmui_constants.py:55
@@ -571,9 +573,8 @@ msgstr ""
 #. first set up lvcreate args
 #: src/lvm_model.py:35
 #: src/lvmui_constants.py:39
-#, fuzzy
 msgid "Unused"
-msgstr "Tidak digunakan"
+msgstr "Tidak Digunakan"
 
 #: src/lvm_model.py:36
 #, fuzzy
@@ -688,7 +689,7 @@ msgstr "Jumlah Stripe:"
 #: src/lvm_model.py:71
 #, fuzzy
 msgid "Stripe Size:   "
-msgstr "Medan Saiz Stripe"
+msgstr "Saiz Stripe:"
 
 #: src/lvm_model.py:73
 msgid "LV UUID:   "
