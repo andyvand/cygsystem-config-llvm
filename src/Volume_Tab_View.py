@@ -201,7 +201,7 @@ class Volume_Tab_View:
     treemodel = self.treeview.get_model()
     treemodel.clear()
     
-    self.model_factory.reload(WaitMsg(RELOAD_LVM_MESSAGE))
+    self.model_factory.reload()
     self.mirror_sync_progress.initiate()
     
     vg_list = self.model_factory.get_VGs()

@@ -6,6 +6,7 @@ import re
 from lvmui_constants import *
 from BlockDeviceModel import *
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
+from execute import execWithCaptureProgress
 import gettext
 _ = gettext.gettext
 
@@ -123,6 +124,13 @@ PV_PE_ALLOC_COUNT_IDX = 6
 PV_ATTR_IDX = 7
 PV_UUID_IDX = 8
 
+QUERING_VGS=_("Quering Volume Groups")
+QUERING_LVS=_("Quering Logical Volumes")
+QUERING_PVS=_("Quering Physical Volumes")
+# change progress display
+QUERING_VGS=RELOAD_LVM_MESSAGE
+QUERING_LVS=RELOAD_LVM_MESSAGE
+QUERING_PVS=RELOAD_LVM_MESSAGE
 
 
 LVS_HAS_ALL_OPTION = False
@@ -326,7 +334,8 @@ class lvm_model:
     arglist.append(",")
     arglist.append("-o")
     arglist.append("+pv_pe_count,pv_pe_alloc_count")
-    result_string = execWithCapture(LVM_BIN_PATH,arglist)
+    #result_string = execWithCapture(LVM_BIN_PATH, arglist)
+    result_string = execWithCaptureProgress(LVM_BIN_PATH, arglist, QUERING_PVS)
     lines = result_string.splitlines()
     for line in lines:
       line = line.strip()
@@ -396,7 +405,8 @@ class lvm_model:
     arglist.append("-o")
     arglist.append("vg_name,vg_attr,vg_size,vg_extent_size,vg_free_count,max_lv,max_pv")
     
-    result_string = execWithCapture(LVM_BIN_PATH,arglist)
+    #result_string = execWithCapture(LVM_BIN_PATH,arglist)
+    result_string = execWithCaptureProgress(LVM_BIN_PATH, arglist, QUERING_VGS)
     lines = result_string.splitlines()
     for line in lines:
       line = line.strip()
@@ -463,7 +473,8 @@ class lvm_model:
     arglist.append(LVS_OPTION_STRING)
     if LVS_HAS_ALL_OPTION:
       arglist.append("--all")
-    result_string = execWithCapture(LVM_BIN_PATH, arglist)
+    #result_string = execWithCapture(LVM_BIN_PATH, arglist)
+    result_string = execWithCaptureProgress(LVM_BIN_PATH, arglist, QUERING_LVS)
     lines = result_string.splitlines()
     for line in lines:
       line = line.strip()
@@ -723,7 +734,8 @@ class lvm_model:
     arglist.append(",")
     arglist.append("-o")
     arglist.append(VGS_OPTION_STRING)
-    vgs_output = execWithCapture(LVM_BIN_PATH,arglist)
+    #vgs_output = execWithCapture(LVM_BIN_PATH,arglist)
+    vgs_output = execWithCaptureProgress(LVM_BIN_PATH,arglist, QUERING_VGS)
     for vg in self.__VGs.values():
       vg.set_properties(self.__get_data_for_VG(vg, vgs_output))
   def __get_data_for_VG(self, vg, vgs_output):
@@ -854,7 +866,8 @@ class lvm_model:
     arglist.append(",")
     arglist.append("-o")
     arglist.append(PVS_OPTION_STRING)
-    pvs_output = execWithCapture(LVM_BIN_PATH,arglist)
+    #pvs_output = execWithCapture(LVM_BIN_PATH,arglist)
+    pvs_output = execWithCaptureProgress(LVM_BIN_PATH,arglist, QUERING_PVS)
     for pv in self.__PVs:
       pv.set_properties(self.__get_data_for_PV(pv, pvs_output))
   def __get_data_for_PV(self, pv, pvs_output):

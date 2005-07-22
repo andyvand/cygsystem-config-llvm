@@ -54,7 +54,7 @@ INIT_ENTITY_MOUNTED=_("Disk entity %s contains data of folder %s. All data in it
 INIT_ENTITY_FREE_SPACE=_("Are you certain that you wish to initialize %s of free space on disk %s?")
 INIT_ENTITY_DEVICE_CHOICE=_("You are about to initialize unpartitioned disk %s. It is advisable, although not required, to create a partition on it. Do you want to create a single partition encompassing the whole drive?")
 
-RELOAD_LVM_MESSAGE=_("Reloading LVM Data")
+RELOAD_LVM_MESSAGE=_("Reloading LVM. Please wait.")
 
 RESTART_COMPUTER=_("Changes will take effect after computer is restarted. If device %s is used, before restart, data corruption WILL occur. It is advisable to restart your computer.")
 

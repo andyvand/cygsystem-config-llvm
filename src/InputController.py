@@ -558,7 +558,7 @@ class InputController:
             lvs_to_remove.remove(lv)
             reload_lvm = True
     if reload_lvm:
-        self.model_factory.reload(WaitMsg(RELOAD_LVM_MESSAGE))
+        self.model_factory.reload()
     vg = self.model_factory.get_VG(vgname)
     # remove other lvs
     for lv in lvs_to_remove:
@@ -580,7 +580,7 @@ class InputController:
           pv_to_remove = self.model_factory.get_VG(vgname).get_pvs()[pvpath]
           if self.remove_pv(pv_to_remove):
               # remove_pv migrates extents -> need to reload lvm data
-              self.model_factory.reload(WaitMsg(RELOAD_LVM_MESSAGE))
+              self.model_factory.reload()
       
       selection = self.treeview.get_selection()
       model,iter = selection.get_selected()
@@ -2002,7 +2002,7 @@ class LV_edit_props:
             # add mirror if needed
             if not self.lv.is_mirrored() and mirrored_new:
                 # first reload lvm_data so that resizing info is known
-                self.model_factory.reload(WaitMsg(RELOAD_LVM_MESSAGE))
+                self.model_factory.reload()
                 self.lv = self.model_factory.get_VG(self.lv.get_vg().get_name()).get_lvs()[name_new]
                 # make room for mirror (free some pvs of main image's extents)
                 if self.__make_room_for_mirror(self.lv, lv_path) == False:
