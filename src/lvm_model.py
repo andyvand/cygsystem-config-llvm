@@ -169,16 +169,12 @@ class lvm_model:
     self.__link_snapshots()
     self.__link_mirrors()
     
-    # set up LVs properties (has to come after link_mirrors)
-    for vg in self.__VGs.values():
-      for lv in vg.get_lvs().values():
-        if lv.is_used():
-          lv.set_properties(self.__get_data_for_LV(lv))
-          if dlg != None:
-            dlg.refresh()
+    # setup properties
+    self.__set_VGs_props()
+    self.__set_LVs_props() # has to come after link_mirrors
+    self.__set_PVs_props()
     
     self.__add_unused_space()
-    
     
     # debugging
     #for vg in self.__VGs.values():
@@ -300,9 +296,6 @@ class lvm_model:
           if pv.initializable:
             pv.initializable = False
             pv.add_property(_("Note:   "), _("Initialize manually"))
-    # set properties
-    for pv in pvs_list:
-      self.__set_PV_props(pv)
     # all done
     return pvs_list
   def __query_partitions2(self, devname, segs, part_dictionary, seg_list):
@@ -401,7 +394,7 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
     arglist.append("-o")
-    arglist.append("vg_name,vg_attr,vg_size,vg_extent_size,vg_free_count")
+    arglist.append("vg_name,vg_attr,vg_size,vg_extent_size,vg_free_count,max_lv,max_pv")
     
     result_string = execWithCapture(LVM_BIN_PATH,arglist)
     lines = result_string.splitlines()
@@ -414,10 +407,14 @@ class lvm_model:
       extents_free = int(words[4])
       
       vgname = words[0].strip()
-      max_lvs, lvs, max_pvs, pvs = self.__get_max_LVs_PVs_on_VG(vgname)
+      
+      max_lvs, max_pvs = int(words[5]), int(words[6])
+      if max_lvs == 0:
+        max_lvs = 256
+      if max_pvs == 0:
+        max_pvs = 256
       
       vg = VolumeGroup(vgname, words[1], extent_size, extents_total, extents_free, max_pvs, max_lvs)
-      vg.set_properties(self.__get_data_for_VG(vg.get_name()))
       vglist.append(vg)
     return vglist
   
@@ -451,6 +448,8 @@ class lvm_model:
     LV_SIZE_IDX         = 11
     LV_MIRROR_LOG_IDX   = 12
     
+    self.__reload_logical_volumes_paths()
+    
     arglist = list()
     arglist.append(LVM_BIN_PATH)
     arglist.append("lvs")
@@ -466,7 +465,6 @@ class lvm_model:
       arglist.append("--all")
     result_string = execWithCapture(LVM_BIN_PATH, arglist)
     lines = result_string.splitlines()
-    
     for line in lines:
       line = line.strip()
       words = line.split(';')
@@ -490,7 +488,7 @@ class lvm_model:
       vg_lvs = vg.get_lvs()
       lv = None
       if lvname not in vg_lvs:
-        lv = LogicalVolume(lvname, self.get_logical_volume_path(lvname, vg.get_name()), True, attrs, uuid)
+        lv = LogicalVolume(lvname, self.__get_logical_volume_path(lvname, vg.get_name()), True, attrs, uuid)
         lv.set_extent_count(lv_size, lv_size)
         vg.add_lv(lv)
       lv = vg_lvs[lvname]
@@ -663,39 +661,28 @@ class lvm_model:
         return True
     return False
   
-  def get_logical_volume_path(self, lname, vgname):
-    lvlist = list()
-    arglist = list()
-    lv_name = lname.strip()
-    vg_name = vgname.strip()
-    arglist.append(LVDISPLAY_BIN_PATH) #lvs does not give path info
+  def get_logical_volume_path(self, lvname, vgname):
+    self.__reload_logical_volumes_paths()
+    return self.__get_logical_volume_path(lvname, vgname)
+  def __get_logical_volume_path(self, lvname, vgname):
+    vgname = vgname.strip()
+    lvname = lvname.strip()
+    return self.__lvs_paths[vgname + '`' + lvname]
+  def __reload_logical_volumes_paths(self):
+    self.__lvs_paths = {}
+    arglist = [LVDISPLAY_BIN_PATH] #lvs does not give path info
     arglist.append('-c')
     if LVS_HAS_ALL_OPTION:
       arglist.append('-a')
-    
     result_string = execWithCapture(LVDISPLAY_BIN_PATH,arglist)
     lines = result_string.splitlines()
-    #The procedure below does the following:
-    #The output of the command is examined line by line for a volume 
-    #group name match in the second column.
-    #If the volume group name matches, check if the LV name can be found 
-    #within the first column string. If so, the column[0] string is the path.
     for line in lines:
-      line = line.strip()
-      words = line.split(":")
-      vgnm = words[LV_VGNAME_COL].strip()
-      if vgnm == vg_name:
-        candidate_path = words[LV_PATH_COL].strip()
-        last_slash_index = candidate_path.rfind("/")
-        if last_slash_index >= 0:
-          last_slash_index = last_slash_index + 1
-          c_path = candidate_path[last_slash_index:]
-          if c_path == lv_name:
-            return candidate_path
-    
-    ###FIXME Raise exception here because true path is not being returned,
-    ###But rather the lname arg is being returned.
-    return lv_name
+      words = line.strip().split(":")
+      vgname = words[LV_VGNAME_COL].strip()
+      lvpath = words[LV_PATH_COL].strip()
+      last_slash_index = lvpath.rfind("/") + 1
+      lvname = lvpath[last_slash_index:]
+      self.__lvs_paths[vgname + '`' + lvname] = lvpath
   
   def partition_UV(self, pv):
     if pv.needsFormat():
@@ -725,40 +712,8 @@ class lvm_model:
         raise CommandError('FATAL', AUTOPARTITION_FAILURE % devname)
     return pv.get_path()
   
-  def __get_max_LVs_PVs_on_VG(self, vgname):
-    vg_name = vgname.strip()
-    arglist = list()
-    arglist.append(LVM_BIN_PATH)
-    arglist.append("vgs")
-    arglist.append("--nosuffix")
-    arglist.append("--noheadings")
-    arglist.append("--separator")
-    arglist.append(",")
-    arglist.append("-o")
-    arglist.append("max_lv,lv_count,max_pv,pv_count")
-    arglist.append(vg_name)
-    
-    result_string = execWithCapture(LVM_BIN_PATH,arglist)
-    
-    words = result_string.split(",")
-    
-    #max LVs, number of LVs, max PVs, number of PVs
-    if words[0] == "0":
-      words[0] = "256"
-    if words[2] == "0":
-      words[2] = "256"
-    
-    max_lvs = int(words[0])
-    lvs = int(words[1])
-    max_pvs = int(words[2])
-    pvs = int(words[3])
-    return max_lvs,lvs,max_pvs,pvs
-  
-  def __get_data_for_VG(self, vgname):
-    name = vgname.strip()
-    text_list = list()
-    arglist = list()
-    arglist.append(LVM_BIN_PATH)
+  def __set_VGs_props(self):
+    arglist = [LVM_BIN_PATH]
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -768,11 +723,17 @@ class lvm_model:
     arglist.append(",")
     arglist.append("-o")
     arglist.append(VGS_OPTION_STRING)
-    arglist.append(name)
-
-    result_string = execWithCapture(LVM_BIN_PATH,arglist)
-    lines = result_string.splitlines()
-    words = lines[0].strip().split(",")
+    vgs_output = execWithCapture(LVM_BIN_PATH,arglist)
+    for vg in self.__VGs.values():
+      vg.set_properties(self.__get_data_for_VG(vg, vgs_output))
+  def __get_data_for_VG(self, vg, vgs_output):
+    lines = vgs_output.splitlines()
+    for line in lines:
+      words = line.strip().split(",")
+      if words[VG_NAME_IDX] == vg.get_name():
+        break
+    
+    text_list = list()
     text_list.append(VG_NAME)
     text_list.append(words[VG_NAME_IDX])
     text_list.append(VG_SYSID)
@@ -783,43 +744,48 @@ class lvm_model:
     text_list.append(words[VG_ATTR_IDX])
     text_list.append(VG_SIZE)
     text_list.append(words[VG_SIZE_IDX])
-      
+    
     text_list.append(VG_FREE)
     text_list.append(words[VG_FREE_IDX])
-      
+    
     text_list.append(VG_EXTENT_COUNT)
     text_list.append(words[VG_EXTENT_COUNT_IDX])
-      
+    
     text_list.append(VG_FREE_COUNT)
     text_list.append(words[VG_FREE_COUNT_IDX])
-      
+    
     text_list.append(VG_EXTENT_SIZE)
     text_list.append(words[VG_EXTENT_SIZE_IDX])
-      
+    
     text_list.append(MAX_PV)
     #lvs reports 0 for sys max
     if words[MAX_PV_IDX] == "0":
       text_list.append("256")
     else:
       text_list.append(words[MAX_PV_IDX])
-      
+    
     text_list.append(PV_COUNT)
     text_list.append(words[PV_COUNT_IDX])
-      
+    
     text_list.append(MAX_LV)
     if words[MAX_LV_IDX] == "0":
       text_list.append("256")
     else:
       text_list.append(words[MAX_LV_IDX])
-      
+    
     text_list.append(LV_COUNT)
     text_list.append(words[LV_COUNT_IDX])
-      
+    
     text_list.append(VG_UUID)
     text_list.append(words[VG_UUID_IDX])
-      
+    
     return text_list
   
+  def __set_LVs_props(self):
+    for vg in self.__VGs.values():
+      for lv in vg.get_lvs().values():
+        if lv.is_used():
+          lv.set_properties(self.__get_data_for_LV(lv))
   def __get_data_for_LV(self, lv):
     text_list = list()
     
@@ -879,12 +845,22 @@ class lvm_model:
     
     return text_list
   
-  def __set_PV_props(self, pv):
+  def __set_PVs_props(self):
+    arglist = list()
+    arglist.append(LVM_BIN_PATH)
+    arglist.append("pvs")
+    arglist.append("--noheadings")
+    arglist.append("--separator")
+    arglist.append(",")
+    arglist.append("-o")
+    arglist.append(PVS_OPTION_STRING)
+    pvs_output = execWithCapture(LVM_BIN_PATH,arglist)
+    for pv in self.__PVs:
+      pv.set_properties(self.__get_data_for_PV(pv, pvs_output))
+  def __get_data_for_PV(self, pv, pvs_output):
     # anything that is in, place to the end
     end = pv.get_properties()
     text_list = list()
-    pv.set_properties(text_list)
-    path = pv.get_path()
     
     if pv.get_type() == UNINITIALIZED_TYPE:
       # size
@@ -935,18 +911,11 @@ class lvm_model:
       text_list.append(UV_FILESYSTEM)
       text_list.append(self.__getFS(path))
     else: # UNALLOCATED_TYPE || PHYS_TYPE
-      arglist = list()
-      arglist.append(LVM_BIN_PATH)
-      arglist.append("pvs")
-      arglist.append("--noheadings")
-      arglist.append("--separator")
-      arglist.append(",")
-      arglist.append("-o")
-      arglist.append(PVS_OPTION_STRING)
-      arglist.append(path)
-      result_string = execWithCapture(LVM_BIN_PATH,arglist)
-      lines = result_string.splitlines()
-      words = lines[0].strip().split(",")
+      lines = pvs_output.splitlines()
+      for line in lines:
+        words = line.strip().split(',')
+        if words[PV_NAME_IDX] in pv.get_paths():
+          break
       text_list.append(PV_NAME)
       text_list.append(words[PV_NAME_IDX])
       if words[PV_VG_NAME_IDX] == "":
@@ -974,6 +943,7 @@ class lvm_model:
     for prop in end:
       text_list.append(prop)
     
+    return text_list
   
   def __getFS(self, path):
     path_list = list()
