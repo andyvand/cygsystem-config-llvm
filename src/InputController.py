@@ -1397,9 +1397,17 @@ class LV_edit_props:
         
         # mirroring
         if self.new:
+            #self.mirror_to_diff_hds = None # prompt for option
+            self.mirror_to_diff_hds = False # disabled until command set supports it
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
         else:
-            self.glade_xml.get_widget('enable_mirroring').set_active(self.lv.is_mirrored())
+            already_mirrored = self.lv.is_mirrored()
+            if already_mirrored:
+                self.mirror_to_diff_hds = False # mirror not resizable => don't care for now
+            else:
+                self.mirror_to_diff_hds = None # prompt for option
+            self.mirror_to_diff_hds = False # disabled until command set supports it
+            self.glade_xml.get_widget('enable_mirroring').set_active(already_mirrored)
         # set up mirror limits
         self.on_enable_mirroring(None)
         
@@ -1460,12 +1468,27 @@ class LV_edit_props:
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 self.update_size_limits()
                 return
+        
+        # mirror images placement: diff HDs or anywhere
+        if self.mirror_to_diff_hds == None: # prompt
+            rc = self.questionMessage(_("Purpose of mirroring is to protect data in the case of Hard Drive failure. Do you want to place mirror images onto different Hard Drives?"))
+            if rc == gtk.RESPONSE_YES:
+                self.mirror_to_diff_hds = True
+            else:
+                self.mirror_to_diff_hds = False
+        
         max_mirror_size = self.__get_max_mirror_data()[0]
         if max_mirror_size == 0:
-            self.errorMessage(_("There has to be free space on at least three Physical Volumes to enable mirroring"))
-            self.glade_xml.get_widget('enable_mirroring').set_active(False)
-            self.update_size_limits()
-            return
+            if self.mirror_to_diff_hds:
+                self.errorMessage(_("Less than 3 Hard Drives with free space. Disabling mirroring."))
+                self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                self.update_size_limits()
+                return
+            else:
+                self.errorMessage(_("There has to be free space on at least three Physical Volumes to enable mirroring"))
+                self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                self.update_size_limits()
+                return
         
         if self.size_new > max_mirror_size:
             if self.new:
@@ -1489,7 +1512,7 @@ class LV_edit_props:
             self.update_size_limits(max_mirror_size)
     
     def __get_max_mirror_data(self):
-        # copy pvs into dir
+        # copy pvs into list
         free_list = []
         for pv in self.vg.get_pvs().values():
             free_extents = pv.get_extent_total_used_free()[2]
@@ -1505,37 +1528,94 @@ class LV_edit_props:
             if free_extents != 0:
                 free_list.append((free_extents, pv))
         
-        if len(free_list) < 3:
+        if self.mirror_to_diff_hds:
+            ## place mirror onto different hds ##
+            # group pvs into hd groups
+            devices = {}
+            for t in free_list:
+                pv = t[1]
+                pv_free = t[0]
+                device_name_in_list = None
+                for devname in pv.getDevnames():
+                    if devname in devices.keys():
+                        device_name_in_list = devname
+                if device_name_in_list == None:
+                    if len(pv.getDevnames()) == 0:
+                        # no known devnmaes
+                        devices[pv.get_path()] = [pv_free, [pv]]
+                    else:
+                        # not in the list
+                        devices[pv.getDevnames()[0]] = [pv_free, [pv]]
+                else:
+                    devices[device_name_in_list][0] = devices[device_name_in_list][0] + pv_free
+                    devices[device_name_in_list][1].append(pv)
+            free_list = devices.values()
+            if len(devices.keys()) < 3:
+                return 0, [], []
+            # sort
+            for i in range(len(free_list) - 1, 0, -1):
+                for j in range(0, i):
+                    if free_list[j][0] < free_list[j + 1][0]:
+                        tmp = free_list[j + 1]
+                        free_list[j + 1] = free_list[j]
+                        free_list[j] = tmp
+            # remove smallest one for log
+            
+            # TODO: finish grouping
             return 0, [], []
-        
-        # sort
-        for i in range(len(free_list) - 1, 0, -1):
-            for j in range(0, i):
-                if free_list[j][0] < free_list[j + 1][0]:
-                    tmp = free_list[j + 1]
-                    free_list[j + 1] = free_list[j]
-                    free_list[j] = tmp
-        # remove smallest one for log
-        free_list.pop(len(free_list) - 1)
-        
-        # place pvs into buckets of similar size
-        buck1, s1 = [free_list[0][1]], free_list[0][0]
-        buck2, s2 = [free_list[1][1]], free_list[1][0]
-        for t in free_list[2:]:
+            
+            free_list.pop(len(free_list) - 1)
+            
+            # place pvs into buckets of similar size
+            buck1, s1 = [free_list[0][1]], free_list[0][0]
+            buck2, s2 = [free_list[1][1]], free_list[1][0]
+            for t in free_list[2:]:
+                if s1 < s2:
+                    s1 = s1 + t[0]
+                    buck1.append(t[1])
+                else:
+                    s2 = s2 + t[0]
+                    buck2.append(t[1])
+            
+            max_m_size = 0
             if s1 < s2:
-                s1 = s1 + t[0]
-                buck1.append(t[1])
+                max_m_size = s1
             else:
-                s2 = s2 + t[0]
-                buck2.append(t[1])
-        
-        max_m_size = 0
-        if s1 < s2:
-            max_m_size = s1
+                max_m_size = s2
+            
+            return max_m_size, buck1, buck2
         else:
-            max_m_size = s2
-        
-        return max_m_size, buck1, buck2
+            ## place mirror anywhere, even on the same hd :( ##
+            if len(free_list) < 3:
+                return 0, [], []
+            # sort
+            for i in range(len(free_list) - 1, 0, -1):
+                for j in range(0, i):
+                    if free_list[j][0] < free_list[j + 1][0]:
+                        tmp = free_list[j + 1]
+                        free_list[j + 1] = free_list[j]
+                        free_list[j] = tmp
+            # remove smallest one for log
+            free_list.pop(len(free_list) - 1)
+            
+            # place pvs into buckets of similar size
+            buck1, s1 = [free_list[0][1]], free_list[0][0]
+            buck2, s2 = [free_list[1][1]], free_list[1][0]
+            for t in free_list[2:]:
+                if s1 < s2:
+                    s1 = s1 + t[0]
+                    buck1.append(t[1])
+                else:
+                    s2 = s2 + t[0]
+                    buck2.append(t[1])
+            
+            max_m_size = 0
+            if s1 < s2:
+                max_m_size = s1
+            else:
+                max_m_size = s2
+            
+            return max_m_size, buck1, buck2
     
     def on_mount_changed(self, obj):
         m1 = self.glade_xml.get_widget('mount').get_active()
@@ -2038,8 +2118,6 @@ class LV_edit_props:
     
     
     def __make_room_for_mirror(self, lv, lvpath):
-        structs = self.__get_structs_for_ext_migration(lv)
-        
         # first check if any extent needs to be migrated
         t, bucket1, bucket2 = self.__get_max_mirror_data()
         tmp_list = bucket1[:]
@@ -2058,6 +2136,7 @@ class LV_edit_props:
             return True
         
         # extents need moving :(
+        structs = self.__get_structs_for_ext_migration(lv)
         string = ''
         for struct in structs:
             string = string + '\n' + struct[0].get_path()
@@ -2076,7 +2155,6 @@ class LV_edit_props:
             return True
         else:
             return False
-    
     # return [[pv_from, ext_start, size, pv_to], ...]
     def __get_structs_for_ext_migration(self, lv):
         t, bucket1, bucket2 = self.__get_max_mirror_data()
