@@ -21,6 +21,10 @@ from WaitMsg import WaitMsg
 
 import PhysicalVolume
 
+from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
+from utilities import follow_links_to_target
+
+
 import gettext
 _ = gettext.gettext
 
@@ -624,10 +628,25 @@ class InputController:
   def on_init_entity_from_menu(self, obj, dlg=None):
       if dlg == None:
           dlg = self.glade_xml.get_widget("init_block_device_dlg")
+      label = self.glade_xml.get_widget("init_block_device_dlg_path")
+      label.select_region(0, (-1))
+      label.grab_focus()
       rc = dlg.run()
       dlg.hide()
       if rc == gtk.RESPONSE_APPLY:
-          path = self.glade_xml.get_widget("init_block_device_dlg_path").get_text().strip()
+          path = label.get_text().strip()
+          target = follow_links_to_target(path)
+          if target == None:
+              self.errorMessage(_("The path you specified doesn't exist."))
+              self.on_init_entity_from_menu(None, dlg)
+              return
+          else:
+              o = execWithCapture('/bin/ls', ['/bin/ls', '-l', target])
+              output = o.strip()
+              if output[0] != 'b':
+                  self.errorMessage(_("The path you specified is not a Block Device."))
+                  self.on_init_entity_from_menu(None, dlg)
+                  return
           pv = PhysicalVolume.PhysicalVolume(path, None, None, 0, 0, False, 0, 0)
           pv.set_path(path)
           self.glade_xml.get_widget("init_block_device_dlg_path").set_text('')
