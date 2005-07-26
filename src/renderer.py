@@ -421,7 +421,8 @@ class DisplayView:
             #label = "<span foreground=\"" + GRADIENT_LV + "\" size=\"8000\">" + lv.get_name() + "</span>"
             label = "<span size=\"8000\">" + lv.get_name() + "</span>"
             #cyl = Subcylinder(self.lv_cyl_gen, 1, 0, lv.is_used())
-            cyl = Subcylinder(self.lv_cyl_gen, 1, 0, True)
+            #cyl = Subcylinder(self.lv_cyl_gen, 1, 0, True)
+            cyl = Subcylinder(self.lv_cyl_gen, 1, 4, True)
             lv_cyls_dir[lv] = cyl
             cyl.set_label_upper(label)
             lv_cyls.append(cyl)

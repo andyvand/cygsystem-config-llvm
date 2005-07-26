@@ -1138,6 +1138,34 @@ class CylinderGenerator:
         
         return pixbuf
     
+    def __get_pattern4(self, dc, width, height):
+        y_radius = height / 2
+        (ellipse_table, x_radius) = get_ellipse_table(y_radius)
+        
+        pixmap_width = width + x_radius
+        scaled_pixbuf = self.pixbuf.scale_simple(pixmap_width, height, gtk.gdk.INTERP_BILINEAR)
+        
+        gc = dc.new_gc()
+        colormap = dc.get_colormap()
+        gc.foreground = colormap.alloc_color(0, 0, 0)
+        
+        pixmap = gtk.gdk.Pixmap(dc, pixmap_width, height)
+        pixmap.draw_rectangle(gc, True, 0, 0, pixmap_width, height)
+        
+        gc.foreground = gtk.gdk.colormap_get_system().alloc_color("white", 1,1)
+        for y in range(0, height, 15):
+            x_offset = ellipse_table[y]
+            for x in range(x_offset, x_offset + width):
+                pixmap.draw_point(gc, x, y)
+        
+        # get pixbuf from pixmap in order to add alpha channel
+        pixbuf = scaled_pixbuf.get_from_drawable(pixmap, pixmap.get_colormap(), 0, 0, 0, 0, pixmap_width, height)
+        
+        # add alpha channel
+        pixbuf = pixbuf.add_alpha(True, chr(0), chr(0), chr(0))
+        
+        return pixbuf
+    
     def get_pattern(self, pattern_id, dc, width, height):
         if pattern_id == 0:
             return self.__get_pattern0(dc, width, height)
@@ -1147,6 +1175,8 @@ class CylinderGenerator:
             return self.__get_pattern2(dc, width, height)
         elif pattern_id == 3:
             return self.__get_pattern3(dc, width, height)
+        elif pattern_id == 4:
+            return self.__get_pattern4(dc, width, height)
         else:
             raise 'INVALID PATTERN ID'
     
