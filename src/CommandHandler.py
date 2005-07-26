@@ -34,7 +34,7 @@ class CommandHandler:
   def __init__(self):
     pass
   
-  def new_lv(self, cmd_args_dict):
+  def new_lv(self, cmd_args_dict, pvlist=[]):
     model_factory = lvm_model()
     #first set up lvcreate args
 
@@ -68,6 +68,9 @@ class CommandHandler:
         arglist.append(str(cmd_args_dict[NEW_LV_STRIPE_SIZE_ARG]))
       vgname = cmd_args_dict[NEW_LV_VGNAME_ARG]
       arglist.append(vgname)
+    
+    for pv in pvlist:
+      arglist.append(pv.get_path())
     
     cmd_str = ' '.join(arglist)
     result_string,err,res = execWithCaptureErrorStatusProgress(LVCREATE_BIN_PATH, arglist,
@@ -131,11 +134,13 @@ class CommandHandler:
     if res != 0:
       raise CommandError('FATAL', LVCHANGE_FAILURE % (cmdstr,err))
   
-  def add_mirroring(self, lvpath):
+  def add_mirroring(self, lvpath, pvlist=[]):
     cmd_args = list()
     cmd_args.append(LVCONVERT_BIN_PATH)
     cmd_args.append('-m1')
     cmd_args.append(lvpath)
+    for pv in pvlist:
+      cmd_args.append(pv.get_path())
     cmdstr = ' '.join(cmd_args)
     out,err,res = execWithCaptureErrorStatusProgress(LVCONVERT_BIN_PATH, cmd_args,
                                                      _("Adding Mirror to Logical Volume"))
