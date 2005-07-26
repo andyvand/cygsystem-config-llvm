@@ -5,6 +5,7 @@ import os
 import Filesystem
 
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
+from utilities import follow_links_to_target
 
 
 DEVICE = 0
@@ -74,7 +75,7 @@ def get_mountpoint(dev_path):
         return None
     
     paths = [dev_path]
-    __follow_links_to_target(dev_path, paths)
+    follow_links_to_target(dev_path, paths)
     label = Filesystem.get_fs(dev_path).get_label(dev_path)
     if label != None:
         paths.append('LABEL=' + label)
@@ -102,12 +103,3 @@ def get_mountpoint(dev_path):
             return words[MOUNTPOINT]
     
     return None
-
-def __follow_links_to_target(path, paths):
-    o, s = execWithCaptureStatus('/bin/ls', ['/bin/ls', '-l', path])
-    if s == 0:
-        words = o.strip().split()
-        if words[0][0] == 'l':
-            target = words[len(words) - 1]
-            paths.append(target)
-            __follow_links_to_target(target, paths)

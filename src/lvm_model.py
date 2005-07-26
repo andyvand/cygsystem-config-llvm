@@ -20,6 +20,7 @@ from Multipath import Multipath
 import Filesystem
 import Fstab
 
+from utilities import follow_links_to_target
 
 
 #Column names for PVS calls
@@ -992,7 +993,8 @@ class lvm_model:
   def getMountPoint(self, path):
     # follow links
     paths = [path]
-    self.__follow_links_to_target(path, paths)
+    if follow_links_to_target(path, paths) == None:
+      return None
     
     result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/mounts', '/etc/mtab'])
     lines = result.splitlines()
@@ -1003,14 +1005,5 @@ class lvm_model:
         return words[1]
     return None
   
-  def __follow_links_to_target(self, path, paths):
-    o, s = execWithCaptureStatus('/bin/ls', ['/bin/ls', '-l', path])
-    if s == 0:
-      words = o.strip().split()
-      if words[0][0] == 'l':
-        target = words[len(words) - 1]
-        paths.append(target)
-        self.__follow_links_to_target(target, paths)
-
   def is_mirroring_supported(self):
     return LVS_HAS_MIRROR_OPTIONS
