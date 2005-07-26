@@ -60,6 +60,8 @@ RESTART_COMPUTER=_("Changes will take effect after computer is restarted. If dev
 
 MIRROR_LOG=_("Mirror Log")
 
+UNABLE_TO_PROCESS_REQUEST=_("Unable to process request")
+
 NEW_LV_NAME_ARG = 0
 NEW_LV_VGNAME_ARG = 1
 NEW_LV_SIZE_ARG = 2

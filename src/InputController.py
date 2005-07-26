@@ -501,7 +501,7 @@ class InputController:
             for snap in snapshots[1:]:
                 snaps_str = snaps_str + ', ' + snap.get_name()
             self.errorMessage(CANNOT_REMOVE_UNDER_SNAPSHOTS % (lv.get_name(), snaps_str))
-        return
+        return False
     
     mountpoint = self.model_factory.getMountPoint(lv.get_path())
     fs = Filesystem.get_fs(lv.get_path())
@@ -520,7 +520,7 @@ class InputController:
         message = CONFIRM_LV_REMOVE_MOUNTED % (lv.get_name(), mountpoint, lv.get_name())
     retval = self.warningMessage(message)
     if retval == gtk.RESPONSE_NO:
-        return
+        return False
     
     # unmount and remove from fstab
     if mountpoint != None:
@@ -528,7 +528,7 @@ class InputController:
             self.command_handler.unmount(mountpoint)
         except CommandError, e:
             self.errorMessage(e.getMessage())
-            return
+            return False
     if fstab_mountpoint != None:
         Fstab.remove(fstab_mountpoint)
     
@@ -537,33 +537,51 @@ class InputController:
         self.command_handler.remove_lv(lv.get_path())
     except CommandError, e:
         self.errorMessage(e.getMessage())
-        return
+        return False
     
     #args = list()
     #args.append(lvname)
     #apply(self.reset_tree_model, args)
     if reset_tree:
         apply(self.reset_tree_model)
+    
+    return True
   
   def on_rm_select_lvs(self, button):
     if self.section_list == None:
         return
     #check if list > 0
-    if len(self.section_list) == 0:
-        return
-    
     lvs_to_remove = self.section_list[:]
-    vgname = lvs_to_remove[0].get_vg().get_name()
+    if len(lvs_to_remove) == 0:
+        return
+    vg = lvs_to_remove[0].get_vg()
+    # check if all operations could be completed
+    for lv in lvs_to_remove:
+        if lv.has_snapshots():
+            for snap in lv.get_snapshots():
+                if snap not in lvs_to_remove:
+                    self.errorMessage(UNABLE_TO_PROCESS_REQUEST + '\n' + _("Logical Volume \"%s\" has snapshots that are not selected for removal. They have to be removed as well.") % lv.get_name())
+                    return
     # remove snapshots first
     reload_lvm = False
     for lv in lvs_to_remove[:]:
         if lv.is_snapshot():
-            self.remove_lv(lv)
             lvs_to_remove.remove(lv)
-            reload_lvm = True
+            if self.remove_lv(lv):
+                # success
+                reload_lvm = True
+            else:
+                # remove_lv failure
+                origin = lv.get_snapshot_info()[0]
+                if origin in lvs_to_remove:
+                    msg = _("\"%s\", an origin of snapshot \"%s\", has been removed from removal list.")
+                    msg = msg % (origin.get_name(), lv.get_name())
+                    self.simpleInfoMessage(msg)
+                    lvs_to_remove.remove(origin)
+    
     if reload_lvm:
         self.model_factory.reload()
-    vg = self.model_factory.get_VG(vgname)
+        vg = self.model_factory.get_VG(vg.get_name())
     # remove other lvs
     for lv in lvs_to_remove:
         self.remove_lv(vg.get_lvs()[lv.get_name()])
@@ -577,7 +595,23 @@ class InputController:
       #need to check if list > 0
       if len(self.section_list) == 0:
           return
-      
+      # check if all operations could be completed
+      for pv in self.section_list:
+          for extent in pv.get_extent_blocks():
+              extents_lv = extent.get_lv()
+              if extents_lv.is_used():
+                  error_message = None
+                  if extents_lv.is_mirror_log or extents_lv.is_mirror_image:
+                      error_message = _("Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are not migratable, so %s is not removable.")
+                      error_message = error_message % (pv.get_path(), pv.get_path())
+                  elif extents_lv.is_snapshot() or extents_lv.has_snapshots():
+                      error_message = _("Physical Volume \"%s\" contains extents belonging to a snapshot or a snapshot's origin. Snapshots are not migratable, so %s is not removable.")
+                      error_message = error_message % (pv.get_path(), pv.get_path())
+                  if error_message != None:
+                      self.errorMessage(UNABLE_TO_PROCESS_REQUEST + '\n' + error_message)
+                      return
+    
+      # do the job
       for pv in self.section_list:
           pvpath = pv.get_path()
           vgname = pv.get_vg().get_name()
