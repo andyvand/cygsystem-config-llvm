@@ -51,6 +51,12 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Jul 26 2005 Stanko Kupcevic <kupcevic@redhat.com> 0.9.52-1.0
+  - Alpha release: Strings, minor bugs, GFS, GFS2, mirrors on diff HDs
+* Fri Jul 15 2005 Stanko Kupcevic <kupcevic@redhat.com> 0.9.51-1.0
+  - Alpha release: mirroring, multipath, GPT, zoom, ...
+* Tue Jun 21 2005 Stanko Kupcevic <kupcevic@redhat.com> 0.9.50-1.0
+  - Alpha release: snapshotting, resizing, lv properties
 * Thu May 26 2005 Jim Parsons <jparsons@redhat.com> 0.9.33-1.0
   - Version bump for rhel
 * Thu May 26 2005 Jim Parsons <jparsons@redhat.com> 0.9.32-1.0
