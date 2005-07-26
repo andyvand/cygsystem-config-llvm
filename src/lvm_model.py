@@ -82,7 +82,7 @@ LV_UUID=_("LV UUID:   ")
 UV_PARTITION_TYPE=_("Partition Type:   ")
 UV_SIZE=_("Size:   ")
 UV_MOUNT_POINT=_("Mount Point:   ")
-UV_MOUNTPOINT_AT_REBOOT=_("Mount Point at Reboot:   ")
+UV_MOUNTPOINT_AT_REBOOT=_("Mount Point when Rebooted:   ")
 UV_FILESYSTEM=_("File System:   ")
 
 PV_NAME=_("Physical Volume Name:   ")
