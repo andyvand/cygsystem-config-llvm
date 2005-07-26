@@ -821,8 +821,8 @@ Logical Volume</property>
 <widget class="GtkDialog" id="new_vg_form">
   <property name="title" translatable="yes">New Volume Group</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
-  <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">False</property>
+  <property name="window_position">GTK_WIN_POS_MOUSE</property>
+  <property name="modal">True</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="decorated">True</property>
@@ -1289,8 +1289,8 @@ Logical Volume</property>
 <widget class="GtkDialog" id="add_pv_to_vg_form">
   <property name="title" translatable="yes">Add Physical Volume to VG</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
-  <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">False</property>
+  <property name="window_position">GTK_WIN_POS_MOUSE</property>
+  <property name="modal">True</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="decorated">True</property>
@@ -1426,8 +1426,8 @@ Logical Volume</property>
   <property name="height_request">235</property>
   <property name="title" translatable="yes">Extend Volume Group</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
-  <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">False</property>
+  <property name="window_position">GTK_WIN_POS_MOUSE</property>
+  <property name="modal">True</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="decorated">True</property>
@@ -1657,8 +1657,8 @@ Logical Volume</property>
 <widget class="GtkDialog" id="init_block_device_dlg">
   <property name="title" translatable="yes">Initialize Block Device</property>
   <property name="type">GTK_WINDOW_TOPLEVEL</property>
-  <property name="window_position">GTK_WIN_POS_NONE</property>
-  <property name="modal">False</property>
+  <property name="window_position">GTK_WIN_POS_MOUSE</property>
+  <property name="modal">True</property>
   <property name="resizable">True</property>
   <property name="destroy_with_parent">False</property>
   <property name="decorated">True</property>
