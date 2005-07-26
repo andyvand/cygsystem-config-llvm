@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Michelle J Kim <mkim@redhat.com>, 2004.
-# hyunjun kim <hyunjun@gmail.com>, 2004
+# hyunjun kim <hyunjun@gmail.com>, 2004.
+# Michelle Ji Yeen Kim <mkim@redhat.com>, 2005.
 msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2004-10-26 11:55+1000\n"
-"Last-Translator: Michelle J Kim <mkim@redhat.com>\n"
-"Language-Team:  <ko@li.org>\n"
+"PO-Revision-Date: 2005-07-26 15:35+1000\n"
+"Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
+"Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #. ## gettext first, then import gtk (exception prints gettext "_") ###
 #: src/InputController.py:25 src/Properties_Renderer.py:26 src/renderer.py:33
@@ -120,8 +121,7 @@ msgstr ""
 
 #: src/InputController.py:115
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "볼륨 그룹이름 %s가 이미 존재합니다. 겹치지 않는 이름을 선택해주십시오."
 
 #: src/InputController.py:117
@@ -134,8 +134,7 @@ msgstr "새로운 볼륨 그룹에 대한 이름이 필요합니다."
 
 #: src/InputController.py:121
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "특정 마운트 포인트 %s가 존재하지 않습니다. 생성할까요?"
 
 #: src/InputController.py:123
@@ -160,8 +159,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:131
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:133
@@ -262,8 +260,7 @@ msgstr ""
 
 #: src/InputController.py:159
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s를 볼륨 그룹 %s로부터 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:160
@@ -284,8 +281,7 @@ msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
-"볼륨 그룹 %s는 %s에 저장된 자료를 옮기기에 충분한 공간이 있지 않습니다."
+msgstr "볼륨 그룹 %s는 %s에 저장된 자료를 옮기기에 충분한 공간이 있지 않습니다."
 
 #: src/InputController.py:163
 msgid ""
@@ -503,11 +499,8 @@ msgstr ""
 "확장하기"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr ""
-"볼륨 그룹 \n"
-"확장하기"
+msgstr "확장 볼륨 그룹"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
@@ -689,82 +682,69 @@ msgstr "ext3"
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:15
-#, fuzzy, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgextend 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgextend 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:16
-#, fuzzy, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:17
-#, fuzzy, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:18
-#, fuzzy, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:19
-#, fuzzy, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:20
-#, fuzzy, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:21
-#, fuzzy, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:22
-#, fuzzy, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:23
-#, fuzzy, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgreduce 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgreduce 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:24
-#, fuzzy, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:25
-#, fuzzy, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "umount 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "umount 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "umount 명령이 실패하였습니다. 수행했던 명령:\"%s\""
+#, python-format
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "mount 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #. first set up lvcreate args
 #. MUST be last arg for this command block
@@ -1062,46 +1042,43 @@ msgstr "비어있는"
 
 #: src/lvmui_constants.py:42
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:43
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:44
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:45
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #: src/lvmui_constants.py:49
-#, fuzzy
 msgid "Ext2"
-msgstr "ext2"
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:50
-#, fuzzy
 msgid "Ext3"
-msgstr "ext3"
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:52
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:53
-#, fuzzy
 msgid "Reiserfs"
-msgstr "Reiser"
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:54
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:56
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:44
 msgid "Properties for"
@@ -1181,14 +1158,3 @@ msgstr "할당되지 않은 볼륨들"
 msgid "Uninitialized Entities"
 msgstr "초기화되지 않은 엔티티들"
 
-#~ msgid "Autobackup?"
-#~ msgstr "자동백업?"
-
-#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
-#~ msgstr "/etc/fstab에 엔트리를 추가하려면 여기를 체크하십시오."
-
-#~ msgid "Resizable?"
-#~ msgstr "크기 조정 가능?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
