@@ -564,6 +564,7 @@ class InputController:
                     return
     # remove snapshots first
     reload_lvm = False
+    reset_tree_model = False
     for lv in lvs_to_remove[:]:
         if lv.is_snapshot():
             lvs_to_remove.remove(lv)
@@ -582,12 +583,15 @@ class InputController:
     if reload_lvm:
         self.model_factory.reload()
         vg = self.model_factory.get_VG(vg.get_name())
+        reset_tree_model = True
     # remove other lvs
     for lv in lvs_to_remove:
-        self.remove_lv(vg.get_lvs()[lv.get_name()])
+        if self.remove_lv(vg.get_lvs()[lv.get_name()]):
+            reset_tree_model = True
     
-    self.clear_highlighted_sections()
-    apply(self.reset_tree_model)
+    if reset_tree_model:
+        self.clear_highlighted_sections()
+        apply(self.reset_tree_model)
   
   def on_rm_select_pvs(self, button):
       if self.section_list == None:
@@ -612,6 +616,7 @@ class InputController:
                       return
     
       # do the job
+      reset_tree_model = False
       for pv in self.section_list:
           pvpath = pv.get_path()
           vgname = pv.get_vg().get_name()
@@ -619,15 +624,15 @@ class InputController:
           if self.remove_pv(pv_to_remove):
               # remove_pv migrates extents -> need to reload lvm data
               self.model_factory.reload()
+              reset_tree_model = True
       
       selection = self.treeview.get_selection()
       model,iter = selection.get_selected()
       vg = model.get_value(iter, OBJ_COL)
       
-      self.clear_highlighted_sections()
-      args = list()
-      args.append(vg.get_name())
-      apply(self.reset_tree_model,args)
+      if reset_tree_model:
+          self.clear_highlighted_sections()
+          apply(self.reset_tree_model, [vg.get_name()])
   
   def on_new_lv(self, button):
       main_selection = self.treeview.get_selection()
@@ -877,6 +882,7 @@ class InputController:
           self.errorMessage(EXCEEDING_MAX_PVS % max_addable_pvs)
           return
       
+      reset_tree_model = False
       for treepath in treepathlist:
           iter = model.get_iter(treepath)
           entity_path = model.get_value(iter, NAME_COL)
@@ -891,10 +897,12 @@ class InputController:
           except CommandError, e:
               self.errorMessage(e.getMessage())
               continue
+          reset_tree_model = True
       
       self.extend_vg_form.hide()
-      apply(self.reset_tree_model)
-      self.treeview.expand_to_path(main_path)
+      if reset_tree_model:
+          apply(self.reset_tree_model)
+          self.treeview.expand_to_path(main_path)
   
   def on_cancel_extend_vg(self, button):
       self.extend_vg_form.hide()
