@@ -100,7 +100,7 @@ class baselvm:
         
   
   def on_reload(self, *args):
-      self.volume_tab_view.reset_tree_model([])
+      self.volume_tab_view.reset_tree_model()
   
   def quit(self, *args):
       gtk.main_quit()

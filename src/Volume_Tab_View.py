@@ -56,7 +56,6 @@ class Volume_Tab_View:
     self.width = 0
     self.height = 0
     self.glade_xml = glade_xml
-    self.found_selection = False  #sentinel for foreach loop
 
     ##Set up list structure
     self.treeview = self.glade_xml.get_widget('treeview1')
@@ -132,71 +131,76 @@ class Volume_Tab_View:
     self.log_panel.hide()
     
     self.prepare_tree()
-                                                                                
+    model = self.treeview.get_model()
+    vgs = self.model_factory.get_VGs()
+    if len(vgs) > 0:
+        model.foreach(self.check_tree_items, [vgs[0].get_name()])
+    else:
+        unallocs = self.model_factory.query_unallocated()
+        if len(unallocs) > 0:
+            model.foreach(self.check_tree_items, ['', '', unallocs[0].get_path()])
+        else:
+            uninits = self.model_factory.query_uninitialized()
+            if len(uninits) > 0:
+                model.foreach(self.check_tree_items, ['', '', uninits[0].get_path()])
+  
+  # format is [vgname, lvpath, pvpath] - put '' if none
   def reset_tree_model(self, *in_args):
-      args = list()
-      for a in in_args:
-          args.append(a)
-      
       self.prepare_tree()
-      if len(args) != 0:
-          model = self.treeview.get_model()
-          self.found_selection = False
-          #model.foreach(self.check_tree_items, args)
       
+      args = []
+      for arg in in_args:
+          args.append(arg)
+      model = self.treeview.get_model()
+      model.foreach(self.check_tree_items, args)
   
   def check_tree_items(self, model, path, iter, *args):
-    name_selection_argss = list()
-    for a in args:
-      name_selection_argss.append(a)
-    if self.found_selection == True:
-      return
-
-    name_selection_args = name_selection_argss[0]
-    name_selection = name_selection_args[0]
-    vgname = None
-    if len(name_selection_args) > 1:
-      vgname = name_selection_args[1]
-
+    # return True to stop foreach, False to continue
+    
+    if len(args) == 0:
+        return True # don't go any further
+    args_internal = []
+    for arg in args[0]:
+        args_internal.append(arg)
+    while len(args_internal) < 3:
+        args_internal.append('')
+    vgname = args_internal[0]
+    lvpath = args_internal[1]
+    pvpath = args_internal[2]
+    
     selection = self.treeview.get_selection()
-
-    #Here we need to check PVs and LVs differently.
-    #LVs have a special model column.
-    nv = model.get_value(iter, PATH_COL)
-    lvn = model.get_value(iter, SIMPLE_LV_NAME_COL)
-    
-    if nv != None:
-      pvname_val = nv.strip()
+    type = model.get_value(iter, TYPE_COL)
+    if type == VG_PHYS_TYPE:
+        if vgname != '' and lvpath == '' and pvpath != '':
+            vg = model.get_value(iter, OBJ_COL)
+            if vgname != vg.get_name():
+                return False
+    elif type == VG_LOG_TYPE:
+        if vgname != '' and lvpath != '' and pvpath == '':
+            vg = model.get_value(iter, OBJ_COL)
+            if vgname != vg.get_name():
+                return False
+    elif type == VG_TYPE:
+        if vgname != '' and lvpath == '' and pvpath == '':
+            vg = model.get_value(iter, OBJ_COL)
+            if vgname != vg.get_name():
+                return False
+    elif type == LOG_TYPE:
+        if vgname == '' and lvpath != '' and pvpath == '':
+            lv = model.get_value(iter, OBJ_COL)
+            if lvpath != lv.get_path():
+                return False
+    elif type == PHYS_TYPE or type == UNALLOCATED_TYPE or type == UNINITIALIZED_TYPE:
+        if vgname == '' and lvpath == '' and pvpath != '':
+            pv = model.get_value(iter, OBJ_COL)
+            if pvpath not in pv.get_paths():
+                return False
     else:
-      pvname_val = nv
+        return False
+    self.treeview.expand_to_path(path)
+    selection.select_path(path)
+    return True
     
-    if lvn != None:
-      lvname_val = lvn.strip()
-    else:
-      lvname_val = lvn
-    
-    if pvname_val == name_selection:
-      self.treeview.expand_to_path(path)
-      self.found_selection = True #prevents vgname selection in multiple places
-      selection.select_path(path)
-
-    if lvname_val == name_selection:
-      if vgname == None:
-        self.treeview.expand_to_path(path)
-        self.found_selection = True #prevents LVs with same name in diff VGs 
-        selection.select_path(path)
-      else:
-        #get parent path in model
-        parent_iter = model.iter_parent(iter)
-        name_string = model.get_value(parent_iter, NAME_COL)
-        result = name_string.find(vgname)
-        if result != (-1):
-          self.treeview.expand_to_path(path)
-          self.found_selection = True  
-          selection.select_path(path)
-        else:
-          return
-  
   def prepare_tree(self):
     treemodel = self.treeview.get_model()
     treemodel.clear()

@@ -311,9 +311,7 @@ class InputController:
     
     self.new_vg_dlg.hide()
     
-    args = list()
-    args.append(pv.get_path())
-    apply(self.reset_tree_model, args)
+    apply(self.reset_tree_model, [Name_request])
   
   def prep_new_vg_dlg(self):
       self.new_vg_name.set_text("")
@@ -475,9 +473,7 @@ class InputController:
                 return False
     
     if reset_tree == True:
-        args = list()
-        args.append(vg.get_name())
-        apply(self.reset_tree_model, args)
+        apply(self.reset_tree_model, [vg.get_name()])
     
     return True
   
@@ -539,11 +535,8 @@ class InputController:
         self.errorMessage(e.getMessage())
         return False
     
-    #args = list()
-    #args.append(lvname)
-    #apply(self.reset_tree_model, args)
     if reset_tree:
-        apply(self.reset_tree_model)
+        apply(self.reset_tree_model, [lv.get_vg().get_name()])
     
     return True
   
@@ -591,7 +584,7 @@ class InputController:
     
     if reset_tree_model:
         self.clear_highlighted_sections()
-        apply(self.reset_tree_model)
+        apply(self.reset_tree_model, [vg.get_name()])
   
   def on_rm_select_pvs(self, button):
       if self.section_list == None:
@@ -652,9 +645,7 @@ class InputController:
       if dlg.run() == False:
           return
       
-      args = list()
-      args.append(vg.get_name())
-      apply(self.reset_tree_model, args)
+      apply(self.reset_tree_model,[vg.get_name()])
   
   def on_init_entity(self, button):
       selection = self.treeview.get_selection()
@@ -662,7 +653,7 @@ class InputController:
       pv = model.get_value(iter, OBJ_COL)
       if self.initialize_entity(pv) == None:
           return
-      apply(self.reset_tree_model, [pv.get_path()])
+      apply(self.reset_tree_model, ['', '', pv.get_path()])
   
   def on_init_entity_from_menu(self, obj, dlg=None):
       if dlg == None:
@@ -693,7 +684,7 @@ class InputController:
               self.glade_xml.get_widget("init_block_device_dlg_path").set_text(path)
               self.on_init_entity_from_menu(None, dlg)
           else:
-              apply(self.reset_tree_model, [pv.get_path()])
+              apply(self.reset_tree_model, ['', '', pv.get_path()])
       else:
           self.glade_xml.get_widget("init_block_device_dlg_path").set_text('')
   
@@ -813,7 +804,7 @@ class InputController:
       
       args = list()
       args.append(pv.get_path())
-      apply(self.reset_tree_model, args)
+      apply(self.reset_tree_model, [vg.get_name()])
       
       self.add_pv_to_vg_dlg.hide()
   
@@ -901,8 +892,7 @@ class InputController:
       
       self.extend_vg_form.hide()
       if reset_tree_model:
-          apply(self.reset_tree_model)
-          self.treeview.expand_to_path(main_path)
+          apply(self.reset_tree_model, [vg.get_name()])
   
   def on_cancel_extend_vg(self, button):
       self.extend_vg_form.hide()
@@ -983,7 +973,7 @@ class InputController:
           except CommandError, e:
               self.errorMessage(e.getMessage())
               return
-          apply(self.reset_tree_model)
+          apply(self.reset_tree_model, ['', '', pv.get_path()])
   
   def on_migrate_exts(self, button):
       selection = self.treeview.get_selection()
@@ -1010,7 +1000,7 @@ class InputController:
           self.command_handler.move_pv(pv.get_path(), exts_from_structs, dlg.get_data())
       except CommandError, e:
           self.errorMessage(e.getMessage())
-      apply(self.reset_tree_model, [pv.get_path()])
+      apply(self.reset_tree_model, [pv.get_vg().get_name()])
       return
   
   # removal - whether this is a migration or a removal operation
@@ -1049,10 +1039,7 @@ class InputController:
       if dlg.run() == False:
           return
       
-      args = list()
-      #args.append(Name_request)
-      args.append(vg.get_name().strip())
-      apply(self.reset_tree_model, args)
+      apply(self.reset_tree_model, [vg.get_name()])
   
   def on_create_snapshot(self, button):
       selection = self.treeview.get_selection()
@@ -1079,10 +1066,7 @@ class InputController:
       if dlg.run() == False:
           return
       
-      args = list()
-      #args.append(Name_request)
-      args.append(vg.get_name())
-      apply(self.reset_tree_model, args)
+      apply(self.reset_tree_model, [vg.get_name()])
       
       
       
