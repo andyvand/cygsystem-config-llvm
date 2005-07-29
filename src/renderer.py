@@ -114,7 +114,11 @@ class DisplayView:
         self.display.set_width(w_new)
         self.display.set_height(h_new)
         
-        return (True, True)
+        smallest_selectable = self.display.get_smallest_selectable_width()
+        if SMALLEST_SELECTABLE_WIDTH <= smallest_selectable or smallest_selectable == 0:
+            return (False, True)
+        else:
+            return (True, True)
     
     def zoom_out(self):
         if self.display == None:

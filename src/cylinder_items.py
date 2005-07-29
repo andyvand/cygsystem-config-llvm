@@ -362,6 +362,9 @@ class SingleCylinder:
         self.respect_selectable_width = bool
         self.__adjust_width()
     
+    def get_smallest_selectable_width(self):
+        return self.cyl.get_smallest_selectable_width()
+    
     def get_selection(self):
         return self.selection
     
@@ -669,6 +672,21 @@ class DoubleCylinder:
     def respect_smallest_selectable_width(self, bool):
         self.respect_selectable_width = bool
         self.__adjust_width()
+    
+    def get_smallest_selectable_width(self):
+        upper = self.cyl_upper.get_smallest_selectable_width()
+        lower = self.cyl_lower.get_smallest_selectable_width()
+        
+        if upper == 0:
+            return lower
+        elif lower == 0:
+            return upper
+        smaller = 0
+        if upper > lower:
+            smaller = lower
+        else:
+            smaller = upper
+        return smaller
     
     def get_selection(self):
         if self.selection == None:
