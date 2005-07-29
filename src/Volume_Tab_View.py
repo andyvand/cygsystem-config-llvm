@@ -173,34 +173,40 @@ class Volume_Tab_View:
     if type == VG_PHYS_TYPE:
         if vgname != '' and lvpath == '' and pvpath != '':
             vg = model.get_value(iter, OBJ_COL)
-            if vgname != vg.get_name():
-                return False
+            if vgname == vg.get_name():
+                self.treeview.expand_to_path(path)
+                selection.select_path(path)
+                return True
     elif type == VG_LOG_TYPE:
         if vgname != '' and lvpath != '' and pvpath == '':
             vg = model.get_value(iter, OBJ_COL)
-            if vgname != vg.get_name():
-                return False
+            if vgname == vg.get_name():
+                self.treeview.expand_to_path(path)
+                selection.select_path(path)
+                return True
     elif type == VG_TYPE:
         if vgname != '' and lvpath == '' and pvpath == '':
             vg = model.get_value(iter, OBJ_COL)
-            if vgname != vg.get_name():
-                return False
+            if vgname == vg.get_name():
+                self.treeview.expand_to_path(path)
+                selection.select_path(path)
+                return True
     elif type == LOG_TYPE:
         if vgname == '' and lvpath != '' and pvpath == '':
             lv = model.get_value(iter, OBJ_COL)
-            if lvpath != lv.get_path():
-                return False
+            if lvpath == lv.get_path():
+                self.treeview.expand_to_path(path)
+                selection.select_path(path)
+                return True
     elif type == PHYS_TYPE or type == UNALLOCATED_TYPE or type == UNINITIALIZED_TYPE:
         if vgname == '' and lvpath == '' and pvpath != '':
             pv = model.get_value(iter, OBJ_COL)
-            if pvpath not in pv.get_paths():
-                return False
-    else:
-        return False
-    self.treeview.expand_to_path(path)
-    selection.select_path(path)
-    return True
-    
+            if pvpath in pv.get_paths():
+                self.treeview.expand_to_path(path)
+                selection.select_path(path)
+                return True
+    return False
+
   def prepare_tree(self):
     treemodel = self.treeview.get_model()
     treemodel.clear()
