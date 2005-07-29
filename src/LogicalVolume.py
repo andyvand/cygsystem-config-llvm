@@ -22,6 +22,7 @@ class LogicalVolume(Volume):
     self.is_mirror_log = False
     self.is_mirror_image = False
     
+    self.set_stripes_num(0)
     
   
   def add_segment(self, segment):
@@ -60,6 +61,13 @@ class LogicalVolume(Volume):
       if self.segments[0].get_type() == MIRROR_SEGMENT_ID:
         return True
     return False
+  
+  def set_stripes_num(self, num):
+    self.stripes = num
+  def is_striped(self):
+    return self.stripes > 1
+  def stripes_num(self):
+    return self.stripes
   
   def set_mirror_log(self, log=None):
     self.mirror_log = log

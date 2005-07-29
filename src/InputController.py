@@ -1500,12 +1500,11 @@ class LV_edit_props:
             return
         # check if lv is striped - no mirroring
         if not self.new:
-            for seg in self.lv.get_segments():
-                if seg.get_type() == STRIPED_SEGMENT_ID:
-                    self.errorMessage(_("Striped Logical Volumes cannot be mirrored."))
-                    self.glade_xml.get_widget('enable_mirroring').set_active(False)
-                    self.update_size_limits()
-                    return
+            if self.lv.is_striped():
+                self.errorMessage(_("Striped Logical Volumes cannot be mirrored."))
+                self.glade_xml.get_widget('enable_mirroring').set_active(False)
+                self.update_size_limits()
+                return
         # check if lv is origin - no mirroring
         if not self.new:
             if self.lv.has_snapshots():
@@ -1659,7 +1658,7 @@ class LV_edit_props:
                 max_m_size = s2
             
             return max_m_size, buck1, buck2, [log]
-    
+        
     def on_mount_changed(self, obj):
         m1 = self.glade_xml.get_widget('mount').get_active()
         m2 = self.glade_xml.get_widget('mount_at_reboot').get_active()

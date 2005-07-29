@@ -442,22 +442,23 @@ class lvm_model:
   
   def __query_LVs(self):
     if LVS_HAS_MIRROR_OPTIONS:
-      LVS_OPTION_STRING="lv_name,vg_name,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size,mirror_log"
+      LVS_OPTION_STRING="lv_name,vg_name,stripes,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size,mirror_log"
     else:
-      LVS_OPTION_STRING="lv_name,vg_name,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size"
+      LVS_OPTION_STRING="lv_name,vg_name,stripes,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size"
     LV_NAME_IDX         = 0
     LV_VG_NAME_IDX      = 1
-    LV_STRIPE_SIZE_IDX  = 2
-    LV_ATTR_IDX         = 3
-    LV_UUID_IDX         = 4
-    LV_DEVICES_IDX      = 5
-    LV_SNAP_ORIGIN_IDX  = 6
-    LV_SNAP_PERCENT_IDX = 7
-    LV_SEG_START_IDX    = 8
-    LV_SEG_SIZE_IDX     = 9
-    LV_EXTENT_SIZE_IDX  = 10
-    LV_SIZE_IDX         = 11
-    LV_MIRROR_LOG_IDX   = 12
+    LV_STRIPES_NUM_IDX  = 2
+    LV_STRIPE_SIZE_IDX  = 3
+    LV_ATTR_IDX         = 4
+    LV_UUID_IDX         = 5
+    LV_DEVICES_IDX      = 6
+    LV_SNAP_ORIGIN_IDX  = 7
+    LV_SNAP_PERCENT_IDX = 8
+    LV_SEG_START_IDX    = 9
+    LV_SEG_SIZE_IDX     = 10
+    LV_EXTENT_SIZE_IDX  = 11
+    LV_SIZE_IDX         = 12
+    LV_MIRROR_LOG_IDX   = 13
     
     self.__reload_logical_volumes_paths()
     
@@ -531,6 +532,7 @@ class lvm_model:
         segment.set_extent_block(extent_block)
       else:
         # striped segment
+        lv.set_stripes_num(int(words[LV_STRIPES_NUM_IDX]))
         stripe_size = int(words[LV_STRIPE_SIZE_IDX])
         segment = StripedSegment(stripe_size, seg_start, seg_size)
         stripe_id = 0
