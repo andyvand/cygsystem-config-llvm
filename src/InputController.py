@@ -135,7 +135,7 @@ REMAINING_SPACE_GIGABYTES=_("%s gigabytes")
 REMAINING_SPACE_EXTENTS=_("%s extents")
 
 REMAINING_SPACE_VG=_("Remaining free space in Volume Group:\n")
-REMAINING_SPACE_AFTER=_("Remaining space for this LV:\n")
+REMAINING_SPACE_AFTER=_("Remaining space for this Volume:\n")
 
 EXTENTS=_("Extents")
 GIGABYTES=_("Gigabytes")
@@ -353,20 +353,20 @@ class InputController:
         if extents_lv.is_used():
             error_message = None
             if extents_lv.is_mirror_log:
-                error_message = _("PV %s contains extents belonging to mirror log of LV %s. Mirrored LVs are not migratable, so %s is not removable.")
+                error_message = _("Physical Volume %s contains extents belonging to a mirror log of Logical Volume %s. Mirrored Logical Volumes are not migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
             elif extents_lv.is_mirror_image:
-                error_message = _("PV %s contains extents belonging to mirror image of LV %s. Mirrored LVs are not migratable, so %s is not removable.")
+                error_message = _("Physical Volume %s contains extents belonging to a mirror image of Logical Volume %s. Mirrored Logical Volumes are not migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
             elif extents_lv.is_snapshot():
-                error_message = _("PV %s contains extents belonging to %s, a snapshot of %s. Snapshots are not migratable, so %s is not removable.")
+                error_message = _("Physical Volume %s contains extents belonging to %s, a snapshot of %s. Snapshots are not migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), extents_lv.get_snapshot_info()[0].get_name(), pv.get_path())
             elif extents_lv.has_snapshots():
                 snapshots = extents_lv.get_snapshots()
                 if len(snapshots) == 1:
-                    error_message = _("PV %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not migratable, so %s is not removable.")
+                    error_message = _("Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not migratable, so %s is not removable.")
                 else:
-                    error_message = _("PV %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not migratable, so %s is not removable.")
+                    error_message = _("Physical Volume %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not migratable, so %s is not removable.")
                 snapshots_string = snapshots[0].get_name()
                 for snap in snapshots[1:]:
                     snapshot_string = snapshot_string + ', ' + snap.get_name()
@@ -1494,7 +1494,7 @@ class LV_edit_props:
             return
         # is mirroring supported by lvm version in use?
         if self.model_factory.is_mirroring_supported() == False:
-            self.errorMessage(_("Underlying LVM doesn't support mirroring"))
+            self.errorMessage(_("Underlying Logical Volume Management doesn't support mirroring"))
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
             self.update_size_limits()
             return
@@ -1502,14 +1502,14 @@ class LV_edit_props:
         if not self.new:
             for seg in self.lv.get_segments():
                 if seg.get_type() == STRIPED_SEGMENT_ID:
-                    self.errorMessage(_("Striped LVs cannot be mirrored."))
+                    self.errorMessage(_("Striped Logical Volumes cannot be mirrored."))
                     self.glade_xml.get_widget('enable_mirroring').set_active(False)
                     self.update_size_limits()
                     return
         # check if lv is origin - no mirroring
         if not self.new:
             if self.lv.has_snapshots():
-                self.errorMessage(_("LVs under snapshots cannot be mirrored yet."))
+                self.errorMessage(_("Logical Volumes under snapshots cannot be mirrored yet."))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 self.update_size_limits()
                 return
@@ -1919,10 +1919,10 @@ class LV_edit_props:
                 if t in string.ascii_letters + string.digits + '._-+':
                     continue
                 elif t in string.whitespace:
-                    invalid_lvname_message = _("Whitespaces are not allowed in LV names")
+                    invalid_lvname_message = _("Whitespaces are not allowed in Logical Volume names")
                     break
                 else:
-                    invalid_lvname_message = _("Invalid character \"%s\" in LV name") % t
+                    invalid_lvname_message = _("Invalid character \"%s\" in Logical Volume name") % t
                     break
         if invalid_lvname_message != '':
             self.errorMessage(invalid_lvname_message)
