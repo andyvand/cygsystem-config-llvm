@@ -50,13 +50,13 @@ OBJ_COL = 4
 #INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 INIT_ENTITY=_("All data on disk entity %s will be lost! Are you certain that you wish to initialize it?")
 INIT_ENTITY_FILESYSTEM=_("Disk entity %s contains %s filesystem. All data on it will be lost! Are you certain that you wish to initialize disk entity %s?")
-INIT_ENTITY_MOUNTED=_("Disk entity %s contains data of folder %s. All data in it will be lost! Are you certain that you wish to initialize disk entity %s?")
+INIT_ENTITY_MOUNTED=_("Disk entity %s contains data from directory %s. All data in it will be lost! Are you certain that you wish to initialize disk entity %s?")
 INIT_ENTITY_FREE_SPACE=_("Are you certain that you wish to initialize %s of free space on disk %s?")
 INIT_ENTITY_DEVICE_CHOICE=_("You are about to initialize unpartitioned disk %s. It is advisable, although not required, to create a partition on it. Do you want to create a single partition encompassing the whole drive?")
 
 RELOAD_LVM_MESSAGE=_("Reloading LVM. Please wait.")
 
-RESTART_COMPUTER=_("Changes will take effect after computer is restarted. If device %s is used, before restart, data corruption WILL occur. It is advisable to restart your computer.")
+RESTART_COMPUTER=_("Changes will take effect after computer is restarted. If device %s is used, before restart, data corruption WILL occur. It is advisable to restart your computer now.")
 
 MIRROR_LOG=_("Mirror Log")
 

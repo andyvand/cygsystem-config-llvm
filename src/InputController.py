@@ -95,9 +95,9 @@ NON_UNIQUE_NAME=_("A Logical Volume with the name %s already exists in this Volu
 
 NON_UNIQUE_VG_NAME=_("A Volume Group with the name %s already exists. Please choose a unique name.")
 
-MUST_PROVIDE_NAME=_("A Name must be provided for new Logical Volume")
+MUST_PROVIDE_NAME=_("A Name must be provided for the new Logical Volume")
 
-MUST_PROVIDE_VG_NAME=_("A Name must be provided for new Volume Group")
+MUST_PROVIDE_VG_NAME=_("A Name must be provided for the new Volume Group")
 
 BAD_MNT_POINT=_("The specified mount point, %s, does not exist. Do you wish to create it?")
 
@@ -115,8 +115,8 @@ NOT_ENOUGH_SPACE_FOR_NEW_LV=_("Volume Group %s does not have enough space for ne
 
 ALREADY_A_SNAPSHOT=_("A snapshot of a snapshot is not supported.")
 
-CANNOT_REMOVE_UNDER_SNAPSHOT=_("Logical volume %s is under a snapshot %s. Please remove the snapshot first.")
-CANNOT_REMOVE_UNDER_SNAPSHOTS=_("Logical volume %s is under snapshots: %s. Please remove snapshots first.")
+CANNOT_REMOVE_UNDER_SNAPSHOT=_("Logical volume %s has snapshot %s currently associated with it. Please remove the snapshot first.")
+CANNOT_REMOVE_UNDER_SNAPSHOTS=_("Logical volume %s has snapshots: %s currently associated with it. Please remove snapshots first.")
 
 TYPE_CONVERSION_ERROR=_("Undefined type conversion error in model factory. Unable to complete task.")
 
@@ -157,7 +157,7 @@ NO_DM_SNAPSHOT=_("The dm-snapshot module is either not loaded in your kernel, or
 
 CONFIRM_LV_REMOVE=_("Are you quite certain that you wish to remove logical volume %s?")
 CONFIRM_LV_REMOVE_FILESYSTEM=_("Logical volume %s contains %s filesystem. All data on it will be lost! Are you quite certain that you wish to remove logical volume %s?")
-CONFIRM_LV_REMOVE_MOUNTED=_("Logical volume %s contains data of folder %s. All data in it will be lost! Are you quite certain that you wish to remove logical volume %s?")
+CONFIRM_LV_REMOVE_MOUNTED=_("Logical volume %s contains data from directory %s. All data in it will be lost! Are you quite certain that you wish to remove logical volume %s?")
 
 
 ###########################################################
@@ -353,20 +353,20 @@ class InputController:
         if extents_lv.is_used():
             error_message = None
             if extents_lv.is_mirror_log:
-                error_message = _("Physical Volume %s contains extents belonging to a mirror log of Logical Volume %s. Mirrored Logical Volumes are not migratable, so %s is not removable.")
+                error_message = _("Physical Volume %s contains extents belonging to a mirror log of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
             elif extents_lv.is_mirror_image:
-                error_message = _("Physical Volume %s contains extents belonging to a mirror image of Logical Volume %s. Mirrored Logical Volumes are not migratable, so %s is not removable.")
+                error_message = _("Physical Volume %s contains extents belonging to a mirror image of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), pv.get_path())
             elif extents_lv.is_snapshot():
-                error_message = _("Physical Volume %s contains extents belonging to %s, a snapshot of %s. Snapshots are not migratable, so %s is not removable.")
+                error_message = _("Physical Volume %s contains extents belonging to %s, a snapshot of %s. Snapshots are not yet migratable, so %s is not removable.")
                 error_message = error_message % (pv.get_path(), extents_lv.get_name(), extents_lv.get_snapshot_info()[0].get_name(), pv.get_path())
             elif extents_lv.has_snapshots():
                 snapshots = extents_lv.get_snapshots()
                 if len(snapshots) == 1:
-                    error_message = _("Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not migratable, so %s is not removable.")
+                    error_message = _("Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not yet migratable, so %s is not removable.")
                 else:
-                    error_message = _("Physical Volume %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not migratable, so %s is not removable.")
+                    error_message = _("Physical Volume %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not yet migratable, so %s is not removable.")
                 snapshots_string = snapshots[0].get_name()
                 for snap in snapshots[1:]:
                     snapshot_string = snapshot_string + ', ' + snap.get_name()
@@ -553,7 +553,7 @@ class InputController:
         if lv.has_snapshots():
             for snap in lv.get_snapshots():
                 if snap not in lvs_to_remove:
-                    self.errorMessage(UNABLE_TO_PROCESS_REQUEST + '\n' + _("Logical Volume \"%s\" has snapshots that are not selected for removal. They have to be removed as well.") % lv.get_name())
+                    self.errorMessage(UNABLE_TO_PROCESS_REQUEST + '\n' + _("Logical Volume \"%s\" has snapshots that are not selected for removal. They must be removed as well.") % lv.get_name())
                     return
     # remove snapshots first
     reload_lvm = False
@@ -568,7 +568,7 @@ class InputController:
                 # remove_lv failure
                 origin = lv.get_snapshot_info()[0]
                 if origin in lvs_to_remove:
-                    msg = _("\"%s\", an origin of snapshot \"%s\", has been removed from removal list.")
+                    msg = _("\"%s\", an origin of snapshot \"%s\", has been deleted from removal list.")
                     msg = msg % (origin.get_name(), lv.get_name())
                     self.simpleInfoMessage(msg)
                     lvs_to_remove.remove(origin)
@@ -667,7 +667,7 @@ class InputController:
           path = label.get_text().strip()
           target = follow_links_to_target(path)
           if target == None:
-              self.errorMessage(_("The path you specified doesn't exist."))
+              self.errorMessage(_("The path you specified does not exist."))
               self.on_init_entity_from_menu(None, dlg)
               return
           else:
@@ -982,10 +982,10 @@ class InputController:
       
       # get selected extents
       if self.section_list == None:
-          self.simpleInfoMessage(_("Select some extents first"))
+          self.simpleInfoMessage(_("Please select some extents first"))
           return
       if len(self.section_list) == 0:
-          self.simpleInfoMessage(_("Select some extents first"))
+          self.simpleInfoMessage(_("Please select some extents first"))
           return
       extents_from = self.section_list[:]
       
@@ -1019,7 +1019,7 @@ class InputController:
                   pvs.append(p)
               free_extents = free_extents + p_free_exts
       if needed_extents > free_extents:
-          self.errorMessage(_("There is not enough free extents to perform migration to. Add more physical volumes."))
+          self.errorMessage(_("There are not enough free extents to perform the necessary migration. Adding more physical volumes would solve the problem."))
           return None
       lvs = {}
       for ext in exts:
@@ -1494,7 +1494,7 @@ class LV_edit_props:
             return
         # is mirroring supported by lvm version in use?
         if self.model_factory.is_mirroring_supported() == False:
-            self.errorMessage(_("Underlying Logical Volume Management doesn't support mirroring"))
+            self.errorMessage(_("Underlying Logical Volume Management does not support mirroring"))
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
             self.update_size_limits()
             return
@@ -1508,14 +1508,14 @@ class LV_edit_props:
         # check if lv is origin - no mirroring
         if not self.new:
             if self.lv.has_snapshots():
-                self.errorMessage(_("Logical Volumes under snapshots cannot be mirrored yet."))
+                self.errorMessage(_("Logical Volumes with associated snapshots cannot be mirrored yet."))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 self.update_size_limits()
                 return
         
         # mirror images placement: diff HDs or anywhere
         if self.mirror_to_diff_hds == None: # prompt
-            rc = self.questionMessage(_("Purpose of mirroring is to protect data in the case of Hard Drive failure. Do you want to place mirror images onto different Hard Drives?"))
+            rc = self.questionMessage(_("The primary purpose of mirroring is to protect data in the case of hard drive failure. Do you want to place mirror images onto different hard drives?"))
             if rc == gtk.RESPONSE_YES:
                 self.mirror_to_diff_hds = True
             else:
@@ -1524,12 +1524,12 @@ class LV_edit_props:
         max_mirror_size = self.__get_max_mirror_data(self.vg)[0]
         if max_mirror_size == 0:
             if self.mirror_to_diff_hds:
-                self.errorMessage(_("Less than 3 Hard Drives with free space. Disabling mirroring."))
+                self.errorMessage(_("Less than 3 hard drives are available with free space. Disabling mirroring."))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 self.update_size_limits()
                 return
             else:
-                self.errorMessage(_("There has to be free space on at least three Physical Volumes to enable mirroring"))
+                self.errorMessage(_("There must be free space on at least three Physical Volumes to enable mirroring"))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 self.update_size_limits()
                 return
@@ -1537,7 +1537,7 @@ class LV_edit_props:
         if self.size_new > max_mirror_size:
             if self.new:
                 self.update_size_limits(max_mirror_size)
-                self.infoMessage(_("Size of Logical Volume has been adjusted to the maximum available size for mirrors."))
+                self.infoMessage(_("The size of the Logical Volume has been adjusted to the maximum available size for mirrors."))
                 self.size_entry.select_region(0, (-1))
                 self.size_entry.grab_focus()
             else:
@@ -2022,11 +2022,11 @@ class LV_edit_props:
             # DEBUGING: check if resizing is posible
             #if extend:
             #    if self.command_handler.extend_lv(self.lv.get_path(), size_new, True) == False:
-            #        retval = self.infoMessage(_("fixme: resizing not posible"))
+            #        retval = self.infoMessage(_("fixme: resizing not possible"))
             #        return False
             #elif reduce:
             #    if self.command_handler.reduce_lv(self.lv.get_path(), size_new, True) == False:
-            #        retval = self.infoMessage(_("fixme: resizing not posible"))
+            #        retval = self.infoMessage(_("fixme: resizing not possible"))
             #        return False
             
             mounted = self.mount
@@ -2037,7 +2037,7 @@ class LV_edit_props:
             if resize and self.lv.is_mirrored():
                 unmount = True
             if filesys_change and self.fs.name!=self.fs_none.name and not ext2_to_ext3:
-                retval = self.warningMessage(_("Change of filesystem will destroy all data on Logical Volume! Are you sure you want to proceed?"))
+                retval = self.warningMessage(_("Changing the filesystem will destroy all data on the Logical Volume! Are you sure you want to proceed?"))
                 if (retval == gtk.RESPONSE_NO):
                     return False
                 unmount_prompt = False

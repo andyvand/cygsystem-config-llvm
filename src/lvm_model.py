@@ -301,7 +301,7 @@ class lvm_model:
     for pv in pvs_list:
       if len(pv.get_paths()) > 1:
         if pv.get_type() == UNINITIALIZED_TYPE:
-          pv.add_property(NOT_INITIALIZABLE, _("Multipathed device"))
+          pv.add_property(NOT_INITIALIZABLE, _("Multipath device"))
           if pv.initializable:
             pv.initializable = False
             pv.add_property(_("Note:   "), _("Initialize manually"))
