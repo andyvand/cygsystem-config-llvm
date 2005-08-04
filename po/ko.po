@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-07-26 15:35+1000\n"
+"PO-Revision-Date: 2005-08-04 11:36+1000\n"
 "Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -144,23 +144,23 @@ msgstr "마운트 위치 %s의 생성이 갑작스럽게 실패하였습니다."
 
 #: src/InputController.py:125
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "이 버전에서는 이 기능이 아직 구현되지 않습니다"
 
 #: src/InputController.py:127
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "볼륨 그룹 내 물리적 볼륨의 수가 최대수에 이르렀습니다."
 
 #: src/InputController.py:129
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "볼륨 그룹 내 논리 볼륨의 수가 최대수에 이르렀습니다."
 
 #: src/InputController.py:131
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "모델 공장(model factory)에 정의되지 않은 형 변환 오류가 발생하여 작업을 완료하지 못했습니다."
 
 #: src/InputController.py:133
 msgid ""
@@ -269,6 +269,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"물리적 볼륨 %s 를 볼륨 그룹 %s에서 삭제한다면 "
+"볼륨 그룹도 비어서 삭제될 것입니다. 그래도 계속 진행하시겠습니까?"
 
 #: src/InputController.py:161
 #, python-format
@@ -276,12 +278,14 @@ msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
 msgstr "논리적 볼륨 %s를 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:162
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr "볼륨 그룹 %s는 %s에 저장된 자료를 옮기기에 충분한 공간이 있지 않습니다."
+msgstr ""
+"볼륨 그룹 %s는 %s에 저장된 자료를 옮기기에 충분한 공간이 있지 않습니다. "
+"볼륨 그룹에 추가 물리적 볼륨을 추가하시는것이 좋을 듯 합니다."
 
 #: src/InputController.py:163
 msgid ""
