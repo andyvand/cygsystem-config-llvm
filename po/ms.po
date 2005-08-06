@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-07-30 19:01+0800\n"
+"PO-Revision-Date: 2005-08-07 01:51+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -598,9 +598,8 @@ msgid "Volume Group Name:   "
 msgstr "Nama Kumpulan Volum:"
 
 #: src/lvm_model.py:53
-#, fuzzy
 msgid "System ID:   "
-msgstr "ID SCSI"
+msgstr "ID Sistem:"
 
 #: src/lvm_model.py:54
 msgid "Format:   "
@@ -609,19 +608,16 @@ msgstr "Format:   "
 #: src/lvm_model.py:55
 #: src/lvm_model.py:72
 #: src/lvm_model.py:86
-#, fuzzy
 msgid "Attributes:   "
-msgstr "Atribut"
+msgstr "Atribut:"
 
 #: src/lvm_model.py:56
-#, fuzzy
 msgid "Volume Group Size:   "
-msgstr "Nama Kumpulan _Volum:"
+msgstr "Saiz Kumpulan Volum:"
 
 #: src/lvm_model.py:57
-#, fuzzy
 msgid "Available Space:   "
-msgstr "Penuhkan semua ruang yang ada"
+msgstr "Ruang Yang Ada:"
 
 #: src/lvm_model.py:58
 #, fuzzy
@@ -677,12 +673,10 @@ msgid "Number of Segments:   "
 msgstr "nombor kumpulan"
 
 #: src/lvm_model.py:70
-#, fuzzy
 msgid "Number of Stripes:   "
 msgstr "Jumlah Stripe:"
 
 #: src/lvm_model.py:71
-#, fuzzy
 msgid "Stripe Size:   "
 msgstr "Saiz Stripe:"
 
