@@ -1,0 +1,817 @@
+# Serbian translations for system-config-lvm
+# Copyright (C) 2005 Red Hat, Inc.
+# This file is distributed under the same license as the system-config-lvm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2005.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: system-config-lvm\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2005-06-12 15:36-0000\n"
+"Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
+"Language-Team: Serbian (sr) <fedora@prevod.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/InputController.py:24
+#: src/Properties_Renderer.py:24
+#: src/renderer.py:31
+#: src/Volume_Tab_View.py:26
+#, python-format
+msgid ""
+"\n"
+"  Unable to initialize graphical environment. Most likely cause of failure\n"
+"  is that the tool was not run using a graphical environment. Please either\n"
+"  start your graphical user interface or set your DISPLAY variable.\n"
+"                                                                                \n"
+"  Caught exception: %s\n"
+msgstr ""
+
+#. ##TRANSLATOR: The two strings below refer to the name and type of
+#. ##available disk entities on the system. There are two types --
+#. ##The first is an 'unallocated physical volume' which is a disk or
+#. ##partition that has been initialized for use with LVM, by writing
+#. ##a special label onto the first block of the partition. The other type
+#. ##is an 'uninitialized entity', which is an available disk or partition
+#. ##that is NOT yet initialized to be used with LVM. Hope this helps give
+#. ##some context.
+#: src/InputController.py:102
+msgid "Name"
+msgstr ""
+
+#: src/InputController.py:103
+msgid "Size"
+msgstr ""
+
+#: src/InputController.py:104
+msgid "Entity Type"
+msgstr ""
+
+#: src/InputController.py:106
+msgid "Unallocated Physical Volume"
+msgstr ""
+
+#: src/InputController.py:107
+msgid "Uninitialized Disk Entity"
+msgstr ""
+
+#: src/InputController.py:108
+#, python-format
+msgid "Select a disk entity to add to the %s Volume Group:"
+msgstr ""
+
+#: src/InputController.py:110
+msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
+msgstr ""
+
+#: src/InputController.py:112
+#, python-format
+msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
+msgstr ""
+
+#: src/InputController.py:114
+#, python-format
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr ""
+
+#: src/InputController.py:116
+msgid "A Name must be provided for the new Logical Volume"
+msgstr ""
+
+#: src/InputController.py:118
+msgid "A Name must be provided for the new Volume Group"
+msgstr ""
+
+#: src/InputController.py:120
+#, python-format
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr ""
+
+#: src/InputController.py:122
+#, python-format
+msgid "The creation of mount point %s unexpectedly failed."
+msgstr ""
+
+#: src/InputController.py:124
+msgid "This capability is not yet implemented in this version"
+msgstr ""
+
+#: src/InputController.py:126
+msgid "The number of Physical Volumes in this Volume Group has reached its maximum limit."
+msgstr ""
+
+#: src/InputController.py:128
+msgid "The number of Logical Volumes in this Volume Group has reached its maximum limit."
+msgstr ""
+
+#: src/InputController.py:130
+msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgstr ""
+
+#: src/InputController.py:132
+msgid "There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind."
+msgstr ""
+
+#: src/InputController.py:134
+#, python-format
+msgid "BIG WARNING: Logical Volume %s has an %s file system on it and is currently mounted on %s. Are you absolutely certain that you wish to discard the data on this mounted filesystem?"
+msgstr ""
+
+#. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
+#. ##of an extent is user-definable.
+#: src/InputController.py:138
+#, python-format
+msgid "Unused space on %s"
+msgstr ""
+
+#: src/InputController.py:139
+#, python-format
+msgid "%s megabytes"
+msgstr ""
+
+#: src/InputController.py:140
+#, python-format
+msgid "%s kilobytes"
+msgstr ""
+
+#: src/InputController.py:141
+#, python-format
+msgid "%s gigabytes"
+msgstr ""
+
+#: src/InputController.py:142
+#, python-format
+msgid "%s extents"
+msgstr ""
+
+#: src/InputController.py:144
+#, python-format
+msgid "The size requested for the new Logical Volume exceeds the available free space on Volume Group %s. The available space is: "
+msgstr ""
+
+#: src/InputController.py:146
+#, python-format
+msgid "The %s should only contain number values"
+msgstr ""
+
+#: src/InputController.py:147
+msgid "The  Maximum Physical Volumes field should contain only integer values between 1 and 256"
+msgstr ""
+
+#: src/InputController.py:148
+msgid "The  Maximum Logical Volumes field should contain only integer values between 1 and 256"
+msgstr ""
+
+#. ##TRANSLATOR: Striping writes data to multiple physical devices
+#. ##concurrently, with the objective being redundance and/or speed
+#: src/InputController.py:152
+msgid "Stripe Size field"
+msgstr ""
+
+#: src/InputController.py:153
+msgid "Number of Stripes field"
+msgstr ""
+
+#: src/InputController.py:155
+#, python-format
+msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
+msgstr ""
+
+#: src/InputController.py:157
+#, python-format
+msgid "The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume."
+msgstr ""
+
+#: src/InputController.py:158
+#, python-format
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr ""
+
+#: src/InputController.py:159
+#, python-format
+msgid "Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?"
+msgstr ""
+
+#: src/InputController.py:160
+#, python-format
+msgid "Are you quite certain that you wish to remove the Logical Volume %s?"
+msgstr ""
+
+#: src/InputController.py:161
+#, python-format
+msgid "Volume Group %s does not have enough space to move the data stored on %s. A possible solution would be to add an additional Physical Volume to the Volume Group."
+msgstr ""
+
+#: src/InputController.py:162
+msgid "The dm-mirror module is either not loaded in your kernel, or your kernel does not support the dm-mirror target. If it is supported, try running \"modprobe dm-mirror\". Otherwise, operations that require moving data on Physical Extents are unavailable."
+msgstr ""
+
+#: src/lvui.glade.h:1
+msgid "*"
+msgstr ""
+
+#: src/lvui.glade.h:2
+msgid "1024"
+msgstr ""
+
+#: src/lvui.glade.h:3
+msgid "128"
+msgstr ""
+
+#: src/lvui.glade.h:4
+msgid "16"
+msgstr ""
+
+#: src/lvui.glade.h:5
+msgid "2"
+msgstr ""
+
+#: src/lvui.glade.h:6
+msgid "256"
+msgstr ""
+
+#: src/lvui.glade.h:7
+msgid "32"
+msgstr ""
+
+#: src/lvui.glade.h:8
+msgid "4"
+msgstr ""
+
+#: src/lvui.glade.h:9
+msgid "40 megabytes"
+msgstr ""
+
+#: src/lvui.glade.h:10
+msgid "512"
+msgstr ""
+
+#: src/lvui.glade.h:11
+msgid "64"
+msgstr ""
+
+#: src/lvui.glade.h:12
+msgid "8"
+msgstr ""
+
+#: src/lvui.glade.h:13
+msgid "Add Physical Volume to VG"
+msgstr ""
+
+#: src/lvui.glade.h:14
+msgid ""
+"Add to existing \n"
+"Volume Group"
+msgstr ""
+
+#: src/lvui.glade.h:16
+msgid ""
+"Create New\n"
+"Logical Volume"
+msgstr ""
+
+#: src/lvui.glade.h:18
+msgid "Create New LV"
+msgstr ""
+
+#: src/lvui.glade.h:19
+msgid "Create a New Logical Volume"
+msgstr ""
+
+#: src/lvui.glade.h:20
+msgid ""
+"Create new \n"
+"Volume Group"
+msgstr ""
+
+#: src/lvui.glade.h:22
+msgid ""
+"Extend\n"
+"Volume Group"
+msgstr ""
+
+#: src/lvui.glade.h:24
+msgid ""
+"Extend \n"
+"Logical Volume"
+msgstr ""
+
+#: src/lvui.glade.h:26
+msgid "Extend Volume Group"
+msgstr ""
+
+#: src/lvui.glade.h:27
+msgid "Extents"
+msgstr ""
+
+#: src/lvui.glade.h:28
+msgid "Filesystem: "
+msgstr ""
+
+#: src/lvui.glade.h:29
+msgid "Gigabytes"
+msgstr ""
+
+#: src/lvui.glade.h:30
+msgid "Initialize Entity"
+msgstr ""
+
+#: src/lvui.glade.h:31
+#: src/lvmui_constants.py:51
+msgid "JFS"
+msgstr ""
+
+#: src/lvui.glade.h:32
+msgid "Kilo"
+msgstr ""
+
+#: src/lvui.glade.h:33
+msgid "Kilobytes"
+msgstr ""
+
+#: src/lvui.glade.h:34
+msgid "Linear"
+msgstr ""
+
+#: src/lvui.glade.h:35
+msgid "Logical Volume Management"
+msgstr ""
+
+#: src/lvui.glade.h:36
+msgid "Manage Volumes"
+msgstr ""
+
+#: src/lvui.glade.h:37
+msgid "Maximum Logical Volumes: "
+msgstr ""
+
+#: src/lvui.glade.h:38
+msgid "Maximum Physical Volumes: "
+msgstr ""
+
+#: src/lvui.glade.h:39
+msgid "Meg"
+msgstr ""
+
+#: src/lvui.glade.h:40
+#: src/renderer.py:104
+msgid "Megabytes"
+msgstr ""
+
+#: src/lvui.glade.h:41
+msgid ""
+"Migrate Selected\n"
+"Extent(s) From Volume"
+msgstr ""
+
+#: src/lvui.glade.h:43
+msgid "Mount point (If blank, LV will not be mounted):"
+msgstr ""
+
+#: src/lvui.glade.h:44
+msgid "Name for Volume Group: "
+msgstr ""
+
+#: src/lvui.glade.h:45
+msgid "Name for new LV:"
+msgstr ""
+
+#: src/lvui.glade.h:46
+msgid "New Volume Group"
+msgstr ""
+
+#: src/lvui.glade.h:47
+msgid "New Volume Group Form"
+msgstr ""
+
+#. File System Types
+#: src/lvui.glade.h:48
+#: src/lvmui_constants.py:48
+msgid "No Filesystem"
+msgstr ""
+
+#: src/lvui.glade.h:49
+msgid "Number of Stripes: "
+msgstr ""
+
+#: src/lvui.glade.h:50
+msgid "Physical Extent Size: "
+msgstr ""
+
+#: src/lvui.glade.h:51
+msgid ""
+"Remove \n"
+"Logical Volume"
+msgstr ""
+
+#: src/lvui.glade.h:53
+msgid ""
+"Remove Selected\n"
+"Logical Volume(s)"
+msgstr ""
+
+#: src/lvui.glade.h:55
+msgid ""
+"Remove Selected\n"
+"Physical Volume(s)"
+msgstr ""
+
+#: src/lvui.glade.h:57
+msgid ""
+"Remove Volume from\n"
+"Volume Group"
+msgstr ""
+
+#: src/lvui.glade.h:59
+msgid ""
+"Remove volume \n"
+"from LVM"
+msgstr ""
+
+#: src/lvui.glade.h:61
+msgid "Select a Volume Group to add this PV to:"
+msgstr ""
+
+#: src/lvui.glade.h:62
+msgid "Select a disk entity to add to Volume Group:"
+msgstr ""
+
+#: src/lvui.glade.h:63
+msgid "Size:"
+msgstr ""
+
+#: src/lvui.glade.h:64
+msgid "Stripe Size:"
+msgstr ""
+
+#: src/lvui.glade.h:65
+msgid "Striped"
+msgstr ""
+
+#: src/lvui.glade.h:66
+msgid "Unused space on VG1:"
+msgstr ""
+
+#: src/lvui.glade.h:67
+msgid "Use Remaining Space"
+msgstr ""
+
+#: src/lvui.glade.h:68
+#: src/lvmui_constants.py:55
+msgid "XFS"
+msgstr ""
+
+#: src/lvui.glade.h:69
+msgid "ext2"
+msgstr ""
+
+#: src/lvui.glade.h:70
+msgid "ext3"
+msgstr ""
+
+#. ##TRANSLATOR: The first word in each string below is
+#. ##an lvm command line command phrase.
+#: src/CommandHandler.py:14
+#, python-format
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:15
+#, python-format
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:16
+#, python-format
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:17
+#, python-format
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:18
+#, python-format
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:19
+#, python-format
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:20
+#, python-format
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:21
+#, python-format
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr ""
+
+#: src/CommandHandler.py:22
+#, python-format
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:23
+#, python-format
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:24
+#, python-format
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:25
+#, python-format
+msgid "mkfs command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+
+#: src/CommandHandler.py:26
+#, python-format
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr ""
+
+#: src/lvm_model.py:34
+#: src/lvmui_constants.py:39
+msgid "Unused"
+msgstr ""
+
+#: src/lvm_model.py:35
+msgid "Unused Space"
+msgstr ""
+
+#. Translator - Linear mapping is another way of saying 'Not Striped' :-)
+#: src/lvm_model.py:38
+msgid "Linear Mapping"
+msgstr ""
+
+#: src/lvm_model.py:39
+msgid "Unmounted"
+msgstr ""
+
+#: src/lvm_model.py:40
+msgid "No File System"
+msgstr ""
+
+#: src/lvm_model.py:51
+msgid "Volume Group Name:   "
+msgstr ""
+
+#: src/lvm_model.py:52
+msgid "System ID:   "
+msgstr ""
+
+#: src/lvm_model.py:53
+msgid "Format:   "
+msgstr ""
+
+#: src/lvm_model.py:54
+#: src/lvm_model.py:71
+#: src/lvm_model.py:85
+msgid "Attributes:   "
+msgstr ""
+
+#: src/lvm_model.py:55
+msgid "Volume Group Size:   "
+msgstr ""
+
+#: src/lvm_model.py:56
+msgid "Available Space:   "
+msgstr ""
+
+#: src/lvm_model.py:57
+msgid "Total Number of Extents:   "
+msgstr ""
+
+#: src/lvm_model.py:58
+msgid "Number of Free Extents:   "
+msgstr ""
+
+#: src/lvm_model.py:59
+msgid "Extent Size:   "
+msgstr ""
+
+#: src/lvm_model.py:60
+msgid "Maximum Allowed Physical Volumes:   "
+msgstr ""
+
+#: src/lvm_model.py:61
+msgid "Number of Physical Volumes:   "
+msgstr ""
+
+#: src/lvm_model.py:62
+msgid "Maximum Allowed Logical Volumes:   "
+msgstr ""
+
+#: src/lvm_model.py:63
+msgid "Number of Logical Volumes:   "
+msgstr ""
+
+#: src/lvm_model.py:64
+msgid "VG UUID:   "
+msgstr ""
+
+#: src/lvm_model.py:66
+msgid "Logical Volume Name:   "
+msgstr ""
+
+#: src/lvm_model.py:67
+msgid "Logical Volume Size:   "
+msgstr ""
+
+#: src/lvm_model.py:68
+msgid "Number of Segments:   "
+msgstr ""
+
+#: src/lvm_model.py:69
+msgid "Number of Stripes:   "
+msgstr ""
+
+#: src/lvm_model.py:70
+msgid "Stripe Size:   "
+msgstr ""
+
+#: src/lvm_model.py:72
+msgid "LV UUID:   "
+msgstr ""
+
+#: src/lvm_model.py:74
+msgid "Partition Type:   "
+msgstr ""
+
+#: src/lvm_model.py:75
+msgid "Size:   "
+msgstr ""
+
+#: src/lvm_model.py:76
+msgid "Mount Point:   "
+msgstr ""
+
+#: src/lvm_model.py:77
+msgid "File System:   "
+msgstr ""
+
+#: src/lvm_model.py:79
+msgid "Physical Volume Name:   "
+msgstr ""
+
+#: src/lvm_model.py:80
+msgid "Physical Volume Size:   "
+msgstr ""
+
+#: src/lvm_model.py:81
+msgid "Space Used:   "
+msgstr ""
+
+#: src/lvm_model.py:82
+msgid "Space Free:   "
+msgstr ""
+
+#: src/lvm_model.py:83
+msgid "Total Physical Extents:   "
+msgstr ""
+
+#: src/lvm_model.py:84
+msgid "Allocated Physical Extents:   "
+msgstr ""
+
+#: src/lvm_model.py:86
+msgid "PV UUID:   "
+msgstr ""
+
+#: src/lvmui_constants.py:19
+#, python-format
+msgid "Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition."
+msgstr ""
+
+#: src/lvmui_constants.py:40
+msgid "Free"
+msgstr ""
+
+#: src/lvmui_constants.py:42
+msgid "G"
+msgstr ""
+
+#: src/lvmui_constants.py:43
+msgid "M"
+msgstr ""
+
+#: src/lvmui_constants.py:44
+msgid "K"
+msgstr ""
+
+#: src/lvmui_constants.py:45
+msgid "B"
+msgstr ""
+
+#: src/lvmui_constants.py:49
+msgid "Ext2"
+msgstr ""
+
+#: src/lvmui_constants.py:50
+msgid "Ext3"
+msgstr ""
+
+#: src/lvmui_constants.py:52
+msgid "MSDOS"
+msgstr ""
+
+#: src/lvmui_constants.py:53
+msgid "Reiserfs"
+msgstr ""
+
+#: src/lvmui_constants.py:54
+msgid "VFAT"
+msgstr ""
+
+#: src/lvmui_constants.py:56
+msgid "Cramfs"
+msgstr ""
+
+#: src/Properties_Renderer.py:42
+msgid "Properties for"
+msgstr ""
+
+#: src/Properties_Renderer.py:43
+#: src/renderer.py:96
+msgid "Physical Volume"
+msgstr ""
+
+#: src/Properties_Renderer.py:44
+#: src/renderer.py:95
+msgid "Logical Volume"
+msgstr ""
+
+#: src/Properties_Renderer.py:45
+msgid "Unallocated Volume"
+msgstr ""
+
+#: src/Properties_Renderer.py:46
+#: src/renderer.py:102
+msgid "Disk Entity"
+msgstr ""
+
+#: src/Properties_Renderer.py:47
+#: src/Properties_Renderer.py:48
+#: src/Properties_Renderer.py:49
+#: src/renderer.py:97
+msgid "Volume Group"
+msgstr ""
+
+#: src/renderer.py:92
+msgid ""
+"This extent has not yet been \n"
+" initialized for use with LVM."
+msgstr ""
+
+#: src/renderer.py:93
+msgid "No Volume Selected"
+msgstr ""
+
+#: src/renderer.py:94
+msgid ""
+"This Volume has not been allocated \n"
+" to a Volume Group yet."
+msgstr ""
+
+#: src/renderer.py:98
+#: src/Volume_Tab_View.py:42
+msgid "Logical View"
+msgstr ""
+
+#: src/renderer.py:99
+#: src/Volume_Tab_View.py:41
+msgid "Physical View"
+msgstr ""
+
+#: src/renderer.py:100
+msgid "Unallocated"
+msgstr ""
+
+#: src/renderer.py:101
+msgid "Uninitialized"
+msgstr ""
+
+#: src/renderer.py:103
+msgid "extents"
+msgstr ""
+
+#: src/Volume_Tab_View.py:38
+msgid "Volume Groups"
+msgstr ""
+
+#: src/Volume_Tab_View.py:39
+msgid "Unallocated Volumes"
+msgstr ""
+
+#: src/Volume_Tab_View.py:40
+msgid "Uninitialized Entities"
+msgstr ""
+
