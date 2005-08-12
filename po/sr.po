@@ -7,13 +7,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-05-17 14:50-0400\n"
-"PO-Revision-Date: 2005-08-11 16:52-0400\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2005-08-12 09:08-0400\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: src/InputController.py:24
 #: src/Properties_Renderer.py:24
@@ -25,10 +25,9 @@ msgid ""
 msgstr ""
 "\n"
 "Не могу да покренем графичко окружење. Највероватнији разлог неуспеха\n"
-"  је то да алатка није покренута из графичког окружења. Молимо вас или\n"
+"  је то да алатка није покренута из графичког окружења. Молимо вас\n"
 "  да покренете графичко корисничко сучеље или да подесите вашу DISPLAY променљиву.\n"
-"                                                                                  \n"
-"  Детектован изузетак: %s\n"
+"                                                                                  \n  Ухваћен изузетак: %s\n"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -51,9 +50,8 @@ msgid "Entity Type"
 msgstr "Врста ентитета"
 
 #: src/InputController.py:106
-#, fuzzy
 msgid "Unallocated Physical Volume"
-msgstr "Неодређен физички диск"
+msgstr "Недодељени физички диск"
 
 #: src/InputController.py:107
 msgid "Uninitialized Disk Entity"
@@ -111,9 +109,8 @@ msgid "The number of Logical Volumes in this Volume Group has reached its maximu
 msgstr "Број логичких дискова у овој диск групи је достигао максимум."
 
 #: src/InputController.py:130
-#, fuzzy
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr "Грешка не дефинисане промене врсте у фабрици модела. Не могу да завршим посао."
+msgstr "Грешка недефинисане промене врсте у фабрици модела. Не могу да завршим посао."
 
 #: src/InputController.py:132
 msgid "There is a problem with the value entered in the Size field. The value should be a numeric value with no alphabetical characters or symbols of any other kind."
@@ -181,9 +178,8 @@ msgstr "Број трака поље"
 
 #: src/InputController.py:155
 #, python-format
-#, fuzzy
 msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr "Да ли сте сасвим сигурни да желите избрисати %s из надзора логичких дискова?"
+msgstr "Да ли сте сасвим сигурни да желите избрисати %s из LVM управљања логичких дискова?"
 
 #: src/InputController.py:157
 #, python-format
@@ -263,9 +259,8 @@ msgid "8"
 msgstr "8"
 
 #: src/lvui.glade.h:13
-#, fuzzy
 msgid "Add Physical Volume to VG"
-msgstr "Додајте физички диск диск групи"
+msgstr "Додајте физички диск VG"
 
 #: src/lvui.glade.h:14
 msgid ""
@@ -279,7 +274,7 @@ msgstr "Направи нови\nлогички диск"
 
 #: src/lvui.glade.h:18
 msgid "Create New LV"
-msgstr "Направи нови логички диск"
+msgstr "Направи нови LV"
 
 #: src/lvui.glade.h:19
 msgid "Create a New Logical Volume"
@@ -340,7 +335,7 @@ msgstr "Линијски"
 
 #: src/lvui.glade.h:35
 msgid "Logical Volume Management"
-msgstr "Logical Volume Management"
+msgstr "LVM Управљање Логичких Дискова"
 
 #: src/lvui.glade.h:36
 msgid "Manage Volumes"
@@ -370,7 +365,7 @@ msgstr "Помери изабране\nповршине са диска"
 
 #: src/lvui.glade.h:43
 msgid "Mount point (If blank, LV will not be mounted):"
-msgstr "Тачка за монтирање (Ако је празна, логички диск неће бити монтиран):"
+msgstr "Тачка за монтирање (Ако је празна, LV неће бити монтиран):"
 
 #: src/lvui.glade.h:44
 msgid "Name for Volume Group: "
@@ -378,7 +373,7 @@ msgstr "Име за диск групу:"
 
 #: src/lvui.glade.h:45
 msgid "Name for new LV:"
-msgstr "Име за нови логички диск:"
+msgstr "Име за нови LV:"
 
 #: src/lvui.glade.h:46
 msgid "New Volume Group"
@@ -449,9 +444,8 @@ msgid "Striped"
 msgstr "Трака"
 
 #: src/lvui.glade.h:66
-#, fuzzy
 msgid "Unused space on VG1:"
-msgstr "Неискориштен простор на диск групи 1:"
+msgstr "Неискориштен простор на VG1:"
 
 #: src/lvui.glade.h:67
 msgid "Use Remaining Space"
@@ -751,7 +745,7 @@ msgstr "Логички диск"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr "Неодређен диск"
+msgstr "Недодељен диск"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:102
@@ -793,7 +787,7 @@ msgstr "Физички преглед"
 
 #: src/renderer.py:100
 msgid "Unallocated"
-msgstr "Неодређени"
+msgstr "Недодељени"
 
 #: src/renderer.py:101
 msgid "Uninitialized"
@@ -809,9 +803,10 @@ msgstr "Диск групе:"
 
 #: src/Volume_Tab_View.py:39
 msgid "Unallocated Volumes"
-msgstr "Неодређени дискови"
+msgstr "Недодељени дискови"
 
 #: src/Volume_Tab_View.py:40
 #, fuzzy
 msgid "Uninitialized Entities"
 msgstr "Непокренути ентитети"
+
