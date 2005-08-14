@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-08-07 01:51+0800\n"
+"PO-Revision-Date: 2005-08-13 21:59+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -620,29 +620,24 @@ msgid "Available Space:   "
 msgstr "Ruang Yang Ada:"
 
 #: src/lvm_model.py:58
-#, fuzzy
 msgid "Total Number of Extents:   "
-msgstr "Masukkan nombor baris"
+msgstr "Jumlah Extent:"
 
 #: src/lvm_model.py:59
-#, fuzzy
 msgid "Number of Free Extents:   "
-msgstr "The Free Software Foundation"
+msgstr "Jumlah Extent Bebas:"
 
 #: src/lvm_model.py:60
-#, fuzzy
 msgid "Extent Size:   "
-msgstr "Saiz Extent Fizikal:"
+msgstr "Saiz Extent:"
 
 #: src/lvm_model.py:61
-#, fuzzy
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "Tidak cukup volum fizikal"
+msgstr "Volum Fizikal Maksimum Dibenarkan:"
 
 #: src/lvm_model.py:62
-#, fuzzy
 msgid "Number of Physical Volumes:   "
-msgstr "Volum Fizikal Maksimum:"
+msgstr "Jumlah Volum Fizikal:"
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
@@ -665,7 +660,7 @@ msgstr "Nama Volum _Logikal:"
 #: src/lvm_model.py:68
 #, fuzzy
 msgid "Logical Volume Size:   "
-msgstr "Buat Volum Logikal"
+msgstr "Saiz Kumpulan Volum:"
 
 #: src/lvm_model.py:69
 #, fuzzy
@@ -711,7 +706,7 @@ msgstr "Nama Volum _Logikal:"
 #: src/lvm_model.py:81
 #, fuzzy
 msgid "Physical Volume Size:   "
-msgstr "Saiz Extent Fizikal:"
+msgstr "Saiz Kumpulan Volum:"
 
 #: src/lvm_model.py:82
 msgid "Space Used:   "
