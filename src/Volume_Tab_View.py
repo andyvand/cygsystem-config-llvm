@@ -537,6 +537,9 @@ class MirrorSyncProgress:
         
     
     def initiate(self):
+        # mirroring support disabled for now :(
+        return
+    
         # return if timer is already ticking
         if self.timer != 0:
             return

@@ -1443,7 +1443,6 @@ class LV_edit_props:
         # mirroring
         if self.new:
             self.mirror_to_diff_hds = None # prompt for option
-            #self.mirror_to_diff_hds = False # disabled until command set supports it
             self.glade_xml.get_widget('enable_mirroring').set_active(False)
         else:
             already_mirrored = self.lv.is_mirrored()
@@ -1451,8 +1450,13 @@ class LV_edit_props:
                 self.mirror_to_diff_hds = False # mirror not resizable => don't care for now
             else:
                 self.mirror_to_diff_hds = None # prompt for option
-            #self.mirror_to_diff_hds = False # disabled until command set supports it
             self.glade_xml.get_widget('enable_mirroring').set_active(already_mirrored)
+        # disable mirroring support for now :(
+        self.mirror_to_diff_hds = False
+        if self.new:
+            self.glade_xml.get_widget('enable_mirroring').hide()
+        else:
+            self.glade_xml.get_widget('lv_properties_frame').hide()
         # set up mirror limits
         self.on_enable_mirroring(None)
         
