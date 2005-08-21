@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-08-13 21:59+0800\n"
+"PO-Revision-Date: 2005-08-21 23:53+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -146,7 +146,7 @@ msgstr "%s gigabyte"
 #: src/InputController.py:143
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s extent"
 
 #: src/InputController.py:145
 #, python-format
@@ -329,7 +329,7 @@ msgstr "Lebihkan Kumpulan Volum"
 
 #: src/lvui.glade.h:27
 msgid "Extents"
-msgstr ""
+msgstr "Extent"
 
 #: src/lvui.glade.h:28
 msgid "Filesystem: "
@@ -641,21 +641,19 @@ msgstr "Jumlah Volum Fizikal:"
 
 #: src/lvm_model.py:63
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "Volum Logikal Maksimum Dibenarkan:"
 
 #: src/lvm_model.py:64
-#, fuzzy
 msgid "Number of Logical Volumes:   "
-msgstr "Volum Logikal Maksimum:"
+msgstr "Jumlah Volum Logikal:"
 
 #: src/lvm_model.py:65
 msgid "VG UUID:   "
 msgstr "VG UUID:   "
 
 #: src/lvm_model.py:67
-#, fuzzy
 msgid "Logical Volume Name:   "
-msgstr "Nama Volum _Logikal:"
+msgstr "Nama Volum Logikal:"
 
 #: src/lvm_model.py:68
 #, fuzzy
@@ -719,12 +717,12 @@ msgstr "Ruang Bebas:"
 #: src/lvm_model.py:84
 #, fuzzy
 msgid "Total Physical Extents:   "
-msgstr "Volum Fizikal LVM"
+msgstr "Jumlah Extent:"
 
 #: src/lvm_model.py:85
 #, fuzzy
 msgid "Allocated Physical Extents:   "
-msgstr "Volum Fizikal LVM"
+msgstr "Jumlah Extent:"
 
 #: src/lvm_model.py:87
 msgid "PV UUID:   "
@@ -869,8 +867,9 @@ msgid "Uninitialized"
 msgstr "Tidak Dimulakan"
 
 #: src/renderer.py:105
+#, fuzzy
 msgid "extents"
-msgstr ""
+msgstr "Jumlah Extent:"
 
 #: src/Volume_Tab_View.py:40
 msgid "Volume Groups"
