@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ko\n"
 "POT-Creation-Date: 2004-11-23 14:03-0500\n"
-"PO-Revision-Date: 2005-08-04 11:36+1000\n"
+"PO-Revision-Date: 2005-08-25 10:24+1000\n"
 "Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -168,6 +168,8 @@ msgid ""
 "should be a numeric value with no alphabetical characters or symbols of any "
 "other kind."
 msgstr ""
+"크기 입력란에 입력하신 값에 문제가 있습니다. "
+"문자나 기호가 아닌 숫자값만 입력하시기 바랍니다."
 
 #: src/InputController.py:135
 #, python-format
@@ -176,6 +178,8 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"중요한 경고: %s 논리 볼륨에 %s 파일 시스템을 있으며 현재 %s에 마운트되어있습니다. "
+"정말로 이 마운트된 파일 시스템에 저장된 데이터를 모두 삭제하시겠습니까?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -257,6 +261,8 @@ msgid ""
 "else remove the Logical Volumes that are associated with this Physical "
 "Volume."
 msgstr ""
+"제거하시려는 물리적인 볼륨 %s에는 이 볼륨 extent를 사용하는 활성 논리 볼륨에 데이터가 저장되어 있습니다. 이 물리 볼륨은 볼륨 그룹 내의 유일한 물리 볼륨이므로, 이 데이터를 다른 곳이 이동시킬 수가 없습니다. 따라서 이 물리 볼륨을 제거하시기 전에 새 물리 볼륨을 추가하시거나 "
+"또는 이 물리 보륨과 연관된 논리 볼륨을 제거하시길 권장합니다."
 
 #: src/InputController.py:159
 #, python-format
@@ -294,6 +300,8 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"dm-mirror 모듈이 커널에 로딩되지 않았거나 커널이 dm-mirror 타겟을 지원하지 않는 것 같습니다. 커널이 지원하는 경우, \"modprobe dm-mirror\" 명령을 입력해보십시오. "
+"그렇지 않다면, 물리적 extent에서 데이터를 이동하는 작업을 불가능합니다."
 
 #. ##########################################################
 #. This global :( is used as a flag for the new lv form
