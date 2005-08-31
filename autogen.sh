@@ -45,10 +45,10 @@ xlc )
     am_opt=--include-deps;;
 esac
 
+
 glib-gettextize --copy --force
 intltoolize --copy -f --automake
 
-patch -p0 < intltool.patch
 
 autoconf
 aclocal-1.7 -I . $ACLOCAL_FLAGS
