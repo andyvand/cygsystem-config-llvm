@@ -4,14 +4,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Boris de Laage <bdelaage@free.fr>, 2004.
 # Jean-Paul Aubry <jpaubry@redhat.com>, 2004.
+# Samuel Mutel <samuel.mutel@free.fr>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-05-12 19:36+0100\n"
-"Last-Translator: Philippe Villiers <philippe.villiers@wanadoo.fr>\n"
+"PO-Revision-Date: 2005-08-01 19:45+0100\n"
+"Last-Translator: Samuel Mutel <samuel.mutel@free.fr>\n"
 "Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -73,7 +74,6 @@ msgid "Uninitialized Disk Entity"
 msgstr "Entité Disque Non Initialisée"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Selectionnez une entité disque à ajouter au Groupe de Volumes %s:"
 
@@ -87,7 +87,6 @@ msgstr ""
 "le mode stripping. Ce Groupe de Volume ne satisfait pas cette contrainte."
 
 #: src/InputController.py:94
-#, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
@@ -96,7 +95,6 @@ msgstr ""
 "Veuillez choisir un autre nom."
 
 #: src/InputController.py:96
-#, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
@@ -111,13 +109,11 @@ msgid "A Name must be provided for the new Volume Group"
 msgstr "Vous devez spécifier un nom pour le nouveau Groupe de Volumes"
 
 #: src/InputController.py:102
-#, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Le point de montage spécifié, %s, n'existe pas. Voulez-vous le créer ?"
 
 #: src/InputController.py:104
-#, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "La création du point de montage %s a échoué."
 
@@ -151,14 +147,13 @@ msgstr ""
 "maximum."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Le Groupe de Volumes %s n'a pas suffisamment d'espace libre pour déplacer "
-"les données stockées sur %s. Une solution possible serait d'ajouter un "
+"Le Groupe de Volumes %s n'a pas suffisamment d'espace libre pour créer "
+"un nouveau volume logique. Une solution possible serait d'ajouter un "
 "Volume Physique supplémentaire au Groupe de Volumes"
 
 #: src/InputController.py:116
@@ -232,11 +227,8 @@ msgid "%s extents"
 msgstr "%s extents"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Créer Nouveau\n"
-"Groupe de Volumes"
+msgstr "Espace libre restant dans le Groupe de Volumes:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
@@ -264,7 +256,6 @@ msgid "The %s should only contain number values"
 msgstr "Le %s ne peut contenir qu'une valeur numérique"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -273,7 +264,6 @@ msgstr ""
 "comprise entre 1 et 256"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -291,7 +281,6 @@ msgstr ""
 "Logiques ?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -347,7 +336,6 @@ msgstr ""
 "des données sur les Extensions Physiques sont indisponibles"
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -359,19 +347,19 @@ msgstr ""
 "des données sur les Extensions Physiques sont indisponibles"
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Etes-vous absolument sûr de vouloir supprimer le Volume Logique %s ?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"GROS AVERTISSEMENT : le Volume Logique %s a un système de fichiers %s et est "
-"actuellement monté sur %s. Etes-vous absolument certain de vouloir renoncer "
-"aux données sur ce système de fichiers monté ?"
+"AVERTISSEMENT IMPORTANT : le Volume Logique %s a un système de fichiers %s. Toutes"
+" les données seront perdues ! Etes-vous absolument certain de vouloir supprimer "
+" le volume logique %s ?"
 
 #: src/InputController.py:160
 #, python-format
@@ -482,7 +470,6 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "Créer un nouveau Volume Logique"
 
@@ -492,9 +479,8 @@ msgid "Edit %s, a Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Volume Logique"
+msgstr "Editer le Volume Logique"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -691,7 +677,7 @@ msgstr ""
 "s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
@@ -699,41 +685,37 @@ msgstr ""
 "Système : %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"La commande pvcreate a échoué. Commande : \"%s\" - Message d'Erreur "
+"La commande lvrename a échoué. Commande : \"%s\" - Message d'Erreur "
 "Système : %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"La commande vgcreate a échoué. Commande : \"%s\" - Message d'Erreur "
+"La commande lvchange a échoué. Commande : \"%s\" - Message d'Erreur "
 "Système : %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"La commande lvremove a échoué. Commande : \"%s\" - Message d'Erreur "
+"La commande lvconvert a échoué. Commande : \"%s\" - Message d'Erreur "
 "Système : %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Créer Nouveau\n"
-"Volume Logique"
+msgstr "Création d'un Volume Logique"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Volume Logique"
+msgstr "Redimensionnement du Volume Logique"
 
 #: src/CommandHandler.py:146
 #, fuzzy
@@ -748,38 +730,28 @@ msgstr ""
 "Volume Logique"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Volume Physique"
+msgstr "Initialisation du Volume Physique"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Ajouter le Volume Physique au GV"
+msgstr "Ajouter le Volume Physique au Group de Volumes"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Créer Nouveau\n"
-"Groupe de Volumes"
+msgstr "Creation du Groupe de Volumes"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Nouveau Groupe de Volumes"
+msgstr "Suppression du Groupe de Volumes"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Volume Physique"
+msgstr "Suppression du Volume Physique"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Supprimer\n"
-"Volume Logique"
+msgstr "Suppression du Volume Logique"
 
 #: src/CommandHandler.py:273
 #, fuzzy
@@ -789,11 +761,8 @@ msgstr ""
 "Volume Logique"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Supprimer le Volume\n"
-"du Groupe de Volumes"
+msgstr "Suppression du Volume Physique du Group de Volumes"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -908,9 +877,8 @@ msgid "Mount Point:   "
 msgstr "Point de Montage :   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Point de Montage :   "
+msgstr "Point de Montage après redémarrage:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -965,19 +933,16 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "Groupes de Volumes"
+msgstr "Interrogation des Groupes de Volumes"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "Volume Logique"
+msgstr "Interrogation du Volume Logique"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "Volume Physique"
+msgstr "Interrogation du Volume Physique"
 
 #: src/lvm_model.py:268
 #, fuzzy
@@ -989,9 +954,8 @@ msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Format : "
+msgstr "Note : "
 
 #: src/lvm_model.py:307
 #, fuzzy
@@ -1017,9 +981,8 @@ msgstr ""
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Pas de Système de Fichiers"
+msgstr "/   Système de Fichiers racine"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
@@ -1096,9 +1059,9 @@ msgid "Unpartitioned space"
 msgstr ""
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "Espace libre sur %s"
+msgstr "Espace non partitionné sur %s"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1295,30 +1258,30 @@ msgid "Upgrading %s filesystem to %s"
 msgstr ""
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"La commande vgcreate a échoué. Commande : \"%s\" - Message d'Erreur "
+"La création du système de fichiers a échoué. Commande : \"%s\" - Message d'Erreur "
 "Système : %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"La commande pvmove a échoué. Commande : \"%s\" - Message d'Erreur Système : %"
+"Le redimensionnement du système de fichiers a échoué. Commande : \"%s\" - Message d'Erreur Système : %"
 "s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"La commande pvmove a échoué. Commande : \"%s\" - Message d'Erreur Système : %"
+"La vérification du système de fichiers a échoué. Commande : \"%s\" - Message d'Erreur Système : %"
 "s"
 
 #: src/Filesystem.py:16
