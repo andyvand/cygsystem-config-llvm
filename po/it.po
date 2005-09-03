@@ -153,19 +153,19 @@ msgstr ""
 "che si raggiunga il limite."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Il Gruppo di Volume %s non ha abbastanza spazio per spostare i dati "
-"memorizzati su %s. Una possibile Soluzione potrebbe essere quella di "
-"aggiungere un Volume Fisico al Gruppo di Volume."
+"Il Gruppo di Volume %s non ha abbastanza spazio per nuovi Volumi Logici. Una "
+"possibile soluzione potrebbe essere quella di aggiungere un Volume Fisico "
+"al Gruppo di Volume."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "Uno snapshot si uno snapshot non è supportato."
 
 #: src/InputController.py:118
 #, python-format
@@ -173,6 +173,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"Il volume logico %s ha lo snapshot %s attualmente associato con esso. Sei pregato "
+"di rimuovere prima lo snapshot."
 
 #: src/InputController.py:119
 #, python-format
@@ -180,6 +182,8 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"Il volume logico %s ha gli snapshots: %s attualmente associati ade esso. Sei pregato "
+"di rimuovere prima gli snapshots."
 
 #: src/InputController.py:121
 msgid "Undefined type conversion error in model factory. Unable to complete task."
@@ -204,6 +208,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"Il Volume Logico %s è attualmente montato su %s. In ordine al completamento della richiesta, "
+"dovrà essere smontato. Sei sicuro di volerlo smontare?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -233,15 +239,12 @@ msgid "%s extents"
 msgstr "%s estensione"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Crea nuovo \n"
-"Gruppo di Volumi"
+msgstr "Spazio libero rimanente nel Gruppo di Volume:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Spazio rimanente per questo Volume:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -265,21 +268,19 @@ msgid "The %s should only contain number values"
 msgstr "%s dovrebbe contenere solamente valori numerici"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"Il  campo numero massimo di Volumi Fisici può contenere solo valori interi "
+"Il campo numero massimo di Volumi Fisici può contenere solo valori interi "
 "compresi tra 1 e 256"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"Il  campo numero massimo di Volumi Logici può contenere solo valori interi "
+"Il campo numero massimo di Volumi Logici può contenere solo valori interi "
 "compresi tra 1 e 256"
 
 #: src/InputController.py:149
@@ -290,7 +291,7 @@ msgid ""
 msgstr "Sei sicuro di voler rimuovere %s da Logical Volume Management?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -299,9 +300,9 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"Il volume Fisico chiamato %s, che vorresti rimuovere, contiene dati di "
-"Volumi Logici attivi mappati nella sua estensione. Poichè è il solo Volume "
-"Fisico nel Gruppo di Volumi, non c'è posto dove muovere i dati. L'azione "
+"Il Volume Fisico nominato %s, che vorresti rimuovere, contiene dati appartenenti "
+"a Volumi Logici attivi mappati nella sua estensione. Poiché è il solo Volume "
+"Fisico nel Gruppo di Volume, non c'è posto dove spostare i dati. L'azione "
 "consigliata è quella di aggiungere un nuovo Volume Fisico prima di rimuovere "
 "questo, o altrimenti rimuovere i Volumi Logici che sono associati a questo "
 "Volume Fisico."
@@ -344,31 +345,28 @@ msgstr ""
 "Estensioni Fisiche non saranno disponibili."
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"Il modulo dm-mirror non è caricato nel kernel, o il tuo kernel non supporta "
-"il dm-mirror target. Se è supportato, prova ad eseguire \"modprobe dm-mirror"
-"\". Altrimenti, le operazioni che richiederanno lo spostamento dei dati su "
-"Estensioni Fisiche non saranno disponibili."
+"Il modulo dm-snapshot non è caricato nel kernel, o il tuo kernel non supporta "
+"il dm-snapshot target. Se è supportato, prova ad eseguire \"modprobe dm-snapshot\". "
+"Altrimenti, la creazione di snapshots non sarà disponibile."
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "Sei veramente sicuro di voler rimuovere il Volume Logico %s?"
+msgstr "Sei veramente sicuro di voler rimuovere il volume logico %s?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"FA MOLTA ATTENZIONE: il Volume Logico %s ha un file system %s su di esso ed "
-"è attualmente montato su %s. Sei assolutamente certo di voler perdere i dati "
-"su questo filesystem montato?"
+"Il Volume Logico %s contiene il filesystem %s. Tutti i dati su di esso verranno persi! "
+"Sei assolutamente certo di voler rimuovere il volume logico %s?"
 
 #: src/InputController.py:160
 #, python-format
@@ -376,6 +374,8 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"Il volume logico %s contiene dati dalla directory %s. Tutti i dati in esso verranno "
+"persi! Sei assolutamente certo di voler rimuovere il volume logico %s?"
 
 #: src/InputController.py:356
 #, python-format
@@ -384,6 +384,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Il Volume Fisico %s contiene estensioni appartenenti a un mirror log del Volume "
+"Logico %s. I Volumi Logici speculari non sono ancora migrabili, così %s non è "
+"rimovibile."
 
 #: src/InputController.py:359
 #, python-format
@@ -392,6 +395,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Il Volume Fisico %s contiene estensioni appartenenti a una immagine mirror del Volume "
+"Logico %s. I Volumi Logici speculari non sono ancora migrabili, così %s non è "
+"rimovibile."
 
 #: src/InputController.py:362
 #, python-format
@@ -399,6 +405,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"Il Volume Fisico %s contiene estensioni appartenenti a %s, uno snapshot di %s. "
+"Gli snapshots non sono ancora migrabili, così %s non è rimovibile."
 
 #: src/InputController.py:367
 #, python-format
@@ -406,6 +414,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Il Volume Fisico %s contiene estensioni appartenenti a %s, l'origine dello snapshot %s. "
+"Le origni degli snapshot non sono migrabili, così %s non è rimovibile."
 
 #: src/InputController.py:369
 #, python-format
@@ -413,6 +423,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"IL Volume Fisico %s contiene estensioni appartenenti a %s, l'origine degli snapshots "
+"%s. Le origini degli snapshot non sono ancora migrabili, così %s non è rimovibile."
 
 #: src/InputController.py:556
 #, python-format
@@ -420,11 +432,13 @@ msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
+"Il Volume Logico \"%s\" ha snapshots che non sono selezionati per la rimozione. Essi "
+"devono essere comunque rimossi."
 
 #: src/InputController.py:571
 #, python-format
 msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgstr "\"%s\", un origine dello snapshot \"%s\", è stato cancellato dalla lista delle rimozioni."
 
 #: src/InputController.py:602
 #, python-format
@@ -432,6 +446,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"Il Volume Fisico \"%s\" contiene estensioni appartenenti a un mirror. I mirrors non "
+"sono migrabili, così %s non è rimovibile."
 
 #: src/InputController.py:605
 #, python-format
@@ -439,23 +455,25 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"Il Volume Fisico \"%s\" contiene estensioni appartenenti a uno snapshot o "
+"al'origine di uno snapshot. Gli snapshots non sono migrabili, così %s non è rimovibile."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "Il path specificato è inesistente."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "Il path specificato non è un Dispositivo a Blocchi."
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "L'inizializzazione di %s è fallita"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Sei pregato di scegliere prima alcune estensioni"
 
 #: src/InputController.py:1022
 msgid ""
