@@ -511,7 +511,7 @@ msgstr "Edita Volume Logico"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr "Il Management dei Volumi Logici implicito non supporta il mirroring"
+msgstr "Il Management del Volume Logico in oggetto non supporta il mirroring"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -612,7 +612,7 @@ msgstr "In ordine all'aggiunta di un mirror, alcune estensioni debbono essere mi
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "Vuoi migrare le estensioni specificate?"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
@@ -701,114 +701,90 @@ msgstr ""
 "s  - Messaggio di Errore del Sistema: \"%s\""
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Comando lvremove eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
+"Comando ivresize eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio d'errore del sistema: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Comando lvcreate eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
+"Comando lvrename eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio d'errore del sistema: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Comando vgchange eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
+"Comando lvchange eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio d'errore del sistema: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"Comando lvremove eseguito senza successo. Si è tentato di eseguire il "
-"comando: \"%s\" - Messaggio di Errore del Sistema: %s"
+"Comando lvconvert eseguito senza successo. Si è tentato di eseguire il "
+"comando: \"%s\" - Messaggio d'errore del sistema: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Crea nuovo\n"
-"Volume Logico"
+msgstr "Creazione Volume Logico"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Volume Logico"
+msgstr "Ridimensionamento Volume Logico"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "Volume Logico"
+msgstr "Aggiunta del Mirror al Volume Logico"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"Rimuovi \n"
-"Volume Logico"
+msgstr "Rimozione del Mirror dal Volume Logico"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Volume Fisico"
+msgstr "Inizializzazione Volume Fisico"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Aggiungi il Volume Fisico al GV"
+msgstr "Aggiunta del Volume Fisico al Gruppo di Volumi"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Crea nuovo \n"
-"Gruppo di Volumi"
+msgstr "Creazione Gruppo di Volumi"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Nuovo Gruppo di Volume"
+msgstr "Rimozione Gruppo di Volumi"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Volume Fisico"
+msgstr "Rimozione Volume Fisico"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Rimuovi \n"
-"Volume Logico"
+msgstr "Rimozione Volume Logico"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Rimuovi \n"
-"Volume Logico"
+msgstr "Rinomina Volume Logico"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Rimuovi Volume dal\n"
-"Gruppo di Volume"
+msgstr "Rimozione Volume Fisico dal Gruppo di Volumi"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "Migrazione estensioni"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "Completamento Migrazione Estensioni"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -915,9 +891,8 @@ msgid "Mount Point:   "
 msgstr "Punto di Montaggio:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Punto di Montaggio:   "
+msgstr "Punto di Montaggio al Riavvio:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -953,62 +928,55 @@ msgstr "VF UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "Non inizializzabile:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "Partizione estesa"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "Swap in uso"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "Partizione di avvio sconosciuta"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Partizionamento automatico fallito"
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "Gruppi di Volume"
+msgstr "Interrogazione dei Gruppi di Volumi"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "Volume Logico"
+msgstr "Interrogazione dei Volumi Logici"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "Volume Fisico"
+msgstr "Interrogazione dei Volumi Fisici"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "Tipo di Partizione:   "
+msgstr "Partizionamento manuale"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "Multipath device"
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Formato:   "
+msgstr "Nota:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Inizializza Entità"
+msgstr "Inizializzazione manuale"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "Numero di Stripes:   "
+msgstr "Numero di immagini mirror:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
