@@ -1,20 +1,21 @@
 # translation of gu.po to Gujarati
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Ankit Patel <ankit@redhat.com>, 2004.
+# Ankit Patel <ankit@redhat.com>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2004-12-08 10:45+0530\n"
+"PO-Revision-Date: 2005-09-05 12:45+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
-"Language-Team: Gujarati <gu@li.org>\n"
+"Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -37,9 +38,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "આ PV ને આમાં ઉમેરવા માટે વોલ્યુમ જૂથ પસંદ કરો:"
+msgstr "%s ને આમાં ઉમેરવા માટે વોલ્યુમ જૂથ પસંદ કરો:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -70,9 +71,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "બિનપ્રારંભિત ડિસ્ક એન્ટીટી"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "%s વોલ્યુમ જૂથમાં ઉમેરવા માટે ડિસ્ક એન્ટીટી પસંદ કરો:"
+msgstr "%s વોલ્યુમ જૂથમાં ઉમેરવા માટે ડિસ્ક એન્ટીટીઓ પસંદ કરો:"
 
 #: src/InputController.py:92
 msgid ""
@@ -93,8 +94,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s નામવાળું વોલ્યુમ જૂથ પહેલાથી જ હાજર છે. મહેરબાની કરીને અનન્ય નામ પસંદ કરો."
 
 #: src/InputController.py:98
@@ -107,8 +107,7 @@ msgstr "નવા વોલ્યુમ જૂથ માટે નામ પૂ�
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "સ્પષ્ટ કરેલ માઉન્ટ બિંદુ, %s, અસ્તિત્વમાં નથી. શું તમે એને બનાવવા માંગો છો?"
 
 #: src/InputController.py:104
@@ -133,43 +132,40 @@ msgid ""
 msgstr "આ વોલ્યુમ જૂથના ભૌતિક વોલ્યુમોની સંખ્યા તેની મર્યાદાની મહત્તમ સંખ્યાએ પહોંચી ગઈ."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "આ વોલ્યુમ જૂથના ભૌતિક વોલ્યુમોની સંખ્યા તેની મર્યાદાની મહત્તમ સંખ્યાએ પહોંચી ગઈ."
+msgstr "મોટે ભાગે %s ભૌતિક વોલ્યુમો આ વોલ્યુમ જૂથમાં ઉમેરી શકાય છે તેઓની મર્યાદા પહોંચી જાય તે પહેલાં."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
-"વોલ્યુમ જૂથ %s પાસે %s પર સંગ્રહિત માહિતીને ખસેડવા માટે પૂરતી જગ્યા નથી. શક્ય ઉકેલ એ "
-"વધારાનો ભૌતિક વોલ્યુમ વોલ્યુમ જૂથમાં ઉમેરવાનો છે."
+msgstr "વોલ્યુમ જૂથ %s પાસે નવા વોલ્યુમ જૂથો માટે પૂરતી જગ્યા નથી. શક્ય ઉકેલ એ વધારાનો ભૌતિક વોલ્યુમ વોલ્યુમ જૂથમાં ઉમેરવાનો છે."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "સ્નેપશોટનો સ્નેપશોધ આધારભૂત નથી."
 
 #: src/InputController.py:118
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમ %s પાસે વર્તમાનમાં તેની સાથે સંકળાયેલ સ્નેપશોટ %s છે. મહેરબાની કરીને સ્નેપશોટને પ્રથમ દૂર કરો."
 
 #: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમ %s પાસે સ્નેપશોટ છે: %s વર્તમાનમાં તેની સાથે સંકળાયેલ છે. મહેરબાની કરીને સ્નેપશોટને પ્રથમ દૂર કરો."
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "મોડેલ કારખાનામાં નહિં વ્યાખ્યાયિત એવી પ્રકાર રૂપાંતરણની ભૂલ આવી. ક્રિયા પૂરી કરવા સમર્થ "
 "નથી."
@@ -190,7 +186,7 @@ msgstr ""
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમ %s એ વર્તમાનમાં %s પર માઉન્ટ થયેલ છે. સંપૂર્ણ અરજી સાથે, તે અનમાઉન્ટ થવું જોઈએ. શું તમે ખરેખર તેને અનમાઉન્ટ કરવા માંગો છો?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -220,15 +216,12 @@ msgid "%s extents"
 msgstr "%s એક્સટેન્ટ"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"નવું વોલ્યુમ જૂથ \n"
-"બનાવો"
+msgstr "વોલ્યુમ જૂથમાં બાકી રહેલ મુક્ત જગ્યા:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "આ વોલ્યુમ માટે બાકી રહેલી જગ્યા:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -252,31 +245,26 @@ msgid "The %s should only contain number values"
 msgstr "%s માત્ર સંખ્યાકીય કિંમતો ધરાવતું હોવું જોઈએ"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"મહત્તમ ભૌતિક વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
+msgstr "મહત્તમ ભૌતિક વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"મહત્તમ લોજીકલ વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
+msgstr "મહત્તમ લોજીકલ વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
 
 #: src/InputController.py:149
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
-"શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને લોજીકલ વોલ્યુમ મેનેજમેન્ટમાંથી દૂર કરવા ઈચ્છો છો?"
+msgstr "શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને લોજીકલ વોલ્યુમ મેનેજમેન્ટમાંથી દૂર કરવા ઈચ્છો છો?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -284,17 +272,11 @@ msgid ""
 "Recommended action is either to add a new Physical Volume before removing "
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
-msgstr ""
-"%s નામવાળું ભૌતિક વોલ્યુમ, કે જે તમે દૂર કરવા માંગો છો, તેની પાસે તેના સમાવિષ્ટો સાથે સુસંગત "
-"થયેલ માહિતી લોજીકલ વોલ્યુમોમાંથી સક્રિય થયેલ છે. કારણ કે તે વોલ્યુમ જૂથમાંનો માત્ર ભૌતિક "
-"વોલ્યુમ છે, ત્યાં માહિતી ખસેડવા માટે કોઈ જગ્યા નથી. આગ્રહણીય પ્રતિક્રિયા છે કે આને દૂર કરવા "
-"પહેલાં ક્યાં તો નવો ભૌતિક વોલ્યુમ ઉમેરો, અથવા આ ભૌતિક વોલ્યુમ સાથે સંકળાયેલ લોજીકલ "
-"વોલ્યુમો દૂર કરો."
+msgstr "%s નામવાળું ભૌતિક વોલ્યુમ, કે જે તમે દૂર કરવા માંગો છો, તેની પાસે તેના સમાવિષ્ટો સાથે સુસંગત થયેલ માહિતી લોજીકલ વોલ્યુમોમાંથી સક્રિય થયેલ છે. કારણ કે તે વોલ્યુમ જૂથમાંનો માત્ર ભૌતિક વોલ્યુમ છે, ત્યાં માહિતી ખસેડવા માટે કોઈ જગ્યા નથી. આગ્રહણીય પ્રતિક્રિયા છે કે આને દૂર કરવા પહેલાં ક્યાં તો નવો ભૌતિક વોલ્યુમ ઉમેરો, અથવા આ ભૌતિક વોલ્યુમ સાથે સંકળાયેલ લોજીકલ વોલ્યુમો દૂર કરો."
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને %s વોલ્યુમ જૂથમાંથી દૂર કરવા માંગો છો?"
 
 #: src/InputController.py:153
@@ -329,38 +311,30 @@ msgstr ""
 "નહિં."
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
-msgstr ""
-"dm-mirror મોડ્યુલ એ ક્યાં તો તમારી કર્નલમાં લવાયું નથી, અથવા તમારી કર્નલ dm-mirror "
-"લક્ષ્યને આધાર આપતી નથી. જો તે આધારભૂત હોય, તો \"modprobe dm-mirror\" ચલાવવાનો "
-"પ્રયત્ન કરો. નહિંતર, માહિતીને ભૌતિક વિસ્તરણો પર ખસેડવા માટેની પ્રક્રિયાઓ ઉપ્લબ્ધ રહેશે "
-"નહિં."
+msgstr "dm-snapshot મોડ્યુલ એ ક્યાં તો તમારી કર્નલમાં લવાયું નથી, અથવા તમારી કર્નલ dm-snapshot લક્ષ્યને આધાર આપતી નથી. જો તે આધારભૂત હોય, તો \"modprobe dm-snapshot\" ચલાવવાનો પ્રયત્ન કરો. નહિંતર, સ્નેપશોટની બનાવટ ઉપલબ્ધ રહેશે નહિં."
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "શું તમે કંઈક અંશે ચોક્કસ છો કે તમે લોજીકલ વોલ્યુમ %s દૂર કરવા ઈચ્છો છો?"
+msgstr "શું તમે ખરેખર ચોક્કસ છો કે તમે લોજીકલ વોલ્યુમ %s દૂર કરવા ઈચ્છો છો?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr ""
-"મોટી ચેતવણી: લોજીકલ વોલ્યુમ %s પાસે તેના પર %s ફાઈલ સિસ્ટમ છે અને તે વર્તમાનમાં %s પર "
-"માઉન્ટ થયેલ છે. શું તમે ચોક્કસ છો કે તમે આ માઉન્ટ થયેલ ફાઈલ સિસ્ટમ પરની માહિતી અવગણવા "
-"માંગો છો?"
+msgstr "લોજીકલ વોલ્યુમ %s એ %s ફાઈલસિસ્ટમ સમાવે છે. બધી માહિતી ગુમ થઈ જશે! શું તમે ખરેખર ચોક્કસ છો કે તમે લોજીકલ વોલ્યુમ %s દૂર કરવા માંગો છો?"
 
 #: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમ %s ડિરેક્ટરી %s માંથી માહિતી સમાવે છે. તેમાંની બધી માહિતી ગુમ થઈ જશે! શું તમે ખરેખર ચોક્કસ છો કે તમે લોજીકલ વોલ્યુમ %s દૂર કરવા માંગો છો?"
 
 #: src/InputController.py:356
 #, python-format
@@ -368,7 +342,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "ભૌતિક વોલ્યુમ %s એ લોજીકલ વોલ્યુમ %s ને અનુસરીને તેનો મીરર લોગ વિસ્તારે છે. મીરર થયેલ લોજિકલ વોલ્યુમો હજુ સુધી રૂપાંતરિત થયા નથી, તેથી %s એ દૂર કરી શકાય તેવું નથી."
 
 #: src/InputController.py:359
 #, python-format
@@ -376,119 +350,115 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "ભૌતિક વોલ્યુમ %s લોજીકલ વોલ્યુમ %s ની મીરર ઈમેજને અનુસરતા એક્સટેન્ટ સમાવે છે. મીરર થયેલ લોજીકલ વોલ્યુમો હજુ સુધી રૂપાંતરિત થયા નથી, તેથી %s એ દૂર કરી શકાય તેવું નથી."
 
 #: src/InputController.py:362
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "ભૌતિક વોલ્યુમ %s એ %s ને અનુસરતા એક્સટેન્ટ સમાવે છે, %s નો સ્નેપશોટ. સ્નેપશોટ હજુ સુધી રૂપાંતરિત કરી શકાયા નથી, તેથી %s દૂર કરી શકાય તેવું નથી."
 
 #: src/InputController.py:367
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "ભૌતિક વોલ્યુમ %s એ %s ને અનુસરતા એક્સટેન્ટ સમાવે છે, સ્નેપશોટ %s નું મૂળ. સ્નેપશોટ મૂળો હજુ સુધી રૂપાંતરિત કરી શકાયા નથી, તેથી %s દૂર કરી શકાય નહિં."
 
 #: src/InputController.py:369
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "ભૌતિક વોલ્યુમ %s એ %s ને અનુસરતા એક્સટેન્ટ સમાવે છે, સ્નેપશોટ %s નું મૂળ. સ્નેપશોટ મૂળ હજુ સુધી રૂપાંતરિત કરી શકાયા નહિં, તેથી %s દૂર કરી શકાય નહિં."
 
 #: src/InputController.py:556
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમ \"%s\" પાસે સ્નેપશોટ છે કે જેઓ દૂર કરવા માટે પસંદ થયેલ નથી. તેઓ સાથે દૂર પણ થવા જ જોઈએ."
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr "\"%s\", સ્નેપશોટ \"%s\" નું મૂળ, નિરાકરણ યાદીમાંથી કાઢી નંખાયેલ છે."
 
 #: src/InputController.py:602
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
-msgstr ""
+msgstr "ભૌતિક વોલ્યુ \"%s\" એ મીરરને અનુસરતા એક્સટેન્ટ સમાવે છે. મીરરો રૂપાંતરિત કરી શકાય નહિં, કે જેથી %s દૂર કરી શકાય નહિં."
 
 #: src/InputController.py:605
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
-msgstr ""
+msgstr "ભૌતિક વોલ્યુમ \"%s\" સ્નેપશોટ અથવા સ્નેપશોટના મૂળને અનુલક્ષતું એક્સટેન્ટ સમાવે છે. સ્નેપશોટ રૂપાંતરિત કરી શકાય નહિં, તેથી %s એ દૂર કરી શકાય નહિં."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "તમે સ્પષ્ટ કરેલ પાથ અસ્તિત્વમાં નથી."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "તમે સ્પષ્ટ કરેલ પાથ બ્લોક ઉપકરણ નથી."
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s નું આરંભ નિષ્ફળ"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "મહેરબાની કરીને અમુક એક્સટેન્ટ પ્રથમ પસંદ કરો"
 
 #: src/InputController.py:1022
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
-msgstr ""
+msgstr "જરૂરી રૂપાંતરણ કરવા માટે ક્યાં કોઈ પૂરતા મુક્ત એક્સટેન્ટ નથી. વધુ ભૌતિક વોલ્યુમો ઉમેરવાનું સમસ્યા ઉકેલશે."
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s એક્સટેન્ટ"
+msgstr "એક્સટેન્ટ રૂપાંતરિત કરો"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "વિકલ્પો"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s નો સ્નેપશોટ બનાવો"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "નવો લોજીકલ વોલ્યુમ બનાવો"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%s માં ફેરફાર કરો, %s નો સ્નેપશોટ"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "લોજીકલ વોલ્યુમ"
+msgstr "લોજીકલ વોલ્યુમમાં ફેરફાર કરો"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "અન્ડરલાઈંગ લોજીકરલ વોલ્યુમ મેનેજમેન્ટ મીરરીંગને આધાર આપતું નથી"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "સ્ટ્રીપ થયેલ લોજીકલ વોલ્યુમોની મીરર બનાવી શકાતી નથી."
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "સંકળાયેલ સ્નેપશોટ સાથેના લોજીકલ વોલ્યુમોની હજુ સુધી મીરર કરી શકાતી નથી."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -496,266 +466,226 @@ msgstr ""
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
-msgstr ""
+msgstr "મીરરીંગનો પ્રાથમિક હેતુ એ હાર્ડ ડ્રાઈવની નિષ્ફળતાના કિસ્સામાં માહિતીની સુરક્ષા કરવાનું છે. શું તમે મીરર ઈમેજોને અલગ હાર્ડ ડ્રાઈવો પર મૂકવા માંગો છો?"
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgstr "૩ કરતાં ઓછી હાર્ડ ડ્રાઈવો મુક્ત જગ્યા સાથે ઉપલબ્ધ છે. મીરરીંગ નિષ્ક્રિય કરો."
 
 #: src/InputController.py:1536
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
+msgstr "મીરરીંગ સક્રિય કરવા માટે ઓછામાં ઓછા ત્રણ ભૌતિક વોલ્યુમો પર મુક્ત જગ્યા હોવી જ જોઈએ"
 
 #: src/InputController.py:1544
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમનું માપ મીરરો માટે મહત્તમ ઉપલબ્ધ માપમાં સંતુલિત થઈ ગયું."
 
 #: src/InputController.py:1549
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
-msgstr ""
+msgstr "મીરરીંગ ઉમેરવા માટે ત્યાં પૂરતી મુક્ત જગ્યા નથી. લોજીકલ વોલ્યુમનું માપ ખૂબ વધુ %s સુધી ઘટાડો, અથવા ભૌતિક વોલ્યુમો ઉમેરો."
 
 #: src/InputController.py:1913
 msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "\"સ્નેપશોટ\" અથવા \"pvmove\" થી શરૂ થતા મુખ્ય શબ્દો આરક્ષિત છે."
 
 #: src/InputController.py:1915
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "\"_mlog\" અથવા \"_mimage\" સમાવતા નામો આરક્ષિત મુખ્ય શબ્દો છે."
 
 #: src/InputController.py:1917
 msgid "Names begining with a \"-\" are invalid"
-msgstr ""
+msgstr "\"-\" થી શરૂ થતા નામો અયોગ્ય છે"
 
 #: src/InputController.py:1919
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "નામો ક્યાં તો \".\" નહિં હોઈ શકે કે \"..\" પણ હોઈ શકે"
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમ નામોમાં સફેદજગ્યાઓ માન્ય નથી"
 
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "લોજીકલ વોલ્યુમ નામમાં અયોગ્ય અક્ષર \"%s\""
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr ""
+msgstr "મહેરબાની કરીને માઉન્ટ પોઈન્ટ સ્પષ્ટ કરો"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "શું તમે લોજીકલ વોલ્યુમ પર ext2 ને ext3 માં માહિતી સાચવવા માટે સુધારવા માંગો છો?"
 
 #: src/InputController.py:2044
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
-msgstr ""
+msgstr "ફાઈલસિસ્ટમ બદલવાનું લોજીકલ વોલ્યુમ પરની બધી માહિતી નષ્ટ કરી નાંખશે! શું તમે ખરેખર પ્રક્રિયા કરવા માંગો છો?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "મીરર બની નથી. બાકીની ક્રિયાઓ પૂર્ણ કરી રહ્યા છીએ."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "મીરરીંગ ઉમેરવા માટે, અમુક એક્સટેન્ટનું રૂપાંતરણ કરવાની જરૂર છે."
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "શું તમે સ્પષ્ટ થયેલ એક્સટેન્ટ રૂપાંતરિત કરવા માંગો છો?"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgextend આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvcreate આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvcreate આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvremove આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvremove આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgremove આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgcreate આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr "vgchange આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgreduce આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvmove આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "umount આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "mount આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: \"%s\""
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+#, python-format
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvresize આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvcreate આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+#, python-format
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvrename આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgchange આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+#, python-format
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "Ivchange આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
-msgstr "lvremove આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+msgstr "lvconvert આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"નવો લોજીકલ\n"
-"વોલ્યુમ બનાવો"
+msgstr "લોજીકલ વોલ્યુમ બનાવી રહ્યા છીએ"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "લોજીકલ વોલ્યુમ"
+msgstr "લોજીકલ વોલ્યુમનું માપ બદલી રહ્યા છીએ"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "લોજીકલ વોલ્યુમ"
+msgstr "લોજીકલ વોલ્યુમમાં મીરર ઉમેરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"લોજીકલ વોલ્યુમ \n"
-"દૂર કરો"
+msgstr "મીરરમાંથી લોજીકલ વોલ્યુમ દૂર કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "ભૌતિક વોલ્યુમ"
+msgstr "ભૌતિક વોલ્યુમનો આરંભ કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "VG માં ભૌતિક વોલ્યુમ ઉમેરો"
+msgstr "વોલ્યુમ જૂથમાં ભૌતિક વોલ્યુમ ઉમેરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"નવું વોલ્યુમ જૂથ \n"
-"બનાવો"
+msgstr "નવું વોલ્યુમ જૂથ બનાવી રહ્યા છીએ"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "નવું વોલ્યુમ જૂથ"
+msgstr "વોલ્યુમ જૂથ દૂર કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "ભૌતિક વોલ્યુમ"
+msgstr "ભૌતિક વોલ્યુમ દૂર કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"લોજીકલ વોલ્યુમ \n"
-"દૂર કરો"
+msgstr "લોજીકલ વોલ્યુમ દૂર કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"લોજીકલ વોલ્યુમ \n"
-"દૂર કરો"
+msgstr "લોજીકલ વોલ્યુમ દૂર કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"વોલ્યુમ જૂથમાંથી\n"
-"વોલ્યુમ દૂર કરો"
+msgstr "વોલ્યુમ જૂથમાંથી ભૌતિક વોલ્યુમ દૂર કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "એક્સટેન્ટ રૂપાંતરિત કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "એક્સટેન્ટ રૂપાંતરણ પૂર્ણ કરી રહ્યા છીએ"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
-msgstr "બિનવપરાશી"
+msgstr "નહિંવપરાયેલ"
 
 #: src/lvm_model.py:47
 msgid "Unused Space"
@@ -858,9 +788,8 @@ msgid "Mount Point:   "
 msgstr "માઉન્ટ પોઈન્ટ:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "માઉન્ટ પોઈન્ટ:   "
+msgstr "માઉન્ટ પોઈન્ટ જ્યારે રીબુટ થાય:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -896,84 +825,76 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "આરંભ નહિં કરી શકાય તેવું:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "વિસ્તૃત પાર્ટીશન"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "સ્વેપ વપરાશમાં છે"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "વિદેશી બુટ પાર્ટીશન"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "આપોઆપપાર્ટીશન નિષ્ફળ"
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "વોલ્યુમ જૂથો"
+msgstr "વોલ્યુમ જૂથોને પ્રશ્ન કરી રહ્યા છીએ"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "લોજીકલ વોલ્યુમ"
+msgstr "લોજીકલ વોલ્યુમને પ્રશ્ન કરી રહ્યા છીએ"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "ભૌતિક વોલ્યુમ"
+msgstr "ભૌતિક વોલ્યુમોને પ્રશ્ન કરી રહ્યા છીએ"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "પાર્ટીશન પ્રકાર:   "
+msgstr "જાતે પાર્ટીશન કરો"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "મલ્ટીપાથ ઉપકરણ"
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "બંધારણ:   "
+msgstr "નોંધ:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "એન્ટીટી પ્રારંભ"
+msgstr "જાતે આરંભ કરો"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "પટ્ટીઓની સંખ્યા:   "
+msgstr "મીરર ઈમેજોની સંખ્યા:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "સ્નેપશોટ:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "સ્નેપશોટ મૂળ:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "સ્નેપશોટ વપરાશ:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "કોઈ ફાઈલ સિસ્ટમ નથી"
+msgstr "/   રુટ ફાઈલસિસ્ટમ"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "કંઈ નહિં"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -981,29 +902,26 @@ msgstr ""
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
+msgstr "ડિસ્ક એન્ટીટી %s પરની બધી માહિતી નષ્ટ થઈ જશે! શું તમે ચોક્કસ છો કે તમે તેનો પ્રારંભ કરવા માંગો છો?"
 
 #: src/lvmui_constants.py:52
 #, python-format
 msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
-msgstr ""
+msgstr "ડિસ્ક એન્ટીટી %s એ %s ફાઈલસિસ્ટમ સમાવે છે. તેના પરની બધી માહિતી નષ્ટ થઈ જશે! શું તમે ચોક્કસ છો કે તમે ડિસ્ક એન્ટીટી %s નો આરંભ કરવા માંગો છો?"
 
 #: src/lvmui_constants.py:53
 #, python-format
 msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
-msgstr ""
+msgstr "ડિસ્ક એન્ટીટી %s એ ડિરેક્ટરી %s માંથી માહિતી સમાવે છે. તેમાંની બધી માહિતી નષ્ટ થઈ જશે! શું તમે ચોક્કસ છો કે તમે ડિસ્ક એન્ટીટી %s નો આરંભ કરવા માંગો છો?"
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"શું તમે ચોક્કસ છો કે તમે ડિસ્ક એન્ટીટી %s નો પ્રારંભ કરવા ઈચ્છો છો? આ ઉપકરણ/પાર્ટીશન "
-"પરની બધી માહિતીનો નાશ થશે."
+#, python-format
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "શું તમે ચોક્કસ છો કે તમે %s જેટલી મુક્ત જગ્યા ડિસ્ક %s પર આરંભ કરવા માંગો છો?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1011,11 +929,11 @@ msgid ""
 "You are about to initialize unpartitioned disk %s. It is advisable, although "
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
-msgstr ""
+msgstr "તમે પાર્ટીશન વિનાની ડિસ્ક %s નો આરંભ કરવા જઈ રહ્યા છો. એ સલાહ માન્ય છે, છતાં પણ જરૂરી નથી, તેના પર પાર્ટીશન બનાવવા માટે. શું તમે આખી ડ્રાઈવને સમાવતું એક પાર્ટીશન બનાવવા માંગો છો?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVM ફરીથી લાવી રહ્યા છીએ. મહેરબાની કરીને રાહ જુઓ."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1023,15 +941,15 @@ msgid ""
 "Changes will take effect after computer is restarted. If device %s is used, "
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
-msgstr ""
+msgstr "ફેરફારો કમ્પ્યૂટર પુનઃશરૂ થાય પછી અસર કરશે. જો ઉપકરણ %s એ વપરાયેલ હોય, પુનઃશરૂ કરવા પહેલાં, તો માહિતી ભંગાણ ઉદ્દભવશે. તમારું કમ્પ્યૂટર હમણઆં પુનઃશરૂ કરવાનું સલાહમાન્ય છે."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "મીરર લોગ"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "અરજી પર પ્રક્રિયા કરવામાં અસમર્થ"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -1039,16 +957,16 @@ msgstr "મુક્ત"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "મુક્ત જગ્યા"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "પાર્ટીશન વિનાની જગ્યા"
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "%s પર નહિં વપરાયેલ જગ્યા"
+msgstr "%s પર પાર્ટીશન વિનાની જગ્યા"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1136,7 +1054,7 @@ msgstr "કોઈ વોલ્યુમ પસંદ નથી"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "ઘણી પસંદગી"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1160,7 +1078,7 @@ msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
-msgstr ""
+msgstr "એક્સટેન્ટ કે જે તમે પસંદ કરવા જઈ રહ્યા છો તે લોજીકલ વોલ્યુમ %s ના મીરર લોગને અનુસરે છે. મીરરવાળા લોજીકલ વોલ્યુમો હજુ સુધી રૂપાંતરિત કરી શકાયા નહિં, તેથી એક્સટેન્ટ પસંદ કરી શકાય તેવા નથી."
 
 #: src/renderer.py:194
 #, python-format
@@ -1168,14 +1086,14 @@ msgid ""
 "The extents that you are attempting to select belong to mirror image of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
-msgstr ""
+msgstr "એક્સટેન્ટ કે જે તમે પસંદ કરવા જઈ રહ્યા છો તે લોજીકલ વોલ્યુમ %s ની મીરર ઈમેજને અનુસરે છે. મીરરવાળા લોજીકલ વોલ્યુમો હજુ સુધી રૂપાંતરિત કરી શકાયા નહિં, તેથી એક્સટેન્ટ પસંદ કરી શકાય તેવા નથી."
 
 #: src/renderer.py:196
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
-msgstr ""
+msgstr "એક્સટેન્ટ કે જે તમે પસંદ કરવા જઈ રહ્યા છો તે %s ને અનુસરે છે, %s નો સ્નેપશોટ. સ્નેપશોટ હજુ સુધી રૂપાંતરિત થયા નથી, તેથી એક્સટેન્ટ પસંદ કરી શકાય નહિં."
 
 #: src/renderer.py:198
 #, python-format
@@ -1183,24 +1101,23 @@ msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
-msgstr ""
+msgstr "એક્સટેન્ટ કે જે તમે પસંદ કરવા જઈ રહ્યા છો તે સ્નેપશોટ મૂળ %s ને અનુસરે છે. સ્નેપશોટ મૂળ હજુ સુધી રૂપાંતરિત કરી શકાયા નથી, તેથી એક્સટેન્ટ પસંદ કરી શકાય નહિં."
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "નો સ્નેપશોટ "
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "મૂળ"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "સ્નેપશોટ"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "વિસ્તરણો"
+msgstr "એક્સટેન્ટ દેખાવ"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1217,86 +1134,84 @@ msgstr "બિનપ્રારંભી એન્ટીટી"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "%s મીરર સુમેળ "
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "જ્યારે પાર્ટીશન બની રહ્યો હોય ત્યારે મહેરબાની કરીને રાહ જુઓ"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s ફાઈલસિસ્ટમ બનાવી રહ્યા છીએ"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s ફાઈલસિસ્ટમનું માપ બદલી રહ્યા છીએ"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s ફાઈલસિસ્ટમ ચકાસી રહ્યા છીએ"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s ફાઈલસિસ્ટમને %s માં સુધારી રહ્યા છીએ"
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgcreate આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+msgstr "ફાઈલસિસ્ટમની બનાવટ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+msgstr "ફાઈલસિસ્ટમનું માપ બદલવામાં નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+msgstr "ફાઈલસિસ્ટમની ચકાસણી નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgreduce આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+msgstr "ફાઈલસિસ્ટમનો સુધારો નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "કોઈ ફાઈલ સિસ્ટમ નથી"
+msgstr "અજ્ઞાત ફાઈલસિસ્ટમ"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (સ્થાનીય)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (ક્લસ્ટરવાળી)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (સ્થાનીય)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (ક્લસ્ટરવાળી)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "પટ્ટી થયેલ"
+msgstr "સ્ટ્રાઈપ "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1304,23 +1219,22 @@ msgstr "રેખીય સંગતતા"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "મીરર "
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+#, python-format
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "dmsetup આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
+msgstr "ls આદેશ નિષ્ફળ. આદેશ લેવાયો: \"%s\" - સિસ્ટમ ભૂલ સંદેશો: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "પાર્ટીશન પ્રકાર:   "
+msgstr "પાર્ટીશન  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1388,7 +1302,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "સ્નેપશોટ બનાવો"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1399,13 +1313,12 @@ msgstr ""
 "બનાવો"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "ના ગુણધર્મો"
+msgstr "ગુણધર્મોમાં ફેરફાર કરો"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "પ્રારંભ કરવા માટે બ્લોક ઉપકરણનો પાથ દાખલ કરો"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1420,19 +1333,16 @@ msgid "Extend Volume Group"
 msgstr "વોલ્યુમ જૂથ વિસ્તારો"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "બંધારણ:   "
+msgstr "બંધારણ"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "બિનપ્રારંભી"
+msgstr "પ્રારંભ કરો"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "એન્ટીટી પ્રારંભ"
+msgstr "બ્લોક ઉપકરણનો આરંભ કરો"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1440,7 +1350,7 @@ msgstr "એન્ટીટી પ્રારંભ"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "બ્લોક ઉપકરણ પ્રારંભ કરો (_B)"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1536,19 +1446,19 @@ msgstr "આ PV ને આમાં ઉમેરવા માટે વોલ્�
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "અમુક લખાણ"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "પુનઃલાવો (_R)"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "સાધનો (_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "vg સંદેશો વિસ્તૃત કરો:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1561,56 +1471,58 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "ફાઈલ સિસ્ટમ: "
+msgstr "<b>ફાઈલસિસ્ટમ</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV ગુણધર્મો</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>માપ</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab માં પ્રવેશ ઉમેરો"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "ફાઈલસિસ્ટમનું માપ બદલી શકાય નહિં"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"નવું વોલ્યુમ જૂથ \n"
-"બનાવો"
+msgstr "વોલ્યુમ જૂથ લેબલમાં મુક્ત જગ્યા"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "બાકીની જગ્યા વાપરો"
+msgstr "બાકી રહેલ મુક્ત જગ્યા લેબલ"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "કિલોબાઈટો"
+msgstr "કિલોબાઈટો ગ્રેન્યુલારીટી"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "LV નામ: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV માપ"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "સ્નેપશોટ હેઠળના LV નું માપ બદલી શકાતું નથી"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1618,191 +1530,105 @@ msgstr "રેખીય"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "મીરર થયેલ"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "મીરર થયેલ LV નું માપ બદલી શકાતું નથી"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "માઉન્ટ"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "માઉન્ટ પોઈન્ટ:   "
+msgstr "માઉન્ટ પોઈન્ટ: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "જ્યારે રીબુટ થાય ત્યારે માઉન્ટ કરો"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "માપ"
+msgstr "માપ શરૂ"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "માપ"
+msgstr "માપ અંત"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "પટ્ટી થયેલ"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "બાકીની જગ્યા વાપરો"
+msgstr "બાકીનું વાપરો"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "ની પટ્ટીઓ"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>અંતિમ મુકામ</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>રૂપાંતરણ નીતિ</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "કોઈપણ જગ્યાએ - અમલમાં મૂકાયેલ નથી"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "રૂપાંતરણ કરવા માટે આપોઆપ PV પસંદ કરો"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "સતત"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PV દૂર કરવા માટે, વપરાશમાં રહેલા એક્સટેન્ટનું રૂપાંતરણ થવું જોઈએ.\n"
+"એક્સટેન્ટનું અંતિમ મુકામ અને રૂપાંતરણ નીતિ પસંદ કરો."
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "બોલાવો"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"વોલ્યુમ જૂથમાંથી\n"
-"વોલ્યુમ દૂર કરો"
+msgstr "વોલ્યુમ જૂથમાંથી બોલાવવાની નીતિ"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "વિસ્તરણો"
+msgstr "એક્સટેન્ટો રૂપાંતરિત કરો"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "કોઈપણ જગ્યાએ રૂપાંતરિત કરો જો તે પ્રભાવ ઘટાડે તો પણ"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"પસંદ કરેલ વિસ્તરણોમાંથી\n"
-"રૂપાંતરણ કરો"
+msgstr "એક્સટેન્ટોને આમાં રૂપાંતરિત કરો "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "નવા એક્સટેન્ટ વર્તમાનની બાજુમાં જ છે"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "સામાન્ય"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "માત્ર LV ને અનુસરતા એક્સટેન્ટ જ રૂપાંતરિત કરો "
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "સામાન્ય બુદ્ધિ વાપરો"
 
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "માપ ક્ષેત્રમાં દાખલ કરેલ કિંમત સાથે સમસ્યા છે. કિંમત બીજા કોઈપણ પ્રકારના બારાક્ષરો "
-#~ "અથવા સંજ્ઞાઓ સિવાયનો આંકડો હોવો જોઈએ."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "નવા લોજીકલ વોલ્યુમ માટે માંગણી થયેલ માપ વોલ્યુમ જૂથ %s પર પ્રાપ્ય મુક્ત જગ્યા કરતાં વધી "
-#~ "ગઈ. પ્રાપ્ય જગ્યા છે: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "પટ્ટી માપ ક્ષેત્ર"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "પટ્ટીઓની સંખ્યા ક્ષેત્ર"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 મેગાબાઈટો"
-
-#~ msgid "Create New LV"
-#~ msgstr "નવો LV બનાવો"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "લોજીકલ વોલ્યુમ \n"
-#~ "વિસ્તારો"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "માઉન્ટો પોઈન્ટ (જો ખાલી હોય, LV માઉન્ટ થશે નહિં):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "નવા LV માટે નામ:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "પટ્ટીઓની સંખ્યા: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "વોલ્યુમ જૂથમાં ઉમેરવા માટે ડિસ્ક એન્ટીટી પસંદ કરો:"
-
-#~ msgid "Size:"
-#~ msgstr "માપ:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "પટ્ટી માપ:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "VG1 પરની બિનવપરાશી જગ્યા:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "કોઈ ફાઈલ સિસ્ટમ નથી"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "વિસ્તરણ હજુ સુધી LVM સાથે \n"
-#~ " વાપરવા માટે પ્રારંભ થયેલ નથી."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "આ વોલ્યુમ હજુ સુધી વોલ્યુમ જૂથને \n"
-#~ " સોંપાયેલ નથી."
