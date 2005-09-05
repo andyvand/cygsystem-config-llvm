@@ -1,20 +1,23 @@
+# translation of pt_BR.po to Português Brasil
 # translation of pt_BR.po to Portuguese
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # David Barzilay <barzilay@redhat.com>, 2004.
+# Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2004-12-08 12:13+1000\n"
-"Last-Translator: David Barzilay <barzilay@redhat.com>\n"
-"Language-Team: Portuguese <gnome-l10n-br@listas.cipsga.org.br>\n"
+"PO-Revision-Date: 2005-09-05 03:48-0300\n"
+"Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
+"Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.0.2\n"
+"X-Generator: KBabel 1.10.2\n"
+"Plural-Forms:  nplurals=2; plural=(n > 1);\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -95,10 +98,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
-"Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -110,8 +111,7 @@ msgstr "É necessário prover um nome para o novo Grupo de Volume"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "O ponto de montagem %s especificado não existe. Você deseja criá-lo?"
 
 #: src/InputController.py:104
@@ -127,23 +127,20 @@ msgstr "Esta funcionalidade ainda não está implementada nesta versão"
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr "O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:112
 #, fuzzy, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr ""
-"O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:114
 #, fuzzy, python-format
@@ -175,8 +172,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Erro de conversão de tipos não definido no model factory. Não foi possível "
 "completar a operação."
@@ -303,8 +299,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Você tem certeza que deseja remover %s do Grupo de Volume %s?"
 
 #: src/InputController.py:153
@@ -419,8 +414,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -461,13 +455,12 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s extensões"
+msgstr "Migrar extensões"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "Opções"
 
 #: src/InputController.py:1341
 #, python-format
@@ -475,9 +468,8 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "Criar um Novo Volume Lógico"
+msgstr "Criar Novo Volume Lógico"
 
 #: src/InputController.py:1346
 #, python-format
@@ -485,9 +477,8 @@ msgid "Edit %s, a Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Volume Lógico"
+msgstr "Editar Volume Lógico"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -510,8 +501,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1536
@@ -589,120 +579,105 @@ msgstr ""
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando vgextend falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando pvcreate falhou. Tentativa de Comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando lvcreate falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando pvremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando lvremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando vgremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando vgcreate falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
 "o comando vgchange falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando vgreduce falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando pvmove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
 "Sistema: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando umount falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
 "Sistema: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr ""
 "o comando mount falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
 "Sistema: %s"
 
 #: src/CommandHandler.py:26
 #, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando lvremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:27
 #, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando lvcreate falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:28
 #, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando vgchange falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
@@ -717,84 +692,60 @@ msgstr ""
 "do Sistema: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Criar Novo\n"
-"Volume Lógico"
+msgstr "Criando Volume Lógico"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Volume Lógico"
+msgstr "Redimensionando Volume Lógico"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "Volume Lógico"
+msgstr "Adicionando Espelho para o Volume Lógico"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"Remover \n"
-"Volume Lógico"
+msgstr "Removendo Espelho de um Volume Lógico"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Volume Físico"
+msgstr "Inicializando Volume Físico"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Adicionar Volume Físico ao Grupo de Volume (VG)"
+msgstr "Adicionando o Volume Físico ao Grupo de Volume"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Criar novo Grupo \n"
-"de Volume"
+msgstr "Criando Grupo de Volume"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Novo Grupo de Volume"
+msgstr "Removendo Grupo de Volume"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Volume Físico"
+msgstr "Removendo Volume Físico"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Remover \n"
-"Volume Lógico"
+msgstr "Removendo Volume Lógico"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Remover \n"
-"Volume Lógico"
+msgstr "Renomeando Volume Lógico"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Remover Volume do\n"
-"Grupo de Volume"
+msgstr "removendo Volume Físico do Grupo de Volume"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "Migrando Extensões"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "Conpletando Migração de Extensões"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -901,9 +852,8 @@ msgid "Mount Point:   "
 msgstr "Ponto de Montagem:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Ponto de Montagem:   "
+msgstr "Ponto de Montagem quando Reiniciar:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -939,23 +889,23 @@ msgstr "UUID do PV (volume físico):   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "Não Inicializável:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "Partição Extendida"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "Swap em uso"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "Partição de Boot Extrangeira"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Falha no Particionamento Automático"
 
 #: src/lvm_model.py:128
 #, fuzzy
@@ -973,28 +923,24 @@ msgid "Quering Physical Volumes"
 msgstr "Volume Físico"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "Tipo de Partição:   "
+msgstr "Particionamento Manual"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Formato:   "
+msgstr "Nota:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Inicializar Entidade"
+msgstr "Inicilise manualmente"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "Número de Stripes:   "
+msgstr "Número de imagens espelho:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
@@ -1010,13 +956,12 @@ msgstr ""
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Sem sistema de arquivo"
+msgstr "/   Sistema de Arquivos Root"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1042,8 +987,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Você tem ceretza que deseja inicialuizar a entidade de disco %s? Todos os "
 "dados deste dispositivo/partição serão perdidios."
@@ -1058,7 +1002,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "Recarregando LVM. Por favor espere."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1070,7 +1014,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Mirror Log"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
@@ -1082,16 +1026,16 @@ msgstr "Livre"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "Espaço Livre"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
 msgstr ""
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "Espaço não utilizado em %s"
+msgstr "Espaço não particionado em %s"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1179,7 +1123,7 @@ msgstr "Nenhum Volume Selecionado"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Seleção múltipla"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1234,7 +1178,7 @@ msgstr ""
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "Origem"
 
 #: src/renderer.py:493
 msgid "Snapshot"
@@ -1270,22 +1214,22 @@ msgstr ""
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Criando sistema de arquivos%s"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Redimensionando sistema de arquivos%s"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "Checando sistema de arquivos%s"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Atualizando sistema de arquivos %s para %s"
 
 #: src/Filesystem.py:13
 #, fuzzy, python-format
@@ -1324,9 +1268,8 @@ msgstr ""
 "do Sistema: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Sem sistema de arquivo"
+msgstr "Sistema de arquivos desconhecido"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1359,8 +1302,7 @@ msgstr ""
 
 #: src/Multipath.py:11
 #, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "o comando mkfs falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
 "Sistema: %s"
@@ -1595,11 +1537,11 @@ msgstr ""
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "_Recarregar"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_Ferramentas"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
@@ -1616,11 +1558,18 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Sistema de arquivo: "
+msgstr "<b>Sistema de arquivos</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
@@ -1628,7 +1577,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Tamanho</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
@@ -1636,7 +1585,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "Sistema de arquivos não é redimensionável"
 
 #: src/lv_edit_props.glade.h:16
 #, fuzzy
@@ -1657,11 +1606,11 @@ msgstr "Kilobytes"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "Nome do LV:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "Tamanho do LV"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1681,7 +1630,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
 
 #: src/lv_edit_props.glade.h:26
 #, fuzzy
@@ -1693,14 +1642,12 @@ msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Tamanho"
+msgstr "Tamanho inicial"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Tamanho"
+msgstr "Tamanho final"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
@@ -1713,11 +1660,11 @@ msgstr "Usar Espaço Restante"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "stripes para"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Destino</b<"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
@@ -1733,7 +1680,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Contíguos"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
@@ -1743,7 +1690,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "Herança"
 
 #: src/migrate_extents.glade.h:9
 #, fuzzy
@@ -1753,20 +1700,16 @@ msgstr ""
 "Grupo de Volume"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "extensões"
+msgstr "Migrar Estensões"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
 msgstr ""
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"Migrar Extensão(ões)\n"
-"Selecionada(s) do Volume"
+msgstr "Migrar Extensões para"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1774,7 +1717,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
@@ -1784,82 +1727,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "Há um problema com o valor indicado no campo Tamanho. O valor deve ser "
-#~ "numérico sem caracteres alfabéticos ou outros símbolos."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "O tamanho requisitado para o novo Volume Lógico excede o espaço livre "
-#~ "disponível no Grupo de Volume %s. O espaço disponível é: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "Campo Tamanho da Stripe"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "Campo Número de Stripes"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 megabytes"
-
-#~ msgid "Create New LV"
-#~ msgstr "Criar Novo Volume Lógico (LV)"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "Extender \n"
-#~ "Volume Lógico"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr ""
-#~ "Ponto de Montagem (se estiver em branco, o volume lógico não será "
-#~ "montado):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "Nome do novo volume lógico:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "Número de Stripes: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "Selecione uma entidade de disco para adicionar ao Grupo de Volume:"
-
-#~ msgid "Size:"
-#~ msgstr "Tamanho:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "Tamanho da Stripe:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "Espaço não utilizado no Volume de Grupo 1:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "Sem Sistema de Arquivo"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "Esta extensão ainda não foi \n"
-#~ "inicializada para o uso com a LVM."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "Este Volume ainda não foi alocado \n"
-#~ " a um Grupo de Volume."
