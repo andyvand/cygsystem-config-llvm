@@ -980,25 +980,24 @@ msgstr "Numero di immagini mirror:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "Snapshots:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "Origine dello Snapshot:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "Uso dello Snapshot:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Nessun Filesystem"
+msgstr "/   Root Filesystem"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Nulla"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1051,7 +1050,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Mirror Log"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
@@ -1063,11 +1062,11 @@ msgstr "Libero"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "Spazio libero"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "Spazio non partizionato"
 
 #: src/lvmui_constants.py:86
 #, fuzzy, python-format
@@ -1160,7 +1159,7 @@ msgstr "Nessun Volume Selezionato"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Selezione multipla"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1211,20 +1210,19 @@ msgstr ""
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "Snapshot di "
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "Origine"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "Snapshot"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "estensioni"
+msgstr "vista estensioni"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1305,30 +1303,28 @@ msgstr ""
 "comando: \"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Nessun Filesystem"
+msgstr "Filesystem sconosciuto"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (local)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (clustered)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (local)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (clustered)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "Striped"
+msgstr "Stripe "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1336,7 +1332,7 @@ msgstr "Mappatura Lineare"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Mirror "
 
 #: src/Multipath.py:11
 #, fuzzy, python-format
@@ -1353,9 +1349,9 @@ msgstr ""
 "\"%s\" - Messaggio di Errore del Sistema: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "Tipo di Partizione:   "
+msgstr "Partizione  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1423,7 +1419,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Crea Snapshot"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1434,9 +1430,8 @@ msgstr ""
 "Gruppo di Volumi"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Proprietà"
+msgstr "Edita proprietà"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1457,19 +1452,16 @@ msgstr ""
 "Gruppo di Volumi"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "Formato:   "
+msgstr "Formato"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Non inizializzato"
+msgstr "Inizializza"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Inizializza Entità"
+msgstr "Inizializza dispositivo a Blocchi"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1477,7 +1469,7 @@ msgstr "Inizializza Entità"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Inizializza dispositivo a _Blocchi"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
