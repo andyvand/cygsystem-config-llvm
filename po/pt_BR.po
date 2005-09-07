@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-05 03:48-0300\n"
+"PO-Revision-Date: 2005-09-06 21:32-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -42,9 +42,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Selecione um Grupo de Volume ao qual adicionar este Volume Físico:"
+msgstr "Selecione um Grupo de Volume para adicionar %s para:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -75,9 +75,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "Entidade de Disco Não Inicializada"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "Selecione uma entidade de disco para adicionar o Grupo de Volume %s:"
+msgstr "Selecione entidades de disco para adicionar ao %s Grupo de Volume:"
 
 #: src/InputController.py:92
 msgid ""
@@ -143,14 +143,13 @@ msgid ""
 msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"O Grupo de Volume %s não tem espaço suficiente para mover os dados "
-"armazenados em %s. Uma possível solução é adicionar um Volume Físico ao "
+"O Grupo de Volume %s não tem espaço suficiente para novos Volumes Lógicos. Uma possível solução é adicionar um Volume Físico ao "
 "Grupo de Volume."
 
 #: src/InputController.py:116
@@ -255,22 +254,16 @@ msgid "The %s should only contain number values"
 msgstr "%s deve conter somente valores numéricos"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"O campo Volumes Físicos Máximos deve conter somente valores inteiros entre 1 "
-"e 256"
+msgstr "O campo Volumes Físicos Máximos deve conter somente valores inteiros entre 1 e 256"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"O campo Volumes Lógicos Máximos deve conter somente valores inteiros entre 1 "
-"e 256"
+msgstr "O campo Volumes Lógicos Máximos deve conter somente valores inteiros entre 1 e 256"
 
 #: src/InputController.py:149
 #, python-format
@@ -347,26 +340,23 @@ msgstr ""
 "dados em Extensões Físicas."
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "Você tem certeza que deseja remover o Volume Lógico %s?"
+msgstr "Você tem certeza que você deseja remover o volume lógico %s?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr ""
-"ATENÇÃO! O Volume Lógico %s possui um sistema de arquivo %s e está montado "
-"em %s. Você tem certeza que deseja descartar os dados contidos neste sistema "
-"de arquivo montado?"
+msgstr "O Volume Lógico %s possui sistema de arquivos %s. Todos os dados serão perdidos! Você tem certeza que deseja remover o volume lógico %s?"
 
 #: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "O Volume Lógico %s possui dados do diretório %s. Todos os dados serão perdidos! Você tem certeza que deseja remover o volume lógico %s?"
 
 #: src/InputController.py:356
 #, python-format
@@ -433,20 +423,20 @@ msgstr ""
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "O caminho que você especificou não existe."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "O caminho que você especificou não é um Dispositivo de Bloco."
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "A inicialização do %s falhou"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Por favor selecione primeiramente as extensões"
 
 #: src/InputController.py:1022
 msgid ""
@@ -550,7 +540,7 @@ msgstr ""
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr ""
+msgstr "Pro favor especifique um ponto de montagem"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
