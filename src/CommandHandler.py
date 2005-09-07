@@ -1,7 +1,6 @@
 import os
 import string
 from CommandError import CommandError
-from lvm_model import lvm_model
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
 
 from lvmui_constants import *
@@ -35,9 +34,7 @@ class CommandHandler:
     pass
   
   def new_lv(self, cmd_args_dict, pvlist=[]):
-    model_factory = lvm_model()
     #first set up lvcreate args
-
     arglist = list()
     arglist.append(LVCREATE_BIN_PATH)
     arglist.append("-n")
