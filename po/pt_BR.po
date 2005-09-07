@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-06 21:32-0300\n"
+"PO-Revision-Date: 2005-09-07 01:56-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -154,14 +154,14 @@ msgstr ""
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "Uma imagem de uma imagem não é suportada."
 
 #: src/InputController.py:118
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
+msgstr "O Volume lógico %s tem uma imagem %s correntemente associada. Por favor remova a imagem primeiro."
 
 #: src/InputController.py:119
 #, python-format
@@ -455,7 +455,7 @@ msgstr "Opções"
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "Criar uma imagem de %s"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume"
@@ -464,7 +464,7 @@ msgstr "Criar Novo Volume Lógico"
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "Editar %s, uma imagem de %s"
 
 #: src/InputController.py:1349
 msgid "Edit Logical Volume"
@@ -898,19 +898,16 @@ msgid "Autopartition failure"
 msgstr "Falha no Particionamento Automático"
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "Grupos de Volume"
+msgstr "Buscando Grupos de Volume"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "Volume Lógico"
+msgstr "Buscando Volumes Lógicos"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "Volume Físico"
+msgstr "Buscando Volumes Físicos"
 
 #: src/lvm_model.py:268
 msgid "Partition manually"
@@ -918,7 +915,7 @@ msgstr "Particionamento Manual"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "Dispositivo multi-caminho"
 
 #: src/lvm_model.py:307
 msgid "Note:   "
@@ -934,15 +931,15 @@ msgstr "Número de imagens espelho:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "Imagens:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "Imagens origens:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "Uso de imangens:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
@@ -1008,7 +1005,7 @@ msgstr "Mirror Log"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "Impossibilitado de processar requisição"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -1020,7 +1017,7 @@ msgstr "Espaço Livre"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "Espaço não particionado"
 
 #: src/lvmui_constants.py:86
 #, python-format
@@ -1164,7 +1161,7 @@ msgstr ""
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "Imagem de "
 
 #: src/renderer.py:487
 msgid "Origin"
@@ -1172,12 +1169,11 @@ msgstr "Origem"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "Imagem"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "extensões"
+msgstr "visualizar extensões"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1194,12 +1190,12 @@ msgstr "Entidades Não Inicializadas"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "%s sincronização de espelho "
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "Por favor espere enquanto a partição é criada"
 
 #: src/Filesystem.py:9
 #, python-format
@@ -1263,24 +1259,23 @@ msgstr "Sistema de arquivos desconhecido"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (local)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (agrupado)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (local)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (agrupado)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "Striped"
+msgstr "Stripe "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1288,7 +1283,7 @@ msgstr "Mapeameto Linear"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Espelho "
 
 #: src/Multipath.py:11
 #, fuzzy, python-format
@@ -1305,9 +1300,9 @@ msgstr ""
 "Sistema: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "Tipo de Partição:   "
+msgstr "Partição  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1375,7 +1370,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Criar Imagem"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1386,9 +1381,8 @@ msgstr ""
 "de Volume"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Propriedades do"
+msgstr "Editar Propriedades"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1407,19 +1401,16 @@ msgid "Extend Volume Group"
 msgstr "Extender Grupo de Volume"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "Formato:   "
+msgstr "Formato"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Não Inicializado"
+msgstr "Inicialise"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Inicializar Entidade"
+msgstr "Inicializar Dispositivo de Bloco"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1427,7 +1418,7 @@ msgstr "Inicializar Entidade"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Inicialize Dispositivo de _Bloco"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1523,7 +1514,7 @@ msgstr "Selecione um Grupo de Volume ao qual adicionar este Volume Físico:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Mesmo texto"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
@@ -1535,7 +1526,7 @@ msgstr "_Ferramentas"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "mensagem de extensão vg:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1563,7 +1554,7 @@ msgstr "<b>Sistema de arquivos</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>Propriedades LV</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
@@ -1571,18 +1562,15 @@ msgstr "<b>Tamanho</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Adicionar entrada a /etc/fstab"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr "Sistema de arquivos não é redimensionável"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"Criar novo Grupo \n"
-"de Volume"
+msgstr "Espaço livre na etiqueta do Grupo de Volume"
 
 #: src/lv_edit_props.glade.h:17
 #, fuzzy
@@ -1612,7 +1600,7 @@ msgstr "Linear"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Espelhado"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1623,13 +1611,12 @@ msgid "Mount"
 msgstr "Montar"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "Ponto de Montagem:   "
+msgstr "Ponto de Montagem: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Montar quando reiniciar"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
@@ -1644,9 +1631,8 @@ msgid "Striped"
 msgstr "Striped"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Usar Espaço Restante"
+msgstr "Usar restante"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
@@ -1658,7 +1644,7 @@ msgstr "<b>Destino</b<"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Politica de Migração</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1666,7 +1652,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "Automaticamente escolha PVs para migrar para"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
@@ -1683,11 +1669,8 @@ msgid "Inherit"
 msgstr "Herança"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
 msgstr ""
-"Remover Volume do\n"
-"Grupo de Volume"
 
 #: src/migrate_extents.glade.h:10
 msgid "Migrate Extents"
