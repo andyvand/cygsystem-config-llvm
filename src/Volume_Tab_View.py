@@ -51,7 +51,24 @@ class Volume_Tab_View:
   def __init__(self, glade_xml, model_factory, app):
                                                                                 
     self.model_factory = model_factory
-                                                                                
+    
+    locking_type = self.model_factory.get_locking_type()
+    if locking_type != 1:
+        if locking_type == 0:
+            msg = _("LVM locking is disabled!!! Massive data corruption may occur. Enable locking in \n/etc/lvm/lvm.conf and try again. Exiting...")
+        elif locking_type == 2:
+            msg = _("Clustered LVM (cLVM) is not yet supported by %s. Exiting...")
+            msg = msg % PROGNAME
+        else:
+            msg = _("%s only supports file-based locking (locking_type=1 in /etc/lvm/lvm.conf). Exiting...")
+            msg = msg % PROGNAME
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+                                msg)
+        dlg.run()
+        sys.exit(10)
+    
+    
     self.main_win = app
     self.width = 0
     self.height = 0

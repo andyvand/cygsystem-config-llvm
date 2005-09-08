@@ -986,3 +986,17 @@ class lvm_model:
   
   def is_mirroring_supported(self):
     return LVS_HAS_MIRROR_OPTIONS
+  
+  def get_locking_type(self):
+    conf = open('/etc/lvm/lvm.conf')
+    
+    lines = conf.readlines()
+    for line in lines:
+      words = line.split()
+      if len(words) < 3:
+        continue
+      if words[0] == 'locking_type':
+        if words[1] == '=':
+          locking_type = int(words[2])
+          return locking_type
+    return None
