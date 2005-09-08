@@ -51,6 +51,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Wed Sep 08 2005 Stanko Kupcevic <kupcevic@redhat.com> 1.0.4-1.0
+  - Fix for bz167662.
 * Mon Aug 15 2005 Stanko Kupcevic <kupcevic@redhat.com> 1.0.3-1.0
   - Fix for bz159457: Temporary removal of mirroring support.
 * Tue Aug 02 2005 Jim Parsons <jparsons@redhat.com> 1.0.2-1.0

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-15 15:50-0400\n"
+"POT-Creation-Date: 2005-09-08 18:25-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -527,369 +527,357 @@ msgstr ""
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
-#: src/CommandHandler.py:14
+#: src/CommandHandler.py:13
 #, python-format
 msgid ""
 "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:15
+#: src/CommandHandler.py:14
 #, python-format
 msgid ""
 "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:16
+#: src/CommandHandler.py:15
 #, python-format
 msgid ""
 "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:17
+#: src/CommandHandler.py:16
 #, python-format
 msgid ""
 "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:18
+#: src/CommandHandler.py:17
 #, python-format
 msgid ""
 "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:19
+#: src/CommandHandler.py:18
 #, python-format
 msgid ""
 "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:20
+#: src/CommandHandler.py:19
 #, python-format
 msgid ""
 "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:21
+#: src/CommandHandler.py:20
 #, python-format
 msgid ""
 "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
 
-#: src/CommandHandler.py:22
+#: src/CommandHandler.py:21
 #, python-format
 msgid ""
 "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:23
+#: src/CommandHandler.py:22
 #, python-format
 msgid ""
 "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:24
+#: src/CommandHandler.py:23
 #, python-format
 msgid ""
 "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:25
+#: src/CommandHandler.py:24
 #, python-format
 msgid ""
 "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr ""
 
-#: src/CommandHandler.py:26
+#: src/CommandHandler.py:25
 #, python-format
 msgid ""
 "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:27
+#: src/CommandHandler.py:26
 #, python-format
 msgid ""
 "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:28
+#: src/CommandHandler.py:27
 #, python-format
 msgid ""
 "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 
-#: src/CommandHandler.py:29
+#: src/CommandHandler.py:28
 #, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
 
-#: src/CommandHandler.py:77
+#: src/CommandHandler.py:74
 msgid "Creating Logical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:96 src/CommandHandler.py:113
+#: src/CommandHandler.py:93 src/CommandHandler.py:110
 msgid "Resizing Logical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:146
+#: src/CommandHandler.py:143
 msgid "Adding Mirror to Logical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:157
+#: src/CommandHandler.py:154
 msgid "Removing Mirror from Logical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:180
+#: src/CommandHandler.py:177
 msgid "Initializing Physical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:191
+#: src/CommandHandler.py:188
 msgid "Adding Physical Volume to Volume Group"
 msgstr ""
 
-#: src/CommandHandler.py:218
+#: src/CommandHandler.py:215
 msgid "Creating Volume Group"
 msgstr ""
 
-#: src/CommandHandler.py:240
+#: src/CommandHandler.py:237
 msgid "Removing Volume Group"
 msgstr ""
 
-#: src/CommandHandler.py:250
+#: src/CommandHandler.py:247
 msgid "Removing Physical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:261
+#: src/CommandHandler.py:258
 msgid "Removing Logical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:273
+#: src/CommandHandler.py:270
 msgid "Renaming Logical Volume"
 msgstr ""
 
-#: src/CommandHandler.py:295
+#: src/CommandHandler.py:292
 msgid "Removing Physical Volume from Volume Group"
 msgstr ""
 
-#: src/CommandHandler.py:330
+#: src/CommandHandler.py:327
 msgid "Migrating Extents"
 msgstr ""
 
-#: src/CommandHandler.py:342
+#: src/CommandHandler.py:339
 msgid "Completing Extent Migration"
 msgstr ""
 
-#: src/lvm_model.py:46 src/lvmui_constants.py:81
+#: src/lvm_model.py:45 src/lvmui_constants.py:81
 msgid "Unused"
 msgstr ""
 
-#: src/lvm_model.py:47
+#: src/lvm_model.py:46
 msgid "Unused Space"
 msgstr ""
 
-#: src/lvm_model.py:49
+#: src/lvm_model.py:48
 msgid "Unmounted"
 msgstr ""
 
-#: src/lvm_model.py:59
+#: src/lvm_model.py:58
 msgid "Volume Group Name:   "
 msgstr ""
 
-#: src/lvm_model.py:60
+#: src/lvm_model.py:59
 msgid "System ID:   "
 msgstr ""
 
-#: src/lvm_model.py:61
+#: src/lvm_model.py:60
 msgid "Format:   "
 msgstr ""
 
-#: src/lvm_model.py:62 src/lvm_model.py:79 src/lvm_model.py:94
+#: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
 msgstr ""
 
-#: src/lvm_model.py:63
+#: src/lvm_model.py:62
 msgid "Volume Group Size:   "
 msgstr ""
 
-#: src/lvm_model.py:64
+#: src/lvm_model.py:63
 msgid "Available Space:   "
 msgstr ""
 
-#: src/lvm_model.py:65
+#: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
 msgstr ""
 
-#: src/lvm_model.py:66
+#: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
 msgstr ""
 
-#: src/lvm_model.py:67
+#: src/lvm_model.py:66
 msgid "Extent Size:   "
 msgstr ""
 
-#: src/lvm_model.py:68
+#: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
 msgstr ""
 
-#: src/lvm_model.py:69
+#: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
 msgstr ""
 
-#: src/lvm_model.py:70
+#: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
 msgstr ""
 
-#: src/lvm_model.py:71
+#: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
 msgstr ""
 
-#: src/lvm_model.py:72
+#: src/lvm_model.py:71
 msgid "VG UUID:   "
 msgstr ""
 
-#: src/lvm_model.py:74
+#: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
 msgstr ""
 
-#: src/lvm_model.py:75
+#: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
 msgstr ""
 
-#: src/lvm_model.py:76
+#: src/lvm_model.py:75
 msgid "Number of Segments:   "
 msgstr ""
 
-#: src/lvm_model.py:77
+#: src/lvm_model.py:76
 msgid "Number of Stripes:   "
 msgstr ""
 
-#: src/lvm_model.py:78
+#: src/lvm_model.py:77
 msgid "Stripe Size:   "
 msgstr ""
 
-#: src/lvm_model.py:80
+#: src/lvm_model.py:79
 msgid "LV UUID:   "
 msgstr ""
 
-#: src/lvm_model.py:82
+#: src/lvm_model.py:81
 msgid "Partition Type:   "
 msgstr ""
 
-#: src/lvm_model.py:83
+#: src/lvm_model.py:82
 msgid "Size:   "
 msgstr ""
 
-#: src/lvm_model.py:84
+#: src/lvm_model.py:83
 msgid "Mount Point:   "
 msgstr ""
 
-#: src/lvm_model.py:85
+#: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
 msgstr ""
 
-#: src/lvm_model.py:86
+#: src/lvm_model.py:85
 msgid "File System:   "
 msgstr ""
 
-#: src/lvm_model.py:88
+#: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
 msgstr ""
 
-#: src/lvm_model.py:89
+#: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
 msgstr ""
 
-#: src/lvm_model.py:90
+#: src/lvm_model.py:89
 msgid "Space Used:   "
 msgstr ""
 
-#: src/lvm_model.py:91
+#: src/lvm_model.py:90
 msgid "Space Free:   "
 msgstr ""
 
-#: src/lvm_model.py:92
+#: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
 msgstr ""
 
-#: src/lvm_model.py:93
+#: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
 msgstr ""
 
-#: src/lvm_model.py:95
+#: src/lvm_model.py:94
 msgid "PV UUID:   "
 msgstr ""
 
-#: src/lvm_model.py:97
+#: src/lvm_model.py:96
 msgid "Not initializable:   "
 msgstr ""
 
-#: src/lvm_model.py:98
+#: src/lvm_model.py:97
 msgid "Extended partition"
 msgstr ""
 
-#: src/lvm_model.py:99
+#: src/lvm_model.py:98
 msgid "Swap in use"
 msgstr ""
 
-#: src/lvm_model.py:100
+#: src/lvm_model.py:99
 msgid "Foreign boot partition"
 msgstr ""
 
-#: src/lvm_model.py:101
+#: src/lvm_model.py:100
 msgid "Autopartition failure"
 msgstr ""
 
-#: src/lvm_model.py:128
-msgid "Quering Volume Groups"
-msgstr ""
-
-#: src/lvm_model.py:129
-msgid "Quering Logical Volumes"
-msgstr ""
-
-#: src/lvm_model.py:130
-msgid "Quering Physical Volumes"
-msgstr ""
-
-#: src/lvm_model.py:268
+#: src/lvm_model.py:250
 msgid "Partition manually"
 msgstr ""
 
-#: src/lvm_model.py:304
+#: src/lvm_model.py:286
 msgid "Multipath device"
 msgstr ""
 
-#: src/lvm_model.py:307
+#: src/lvm_model.py:289
 msgid "Note:   "
 msgstr ""
 
-#: src/lvm_model.py:307
+#: src/lvm_model.py:289
 msgid "Initialize manually"
 msgstr ""
 
-#: src/lvm_model.py:810
+#: src/lvm_model.py:788
 msgid "Number of mirror images:  "
 msgstr ""
 
-#: src/lvm_model.py:813
+#: src/lvm_model.py:791
 msgid "Snapshots:  "
 msgstr ""
 
-#: src/lvm_model.py:819
+#: src/lvm_model.py:797
 msgid "Snapshot origin:  "
 msgstr ""
 
-#: src/lvm_model.py:826
+#: src/lvm_model.py:804
 msgid "Snapshot usage:  "
 msgstr ""
 
-#: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
-#: src/lvm_model.py:915
+#: src/lvm_model.py:827 src/lvm_model.py:833 src/lvm_model.py:876
+#: src/lvm_model.py:892
 msgid "/   Root Filesystem"
 msgstr ""
 
-#: src/lvm_model.py:918 src/Filesystem.py:120
+#: src/lvm_model.py:895 src/Filesystem.py:120
 msgid "None"
 msgstr ""
 

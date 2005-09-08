@@ -24,68 +24,39 @@ def execWithCaptureErrorStatus(bin, args):
 
 
 def execWithCaptureProgress(bin, args, message):
-    forked = ForkedCommandProgress(bin, args, message)
-    return forked.run()[0]
+    res = execWithCaptureErrorStatusProgress(bin, args, message)
+    return res[0]
 
 def execWithCaptureStatusProgress(bin, args, message):
-    forked = ForkedCommandProgress(bin, args, message)
-    res = forked.run()
+    res = execWithCaptureErrorStatusProgress(bin, args, message)
     return res[0], res[2]
 
 def execWithCaptureErrorStatusProgress(bin, args, message):
-    forked = ForkedCommandProgress(bin, args, message)
-    return forked.run()
+    progress = ProgressPopup(message)
+    progress.start()
+    res = execWithCaptureErrorStatus(bin, args)
+    progress.stop()
+    return res
 
 
-class ForkedCommandProgress:
-    def __init__(self, bin, args, message):
-        self.child_pid = None
-        self.pbar_timer = 0
-        self.be_patient_dialog = None
-        self.system_command_retval = None
-        
-        self.bin = bin
-        self.args = args
-        
+class ProgressPopup:
+    def __init__(self, message):
         self.message = message
         
-        # This pipe is for the parent process to receive
-        # the result of the system call in the child process.
-        self.fd_read_out, self.fd_write_out = os.pipe()
-        self.fd_read_err, self.fd_write_err = os.pipe()
-        
-    def run(self):
-        try:
-            self.child_pid = os.fork()
-        except OSError:
-            sys.exit("Unable to fork!!!")
-            
-        if (self.child_pid != 0):
-            # parent process
-            os.close(self.fd_write_out)
-            os.close(self.fd_write_err)
-            
-            return self.showDialog(self.message)
-        else:
-            # child process
-            
-            os.close(self.fd_read_out)
-            os.close(self.fd_read_err)
-            
-            out, err, res = execWithCaptureErrorStatus(self.bin, self.args)
-            # let parent process know result of system call through IPC
-            os.write(self.fd_write_out, out)
-            os.write(self.fd_write_err, err)
-            os.close(self.fd_write_out)
-            os.close(self.fd_write_err)
-            
-            os._exit(res)
-        
-    def showDialog(self,message):
+        self.pbar_timer = 0
+        self.be_patient_dialog = None
+    
+    def start(self):
         self.be_patient_dialog = gtk.Dialog()
+        self.be_patient_dialog.set_modal(True)
+        
+        self.be_patient_dialog.connect("response", self.__on_delete_event)
+        self.be_patient_dialog.connect("close", self.__on_delete_event)
+        self.be_patient_dialog.connect("delete_event", self.__on_delete_event)
+        
         self.be_patient_dialog.set_has_separator(False)
         
-        label = gtk.Label(message)
+        label = gtk.Label(self.message)
         self.be_patient_dialog.vbox.pack_start(label, True, True, 0)
         self.be_patient_dialog.set_modal(True)
         
@@ -98,62 +69,36 @@ class ForkedCommandProgress:
         align.add(self.pbar)
         self.pbar.show()
         
-        #Start bouncing progress bar
-        self.pbar_timer = gobject.timeout_add(100, self.progress_bar_timeout)
-        
         # change cursor
         cursor = gtk.gdk.Cursor(gtk.gdk.WATCH)
         self.be_patient_dialog.get_root_window().set_cursor(cursor)
         
         # display dialog
         self.be_patient_dialog.show_all()
-        while self.be_patient_dialog.run() == gtk.RESPONSE_DELETE_EVENT:
-            pass
-        self.be_patient_dialog.destroy()
+        
+        #Start bouncing progress bar
+        self.pbar_timer = gobject.timeout_add(100, self.__progress_bar_timeout)
+        
+        
+    def stop(self):
+        # remove timer
+        gobject.source_remove(self.pbar_timer)
+        self.pbar_timer = 0
         
         # revert cursor
         cursor = gtk.gdk.Cursor(gtk.gdk.LEFT_PTR)
         self.be_patient_dialog.get_root_window().set_cursor(cursor)
         
-        # child has finished, collect data
-        out = ''
-        err = ''
-        in_list = [self.fd_read_out, self.fd_read_err]
-        while len(in_list) != 0:
-            i,o,e = select.select(in_list, [], [])
-            for fd in i:
-                if fd == self.fd_read_out:
-                    s = os.read(self.fd_read_out, 1000)
-                    if s == '':
-                        in_list.remove(self.fd_read_out)
-                    out = out + s
-                if fd == self.fd_read_err:
-                    s = os.read(self.fd_read_err, 1000)
-                    if s == '':
-                        in_list.remove(self.fd_read_err)
-                    err = err + s
-        os.close(self.fd_read_out)
-        os.close(self.fd_read_err)
-        
-        return out, err, self.system_command_retval
+        # destroy dialog
+        self.be_patient_dialog.destroy()
+        self.be_patient_dialog = None
     
-    def progress_bar_timeout(self):
-        (reaped, status) = os.waitpid(self.child_pid, os.WNOHANG)
-        
-        if reaped == self.child_pid:
-            # child exited
-            if os.WIFEXITED(status):
-                ret_status = os.WEXITSTATUS(status)
-                self.system_command_retval = ret_status
-            else:
-                self.system_command_retval = 255
-            self.be_patient_dialog.response(gtk.RESPONSE_OK)
-            return False
-        else:
-            # child still alive
-            self.pbar.pulse()
-            return True
-
+    def __progress_bar_timeout(self):
+        self.pbar.pulse()
+        return True
+    
+    def __on_delete_event(self, *args):
+        return True
 
 
 
@@ -184,7 +129,7 @@ class ForkedCommand:
             os.close(self.fd_read_out)
             os.close(self.fd_read_err)
             
-            out, err, res = execWithCaptureErrorStatus(self.bin, self.args)
+            out, err, res = __execWithCaptureErrorStatus(self.bin, self.args, 0, '/', 0, 1, 2, -1, False)
             # let parent process know result of system call through IPC
             os.write(self.fd_write_out, out)
             os.write(self.fd_write_err, err)
@@ -231,8 +176,7 @@ class ForkedCommand:
 
 
 
-# to be moved back into rhpl when time arrives
-def __execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdin = 0, catchfd = 1, catcherrfd = 2, closefd = -1):
+def __execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdin = 0, catchfd = 1, catcherrfd = 2, closefd = -1, update_gtk=True):
     if not os.access (root + command, os.X_OK):
         raise RuntimeError, command + " can not be run"
     
@@ -270,8 +214,7 @@ def __execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdi
             os.execvp(command, argv)
         else:
             os.execv(command, argv)
-        
-        sys.exit(1)
+        # will never come here
     
     os.close(write)
     os.close(write_err)
@@ -280,7 +223,11 @@ def __execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdi
     rc_err = ""
     in_list = [read, read_err]
     while len(in_list) != 0:
-        i,o,e = select.select(in_list, [], [])
+        # let GUI update
+        if update_gtk:
+            while gtk.events_pending():
+                gtk.main_iteration()
+        i,o,e = select.select(in_list, [], [], 0.1)
         for fd in i:
             if fd == read:
                 s = os.read(read, 1000)
@@ -302,15 +249,9 @@ def __execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdi
     except OSError, (errno, msg):
         print __name__, "waitpid:", msg
     
-    if os.WIFEXITED(status) and (os.WEXITSTATUS(status) == 0):
+    if os.WIFEXITED(status):
         status = os.WEXITSTATUS(status)
     else:
         status = -1
     
     return (rc, rc_err, status)
-
-
-
-
-
-
