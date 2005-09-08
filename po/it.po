@@ -1,4 +1,4 @@
-# translation of it.po to 
+# translation of it.po to
 # translation of it.po to
 # translation of it.po to
 # translation of it.po to
@@ -1007,7 +1007,7 @@ msgstr "Nulla"
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
+msgstr "Tutti i dati sull'entità disco %s verranno persi! Sei certo di volerlo inizializzare?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -1015,13 +1015,15 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"L'entità disco %s contiene il filesystem %s. Tutti i dati su di esso verranno persi! Sei certo "
+"di voler inizializzare l'entità disco %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
 msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
-msgstr ""
+msgstr "L'entità disco %s contiene dati dalla directory %s.Tutti i dati su di esso verranno persi! Sei certo di voler inizializzare l'entità disco%s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -1035,10 +1037,13 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"Stai per inizializzare il disco non partizionato %s. E' consigliabile, anche se "
+"non richiesta, la creazione di una partizione. Vuoi creare una singola "
+"partizione comprendente l'intero disco?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "Ricaricamento del LVM. Sei pregato di attendere."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1047,6 +1052,9 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
+"I cambiamenti avranno effetto dopo il riavvio del computer. Se il dispositivo %s viene usato, "
+"prima del riavvio, si POTREBBE incorrere nella corruzione dei dati. E' consigliabile riavviare "
+"il tcomputer ora."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1054,7 +1062,7 @@ msgstr "Mirror Log"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "Impossibile elaborare la richiesta"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -1184,6 +1192,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Le estensioni che stai tentando di selezionare appartengono al mirror log del "
+"Volume Logico %s. I Volumi Logici con Mirror non sono ancora migrabili, così "
+"le estensioni non sono selezionabili."
 
 #: src/renderer.py:194
 #, python-format
@@ -1192,6 +1203,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Le estensioni che stai tentando di selezionare appartengono all'immagine mirror del "
+"Volume Logico %s. I Volumi Logici con Mirror non sono ancora migrabili, così "
+"le estensioni non sono selezionabili."
 
 #: src/renderer.py:196
 #, python-format
@@ -1199,6 +1213,8 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"Le estensioni che stai tentando di selezionare appartengono a %s. uno snapshot di %s. "
+"Gli snapshots non sono ancora migrabili, così le estensioni non sono selezionabili."
 
 #: src/renderer.py:198
 #, python-format
@@ -1207,6 +1223,9 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"Le estensioni che stai tentando di selezionare appartengono al'origine di "
+"snapshot %s. Le origini di snapshot non sono ancora migrabili, così "
+"le estensioni non sono selezionabili."
 
 #: src/renderer.py:385
 msgid "Snapshot of "
@@ -1239,32 +1258,32 @@ msgstr "Entità non inizializzate"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "Sincronizzazione mirror %s "
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "Sei pregato di attendere che le partizioni vengano create"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Creazione del filesystem %s"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Ridimensionamento del filesystem %s"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "Controllo del filesystem %s"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Aggiornamento del filesystem %s a %s"
 
 #: src/Filesystem.py:13
 #, python-format
@@ -1435,7 +1454,7 @@ msgstr "Edita proprietà"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Immettere il path del Dispositivo a Blocchi da inizializzare"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1565,19 +1584,19 @@ msgstr "Scegliere un Gruppo di Volume a cui aggiungere questo VF"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Testo"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "_Ricaricare"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_Strumenti"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "messaggio estensione gv:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1590,6 +1609,14 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
@@ -1597,19 +1624,19 @@ msgstr "<b>Filesystem</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>Proprietà VL</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Dimensione</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Aggiungi riga in /etc/fstab"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "Il filesystem non è ridimensionabile"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
