@@ -1652,15 +1652,15 @@ msgstr "Granularità Kilobytes"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "Nome VL: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "Dimensione VL"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "I VL sotto snapshots non sono ridimensionabili"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1668,15 +1668,15 @@ msgstr "Lineare"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Mirrored"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "I VL con Mirror non sono ridimensionabili"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Mount"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point: "
@@ -1684,30 +1684,27 @@ msgstr "Mount point: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Monta al riavvio"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Dimensioni"
+msgstr "Dimensione (beg)"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Dimensioni"
+msgstr "Dimensione finale"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Striped"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Utilizza lo spazio residuo"
+msgstr "Usa spazio residuo"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "stripes di"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1734,10 +1731,12 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"Per poter rimuovere un VF, le estensioni in uso devono essere migrate.\n"
+"Seleziona la destinazione per le estensioni e la policy di migrazione."
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "Eredita"
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit policy from Volume Group"
@@ -1749,7 +1748,7 @@ msgstr "Migra estensioni"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "Migra ovunque anche se riduce le prestazioni"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate extents to "
@@ -1757,17 +1756,17 @@ msgstr "Migra estensioni su"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "Le nuove estensioni sono adiacenti a quelle esistenti"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Normale"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "Migra solo le estensioni appartenenti al VL "
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "Usa buonsenso"
 
