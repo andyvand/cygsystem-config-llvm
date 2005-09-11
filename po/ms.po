@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-03 17:57+0800\n"
+"PO-Revision-Date: 2005-09-11 21:38+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -70,7 +70,7 @@ msgid "Uninitialized Disk Entity"
 msgstr "Entiti Cakera Tidak Dimulakan"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Pilih entiti cakera untuk ditambah ke Kumpulan Volum %s:"
 
@@ -129,9 +129,8 @@ msgid "Volume Group %s does not have enough space for new Logical Volumes. A pos
 msgstr ""
 
 #: src/InputController.py:116
-#, fuzzy
 msgid "A snapshot of a snapshot is not supported."
-msgstr "Protokol terpilih tidak disokong."
+msgstr "Snapshot bagi snapshot tidak disokong."
 
 #: src/InputController.py:118
 #, python-format
@@ -185,15 +184,12 @@ msgid "%s extents"
 msgstr "%s extent"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Cipta Kumpulan Volum \n"
-"baru"
+msgstr "Ruang kosong masih ada dalam Kumpulan Volum:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Ruang masih ada untuk Volum ini:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -318,9 +314,8 @@ msgid "Physical Volume \"%s\" contains extents belonging to a snapshot or a snap
 msgstr ""
 
 #: src/InputController.py:670
-#, fuzzy
 msgid "The path you specified does not exist."
-msgstr "%s: Direktori destinasi dinyatakan tidak wujud"
+msgstr "Laluan yang anda nyatakan tidak wujud."
 
 #: src/InputController.py:677
 #, fuzzy
@@ -336,7 +331,7 @@ msgstr "[%s (%s): gagal.  Diabaikan]\n"
 #: src/InputController.py:988
 #, fuzzy
 msgid "Please select some extents first"
-msgstr "Tiada pakej dipilih. Sila pilih pakej dahulu."
+msgstr "Sila pilih destinasi folder dahulu!"
 
 #: src/InputController.py:1022
 msgid "There are not enough free extents to perform the necessary migration. Adding more physical volumes would solve the problem."
@@ -571,7 +566,7 @@ msgstr "Volum Fizikal LVM"
 #: src/CommandHandler.py:191
 #, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Tambah Volum Fizikal ke VG"
+msgstr "Pilih Kumpulan Volum untuk menambah %s ke dalamnya:"
 
 #: src/CommandHandler.py:218
 #, fuzzy
@@ -902,14 +897,13 @@ msgstr "Log Mentah..."
 #: src/lvmui_constants.py:63
 #, fuzzy
 msgid "Unable to process request"
-msgstr "Fail dalam proses: %d"
+msgstr "Gagal memulakan proses faks."
 
 #: src/lvmui_constants.py:82
 msgid "Free"
 msgstr "Bebas"
 
 #: src/lvmui_constants.py:83
-#, fuzzy
 msgid "Free space"
 msgstr "Ruang bebas"
 
@@ -979,7 +973,7 @@ msgstr "Cramfs"
 #: src/Properties_Renderer.py:42
 #, fuzzy
 msgid "Properties for"
-msgstr "Untuk ncurses:"
+msgstr "Ciri-ciri untuk %1"
 
 #: src/Properties_Renderer.py:43
 #: src/renderer.py:37
@@ -1164,8 +1158,9 @@ msgid "GFS (local)"
 msgstr "CDROM lokal"
 
 #: src/Filesystem.py:470
+#, fuzzy
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS - Global File System"
 
 #: src/Segment.py:44
 msgid "Stripe "
@@ -1304,7 +1299,7 @@ msgstr "Mulakan Entiti"
 #: src/lvui.glade.h:27
 #, fuzzy
 msgid "Initialize Block Device"
-msgstr "Fail \"%s\" adalah sebuah fail peranti"
+msgstr "Comment=Peranti Blok"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1313,7 +1308,7 @@ msgstr "Mulakan Entiti"
 #: src/lvui.glade.h:29
 #, fuzzy
 msgid "Initialize _Block Device"
-msgstr "Fail \"%s\" adalah sebuah fail peranti"
+msgstr "Comment=Peranti Blok"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
