@@ -1,5 +1,5 @@
 AC_INIT(system-config-lvm.spec.in)
-AM_INIT_AUTOMAKE(system-config-lvm, 1.0.4)
+AM_INIT_AUTOMAKE(system-config-lvm, 1.0.5)
 AM_PATH_PYTHON(2.3)
 
 ALL_LINGUAS=""

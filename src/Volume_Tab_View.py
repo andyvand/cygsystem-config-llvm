@@ -239,6 +239,7 @@ class Volume_Tab_View:
                       NAME_COL, vg_string, 
                       TYPE_COL,
                       UNSELECTABLE_TYPE)
+        self.__sort_list_by_get_name_fcn(vg_list)
         for vg in vg_list:
             vg_child_iter = treemodel.append(vg_iter)
             vg_name = vg.get_name()
@@ -263,7 +264,9 @@ class Volume_Tab_View:
             
             pv_list = vg.get_pvs().values()
             grouped_dir, ungrouped_list = self.__group_by_device(pv_list)
-            for main_dev in grouped_dir:
+            grouped_dir_sorted = grouped_dir.keys()
+            grouped_dir_sorted.sort()
+            for main_dev in grouped_dir_sorted:
                 dev_iter = treemodel.append(phys_iter)
                 pvs = grouped_dir[main_dev]
                 devnames = pvs[0].getDevnames()
@@ -293,6 +296,7 @@ class Volume_Tab_View:
                               OBJ_COL, pv)
             
             lv_list = vg.get_lvs().values()
+            self.__sort_list_by_get_name_fcn(lv_list)
             for lv in lv_list:
                 if lv.is_used():
                     iter = treemodel.append(log_iter)
@@ -315,7 +319,9 @@ class Volume_Tab_View:
                       NAME_COL, unalloc_string, 
                       TYPE_COL, UNSELECTABLE_TYPE)
         grouped_dir, ungrouped_list = self.__group_by_device(unalloc_list)
-        for main_dev in grouped_dir:
+        grouped_dir_sorted = grouped_dir.keys()
+        grouped_dir_sorted.sort()
+        for main_dev in grouped_dir_sorted:
             dev_iter = treemodel.append(unallocated_iter)
             pvs = grouped_dir[main_dev]
             devnames = pvs[0].getDevnames()
@@ -352,7 +358,9 @@ class Volume_Tab_View:
                       NAME_COL, uninit_string, 
                       TYPE_COL, UNSELECTABLE_TYPE)
         grouped_dir, ungrouped_list = self.__group_by_device(uninit_list)
-        for main_dev in grouped_dir:
+        grouped_dir_sorted = grouped_dir.keys()
+        grouped_dir_sorted.sort()
+        for main_dev in grouped_dir_sorted:
             dev_iter = treemodel.append(uninitialized_iter)
             pvs = grouped_dir[main_dev]
             devnames = pvs[0].getDevnames()
@@ -394,7 +402,29 @@ class Volume_Tab_View:
               grouped[pv.getDevnames()[0]].append(pv)
           else:
               grouped[pv.getDevnames()[0]] = [pv]
+
+      # sort lists
+      for main_dev in grouped:
+          self.__sort_list_by_get_name_fcn(grouped[main_dev])
+      self.__sort_list_by_get_name_fcn(ungrouped)
       return grouped, ungrouped
+  
+  def __sort_list_by_get_name_fcn(self, some_list):
+      d = {}
+      l = []
+      while len(some_list) != 0:
+          o = some_list.pop()
+          name = o.get_name()
+          if name in d:
+              d[name].append(o)
+          else:
+              d[name] = [o]
+              l.append(name)
+      l.sort()
+      for name in l:
+          for o in d[name]:
+              some_list.append(o)
+      return some_list
   
   def on_tree_selection_changed(self, *args):
     selection = self.treeview.get_selection()
