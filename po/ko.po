@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-08-25 10:24+1000\n"
+"PO-Revision-Date: 2005-09-08 09:19+1000\n"
 "Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -40,9 +40,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "이 PV에 추가하기위한 볼륨 그룹을 선택하십시오."
+msgstr "다음에 %s를 추가하기위한 볼륨 그룹을 선택하십시오:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -73,9 +73,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "초기화되지 않는 디스크 엔티티"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "볼륨 그룹 %s에 추가하기위한 디스크 엔티티를 선택하십시오."
+msgstr "볼륨 그룹 %s에 추가하기위한 디스크 엔티티를 선택하십시오:"
 
 #: src/InputController.py:92
 msgid ""
@@ -96,8 +96,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "볼륨 그룹이름 %s가 이미 존재합니다. 겹치지 않는 이름을 선택해주십시오."
 
 #: src/InputController.py:98
@@ -110,8 +109,7 @@ msgstr "새로운 볼륨 그룹에 대한 이름이 필요합니다."
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "특정 마운트 포인트 %s가 존재하지 않습니다. 생성할까요?"
 
 #: src/InputController.py:104
@@ -171,8 +169,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "모델 공장(model factory)에 정의되지 않은 형 변환 오류가 발생하여 작업을 완료"
 "하지 못했습니다."
@@ -292,8 +289,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s를 볼륨 그룹 %s로부터 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:153
@@ -406,8 +402,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -497,8 +492,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1536
@@ -576,108 +570,81 @@ msgstr ""
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgextend 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgextend 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
 "vgcreate 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %"
 "s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "vgreduce 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %"
 "s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvmove 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"umount 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "umount 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
-"mount 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "mount 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #: src/CommandHandler.py:26
 #, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:27
 #, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:28
 #, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "vgcreate 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %"
 "s"
@@ -687,8 +654,7 @@ msgstr ""
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
-msgstr ""
-"lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:77
 #, fuzzy
@@ -725,42 +691,28 @@ msgid "Adding Physical Volume to Volume Group"
 msgstr "VG에 물리적 볼륨 추가하기"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"새로운 볼륨\n"
-"그룹 만들기"
+msgstr "볼륨 그룹 만들기"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "새로운 볼륨 그룹"
+msgstr "볼륨 그룹을 삭제"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "물리적 볼륨"
+msgstr "물리적 볼륨을 삭제"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"논리적 볼륨 \n"
-"을 제거"
+msgstr "논리적 볼륨을 삭제"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"논리적 볼륨 \n"
-"을 제거"
+msgstr "논리적 볼륨 이름 변경"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"볼륨 그룹으로부터 \n"
-"볼륨을 제거"
+msgstr "볼륨 그룹으로부터 물리적 볼륨을 제거"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -1016,8 +968,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "정말로 디스크 엔티티 %s를 초기화하시겠습니까? 이 장치/파티션에 있는 모든 데이"
 "타는 없어질 것입니다."
@@ -1266,24 +1217,21 @@ msgstr ""
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/Filesystem.py:14
 #, fuzzy, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #: src/Filesystem.py:15
 #, fuzzy, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #: src/Filesystem.py:16
 #, fuzzy, python-format
@@ -1330,16 +1278,13 @@ msgstr ""
 
 #: src/Multipath.py:11
 #, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #: src/Multipath.py:12
 #, fuzzy, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #: src/PhysicalVolume.py:142
 #, fuzzy, python-format
@@ -1753,80 +1698,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "크기 입력란에 입력하신 값에 문제가 있습니다. 문자나 기호가 아닌 숫자값만 "
-#~ "입력하시기 바랍니다."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "새로운 논리 볼륨으로 정할 크기가 볼륨 그룹 %s의 비어있는 공간을 초과하였습"
-#~ "니다.  가능한 공간은 :"
-
-#~ msgid "Stripe Size field"
-#~ msgstr "스트라이프 크기 영역"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "스트라이프 영역 개수"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 메가바이트"
-
-#~ msgid "Create New LV"
-#~ msgstr "새로운 LV 만들기"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "논리적인 볼륨을 \n"
-#~ "확장하기"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "마운트 위치(여백으로 남긴다면, LV는 마운트되지 않을 것입니다.)"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "새로운 LV를 위한 이름"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "스트라입 개수: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "볼륨 그룹에 추가하기위해 디스크 엔티티를 선택하십시오."
-
-#~ msgid "Size:"
-#~ msgstr "크기:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "스트라입 크기:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "VG1의 사용되지 않는 영역"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "화일 시스템이 존재안함"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "이 확장영역은 아직 LVM으로 \n"
-#~ "사용되기 위한 초기화가 되지 않았습니다."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "이 볼륨은 아직 볼륨그룹으로 할당되지\n"
-#~ "않았습니다."
