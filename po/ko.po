@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-08 09:19+1000\n"
+"PO-Revision-Date: 2005-09-15 16:17+1000\n"
 "Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr "볼륨 그룹이름 %s가 이미 존재합니다. 겹치지 않는 이�
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr "새로운 논리적 볼륨에 대한 이름이 반드시 필요합니다."
+msgstr "새로운 논리 볼륨에 대한 이름이 반드시 필요합니다."
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
@@ -131,28 +131,28 @@ msgstr "볼륨 그룹 내 논리 볼륨의 수가 최대수에 이르렀습니�
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "볼륨 그룹 내 물리적 볼륨의 수가 최대수에 이르렀습니다."
+msgstr "볼륨 그룹 내 물리 볼륨의 수가 최대수에 이르렀습니다."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "볼륨 그룹 내 물리적 볼륨의 수가 최대수에 이르렀습니다."
+msgstr "볼륨 그룹 내에 추가할 수 있는 최대 물리 볼륨의 수는 %s 입니다."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"볼륨 그룹 %s는 %s에 저장된 자료를 옮기기에 충분한 공간이 있지 않습니다. 볼륨 "
-"그룹에 추가 물리적 볼륨을 추가하시는것이 좋을 듯 합니다."
+"볼륨 그룹 %s에는 새 논리 볼륨을 위한 충분한 공간이 있지 않습니다. 볼륨 "
+"그룹에 추가 물리 볼륨을 추가하시는 것이 좋을 듯 합니다."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "스냅샷을 다시 스냅샷할 수 없습니다."
 
 #: src/InputController.py:118
 #, python-format
@@ -160,6 +160,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"%s 논리 볼륨에는 현재 %s 스냅샷이 있습니다. 이 스냅샷을 먼저 "
+"삭제하시기 바랍니다."
 
 #: src/InputController.py:119
 #, python-format
@@ -216,14 +218,11 @@ msgstr "%s 기가바이트"
 #: src/InputController.py:135
 #, python-format
 msgid "%s extents"
-msgstr "%s 확장"
+msgstr "%s 익스텐트"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"새로운 볼륨\n"
-"그룹 만들기"
+msgstr "볼륨 그룹에 남은 여유 공간:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
@@ -231,7 +230,7 @@ msgstr ""
 
 #: src/InputController.py:140
 msgid "Extents"
-msgstr "확장(Extents)"
+msgstr "익스텐트(Extents)"
 
 #: src/InputController.py:141
 msgid "Gigabytes"
@@ -251,18 +250,16 @@ msgid "The %s should only contain number values"
 msgstr "%s는 숫자이어야 합니다."
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr "최대 물리적인 볼륨 필드는 1부터 256사이의 정수이어야 합니다."
+msgstr "최대 물리 볼륨 입력값은 1부터 256사이의 정수이어야 합니다."
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr "최대 논리적인 볼륨 필드는 1부터 256사이의 정수이어야 합니다."
+msgstr "최대 물리 볼륨 입력값은 1부터 256사이의 정수이어야 합니다."
 
 #: src/InputController.py:149
 #, python-format
@@ -272,7 +269,7 @@ msgid ""
 msgstr "논리적인 볼륨 관리로부터 %s를 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -281,7 +278,7 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"제거하시려는 물리적인 볼륨 %s에는 이 볼륨 extent를 사용하는 활성 논리 볼륨에 "
+"제거하시려는 물리 볼륨 %s에는 이 볼륨 extent를 사용하는 활성 논리 볼륨에 "
 "데이터가 저장되어 있습니다. 이 물리 볼륨은 볼륨 그룹 내의 유일한 물리 볼륨이"
 "므로, 이 데이터를 다른 곳이 이동시킬 수가 없습니다. 따라서 이 물리 볼륨을 제"
 "거하시기 전에 새 물리 볼륨을 추가하시거나 또는 이 물리 보륨과 연관된 논리 볼"
@@ -298,7 +295,7 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
-"물리적 볼륨 %s 를 볼륨 그룹 %s에서 삭제한다면 볼륨 그룹도 비어서 삭제될 것입"
+"물리 볼륨 %s 를 볼륨 그룹 %s에서 삭제한다면 볼륨 그룹도 비어서 삭제될 것입"
 "니다. 그래도 계속 진행하시겠습니까?"
 
 #: src/InputController.py:154
@@ -309,7 +306,7 @@ msgid ""
 "Volume Group."
 msgstr ""
 "볼륨 그룹 %s는 %s에 저장된 자료를 옮기기에 충분한 공간이 있지 않습니다. 볼륨 "
-"그룹에 추가 물리적 볼륨을 추가하시는것이 좋을 듯 합니다."
+"그룹에 추가 물리 볼륨을 추가하시는것이 좋을 듯 합니다."
 
 #: src/InputController.py:155
 msgid ""
@@ -320,34 +317,31 @@ msgid ""
 msgstr ""
 "dm-mirror 모듈이 커널에 로딩되지 않았거나 커널이 dm-mirror 타겟을 지원하지 않"
 "는 것 같습니다. 커널이 지원하는 경우, \"modprobe dm-mirror\" 명령을 입력해보"
-"십시오. 그렇지 않다면, 물리적 extent에서 데이터를 이동하는 작업을 불가능합니"
+"십시오. 그렇지 않다면, 물리 extent에서 데이터를 이동하는 작업을 불가능합니"
 "다."
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"dm-mirror 모듈이 커널에 로딩되지 않았거나 커널이 dm-mirror 타겟을 지원하지 않"
-"는 것 같습니다. 커널이 지원하는 경우, \"modprobe dm-mirror\" 명령을 입력해보"
-"십시오. 그렇지 않다면, 물리적 extent에서 데이터를 이동하는 작업을 불가능합니"
+"dm-snapshot 모듈이 커널에 로딩되지 않았거나 커널이 dm-snapshot 타겟을 지원하지 않"
+"는 것 같습니다. 커널이 지원하는 경우, \"modprobe dm-snapshot\" 명령을 입력해보"
+"십시오. 그렇지 않다면, 스냅샷을 생성하는 작업이 불가능합니"
 "다."
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "논리적 볼륨 %s를 정말로 제거하시겠습니까?"
+msgstr "논리 볼륨 %s를 정말로 제거하시겠습니까?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr ""
-"중요한 경고: %s 논리 볼륨에 %s 파일 시스템을 있으며 현재 %s에 마운트되어있습"
-"니다. 정말로 이 마운트된 파일 시스템에 저장된 데이터를 모두 삭제하시겠습니까?"
+msgstr "%s 논리 볼륨에 %s 파일 시스템이 존재합니다. 정말로 %s 논리 볼륨을 삭제하시겠습니까?"
 
 #: src/InputController.py:160
 #, python-format
@@ -443,9 +437,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s 확장"
+msgstr "익스텐트 이동"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -457,9 +450,8 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "새로운 논리적 볼륨 만들기"
+msgstr "새로운 논리 볼륨 만들기"
 
 #: src/InputController.py:1346
 #, python-format
@@ -467,9 +459,8 @@ msgid "Edit %s, a Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "논리적 볼륨"
+msgstr "논리 볼륨 편집"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -633,62 +624,50 @@ msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s
 msgstr "mount 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgstr "lvresize 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgstr "lvrename 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgcreate 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %"
-"s"
+msgstr "lvchange 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
-msgstr "lvremove 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgstr "lvconvert 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"새로운 볼륨\n"
-"그룹 만들기"
+msgstr "논리 볼륨 만들기"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "논리적 볼륨"
+msgstr "논리 볼륨 크기 조정"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "논리적 볼륨"
+msgstr "논리 볼륨에 미러(mirror) 추가"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"논리적 볼륨 \n"
-"을 제거"
+msgstr "논리 볼륨에서 미러 제거"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "물리적 볼륨"
+msgstr "물리 볼륨 초기화"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "VG에 물리적 볼륨 추가하기"
+msgstr "볼륨 그룹에 물리 볼륨 추가하기"
 
 #: src/CommandHandler.py:218
 msgid "Creating Volume Group"
@@ -700,19 +679,19 @@ msgstr "볼륨 그룹을 삭제"
 
 #: src/CommandHandler.py:250
 msgid "Removing Physical Volume"
-msgstr "물리적 볼륨을 삭제"
+msgstr "물리 볼륨을 삭제"
 
 #: src/CommandHandler.py:261
 msgid "Removing Logical Volume"
-msgstr "논리적 볼륨을 삭제"
+msgstr "논리 볼륨을 삭제"
 
 #: src/CommandHandler.py:273
 msgid "Renaming Logical Volume"
-msgstr "논리적 볼륨 이름 변경"
+msgstr "논리 볼륨 이름 변경"
 
 #: src/CommandHandler.py:295
 msgid "Removing Physical Volume from Volume Group"
-msgstr "볼륨 그룹으로부터 물리적 볼륨을 제거"
+msgstr "볼륨 그룹으로부터 물리 볼륨을 제거"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -760,31 +739,31 @@ msgstr "사용가능한 공간"
 
 #: src/lvm_model.py:65
 msgid "Total Number of Extents:   "
-msgstr "확장의 전체 개수:   "
+msgstr "익스텐트의 전체 개수:   "
 
 #: src/lvm_model.py:66
 msgid "Number of Free Extents:   "
-msgstr "빈 확장의 개수:   "
+msgstr "빈 익스텐트의 개수:   "
 
 #: src/lvm_model.py:67
 msgid "Extent Size:   "
-msgstr "확장 크기:   "
+msgstr "익스텐트 크기:   "
 
 #: src/lvm_model.py:68
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "최대 허용 물리적 볼륨 개수"
+msgstr "최대 허용 물리 볼륨 개수"
 
 #: src/lvm_model.py:69
 msgid "Number of Physical Volumes:   "
-msgstr "물리적 볼륨 개수"
+msgstr "물리 볼륨 개수"
 
 #: src/lvm_model.py:70
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "최대 허용 논리적 볼륨 개수"
+msgstr "최대 허용 논리 볼륨 개수"
 
 #: src/lvm_model.py:71
 msgid "Number of Logical Volumes:   "
-msgstr "논리적 볼륨 개수"
+msgstr "논리 볼륨 개수"
 
 #: src/lvm_model.py:72
 msgid "VG UUID:   "
@@ -792,11 +771,11 @@ msgstr "VG UUID:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Name:   "
-msgstr "논리적 볼륨 이름"
+msgstr "논리 볼륨 이름"
 
 #: src/lvm_model.py:75
 msgid "Logical Volume Size:   "
-msgstr "논리적 볼륨 크기"
+msgstr "논리 볼륨 크기"
 
 #: src/lvm_model.py:76
 msgid "Number of Segments:   "
@@ -827,9 +806,8 @@ msgid "Mount Point:   "
 msgstr "마운트 위치"
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "마운트 위치"
+msgstr "재부팅시 마운트 지점:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -837,11 +815,11 @@ msgstr "파일 시스템"
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Name:   "
-msgstr "물리적 볼륨 이름"
+msgstr "물리 볼륨 이름"
 
 #: src/lvm_model.py:89
 msgid "Physical Volume Size:   "
-msgstr "물리적 볼륨 크기"
+msgstr "물리 볼륨 크기"
 
 #: src/lvm_model.py:90
 msgid "Space Used:   "
@@ -853,11 +831,11 @@ msgstr "남은 공간"
 
 #: src/lvm_model.py:92
 msgid "Total Physical Extents:   "
-msgstr "총 물리적인 확장"
+msgstr "총 물리 익스텐트:   "
 
 #: src/lvm_model.py:93
 msgid "Allocated Physical Extents:   "
-msgstr "할당된 물리적인 확장"
+msgstr "할당된 물리 익스텐트:   "
 
 #: src/lvm_model.py:95
 msgid "PV UUID:   "
@@ -884,47 +862,40 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "볼륨 그룹들"
+msgstr "볼륨 그룹 질의"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "논리적 볼륨"
+msgstr "논리 볼륨 질의"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "물리적 볼륨"
+msgstr "물리 볼륨 질의"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "파티션 타입"
+msgstr "수동으로 파티션하기"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "포맷"
+msgstr "알림:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "엔티티 초기화하기"
+msgstr "수동으로 초기화하기"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "스트라입의 개수"
+msgstr "미러 이미지 개수:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "스냅샷:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
@@ -936,9 +907,8 @@ msgstr ""
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "파일 시스템 없음"
+msgstr "/   루트 파일시스템"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
@@ -967,11 +937,9 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
+#, python-format
 msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"정말로 디스크 엔티티 %s를 초기화하시겠습니까? 이 장치/파티션에 있는 모든 데이"
-"타는 없어질 것입니다."
+msgstr "정말로 디스크 %s의 여유 공간에서 %s을(를) 초기화하시겠습니까?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1014,9 +982,9 @@ msgid "Unpartitioned space"
 msgstr ""
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "%s에 사용되지 않는 공간"
+msgstr "%s에 파티션되지 않은 공간"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1077,12 +1045,12 @@ msgstr "에 대한 속성들"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr "물리적 볼륨"
+msgstr "물리 볼륨"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
-msgstr "논리적 볼륨"
+msgstr "논리 볼륨"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
@@ -1166,9 +1134,8 @@ msgid "Snapshot"
 msgstr ""
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "확장"
+msgstr "익스텐트 보기"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1213,39 +1180,36 @@ msgid "Upgrading %s filesystem to %s"
 msgstr ""
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgcreate 명령이 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
+msgstr "파티션 생성에 실패하였습니다. 수행했던 명령:\"%s\" - 시스템 오류 메시지: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgstr "파일 시스템 크기 재조정 작업에 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgstr "파일 시스템 확인 작업에 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"vgreduce 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %"
-"s"
+msgstr "파일 시스템 업그레이드에 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "파일 시스템 없음"
+msgstr "알 수 없는 파일 시스템"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1264,9 +1228,8 @@ msgid "GFS (clustered)"
 msgstr ""
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "스트라이프됨"
+msgstr "스트라이프"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1277,19 +1240,19 @@ msgid "Mirror "
 msgstr ""
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgstr "dmsetup 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs 명령이 실패하였습니다. 수행했던 명령: %s  - 시스템 오류 메시지: \"%s\""
+msgstr "ls 명령이 실패하였습니다. 수행했던 명령: \"%s\" - 시스템 오류 메시지: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "파티션 타입"
+msgstr "파티션  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1337,7 +1300,7 @@ msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr "VG에 물리적 볼륨 추가하기"
+msgstr "VG에 물리 볼륨 추가하기"
 
 #: src/lvui.glade.h:13
 msgid ""
@@ -1368,9 +1331,8 @@ msgstr ""
 "그룹 만들기"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "에 대한 속성들"
+msgstr "등록 정보 수정"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1382,26 +1344,23 @@ msgid ""
 "Volume Group"
 msgstr ""
 "볼륨 그룹 \n"
-"확장하기"
+"익스텐트하기"
 
 #: src/lvui.glade.h:24
 msgid "Extend Volume Group"
-msgstr "확장 볼륨 그룹"
+msgstr "익스텐트 볼륨 그룹"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
 msgstr "포맷"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "초기화되지 않은"
+msgstr "초기화"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "엔티티 초기화하기"
+msgstr "블록 장치 초기화"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1441,7 +1400,7 @@ msgid ""
 "Extent(s) From Volume"
 msgstr ""
 "볼륨으로부터 \n"
-"선택된 확장을 이전하기"
+"선택된 익스텐트를 이동하기"
 
 #: src/lvui.glade.h:38
 msgid "Name for Volume Group: "
@@ -1457,14 +1416,14 @@ msgstr "새로운 볼륨 그룹 형식"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size: "
-msgstr "물리적 확장 크기: "
+msgstr "물리 익스텐트 크기: "
 
 #: src/lvui.glade.h:42
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
-"논리적 볼륨 \n"
+"논리 볼륨 \n"
 "을 제거"
 
 #: src/lvui.glade.h:44
@@ -1472,7 +1431,7 @@ msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
-"논리적 볼륨(들)으로부터 \n"
+"논리 볼륨(들)으로부터 \n"
 "볼륨을 제거"
 
 #: src/lvui.glade.h:46
@@ -1480,7 +1439,7 @@ msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
-"물리적 볼륨(들)으로부터 \n"
+"물리 볼륨(들)으로부터 \n"
 "볼륨을 제거"
 
 #: src/lvui.glade.h:48
@@ -1513,7 +1472,7 @@ msgstr ""
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "도구(_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
@@ -1530,11 +1489,18 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "파일시스템: "
+msgstr "<b>파일시스템</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
@@ -1542,7 +1508,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>크기</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
@@ -1553,21 +1519,16 @@ msgid "Filesystem is not resizable"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"새로운 볼륨\n"
-"그룹 만들기"
+msgstr "볼륨 그룹 레이블 내 여유 공간"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "남은 공간 사용하기"
+msgstr "남은 여유 공간 레이블"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "킬로바이트"
+msgstr "킬로바이트 세분성"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
@@ -1598,30 +1559,26 @@ msgid "Mount"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "마운트 위치"
+msgstr "마운트 지점: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "크기"
+msgstr "용량 시작"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "크기"
+msgstr "용량 끝"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "스트라이프됨"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
 msgstr "남은 공간 사용하기"
 
@@ -1657,30 +1614,25 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "물려받음"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"볼륨 그룹으로부터 \n"
-"볼륨을 제거"
+msgstr "볼륨 그룹으로부터 정책을 물려받음"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "확장"
+msgstr "익스텐트 이동하기"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
 msgstr ""
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
 msgstr ""
 "볼륨으로부터 \n"
-"선택된 확장을 이전하기"
+"선택된 익스텐트를 이동하기"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
