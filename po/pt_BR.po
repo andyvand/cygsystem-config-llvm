@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-07 01:56-0300\n"
+"PO-Revision-Date: 2005-09-16 02:50-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -222,15 +222,12 @@ msgid "%s extents"
 msgstr "%s extensões"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Criar novo Grupo \n"
-"de Volume"
+msgstr "Espaço livre restante no Grupo de Volume:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Espaço restante para este Volume:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -536,7 +533,7 @@ msgstr ""
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "Caractere inválido \"%s\" no nome do Volume Lógico"
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
@@ -555,7 +552,7 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "Espelho não criado. Completando tarefas restantes."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -563,7 +560,7 @@ msgstr ""
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "Você deseja migrar as extensões especificadas?"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
@@ -652,34 +649,33 @@ msgstr ""
 "Sistema: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando lvremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"o comando lvresize falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"o comando lvcreate falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
-"do Sistema: %s"
+msgstr "o comando lvcrename falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando vgchange falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"o comando Ivchange falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
 "do Sistema: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"o comando lvremove falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
-"do Sistema: %s"
+"o comando lvconvert falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
+"do Sistema: %s "
+"s"
 
 #: src/CommandHandler.py:77
 msgid "Creating Logical Volume"
@@ -1218,40 +1214,34 @@ msgid "Upgrading %s filesystem to %s"
 msgstr "Atualizando sistema de arquivos %s para %s"
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"o comando vgcreate falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
-"do Sistema: %s"
+msgstr "Criação do sistema de arquivos falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"o comando mkfs falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"Redimensionamento do sistema de arquivos falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
 "Sistema: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"o comando mkfs falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
-"Sistema: %s"
+msgstr "Checando sistema de arquivos falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"o comando vgreduce falhou. Tentativa de comando: \"%s\" - Mensagem de Erro "
-"do Sistema: %s"
+msgstr "Atualização no sistema de arquivos falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/Filesystem.py:125
 msgid "Unknown filesystem"
@@ -1286,17 +1276,17 @@ msgid "Mirror "
 msgstr "Espelho "
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando mkfs falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"o comando dmsetup falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
 "Sistema: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"o comando mkfs falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"o comando ls falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
 "Sistema: %s"
 
 #: src/PhysicalVolume.py:142
@@ -1386,7 +1376,7 @@ msgstr "Editar Propriedades"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Entre com o caminho do Dispositivo de Block para inicializar"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1573,14 +1563,12 @@ msgid "Free space in Volume Group label"
 msgstr "Espaço livre na etiqueta do Grupo de Volume"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "Usar Espaço Restante"
+msgstr "Rótulo do espaço livre restante"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Kilobytes"
+msgstr "Granularidade em Kilobytes"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
@@ -1604,7 +1592,7 @@ msgstr "Espelhado"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "LVs Espelhado não redimensionável"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
@@ -1648,7 +1636,7 @@ msgstr "<b>Politica de Migração</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "Qualquer Um - não impementado"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
@@ -1670,7 +1658,7 @@ msgstr "Herança"
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit policy from Volume Group"
-msgstr ""
+msgstr "Políticas de Herança do Grupo de Volume"
 
 #: src/migrate_extents.glade.h:10
 msgid "Migrate Extents"
