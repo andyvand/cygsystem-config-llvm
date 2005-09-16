@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-15 16:17+1000\n"
+"PO-Revision-Date: 2005-09-16 15:28+1000\n"
 "Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -169,6 +169,8 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"논리 볼륨 %s에 스냅샷이 있습니다: %s가 현재 연계되어 있습니다. "
+"스냅샷 먼저 삭제하시기 바랍니다."
 
 #: src/InputController.py:121
 msgid "Undefined type conversion error in model factory. Unable to complete task."
@@ -192,6 +194,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"%s 논리 볼륨이 현재 %s에 마운트되어있습니다. 이 요청을 완료하기 위해서는 "
+"마운트 해제해야 합니다. 정말로 마운트 해제하시겠습니까?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -226,7 +230,7 @@ msgstr "볼륨 그룹에 남은 여유 공간:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "이 볼륨 상에 남은 공간:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -349,6 +353,8 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"%s 논리 볼륨은 %s 디렉토리의 데이터를 포함하고 있습니다. 모든 데이터를 잃게될 것입니다. "
+"그래도 %s 논리 볼륨을 삭제하시겠습니까?"
 
 #: src/InputController.py:356
 #, python-format
