@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-11 21:38+0800\n"
+"PO-Revision-Date: 2005-09-18 23:14+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -318,38 +318,35 @@ msgid "The path you specified does not exist."
 msgstr "Laluan yang anda nyatakan tidak wujud."
 
 #: src/InputController.py:677
-#, fuzzy
 msgid "The path you specified is not a Block Device."
-msgstr "Anda tidak menyatakan nombor peranti atau nombor tidak sah"
+msgstr "Laluan yang anda nyatakan adalah bukan Peranti Blok."
 
 #: src/InputController.py:748
-#, fuzzy, python-format
+#, python-format
 msgid "Initialization of %s failed"
-msgstr "[%s (%s): gagal.  Diabaikan]\n"
+msgstr "Permulaan %s gagal"
 
 #: src/InputController.py:985
 #: src/InputController.py:988
-#, fuzzy
 msgid "Please select some extents first"
-msgstr "Sila pilih destinasi folder dahulu!"
+msgstr "Sila pilih beberapa eksten dahulu!"
 
 #: src/InputController.py:1022
 msgid "There are not enough free extents to perform the necessary migration. Adding more physical volumes would solve the problem."
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "Migrasi ke %s"
+msgstr "Pindah eksten"
 
 #: src/InputController.py:1307
 msgid "Options"
 msgstr "Pilihan"
 
 #: src/InputController.py:1341
-#, fuzzy, python-format
+#, python-format
 msgid "Create A Snapshot of %s"
-msgstr "Nama snapshot"
+msgstr "Cipta Petikan %s"
 
 #: src/InputController.py:1343
 #: src/lv_edit_props.glade.h:14
@@ -1458,14 +1455,12 @@ msgstr "Sijil tidak dipercayai."
 #: src/lv_edit_props.glade.h:16
 #, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"Cipta Kumpulan Volum \n"
-"baru"
+msgstr "Ruang kosong masih ada dalam Kumpulan Volum:\n"
 
 #: src/lv_edit_props.glade.h:17
 #, fuzzy
 msgid "Free space remaining label"
-msgstr "Anda tidak boleh padam ruang kososng."
+msgstr "Ruang kosong masih ada dalam Kumpulan Volum:\n"
 
 #: src/lv_edit_props.glade.h:18
 #, fuzzy
