@@ -1,4 +1,5 @@
 # translation of zh_TW.po to 
+# translation of zh_TW.po to
 # translation of zh_TW.po to Chinese Traditional
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -10,7 +11,7 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-16 16:57+1000\n"
+"PO-Revision-Date: 2005-09-23 13:25+1000\n"
 "Last-Translator: Waika Liu <wliu@redhat.com>\n"
 "Language-Team:  <zh@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -185,8 +186,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
-"邏輯 Volume %s 現正上載在 %s。為了完成工作，它必須掛載。 "
-"您是否想要掛載它？"
+"邏輯 Volume %s 現正掛載在 %s。為了完成工作，它必須卸載。 "
+"您是否想要卸載它？"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -350,7 +351,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr "實體 Volume %s 包含了屬於邏輯 Volume %s 的鏡射範圍。鏡射邏輯 Volumes 還沒有轉移，所以不能移除 %s。"
+msgstr "實體 Volume %s 包含了屬於邏輯 Volume %s 的鏡射記錄範圍。鏡射邏輯 Volumes 還沒有轉移，所以不能移除 %s。"
 
 #: src/InputController.py:359
 #, python-format
@@ -365,7 +366,7 @@ msgstr "實體 Volume %s 包含了屬於邏輯 Volume %s 的鏡射影像範圍�
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr "實體 Volume %s 包含了屬於 %s (一個 %s 的快照)的範圍。快照還沒有轉移，所以不能移除 %s。"
+msgstr "實體 Volume %s 包含了屬於 %s (一份 %s 的快照)的範圍。快照還沒有轉移，所以不能移除 %s。"
 
 #: src/InputController.py:367
 #, python-format
@@ -460,15 +461,15 @@ msgstr "編輯邏輯 Volume"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr "根本的邏輯 Volume 管理並不支援鏡像"
+msgstr "根本的邏輯 Volume 管理並不支援鏡射"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr "等量磁碟邏輯 Volume 不能作鏡像。"
+msgstr "等量磁碟邏輯 Volume 不能作鏡射。"
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "與快照有關的邏輯 Volume 還未可以作鏡像。"
+msgstr "與快照有關的邏輯 Volume 還未可以作鏡射。"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -532,7 +533,7 @@ msgstr "邏輯 Volume名稱有無效的字元 \"%s\""
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr "請指定上載點"
+msgstr "請指定掛載點"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -645,11 +646,11 @@ msgstr "lvconvert 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息�
 
 #: src/CommandHandler.py:77
 msgid "Creating Logical Volume"
-msgstr "建立邏輯 Volume"
+msgstr "正在建立邏輯 Volume"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
 msgid "Resizing Logical Volume"
-msgstr "調整邏輯 Volume 的大小"
+msgstr "正在調整邏輯 Volume 的大小"
 
 #: src/CommandHandler.py:146
 msgid "Adding Mirror to Logical Volume"
@@ -709,7 +710,7 @@ msgstr "未使用的空間"
 
 #: src/lvm_model.py:49
 msgid "Unmounted"
-msgstr "為掛載的"
+msgstr "已卸載的"
 
 #: src/lvm_model.py:59
 msgid "Volume Group Name:   "
@@ -805,7 +806,7 @@ msgstr "掛載點：   "
 
 #: src/lvm_model.py:85
 msgid "Mount Point when Rebooted:   "
-msgstr "重新啟動時的上載點：   "
+msgstr "重新啟動時的掛載點：   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -845,7 +846,7 @@ msgstr "未初始化:…"
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr "分割區範圍"
+msgstr "延伸的分割區"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
@@ -961,20 +962,21 @@ msgstr "重新載入 LVM 中，請稍候。"
 
 #: src/lvmui_constants.py:59
 #, python-format
-#, fuzzy
 msgid ""
 "Changes will take effect after computer is restarted. If device %s is used, "
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
-msgstr "更改會在電腦重新啟動後生效。倘若 %s 裝置在重新啟動前已在使用"
+msgstr ""
+"更改會在電腦重新啟動後生效。倘若 %s 裝置在重新啟動前已在使用，便會發生資料毀損。 "
+"建議您現在重新啟動電腦。"
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "鏡射記錄"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "不能處理要求的工作"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -982,16 +984,16 @@ msgstr "可用"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "可用空間"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "非分割區空間"
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "%s 上的未使用空間"
+msgstr "%s 上的非分割區空間"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1079,7 +1081,7 @@ msgstr "尚未選取 Volume"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "多項選擇"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1104,6 +1106,8 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"您嘗試選取的範圍是屬於邏輯 Volume %s 的鏡射記錄。 "
+"鏡射邏輯 Volume 還沒有轉移，所以不能選取此範圍。"
 
 #: src/renderer.py:194
 #, python-format
@@ -1112,6 +1116,8 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"您嘗試選取的範圍是屬於邏輯 Volume %s 的鏡射影像。 "
+"鏡射邏輯 Volume 還沒有轉移，所以不能選取此範圍。"
 
 #: src/renderer.py:196
 #, python-format
@@ -1119,6 +1125,8 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"您嘗試選取的範圍是屬於 %s (一份 %s 的快照)。 "
+"快照還沒有轉移，所以不能選取此範圍。"
 
 #: src/renderer.py:198
 #, python-format
@@ -1127,23 +1135,24 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"您嘗試選取的範圍是屬於 %s 快照來源。 "
+"快照來源還沒有轉移，所以不能選取此範圍。"
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr " 的快照"
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "來源"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "快照"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "範圍"
+msgstr "範圍檢視"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1160,84 +1169,82 @@ msgstr "未初始化的個體"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "%s 鏡射同步"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "正在建立分割區，請稍候"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "正在建立 %s 檔案系統"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "正在調整 %s 檔案系統大小"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "正在檢查 %s 檔案系統"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "正在把 %s 檔案系統升級至 %s"
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
+msgstr "建立檔案系統失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
+msgstr "調整檔案系統大小失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
+msgstr "檢查檔案系統失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgreduce 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
+msgstr "升級檔案系統失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "沒有檔案系統"
+msgstr "未知的檔案系統"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (本機)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (叢集)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (本機)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (叢集)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
 msgstr "等量磁區"
 
@@ -1247,22 +1254,22 @@ msgstr "線性對應"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "鏡射"
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
+msgstr "dmsetup 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
+msgstr "ls 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "分割區類型：   "
+msgstr "分割區  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1330,7 +1337,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "建立快照"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1341,13 +1348,12 @@ msgstr ""
 "Volume 群組"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "屬性："
+msgstr "編輯屬性："
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "請輸入磁區裝置之路徑以作初始化"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1362,19 +1368,16 @@ msgid "Extend Volume Group"
 msgstr "延伸 Volume 群組"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "格式：   "
+msgstr "格式"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "未初始化的"
+msgstr "初始化的"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "初始個體"
+msgstr "初始磁區裝置"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1382,7 +1385,7 @@ msgstr "初始個體"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "初始 _磁區裝置"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1478,19 +1481,19 @@ msgstr "選擇這個實體 Volume 要加入的 Volume 群組："
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "一些文字"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "_重新載入"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_工具"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "延伸 vg 訊息"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1503,56 +1506,59 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "檔案系統："
+msgstr "<b>檔案系統</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV 屬性</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>大小</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "在 /etc/fstab 中加入項目"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "檔案系統不可調整大小"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"建立新的 \n"
-"Volume 群組"
+msgstr "在 Volume 群組標籤的可用空間"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "使用剩餘空間"
+msgstr "剩餘可用空間標籤"
 
 #: src/lv_edit_props.glade.h:18
 #, fuzzy
 msgid "Kilobytes granularity"
-msgstr "千位元組"
+msgstr "千位元組顆粒性"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "LV 名稱:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV 大小"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "在快照內的 LV 不能調整大小"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1560,24 +1566,23 @@ msgstr "線性"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "已作鏡射"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "鏡射 LV 不能調整大小"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "掛載"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "掛載點：   "
+msgstr "掛載點： "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "在重新啟動時掛載"
 
 #: src/lv_edit_props.glade.h:28
 #, fuzzy
@@ -1599,75 +1604,71 @@ msgid "Use remaining"
 msgstr "使用剩餘空間"
 
 #: src/lv_edit_props.glade.h:32
+#, fuzzy
 msgid "stripes of"
-msgstr ""
+msgstr "等量磁碟，屬於"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>目的地</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>轉移政策</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "任何地方 - 還未執行"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "自動選取 PV 來轉移"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "連續"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"為了移除 PV，使用中的範圍需要轉移。\n"
+"請選擇目的地及轉移政策。"
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "繼承"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"從 Volume 群組\n"
-"移除 Volume"
+msgstr "從 Volume 群組繼承政策"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "範圍"
+msgstr "轉移範圍"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "轉移至任何地方，縱使這可能會減低效能"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"從 Volume 中轉移\n"
-"選擇的範圍"
+msgstr "轉移範圍至"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "新的範圍會鄰接至現有的範圍"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "正常"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "只有轉移範圍是屬於 LV"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "使用常識"
 
