@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-16 02:50-0300\n"
+"PO-Revision-Date: 2005-09-23 02:31-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -136,11 +136,11 @@ msgid ""
 msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr "Na maioria dos Volumes Físicos %s podem ser adicionados a este Grupo de Volume antes que o limite seja alcançado."
 
 #: src/InputController.py:114
 #, python-format
@@ -168,7 +168,7 @@ msgstr "O Volume lógico %s tem uma imagem %s correntemente associada. Por favor 
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
+msgstr "O volume Lógico %s tem imagens: %s atualmente associado a ele. Por favor remova as imagens primeiro."
 
 #: src/InputController.py:121
 msgid "Undefined type conversion error in model factory. Unable to complete task."
@@ -192,7 +192,7 @@ msgstr ""
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
-msgstr ""
+msgstr "O volume lógico %s é montado atualmente em %s. A fim de terminar o pedido, este tem que se desmontado. Você está certo que deseja desmontá-lo?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -272,7 +272,7 @@ msgstr ""
 "(LVM)?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -281,11 +281,8 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"O Volue Físico chamado %s, que você deseja remover, possui dados de Volume"
-"(s) Lógico(s) mapeado(s) para suas extensões. Como este é o único Volume "
-"Físico no Grupo de Volume, não há lugar para mover os dados. A ação "
-"recomendada é adicionar um novo Volume Físico antes de remover este ou então "
-"remover os Volumes Lógicos associados a este Volume Físico."
+"O Volume Físico chamado %s, que você deseja remover, possui dados de Volume(s) Lógico(s) mapeado(s) para suas extensões. Como este é o único Volume Físico no Grupo de Volume, não há lugar para mover os dados. A ação "
+"recomendada é adicionar um novo Volume Físico antes de remover este, ou então remover os Volumes Lógicos associados a este Volume Físico."
 
 #: src/InputController.py:152
 #, python-format
@@ -325,16 +322,13 @@ msgstr ""
 "dados em Extensões Físicas."
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"O módulo dm-mirror não está carregado no seu kernel ou seu kernel não "
-"suporta o alvo dm-mirror. Se for suportado, tente rodar \"modprobe dm-mirror"
-"\". Caso contrário, não será possível executar operações que requerem mover "
-"dados em Extensões Físicas."
+"O módulo dm-snapshot não está carregado no seu kernel ou seu kernel não "
+"suporta o alvo dm-snapshot. Se for suportado, tente rodar \"modprobe dm-snapshot\". Caso contrário, a criação das imagens será indisponibilizada."
 
 #: src/InputController.py:158
 #, python-format
@@ -969,11 +963,9 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
+#, python-format
 msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"Você tem ceretza que deseja inicialuizar a entidade de disco %s? Todos os "
-"dados deste dispositivo/partição serão perdidios."
+msgstr "Você tem certeza que deseja inicializar %s do espaço livre no disco %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1580,7 +1572,7 @@ msgstr "Tamanho do LV"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "LVs sob imagens não são redimensionáveis"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1666,7 +1658,7 @@ msgstr "Migrar Estensões"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "Migre em qualquer lugar mesmo que isso reduza a performace"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate extents to "
@@ -1674,7 +1666,7 @@ msgstr "Migrar Extensões para"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "As novas extensões são adicionadas às existentes"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
@@ -1682,9 +1674,9 @@ msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "Somente migre extensões pertencentes para LV "
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "Use o sentido comum"
 
