@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-24 02:12-0300\n"
+"PO-Revision-Date: 2005-09-25 20:20-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -370,47 +370,47 @@ msgstr "O Volume Físico %s contem as extensões que pertencem a uma imagem do esp
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "O volume físico %s contem as extensões que pertencem a %s, uma imagem de %s. As imagens não são ainda migráveis, assim %s não é removível."
 
 #: src/InputController.py:367
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "O volume físico %s contem as extensões que pertencem a %s, a origem da imagem %s. As origens das imagens não são migráveis, assim %s não é removível."
 
 #: src/InputController.py:369
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "O volume físico %s contem as extensões que pertencem a %s, a origem da imagem %s. As origens das imagens não são migráveis, assim %s não é removível."
 
 #: src/InputController.py:556
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
-msgstr ""
+msgstr "O volume lógico \"%s \" tem imagens que não foram selecionadas para a remoção. Eles devem ser removidos também."
 
 #: src/InputController.py:571
 #, python-format
 msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgstr "\"%s \", uma origem da imagem \"%s \", foi removido da lista da remoção."
 
 #: src/InputController.py:602
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
-msgstr ""
+msgstr "O volume físico \"%s \" contem as extensões que pertencem a um espelho. Os espelhos não são migráveis, assim %s não é removível."
 
 #: src/InputController.py:605
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
-msgstr ""
+msgstr "O volume físico \"%s \" contem as extensões que pertencem a uma origem da imagem ou de uma imagem. As imagens não são migráveis, assim %s não é removível."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
@@ -433,7 +433,7 @@ msgstr "Por favor selecione primeiramente as extensões"
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
-msgstr ""
+msgstr "Não há extensões livres suficientes para executar a migração necessária. Adicionar mais volumes físicos resolveria o problema."
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
@@ -463,11 +463,11 @@ msgstr "Editar Volume Lógico"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "A gerência de volumes lógicos subjacentes não suporta espelhamento"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "Os volumes lógicos listrados não podem ser espelhados."
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
