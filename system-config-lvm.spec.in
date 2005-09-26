@@ -51,6 +51,10 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Sep 26 2005 Jim Parsons <jparsons@redhat.com> 1.0.7-1.0
+  - Version bump.
+* Mon Sep 26 2005 Jim Parsons <jparsons@redhat.com> 1.0.6-1.0
+  - Version bump for FC.
 * Wed Sep 13 2005 Stanko Kupcevic <kupcevic@redhat.com> 1.0.5-1.0
   - Fix for bz167671.
 * Wed Sep 08 2005 Stanko Kupcevic <kupcevic@redhat.com> 1.0.4-1.0
