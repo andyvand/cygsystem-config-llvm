@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-19 12:03+1000\n"
+"PO-Revision-Date: 2005-09-19 15:37+1000\n"
 "Last-Translator: Michelle Ji Yeen Kim <mkim@redhat.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -562,26 +562,26 @@ msgstr "마운트 지점을 지정해주세요"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "LV에 저장된 자료를 보존하며 ext2에서 ext3로 업그레이드하시겠습니까?"
 
 #: src/InputController.py:2044
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
-msgstr ""
+msgstr "파일 시스템을 변경하시면 LV에 저장된 모든 자료를 잃게됩니다! 계속 진행하시겠습니까?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "미러가 생성되지 않았습니다. 남은 작업을 완료합니다."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "미러링을 추가하기 위해서는 일부 익스텐트를 이동시켜야 합니다."
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "선택된 익스텐트를 이동시키겠습니까?"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
@@ -721,11 +721,11 @@ msgstr "볼륨 그룹으로부터 물리 볼륨을 제거"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "익스텐트 이동"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "익스텐트 이동 작업 완료 중"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -869,23 +869,23 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "초기화 불가능:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "확장 파티션"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "스왑 사용 중"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "이종 부트 파티션"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "자동 파티션 실패"
 
 #: src/lvm_model.py:128
 msgid "Quering Volume Groups"
@@ -905,7 +905,7 @@ msgstr "수동으로 파티션하기"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "멀티패스 장치"
 
 #: src/lvm_model.py:307
 msgid "Note:   "
@@ -925,11 +925,11 @@ msgstr "스냅샷:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "스냅샷 원본:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "스냅샷 사용법:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
@@ -938,7 +938,7 @@ msgstr "/   루트 파일시스템"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "없음"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -946,7 +946,7 @@ msgstr ""
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
+msgstr "%s 디스크에 저장된 모든 자료를 잃게됩니다! 초기화하시겠습니까?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -954,6 +954,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"%s 디스크는 %s 파일시스템을 포함하고 있으며, 모든 자료를 잃게될 것입니다! "
+"그래도 %s 디스크를 초기화하시겠습니까?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -961,6 +963,8 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
+"%s 디스크는 %s 디렉토리의 자료를 포함하고 있으며, 모든 자료를 잃게될 것입니다! "
+"그래도 %s 디스크를 초기화하시겠습니까?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -974,10 +978,13 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"파티션되지 않은 디스크 %s을(를) 초기화하려고 합니다. "
+"비록 필수 사항은 아니지만, 이 디스크에 한개의 파티션을 생성하시길 권장합니다. "
+"전체 드라이브를 포함하는 단독 파티션을 생성하시겠습니까?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVM을 로딩 중입니다. 잠시만 기다려주세요."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -985,27 +992,27 @@ msgid ""
 "Changes will take effect after computer is restarted. If device %s is used, "
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
-msgstr ""
+msgstr "컴퓨터를 재시작하시면 변경 사항이 적용될 것입니다. 만일 컴퓨터를 재시작하기 전에 %s 장치가 사용 중이라면, 데이터가 손상될 것입니다. 따라서 지금 바로 컴퓨터를 재시작하시기 권장합니다."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "미러 로그"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "요청을 처리할 수 없습니다"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
-msgstr "비어있는"
+msgstr "여유"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "여유 공간"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "파티션되지 않은 공간"
 
 #: src/lvmui_constants.py:86
 #, python-format
@@ -1098,7 +1105,7 @@ msgstr "선택된 볼륨없음."
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "여러개 선택"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1123,6 +1130,8 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"선택하시려는 익스텐트는 %s LV의 미러 로그에 속해 있습니다. "
+"미러된 LV는 이동할 수 없기 때문에, 익스텐트도 선택 불가능합니다."
 
 #: src/renderer.py:194
 #, python-format
@@ -1131,6 +1140,8 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"선택하시려는 익스텐트는 %s LV의 미러 이미지에 속해 있습니다. "
+"미러된 LV는 이동할 수 없기 때문에, 익스텐트도 선택 불가능합니다."
 
 #: src/renderer.py:196
 #, python-format
@@ -1138,6 +1149,8 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"선택하시려는 익스텐트는 %s (%s의 스냅샷)에 속해 있습니다. "
+"스냅샷은 이동할 수 없기 때문에, 익스텐트도 선택 불가능합니다."
 
 #: src/renderer.py:198
 #, python-format
@@ -1146,18 +1159,20 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"선택하시려는 익스텐트는 %s 스냅샷 원본에 속해 있습니다. "
+"스냅샷은 이동할 수 없기 때문에, 익스텐트도 선택 불가능합니다."
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "스냅샷"
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "원본"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "스냅샷"
 
 #: src/renderer.py:537
 msgid "extent view"
@@ -1178,32 +1193,32 @@ msgstr "초기화되지 않은 엔티티들"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "%s 미러 동기화"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "파티션이 생성되는 동안 잠시만 기다려주십시오"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s 파일 시스템을 생성합니다"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s 파일 시스템 크기를 재조정합니다"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s 파일 시스템을 확인합니다"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s 파일 시스템을 %s 로 업그레이드합니다"
 
 #: src/Filesystem.py:13
 #, python-format
@@ -1239,31 +1254,31 @@ msgstr "알 수 없는 파일 시스템"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (local)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (clustered)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (local)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (clustered)"
 
 #: src/Segment.py:44
 msgid "Stripe "
-msgstr "스트라이프"
+msgstr "Stripe "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
-msgstr "선형 맵핑"
+msgstr "선형(Linear) 맵핑"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "미러 "
 
 #: src/Multipath.py:11
 #, python-format
@@ -1346,7 +1361,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "스냅샷 만들기"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1362,7 +1377,7 @@ msgstr "등록 정보 수정"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "초기화할 블록 장치의 경로를 입력해주세요"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1394,7 +1409,7 @@ msgstr "엔티티 초기화하기"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "블록 장치 초기화(_B)"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1490,11 +1505,11 @@ msgstr "이 PV에 추가하기위한 볼륨 그룹을 선택하십시오."
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "일부 텍스트"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "재로드(_R)"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
@@ -1502,7 +1517,7 @@ msgstr "도구(_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "vg 메시지 확장:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1530,7 +1545,7 @@ msgstr "<b>파일시스템</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV 속성</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
@@ -1538,11 +1553,11 @@ msgstr "<b>크기</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab에 항목 추가"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "파일시스템 크기를 재조정할 수 없습니다"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
@@ -1610,33 +1625,35 @@ msgstr "남은 공간 사용하기"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "다음의 스트라이프(striped)"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>목적지</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>이동 정책</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "어디든지 - 구현안됨"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "PV가 자동으로"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "근접한 위치로 이동하도록 선택"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PV를 삭제하기 위해서는, 사용 중인 익스텐트를 이동시켜야 합니다.\n"
+"익스텐트의 목적지와 이동 정책을 선택해주십시오."
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
@@ -1652,7 +1669,7 @@ msgstr "익스텐트 이동"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "성능이 감퇴되더라도 어디든지 이동시킴"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate extents to "
@@ -1660,11 +1677,11 @@ msgstr "다음으로 익스텐트를 이동하기"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "새 익스텐트는 기존 익스텐트 바로 옆에 위치합니다"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "정상"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
@@ -1672,5 +1689,5 @@ msgstr "논리 볼륨에 속한 익스텐트만 이동하기"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "상식 이용"
 
