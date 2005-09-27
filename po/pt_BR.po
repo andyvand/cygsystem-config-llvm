@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-27 17:48-0300\n"
+"PO-Revision-Date: 2005-09-27 17:52-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -535,13 +535,13 @@ msgstr "Pro favor especifique um ponto de montagem"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "Você quer atualizar ext2 para ext3 preservando os dados no volume lógico?"
 
 #: src/InputController.py:2044
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
-msgstr ""
+msgstr "Mudar o sistema de arquivos destruirá todos os dados no volume lógico! Você tem certeza que deseja prosseguir?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
@@ -550,7 +550,7 @@ msgstr "Espelho não criado. Completando tarefas restantes."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "In order to add mirroring, some extents need to be migrated."
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
