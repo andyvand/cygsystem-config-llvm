@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-27 17:52-0300\n"
+"PO-Revision-Date: 2005-09-27 18:47-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -550,7 +550,7 @@ msgstr "Espelho não criado. Completando tarefas restantes."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr "In order to add mirroring, some extents need to be migrated."
+msgstr "A fim de adicionar espelhamento, algumas extensões necessitam ser migradas."
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
@@ -946,21 +946,21 @@ msgstr "Nenhum"
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
+msgstr "Todos os dados na entidade de disco %s serão perdidos! Você tem certeza que deseja inicializar isso?"
 
 #: src/lvmui_constants.py:52
 #, python-format
 msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
-msgstr ""
+msgstr "A entidade de disco %s contém sistema de arquivos %s. Todos os dados serão perdidos! Você tem certeza que deseja inicializar a entidade de disco %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
 msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
-msgstr ""
+msgstr "A entidade de disco %s contém dados do diretório %s. Todos os dados neles serão perdidos! Você tem certeza que deseja inicializar a entidade de disco %s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -973,7 +973,7 @@ msgid ""
 "You are about to initialize unpartitioned disk %s. It is advisable, although "
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
-msgstr ""
+msgstr "Você está a ponto de inicializar o disco não particionado %s. É aconselhável, embora não requerido, criar uma partição nele. Você quer criar uma única partição que abranja todo o drive?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -985,7 +985,7 @@ msgid ""
 "Changes will take effect after computer is restarted. If device %s is used, "
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
-msgstr ""
+msgstr "As mudanças farão efeito depois que o computador for reiniciado. Se o dispositivo %s estiver sendo usado, antes da reinicialização, poderá ocorrer a corrupção de dados. É aconselhável reiniciar o computador agora."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
