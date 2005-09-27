@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-25 20:20-0300\n"
+"PO-Revision-Date: 2005-09-27 17:48-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -467,11 +467,11 @@ msgstr "A gerência de volumes lógicos subjacentes não suporta espelhamento"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr "Os volumes lógicos listrados não podem ser espelhados."
+msgstr "Os volumes lógicos distribuídos não podem ser espelhados."
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "Vomules lógicos com imagens associadas ainda não podem ser espelhados."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -479,50 +479,50 @@ msgstr ""
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
-msgstr ""
+msgstr "A finalidade preliminar do espelhamento é proteger dados em caso de falha do disco rígido. Você quer colocar imagens espelhadas em discos rígidos diferentes?"
 
 #: src/InputController.py:1531
 msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgstr "Menos de 3 discos rígidos estão disponíveis com espaço livre. Desabilitando espelhamento."
 
 #: src/InputController.py:1536
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
+msgstr "Deve haver espaço livre ao menos em três volumes físicos para habilitar espelhamento"
 
 #: src/InputController.py:1544
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
+msgstr "O tamanho do volume lógico foi ajustado ao tamanho máximo disponível para espelhos."
 
 #: src/InputController.py:1549
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
-msgstr ""
+msgstr "Não há espaço livre suficiente para adicionar espelhamento. Reduza o tamanho do volume lógico até %s, ou adicione volumes físicos."
 
 #: src/InputController.py:1913
 msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "Os nomes que comecem com \"snapshot \" ou \"pvmove \" são palavras chave reservadas."
 
 #: src/InputController.py:1915
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "Os nomes contendo \"_mlog \" ou \"_mimage\" são palavras chave reservadas."
 
 #: src/InputController.py:1917
 msgid "Names begining with a \"-\" are invalid"
-msgstr ""
+msgstr "Os nomes que comecem com \"-\" são inválidos"
 
 #: src/InputController.py:1919
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "O nome não pode ser \".\" nem \"..\""
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "Espaços não são permitidos em nomes de Volumes Lógicos"
 
 #: src/InputController.py:1928
 #, python-format
