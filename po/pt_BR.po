@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-27 18:47-0300\n"
+"PO-Revision-Date: 2005-09-27 18:58-0300\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Português Brasil\n"
 "MIME-Version: 1.0\n"
@@ -1122,7 +1122,7 @@ msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
-msgstr ""
+msgstr "As extensões que você está tentando selecionar pertencem a um log do espelho do Volume Lógico %s. Volumes Lógicos Espelhados ainda não são migráveis, portanto as extensões não são selecionáveis."
 
 #: src/renderer.py:194
 #, python-format
@@ -1130,14 +1130,14 @@ msgid ""
 "The extents that you are attempting to select belong to mirror image of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
-msgstr ""
+msgstr "As extensões que você está tentando selecionar pertencem à imagem do espelho do volume lógico %s.Volumes Lógicos Espelhados ainda não são migráveis, portanto as extensões não são selecionáveis."
 
 #: src/renderer.py:196
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
-msgstr ""
+msgstr "As extensões que você está tentando selecionar pertencem a %s, uma imagem do %s. As imagens não são migráveis, portanto as extensões não são selecionáveis."
 
 #: src/renderer.py:198
 #, python-format
@@ -1145,7 +1145,7 @@ msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
-msgstr ""
+msgstr "As extensões que você está tentando selecionar pertencem à orígem da imagem %s. A origem das imagens ainda não são migráveis, portanto as extensões não são selecionáveis."
 
 #: src/renderer.py:385
 msgid "Snapshot of "
@@ -1643,6 +1643,8 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"A fim de remover o PV, as extensões em uso têm que ser migradas.\n"
+"Selecione as extensões de destino e a política de migração."
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
