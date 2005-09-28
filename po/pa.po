@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-26 17:43+0530\n"
+"PO-Revision-Date: 2005-09-28 14:10+0530\n"
 "Last-Translator: harmeet <harmeetphulewala@yahoo.com>\n"
 "Language-Team: punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -965,6 +965,8 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"ਤੁਸੀਂ ਬਿਨਾਂ ਵਿਭਾਗੀਕਰਨ ਕੀਤੀ ਡਿਸਕ %s ਬਾਰੇ ਸ਼ੁਰੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ। ਭਾਵੇਂ ਇਸ ਤੇ ਲੋੜ ਨਹੀਂ, ਫਿਰ ਵੀ ਇਸ ਉੱਪਰ ਵਿਭਾਗੀਕਰਨ ਬਣਾਉਣ ਦੀ, ਸਲਾਹ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ। Do you want to create a single "
+"partition encompassing the whole drive?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -976,7 +978,7 @@ msgid ""
 "Changes will take effect after computer is restarted. If device %s is used, "
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
-msgstr ""
+msgstr "ਕੰਪਿਊਟਰ ਮੁੜ-ਚਾਲੂ ਕਰਨ ਤੋਂ ਬਾਅਦ ਤਬਦੀਲੀ ਲਾਗੂ ਹੋਵੇਗੀ। ਜੇਕਰ ਮੁੜ-ਚਾਲੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਜੰਤਰ %s ਵਰਤਿਆ ਹੈ, ਡਾਟਾ ਖਰਾਬ ਹੋ ਜਾਵੇਗਾ। ਤੁਹਾਨੂੰ ਕੰਪਿਊਟਰ ਮੁੜ-ਚਾਲੂ ਕਰਨ ਦੀ ਸਲਾਹ ਦਿੱਤੀ ਜਾਂਦੀ ਹੈ।"
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1105,7 +1107,7 @@ msgstr "ਨਾ-ਜਾਰੀ"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr "ਨਾ-ਸ਼ੁਰੂ"
+msgstr "ਨਾ-ਸ਼ੁਰੂ ਕੀਤਾ"
 
 #: src/renderer.py:192
 #, python-format
@@ -1114,6 +1116,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"ਸੀਮਾਂਵਾਂ ਜੋ ਤੁਸੀਂ ਚੁਣਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹੋ ਲਾਜੀਕਲ ਵਾਲੀਅਮ %s ਦੇ ਪ੍ਰਤਿਬਿੰਬ ਲਾਗ "
+"ਨਾਲ ਸੰਬੰਧਿਤ ਹਨ। ਪ੍ਰਤਿਬਿੰਬਿਤ ਲਾਜੀਕਲ ਵਾਲੀਅਮਾਂ ਅਜੇ ਬਦਲਣ-ਯੋਗ ਨਹੀਂ ਹਨ, ਇਸ ਕਰਕੇ "
+"ਸੀਮਾਂਵਾਂ ਚੁਣਨ-ਯੋਗ ਨਹੀਂ ਹਨ।  "
 
 #: src/renderer.py:194
 #, python-format
@@ -1122,6 +1127,8 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"ਸੀਮਾਂਵਾਂ ਜੋ ਤੁਸੀਂ ਚੁਣਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹੋ ਲਾਜੀਕਲ ਵਾਲੀਅਮ %s ਦੇ ਪ੍ਰਤਿਬਿੰਬ ਚਿੱਤਰ "
+"ਨਾਲ ਸੰਬੰਧਿਤ ਹਨ। ਪ੍ਰਤਿਬਿੰਬਿਤ ਲਾਜੀਕਲ ਵਾਲੀਅਮਾਂ ਅਜੇ ਬਦਲਣ-ਯੋਗ ਨਹੀਂ ਹਨ, ਇਸ ਕਰਕੇ ਸੀਮਾਂਵਾਂ ਚੁਣਨ-ਯੋਗ ਨਹੀਂ ਹਨ।"
 
 #: src/renderer.py:196
 #, python-format
@@ -1129,6 +1136,8 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"ਸੀਮਾਂਵਾਂ ਜਿਹਨਾਂ ਨੂੰ ਤੁਸੀਂ ਚੁਣਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹੋ %s ਨਾਲ ਸੰਬੰਧਿਤ ਹਨ, %s ਦੀ ਪਰਦਾ ਤਸਵੀਰ। "
+"ਪਰਦਾ ਤਸਵੀਰ ਅਜੇ ਬਦਲਣ-ਯੋਗ ਨਹੀਂ ਹੈ, ਇਸ ਕਰਕੇ ਸੀਮਾਂਵਾਂ ਚੁਣਨ-ਯੋਗ ਨਹੀਂ ਹਨ।"
 
 #: src/renderer.py:198
 #, python-format
@@ -1137,6 +1146,9 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"ਸੀਮਾਂਵਾਂ ਜੋ ਤੁਸੀਂ ਚੁਣਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਹੇ ਹੋ ਪਰਦਾ ਤਸਵੀਰ ਆਰੰਭ %s ਨਾਲ ਸੰਬੰਧਿਤ ਹਨ। "
+"ਪਰਦਾ ਤਸਵੀਰ ਦਾ ਆਰੰਭ ਅਜੇ ਬਦਲਣ-ਯੋਗ ਨਹੀਂ ਹੈ, ਇਸ ਕਰਕੇ ਸੀਮਾਂਵਾਂ ਚੁਣਨ-ਯੋਗ "
+"ਨਹੀਂ ਹਨ।"
 
 #: src/renderer.py:385
 msgid "Snapshot of "
@@ -1197,58 +1209,60 @@ msgid "Upgrading %s filesystem to %s"
 msgstr " %s ਫਾਇਲ ਸਿਸਟਮ %s ਵਿੱਚ ਨਵੀਕਰਨ ਕਰ ਰਿਹਾ ਹੈ"
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgcreate ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgstr "ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "pvmove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgstr ""
+"ਫਾਇਲ ਸਿਸਟਮ ਦਾ ਮੁੜ-ਆਕਾਰ ਅਸਫਲ ਹੋਇਆ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ "
+"ਸੁਨੇਹਾ: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "pvmove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgstr ""
+"ਫਾਇਲ ਸਿਸਟਮ ਦੀ ਜਾਂਚ ਅਸਫਲ ਹੋਈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ "
+"ਸੁਨੇਹਾ: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgreduce ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgstr "ਫਾਇਲ ਸਿਸਟਮ ਦਾ ਨਵੀਨੀ-ਕਰਨ ਅਸਫਲ ਹੋਇਆ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "ਕੋਈ ਫਾਇਲ ਸਿਸਟਮ ਨਹੀਂ"
+msgstr "ਅਣਪਛਾਤਾ ਫਾਇਲ ਸਿਸਟਮ "
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (ਲੋਕਲ)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (ਕਲੱਸਟਰਡ)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (ਲੋਕਲ)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (ਕਲੱਸਟਰਡ)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "ਸਟ੍ਰਿਪਡ"
+msgstr "ਪੱਟੀ"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1256,22 +1270,22 @@ msgstr "ਰੇਖੀ ਮਿਲਾਨ"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "ਪ੍ਰਤਿਬਿੰਬ"
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgstr "dmsetup ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgstr "ls ਕਮਾਂਡ ਅਸਫਲ ਰਹੀ ਹੈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "ਭਾਗ ਕਿਸਮ:    "
+msgstr "ਵਿਭਾਗੀਕਰਨ %s   "
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1339,7 +1353,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "ਪਰਦਾ ਤਸਵੀਰ ਬਣਾਓ"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1350,13 +1364,12 @@ msgstr ""
 "ਬਣਾਓ"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "ਇਸ ਦੀ ਵਿਸ਼ੇਸਤਾ"
+msgstr "ਵਿਸ਼ੇਸਤਾਵਾਂ ਸੋਧੋ"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਬਲਾਕ ਜੰਤਰ ਦਾ ਮਾਰਗ ਭਰੋ"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1371,19 +1384,16 @@ msgid "Extend Volume Group"
 msgstr "ਐਕਸਟੈਂਡ ਵਾਲੀਅਮ ਸਮੂਹ"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "ਫਾਰਮਿਟ:    "
+msgstr "ਫਾਰਮਿਟ    "
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "ਨਾ-ਸ਼ੁਰੂ"
+msgstr "ਸ਼ੁਰੂ ਕਰੋ"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "ਸ਼ੁਰੂਆਤ ਇੰਦਰਾਜ਼"
+msgstr "ਬਲਾਕ ਜੰਤਰ ਸ਼ੁਰੂ ਕਰੋ"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1391,7 +1401,7 @@ msgstr "ਸ਼ੁਰੂਆਤ ਇੰਦਰਾਜ਼"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr " _ਬਲਾਕ ਜੰਤਰ ਸ਼ੁਰੂ ਕਰੋ"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1487,19 +1497,19 @@ msgstr "ਇਸ PV ਨੂੰ ਇਸ ਵਿੱਚ ਸ਼ਾਮਿਲ ਕਰਨ ਲਈ
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "ਕੁਝ ਪਾਠ"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "_ਮੁੜ-ਲੋਡ"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_ਸੰਦ"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "vg ਸੁਨੇਹਾ ਵਧਾਓ:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1512,56 +1522,58 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "ਫਾਇਲ ਸਿਸਟਮ:"
+msgstr "<b>ਫਾਇਲ ਸਿਸਟਮ</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV ਵਿਸ਼ੇਸ਼ਤਾ</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>ਆਕਾਰ</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab ਵਿੱਚ ਇੰਦਰਾਜ ਸ਼ਾਮਿਲ ਕਰੋ"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "ਫਾਇਲ ਸਿਸਟਮ ਮੁੜ-ਆਕਾਰ ਦੇ ਯੋਗ ਨਹੀਂ"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"ਨਵਾਂ ਵਾਲੀਅਮ ਸਮੂਹ\n"
-"ਬਣਾਓ"
+msgstr "ਵਾਲੀਅਮ ਸਮੂਹ ਲੇਬਲ ਵਿੱਚ ਖਾਲੀ ਥਾਂ"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "ਬਾਕੀਂ ਖਾਲੀ ਥਾਂ ਵਰਤੋਂ"
+msgstr "ਅਧੂਰੇ ਲੇਬਲ ਵਿੱਚ ਖਾਲੀ ਥਾਂ"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "ਕਿਲੋਬਾਈਟ"
+msgstr "ਕਿਲੋਬਾਈਟ ਦਾਣੇਦਾਰ"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "LV ਨਾਂ: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV ਆਕਾਰ"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "LVs ਪਰਦਾ ਤਸਵੀਰ ਦੇ ਹੇਠਾਂ ਮੁੜ-ਆਕਾਰ ਦੇ ਯੋਗ ਨਹੀਂ ਹੈ"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1569,114 +1581,105 @@ msgstr "ਰੇਖੀ"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "ਪ੍ਰਤਿਬਿੰਬਤ"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "ਪ੍ਰਤਿਬਿੰਬਿਤ LVs ਮੁੜ-ਆਕਾਰ ਦੇ ਯੋਗ ਨਹੀਂ ਹੈ"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "ਮਾਊਂਟ"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
 msgstr "ਮਾਊਂਟ ਸਥਿਤੀ:   "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "ਮਾਊਂਟ ਕਰਨ ਤੇ ਮੁੜ-ਚਾਲੂ ਹੋਇਆ "
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "ਆਕਾਰ"
+msgstr "ਆਕਾਰ ਸ਼ੁਰੂ"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "ਆਕਾਰ"
+msgstr "ਆਕਾਰ ਸਮਾਪਤ"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr "ਸਟ੍ਰਿਪਡ"
+msgstr "ਪੱਟੀਦਾਰੇ"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "ਬਾਕੀਂ ਖਾਲੀ ਥਾਂ ਵਰਤੋਂ"
+msgstr "ਬਾਕੀ ਬਚੀ ਵਰਤੋਂ"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "ਇਸ ਦੀ ਪੱਟੀ"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>ਮੰਜਿਲ</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>ਬਦਲਣ ਦੀ ਨੀਤੀ</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "ਕਿਤੇ ਵੀ - ਲਾਗੂ ਨਹੀਂ ਕੀਤਾ"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "ਇਸ ਨੂੰ ਬਦਲਣ ਲਈ ਸਵੈ-ਚਾਲਿਤ ਤੌਰ ਤੇ PVs ਚੁਣੋ"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "ਲਗਾਤਾਰ"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PV ਨੂੰ ਕ੍ਰਮਬੱਧ ਹਟਾਓ, ਸੀਮਾਵਾਂ ਦੀ ਵਰਤੋਂ ਬਦਲੀ ਜਾ ਚੁੱਕੀ ਹੈ।\n"
+"ਸੀਮਾਵਾਂ ' ਮੰਜਿਲ ਅਤੇ ਬਦਲਣ ਦੀ ਨੀਤੀ ਚੁਣੋ।"
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "ਪੀੜੀ ਦਰ ਪੀੜੀ"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"ਵਾਲੀਅਮ ਸਮੂਹ ਤੋਂ\n"
-"ਵਾਲੀਅਮ ਹਟਾਓ"
+msgstr "ਵਾਲੀਅਮ ਸਮੂਹ ਤੋਂ ਪੀੜੀ ਦਰ ਪੀੜੀ ਨੀਤੀ"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "ਐਕਸ਼ਟੈਂਟ"
+msgstr "ਸੀਮਾ ਬਦਲੋ"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "ਕਿਤੇ ਵੀ ਬਦਲੋ ਭਾਂਵੇਂ ਉਸ ਦੇ ਨਾਲ ਪ੍ਰਦਰਸ਼ਨ ਘਟ ਜਾਵੇ"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"ਚੁਣੇ ਵਾਲੀਅਮ ਤੋਂ ਐਕਟੈਂਟ\n"
-"ਤਬਦੀਲ"
+msgstr "ਇਸ ਨਾਲ ਸੀਮਾਵਾਂ ਬਦਲੋ"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "ਨਵੀਆਂ ਸੀਮਾਵਾਂ ਮੌਜੂਦਾ ਦੇ ਨੇੜਲੀਆਂ ਹਨ"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "ਸਧਾਰਨ"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "ਸਿਰਫ LV ਨਾਲ ਸੰਬੰਧਿਤ ਸੀਮਾ ਬਦਲੋ"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "ਸਧਾਰਨ ਜਾਣਕਾਰੀ ਵਰਤੋ"
 
