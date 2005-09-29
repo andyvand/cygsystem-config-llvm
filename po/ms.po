@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-18 23:14+0800\n"
+"PO-Revision-Date: 2005-09-30 00:21+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -350,19 +350,17 @@ msgstr "Cipta Petikan %s"
 
 #: src/InputController.py:1343
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "Partisyen Baru atau Volum Logikal?"
+msgstr "Cipta Volum Logikal Baru"
 
 #: src/InputController.py:1346
-#, fuzzy, python-format
+#, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr "Nama snapshot"
+msgstr "Sunting %s, sebuah Snapshot %s"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Edit Volum Logikal"
+msgstr "Sunting Volum Logikal"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -425,9 +423,8 @@ msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr ""
 
 #: src/InputController.py:1948
-#, fuzzy
 msgid "Please specify mount point"
-msgstr "Nyatakan titik lekapan bagi partisyen ini."
+msgstr "Sila nyatakan titik lekapan"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -533,9 +530,8 @@ msgid "lvconvert command failed. Command attempted: \"%s\" - System Error Messag
 msgstr ""
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr "Buat Volum Logikal"
+msgstr "Mencipta Volum Logikal"
 
 #: src/CommandHandler.py:96
 #: src/CommandHandler.py:113
@@ -598,7 +594,7 @@ msgstr "Tambah Volum Fizikal ke VG"
 #: src/CommandHandler.py:330
 #, fuzzy
 msgid "Migrating Extents"
-msgstr "Jumlah Extent:"
+msgstr "Pindah eksten"
 
 #: src/CommandHandler.py:342
 #, fuzzy
@@ -1254,7 +1250,7 @@ msgstr ""
 #: src/lvui.glade.h:17
 #, fuzzy
 msgid "Create Snapshot"
-msgstr "Nama snapshot"
+msgstr "Cipta Petikan %s"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1572,7 +1568,7 @@ msgstr "Nama untuk Kumpulan Volum:"
 #: src/migrate_extents.glade.h:10
 #, fuzzy
 msgid "Migrate Extents"
-msgstr "Migrasi ke %s"
+msgstr "Pindah eksten"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
