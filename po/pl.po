@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-15 17:26+0200\n"
+"PO-Revision-Date: 2005-09-17 16:29+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -851,7 +851,7 @@ msgstr "Rozmiar paska:   "
 
 #: src/lvm_model.py:80
 msgid "LV UUID:   "
-msgstr "WL UUID:"
+msgstr "UUID woluminu logicznego:   "
 
 #: src/lvm_model.py:82
 msgid "Partition Type:   "
@@ -899,7 +899,7 @@ msgstr "Zaalokowane obszary fizyczne:   "
 
 #: src/lvm_model.py:95
 msgid "PV UUID:   "
-msgstr "WF UUID:   "
+msgstr "UUID woluminu fizycznego:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
