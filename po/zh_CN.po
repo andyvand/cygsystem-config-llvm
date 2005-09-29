@@ -1,20 +1,22 @@
-# translate the zh_CN.po to Chinese Simplified 
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# translation of zh_CN.po to Chinese, Simplified
+# translate the zh_CN.po to Chinese Simplified
 # This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # happy <metaphysis@yeah.net>, 2004.
+# Leah Liu <weliu@redhat.com>, 2005.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: zn_CN\n"
+"Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2004-12-01 23:47+1000\n"
-"Last-Translator: happy <metaphysis@yeah.net>\n"
-"Language-Team: Simplified Chinese <i18n@redhat.com>\n"
+"PO-Revision-Date: 2005-09-29 16:52+1000\n"
+"Last-Translator: Leah Liu <weliu@redhat.com>\n"
+"Language-Team: Chinese, Simplified <zh@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -78,8 +80,7 @@ msgstr "选择一个磁盘实例添加到 %s 卷组"
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr ""
-"一个卷组必须由两个或两个以上的物理卷组成以支持分块.这个卷组不满足这个要求."
+msgstr "一个卷组必须由两个或两个以上的物理卷组成以支持分块.这个卷组不满足这个要求."
 
 #: src/InputController.py:94
 #, python-format
@@ -90,8 +91,7 @@ msgstr "以名称 %s 命名的逻辑卷已经在卷组中存在.请选择另一�
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "以名称 %s 命名的卷组已经存在了.请选择另一个名称."
 
 #: src/InputController.py:98
@@ -104,8 +104,7 @@ msgstr "必须为新的卷组命名"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "指定的挂载点, %s, 不存在. 要创建它吗?"
 
 #: src/InputController.py:104
@@ -155,7 +154,7 @@ msgstr ""
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
+msgstr "逻辑分区 %s有一个当前与之相关的瞬态图 %s。请先除去这个瞬态图。"
 
 #: src/InputController.py:119
 #, python-format
@@ -165,8 +164,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "未定义的类型的转换错误.不能完成该任务."
 
 #: src/InputController.py:123
@@ -221,8 +219,9 @@ msgstr ""
 "卷组"
 
 #: src/InputController.py:138
+#, fuzzy
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "为此分区保留空间:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -282,8 +281,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "您确定将 %s 从卷组 %s 中移除吗?"
 
 #: src/InputController.py:153
@@ -291,8 +289,7 @@ msgstr "您确定将 %s 从卷组 %s 中移除吗?"
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
-"将物理卷 %s 从卷组 %s 中移除将导致卷为空,但还是可以移除.您要进行此操作吗?"
+msgstr "将物理卷 %s 从卷组 %s 中移除将导致卷为空,但还是可以移除.您要进行此操作吗?"
 
 #: src/InputController.py:154
 #, python-format
@@ -343,7 +340,7 @@ msgstr ""
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "逻辑分区 %s含有来自目录 %s的数据。这些数据将会丢失！您是否非常明确地要除去这个逻辑分区%s？"
 
 #: src/InputController.py:356
 #, python-format
@@ -351,7 +348,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "物理分区%s包含属于逻辑分区%s镜像登录的扩展区。镜像逻辑分区还无法迁移，因此不能除去%s。"
 
 #: src/InputController.py:359
 #, python-format
@@ -366,21 +363,23 @@ msgstr ""
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "物理分区%s包含属于%s的扩展区，一个%s的瞬态图。瞬态图还无法迁移，因此不能除去%s。"
 
 #: src/InputController.py:367
 #, python-format
+#, fuzzy
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "物理分区%s包含属于%s的扩展区，%s瞬态图原本。瞬态图原本还无法迁移，因此不能除去%s。"
 
 #: src/InputController.py:369
 #, python-format
+#, fuzzy
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "物理分区%s包含属于%s的扩展区，一个%s的瞬态图原本。瞬态图原本还无法迁移，因此不能除去%s。"
 
 #: src/InputController.py:556
 #, python-format
@@ -391,46 +390,49 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
 #, python-format
+#, fuzzy
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
-msgstr ""
+msgstr "物理分区\"%s\"包含属于镜像的扩展区。镜像还无法迁移，因此不能除去%s。"
 
 #: src/InputController.py:605
 #, python-format
+#, fuzzy
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
-msgstr ""
+msgstr "物理分区\"%s\"包含属于的瞬态图或瞬态图原本的扩展区。瞬态图还无法迁移，因此不能除去%s。"
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "您所指定的路径不存在。"
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "您所指定的路径不是成组设备。"
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "初始化%s失败"
 
 #: src/InputController.py:985 src/InputController.py:988
+#, fuzzy
 msgid "Please select some extents first"
-msgstr ""
+msgstr "请先选择分区"
 
 #: src/InputController.py:1022
+#, fuzzy
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
-msgstr ""
+msgstr "没用足够的空间来进行必要的迁移。添加更多的物理容量可以解决这个问题。"
 
 #: src/InputController.py:1181
 #, fuzzy
@@ -439,12 +441,12 @@ msgstr "%s 扩展"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "选项"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "生成%s的瞬态图"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
 #, fuzzy
@@ -454,7 +456,7 @@ msgstr "创建一个新的逻辑卷"
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "编辑%s，%s的瞬态图"
 
 #: src/InputController.py:1349
 #, fuzzy
@@ -470,20 +472,21 @@ msgid "Striped Logical Volumes cannot be mirrored."
 msgstr ""
 
 #: src/InputController.py:1515
+#, fuzzy
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "有瞬态图的逻辑卷还无法生成镜像。"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
 #: src/InputController.py:1522
+#, fuzzy
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
-msgstr ""
+msgstr "生成镜像文件的主要目的是保护数据，以防硬盘损坏造成数据丢失。您希望在不同硬盘上设置镜像吗？"
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1536
@@ -510,48 +513,52 @@ msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 
 #: src/InputController.py:1915
+#, fuzzy
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "含有\"_mlog\" 或 \"_mimage\"的名字是专用关键字。"
 
 #: src/InputController.py:1917
 msgid "Names begining with a \"-\" are invalid"
-msgstr ""
+msgstr "以\"-\"开头的名字是无效的"
 
 #: src/InputController.py:1919
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "名称不可以是\".\"，也不可以是\"..\""
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "逻辑卷标名不允许有空白"
 
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "逻辑卷标名中\"%s\"是无效字符"
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr ""
+msgstr "请指定安装点"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 
 #: src/InputController.py:2044
+#, fuzzy
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
-msgstr ""
+msgstr "更换文件系统将销毁逻辑卷上的所有数据！您确定要更换吗？"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
+#, fuzzy
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "未生成镜像。完成遗留任务。"
 
 #: src/InputController.py:2194
+#, fuzzy
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "为生成镜像文件，需要迁移一些／／"
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
@@ -561,92 +568,77 @@ msgstr ""
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 vgextend 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 pvcreate 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 lvcreate 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 pvremove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 lvremove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 vgremove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 vgcreate 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr "命令 vgchange 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 vgreduce 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 pvmove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 umount 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "命令 mount 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:26
 #, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 lvremove 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:27
 #, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 lvcreate 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:28
 #, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 vgchange 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/CommandHandler.py:29
@@ -879,7 +871,7 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "无法初始化:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
@@ -982,8 +974,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "您确定要初始化磁盘实例 %s 吗? 在此设备/分区上的数据将全部丢失."
 
 #: src/lvmui_constants.py:55
@@ -1289,8 +1280,7 @@ msgstr ""
 
 #: src/Multipath.py:11
 #, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "命令 mkfs 失败. 命令尝试: \"%s\" - 系统错误信息: %s"
 
 #: src/Multipath.py:12
@@ -1710,78 +1700,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "在大小区域输入的值不满足要求.该值不能包含字母字符或标点符号,应是一个数字"
-#~ "值."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr "新的逻辑卷的大小已经超过了卷组 %s 的可用空间可用空间是: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "分块大小区域"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "分块区域的数目"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 MB"
-
-#~ msgid "Create New LV"
-#~ msgstr "创建新的LV"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "扩展\n"
-#~ "逻辑卷组"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "挂载点(假如为空, LV将不会被挂载):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "新的LV的名称:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "分块数目: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "选择一个磁盘实例添加到卷组:"
-
-#~ msgid "Size:"
-#~ msgstr "大小"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "分块大小"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "在VG1中未使用的空间:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "无文件系统"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "区域还未用\n"
-#~ "逻辑卷管理器进行初始化."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "此卷还未被分配\n"
-#~ "给任一卷组."
