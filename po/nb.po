@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Norwegian bokmål translation of system-config-lvm.
+# Copyright (C) 2004-2005, Red Hat, Inc.
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Kjartan Maraas <kmaraas@gnome.org>, 2004-2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-05-04 13:35+0200\n"
+"PO-Revision-Date: 2005-10-18 23:02+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -63,9 +63,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "Ikke-initiert diskentitet"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "Velg en diskentitet smo skal legges til i volumgruppen %s:"
+msgstr "Velg en diskentitet som skal legges til i volumgruppen %s:"
 
 #: src/InputController.py:92
 msgid ""
@@ -202,15 +202,12 @@ msgid "%s extents"
 msgstr ""
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Opprett ny \n"
-"volumgruppe"
+msgstr "Gjenværende ledig plass i volumgruppen:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Gjenværende plass for dette volumet:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -419,19 +416,17 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "Opprett et nytt logisk volum"
+msgstr "Opprett nytt logisk volum"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "Rediger %s, et bilde av %s"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Logisk volum"
+msgstr "Rediger logisk volum"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -629,74 +624,52 @@ msgid ""
 msgstr ""
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Opprett nytt\n"
-"logisk volum"
+msgstr "Oppretter logisk volum"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Logisk volum"
+msgstr "Endrer størrelse på logisk volum"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "Logisk volum"
+msgstr "Legger til speiling av logisk volum"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"Fjern \n"
-"logisk volum"
+msgstr "Fjerner speil fra logisk volum"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Fysisk volum"
+msgstr "Initierer fysisk volum"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Legg til fysisk volum i volumgruppe"
+msgstr "Legger til fysisk volum i volumgruppen"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Opprett ny \n"
-"volumgruppe"
+msgstr "Oppretter volumgruppe"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Ny volumgruppe"
+msgstr "Fjerner volumgruppe"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Fysisk volum"
+msgstr "Fjerner fysisk volum"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Fjern \n"
-"logisk volum"
+msgstr "Fjerner logisk volum"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Fjern \n"
-"logisk volum"
+msgstr "Gir logisk volum nytt navn"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr "Legg til fysisk volum i volumgruppe"
+msgstr "Fjerner fysisk volum fra volumgruppen"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -811,9 +784,8 @@ msgid "Mount Point:   "
 msgstr "Monteringspunkt:  "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Monteringspunkt:  "
+msgstr "Monteringspunkt etter omstart:  "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -821,19 +793,19 @@ msgstr "Filsystem:     "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Navn på fysisk volum:   "
 
 #: src/lvm_model.py:89
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Størrelse på fysisk volum:   "
 
 #: src/lvm_model.py:90
 msgid "Space Used:   "
-msgstr ""
+msgstr "Brukt plass:   "
 
 #: src/lvm_model.py:91
 msgid "Space Free:   "
-msgstr ""
+msgstr "Ledig plass:   "
 
 #: src/lvm_model.py:92
 msgid "Total Physical Extents:   "
@@ -853,7 +825,7 @@ msgstr ""
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "Utvidet partisjon"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
@@ -868,42 +840,36 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "Volumgrupper"
+msgstr ""
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "Logisk volum"
+msgstr ""
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "Fysisk volum"
+msgstr ""
 
 #: src/lvm_model.py:268
 msgid "Partition manually"
-msgstr ""
+msgstr "Partisjoner manuelt"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Størrelse:"
+msgstr "Merknad:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Initier entitet"
+msgstr "Initier manuelt"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "Antall striper: "
+msgstr ""
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
@@ -919,9 +885,8 @@ msgstr ""
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Ingen filsystem"
+msgstr "/   Rotfilsystem"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
@@ -996,9 +961,9 @@ msgid "Unpartitioned space"
 msgstr ""
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "Ubrukt plass på %s"
+msgstr "Ikke partisjonert plass på %s"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1222,39 +1187,36 @@ msgid ""
 msgstr ""
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Ingen filsystem"
+msgstr "Ukjent filsystem"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (lokalt)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (klynge)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (lokalt)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (klynge)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "Stripet"
+msgstr "Stripe "
 
 #: src/Segment.py:68
-#, fuzzy
 msgid "Linear Mapping"
-msgstr "Lineær"
+msgstr "Lineær tilordning"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Speil "
 
 #: src/Multipath.py:11
 #, python-format
@@ -1270,7 +1232,7 @@ msgstr ""
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition  %s"
-msgstr ""
+msgstr "Partisjon %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1349,9 +1311,8 @@ msgstr ""
 "volumgruppe"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Egenskaper for"
+msgstr "Rediger egenskaper"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1371,17 +1332,15 @@ msgstr "Utvid volumgruppe"
 
 #: src/lvui.glade.h:25
 msgid "Format"
-msgstr ""
+msgstr "Formatter"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Ikke initiert"
+msgstr "Initier"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Initier entitet"
+msgstr "Initier blokkenhet"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1504,9 +1463,8 @@ msgid ""
 msgstr ""
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Filsystem: "
+msgstr "<b>Filsystem</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
@@ -1514,36 +1472,31 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Størrelse</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Legg til oppføring i /etc/fstab"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "Filsystemet kan ikke endre størrelse"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
 msgstr ""
-"Opprett ny \n"
-"volumgruppe"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "Bruk gjenværende plass"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Kilobyte"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "LV-navn: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
@@ -1559,7 +1512,7 @@ msgstr "Lineær"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Speilet"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1567,33 +1520,29 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Monter"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "Monteringspunkt:  "
+msgstr "Monteringspunkt: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Størrelse"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Størrelse"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Stripet"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
 msgstr "Bruk gjenværende plass"
 
@@ -1619,7 +1568,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Sammenhengende"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
@@ -1629,12 +1578,11 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "Arv"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr "Navn for volumgruppe: "
+msgstr ""
 
 #: src/migrate_extents.glade.h:10
 msgid "Migrate Extents"
@@ -1663,31 +1611,3 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr ""
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 megabyte"
-
-#~ msgid "Create New LV"
-#~ msgstr "Opprett nytt logisk volum"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "Uvid\n"
-#~ "logisk volum"
-
-#~ msgid "Size:"
-#~ msgstr "Størrelse:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "Ubrukt plass i volumgruppe1:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "Ingen filsystem"
