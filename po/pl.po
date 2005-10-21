@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-09-17 16:29+0200\n"
+"PO-Revision-Date: 2005-10-04 20:54+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -69,7 +69,7 @@ msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
-"Aby utworzyć stripe grupa woluminów musi być utworzona z dwóch lub więcej "
+"Aby utworzyć pasek grupa woluminów musi być utworzona z dwóch lub więcej "
 "woluminów fizycznych. Ta grupa woluminów nie spełnia tego warunku."
 
 #: src/InputController.py:94
@@ -364,6 +364,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Wolumin fizyczny %s zawiera obszary należące do dziennika lustrzanego "
+"woluminu logicznego %s. Lustrzane woluminy logiczne nie mogą być jeszcze "
+"migrowane, więc %s nie może być usuwany."
 
 #: src/InputController.py:359
 #, python-format
@@ -372,6 +375,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Wolumin fizyczny %s zawiera obszary należące do obrazu lustrzanego woluminu "
+"logicznego %s. Lustrzane woluminy logiczne nie mogą być jeszcze migrowane, "
+"więc %s nie może być usuwany."
 
 #: src/InputController.py:362
 #, python-format
@@ -379,6 +385,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"Wolumin fizyczny %s zawiera obszary należące do %s, migawki %s. Migawki nie "
+"mogą być jeszcze migrowane, więc %s nie może być usuwany."
 
 #: src/InputController.py:367
 #, python-format
@@ -386,6 +394,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Wolumin fizyczny %s zawiera obszary należące do %s, oryginału migawki %s. "
+"Oryginały migawek nie mogą być jeszcze migrowane, więc %s nie może być "
+"usuwany."
 
 #: src/InputController.py:369
 #, python-format
@@ -393,6 +404,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Wolumin fizyczny %s zawiera obszary należące do %s, oryginału migawek %s. "
+"Oryginały migawek nie mogą być jeszcze migrowane, więc %s nie może być "
+"usuwany."
 
 #: src/InputController.py:556
 #, python-format
@@ -416,6 +430,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"Wolumin fizyczny \"%s\" zawiera obszary należące do lustra. Lustra nie mogą "
+"być jeszcze migrowane, więc %s nie może być usuwany."
 
 #: src/InputController.py:605
 #, python-format
@@ -423,6 +439,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"Wolumin fizyczny \"%s\" zawiera obszary należące do migawki lub oryginału "
+"migawki. Migawki nie mogą być jeszcze migrowane, więc %s nie może być usuwany."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
@@ -477,38 +495,46 @@ msgstr "Edytuj wolumin logiczny"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "Podstawowe zarządzanie woluminami logicznymi nie obsługuje luster"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "Paskowany wolumin logiczny nie może być lustrem."
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
+"Woluminy logiczne z dołączonymi migawkami jeszcze nie mogą być lustrami."
 
 #: src/InputController.py:1522
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
+"Głównym celem używania luster jest ochrona danych w przypadku błędu dysku "
+"twardego. Czy chcesz umieścić obrazy luster na różnych dyskach twardych?"
 
 #: src/InputController.py:1531
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
+"Mniej niż 3 dyski twarde mają dostępne wolne miejsce. Wyłączanie luster."
 
 #: src/InputController.py:1536
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
+"Wolne miejsce musi być na co najmniej trzech woluminach fizycznych, aby "
+"włączyć lustra"
 
 #: src/InputController.py:1544
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
+"Rozmiar woluminu logicznego został dopasowany do maksymalnego dostępnego "
+"rozmiaru luster."
 
 #: src/InputController.py:1549
 #, python-format
@@ -516,6 +542,8 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"Nie ma wystarczającej ilości wolnego miejsca, aby dodać lustra. Zmiejsz "
+"rozmiar woluminu logicznego do co najwyżej %s lub dodaj woluminy fizyczne."
 
 #: src/InputController.py:1913
 msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
@@ -539,7 +567,7 @@ msgstr "Nazwa nie może zawierać ani \".\", ani \"..\""
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr "Niewidoczne znaki nie są dozwolone w nazwach wolminów logicznych"
+msgstr "Białe znaki nie są dozwolone w nazwach wolminów logicznych"
 
 #: src/InputController.py:1928
 #, python-format
@@ -566,15 +594,15 @@ msgstr ""
 
 #: src/InputController.py:2145
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "Lustro nie zostało utworzone. Zakończenie pozostałych zadań."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "Aby dodać lustra, niektóre obszary muszę zostać zmigrowane."
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr "Czy chcesz migrować określone obszary?"
+msgstr "Czy chcesz zmigrować określone obszary?"
 
 #: src/CommandHandler.py:14
 #, python-format
@@ -715,11 +743,11 @@ msgstr "Zmienianie rozmiaru woluminu logicznego"
 
 #: src/CommandHandler.py:146
 msgid "Adding Mirror to Logical Volume"
-msgstr ""
+msgstr "Dodawanie lustra do woluminu logicznego"
 
 #: src/CommandHandler.py:157
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
+msgstr "Usuwanie lustra z woluminu logicznego"
 
 #: src/CommandHandler.py:180
 msgid "Initializing Physical Volume"
@@ -763,7 +791,7 @@ msgstr "Zakończenie migrowania obszarów"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
-msgstr "Nieużywany"
+msgstr "Nieużywane"
 
 #: src/lvm_model.py:47
 msgid "Unused Space"
@@ -827,7 +855,7 @@ msgstr "Liczba woluminów logicznych:   "
 
 #: src/lvm_model.py:72
 msgid "VG UUID:   "
-msgstr "GW UUID:   "
+msgstr "UUID grupy woluminów:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Name:   "
@@ -951,7 +979,7 @@ msgstr "Zainicjuj ręcznie"
 
 #: src/lvm_model.py:810
 msgid "Number of mirror images:  "
-msgstr ""
+msgstr "Liczba obrazów luster:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
@@ -1015,6 +1043,9 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"Za chwilę nie podzielony na partycje dysk %s zostanie zainicjowany. Jest "
+"zalecane, ale nie wymagane, aby utworzyć na nim partycje. Czy chcesz utworzyć "
+"pojedynczą partycję w zasięgu całego dysku?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -1033,7 +1064,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Dziennik lustra"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
@@ -1164,6 +1195,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Obszary, które próbujesz wybrać należą do dziennika lustra woluminu "
+"logicznego %s. Lustra woluminów logicznych jeszcze nie mogą być migrowane, "
+"więc nie można wybrać tych obszarów."
 
 #: src/renderer.py:194
 #, python-format
@@ -1172,6 +1206,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Obszary, które próbujesz wybrać należą do obrazu lustra woluminu logicznego "
+"%s. Lustra woluminów logicznych jeszcze nie mogą być migrowane, więc nie "
+"można wybrać tych obszarów."
 
 #: src/renderer.py:196
 #, python-format
@@ -1224,7 +1261,7 @@ msgstr "Niezainicjowane jednostki"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "synchronizacja lustra %s "
 
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
@@ -1308,7 +1345,7 @@ msgstr "GFS (klastrowy)"
 
 #: src/Segment.py:44
 msgid "Stripe "
-msgstr "Stripe "
+msgstr "Pasek "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1316,7 +1353,7 @@ msgstr "Mapowanie liniowe"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Lustro "
 
 #: src/Multipath.py:11
 #, python-format
@@ -1436,7 +1473,7 @@ msgstr "Rozszerz grupę woluminów"
 
 #: src/lvui.glade.h:25
 msgid "Format"
-msgstr "Format"
+msgstr "Sformatuj"
 
 #: src/lvui.glade.h:26
 msgid "Initialize"
@@ -1612,7 +1649,7 @@ msgstr "Pozostałe wolne miejsce w etykiecie"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
-msgstr ""
+msgstr "Ziarnistość kilobajtów"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
@@ -1632,11 +1669,11 @@ msgstr "Liniowy"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Lustro"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "Nie można zmieniać rozmiaru luster woluminów logicznych"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
@@ -1652,15 +1689,15 @@ msgstr "Zamontuj przy ponownym uruchomieniu"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr ""
+msgstr "Rozmiar początkowy"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr ""
+msgstr "Rozmiar końcowy"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr "Stripe'owany"
+msgstr "Paskowany"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
@@ -1668,7 +1705,7 @@ msgstr "Użyj pozostałych"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr "stripe'ów"
+msgstr "pasków"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1732,4 +1769,4 @@ msgstr "Migruj tylko obszary należące do woluminu logicznego "
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "Użyj we wspólnym znaczeniu"
