@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-10-19 00:30+0800\n"
+"PO-Revision-Date: 2005-10-23 21:41+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -563,29 +563,24 @@ msgid "Removing Volume Group"
 msgstr "Membuang Kumpulan Volum"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Volum Fizikal LVM"
+msgstr "Membuang Volum Fizikal"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr "Buat Volum Logikal"
+msgstr "Membuang Volum Logikal"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr "Buat Volum Logikal"
+msgstr "Mengulangnama Volum Logikal"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr "Tambah Volum Fizikal ke VG"
+msgstr "Membuang Volum Fizikal dari Kumpulan Volum"
 
 #: src/CommandHandler.py:330
-#, fuzzy
 msgid "Migrating Extents"
-msgstr "Pindah eksten"
+msgstr "Memindahkan Eksten"
 
 #: src/CommandHandler.py:342
 #, fuzzy
