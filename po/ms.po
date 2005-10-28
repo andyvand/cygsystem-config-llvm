@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-10-23 21:41+0800\n"
+"PO-Revision-Date: 2005-10-28 23:59+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -583,9 +583,8 @@ msgid "Migrating Extents"
 msgstr "Memindahkan Eksten"
 
 #: src/CommandHandler.py:342
-#, fuzzy
 msgid "Completing Extent Migration"
-msgstr "Saiz Extent Fizikal:"
+msgstr "Melengkapkan Pemindahan Extent"
 
 #: src/lvm_model.py:46
 #: src/lvmui_constants.py:81
@@ -663,14 +662,12 @@ msgid "Logical Volume Name:   "
 msgstr "Nama Volum Logikal:"
 
 #: src/lvm_model.py:75
-#, fuzzy
 msgid "Logical Volume Size:   "
-msgstr "Saiz Kumpulan Volum:"
+msgstr "Saiz Volum Logikal:"
 
 #: src/lvm_model.py:76
-#, fuzzy
 msgid "Number of Segments:   "
-msgstr "nombor kumpulan"
+msgstr "Jumlah Segmen:"
 
 #: src/lvm_model.py:77
 msgid "Number of Stripes:   "
@@ -685,18 +682,16 @@ msgid "LV UUID:   "
 msgstr "LV UUID:   "
 
 #: src/lvm_model.py:82
-#, fuzzy
 msgid "Partition Type:   "
-msgstr "Jenis Partisyen"
+msgstr "Jenis Partisyen:"
 
 #: src/lvm_model.py:83
 msgid "Size:   "
 msgstr "Saiz:"
 
 #: src/lvm_model.py:84
-#, fuzzy
 msgid "Mount Point:   "
-msgstr "Titik Lekapan"
+msgstr "Titik Lekapan:"
 
 #: src/lvm_model.py:85
 #, fuzzy
@@ -1360,10 +1355,11 @@ msgstr ""
 "Fizikal Dipilih"
 
 #: src/lvui.glade.h:48
+#, fuzzy
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
-msgstr ""
+msgstr "Membuang Volum Fizikal dari Kumpulan Volum"
 
 #: src/lvui.glade.h:50
 msgid ""
@@ -1549,7 +1545,7 @@ msgstr ""
 #: src/migrate_extents.glade.h:9
 #, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr "Nama untuk Kumpulan Volum:"
+msgstr "Membuang Volum Fizikal dari Kumpulan Volum"
 
 #: src/migrate_extents.glade.h:10
 #, fuzzy
