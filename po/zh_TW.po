@@ -1,10 +1,10 @@
-# translation of zh_TW.po to 
+# translation of zh_TW.po to
 # translation of zh_TW.po to
 # translation of zh_TW.po to
 # translation of zh_TW.po to Chinese Traditional
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Chester Cheng <ccheng@redhat.com>, 2004.
+# Chester Cheng <ccheng@redhat.com>, 2004, 2005.
 # Waika Liu <wliu@redhat.com>, 2005.
 #
 msgid ""
@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-09-13 10:37-0400\n"
-"PO-Revision-Date: 2005-10-10 15:17+1000\n"
-"Last-Translator: Waika Liu <wliu@redhat.com>\n"
-"Language-Team:  <zh@li.org>\n"
+"PO-Revision-Date: 2005-11-04 10:44+1000\n"
+"Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
+"Language-Team: Chinese Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -97,8 +97,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "名為 %s 的 Volume 群組已經存在。請選擇一個獨一無二的名稱。"
 
 #: src/InputController.py:98
@@ -111,8 +110,7 @@ msgstr "您必須賦予新 Volume 群組一個名稱"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "指定的掛載點 %s 不存在。您想要建立這掛載點嗎？"
 
 #: src/InputController.py:104
@@ -172,8 +170,7 @@ msgid ""
 msgstr "現有快照: %s 在邏輯 Volume %s 中。請先移除快照。"
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "未定義的類型轉換錯誤。無法完成該項任務。"
 
 #: src/InputController.py:123
@@ -191,8 +188,7 @@ msgstr ""
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
-msgstr ""
-"邏輯 Volume %s 現正掛載在 %s。為了完成工作，它必須卸載。 您是否想要卸載它？"
+msgstr "邏輯 Volume %s 現正掛載在 %s。為了完成工作，它必須卸載。 您是否想要卸載它？"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -286,8 +282,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "您是否非常確定要移除 %s（位於 Volume 群組 %s 中）？"
 
 #: src/InputController.py:153
@@ -409,8 +404,7 @@ msgstr "邏輯 Volume \"%s\" 有快照並未作移除選擇。它們也必須移
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\"(一個快照 \"%s\"來源)已從移除清單中刪除。"
 
 #: src/InputController.py:602
@@ -450,8 +444,7 @@ msgstr "請先選擇一些範圍"
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
-msgstr ""
-"沒有足夠的可用範圍來執行必需的移動。 加入更多實體 volume 便可解決此問題。"
+msgstr "沒有足夠的可用範圍來執行必需的移動。 加入更多實體 volume 便可解決此問題。"
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
@@ -502,8 +495,7 @@ msgstr ""
 "硬碟？"
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "少於三個硬碟有可用空間。請停止使用鏡射。"
 
 #: src/InputController.py:1536
@@ -583,92 +575,77 @@ msgstr "您是否想要轉移指定範圍？"
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:13
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgextend 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr "vgchange 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgreduce 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvmove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "umount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "mount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvresize 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:26
 #, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvrename 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:27
 #, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvchange 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/CommandHandler.py:28
@@ -963,8 +940,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "您是否確定要把在磁碟 %s 的 %s 可用空間初始化？"
 
 #: src/lvmui_constants.py:55
@@ -1155,8 +1131,7 @@ msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
-msgstr ""
-"您嘗試選取的範圍是屬於 %s 快照來源。 快照來源還沒有轉移，所以不能選取此範圍。"
+msgstr "您嘗試選取的範圍是屬於 %s 快照來源。 快照來源還沒有轉移，所以不能選取此範圍。"
 
 #: src/renderer.py:385
 msgid "Snapshot of "
@@ -1301,8 +1276,7 @@ msgstr "鏡射"
 
 #: src/Multipath.py:11
 #, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "dmsetup 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/Multipath.py:12
@@ -1588,7 +1562,6 @@ msgid "Free space remaining label"
 msgstr "剩餘可用空間標籤"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
 msgstr "千位元組擴充量(Kilobytes granularity)"
 
@@ -1641,12 +1614,10 @@ msgid "Striped"
 msgstr "等量磁區"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "使用剩餘空間"
+msgstr "使用剩餘"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes of"
 msgstr "等量磁碟，屬於"
 
@@ -1713,3 +1684,4 @@ msgstr "只有轉移範圍是屬於 LV"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "使用常識"
+
