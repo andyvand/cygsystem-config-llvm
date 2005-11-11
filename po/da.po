@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-11-09 15:46+0100\n"
+"PO-Revision-Date: 2005-11-10 15:46+0100\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
-"Language-Team:  <da@li.org>\n"
+"Language-Team:  <dansk@klid.dk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -148,14 +148,14 @@ msgstr ""
 "maksimumsgrænsen er nået."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Delarkivgruppen %s har ikke tilstrækkeligt med plads for at flytte de data "
-"som er lagrede på %s. En mulig løsning kunne være at tilføje endnu et fysisk "
+"Delarkivgruppen %s har ikke tilstrækkeligt med plads for nye delarkiver. "
+"En mulig løsning kunne være at tilføje endnu et fysisk "
 "delarkiv til delarkiv-gruppen."
 
 #: src/InputController.py:116
@@ -226,11 +226,8 @@ msgid "%s extents"
 msgstr "%s områder"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
 msgstr ""
-"Opret ny\n"
-"delarkivgruppe"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
@@ -259,7 +256,6 @@ msgid "The %s should only contain number values"
 msgstr "%s bør kun indholde talværdier"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -268,7 +264,6 @@ msgstr ""
 "mellem 1 og 256"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -286,7 +281,7 @@ msgstr ""
 "delarkiver?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -300,7 +295,7 @@ msgstr ""
 "eneste fysiske delafsnit i delafsnitsgruppen, så er der ikke noget sted som "
 "data kan flyttes til. Anbefalet fremgangsmåde er enten at tilføje et nyt "
 "fysisk delafsnit før fjernelse af det nuværende, eller ellers fjerne de "
-"logiske delafsnit som er tilknyttet dette fysiske  delafsnit."
+"logiske delafsnit som er tilknyttet dette fysiske delafsnit."
 
 #: src/InputController.py:152
 #, python-format
@@ -341,31 +336,30 @@ msgstr ""
 "på fysiske udvidelser, være utilgængelige."
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"Dm-mirror-modulet er enten ikke indlæst i din kerne, eller din kerne "
-"understøtter ikke dm-mirror-målet. Hvis det er understøttet, så prøv at køre "
-"\"modprobe dm-mirror\". Ellers vil handlinger, der kræver flytning af data "
-"på fysiske udvidelser, være utilgængelige."
+"Dm-snapshot-modulet er enten ikke indlæst i din kerne, eller din kerne "
+"understøtter ikke dm-snapshot-målet. Hvis det er understøttet, så prøv at køre "
+"\"modprobe dm-snapshot\". Ellers vil producering af snapshot "
+"være utilgængelige."
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "Er du helt sikker på at du vil fjerne det logiske delarkiv %s?"
+msgstr "Er du helt sikker på at du vil fjerne logisk delarkiv %s?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"STOR ADVARSEL: Delafsnitsgruppe %s har et %s-filsystem på sig og er for "
-"øjeblikket monteret på %s. Er du absolut sikker på at du ønsker at smide "
-"dataene på dette mounterede filsystem væk?"
+"Delafsnitsgruppe %s har et %s-filsystem. Alle data på den vil gå tabt! "
+"Er du helt sikker på at du ønsker at fjerne "
+"delafsnit %s?"
 
 #: src/InputController.py:160
 #, python-format
@@ -461,9 +455,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s områder"
+msgstr ""
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -475,7 +468,6 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "Opret et nyt logisk delarkiv"
 
@@ -485,9 +477,8 @@ msgid "Edit %s, a Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Logiske delarkiv"
+msgstr "Redigér logisk delarkiv"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -671,106 +662,82 @@ msgstr ""
 "fejlbesked : %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"lvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"lvresize-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"pvcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\" - Systemets "
+"lvrename-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\" - Systemets "
 "fejlbesked : %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"lvchange-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"lvremove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"lvconvert-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Opret nyt\n"
-"logisk delarkiv"
+msgstr "Opretter nyt logisk delarkiv"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Logiske delarkiv"
+msgstr "Laver størrelse om på logisk delarkiv"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "Logiske delarkiv"
+msgstr "Tilføjer spejl til logisk delarkiv"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
 msgstr ""
-"Fjern\n"
-"logisk delarkiv"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Fysisk delarkiv"
+msgstr ""
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Føj fysisk delarkiv til VG"
+msgstr "Føjer fysisk delarkiv til delarkivsgruppe"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Opret ny\n"
-"delarkivgruppe"
+msgstr "Opretter delarkivgruppe"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Ny delarkivgruppe"
+msgstr "Fjerner delarkivgruppe"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Fysisk delarkiv"
+msgstr "Fjerner fysisk delarkiv"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Fjern\n"
-"logisk delarkiv"
+msgstr "Fjerner logisk delarkiv" 
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Fjern\n"
-"logisk delarkiv"
+msgstr "Fjerner logisk delarkiv"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Fjern delarkiv fra\n"
-"delarkivgruppe"
+msgstr "Fjerner fysisk delarkiv fra delarkivgruppe"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -885,9 +852,8 @@ msgid "Mount Point:   "
 msgstr "Monteringspunkt:"
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Monteringspunkt:"
+msgstr "Monteringspunkt ved genstart:"
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -943,43 +909,36 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "Delarkivgrupper"
+msgstr ""
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "Logiske delarkiv"
+msgstr ""
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "Fysisk delarkiv"
+msgstr ""
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "Partitionstype:    "
+msgstr "Lav partitionering manuelt"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Format:   "
+msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Klargør entitet"
+msgstr "Klargør manuelt"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "Antal strimler:"
+msgstr ""
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
@@ -995,13 +954,12 @@ msgstr ""
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Intet filsystem"
+msgstr "/   Rod-filsystem"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Intet"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1026,11 +984,10 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
+#, python-format
 msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
-"Er du sikker på at du vil klargøre diskentiteten %s? Alle data vil gå tabt "
-"på denne enhed/partition."
+"Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1073,9 +1030,9 @@ msgid "Unpartitioned space"
 msgstr ""
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "Ledig plads på %s"
+msgstr "Upartitioneret plads på %s"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1225,9 +1182,8 @@ msgid "Snapshot"
 msgstr ""
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "områder"
+msgstr "visning af områder"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1272,45 +1228,44 @@ msgid "Upgrading %s filesystem to %s"
 msgstr ""
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgcreate-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"Oprettelse af filsystem mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"Størrelsesændring af filsystem mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"Tjek af filsystem mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgreduce-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"Opgradering af filsystem mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Intet filsystem"
+msgstr "Ukendt filsystem"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1329,9 +1284,8 @@ msgid "GFS (clustered)"
 msgstr ""
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "Strimlet"
+msgstr "Strimlet "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1342,23 +1296,23 @@ msgid "Mirror "
 msgstr ""
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"dmsetup-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"pvmove-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
+"ls-kommandoen mislykkedes. Forsøgte med kommandoen: \"%s\"- Systemets "
 "fejlbesked : %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "Partitionstype:    "
+msgstr "Partition  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1437,9 +1391,8 @@ msgstr ""
 "delarkivgruppe"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Egenskaber for"
+msgstr "Redigér genskaber"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1458,27 +1411,24 @@ msgid "Extend Volume Group"
 msgstr "Udvid delarkivgruppe"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "Format:   "
+msgstr "Format"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Ikke klargjort"
+msgstr "Initialisér"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Klargør entitet"
+msgstr "Initialisér blokenhed"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
-msgstr "Klargør entitet"
+msgstr "Initialisér entitet"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Initialisér _blokenhed"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1601,9 +1551,8 @@ msgid ""
 msgstr ""
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Filsystem: "
+msgstr "<b>Filsystem</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
@@ -1622,21 +1571,16 @@ msgid "Filesystem is not resizable"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
 msgstr ""
-"Opret ny\n"
-"delarkivgruppe"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "Anvend tilbagestående plads"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Kilobyte"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
@@ -1667,32 +1611,28 @@ msgid "Mount"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "Monteringspunkt:"
+msgstr "Monteringspunkt: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Størrelse"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Størrelse"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Strimlet"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Anvend tilbagestående plads"
+msgstr "Anvend tilværende plads"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
@@ -1729,27 +1669,21 @@ msgid "Inherit"
 msgstr ""
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
 msgstr ""
-"Fjern delarkiv fra\n"
-"delarkivgruppe"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "områder"
+msgstr "Migrér områder"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
 msgstr ""
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
 msgstr ""
-"Migrér valgte\n"
-"områder fra delarkiv"
+"Migrér områder til "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
