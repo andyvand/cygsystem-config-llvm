@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-10-28 23:59+0800\n"
+"PO-Revision-Date: 2005-11-13 18:32+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -694,24 +694,20 @@ msgid "Mount Point:   "
 msgstr "Titik Lekapan:"
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Titik lekapan sedang digunakan"
+msgstr "Titik Lekapan apabila Diulangboot:"
 
 #: src/lvm_model.py:86
-#, fuzzy
 msgid "File System:   "
-msgstr "Memformat sistem fail %s ..."
+msgstr "Sistem Fail:"
 
 #: src/lvm_model.py:88
-#, fuzzy
 msgid "Physical Volume Name:   "
-msgstr "Nama Volum _Logikal:"
+msgstr "Nama Volum Fizikal:"
 
 #: src/lvm_model.py:89
-#, fuzzy
 msgid "Physical Volume Size:   "
-msgstr "Saiz Kumpulan Volum:"
+msgstr "Saiz Volum Fizikal:"
 
 #: src/lvm_model.py:90
 msgid "Space Used:   "
@@ -722,9 +718,8 @@ msgid "Space Free:   "
 msgstr "Ruang Bebas:"
 
 #: src/lvm_model.py:92
-#, fuzzy
 msgid "Total Physical Extents:   "
-msgstr "Jumlah Extent:"
+msgstr "Jumlah Extent Fizikal:"
 
 #: src/lvm_model.py:93
 #, fuzzy
