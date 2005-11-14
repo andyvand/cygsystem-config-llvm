@@ -628,7 +628,7 @@ class MirrorSyncProgress:
             for name in mirrors:
                 if name not in self.progress_bars:
                     progress = gtk.ProgressBar()
-                    progress.set_text(_("%s mirror synchronisation ") % name)
+                    progress.set_text(_("%s mirror synchronisation") % name)
                     progress.set_fraction(mirrors[name]/100.0)
                     hbox = gtk.HBox()
                     hbox.pack_end(progress)

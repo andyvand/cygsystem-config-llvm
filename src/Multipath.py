@@ -3,13 +3,11 @@ import os
 
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
 
+from lvmui_constants import *
 
 MULTIPATH_BIN='/sbin/multipath'
 DMSETUP_BIN='/sbin/dmsetup'
 LS_BIN='/bin/ls'
-
-DMSETUP_FAILURE=_("dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s")
-LS_FAILURE=_("ls command failed. Command attempted: \"%s\" - System Error Message: %s")
 
 
 class Multipath:
@@ -29,7 +27,7 @@ class Multipath:
             cmdstr = ' '.join(args)
             o,e,r = execWithCaptureErrorStatus(DMSETUP_BIN, args)
             if r != 0:
-                raise CommandError('FATAL', DMSETUP_FAILURE % (cmdstr, e))
+                raise CommandError('FATAL', COMMAND_FAILURE % ("dmsetup",cmdstr, e))
             dmtable_lines = o.splitlines()
         else:
             return multipath_data
@@ -41,7 +39,7 @@ class Multipath:
         cmdstr = ' '.join(args)
         o,e,r = execWithCaptureErrorStatus(LS_BIN, args)
         if r != 0:
-            raise CommandError('FATAL', LS_FAILURE % (cmdstr, e))
+            raise CommandError('FATAL', COMMAND_FAILURE % ("ls",cmdstr, e))
         ls_lines = o.splitlines()
         
         # get block devices
@@ -69,7 +67,7 @@ class Multipath:
             cmdstr = ' '.join(args)
             o,e,r = execWithCaptureErrorStatus(DMSETUP_BIN, args)
             if r != 0:
-                raise CommandError('FATAL', DMSETUP_FAILURE % (cmdstr, e))
+                raise CommandError('FATAL', COMMAND_FAILURE % ("dmsetup",cmdstr, e))
             origin = None
             origin_name = words[0].rstrip(':')
             for or_line in o.splitlines():

@@ -139,7 +139,7 @@ class PhysicalVolume(Volume):
     if part.id == ID_EMPTY:
       self.set_name(UNPARTITIONED_SPACE)
     else:
-      self.set_name(_("Partition  %s") % str(part.num))
+      self.set_name(_("Partition %s") % str(part.num))
     
     
   def getPartition(self):

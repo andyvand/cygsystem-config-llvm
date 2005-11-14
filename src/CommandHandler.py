@@ -8,25 +8,6 @@ from lvmui_constants import *
 import gettext
 _ = gettext.gettext
 
-###TRANSLATOR: The first word in each string below is
-###an lvm command line command phrase.
-VGEXTEND_FAILURE=_("vgextend command failed. Command attempted: \"%s\" - System Error Message: %s")
-PVCREATE_FAILURE=_("pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s")
-LVCREATE_FAILURE=_("lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s")
-PVREMOVE_FAILURE=_("pvremove command failed. Command attempted: \"%s\" - System Error Message: %s")
-LVREMOVE_FAILURE=_("lvremove command failed. Command attempted: \"%s\" - System Error Message: %s")
-VGREMOVE_FAILURE=_("vgremove command failed. Command attempted: \"%s\" - System Error Message: %s")
-VGCREATE_FAILURE=_("vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s")
-VGCHANGE_FAILURE=_("vgchange command failed. Command attempted: \"%s\" - System Error Message %s")
-VGREDUCE_FAILURE=_("vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s")
-PVMOVE_FAILURE=_("pvmove command failed. Command attempted: \"%s\" - System Error Message: %s")
-UMOUNT_FAILURE=_("umount command failed. Command attempted: \"%s\" - System Error Message: %s")
-MNTCREATE_FAILURE=_("mount command failed. Command Attempted: %s  - System Error Message: \"%s\"")
-LVRESIZE_FAILURE=_("lvresize command failed. Command attempted: \"%s\" - System Error Message: %s")
-LVRENAME_FAILURE=_("lvrename command failed. Command attempted: \"%s\" - System Error Message: %s")
-LVCHANGE_FAILURE=_("lvchange command failed. Command attempted: \"%s\" - System Error Message: %s")
-LVCONVERT_FAILURE=_("lvconvert command failed. Command attempted: \"%s\" - System Error Message: %s")
-
 
 class CommandHandler:
   
@@ -73,7 +54,7 @@ class CommandHandler:
     result_string,err,res = execWithCaptureErrorStatusProgress(LVCREATE_BIN_PATH, arglist,
                                                                _("Creating Logical Volume"))
     if res != 0:
-      raise CommandError('FATAL', LVCREATE_FAILURE % (cmd_str,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvcreate",cmd_str,err))
   
   def reduce_lv(self, lvpath, new_size_extents, test=False): 
     cmd_args = list()
@@ -92,7 +73,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(LVREDUCE_BIN_PATH, cmd_args,
                                                      _("Resizing Logical Volume"))
     if res != 0:
-      raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvresize",cmdstr,err))
   
   def extend_lv(self, lvpath, new_size_extents, test=False): 
     cmd_args = list()
@@ -109,7 +90,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(LVEXTEND_BIN_PATH, cmd_args,
                                                      _("Resizing Logical Volume"))
     if res != 0:
-      raise CommandError('FATAL', LVRESIZE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvresize",cmdstr,err))
   
   def activate_lv(self, lvpath):
     cmd_args = list()
@@ -119,7 +100,7 @@ class CommandHandler:
     cmdstr = ' '.join(cmd_args)
     out,err,res = execWithCaptureErrorStatus(LVCHANGE_BIN_PATH, cmd_args)
     if res != 0:
-      raise CommandError('FATAL', LVCHANGE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvchange",cmdstr,err))
   
   def deactivate_lv(self, lvpath):
     cmd_args = list()
@@ -129,7 +110,7 @@ class CommandHandler:
     cmdstr = ' '.join(cmd_args)
     out,err,res = execWithCaptureErrorStatus(LVCHANGE_BIN_PATH, cmd_args)
     if res != 0:
-      raise CommandError('FATAL', LVCHANGE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvchange",cmdstr,err))
   
   def add_mirroring(self, lvpath, pvlist=[]):
     cmd_args = list()
@@ -142,7 +123,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(LVCONVERT_BIN_PATH, cmd_args,
                                                      _("Adding Mirror to Logical Volume"))
     if res != 0:
-      raise CommandError('FATAL', LVCONVERT_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvconvert",cmdstr,err))
   
   def remove_mirroring(self, lvpath):
     cmd_args = list()
@@ -153,7 +134,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(LVCONVERT_BIN_PATH, cmd_args,
                                                      _("Removing Mirror from Logical Volume"))
     if res != 0:
-      raise CommandError('FATAL', LVCONVERT_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvconvert",cmdstr,err))
   
   def mount(self, dev_path, mnt_point): 
     cmd_args = list()
@@ -163,7 +144,7 @@ class CommandHandler:
     cmdstr = ' '.join(cmd_args)
     out,err,res = execWithCaptureErrorStatus("/bin/mount",cmd_args)
     if res != 0:
-      raise CommandError('FATAL', MNTCREATE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("mount",cmdstr,err))
   
   def initialize_entity(self, ent):
     entity = ent.strip()
@@ -176,7 +157,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(PVCREATE_BIN_PATH,command_args,
                                                      _("Initializing Physical Volume"))
     if res != 0:
-      raise CommandError('FATAL', PVCREATE_FAILURE % (commandstring,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("pvcreate",commandstring,err))
 
   def add_unalloc_to_vg(self, pv, vg):
     args = list()
@@ -187,7 +168,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(VGEXTEND_BIN_PATH, args, 
                                                      _("Adding Physical Volume to Volume Group"))
     if res != 0:
-      raise CommandError('FATAL', VGEXTEND_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("vgextend",cmdstr,err))
 
   def create_new_vg(self, name, max_phys, max_log, extent_size, is_unit_megs,
                     pv):
@@ -214,7 +195,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(VGCREATE_BIN_PATH, args, 
                                                      _("Creating Volume Group"))
     if res != 0:
-      raise CommandError('FATAL', VGCREATE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("vgcreate",cmdstr,err))
 
   def remove_vg(self, vgname):
     args = list()
@@ -225,7 +206,7 @@ class CommandHandler:
     cmdstr = ' '.join(args)
     out,err,res = execWithCaptureErrorStatus(VGCHANGE_BIN_PATH,args)
     if res != 0:
-      raise CommandError('FATAL', VGCHANGE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("vgchange",cmdstr,err))
       return
 
     commandstring = VGREMOVE_BIN_PATH + " " + vgname
@@ -236,7 +217,7 @@ class CommandHandler:
     outs,errs,result = execWithCaptureErrorStatusProgress(VGREMOVE_BIN_PATH,args_list,
                                                           _("Removing Volume Group"))
     if result != 0:
-      raise CommandError('FATAL', VGREMOVE_FAILURE % (cmdstring,errs))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("vgremove",cmdstring,errs))
 
   def remove_pv(self, pvname):
     args = list()
@@ -246,7 +227,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(PVREMOVE_BIN_PATH,args,
                                                      _("Removing Physical Volume"))
     if res != 0:
-      raise CommandError('FATAL', PVREMOVE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("pvremove",cmdstr,err))
 
   def remove_lv(self, lvname):
     args = list()
@@ -257,7 +238,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(LVREMOVE_BIN_PATH,args,
                                                      _("Removing Logical Volume"))
     if res != 0:
-      raise CommandError('FATAL', LVREMOVE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvremove",cmdstr,err))
   
   def rename_lv(self, vgname, lvname_old, lvname_new):
     args = list()
@@ -269,7 +250,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(LVRENAME_BIN_PATH,args,
                                                      _("Renaming Logical Volume"))
     if res != 0:
-      raise CommandError('FATAL', LVRENAME_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("lvrename",cmdstr,err))
   
   def unmount(self, mountpoint):
     args = ['/bin/umount']
@@ -277,7 +258,7 @@ class CommandHandler:
     cmdstr = ' '.join(args)
     out,err,res = execWithCaptureErrorStatus("/bin/umount", args)
     if res != 0:
-      raise CommandError('FATAL', UMOUNT_FAILURE % (cmdstr, err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("umount",cmdstr, err))
     # unmount all with mountpoint
     while res == 0:
       out,err,res = execWithCaptureErrorStatus("/bin/umount", args)
@@ -291,7 +272,7 @@ class CommandHandler:
     out,err,res = execWithCaptureErrorStatusProgress(VGREDUCE_BIN_PATH,args,
                                                      _("Removing Physical Volume from Volume Group"))
     if res != 0:
-      raise CommandError('FATAL', VGREDUCE_FAILURE % (cmdstr,err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("vgreduce",cmdstr,err))
 
   # data = [pv to migrate to, policy (0 - inherit, 1 - normal, 2 - contiguous, 3 - anywhere), lv_path to migrate from]
   # extents_from = [(start, size), ...]
@@ -327,7 +308,7 @@ class CommandHandler:
                                                          _("Migrating Extents"))
     if res != 0:
       cmdstr = ' '.join(args)
-      raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("pvmove",cmdstr, err))
   
   def complete_pvmove(self, background=False):
     args = [PVMOVE_BIN_PATH]
@@ -339,7 +320,7 @@ class CommandHandler:
                                                          _("Completing Extent Migration"))
     if res != 0:
       cmdstr = ' '.join(args)
-      raise CommandError('FATAL', PVMOVE_FAILURE % (cmdstr, err))
+      raise CommandError('FATAL', COMMAND_FAILURE % ("pvmove",cmdstr, err))
   
   def is_dm_mirror_loaded(self):
     arglist = list()

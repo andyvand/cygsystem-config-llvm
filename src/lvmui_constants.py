@@ -62,6 +62,8 @@ MIRROR_LOG=_("Mirror Log")
 
 UNABLE_TO_PROCESS_REQUEST=_("Unable to process request")
 
+COMMAND_FAILURE=_("%s command failed. Command attempted: \"%s\" - System Error Message: %s")
+
 NEW_LV_NAME_ARG = 0
 NEW_LV_VGNAME_ARG = 1
 NEW_LV_SIZE_ARG = 2
@@ -85,10 +87,10 @@ FREE_SPACE=_("Free space")
 UNPARTITIONED_SPACE=_("Unpartitioned space")
 UNPARTITIONED_SPACE_ON=_("Unpartitioned space on %s")
 
-GIG_SUFFIX=_("G")
-MEG_SUFFIX=_("M")
-KILO_SUFFIX=_("K")
-BYTE_SUFFIX=_("B")
+GIG_SUFFIX=_("GB")
+MEG_SUFFIX=_("MB")
+KILO_SUFFIX=_("KB")
+BYTE_SUFFIX=_("Bytes")
 
 
 #File System Types

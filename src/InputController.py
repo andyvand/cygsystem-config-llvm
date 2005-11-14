@@ -1451,12 +1451,8 @@ class LV_edit_props:
             else:
                 self.mirror_to_diff_hds = None # prompt for option
             self.glade_xml.get_widget('enable_mirroring').set_active(already_mirrored)
-        # disable mirroring support for now :(
         self.mirror_to_diff_hds = False
-        if self.new:
-            self.glade_xml.get_widget('enable_mirroring').hide()
-        else:
-            self.glade_xml.get_widget('lv_properties_frame').hide()
+
         # set up mirror limits
         self.on_enable_mirroring(None)
         
@@ -1910,11 +1906,11 @@ class LV_edit_props:
         # illegal characters
         invalid_lvname_message = ''
         if re.match('snapshot', name_new) or re.match('pvmove', name_new):
-            invalid_lvname_message = _("Names begining with \"snapshot\" or \"pvmove\" are reserved keywords.")
+            invalid_lvname_message = _("Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords.")
         elif re.search('_mlog', name_new) or re.search('_mimage', name_new):
             invalid_lvname_message = _("Names containing \"_mlog\" or \"_mimage\" are reserved keywords.")
         elif name_new[0] == '-':
-            invalid_lvname_message = _("Names begining with a \"-\" are invalid")
+            invalid_lvname_message = _("Names beginning with a \"-\" are invalid")
         elif name_new == '.' or name_new == '..':
             invalid_lvname_message = _("Name can be neither \".\" nor \"..\"")
         else:

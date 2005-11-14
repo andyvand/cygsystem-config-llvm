@@ -382,7 +382,7 @@ class DisplayView:
                 snap_cyl = lv_cyls_dir[snap.get_name()]
                 orig_cyl.add_highlightable(snap_cyl)
                 snap_cyl.add_highlightable(orig_cyl)
-                label_snap = "<span size=\"8000\">" + _("Snapshot of ") + orig.get_name() + "</span>"
+                label_snap = "<span size=\"8000\">" + (_("Snapshot of %s") % orig.get_name()) + "</span>"
                 snap_cyl.set_label_lower(label_snap, False, True, True)
     
     def render_vg(self, vg):
