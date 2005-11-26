@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-11-13 18:32+0800\n"
+"PO-Revision-Date: 2005-11-26 13:32+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -94,7 +94,7 @@ msgstr "Satu Nama mesti diberikan untuk Volum Logikal baru"
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "Satu Nama mesti diberikan untuk Kumpulan Volum baru"
 
 #: src/InputController.py:102
 #, python-format
@@ -722,28 +722,24 @@ msgid "Total Physical Extents:   "
 msgstr "Jumlah Extent Fizikal:"
 
 #: src/lvm_model.py:93
-#, fuzzy
 msgid "Allocated Physical Extents:   "
-msgstr "Jumlah Extent:"
+msgstr "Extent Fizikal Diperuntukkan:"
 
 #: src/lvm_model.py:95
 msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
-#, fuzzy
 msgid "Not initializable:   "
-msgstr "\"%s\" tidak dijumpai"
+msgstr "Tidak boleh dimulakan:"
 
 #: src/lvm_model.py:98
-#, fuzzy
 msgid "Extended partition"
-msgstr "_Ubahsuai Partisyen"
+msgstr "Partisyen dilanjutkan"
 
 #: src/lvm_model.py:99
-#, fuzzy
 msgid "Swap in use"
-msgstr "Gelaran sudah digunakan"
+msgstr "Swap sedang digunakan"
 
 #: src/lvm_model.py:100
 #, fuzzy
@@ -763,12 +759,12 @@ msgstr "Kumpulan Volum LVM"
 #: src/lvm_model.py:129
 #, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "Volum Logikal Maksimum:"
+msgstr "Jumlah Volum Logikal:"
 
 #: src/lvm_model.py:130
 #, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "Volum Fizikal Maksimum:"
+msgstr "Jumlah Volum Fizikal:"
 
 #: src/lvm_model.py:268
 #, fuzzy
@@ -778,7 +774,7 @@ msgstr "Pilih secara manual"
 #: src/lvm_model.py:304
 #, fuzzy
 msgid "Multipath device"
-msgstr "peranti tidak sah %s %s"
+msgstr "Peranti RAID"
 
 #: src/lvm_model.py:307
 #, fuzzy
@@ -802,12 +798,12 @@ msgstr ""
 #: src/lvm_model.py:819
 #, fuzzy
 msgid "Snapshot origin:  "
-msgstr "Nama snapshot"
+msgstr "Cipta Petikan %s"
 
 #: src/lvm_model.py:826
 #, fuzzy
 msgid "Snapshot usage:  "
-msgstr "Pengunaan: %s [OPSYEN]...\n"
+msgstr "penggunaan: %s [pilihan]"
 
 #: src/lvm_model.py:849
 #: src/lvm_model.py:855
@@ -815,7 +811,7 @@ msgstr "Pengunaan: %s [OPSYEN]...\n"
 #: src/lvm_model.py:915
 #, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Memeriksa sistemfail root"
+msgstr "Tiada sistemfail"
 
 #: src/lvm_model.py:918
 #: src/Filesystem.py:120
@@ -851,7 +847,7 @@ msgstr ""
 #: src/lvmui_constants.py:57
 #, fuzzy
 msgid "Reloading LVM. Please wait."
-msgstr "Memuatkan Tetapan... Sila tunggu"
+msgstr "Sila tunggu sementara memformat pemacu %s...\n"
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -861,12 +857,12 @@ msgstr ""
 #: src/lvmui_constants.py:61
 #, fuzzy
 msgid "Mirror Log"
-msgstr "Log Mentah..."
+msgstr "Log Ralat"
 
 #: src/lvmui_constants.py:63
 #, fuzzy
 msgid "Unable to process request"
-msgstr "Gagal memulakan proses faks."
+msgstr "Tidak boleh untuk akses ke CDROM"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -942,7 +938,7 @@ msgstr "Cramfs"
 #: src/Properties_Renderer.py:42
 #, fuzzy
 msgid "Properties for"
-msgstr "Ciri-ciri untuk %1"
+msgstr "Perincian bagi '%s'"
 
 #: src/Properties_Renderer.py:43
 #: src/renderer.py:37
@@ -1029,7 +1025,7 @@ msgstr ""
 #: src/renderer.py:385
 #, fuzzy
 msgid "Snapshot of "
-msgstr "Nama snapshot"
+msgstr "Cipta Petikan %s"
 
 #: src/renderer.py:487
 msgid "Origin"
@@ -1038,7 +1034,7 @@ msgstr ""
 #: src/renderer.py:493
 #, fuzzy
 msgid "Snapshot"
-msgstr "Nama snapshot"
+msgstr "Cipta Petikan %s"
 
 #: src/renderer.py:537
 #, fuzzy
@@ -1070,17 +1066,17 @@ msgstr ""
 #: src/Filesystem.py:9
 #, fuzzy, python-format
 msgid "Creating %s filesystem"
-msgstr "Sistem fail   Jenis"
+msgstr "Tiada sistemfail"
 
 #: src/Filesystem.py:10
 #, fuzzy, python-format
 msgid "Resizing %s filesystem"
-msgstr "Sistem fail   Jenis"
+msgstr "Tiada sistemfail"
 
 #: src/Filesystem.py:11
 #, fuzzy, python-format
 msgid "Checking %s filesystem"
-msgstr "Memeriksa sistemfail root"
+msgstr "Memeriksa quota sistemfail lokal: "
 
 #: src/Filesystem.py:12
 #, fuzzy, python-format
@@ -1110,7 +1106,7 @@ msgstr ""
 #: src/Filesystem.py:125
 #, fuzzy
 msgid "Unknown filesystem"
-msgstr "Sistem fail   Jenis"
+msgstr "Tiada sistemfail"
 
 #: src/Filesystem.py:352
 #, fuzzy
@@ -1268,7 +1264,7 @@ msgstr "Mulakan Entiti"
 #: src/lvui.glade.h:27
 #, fuzzy
 msgid "Initialize Block Device"
-msgstr "Comment=Peranti Blok"
+msgstr "Jadikan Peranti RAID."
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1277,7 +1273,7 @@ msgstr "Mulakan Entiti"
 #: src/lvui.glade.h:29
 #, fuzzy
 msgid "Initialize _Block Device"
-msgstr "Comment=Peranti Blok"
+msgstr "Jadikan Peranti RAID."
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1371,7 +1367,7 @@ msgstr "Pilih Kumpulan Volum untuk menambah PV ini:"
 #: src/lvui.glade.h:53
 #, fuzzy
 msgid "Some text"
-msgstr "Kerat Teks"
+msgstr "Teks Placeholder."
 
 #: src/lvui.glade.h:54
 #, fuzzy
@@ -1381,12 +1377,14 @@ msgstr "ulangmuat"
 #: src/lvui.glade.h:55
 #, fuzzy
 msgid "_Tools"
-msgstr "Perkakasan"
+msgstr "Alatan Pentadbiran"
 
 #: src/lvui.glade.h:56
 #, fuzzy
 msgid "extend vg message:"
-msgstr "Papar mesej ini"
+msgstr ""
+"Lebihkan\n"
+"Kumpulan Volum"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1408,7 +1406,7 @@ msgstr "Sistem fail"
 #: src/lv_edit_props.glade.h:11
 #, fuzzy
 msgid "<b>LV Properties</b>"
-msgstr "Ciri-ciri Alamat"
+msgstr "Ciri perkongsian - %s"
 
 #: src/lv_edit_props.glade.h:12
 #, fuzzy
@@ -1423,7 +1421,7 @@ msgstr "laksana wizard untuk menambah masukan PXE"
 #: src/lv_edit_props.glade.h:15
 #, fuzzy
 msgid "Filesystem is not resizable"
-msgstr "Sijil tidak dipercayai."
+msgstr "%s adalah nama hos yang tidak sah"
 
 #: src/lv_edit_props.glade.h:16
 #, fuzzy
@@ -1443,12 +1441,12 @@ msgstr "Kilobyte"
 #: src/lv_edit_props.glade.h:19
 #, fuzzy
 msgid "LV name: "
-msgstr "Nama untuk LV baru:"
+msgstr "Nama Pengguna"
 
 #: src/lv_edit_props.glade.h:20
 #, fuzzy
 msgid "LV size"
-msgstr "saiz blok"
+msgstr "_Saiz (MB):"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1478,17 +1476,17 @@ msgstr "Titik Lekapan"
 #: src/lv_edit_props.glade.h:27
 #, fuzzy
 msgid "Mount when rebooted"
-msgstr "Titik lekapan tidak sah"
+msgstr "Titik Lekapan apabila Diulangboot:"
 
 #: src/lv_edit_props.glade.h:28
 #, fuzzy
 msgid "Size beg"
-msgstr "Minta untuk Par"
+msgstr "_Saiz (MB):"
 
 #: src/lv_edit_props.glade.h:29
 #, fuzzy
 msgid "Size end"
-msgstr "Pengakhir Par"
+msgstr "Silinder _Akhir:"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
@@ -1497,7 +1495,7 @@ msgstr "Jaluran"
 #: src/lv_edit_props.glade.h:31
 #, fuzzy
 msgid "Use remaining"
-msgstr "Guna Ruang Yang Tinggal"
+msgstr " (%02d:%02d:%02d yang tinggal)"
 
 #: src/lv_edit_props.glade.h:32
 #, fuzzy
@@ -1512,7 +1510,7 @@ msgstr "Destinasi"
 #: src/migrate_extents.glade.h:2
 #, fuzzy
 msgid "<b>Migration Policy</b>"
-msgstr "Jenis Polisi:"
+msgstr "Tentutetap Polisi SELinux"
 
 #: src/migrate_extents.glade.h:3
 #, fuzzy
