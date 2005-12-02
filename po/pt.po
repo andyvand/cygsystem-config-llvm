@@ -13,6 +13,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.4\n"
+"X-POFile-SpellExtra: gv pvmove mimage pvremove inicializável VOlume\n"
+"X-POFile-SpellExtra: cluster vgreduce lvconvert JFS Kilobytes VLs striped\n"
+"X-POFile-SpellExtra: lvremove Meg Gigabytes mlog fstab vgextend lvchange\n"
+"X-POFile-SpellExtra: DISPLAY LV ls Reiserfs XFS VFs pvcreate GV dm VF VG\n"
+"X-POFile-SpellExtra: MSDOS VFAT VL Ext vgcreate LVM modprobe dmsetup UUID\n"
+"X-POFile-SpellExtra: Cramfs lvrename GFS umount ext snapshot lvresize Kilo\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
