@@ -1,14 +1,14 @@
 # translation of ja.po to Japanese
 # system-config-lvm ja.po Japanese translation.
 # Copyright (C) Red Hat Inc.2004
-# Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004.
+# Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-02-18 23:46+0900\n"
+"PO-Revision-Date: 2005-12-04 00:54+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -38,9 +38,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "この PV を加えるボリュームグループを選択してください: "
+msgstr "この %s を加えるボリュームグループを選択してください: "
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -71,10 +71,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "初期化不能なディスクエンティティー"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
-"%s ボリュームグループに加えるためにディスクのエンティティーを選んでください:"
+msgstr "%s ボリュームグループに加えるためにディスクのエンティティーを選んでください:"
 
 #: src/InputController.py:92
 msgid ""
@@ -137,21 +136,24 @@ msgid ""
 msgstr "このボリュームグループの中の物理ボリューム数は最大に達しました。"
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "このボリュームグループの中の物理ボリューム数は最大に達しました。"
+msgstr ""
+"ほとんどの %s 物理ボリュームは限界に達する前にこのボリュームグループに"
+"加えられました。"
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"ボリュームグループ %s には %s にあるデータを移動させる十分なスペースがありま"
-"せん。解決策としてボリュームグループに追加の物理ボリュームを加えます。"
+"ボリュームグループ %s には新しい論理ボリューム用に十分なスペースが"
+"ありません。解決策としてボリュームグループに追加の物理ボリュームを"
+"加えます。"
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
@@ -224,11 +226,8 @@ msgid "%s extents"
 msgstr "%s エクステント"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"新しいボリューム\n"
-"グループの作成"
+msgstr "ボリュームグループの空き領域のリネーム:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
@@ -256,18 +255,18 @@ msgid "The %s should only contain number values"
 msgstr "%s は数値のみ使用可能です"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr "最大物理ボリュームは 1 から 256 までの整数のみ使用可能です"
+msgstr ""
+"最大物理ボリュームフィールドは 1 から 256 までの整数のみ使用可能です"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr "最大論理ボリュームは 1 から 256 までの整数のみ使用可能です"
+msgstr ""
+"最大論理ボリュームフィールドは 1 から 256 までの整数のみ使用可能です"
 
 #: src/InputController.py:149
 #, python-format
@@ -277,7 +276,7 @@ msgid ""
 msgstr "本当に論理ボリューム管理から %s を外してもよろしいですか?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -286,11 +285,11 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"除こうとしている物理ボリューム %s はマッピングされているアクティブな論理ボ"
-"リュームからのデータを保有しています。なぜなら、ボリュームグループの中で唯一"
-"の物理ボリュームであり、データを移動する空きスペースがないからです。これを削"
-"除する前に新しい物理ボリュームを加えるか、この物理ボリュームに割り当てられて"
-"いる論理ボリュームを削除することを推奨します。"
+"除こうとしている物理ボリューム %s はマッピングされているアクティブな論理"
+"ボリュームからのデータを保有しています。なぜなら、ボリュームグループの中で"
+"唯一の物理ボリュームであり、データを移動する空きスペースがないからです。"
+"解決策としては、これを削除する前に新しい物理ボリュームを加えるか、この物理"
+"ボリュームに割り当てられている論理ボリュームを削除することがあります。"
 
 #: src/InputController.py:152
 #, python-format
@@ -330,31 +329,29 @@ msgstr ""
 "用できません。"
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"dm-mirror モジュールはカーネルの中でロードされず、カーネルは dm-mirror ター"
-"ゲットをサポートしません。もし、サポートするのであれば、\"modprobe dm-mirror"
-"\" を実行してみてください。そうしないと、物理拡張にあるデータの移動の要求は利"
-"用できません。"
+"dm-snapshot モジュールはカーネルの中でロードされず、カーネルは dm-snapshot "
+"ターゲットをサポートしません。もし、サポートするのであれば、\"modprobe "
+"dm-snapshot\" を実行してみてください。そうしないと、物理拡張にあるデータの"
+"移動の要求は利用できません。"
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "本当に論理ボリューム %s を外してもよろしいですか?"
+msgstr "本当に論理ボリューム %s を削除してもかまいませんか?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"重大な警告: 論理ボリューム %s はシステムで %s ファイルシステムを使っていて、"
-"現在 %s にマウントされています。マウントされたファイルシステムのデータを完全"
-"に無視しても構いませんか?"
+"論理ボリューム %s はシステムで %s ファイルシステムを含んでいます。"
+"全てのデータが失われます! 論理ボリューム %s を削除してもかまいませんか?"
 
 #: src/InputController.py:160
 #, python-format
@@ -451,9 +448,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s エクステント"
+msgstr "移動拡張"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -465,7 +461,6 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "新しい論理ボリュームの作成"
 
@@ -475,9 +470,8 @@ msgid "Edit %s, a Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "論理ボリューム"
+msgstr "論理ボリュームの編集"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -674,109 +668,81 @@ msgstr ""
 "%s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"lvremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-"ジ: %s"
+"lvresize コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"lvcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-"ジ: %s"
+"lvcrename コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"vgcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-"ジ: %s"
+"vvchange コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"lvremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-"ジ: %s"
+"lvconvert コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"新しい論理\n"
-"ボリュームの作成"
+msgstr "論理ボリュームの作成"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "論理ボリューム"
+msgstr "論理ボリュームのリサイズ"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "論理ボリューム"
+msgstr "論理ボリュームのミラーの追加"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"論理ボリューム\n"
-"の削除"
+msgstr "論理ボリュームのミラーの削除"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "物理ボリューム"
+msgstr "物理ボリュームの初期化"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "VG に物理ボリュームを追加"
+msgstr "ボリュームグループに物理ボリュームを追加"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"新しいボリューム\n"
-"グループの作成"
+msgstr "ボリュームグループの作成"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "新しいボリュームグループ"
+msgstr "ボリュームグループの削除"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "物理ボリューム"
+msgstr "物理ボリュームの削除"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"論理ボリューム\n"
-"の削除"
+msgstr "論理ボリュームの削除"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"論理ボリューム\n"
-"の削除"
+msgstr "論理ボリュームのリネーム"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"ボリュームグループから\n"
-"ボリュームの削除"
+msgstr "ボリュームグループから物理ボリュームの削除"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -891,9 +857,8 @@ msgid "Mount Point:   "
 msgstr "マウントポイント:"
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "マウントポイント:"
+msgstr "リブート時のマウントポイント:"
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -948,65 +913,57 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "ボリュームグループ"
+msgstr "ボリュームグループのクエリー"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "論理ボリューム"
+msgstr "論理ボリュームのクエリー"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "物理ボリューム"
+msgstr "物理ボリュームのクエリー"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "パーティションタイプ:"
+msgstr "手動パーティション"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "マルチパスデバイス"
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "フォーマット:"
+msgstr "注意:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "エンティティーを初期化"
+msgstr "手動で初期化"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "ストライプ数:          "
+msgstr "ミラーイメージの数:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "スナップショット:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "スナップショットの基点:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "スナップショットの使用方法:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "ファイルシステムがありません"
+msgstr "/   ルートファイルシステム"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "注意"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1031,12 +988,11 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
-"本当にディスクエンティティー %s を初期化してもよろしいですか? 全てのデータが"
-"このデバイス/パーティションから失われます。"
+"ディスク %s の空き領域 %s を初期化してもかまいませんか?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1060,11 +1016,11 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "ミラーログ"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "プロセス要求の無効"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -1072,16 +1028,16 @@ msgstr "フリー"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "空き領域"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "パーティションのない領域"
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "%s の未使用スペース"
+msgstr "%s のパーティションのない領域"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1231,9 +1187,8 @@ msgid "Snapshot"
 msgstr ""
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "エクステント"
+msgstr "拡張ビュー"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1278,62 +1233,62 @@ msgid "Upgrading %s filesystem to %s"
 msgstr ""
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-"ジ: %s"
+"ファイルシステムの作成に失敗しました。以下を試みました: \"%s\" - システム"
+"エラーメッセージ: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"mkfs コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
+"ファイルシステムのリサイズに失敗しました。以下を試みました: \"%s\" - "
+"システムエラーメッセージ: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"mkfs コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
+"ファイルシステムのチェックに失敗しました。以下を試みました: \"%s\" - "
+"システムエラーメッセージ: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgreduce コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-"ジ: %s"
+"ファイルシステムのアップグレードに失敗しました。以下を試みました: "
+"\"%s\" - システムエラーメッセージ: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "ファイルシステムがありません"
+msgstr "未知のファイルシステム"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (ローカル)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (クラスター)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (ローカル)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (クラスター)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
 msgstr "ストライプ"
 
@@ -1346,22 +1301,22 @@ msgid "Mirror "
 msgstr ""
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"mkfs コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
+"dmsetup コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"mkfs コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
+"ls コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "パーティションタイプ:"
+msgstr "パーティション %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1440,9 +1395,8 @@ msgstr ""
 "グループの作成"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "プロパティ"
+msgstr "プロパティの編集"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1461,19 +1415,16 @@ msgid "Extend Volume Group"
 msgstr "拡張ボリュームグループ"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
 msgstr "フォーマット:"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "未初期化"
+msgstr "初期化"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "エンティティーを初期化"
+msgstr "ブロックデバイスの初期化"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1604,50 +1555,44 @@ msgid ""
 msgstr ""
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "ファイルシステム: "
+msgstr "<b>ファイルシステム</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV プロパティ</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>サイズ</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab へのエントリーの追加"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "ファイルシステムはリサイズできません"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"新しいボリューム\n"
-"グループの作成"
+msgstr "ボリュームグループラベルの空き領域"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "残りのスペースの使用"
+msgstr "ラベルを残した空き領域"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "キロバイト"
+msgstr "キロバイト粒度"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "LV 名: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV サイズ"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1670,32 +1615,28 @@ msgid "Mount"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "マウントポイント:"
+msgstr "マウントポイント: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "サイズ"
+msgstr "開始サイズ"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "サイズ"
+msgstr "終了サイズ"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "ストライプ"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "残りのスペースの使用"
+msgstr "残り領域の使用"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
@@ -1732,27 +1673,20 @@ msgid "Inherit"
 msgstr ""
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"ボリュームグループから\n"
-"ボリュームの削除"
+msgstr "ボリュームグループからのポリシーの引継ぎ"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "エクステント"
+msgstr "移動拡張"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
 msgstr ""
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"選択したエクステントの\n"
-"ボリュームからの移動"
+msgstr "移動拡張 "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1760,7 +1694,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "普通"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
@@ -1768,7 +1702,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "常識の使用"
 
 #~ msgid ""
 #~ "There is a problem with the value entered in the Size field. The value "
