@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-12-04 00:54+0900\n"
+"PO-Revision-Date: 2005-12-04 21:27+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -157,7 +157,7 @@ msgstr ""
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "スナップショットのスナップショットはサポートされていません。"
 
 #: src/InputController.py:118
 #, python-format
@@ -165,6 +165,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"論理ボリューム %s には現在 %s を関連付けられているスナップショットがあり"
+"ます。スナップショットを最初に削除しています。"
 
 #: src/InputController.py:119
 #, python-format
@@ -172,6 +174,8 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"論理ボリューム %s にはスナップショットがあります: %s は現在関連付けられて"
+"います。最初にスナップショットを削除してください。"
 
 #: src/InputController.py:121
 msgid ""
@@ -197,6 +201,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"論理ボリューム %s は現在 %s にマウントされています。要求を完了するには、"
+"アンマウントしなければいけません。アンマウントしてもかまいませんか?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -231,7 +237,7 @@ msgstr "ボリュームグループの空き領域のリネーム:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "このボリュームの残りスペース:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -325,8 +331,8 @@ msgid ""
 msgstr ""
 "dm-mirror モジュールはカーネルの中でロードされず、カーネルは dm-mirror ター"
 "ゲットをサポートしません。もし、サポートするのであれば、\"modprobe dm-mirror"
-"\" を実行してみてください。そうしないと、物理拡張にあるデータの移動の要求は利"
-"用できません。"
+"\" を実行してみてください。そうしないと、物理エクステントにあるデータの移動"
+"の要求は利用できません。"
 
 #: src/InputController.py:156
 msgid ""
@@ -336,8 +342,8 @@ msgid ""
 msgstr ""
 "dm-snapshot モジュールはカーネルの中でロードされず、カーネルは dm-snapshot "
 "ターゲットをサポートしません。もし、サポートするのであれば、\"modprobe "
-"dm-snapshot\" を実行してみてください。そうしないと、物理拡張にあるデータの"
-"移動の要求は利用できません。"
+"dm-snapshot\" を実行してみてください。そうしないと、物理エクステントにある"
+"データの移動の要求は利用できません。"
 
 #: src/InputController.py:158
 #, python-format
@@ -359,6 +365,9 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"論理ボリューム %s は %s ディレクトリからのデータを含んでいます。その中の"
+"全てのデータは失われてしまいます! 本当に論理ボリューム %s を削除しても"
+"かまいませんか?"
 
 #: src/InputController.py:356
 #, python-format
@@ -367,6 +376,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"物理ボリューム %s は論理ボリューム %s のミラーログに含まれるエクステント"
+"を含んでいます。ミラーされた論理ボリュームはまだ移動されていません。"
+"したがって %s は削除できません。"
 
 #: src/InputController.py:359
 #, python-format
@@ -375,6 +387,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"物理ボリューム %s は論理ボリューム %s のミラーイメージを含んだエクステントを"
+"含んでいます。ミラーされた論理ボリュームはまだ移動されていません。したがっ"
+"て %s は削除されません。"
 
 #: src/InputController.py:362
 #, python-format
@@ -382,6 +397,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"物理ボリューム %s は %s に属するエクステント、つまり %s のスナップ"
+"ショットを含んでいます。スナップショットはまだ移動されていませんので、"
+"%s は削除されません。"
 
 #: src/InputController.py:367
 #, python-format
@@ -389,6 +407,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"物理ボリューム %s は %s に属するエクステント、つまりスナップショットの基点 "
+"%s を含んでいます。スナップショットの基点はまだ移動されていませんので、%s "
+"は削除されません。"
 
 #: src/InputController.py:369
 #, python-format
@@ -396,6 +417,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"物理ボリューム %s は %s に属するエクステント、つまりスナップショット %s の"
+"基点を含んでいます。スナップショットの基点はまだ移動されていませんので、"
+"%s は削除されません。"
 
 #: src/InputController.py:556
 #, python-format
@@ -403,12 +427,15 @@ msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
+"論理ボリューム\"%s\" は削除のために選択されていないスナップショットが含まれ"
+"ています。同様に削除されなければいけません。"
 
 #: src/InputController.py:571
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
+"\"%s\" は、スナップショット \"%s\" の基点であり、削除リストから削除されます。"
 
 #: src/InputController.py:602
 #, python-format
@@ -416,6 +443,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"物理ボリューム \"%s\" はミラーに属するエクステントを含んでいます。ミラーは"
+"移動されていませんので、%s は削除できません。"
 
 #: src/InputController.py:605
 #, python-format
@@ -423,42 +452,47 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"物理ボリューム \"%s\" はスナップショットに属するエクステントまたはスナッ"
+"プショットの基点を含んでいます。スナップショットは移動されていません"
+"ので、%s は削除できません。"
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "指定されたパスは存在しません。"
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "指定されたパスはブロックデバイスです。"
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s の初期化に失敗"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "いくつかのエクステントを最初に選択してください"
 
 #: src/InputController.py:1022
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"必要な移動を行うための十分な空きエクステントがありません。もっと物理ボリュー"
+"ムを増やして問題を解決してください。"
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
-msgstr "移動拡張"
+msgstr "エクステントの移動"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "オプション"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s のスナップショットを作成"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume"
@@ -467,7 +501,7 @@ msgstr "新しい論理ボリュームの作成"
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%s、 %s のスナップショットの編集"
 
 #: src/InputController.py:1349
 msgid "Edit Logical Volume"
@@ -475,15 +509,16 @@ msgstr "論理ボリュームの編集"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "基本となる論理ボリューム管理がミラーリングをサポートしていません"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "ストリップされた論理ボリュームが移動できません。"
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "関連付けされたスナップショットを含んだ論理ボリュームがまだミラー"
+"できていません。"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -492,23 +527,30 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
+"ミラーリングの第一の目的はハードドライブの失敗によるデータを保護すること"
+"です。異なったハードドライブ上にミラーイメージを置きますか?"
 
 #: src/InputController.py:1531
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
+"3 つ以下のハードドライブが空きスペースとして利用できます。ミラーリングを"
+"不可にします。"
 
 #: src/InputController.py:1536
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
+"ミラーリングを可能にする最低 3 つの物理ボリューム上に空きスペースがな"
+"ければいけません。"
 
 #: src/InputController.py:1544
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
+"論理ボリュームの大きさがミラーとして利用できる最大サイズに調整されます。"
 
 #: src/InputController.py:1549
 #, python-format
@@ -516,58 +558,62 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"ミラーを追加する十分な空きスペースがありません。論理ボリュームの大きさを "
+"%s にするか、物理ボリュームを追加してください。"
 
 #: src/InputController.py:1913
 msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "\"snapshot\" または \"pvmove\" で始まる名前は予約語です。"
 
 #: src/InputController.py:1915
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "\"_mlog\" または \"_mimage\" を含む名前は予約語です。"
 
 #: src/InputController.py:1917
 msgid "Names begining with a \"-\" are invalid"
-msgstr ""
+msgstr "\"-\" で始まる名前は無効です。"
 
 #: src/InputController.py:1919
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "\".\" または \"..\" を含む名前は使えません。"
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "ホワイトスペースは論理ボリュームの名前として許可されていません"
 
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "論理ボリューム名の \"%s\" は無効な文字です"
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr ""
+msgstr "マウントポイントを指定してください"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "論理ボリュームのデータを保持したまま ext2 を ext3 にアップグレードしますか?"
 
 #: src/InputController.py:2044
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
+"ファイルシステムの変更は論理ボリューム上の全てのデータを破壊します! それでも"
+"続けますか?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "ミラーは作成されません。残りのタスクが完了しました。"
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "ミラーを追加するには、いくつかのエクステントを移動させる必要があります。"
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "指定されたエクステントを移動しますか?"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
@@ -746,11 +792,11 @@ msgstr "ボリュームグループから物理ボリュームの削除"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "エクステントの移動"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "エクステントの移動の完了"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -894,23 +940,23 @@ msgstr "PV UUID"
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "未初期化::   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "拡張パーティション"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "使用中のスワップ"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "他のブートパーティション"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "自動パーティションの失敗"
 
 #: src/lvm_model.py:128
 msgid "Quering Volume Groups"
@@ -972,6 +1018,7 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"ディスクエンティティ %s の全てのデータが失われます! それでも初期化しますか?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -979,6 +1026,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"ディスクエンティティ %s は %s ファイルシステムを含んでいます。その全ての"
+"データは失われます! それでもディスクエンティティ %s を初期化しますか?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -986,6 +1035,8 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
+"ディスクエンティティ %s はディレクトリ %s のデータを含んでいます。その全ての"
+"データは失われます。それでもディスクエンティティ %s を初期化しますか?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -1001,10 +1052,13 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"未初期化のディスク %s を初期化しようとしています。要求されていませんが、それに"
+"パーティションを作成することが賢明です。全てのディスクを囲むような 1 つの"
+"パーティションを作成しますか?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVM を再読み込みしています。お待ちください。"
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1013,6 +1067,9 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
+"変更はコンピューターを再起動した後に有効になります。もしデバイス %s が使用中"
+"であれば、再起動の前に、データの破壊が発生します。コンピュータを今すぐ再起動"
+"するのが賢明です。"
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1125,7 +1182,7 @@ msgstr "ボリュームが選択されていません"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "複数の選択"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1150,6 +1207,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"選択しようとしているエクステントは論理ボリューム %s のミラーログに属して"
+"います。ミラーされた論理ボリュームはまだ移動されていませんので、エクステ"
+"ントは選択できません。"
 
 #: src/renderer.py:194
 #, python-format
@@ -1158,6 +1218,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"選択しようとしているエクステントは論理ボリューム %s のミラーイメージを含"
+"んでいます。ミラーされた論理ボリュームはまだ移動されていませんので、エク"
+"ステントは選択できません。"
 
 #: src/renderer.py:196
 #, python-format
@@ -1165,6 +1228,9 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"選択しようとしているエクステントは %s、つまり %s のスナップショットに属し"
+"ています。スナップショットはまだ移動されていませんので、エクステントは選択"
+"できません。"
 
 #: src/renderer.py:198
 #, python-format
@@ -1173,22 +1239,25 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"選択しようとしているエクステントはスナップショットの基点 %s に属しています。"
+"スナップショットの基点はまだ移動されていませんので、エクステントは選択"
+"できません。"
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "スナップショット "
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "基点"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "スナップショット"
 
 #: src/renderer.py:537
 msgid "extent view"
-msgstr "拡張ビュー"
+msgstr "エクステントの閲覧"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1205,32 +1274,32 @@ msgstr "初期化されていないエンティティー"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "%s ミラー同期 "
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "パーティションが作成されるまでお待ちください"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s ファイルシステムの作成"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s ファイルシステムのリサイズ"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s ファイルシステムのチェック"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s ファイルシステムを %s へアップグレード"
 
 #: src/Filesystem.py:13
 #, python-format
@@ -1298,7 +1367,7 @@ msgstr "リニアマッピング"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "ミラー "
 
 #: src/Multipath.py:11
 #, python-format
@@ -1384,7 +1453,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "スナップショットの作成"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1400,7 +1469,7 @@ msgstr "プロパティの編集"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "初期化するブロックデバイスのパスを入力"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1432,7 +1501,7 @@ msgstr "エンティティーを初期化"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "ブロックデバイスの初期化"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1528,19 +1597,19 @@ msgstr "この PV を加えるボリュームグループを選択してくだ�
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "テキスト"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "再読み込み(_R)"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "ツール(_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "拡張 vg メッセージ:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1553,6 +1622,14 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
@@ -1596,7 +1673,7 @@ msgstr "LV サイズ"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "スナップショット下の LV はリサイズできません"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1604,15 +1681,15 @@ msgstr "リニア"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "ミラーされた"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "ミラーされた LV はリサイズできません"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "マウント"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point: "
@@ -1620,7 +1697,7 @@ msgstr "マウントポイント: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "再起動時にマウント"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
@@ -1640,37 +1717,39 @@ msgstr "残り領域の使用"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "ストライプ "
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>移動先</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>移動ポリシー</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "どこでも - 実装されていない"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "自動的に移動する PV を選択"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "隣接"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PV を削除するには、使用しているエクステントは移動しなければいけません。\n"
+"エクステントの移動先と移動ポリシーを選択してください。"
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "相続"
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit policy from Volume Group"
@@ -1678,19 +1757,19 @@ msgstr "ボリュームグループからのポリシーの引継ぎ"
 
 #: src/migrate_extents.glade.h:10
 msgid "Migrate Extents"
-msgstr "移動拡張"
+msgstr "エクステントの移動"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "もしパフォーマンスを落としても良いならどこへでも移動"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate extents to "
-msgstr "移動拡張 "
+msgstr "エクステントの移動 "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "新しいエクステントは現在のものと隣接しています"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
@@ -1698,7 +1777,7 @@ msgstr "普通"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "LV に属するエクステントの移動のみ "
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
