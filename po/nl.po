@@ -1,15 +1,15 @@
 # translation of system-config-lvm to Dutch
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C) 2005 Free Software Foundation, Inc.
-# Peter van Egdom <p.van.egdom@chello.nl>, 2005.
+# Peter van Egdom <p.van.egdom@gmail.com>, 2005.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-08-21 17:33+0200\n"
-"Last-Translator: Peter van Egdom <p.van.egdom@chello.nl>\n"
+"PO-Revision-Date: 2005-12-05 23:05+0100\n"
+"Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -208,11 +208,11 @@ msgstr "%s extents"
 
 #: src/InputController.py:137
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
+msgstr "Overgebleven vrije ruimte in Volume Group:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Overgebleven ruimte voor dit Volume:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -386,11 +386,11 @@ msgstr ""
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "Het door u opgegeven pad bestaat niet."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "Het door u opgegeven pad is geen Block Device."
 
 #: src/InputController.py:748
 #, python-format
@@ -399,7 +399,7 @@ msgstr ""
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Selecteer eerst een paar extents"
 
 #: src/InputController.py:1022
 msgid ""
@@ -409,7 +409,7 @@ msgstr ""
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
-msgstr ""
+msgstr "migreer extents"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -500,11 +500,11 @@ msgstr ""
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "Ongeldig teken \"%s\" in Logical Volume naam"
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr ""
+msgstr "Geef aankoppelpunt op"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -524,6 +524,7 @@ msgstr ""
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr ""
+"Om mirroring toe te voegen dienen er een aantal extents te worden gemigreerd."
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
@@ -686,11 +687,11 @@ msgstr ""
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
-msgstr ""
+msgstr "Ongebruikt"
 
 #: src/lvm_model.py:47
 msgid "Unused Space"
-msgstr ""
+msgstr "Ongebruikte ruimte"
 
 #: src/lvm_model.py:49
 msgid "Unmounted"
@@ -698,7 +699,7 @@ msgstr ""
 
 #: src/lvm_model.py:59
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Volume Group naam:   "
 
 #: src/lvm_model.py:60
 msgid "System ID:   "
@@ -710,7 +711,7 @@ msgstr ""
 
 #: src/lvm_model.py:62 src/lvm_model.py:79 src/lvm_model.py:94
 msgid "Attributes:   "
-msgstr ""
+msgstr "Attributen:   "
 
 #: src/lvm_model.py:63
 msgid "Volume Group Size:   "
@@ -722,11 +723,11 @@ msgstr "Beschikbare ruimte:   "
 
 #: src/lvm_model.py:65
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Totaal aantal Extents:   "
 
 #: src/lvm_model.py:66
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Aantal vrije Extents:   "
 
 #: src/lvm_model.py:67
 msgid "Extent Size:   "
@@ -734,23 +735,23 @@ msgstr ""
 
 #: src/lvm_model.py:68
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "Maximum toegestane Physical Volumes:   "
 
 #: src/lvm_model.py:69
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "Aantal Physical Volumes:   "
 
 #: src/lvm_model.py:70
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "Maximum toegestane Logical Volumes:   "
 
 #: src/lvm_model.py:71
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "Aantal Logical Volumes:   "
 
 #: src/lvm_model.py:72
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Name:   "
@@ -762,27 +763,27 @@ msgstr "Logical Volume grootte:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "Aantal Segments:   "
 
 #: src/lvm_model.py:77
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "Aantal Stripes:   "
 
 #: src/lvm_model.py:78
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "Stripe grootte:   "
 
 #: src/lvm_model.py:80
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:82
 msgid "Partition Type:   "
-msgstr ""
+msgstr "Partitie soort:   "
 
 #: src/lvm_model.py:83
 msgid "Size:   "
-msgstr ""
+msgstr "Grootte:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point:   "
@@ -794,15 +795,15 @@ msgstr ""
 
 #: src/lvm_model.py:86
 msgid "File System:   "
-msgstr ""
+msgstr "Bestandssysteem:   "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Physical Volume naam:   "
 
 #: src/lvm_model.py:89
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Physical Volume grootte:   "
 
 #: src/lvm_model.py:90
 msgid "Space Used:   "
@@ -814,7 +815,7 @@ msgstr ""
 
 #: src/lvm_model.py:92
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Totaal Physical Extents:   "
 
 #: src/lvm_model.py:93
 msgid "Allocated Physical Extents:   "
@@ -822,15 +823,15 @@ msgstr ""
 
 #: src/lvm_model.py:95
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "Niet initialiseerbaar:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "Extended partitie"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
@@ -858,7 +859,7 @@ msgstr ""
 
 #: src/lvm_model.py:268
 msgid "Partition manually"
-msgstr ""
+msgstr "Partitioneer handmatig"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
@@ -866,15 +867,15 @@ msgstr ""
 
 #: src/lvm_model.py:307
 msgid "Note:   "
-msgstr ""
+msgstr "Let op:   "
 
 #: src/lvm_model.py:307
 msgid "Initialize manually"
-msgstr ""
+msgstr "Initialiseer handmatig"
 
 #: src/lvm_model.py:810
 msgid "Number of mirror images:  "
-msgstr ""
+msgstr "Aantal mirror images:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
@@ -891,11 +892,11 @@ msgstr ""
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
 msgid "/   Root Filesystem"
-msgstr ""
+msgstr "/   Root bestandssysteem"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Geen"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -955,90 +956,90 @@ msgstr ""
 
 #: src/lvmui_constants.py:82
 msgid "Free"
-msgstr ""
+msgstr "Vrij"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "Vrije ruimte"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "Niet-gepartioneerde ruimte"
 
 #: src/lvmui_constants.py:86
 #, python-format
 msgid "Unpartitioned space on %s"
-msgstr ""
+msgstr "Niet-gepartioneerde ruimte op %s"
 
 #: src/lvmui_constants.py:88
 msgid "G"
-msgstr ""
+msgstr "G"
 
 #: src/lvmui_constants.py:89
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: src/lvmui_constants.py:90
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/lvmui_constants.py:91
 msgid "B"
-msgstr ""
+msgstr "B"
 
 #. File System Types
 #: src/lvmui_constants.py:95
 msgid "No Filesystem"
-msgstr ""
+msgstr "Geen bestandssysteem"
 
 #: src/lvmui_constants.py:96
 msgid "Ext2"
-msgstr ""
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:97
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:98
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvmui_constants.py:99
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:100
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:101
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:102
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvmui_constants.py:103
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "Eigenschappen van"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr ""
+msgstr "Physical Volume"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
-msgstr ""
+msgstr "Logical Volume"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Niet toegewezen Volume"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
@@ -1047,12 +1048,12 @@ msgstr ""
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr ""
+msgstr "Volume Group"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Geen Volume geselecteerd"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
@@ -1068,7 +1069,7 @@ msgstr ""
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr ""
+msgstr "Niet toegewezen"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
@@ -1123,11 +1124,11 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
-msgstr ""
+msgstr "Volume Groups"
 
 #: src/Volume_Tab_View.py:43
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Niet toegewezen Volumes"
 
 #: src/Volume_Tab_View.py:44
 msgid "Uninitialized Entities"
@@ -1197,23 +1198,23 @@ msgstr ""
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (lokaal)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (geclustered)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (lokaal)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (geclustered)"
 
 #: src/Segment.py:44
 msgid "Stripe "
-msgstr ""
+msgstr "Stripe "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1221,7 +1222,7 @@ msgstr ""
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Mirror "
 
 #: src/Multipath.py:11
 #, python-format
@@ -1237,51 +1238,51 @@ msgstr ""
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition  %s"
-msgstr ""
+msgstr "Partitioneer %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
@@ -1333,27 +1334,27 @@ msgstr ""
 
 #: src/lvui.glade.h:26
 msgid "Initialize"
-msgstr ""
+msgstr "Initialiseren"
 
 #: src/lvui.glade.h:27
 msgid "Initialize Block Device"
-msgstr ""
+msgstr "Initialiseer Block Device"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
-msgstr ""
+msgstr "Initialiseer entiteit"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Initialiseer _Block Device"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
-msgstr ""
+msgstr "Kilo"
 
 #: src/lvui.glade.h:31
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "Logical Volume Management"
 
 #: src/lvui.glade.h:32
 msgid "Manage Volumes"
@@ -1361,15 +1362,15 @@ msgstr ""
 
 #: src/lvui.glade.h:33
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Maximum Logical Volumes: "
 
 #: src/lvui.glade.h:34
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Maximum Physical Volumes: "
 
 #: src/lvui.glade.h:35
 msgid "Meg"
-msgstr ""
+msgstr "Meg"
 
 #: src/lvui.glade.h:36
 msgid ""
@@ -1379,11 +1380,11 @@ msgstr ""
 
 #: src/lvui.glade.h:38
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Naam voor Volume Group: "
 
 #: src/lvui.glade.h:39
 msgid "New Volume Group"
-msgstr ""
+msgstr "Nieuwe Volume Group"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group Form"
@@ -1398,6 +1399,8 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"Verwijder \n"
+"Logical Volume"
 
 #: src/lvui.glade.h:44
 msgid ""
@@ -1425,7 +1428,7 @@ msgstr ""
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "Selecteer een Volume Group om deze PV aan toe te voegen:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
@@ -1437,7 +1440,7 @@ msgstr ""
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_Hulpmiddelen"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
@@ -1454,18 +1457,26 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
-msgstr ""
+msgstr "<b>Bestandssysteem</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV eigenschappen</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Grootte</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
@@ -1477,7 +1488,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
-msgstr ""
+msgstr "Vrije ruimte in Volume Group label"
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
@@ -1489,11 +1500,11 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "LV naam: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV grootte"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1501,7 +1512,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
-msgstr ""
+msgstr "Lineair"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
@@ -1517,7 +1528,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point: "
-msgstr ""
+msgstr "Aankoppelpunt: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1525,11 +1536,11 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr ""
+msgstr "Begin grootte"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr ""
+msgstr "Eind grootte"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
@@ -1545,11 +1556,11 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Bestemming</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Migratiebeleid</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1568,6 +1579,8 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"Om PV te verwijderen dienen extents die in gebruik zijn te worden gemigreerd.\n"
+"Selecteer de bestemming van de extents en het migratiebeleid."
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
@@ -1579,7 +1592,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:10
 msgid "Migrate Extents"
-msgstr ""
+msgstr "Migreer Extents"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
@@ -1587,7 +1600,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate extents to "
-msgstr ""
+msgstr "Migreer extents naar "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1595,12 +1608,12 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Normaal"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "Migreer alleen extents die deel uitmaken van LV"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "Gebruik gezond verstand"
