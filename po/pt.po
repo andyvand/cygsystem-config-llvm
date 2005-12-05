@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-11-04 14:20+0000\n"
+"PO-Revision-Date: 2005-12-05 11:23+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,7 @@ msgstr ""
 "X-POFile-SpellExtra: DISPLAY LV ls Reiserfs XFS VFs pvcreate GV dm VF VG\n"
 "X-POFile-SpellExtra: MSDOS VFAT VL Ext vgcreate LVM modprobe dmsetup UUID\n"
 "X-POFile-SpellExtra: Cramfs lvrename GFS umount ext snapshot lvresize Kilo\n"
+"X-POFile-SpellExtra: ões inicializá\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -175,9 +176,7 @@ msgstr "O volume lógico %s tem as imagens %s associadas de momento a ele. Por f
 #: src/InputController.py:121
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
-"Erro de conversão de tipo indefinido na fábrico de modelos. Não é possível "
-"completar a tarefa."
+msgstr "Erro de conversão de tipo indefinido na fábrica de modelos. Não é possível completar a tarefa."
 
 #: src/InputController.py:123
 #, python-format
@@ -195,7 +194,7 @@ msgstr ""
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
-msgstr "O volume lógico %s está de momento montado em %s. Para poder completar o pedidom terá de ser desmontado. Tem a certeza que o deseja desmontar?"
+msgstr "O volume lógico %s está de momento montado em %s. Para poder completar o pedido, terá de ser desmontado. Tem a certeza que o deseja desmontar?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -212,7 +211,7 @@ msgstr "%s megabytes"
 #: src/InputController.py:133
 #, python-format
 msgid "%s kilobytes"
-msgstr "%s kilobytes"
+msgstr "%s quilobytes"
 
 #: src/InputController.py:134
 #, python-format
@@ -545,7 +544,7 @@ msgstr "Deseja actualizar o ext2 para ext3, preservando os dados no volume lógi
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
-msgstr "A mudança do sistema de fcheiros irá destruir todos os dados no volume lógico! Tem a certeza que deseja prosseguir?"
+msgstr "A mudança do sistema de ficheiros irá destruir todos os dados no volume lógico! Tem a certeza que deseja prosseguir?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
@@ -1396,7 +1395,7 @@ msgstr "Formatar"
 
 #: src/lvui.glade.h:26
 msgid "Initialize"
-msgstr "nicializar"
+msgstr "Inicializar"
 
 #: src/lvui.glade.h:27
 msgid "Initialize Block Device"
