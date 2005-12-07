@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-12-05 23:05+0100\n"
+"PO-Revision-Date: 2005-12-07 22:39+0100\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Selecteer een Volume Group om %s aan toe te voegen:"
+msgstr "Selecteer een volume group om %s aan toe te voegen:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -53,28 +53,28 @@ msgstr "Grootte"
 
 #: src/InputController.py:86
 msgid "Entity Type"
-msgstr ""
+msgstr "Entiteittype"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr "Niet toegewezen Physical Volume"
+msgstr "Niet-toegewezen physical volume"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "Niet-geïnitialiseerde disk-entiteit"
 
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
+msgstr "Selecteer disk-entiteiten om toe te voegen aan de %s volume group:"
 
 #: src/InputController.py:92
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
-"Een Volume Group dient te bestaan uit twee of meerdere Physical Volumes om "
-"striping te ondersteunen. Deze Volume Group voldoet niet aan deze vereiste."
+"Een volume group dient te bestaan uit twee of meerdere physical volumes om "
+"striping te ondersteunen. Deze volume group voldoet niet aan deze vereiste."
 
 #: src/InputController.py:94
 #, python-format
@@ -82,22 +82,22 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
-"Een Logical Volume met de naam %s bestaat al in deze Volume Group. Kies een "
+"Een logical volume met de naam %s bestaat al in deze volume group. Kies een "
 "unieke naam."
 
 #: src/InputController.py:96
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Een Volume Group met de naam %s bestaat al. Kies een unieke naam."
+msgstr "Een volume group met de naam %s bestaat al. Kies een unieke naam."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr "Er dient een naam te worden opgegeven voor het nieuwe Logical Volume"
+msgstr "Er dient een naam te worden opgegeven voor het nieuwe logical volume"
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr "Er dient een naam te worden opgegeven voor het nieuwe Volume Group"
+msgstr "Er dient een naam te worden opgegeven voor het nieuwe volume group"
 
 #: src/InputController.py:102
 #, python-format
@@ -143,7 +143,7 @@ msgstr ""
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "Een snapshot van een snapshot is niet ondersteund."
 
 #: src/InputController.py:118
 #, python-format
@@ -208,11 +208,11 @@ msgstr "%s extents"
 
 #: src/InputController.py:137
 msgid "Remaining free space in Volume Group:\n"
-msgstr "Overgebleven vrije ruimte in Volume Group:\n"
+msgstr "Overgebleven vrije ruimte in volume group:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr "Overgebleven ruimte voor dit Volume:\n"
+msgstr "Overgebleven ruimte voor dit volume:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -233,7 +233,7 @@ msgstr "Kilobytes"
 #: src/InputController.py:145
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "De %s dient alleen numerieke waarden te bevatten"
 
 #: src/InputController.py:146
 msgid ""
@@ -252,7 +252,7 @@ msgstr ""
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
+msgstr "Weet u zeker dat uw %s wilt verwijderen uit Logical Volume Management?"
 
 #: src/InputController.py:151
 #, python-format
@@ -390,7 +390,7 @@ msgstr "Het door u opgegeven pad bestaat niet."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr "Het door u opgegeven pad is geen Block Device."
+msgstr "Het door u opgegeven pad is geen block device."
 
 #: src/InputController.py:748
 #, python-format
@@ -409,7 +409,7 @@ msgstr ""
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
-msgstr "migreer extents"
+msgstr "Migreer extents"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -418,11 +418,11 @@ msgstr "Opties"
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "Maak een snapshot van %s"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume"
-msgstr ""
+msgstr "Nieuw logical volume aanmaken"
 
 #: src/InputController.py:1346
 #, python-format
@@ -431,7 +431,7 @@ msgstr ""
 
 #: src/InputController.py:1349
 msgid "Edit Logical Volume"
-msgstr ""
+msgstr "Logical volume bewerken"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -480,14 +480,17 @@ msgstr ""
 #: src/InputController.py:1913
 msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
+"Namen die beginnen met \"snapshot\" of \"pvmove\" zijn gereserveerde "
+"sleutelwoorden."
 
 #: src/InputController.py:1915
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr ""
+"Namen die \"_mlog\" of \"_mimage\" bevatten zijn gereserveerde sleutelwoorden."
 
 #: src/InputController.py:1917
 msgid "Names begining with a \"-\" are invalid"
-msgstr ""
+msgstr "Namen die beginnen met een \"-\" zijn ongeldig"
 
 #: src/InputController.py:1919
 msgid "Name can be neither \".\" nor \"..\""
@@ -500,7 +503,7 @@ msgstr ""
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr "Ongeldig teken \"%s\" in Logical Volume naam"
+msgstr "Ongeldig teken \"%s\" in logical volume naam"
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
@@ -631,7 +634,7 @@ msgstr ""
 
 #: src/CommandHandler.py:77
 msgid "Creating Logical Volume"
-msgstr ""
+msgstr "Aanmaken van logical volume"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
 msgid "Resizing Logical Volume"
@@ -639,7 +642,7 @@ msgstr ""
 
 #: src/CommandHandler.py:146
 msgid "Adding Mirror to Logical Volume"
-msgstr ""
+msgstr "Toevoegen van mirror aan logical volume"
 
 #: src/CommandHandler.py:157
 msgid "Removing Mirror from Logical Volume"
@@ -655,7 +658,7 @@ msgstr ""
 
 #: src/CommandHandler.py:218
 msgid "Creating Volume Group"
-msgstr ""
+msgstr "Aanmaken van volume group"
 
 #: src/CommandHandler.py:240
 msgid "Removing Volume Group"
@@ -695,19 +698,19 @@ msgstr "Ongebruikte ruimte"
 
 #: src/lvm_model.py:49
 msgid "Unmounted"
-msgstr ""
+msgstr "Afgekoppeld"
 
 #: src/lvm_model.py:59
 msgid "Volume Group Name:   "
-msgstr "Volume Group naam:   "
+msgstr "Volume group naam:   "
 
 #: src/lvm_model.py:60
 msgid "System ID:   "
-msgstr ""
+msgstr "Systeem ID:   "
 
 #: src/lvm_model.py:61
 msgid "Format:   "
-msgstr ""
+msgstr "Formaat:   "
 
 #: src/lvm_model.py:62 src/lvm_model.py:79 src/lvm_model.py:94
 msgid "Attributes:   "
@@ -715,7 +718,7 @@ msgstr "Attributen:   "
 
 #: src/lvm_model.py:63
 msgid "Volume Group Size:   "
-msgstr "Volume Group grootte:   "
+msgstr "Volume group grootte:   "
 
 #: src/lvm_model.py:64
 msgid "Available Space:   "
@@ -723,11 +726,11 @@ msgstr "Beschikbare ruimte:   "
 
 #: src/lvm_model.py:65
 msgid "Total Number of Extents:   "
-msgstr "Totaal aantal Extents:   "
+msgstr "Totaal aantal extents:   "
 
 #: src/lvm_model.py:66
 msgid "Number of Free Extents:   "
-msgstr "Aantal vrije Extents:   "
+msgstr "Aantal vrije extents:   "
 
 #: src/lvm_model.py:67
 msgid "Extent Size:   "
@@ -735,19 +738,19 @@ msgstr ""
 
 #: src/lvm_model.py:68
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "Maximum toegestane Physical Volumes:   "
+msgstr "Maximum toegestane physical volumes:   "
 
 #: src/lvm_model.py:69
 msgid "Number of Physical Volumes:   "
-msgstr "Aantal Physical Volumes:   "
+msgstr "Aantal physical volumes:   "
 
 #: src/lvm_model.py:70
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "Maximum toegestane Logical Volumes:   "
+msgstr "Maximum toegestane logical volumes:   "
 
 #: src/lvm_model.py:71
 msgid "Number of Logical Volumes:   "
-msgstr "Aantal Logical Volumes:   "
+msgstr "Aantal logical volumes:   "
 
 #: src/lvm_model.py:72
 msgid "VG UUID:   "
@@ -755,19 +758,19 @@ msgstr "VG UUID:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Name:   "
-msgstr "Logical Volume naam:   "
+msgstr "Logical volume naam:   "
 
 #: src/lvm_model.py:75
 msgid "Logical Volume Size:   "
-msgstr "Logical Volume grootte:   "
+msgstr "Logical volume grootte:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Segments:   "
-msgstr "Aantal Segments:   "
+msgstr "Aantal segments:   "
 
 #: src/lvm_model.py:77
 msgid "Number of Stripes:   "
-msgstr "Aantal Stripes:   "
+msgstr "Aantal stripes:   "
 
 #: src/lvm_model.py:78
 msgid "Stripe Size:   "
@@ -799,23 +802,23 @@ msgstr "Bestandssysteem:   "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Name:   "
-msgstr "Physical Volume naam:   "
+msgstr "Physical volume naam:   "
 
 #: src/lvm_model.py:89
 msgid "Physical Volume Size:   "
-msgstr "Physical Volume grootte:   "
+msgstr "Physical volume grootte:   "
 
 #: src/lvm_model.py:90
 msgid "Space Used:   "
-msgstr ""
+msgstr "Gebruikte ruimte:   "
 
 #: src/lvm_model.py:91
 msgid "Space Free:   "
-msgstr ""
+msgstr "Vrije ruimte:   "
 
 #: src/lvm_model.py:92
 msgid "Total Physical Extents:   "
-msgstr "Totaal Physical Extents:   "
+msgstr "Totaal physical extents:   "
 
 #: src/lvm_model.py:93
 msgid "Allocated Physical Extents:   "
@@ -827,7 +830,7 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr "Niet initialiseerbaar:   "
+msgstr "Niet-initialiseerbaar:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
@@ -843,19 +846,19 @@ msgstr ""
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Automatisch partitioneren mislukt"
 
 #: src/lvm_model.py:128
 msgid "Quering Volume Groups"
-msgstr ""
+msgstr "Opvragen van volume groups"
 
 #: src/lvm_model.py:129
 msgid "Quering Logical Volumes"
-msgstr ""
+msgstr "Opvragen van logical volumes"
 
 #: src/lvm_model.py:130
 msgid "Quering Physical Volumes"
-msgstr ""
+msgstr "Opvragen van physical volumes"
 
 #: src/lvm_model.py:268
 msgid "Partition manually"
@@ -863,7 +866,7 @@ msgstr "Partitioneer handmatig"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "Multipath device"
 
 #: src/lvm_model.py:307
 msgid "Note:   "
@@ -879,7 +882,7 @@ msgstr "Aantal mirror images:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "Snapshots:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
@@ -887,7 +890,7 @@ msgstr ""
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "Snapshot gebruik:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
@@ -948,7 +951,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Mirror log"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
@@ -1030,30 +1033,30 @@ msgstr "Eigenschappen van"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr "Physical Volume"
+msgstr "Physical volume"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
-msgstr "Logical Volume"
+msgstr "Logical volume"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr "Niet toegewezen Volume"
+msgstr "Niet-toegewezen volume"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
-msgstr ""
+msgstr "Disk-entiteit"
 
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr "Volume Group"
+msgstr "Volume group"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
-msgstr "Geen Volume geselecteerd"
+msgstr "Geen volume geselecteerd"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
@@ -1061,15 +1064,15 @@ msgstr ""
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
-msgstr ""
+msgstr "Logical weergave"
 
 #: src/renderer.py:40 src/Volume_Tab_View.py:45
 msgid "Physical View"
-msgstr ""
+msgstr "Physical weergave"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr "Niet toegewezen"
+msgstr "Niet-toegewezen"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
@@ -1108,7 +1111,7 @@ msgstr ""
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "Snapshot van "
 
 #: src/renderer.py:487
 msgid "Origin"
@@ -1116,23 +1119,23 @@ msgstr ""
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "Snapshot"
 
 #: src/renderer.py:537
 msgid "extent view"
-msgstr ""
+msgstr "extend weergave"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
-msgstr "Volume Groups"
+msgstr "Volume groups"
 
 #: src/Volume_Tab_View.py:43
 msgid "Unallocated Volumes"
-msgstr "Niet toegewezen Volumes"
+msgstr "Niet-toegewezen volumes"
 
 #: src/Volume_Tab_View.py:44
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "Niet-geïnitialiseerde entiteiten"
 
 #: src/Volume_Tab_View.py:584
 #, python-format
@@ -1147,7 +1150,7 @@ msgstr ""
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Aanmaken van %s bestandssysteem"
 
 #: src/Filesystem.py:10
 #, python-format
@@ -1194,7 +1197,7 @@ msgstr ""
 
 #: src/Filesystem.py:125
 msgid "Unknown filesystem"
-msgstr ""
+msgstr "Onbekend bestandssysteem"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1286,7 +1289,7 @@ msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Voeg physical volume aan VG toe"
 
 #: src/lvui.glade.h:13
 msgid ""
@@ -1302,7 +1305,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Snapshot aanmaken"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1312,7 +1315,7 @@ msgstr ""
 
 #: src/lvui.glade.h:20
 msgid "Edit Properties"
-msgstr ""
+msgstr "Eigenschappen bewerken"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1338,7 +1341,7 @@ msgstr "Initialiseren"
 
 #: src/lvui.glade.h:27
 msgid "Initialize Block Device"
-msgstr "Initialiseer Block Device"
+msgstr "Initialiseer block device"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1346,7 +1349,7 @@ msgstr "Initialiseer entiteit"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr "Initialiseer _Block Device"
+msgstr "Initialiseer _block device"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1358,15 +1361,15 @@ msgstr "Logical Volume Management"
 
 #: src/lvui.glade.h:32
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Beheer volumes"
 
 #: src/lvui.glade.h:33
 msgid "Maximum Logical Volumes: "
-msgstr "Maximum Logical Volumes: "
+msgstr "Maximum logical volumes: "
 
 #: src/lvui.glade.h:34
 msgid "Maximum Physical Volumes: "
-msgstr "Maximum Physical Volumes: "
+msgstr "Maximum physical volumes: "
 
 #: src/lvui.glade.h:35
 msgid "Meg"
@@ -1380,11 +1383,11 @@ msgstr ""
 
 #: src/lvui.glade.h:38
 msgid "Name for Volume Group: "
-msgstr "Naam voor Volume Group: "
+msgstr "Naam voor volume group: "
 
 #: src/lvui.glade.h:39
 msgid "New Volume Group"
-msgstr "Nieuwe Volume Group"
+msgstr "Nieuwe volume group"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group Form"
@@ -1392,7 +1395,7 @@ msgstr ""
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Physical extent grootte: "
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1400,7 +1403,7 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "Verwijder \n"
-"Logical Volume"
+"logical volume"
 
 #: src/lvui.glade.h:44
 msgid ""
@@ -1428,7 +1431,7 @@ msgstr ""
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr "Selecteer een Volume Group om deze PV aan toe te voegen:"
+msgstr "Selecteer een volume group om deze PV aan toe te voegen:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
@@ -1480,7 +1483,7 @@ msgstr "<b>Grootte</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Voeg item toe aan /etc/fstab"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1488,7 +1491,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
-msgstr "Vrije ruimte in Volume Group label"
+msgstr "Vrije ruimte in volume group label"
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
@@ -1592,7 +1595,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:10
 msgid "Migrate Extents"
-msgstr "Migreer Extents"
+msgstr "Migreer extents"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
