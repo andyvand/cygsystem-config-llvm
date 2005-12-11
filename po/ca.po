@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-04-16 12:14+0200\n"
+"PO-Revision-Date: 2005-12-11 17:24+0100\n"
 "Last-Translator: Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -52,9 +52,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Seleccioneu a quin grup de volum voleu afegir aquest volum físic:"
+msgstr "Seleccioneu a quin grup de volum voleu %s:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -85,9 +85,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "Entitat de disc sense inicialitzar"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "Seleccioneu una entitat de disc a afegir al grup de volum %s:"
+msgstr "Seleccioneu les entitat de disc a afegir al grup de volum %s:"
 
 #: src/InputController.py:92
 msgid ""
@@ -148,26 +148,27 @@ msgstr ""
 "El nombre de volums físics d'aquest grup de volum ha arribat al seu màxim."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
 msgstr ""
-"El nombre de volums físics d'aquest grup de volum ha arribat al seu màxim."
+"Com a molt es poden afegir %s volums físics a aquest grup de volum abas no "
+"s'arribi al seu límit."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"El grup de volum %s no conté prou espai per a moure les dades emmagatzemades "
-"a %s. Una solució podria ser afegir un altre volum físic al grup de volum."
+"El grup de volum %s no té prou espai per a volums lògics nous. Una possible\n"
+"solució podria ser afegir un volum físic addicional al grup de volum."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "No es permet fer una instantània d'una instantània."
 
 #: src/InputController.py:118
 #, python-format
@@ -175,6 +176,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"El volum lògic %s té actualment associat la instantània %s. Suprimiu-la "
+"primer."
 
 #: src/InputController.py:119
 #, python-format
@@ -236,15 +239,12 @@ msgid "%s extents"
 msgstr "%s extensions"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Crea un nou \n"
-"grup de volum"
+msgstr "Espai restant al grup de volum:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Espai restant per aquest volum:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -268,7 +268,6 @@ msgid "The %s should only contain number values"
 msgstr "%s només hauria de contenir valors numèrics"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -277,7 +276,6 @@ msgstr ""
 "enters entre 1 i 256"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -294,7 +292,7 @@ msgstr ""
 "Esteu del tot segur que voleu suprimir %s de la gestió de volums lògics?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -350,19 +348,18 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Esteu del tot segur que voleu suprimir el volum lògic %s?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"Avís important: El volum lògic %s conté un sistema de fitxers %s que està "
-"actualment muntat a %s. Esteu totalment segur que voleu descartar totes les "
-"dades d'aquest sistema de fitxers muntat?"
+"El volum lògic %s conté un sistema de fitxers %s. Se'n perdran totes les "
+"dades. Esteu totalment segur que voleu suprimir el volum lògic %s?"
 
 #: src/InputController.py:160
 #, python-format
@@ -370,6 +367,8 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"El volum lògic %s conté dades del directori %s. Se'n perdran totes les "
+"dades. Esteu del tot segur que voleu suprimir el volum lògic %s?"
 
 #: src/InputController.py:356
 #, python-format
@@ -459,33 +458,30 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s extensions"
+msgstr "Migra extensions"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "Opcions"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "Crea una instantània de %s"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "Crea un nou volum lògic"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "Edita %s, una instantània de %s"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Volum lògic"
+msgstr "Edita un Volum lògic"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -682,117 +678,93 @@ msgstr ""
 "del sistema: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Ha fallat l'ordre lvremove. S'ha provat amb l'ordre \"%s\" - Missatge "
-"d'error del sistema: %s"
+"Ha fallat l'ordre lvresize. S'ha provat amb l'ordre «%s» - Missatge d'error "
+"del sistema: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Ha fallat l'ordre lvcreate. S'ha provat amb l'ordre \"%s\" - Missatge "
-"d'error del sistema: %s"
+"Ha fallat l'ordre lvrename. S'ha provat amb l'ordre «%s» - Missatge d'error "
+"del sistema: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Ha fallat l'ordre vgchange. S'ha provat amb l'ordre \"%s\" - Missatge "
-"d'error del sistema: %s"
+"Ha fallat l'ordre lvchange. S'ha provat amb l'ordre «%s» - Missatge d'error "
+"del sistema: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"Ha fallat l'ordre lvremove. S'ha provat amb l'ordre \"%s\" - Missatge "
-"d'error del sistema: %s"
+"Ha fallat l'ordre lvconvert. S'ha provat amb l'ordre «%s» - Missatge d'error "
+"del sistema: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Crea un volum\n"
-"lògic nou"
+msgstr "S'està creant el volum lògic"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Volum lògic"
+msgstr "S'està canviant la mida del volum lògic"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "Volum lògic"
+msgstr "S'està afegint un mirall al volum lògic"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"Suprimeix \n"
-"volum lògic"
+msgstr "S'està suprimint un mirall del volum lògic"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Volum físic"
+msgstr "S'està inicialitzant un volum físic"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Afegeix volum físic al grup de volum"
+msgstr "S'està afeging un volum físic al grup de volum"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Crea un nou \n"
-"grup de volum"
+msgstr "S'està crean un grup de volum"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Nou grup de volum"
+msgstr "S'està suprimint un grup de volum"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Volum físic"
+msgstr "S'està suprimint un volum físic"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Suprimeix \n"
-"volum lògic"
+msgstr "S'està supriming un volum lògic"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Suprimeix \n"
-"volum lògic"
+msgstr "S'està canviant el nom d'un volum lògic"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Suprimeix un volum del\n"
-"grup de volum"
+msgstr "S'està suprimint un volum fídic del grup de volum"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "S'està migrant les extensions"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "S'està completant la migració de les extensions"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -899,9 +871,8 @@ msgid "Mount Point:   "
 msgstr "Punt de muntatge:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Punt de muntatge:   "
+msgstr "Punt de muntatge en arrencar de nou:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -937,84 +908,76 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "No inicialitzable:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "Partició estesa"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "La memòria d'intercanvi està en ús"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "Partició d'arrencada aliena"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Ha fallat la partició automàtica"
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "Grups de volum"
+msgstr "S'esta consultant els grups de volum"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "Volum lògic"
+msgstr "S'està consultant els volums lògics"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "Volum físic"
+msgstr "S'està consultant els volums físics"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "Tipus de partició:   "
+msgstr "Particiona manualment"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "Dispositiu multicamí"
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Format:   "
+msgstr "Nota:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Inicialitza l'entitat"
+msgstr "Inicialitza manualment"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "Nombre de segments:   "
+msgstr "Nombre de imatges mirall:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "Instantànies:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "Origen de les instantànies:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "Ús de les instanànies:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Sense sistema de fitxers"
+msgstr "/  Sistema de fitxers arrel"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Cap"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1023,6 +986,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"Totes les dades del disc %s es perdran. Esteu del tot segur que voleu "
+"inicialitzar-lo?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -1030,6 +995,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"L'entitat de disc %s conté el sistema de fitxers %s. Se'n perdran totes les "
+"dades. Esteu del tot segur que voleu inicialitzar l'entitat de disc %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -1039,12 +1006,11 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
-"Esteu segur que voleu inicialitzar l'entitat de disc %s? Es perdran totes "
-"les ddes que hi hagi en aquest dispositiu/partició."
+"Esteu segur que voleu inicialitzar %s d'espai lliure a l'entitat de disc %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1056,7 +1022,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "S'esta carregant de nou l'LVM. Espereu."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1072,7 +1038,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "No s'ha pogut processar la petició"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -1080,16 +1046,16 @@ msgstr "Lliure"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "Espai lliure"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "Espai sense partir"
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "Espai sense utilitzar a %s"
+msgstr "Espai sense partir a %s"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1177,7 +1143,7 @@ msgstr "No s'ha seleccionat cap volum"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Selecció múltiple"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1228,20 +1194,19 @@ msgstr ""
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "Instantània de "
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "Origen"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "Instantània"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "extensions"
+msgstr "visualització d'extensions"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1268,79 +1233,78 @@ msgstr ""
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "S'està creant un sistema de fitxers %s"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "S'esta canviant la mida d'un sistema de fitxers %s"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "S'està comprovant un sistema de fitxers %s"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "S'està actualitzant el sistema de fitxers %s a %s"
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Ha fallat l'ordre vgcreate. S'ha provat amb l'ordre \"%s\" - Missatge "
-"d'error del sistema: %s"
+"Ha fallat la creació del sistema de fitxers. S'ha provat amb l'ordre «%s» - "
+"Missatge d'error del sistema: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Ha fallat l'ordre mkfs. S'ha provat amb l'ordre \"%s\" - Missatge d'error "
-"del sistema: %s"
+"Ha fallat canviar la mida del sistema de fitxers. S'ha provat amb l'ordre «%"
+"s» - Missatge d'error del sistema: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Ha fallat l'ordre mkfs. S'ha provat amb l'ordre \"%s\" - Missatge d'error "
-"del sistema: %s"
+"Ha fallat la comprovació del sistema de fitxers. S'ha provat amb l'ordre «%"
+"s» - Missatge d'error del sistema: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Ha fallat l'ordre vgreduce. S'ha provat amb l'ordre \"%s\" - Missatge "
-"d'error del sistema: %s"
+"Ha fallat l'actualització del sistema de fitxers. S'ha provat amb l'ordre «%"
+"s» - Missatge d'error del sistema: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Sense sistema de fitxers"
+msgstr "Sistema de fitxers desconegut"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (local)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (clustered)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (local)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (clustered)"
 
 #: src/Segment.py:44
 msgid "Stripe "
@@ -1348,31 +1312,31 @@ msgstr ""
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Mapat lineal"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Mirall "
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Ha fallat l'ordre mkfs. S'ha provat amb l'ordre \"%s\" - Missatge d'error "
+"Ha fallat l'ordre dmsetup. S'ha provat amb l'ordre «%s» - Missatge d'error "
 "del sistema: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Ha fallat l'ordre mkfs. S'ha provat amb l'ordre \"%s\" - Missatge d'error "
-"del sistema: %s"
+"Ha fallat l'ordre ls. S'ha provat amb l'ordre «%s» - Missatge d'error del "
+"sistema: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "Tipus de partició:   "
+msgstr "Partició  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1451,9 +1415,8 @@ msgstr ""
 "grup de volum"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Propietats per a"
+msgstr "Edita les propietats"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1472,19 +1435,16 @@ msgid "Extend Volume Group"
 msgstr "Estén el grup de volum"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "Format:   "
+msgstr "Formata"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Sense inicialitzar"
+msgstr "Inicialitza"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Inicialitza l'entitat"
+msgstr "Inicialitza el dispositiu de bloc"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1492,7 +1452,7 @@ msgstr "Inicialitza l'entitat"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Inicialitza el dispositiu de _bloc"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1588,15 +1548,15 @@ msgstr "Seleccioneu a quin grup de volum voleu afegir aquest volum físic:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Text"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "Ca_rrega de nou"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_Eines"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
@@ -1613,52 +1573,54 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Sistema de fitxers: "
+msgstr "<b>Sistema de fitxers</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>Propietats LV</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Mida</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Afegeix una entrada a /etc/fstab"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "No es pot canviar la mida d'aquest sistema de fitxers"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"Crea un nou \n"
-"grup de volum"
+msgstr "Espai lliure en el grup de volum amb etiqueta"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "Usa la resta d'espai lliure"
+msgstr "Etiqueta d'espai lliure restant"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Kilobytes"
+msgstr "Granulació dels kKilobytes"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "Nom del LV: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "Mida del LV"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1670,43 +1632,39 @@ msgstr "Lineal"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Emmirallat"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "No es pot canviar la mida dels LV emmirallats"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Munta"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "Punt de muntatge:   "
+msgstr "Punt de muntatge: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Monta quan s'arrenqui de nou"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Mida"
+msgstr "Mida principi"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Mida"
+msgstr "Mida final"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Usa la resta d'espai lliure"
+msgstr "Usa la resta"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
@@ -1714,15 +1672,15 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Destí</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Política de migració</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "A qualsevol lloc - no està implementat"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
@@ -1730,7 +1688,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Seguit"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
@@ -1740,30 +1698,23 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "Hereta"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"Suprimeix un volum del\n"
-"grup de volum"
+msgstr "Hereta la política del grup de volum"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "extensions"
+msgstr "Migra les extensions"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
 msgstr ""
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"Fes la migració de les\n"
-"extensions seleccionades del volum"
+msgstr "Migra les extensions a"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1771,7 +1722,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
@@ -1779,7 +1730,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "Utilitza el sentit comú"
 
 #~ msgid ""
 #~ "There is a problem with the value entered in the Size field. The value "
