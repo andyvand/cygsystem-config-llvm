@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-10-04 20:54+0200\n"
+"PO-Revision-Date: 2005-11-22 21:02+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -105,7 +105,7 @@ msgstr "Podany punkt montowania %s nie istnieje. Czy chcesz go utworzyć?"
 #: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr "Tworzenie punktu montowania %s nieoczekiewanie nie powiodło się."
+msgstr "Tworzenie punktu montowania %s nieoczekiwanie nie powiodło się."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
@@ -161,7 +161,7 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
-"Wolumin logiczny %s ma %s migawki już z nim skojarzone. Usuń najpierw migawki." 
+"Wolumin logiczny %s ma %s migawki już z nim skojarzone. Najpierw usuń migawki." 
 
 #: src/InputController.py:121
 msgid ""
@@ -250,7 +250,7 @@ msgid ""
 "between 1 and 256"
 msgstr ""
 "Pole Maksymalna liczba woluminów fizycznych powinno zawierać tylko liczby "
-"całkowite pomiędzy 1 a 256"
+"całkowite między 1 a 256"
 
 #: src/InputController.py:147
 msgid ""
@@ -258,7 +258,7 @@ msgid ""
 "1 and 256"
 msgstr ""
 "Pole Maksymalna liczba woluminów logicznych powinno zawierać tylko liczby "
-"całkowite pomiędzy 1 a 256"
+"całkowite między 1 a 256"
 
 #: src/InputController.py:149
 #, python-format
@@ -567,7 +567,7 @@ msgstr "Nazwa nie może zawierać ani \".\", ani \"..\""
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr "Białe znaki nie są dozwolone w nazwach wolminów logicznych"
+msgstr "Białe znaki nie są dozwolone w nazwach woluminów logicznych"
 
 #: src/InputController.py:1928
 #, python-format
@@ -1717,7 +1717,7 @@ msgstr "<b>Polityka migracji</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr "Wszędzie - niezaimplemetowane"
+msgstr "Wszędzie - niezaimplementowane"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
