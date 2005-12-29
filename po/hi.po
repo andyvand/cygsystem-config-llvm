@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-03-29 15:04+0530\n"
+"PO-Revision-Date: 2005-12-29 14:24+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -37,9 +38,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "इस PV में जोड़ने के लिये एक आयतन समूह चुनें:"
+msgstr "%s को इसमें जोड़ने के लिये आयतन समूह चुनें:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -70,7 +71,7 @@ msgid "Uninitialized Disk Entity"
 msgstr "अप्रारंभीकृत डिस्क एंटिटी"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "%s आयतन समूह में जोड़ने के लिये एक डिस्क एंटिटी चुनें:"
 
@@ -93,8 +94,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s नाम के साथ पहले से ही एक आयतन समूह मौजूद है. कृपया एक अद्वितीय नाम चुनें."
 
 #: src/InputController.py:98
@@ -107,8 +107,7 @@ msgstr "नये आयतन समूह के लिये एक नाम
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "निर्दिष्ट आरोह बिंदु %s मौजूद नहीं है. क्या आप इसे बनाना चाहते हैं?"
 
 #: src/InputController.py:104
@@ -133,11 +132,11 @@ msgid ""
 msgstr "इस आयतन समूह में भौतिक आयतन की संख्या इसके अधिकतम सीमा तक पहुंच गई है."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "इस आयतन समूह में भौतिक आयतन की संख्या इसके अधिकतम सीमा तक पहुंच गई है."
+msgstr "इस आयतन समूह में ज्यादा से ज्यादा %s भौतिक आयतन जोड़ा जा सकता है जबतक कि अधिकतम सीमा तक पहुंच गई है."
 
 #: src/InputController.py:114
 #, fuzzy, python-format
@@ -151,7 +150,7 @@ msgstr ""
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "स्नेपशॉट का स्नेपशॉट समर्थित नहीं है."
 
 #: src/InputController.py:118
 #, python-format
@@ -168,8 +167,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "मॉडल फैक्टरी में अपरिभाषित प्रकार कनवर्सन त्रुटि. कार्य पूरा करने में असमर्थ."
 
 #: src/InputController.py:123
@@ -225,7 +223,7 @@ msgstr ""
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "इस आयतन के लिये शेष स्थान:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -286,8 +284,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "क्या आप पूरी तरह से निश्चित हैं कि %s आयतन समूह से %s को हटाना चाहते हैं?"
 
 #: src/InputController.py:153
@@ -400,8 +397,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -420,20 +416,20 @@ msgstr ""
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "आपके द्वारा निर्दिष्ट पथ मौजूद नहीं है."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "आपके द्वारा निर्दिष्ट पथ एक ब्लॉक युक्ति नहीं है."
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s का आरंभीकरण विफल रहा"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "कृपया पहले कुछ विस्तार चुनें"
 
 #: src/InputController.py:1022
 msgid ""
@@ -448,27 +444,25 @@ msgstr "%s विस्तार"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "विकल्प"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s का एक स्नेपशॉट बनायें"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "नया तार्किक आयतन बनायें"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%s संपादित करें, %s का स्नेपशॉट"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "तार्किक आयतन"
+msgstr "तार्किक आयतन संपादित करें"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -491,8 +485,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1536
@@ -541,7 +534,7 @@ msgstr ""
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr ""
+msgstr "आरोह बिंदु निर्दिष्ट करें"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -556,7 +549,7 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "मिरर नहीं बनाया गया. शेष कार्य पूरा कर रहा है."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -564,98 +557,83 @@ msgstr ""
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "क्या आप निर्दिष्ट विस्तार उत्प्रवासित करना चाहते हैं?"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgextend समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr "vgchange समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgreduce समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "pvmove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "umount समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
 msgstr "आरोह समादेश विफल. प्रयास किया गया समादेश: %s  - सिस्टम त्रुटि संदेश: \"%s\""
 
 #: src/CommandHandler.py:26
 #, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:27
 #, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "lvcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:28
 #, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "vgchange समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश %s"
 
 #: src/CommandHandler.py:29
@@ -739,11 +717,11 @@ msgstr ""
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "विस्तार उत्प्रवासित कर रहा है"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "विस्तार उत्प्रवासन पूरा कर रहा है"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -888,23 +866,23 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "नहीं आरंभ कर रहा है:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "विस्तारित विभाजन"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "प्रयोग में स्वैप"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "विजातीय बूट विभाजन"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "स्वविभाजन विफलता"
 
 #: src/lvm_model.py:128
 #, fuzzy
@@ -928,12 +906,11 @@ msgstr "विभाजन प्रकार:   "
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "बहु पथ युक्ति"
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "प्रारूप:   "
+msgstr "नोट:   "
 
 #: src/lvm_model.py:307
 #, fuzzy
@@ -947,15 +924,15 @@ msgstr "स्ट्राइप्स की संख्या:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "स्नेपशॉट:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "स्नेपशॉट मूल:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "स्नेपशॉट प्रयोग:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
@@ -965,7 +942,7 @@ msgstr "कोई फाइलसिस्टम नहीं"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "कोई नहीं"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -991,8 +968,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "क्या आप निश्चित हैं कि आप डिस्क एंटिटी %s को प्रारंभीकृत करना चाहते हैं? इस युक्ति/विभाजन "
 "पर सारा आंकड़ा समाप्त हो जायेगा."
@@ -1007,7 +983,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVM फिर लोड कर रहा है. कृपया प्रतीक्षा करें."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1019,11 +995,11 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "मिरर लॉग"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "आग्रह की प्रक्रिया में असमर्थ"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -1031,11 +1007,11 @@ msgstr "मुक्त"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "मुक्त स्थान"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "अविभाजित स्थान"
 
 #: src/lvmui_constants.py:86
 #, fuzzy, python-format
@@ -1128,7 +1104,7 @@ msgstr "कोई आयतन नहीं चुना गया"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "कई चयन"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1179,15 +1155,15 @@ msgstr ""
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "इसका स्नेपशॉट"
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "मूल"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "स्नेपशॉट"
 
 #: src/renderer.py:537
 #, fuzzy
@@ -1209,7 +1185,7 @@ msgstr "अप्रारंभीकृत एंटिटी"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "%s मिरर तुल्यकालन "
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
@@ -1219,22 +1195,22 @@ msgstr ""
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s फाइल सिस्टम बना रहा है"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s फाइलसिस्टम को फिर आकार दे रहा है"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s फाइल सिस्टम जांच रहा है"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s फाइल सिस्टम को %s में उन्नत कर रहा है"
 
 #: src/Filesystem.py:13
 #, fuzzy, python-format
@@ -1271,19 +1247,19 @@ msgstr "कोई फाइलसिस्टम नहीं"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (local)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (समूहित)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (स्थानीय)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (क्लस्टर)"
 
 #: src/Segment.py:44
 #, fuzzy
@@ -1296,12 +1272,11 @@ msgstr "रैखिक मैपिंग"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "मिरर"
 
 #: src/Multipath.py:11
 #, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr "mkfs समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/Multipath.py:12
@@ -1380,7 +1355,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "स्नेपशॉट बनायें"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1721,80 +1696,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "आकार क्षेत्र में दाखिल मानों के साथ समस्या है. बिना किसी वर्णमाला या किसी अन्य तरह के "
-#~ "संकेत के मान को एक सांख्यिक मान होना चाहिये."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "नये तार्किक आयतन के लिये निवेदित आकार आयतन समूह %s पर उपलब्ध मुक्त स्थान से ज्यादा हो "
-#~ "जाता है. उपलब्ध स्थान है: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "स्ट्राइप आकार क्षेत्र"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "स्ट्राइप्स क्षेत्र की संख्या"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 मेगाबाइट"
-
-#~ msgid "Create New LV"
-#~ msgstr "नया LV बनायें"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "विस्तार दें\n"
-#~ "तार्किक आयतन को"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "आरोह बिंदु (अगर खाली है तो LV आरोहित होगा):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "नया LV के लिये नाम:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "स्ट्राइप्स की संख्या: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "आयतन समूह में जोड़ने के लिये एक डिस्क एंटिटी चुनें:"
-
-#~ msgid "Size:"
-#~ msgstr "आकार:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "स्ट्राइप आकार:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "VG1 पर अप्रयुक्त स्थान:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "कोई फाइल सिस्टम नहीं"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "यह विस्तार अबतक\n"
-#~ "LVM के साथ प्रारंभीकृत नहीं हुई है."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "यह आयतन आयतन समूह अबतक \n"
-#~ "संभाजित नहीं किया गया है."
