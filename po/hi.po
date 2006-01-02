@@ -1,14 +1,14 @@
 # translation of hi.po to Hindi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rajesh Ranjan <rranjan@redhat.com>, 2004, 2005.
+# Rajesh Ranjan <rranjan@redhat.com>, 2004, 2005, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-12-29 14:24+0530\n"
+"PO-Revision-Date: 2006-01-02 16:12+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -215,11 +215,8 @@ msgid "%s extents"
 msgstr "%s विस्तार"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"बनायें एक नया\n"
-"आयतन समूह"
+msgstr "आयतन समूह में बचा मुक्त स्थान:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
@@ -438,9 +435,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s विस्तार"
+msgstr "विस्तार उत्प्रवासित करें"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -622,98 +618,74 @@ msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s
 msgstr "आरोह समादेश विफल. प्रयास किया गया समादेश: %s  - सिस्टम त्रुटि संदेश: \"%s\""
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
+msgstr "lvresize समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvcreate समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
+msgstr "lvrename समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgchange समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश %s"
+msgstr "lvchange समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
-msgstr "lvremove समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
+msgstr "lvconvert समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"नया तार्किक आयतन\n"
-"बनायें"
+msgstr "तार्किक आयतन बना रहा है"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "तार्किक आयतन"
+msgstr "तार्किक आयतन फिर आकार बढा रहा है"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "तार्किक आयतन"
+msgstr "तार्किक आयतन में मिरर जोड़ रहा है"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"हटायें \n"
-"तार्किक आयतन को"
+msgstr "तार्किक आयतन से मिरर हटा रहा है"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "भौतिक आयतन"
+msgstr "भौतिक आयतन आरंभ कर रहा है"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "VG में भौतिक आयतन जोड़ें"
+msgstr "भौतिक आयतन आयतन समूह में जोड़ रहा है"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"बनायें एक नया\n"
-"आयतन समूह"
+msgstr "आयतन समूह बना रहा है"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "नया आयतन समूह"
+msgstr "आयतन समूह हटा रहा है"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "भौतिक आयतन"
+msgstr "भौतिक आयतन हटा रहा है"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"हटायें \n"
-"तार्किक आयतन को"
+msgstr "तार्किक आयतन को हटा रहा है"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"हटायें \n"
-"तार्किक आयतन को"
+msgstr "तार्किक आयतन का फिर नाम कर रहा है"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"आयतन हटायें\n"
-"आयतन समूह से"
+msgstr "आयतन समूह से भौतिक आयतन हटा रहा है"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -828,9 +800,8 @@ msgid "Mount Point:   "
 msgstr "आरोह बिंदु:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "आरोह बिंदु:   "
+msgstr "फिर बूट पर आरोह बिंदु:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -885,24 +856,20 @@ msgid "Autopartition failure"
 msgstr "स्वविभाजन विफलता"
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "आयतन समूह"
+msgstr "आयतन समूह प्रश्न कर रहा है"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "तार्किक आयतन"
+msgstr "तार्किक आयतन प्रश्न कर रहा है"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "भौतिक आयतन"
+msgstr "भौतिक आयतन को प्रश्न कर रहा है"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "विभाजन प्रकार:   "
+msgstr "विभाजन दस्ती रूप से करें"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
@@ -913,14 +880,12 @@ msgid "Note:   "
 msgstr "नोट:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "एंटिटी को प्रारंभीकृत करें"
+msgstr "दस्ती प्रारंभीकृत करें"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "स्ट्राइप्स की संख्या:   "
+msgstr "मिरर चित्र की संख्या:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
@@ -936,9 +901,8 @@ msgstr "स्नेपशॉट प्रयोग:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "कोई फाइलसिस्टम नहीं"
+msgstr "/   रूट फाइलसिस्टम"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
@@ -1014,9 +978,9 @@ msgid "Unpartitioned space"
 msgstr "अविभाजित स्थान"
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "%s पर अप्रयुक्त स्थान"
+msgstr "%s पर अविभाजित स्थान"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1166,9 +1130,8 @@ msgid "Snapshot"
 msgstr "स्नेपशॉट"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "विस्तार"
+msgstr "विस्तार दृश्य"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1190,7 +1153,7 @@ msgstr "%s मिरर तुल्यकालन "
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "प्रतीक्षा करें जबकि विभाजन किया जा रहा है"
 
 #: src/Filesystem.py:9
 #, python-format
@@ -1234,16 +1197,15 @@ msgid ""
 msgstr "mkfs समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "vgreduce समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
+msgstr "फाइलसिस्टम का उन्नयन विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "कोई फाइलसिस्टम नहीं"
+msgstr "अनजान फाइलसिस्टम"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1262,7 +1224,6 @@ msgid "GFS (clustered)"
 msgstr "GFS (क्लस्टर)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
 msgstr "स्ट्राइप किया हुआ"
 
@@ -1275,19 +1236,19 @@ msgid "Mirror "
 msgstr "मिरर"
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
+msgstr "dmsetup समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs समादेश विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
+msgstr "ls कमांड विफल. प्रयास किया गया समादेश: \"%s\" - सिस्टम त्रुटि संदेश: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "विभाजन प्रकार:   "
+msgstr "विभाजन  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1366,13 +1327,12 @@ msgstr ""
 "आयतन समूह"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "इसके लिये गुण"
+msgstr "गुण संपादित करें"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "आरंभ करने के लिये ब्लॉक युक्ति का पथ डालें"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1387,19 +1347,16 @@ msgid "Extend Volume Group"
 msgstr "आयतन समूह को विस्तार दें"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "प्रारूप:   "
+msgstr "प्रारूप"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "अप्रारंभीकृत"
+msgstr "प्रारंभीकृत"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "एंटिटी को प्रारंभीकृत करें"
+msgstr "ब्लॉक युक्ति प्रारंभीकृत करें"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1407,7 +1364,7 @@ msgstr "एंटिटी को प्रारंभीकृत करें
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "ब्लॉक युक्ति आरंभ करें (_B)"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1503,19 +1460,19 @@ msgstr "इस PV में जोड़ने के लिये एक आय
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "कुछ पाठ"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "फिर लोड करें (_R)"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "उपकरण (_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "vg संदेश बढायें:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1528,56 +1485,58 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "फाइलसिस्टम: "
+msgstr "<b>फाइलसिस्टम</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV गुण</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>आकार</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab में प्रविष्टि जोड़ें"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "फाइलसिस्टम फिर आकार करने योग्य नहीं है"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"बनायें एक नया\n"
-"आयतन समूह"
+msgstr "आयतन समूह स्तर में मुक्त स्थान"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "शेष स्थान का प्रयोग करें"
+msgstr "मुक्त स्थान शेष स्तर"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "किलोबाइट"
+msgstr "किलोबाइट सूक्ष्मता"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "LV नाम: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV आकार"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "LV स्नेपशॉट के अंदर फिर आकार बदलने योग्य नहीं है"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1585,67 +1544,63 @@ msgstr "रैखिक"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "मिरर किया"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "मिरर किया LV फिर आकार के योग्य नहीं है"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "आरोह"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
 msgstr "आरोह बिंदु:   "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "फिर बूट पर आरोहित करें"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "आकार"
+msgstr "आकार बेग"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "आकार"
+msgstr "आकार अंत"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "स्ट्राइप किया हुआ"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
 msgstr "शेष स्थान का प्रयोग करें"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "इसका स्ट्राइप"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>गंतव्य</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>उत्प्रवासन नीति</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "कहीभी - लागू नहीं"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "इसमें उत्प्रवासित होने के लिये स्वतः चुनें"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "स्पर्श"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
@@ -1655,44 +1610,37 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "उत्तराधिकार"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"आयतन हटायें\n"
-"आयतन समूह से"
+msgstr "आयतन समूह से नीति लें"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "विस्तार"
+msgstr "विस्तार उत्प्रवासित करें"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "कही उत्प्रवासित करें अगर वह प्रदर्शन कम करता है"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"आयतन से चयनित\n"
-"विस्तार प्रवासित करें"
+msgstr "इसमें विस्तार प्रवासित करें"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "नया विस्तार मौजूदा के समीप है"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "सामान्य"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "LV के अवयव विस्तार को सिर्फ उत्प्रवासित करें"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "सामान्य ज्ञान का प्रयोग करें"
 
