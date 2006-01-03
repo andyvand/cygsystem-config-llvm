@@ -118,20 +118,23 @@ msgstr "Deze mogelijkheid is nog niet geïmplementeerd in deze versie"
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Het aantal Logical Volumes in deze Volume Group heeft zijn maximum "
+"bereikt."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "Het aantal Physical Volumes in deze Volume Group heeft zijn maximum"
+"bereikt."
 
 #: src/InputController.py:112
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr ""
+msgstr "Er kunnen nog %s Physical Volumes aan deze Volume Group worden "
+"toegevoegd, voordat het limiet is bereikt."
 
 #: src/InputController.py:114
 #, python-format
