@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2006-01-04 14:53+0530\n"
+"PO-Revision-Date: 2006-01-05 17:45+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -344,7 +344,7 @@ msgstr ""
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "लॉजिकल वॉल्यूम %s में %s निर्देशिका से आंकड़ा समाहित है. इसमें मौजूद सारे आंकड़े समाप्त हो जायेंगे! क्या आप पूरी तरह से निश्चित हैं कि आप लॉजिकल वॉल्यूम %s हटाना चाहते हैं?"
 
 #: src/InputController.py:356
 #, python-format
@@ -352,7 +352,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "फिजिकल वॉल्यूम %s में लॉजिकल वॉल्यूम %s के मिरर लॉग में रहने वाली सामग्री समाहित करता है. मिरर किया लॉजिकल वॉल्यूम अबतक प्रवासन के योग्य नहीं है, इसलिये %s हटाने योग्य नहीं है."
 
 #: src/InputController.py:359
 #, python-format
@@ -360,21 +360,21 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "फिजिकल वॉल्यूम %s में लॉजिकल वॉल्यूम %s के मिरर लॉग में रहने वाली सामग्री समाहित करता है. मिरर किया लॉजिकल वॉल्यूम अबतक प्रवासन के योग्य नहीं है, इसलिये %s हटाने योग्य नहीं है."
 
 #: src/InputController.py:362
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "फिजिकल वॉल्यूम %s में %s के स्नेपशॉट %s समाहित करता है. स्पेशॉट अबतक प्रवासन के योग्य नहीं है, इसलिये %s हटाने योग्य नहीं है."
 
 #: src/InputController.py:367
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "फिजिकल वॉल्यूम %s में %s का अवयव समाहित है, %s का मूल. स्नेपशॉट का मूल, इसलिये %s हटाने योग्य नहीं है."
 
 #: src/InputController.py:369
 #, python-format
@@ -393,14 +393,14 @@ msgstr ""
 #: src/InputController.py:571
 #, python-format
 msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgstr "\"%s\", \"%s\" स्नेपशॉट का मूल, को हटाये जाने वाली सूची से मिटाया जा रहा है."
 
 #: src/InputController.py:602
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
-msgstr ""
+msgstr "फिजिकल वॉल्यूम \"%s\" मिरर में शामिल विस्तार को शामिल करता है. मिरर उत्प्रवासनीय नहीं है, इसलिये %s हटाने योग्य नहीं है."
 
 #: src/InputController.py:605
 #, python-format
@@ -464,11 +464,11 @@ msgstr ""
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "स्ट्रिप लॉजिकल वॉल्यूम मिरर नहीं किया जा सकता है."
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "जुड़े स्नेपशॉट के साथ लॉजिकल वॉल्यूम को अबतक मिरर नहीं किया जा सकता है."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -480,7 +480,7 @@ msgstr ""
 
 #: src/InputController.py:1531
 msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgstr "3 से कम हार्ड ड्राइव मुक्त स्थान के साथ उपलब्ध है. मिरर को निष्क्रिय कर रहा है."
 
 #: src/InputController.py:1536
 msgid ""
@@ -511,20 +511,20 @@ msgstr ""
 
 #: src/InputController.py:1917
 msgid "Names begining with a \"-\" are invalid"
-msgstr ""
+msgstr "\"-\" के साथ शुरू नाम अवैध है"
 
 #: src/InputController.py:1919
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "नाम न तो \".\" न \"..\" हो सकता है."
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "लॉजिकल वॉल्यूम नाम में खाली स्थान अनुमति प्राप्त है."
 
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "अवैध संप्रतीक \"%s\" लॉजिकल वॉल्यूम नाम में"
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
