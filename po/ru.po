@@ -1,16 +1,18 @@
+# translation of ru.po to 
 # translation of system-config-lvm.pot to Russian
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C)
 # Andrew Martynov <andrewm@inventa.ru>, 2004.
+# Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: system-config-lvm\n"
+"Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2004-12-26 20:23+0300\n"
-"Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
-"Language-Team: Russian <fedora-trans-ru@redhat.com>\n"
+"PO-Revision-Date: 2006-01-06 15:23+1000\n"
+"Last-Translator: Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>\n"
+"Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,9 +40,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Укажите в какую Группу томов добавить Физ том: "
+msgstr "Укажите в какую Группу томов добавить %s: "
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -71,9 +73,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "Неинициализированное устройство хранения"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "Укажите устройство для включения в Группу томов %s:"
+msgstr "Укажите устройства для включения в Группу томов %s:"
 
 #: src/InputController.py:92
 msgid ""
@@ -94,10 +96,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
-"Группа томов с именем %s уже существует. Пожалуйста, выберите уникальное имя."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "Группа томов с именем %s уже существует. Пожалуйста, выберите уникальное имя."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -109,8 +109,7 @@ msgstr "Необходимо задать Имя для новой Группы 
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Указанная точка монтирования %s не существует. Нужно ли ее создать?"
 
 #: src/InputController.py:104
@@ -126,33 +125,30 @@ msgstr "Данная возможность еще не реализована �
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"Число Логических томов в этой Группе томов достигло максимального значения."
+msgstr "Число Логических томов в этой Группе томов достигло максимального значения."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"Число Физических томов в этой Группе томов достигло максимального значения."
+msgstr "Число Физических томов в этой Группе томов достигло максимального значения."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr ""
-"Число Физических томов в этой Группе томов достигло максимального значения."
+msgstr "Число Физических томов в этой Группе томов может достигать %s."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Группа томов %s не имеет достаточно места для перемещения данных, хранимых в "
-"%s. Возможное решение состоит в добавлении дополнительного Физического тома "
+"Группа томов %s не имеет достаточно места для новых Логических томов."
+"Возможное решение состоит в добавлении дополнительного Физического тома "
 "в Группу Томов."
 
 #: src/InputController.py:116
@@ -174,8 +170,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Неопределенная ошибка преобразования в model factory. Невозможно завершить "
 "задачу."
@@ -197,6 +192,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"Логический том %s подключён в %s. Для завершения запроса, необходимо "
+"его отключить. Вы уверены в том, что вы хотите его отключить?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -226,15 +223,12 @@ msgid "%s extents"
 msgstr "%s экстентов"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Создать новую\n"
-"Группу томов"
+msgstr "Доступно места в Группе томов:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Осталось места для этого Тома:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -258,20 +252,16 @@ msgid "The %s should only contain number values"
 msgstr "%s должно содержать только числовые значения"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"Поле  Максимум Физических Томов должно содержать целое число от 1 до 256"
+msgstr "Поле Максимум Физических Томов должно содержать только целые числа от 1 до 256"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"Поле  Максимум Логических Томов должно содержать целое число от 1 до 256"
+msgstr "Поле Максимум Логических Томов должно содержать только целые числа от 1 до 256"
 
 #: src/InputController.py:149
 #, python-format
@@ -281,7 +271,7 @@ msgid ""
 msgstr "Вы действительно хотите удалить %s из Управления логическими томами?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -290,17 +280,16 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"Физический том %s, который вы желаете удалить, содержит данные из "
-"Логического том(ов) сопоставленного с его экстентами. Так как это "
+"Физический том %s, который вы желаете удалить, содержит данные "
+"активного Логического том(ов) сопоставленного с его экстентами. Так как это "
 "единственный Физический Том в Группе томов, нет возможности перенести "
 "данные. Рекомендуется либо добавить другой Физический том перед удалением "
-"данного тома, либо удалите Логические том сопоставленные этому Физическому "
+"данного тома, либо удалить Логические тома, сопоставленные этому Физическому "
 "тому."
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Вы действительно хотите удалить %s из Группы томов %s?"
 
 #: src/InputController.py:153
@@ -309,7 +298,7 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
-"После удаления физического тома %s из Группы томов %s данная группа окажется "
+"После удаления Физического тома %s из Группы томов %s данная группа окажется "
 "пустой и также будет удалена. Продолжить?"
 
 #: src/InputController.py:154
@@ -332,35 +321,32 @@ msgid ""
 msgstr ""
 "Модуль dm-mirror либо не загружен в ядро, либо ядро не поддерживает dm-"
 "mirror. Если он поддерживается, попробуйте запустить \"modprobe dm-mirror\". "
-"В противном случае операции требующие перенос данных в Физических томах не "
-"будут доступны."
+"В противном случае операции требующие перенос данных в Физических экстентах "
+"не будут доступны."
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"Модуль dm-mirror либо не загружен в ядро, либо ядро не поддерживает dm-"
-"mirror. Если он поддерживается, попробуйте запустить \"modprobe dm-mirror\". "
-"В противном случае операции требующие перенос данных в Физических томах не "
-"будут доступны."
+"Модуль dm-snapshot либо не загружен в ядро, либо ядро не поддерживает dm-"
+"snapshot. Если он поддерживается, попробуйте запустить \"modprobe dm-snapshot\". "
+"В противном случае операции создания снимков не будут доступны."
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Вы действительно хотите удалить Логический том %s?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"ПРЕДУПРЕЖДЕНИЕ: Логический том %s содержит файловую систему %s, которая в "
-"данный момент подключена в %s. Вы абсолютно уверены, что хотите потерять "
-"данные на данной подключенной файловой систем?"
+"Логический том %s содержит файловую систему %s. Все данные будут потеряны! "
+"Вы абсолютно уверены, что хотите удалить Логический том %s?"
 
 #: src/InputController.py:160
 #, python-format
@@ -368,6 +354,8 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"Логический том %s содержит данные папки %s. Все данные будут потеряны! "
+"Вы абсолютно уверены, что хотите удалить Логический том %s?"
 
 #: src/InputController.py:356
 #, python-format
@@ -415,8 +403,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -435,7 +422,7 @@ msgstr ""
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "Заданный путь не существует."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
@@ -444,17 +431,19 @@ msgstr ""
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "Сбой инициализации %s"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Сначала осуществите выбор экстентов"
 
 #: src/InputController.py:1022
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"Недостаточно свободных экстентов для выполнения необходимой миграции. "
+"Добавление дополнительных Физических томов поможет решить эту проблему."
 
 #: src/InputController.py:1181
 #, fuzzy
@@ -463,7 +452,7 @@ msgstr "%s экстентов"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "Параметры"
 
 #: src/InputController.py:1341
 #, python-format
@@ -471,9 +460,8 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "Создание нового Логического тома"
+msgstr "Создать Логический том"
 
 #: src/InputController.py:1346
 #, python-format
@@ -481,9 +469,8 @@ msgid "Edit %s, a Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Логический том"
+msgstr "Редактировать Логический том"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -506,8 +493,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1536
@@ -585,143 +571,123 @@ msgstr ""
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды vgextend. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды pvcreate. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды lvcreate. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды pvremove. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды lvremove. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды vgremove. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды vgcreate. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
 msgstr ""
 "Сбой команды vgchange. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды vgreduce. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды pvmove. Вызов команды: \"%s\" - Системное сообщение об ошибке: %"
 "s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
 "Сбой команды umount. Вызов команды: \"%s\" - Системное сообщение об ошибке: %"
 "s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
-"Сбой команды mount. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "Сбой команды mount. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, python-format
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Сбой команды lvremove. Вызов команды: \"%s\" - Системное сообщение об "
+"Сбой команды lvresize. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, python-format
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Сбой команды lvcreate. Вызов команды: \"%s\" - Системное сообщение об "
+"Сбой команды lvrename. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+#, python-format
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Сбой команды vgchange. Вызов команды: \"%s\" - Системное сообщение об "
+"Сбой команды Ivchange. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"Сбой команды lvremove. Вызов команды: \"%s\" - Системное сообщение об "
+"Сбой команды lvconvert. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Создать новый\n"
-"Логический том"
+msgstr "Создание Логического тома"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Логический том"
+msgstr "Изменение размера Логического тома"
 
 #: src/CommandHandler.py:146
 #, fuzzy
@@ -736,52 +702,36 @@ msgstr ""
 "Логический том"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Физический том"
+msgstr "Инициализация Физического тома"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Добавить Физический том в ГрТомов"
+msgstr "Добавление Физического тома к Группе томов"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Создать новую\n"
-"Группу томов"
+msgstr "Создание Группы томов"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Новая Группа томов"
+msgstr "Удаление Группы томов"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Физический том"
+msgstr "Удаление Физического тома"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Удалить \n"
-"Логический том"
+msgstr "Удаление Логического тома"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Удалить \n"
-"Логический том"
+msgstr "Переименование Логического тома"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Удалить Том из\n"
-"Группы томов"
+msgstr "Удаление Физического тома из Группы томов"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -809,7 +759,7 @@ msgstr "Имя Группы томов:   "
 
 #: src/lvm_model.py:60
 msgid "System ID:   "
-msgstr "System ID:   "
+msgstr "ID системы:   "
 
 #: src/lvm_model.py:61
 msgid "Format:   "
@@ -896,9 +846,8 @@ msgid "Mount Point:   "
 msgstr "Точка монтирования:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Точка монтирования:   "
+msgstr "Точка монтирования после перезагрузки:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -934,7 +883,7 @@ msgstr "UUID Физического тома:  "
 
 #: src/lvm_model.py:97
 msgid "Not initializable:   "
-msgstr ""
+msgstr "Инициализация недоступна:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
@@ -950,7 +899,7 @@ msgstr ""
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Сбой авторазбиения"
 
 #: src/lvm_model.py:128
 #, fuzzy
@@ -968,23 +917,20 @@ msgid "Quering Physical Volumes"
 msgstr "Физический том"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "Тип раздела:   "
+msgstr "Выполнить разбиение вручную"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Формат:   "
+msgstr "Замечание:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Инициализировать раздел"
+msgstr "Инициализировать вручную"
 
 #: src/lvm_model.py:810
 #, fuzzy
@@ -1005,13 +951,12 @@ msgstr ""
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Нет файловой системы"
+msgstr "/   Корневая файловая система"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Нет"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1020,6 +965,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"Все данные дискового устройства %s будут потеряны! Вы действительно "
+"хотите выполнить его инициализацию?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -1027,6 +974,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"Дисковое устройство %s содержит файловую систему %s. Все данные "
+"будут потеряны! Вы действительно уверены в том, что вы хотите выполнить инициализацию устройства %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -1034,14 +983,13 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
+"Дисковое устройство %s содержит данные папки %s. Все данные "
+"будут потеряны! Вы уверены в том, что вы хотите выполнить инициализацию устройства %s?"
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"Вы действительно хотите инициализировать устройство %s? Все данные на этом "
-"диске/разделе будут уничтожены."
+#, python-format
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "Вы действительно хотите инициализировать %s свободного места на диске %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1053,7 +1001,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "Производится перезагрузка LVM. Пожалуйста, подождите."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1077,11 +1025,11 @@ msgstr "Свободно"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "Свободно места"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "Неиспользуемое место"
 
 #: src/lvmui_constants.py:86
 #, fuzzy, python-format
@@ -1174,7 +1122,7 @@ msgstr "Не выбран ни один том"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Множественное выделение"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1283,43 +1231,40 @@ msgid "Upgrading %s filesystem to %s"
 msgstr ""
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Сбой команды vgcreate. Вызов команды: \"%s\" - Системное сообщение об "
+"Сбой создания файловой системы. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"Сбой команды mkfs. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
+msgstr "Сбой изменения размера файловой системы. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"Сбой команды mkfs. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
+msgstr "Сбой проверки файловой системы. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Сбой команды vgreduce. Вызов команды: \"%s\" - Системное сообщение об "
+"Сбой обновления файловой системы. Вызов команды: \"%s\" - Системное сообщение об "
 "ошибке: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Нет файловой системы"
+msgstr "Неизвестная файловая система"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1351,22 +1296,19 @@ msgid "Mirror "
 msgstr ""
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"Сбой команды mkfs. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
+#, python-format
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "Сбой команды dmsetup. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"Сбой команды mkfs. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
+msgstr "Сбой команды ls. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "Тип раздела:   "
+msgstr "Раздел: %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1445,9 +1387,8 @@ msgstr ""
 "Группу томов"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Свойства :"
+msgstr "Редактировать свойства"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1466,14 +1407,12 @@ msgid "Extend Volume Group"
 msgstr "Расширить Группу томов"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "Формат:   "
+msgstr "Формат"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Не инициализировано"
+msgstr "Инициализировать"
 
 #: src/lvui.glade.h:27
 #, fuzzy
@@ -1607,27 +1546,34 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Файловая система: "
+msgstr "<b>Файловая система</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>Свойства LV</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Размер</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Добавить запись к /etc/fstab"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "Изменение файловой системы недоступно"
 
 #: src/lv_edit_props.glade.h:16
 #, fuzzy
@@ -1648,11 +1594,11 @@ msgstr "Килобайт"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "Имя LV: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "Размер LV"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1672,35 +1618,31 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Подключить"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "Точка монтирования:   "
+msgstr "Точка монтирования: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Подключить после перезагрузки"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Размер"
+msgstr "Размер (нач.)"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Размер"
+msgstr "Размер (конец)"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "С чередованием"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Использовать оставшееся место"
+msgstr "Использовать оставшееся"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
@@ -1775,89 +1717,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "В поле Размер введено ошибочное значение. Значение должно быть числовым, "
-#~ "не содержать букв или любых других символов."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "Запрошенный размер для нового Логического Тома превышает свободное "
-#~ "пространство в Группе Томов %s. Доступное пространство:"
-
-#~ msgid "Stripe Size field"
-#~ msgstr "поле Фрагмент чередования"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "поле Число фрагментов чередования"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 мегабайт"
-
-#~ msgid "Create New LV"
-#~ msgstr "Создать новый ЛогТом"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "Расширить\n"
-#~ "Логический том"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "Точка монтирования (если пусто, ЛогТом не будет смонтирован):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "Имя для нового ЛогТома:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "Число фрагментов чередования: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "Укажите диск (раздел), для добавления в Группу томов:"
-
-#~ msgid "Size:"
-#~ msgstr "Размер:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "Размер фрагмента чередования:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "Неиспользуемое место в VG1:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "Нет файловой системы"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "Этот экстент не был инициализирован\n"
-#~ "для использования с LVM."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "Этот Том не был связан\n"
-#~ "с Группой томов"
-
-#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
-#~ msgstr "Поставте отметку, если вы хотите сделать запись в /etc/fstab"
-
-#~ msgid "Resizable?"
-#~ msgstr "Изменяемый размер?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
