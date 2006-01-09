@@ -1,4 +1,5 @@
 # translation of ru.po to 
+# translation of ru.po to
 # translation of system-config-lvm.pot to Russian
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C)
@@ -10,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2006-01-06 15:23+1000\n"
+"PO-Revision-Date: 2006-01-09 16:13+1000\n"
 "Last-Translator: Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>\n"
 "Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -153,7 +154,7 @@ msgstr ""
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "Не поддерживается создание снимка уже существующего снимка тома."
 
 #: src/InputController.py:118
 #, python-format
@@ -161,6 +162,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"Уже существует снимок %s, ассоциированный с логическим томом %s. "
+"Сначала удалите этот снимок."
 
 #: src/InputController.py:119
 #, python-format
@@ -168,6 +171,8 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"Уже существуют снимки логического тома %s; текущая ассоциация с %s. "
+"Сначала удалите эти снимки."
 
 #: src/InputController.py:121
 msgid "Undefined type conversion error in model factory. Unable to complete task."
