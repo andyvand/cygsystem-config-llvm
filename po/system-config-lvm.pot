@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-01 15:15-0500\n"
+"POT-Creation-Date: 2005-12-02 08:17-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -416,7 +416,7 @@ msgstr ""
 msgid "Create A Snapshot of %s"
 msgstr ""
 
-#: src/InputController.py:1343 src/lv_edit_props.glade.h:14
+#: src/InputController.py:1343
 msgid "Create New Logical Volume"
 msgstr ""
 
@@ -1326,6 +1326,16 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
+"* In this release, mirroring support is \n"
+"available as a Technology Preview"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:4
+msgid "* Mirrored"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:5
+msgid ""
 "4\n"
 "8\n"
 "16\n"
@@ -1336,35 +1346,39 @@ msgid ""
 "512"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:10
+#: src/lv_edit_props.glade.h:13
 msgid "<b>Filesystem</b>"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:11
+#: src/lv_edit_props.glade.h:14
 msgid "<b>LV Properties</b>"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:12
+#: src/lv_edit_props.glade.h:15
 msgid "<b>Size</b>"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:13
+#: src/lv_edit_props.glade.h:16
 msgid "Add entry to /etc/fstab"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:15
-msgid "Filesystem is not resizable"
-msgstr ""
-
-#: src/lv_edit_props.glade.h:16
-msgid "Free space in Volume Group label"
-msgstr ""
-
 #: src/lv_edit_props.glade.h:17
-msgid "Free space remaining label"
+msgid "Create New Logical Volume (LV)"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:18
+msgid "Filesystem is not resizable"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:19
+msgid "Free space in Volume Group label"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:20
+msgid "Free space remaining label"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:21
 msgid "Kilobytes granularity"
 msgstr ""
 
@@ -1372,27 +1386,23 @@ msgstr ""
 msgid "LV name:"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:20
+#: src/lv_edit_props.glade.h:23
 msgid "LV size"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:21
+#: src/lv_edit_props.glade.h:24
 msgid "LVs under snapshots are not resizable"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:22
+#: src/lv_edit_props.glade.h:25
 msgid "Linear"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:23
-msgid "Mirrored"
-msgstr ""
-
-#: src/lv_edit_props.glade.h:24
+#: src/lv_edit_props.glade.h:26
 msgid "Mirrored LVs are not resizable"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:25
+#: src/lv_edit_props.glade.h:27
 msgid "Mount"
 msgstr ""
 
@@ -1400,23 +1410,23 @@ msgstr ""
 msgid "Mount point:"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:27
+#: src/lv_edit_props.glade.h:29
 msgid "Mount when rebooted"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:28
+#: src/lv_edit_props.glade.h:30
 msgid "Size beg"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:29
+#: src/lv_edit_props.glade.h:31
 msgid "Size end"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:30
+#: src/lv_edit_props.glade.h:32
 msgid "Striped"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:31
+#: src/lv_edit_props.glade.h:33
 msgid "Use remaining"
 msgstr ""
 
