@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-01 15:15-0500\n"
-"PO-Revision-Date: 2006-01-07 18:03-0000\n"
+"POT-Creation-Date: 2005-12-02 08:17-0500\n"
+"PO-Revision-Date: 2006-01-09 15:51-0000\n"
 "Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -349,7 +349,6 @@ msgid "Create A Snapshot of %s"
 msgstr "Направи снимак %s"
 
 #: src/InputController.py:1343
-#: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume"
 msgstr "Направи нови логички диск"
 
@@ -1251,6 +1250,18 @@ msgstr "порука проширења ГД-а:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
+"* In this release, mirroring support is \n"
+"available as a Technology Preview"
+msgstr ""
+"* У овом издању, подршка за пресликавање \n"
+"је доступна као преглед будуће технологије"
+
+#: src/lv_edit_props.glade.h:4
+msgid "* Mirrored"
+msgstr "* Пресликано"
+
+#: src/lv_edit_props.glade.h:5
+msgid ""
 "4\n"
 "8\n"
 "16\n"
@@ -1269,35 +1280,39 @@ msgstr ""
 "256\n"
 "512"
 
-#: src/lv_edit_props.glade.h:10
+#: src/lv_edit_props.glade.h:13
 msgid "<b>Filesystem</b>"
 msgstr "<b>Систем датотека</b>"
 
-#: src/lv_edit_props.glade.h:11
+#: src/lv_edit_props.glade.h:14
 msgid "<b>LV Properties</b>"
 msgstr "<b>Особине ЛД-а</b>"
 
-#: src/lv_edit_props.glade.h:12
+#: src/lv_edit_props.glade.h:15
 msgid "<b>Size</b>"
 msgstr "<b>Величина</b>"
 
-#: src/lv_edit_props.glade.h:13
+#: src/lv_edit_props.glade.h:16
 msgid "Add entry to /etc/fstab"
 msgstr "Додај ставку у /etc/fstab"
 
-#: src/lv_edit_props.glade.h:15
+#: src/lv_edit_props.glade.h:17
+msgid "Create New Logical Volume (LV)"
+msgstr "Направи нови логички диск (ЛД)"
+
+#: src/lv_edit_props.glade.h:18
 msgid "Filesystem is not resizable"
 msgstr "Систему датотека се не може променити величина"
 
-#: src/lv_edit_props.glade.h:16
+#: src/lv_edit_props.glade.h:19
 msgid "Free space in Volume Group label"
 msgstr "Слободан простор у ознаци групе дискова"
 
-#: src/lv_edit_props.glade.h:17
+#: src/lv_edit_props.glade.h:20
 msgid "Free space remaining label"
 msgstr "Ознака преосталог слободног простора"
 
-#: src/lv_edit_props.glade.h:18
+#: src/lv_edit_props.glade.h:21
 msgid "Kilobytes granularity"
 msgstr "Гранулација у Килобајтима"
 
@@ -1305,27 +1320,23 @@ msgstr "Гранулација у Килобајтима"
 msgid "LV name:"
 msgstr "Име ЛД-а:"
 
-#: src/lv_edit_props.glade.h:20
+#: src/lv_edit_props.glade.h:23
 msgid "LV size"
 msgstr "Величина ЛД-а"
 
-#: src/lv_edit_props.glade.h:21
+#: src/lv_edit_props.glade.h:24
 msgid "LVs under snapshots are not resizable"
 msgstr "ЛД-овима под снимком се не може променити величина"
 
-#: src/lv_edit_props.glade.h:22
+#: src/lv_edit_props.glade.h:25
 msgid "Linear"
 msgstr "Линеарно"
 
-#: src/lv_edit_props.glade.h:23
-msgid "Mirrored"
-msgstr "Пресликано"
-
-#: src/lv_edit_props.glade.h:24
+#: src/lv_edit_props.glade.h:26
 msgid "Mirrored LVs are not resizable"
 msgstr "Пресликаним ЛД-овима се не може променити величина"
 
-#: src/lv_edit_props.glade.h:25
+#: src/lv_edit_props.glade.h:27
 msgid "Mount"
 msgstr "Монтирај"
 
@@ -1333,23 +1344,23 @@ msgstr "Монтирај"
 msgid "Mount point:"
 msgstr "Тачка за монтирање:"
 
-#: src/lv_edit_props.glade.h:27
+#: src/lv_edit_props.glade.h:29
 msgid "Mount when rebooted"
 msgstr "Монтирај при поновном покретању"
 
-#: src/lv_edit_props.glade.h:28
+#: src/lv_edit_props.glade.h:30
 msgid "Size beg"
 msgstr "Почетак величине"
 
-#: src/lv_edit_props.glade.h:29
+#: src/lv_edit_props.glade.h:31
 msgid "Size end"
 msgstr "Крај величине"
 
-#: src/lv_edit_props.glade.h:30
+#: src/lv_edit_props.glade.h:32
 msgid "Striped"
 msgstr "Испреплетено"
 
-#: src/lv_edit_props.glade.h:31
+#: src/lv_edit_props.glade.h:33
 msgid "Use remaining"
 msgstr "Користи преостали"
 
