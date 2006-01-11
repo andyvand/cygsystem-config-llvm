@@ -1,6 +1,7 @@
 # translation of ru.po to 
 # translation of ru.po to
 # translation of ru.po to
+# translation of ru.po to
 # translation of system-config-lvm.pot to Russian
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C)
@@ -12,7 +13,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2006-01-10 17:32+1000\n"
+"PO-Revision-Date: 2006-01-11 15:59+1000\n"
 "Last-Translator: Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>\n"
 "Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -370,6 +371,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Физический том %s содержит экстенты, принадлежащие журналу "
+"зеркала Логического тома %s. Недоступно выполнение переноса "
+"дублируемых Логических томов, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:359
 #, python-format
@@ -378,6 +382,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Физический том %s содержит экстенты, принадлежащие образу "
+"зеркала Логического тома %s. Недоступно выполнение переноса "
+"дублируемых Логических томов, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:362
 #, python-format
@@ -385,6 +392,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"Физический том %s содержит экстенты, принадлежащие %s (снимку %s). "
+"Недоступно выполнение переноса снимков, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:367
 #, python-format
@@ -392,6 +401,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Физический том %s содержит экстенты, принадлежащие %s (оригиналу "
+"снимка %s). Недоступно выполнение переноса снимков, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:369
 #, python-format
@@ -399,6 +410,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Физический том %s содержит экстенты, принадлежащие %s (оригиналу "
+"снимка %s). Недоступно выполнение переноса снимков, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:556
 #, python-format
@@ -420,6 +433,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"Физический том \"%s\" содержит экстенты, принадлежащие зеркалу. "
+"Недоступно выполнение переноса зеркала, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:605
 #, python-format
@@ -427,6 +442,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"Физический том %s содержит экстенты, принадлежащие снимку его оригинала. "
+"Недоступно выполнение переноса снимка, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
@@ -434,7 +451,7 @@ msgstr "Заданный путь не существует."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "Указанный вами путь не является путём блочного устройства"
 
 #: src/InputController.py:748
 #, python-format
@@ -454,9 +471,8 @@ msgstr ""
 "Добавление дополнительных Физических томов поможет решить эту проблему."
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s экстентов"
+msgstr "Перенос экстентов"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -531,6 +547,8 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"Недостаточно места для обеспечения дублирования. Уменьшите размер "
+"Логического тома до %s (как максимум) или же добавьте Физические тома."
 
 #: src/InputController.py:1913
 msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
@@ -582,15 +600,17 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2145
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "Зеркало не создано. Происходит завершение оставшихся задач."
 
 #: src/InputController.py:2194
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr ""
+"Для обеспечения создания зеркала необходимо выполнить перенос "
+"некоторых экстентов."
 
 #: src/InputController.py:2194
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "Вы хотите выполнить перенос указанных экстентов?"
 
 #. ##TRANSLATOR: The first word in each string below is
 #. ##an lvm command line command phrase.
@@ -756,11 +776,11 @@ msgstr "Удаление Физического тома из Группы то�
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "Перенос экстентов"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "Завершение переноса экстентов"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -954,21 +974,20 @@ msgid "Initialize manually"
 msgstr "Инициализировать вручную"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "Число фрагментов чередования:   "
+msgstr "Количество образов зеркала:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "Снимки:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "Оригинал снимка:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "Использование снимков:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
@@ -1019,6 +1038,9 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"Будет выполнена инициализация неразделённого диска %s. Мы рекомендуем "
+"создать раздел на данном диске. Создать единственный раздел, "
+"занимающий по объему весь диск?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -1038,7 +1060,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "Невозможно обработать запрос"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
@@ -1053,9 +1075,9 @@ msgid "Unpartitioned space"
 msgstr "Неиспользуемое место"
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "Неиспользуемое место в %s"
+msgstr "Неразделённое место в %s"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1194,20 +1216,19 @@ msgstr ""
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "Снимок"
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "Оригинал"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "Снимок"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "экстентов"
+msgstr "просмотр экстентов"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1229,27 +1250,27 @@ msgstr ""
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "Пожалуйста, подождите пока не завершится создание раздела"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Создание файловой системы %s"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Изменение размера файловой системы %s"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "Проверка файловой системы %s"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Обновление файловой системы с %s до %s"
 
 #: src/Filesystem.py:13
 #, python-format
@@ -1314,7 +1335,7 @@ msgstr "Без чередования"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Зеркало "
 
 #: src/Multipath.py:11
 #, python-format
@@ -1397,7 +1418,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Создать снимок"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1413,7 +1434,7 @@ msgstr "Редактировать свойства"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Введите путь к блочному устройству для инициализации"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1436,9 +1457,8 @@ msgid "Initialize"
 msgstr "Инициализировать"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Инициализировать раздел"
+msgstr "Инициализировать блочное устройство"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1542,7 +1562,7 @@ msgstr "Укажите в какую Группу томов добавить Ф
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Какой-либо текст"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
@@ -1623,7 +1643,7 @@ msgstr "Размер LV"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "Недоступно изменение размера Логических томов снимков"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1707,20 +1727,16 @@ msgstr ""
 "Группы томов"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "экстентов"
+msgstr "Перенос экстентов"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
 msgstr ""
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"Перенести выбранные\n"
-"Экстент(ы) из Тома"
+msgstr "Перенести экстенты в "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
