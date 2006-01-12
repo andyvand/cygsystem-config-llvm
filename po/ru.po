@@ -2,6 +2,8 @@
 # translation of ru.po to
 # translation of ru.po to
 # translation of ru.po to
+# translation of ru.po to
+# translation of ru.po to
 # translation of system-config-lvm.pot to Russian
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C)
@@ -13,7 +15,7 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2006-01-11 15:59+1000\n"
+"PO-Revision-Date: 2006-01-12 17:14+1000\n"
 "Last-Translator: Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>\n"
 "Language-Team:  <ru@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -372,8 +374,8 @@ msgid ""
 "removable."
 msgstr ""
 "Физический том %s содержит экстенты, принадлежащие журналу "
-"зеркала Логического тома %s. Недоступно выполнение переноса "
-"дублируемых Логических томов, как следствие, невозможно удалить %s."
+"дублирования Логического тома %s. Недоступно выполнение переноса "
+"зеркальных Логических томов, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:359
 #, python-format
@@ -384,7 +386,7 @@ msgid ""
 msgstr ""
 "Физический том %s содержит экстенты, принадлежащие образу "
 "зеркала Логического тома %s. Недоступно выполнение переноса "
-"дублируемых Логических томов, как следствие, невозможно удалить %s."
+"зеркальных Логических томов, как следствие, невозможно удалить %s."
 
 #: src/InputController.py:362
 #, python-format
@@ -498,11 +500,11 @@ msgstr "Редактировать Логический том"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "Базовое управление логическими томами не поддерживает работу с зеркалами"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "Расслоенный логический том не может быть зеркалирован."
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
@@ -928,15 +930,15 @@ msgstr "Инициализация недоступна:   "
 
 #: src/lvm_model.py:98
 msgid "Extended partition"
-msgstr ""
+msgstr "Расширенный раздел"
 
 #: src/lvm_model.py:99
 msgid "Swap in use"
-msgstr ""
+msgstr "Используется swap"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "Чужой загрузочный раздел"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
@@ -963,7 +965,7 @@ msgstr "Выполнить разбиение вручную"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "Устройство с несколькими путями (multipath)"
 
 #: src/lvm_model.py:307
 msgid "Note:   "
@@ -1053,10 +1055,13 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
+"Изменения вступят в силу после перезапуска компьютера. Если устройство "
+"%s занято, перед выполнением рестарта данные БУДУТ утеряны. "
+"Рекомендуется произвести перезапуск компьютера сейчас."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Журнал дублирования"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
@@ -1190,6 +1195,10 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Экстенты, которые вы пытаетесь выбрать, принадлежат журналу "
+"дублирования Логического тома %s. Недоступно выполнение переноса "
+"зеркальных Логических томов, как следствие, невозможно "
+"осуществить выбор экстентов."
 
 #: src/renderer.py:194
 #, python-format
@@ -1198,6 +1207,10 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Экстенты, которые вы пытаетесь выбрать, принадлежат образу зеркала "
+"Логического тома %s. Недоступно выполнение переноса "
+"зеркальных Логических томов, как следствие, невозможно "
+"осуществить выбор экстентов."
 
 #: src/renderer.py:196
 #, python-format
@@ -1205,6 +1218,9 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"Экстенты, которые вы пытаетесь выбрать, принадлежат %s (снимку %s). "
+"Недоступно выполнение переноса снимков, как следствие, невозможно "
+"осуществить выбор экстентов."
 
 #: src/renderer.py:198
 #, python-format
@@ -1213,6 +1229,9 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"Экстенты, которые вы пытаетесь выбрать, принадлежат оригиналу снимка %s. "
+"Недоступно выполнение переноса оригиналов снимков, как следствие, невозможно "
+"осуществить выбор экстентов."
 
 #: src/renderer.py:385
 msgid "Snapshot of "
@@ -1245,7 +1264,7 @@ msgstr "Неинициализированные устр-ва"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "синхронизация зеркала %s "
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
@@ -1310,24 +1329,23 @@ msgstr "Неизвестная файловая система"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (local)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (clustered)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (local)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (clustered)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "С чередованием"
+msgstr "Чередование "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1466,7 +1484,7 @@ msgstr "Инициализировать раздел"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Инициализировать _Блочное устройство"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1566,11 +1584,11 @@ msgstr "Какой-либо текст"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "_Перезагрузить"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_Инструменты"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
@@ -1629,13 +1647,12 @@ msgid "Free space remaining label"
 msgstr "Использовать оставшееся место"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Килобайт"
+msgstr "Разбиение на кБ"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr "Имя LV: "
+msgstr "Имя Лог.тома: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
@@ -1651,11 +1668,11 @@ msgstr "Без чередования"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Дубликат (зеркало)"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "Недоступно изменение размера зеркальных Лог.томов"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
@@ -1663,7 +1680,7 @@ msgstr "Подключить"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point: "
-msgstr "Точка монтирования: "
+msgstr "Точка подключения: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1687,7 +1704,7 @@ msgstr "Использовать оставшееся"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "Фрагменты чередования"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1699,25 +1716,28 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "Любое место - функциональность не реализована"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "Автоматически выбирать Физ.тома для выполнения переноса"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
 msgstr ""
 
 #: src/migrate_extents.glade.h:6
+#, fuzzy
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"Для удаления Физ.тома необходимо выполнить перенос\n "
+"используемых экстентов.\n"
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "Наследовать"
 
 #: src/migrate_extents.glade.h:9
 #, fuzzy
@@ -1732,7 +1752,7 @@ msgstr "Перенос экстентов"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "Выполнить перенос в любое место, даже если это уменьшит производительность"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate extents to "
@@ -1748,9 +1768,9 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "Выполнить перенос только принадлежащих Лог.тому экстентов"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "На основе здравого смысла"
 
