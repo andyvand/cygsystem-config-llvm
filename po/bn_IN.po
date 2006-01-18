@@ -1,21 +1,45 @@
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
 # translation of bn.po to bangla
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Runa Bhattacharjee <runab@redhat.com>, 2004.
+# Runa Bhattacharjee <runab@redhat.com>, 2004, 2006.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: bn\n"
+"Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2004-12-07 18:30+0530\n"
+"PO-Revision-Date: 2006-01-18 19:02+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
-"Language-Team: bangla <redhat-translation@bengalinux.org>\n"
+"Language-Team: Bangla (INDIA) <redhat-translation@bengalinux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
@@ -39,9 +63,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "এই প্রকৃত ভলিউম (PV) যোগ করার জন্য একটি ভলিউম গ্রুপ নির্বাচন করুন:"
+msgstr "%s-এ যোগ করার জন্য একটি ভলিউম গ্রুপ নির্বাচন করুন:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -72,7 +96,7 @@ msgid "Uninitialized Disk Entity"
 msgstr "নিষ্ক্রিয় ডিস্কের সত্ত্বা"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "%s ভলিউম গ্রুপে যোগ করার জন্য ডিস্কের একটি সত্ত্বা নির্বাচন করুন:"
 
@@ -96,8 +120,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "%s নামক একটি ভলিউম গ্রুপ বর্তমানে উপস্থিত রয়েছে। অনুগ্রহ করে একটি পৃথক নাম নির্বাচন "
 "করুন।"
@@ -112,10 +135,8 @@ msgstr "নতুন ভলিউম গ্রুপের একটি না�
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"উল্লিখিত মাউন্ট-পয়েন্ট %s বর্তমানে উপস্থিত নেই। আপনি কি এটি নির্মাণ করতে ইচ্ছুক?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "উল্লিখিত মাউন্ট-পয়েন্ট %s বর্তমানে উপস্থিত নেই। আপনি কি এটি নির্মাণ করতে ইচ্ছুক?"
 
 #: src/InputController.py:104
 #, python-format
@@ -139,43 +160,42 @@ msgid ""
 msgstr "এই ভলিউম গ্রুপের সর্বাধিক অনুমোদিত প্রকৃত ভলিউমের সংখ্যা পূরণ হয়ে গেছে।"
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "এই ভলিউম গ্রুপের সর্বাধিক অনুমোদিত প্রকৃত ভলিউমের সংখ্যা পূরণ হয়ে গেছে।"
+msgstr "এই ভলিউম গ্রুপের সর্বাধিক অনুমোদিত প্রকৃত ভলিউমের সংখ্যা পূরণ হওয়ার পূর্বে %s-টি প্রকৃত ভলিউম যোগ করা যাবে।"
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"ভলিউম গ্রুপ %s-এ, %s-তে সংরক্ষিত ডাটা স্থাপন করার জন্য পর্যাপ্ত শূণ্যস্থান উপস্থিত নেই। "
+"ভলিউম গ্রুপ %s-এ, নতুন লজিকাল ভলিউম স্থাপন করার জন্য পর্যাপ্ত শূণ্যস্থান উপস্থিত নেই। "
 "ঐ ভলিউম গ্রুপে একটি অতিরিক্ত প্রকৃত ভলিউম যোগ করে এই সমস্যার সমাধান করা সম্ভব।"
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "স্ন্যাপশটের স্ন্যাপশট সমর্থিত হয় না।"
 
 #: src/InputController.py:118
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
+msgstr "%s লজিকাল ভলিউমের সাথে বর্তমানে %s স্ন্যাপশট সংযুক্ত রয়েছে। অনুগ্রহ করে এই স্ন্যাপশটটি প্রথমে অপসারণ করুন।"
 
 #: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
+msgstr "%s লজিকাল ভলিউমের সাথে স্ন্যাপশট: %s বর্তমানে সংযুক্ত রয়েছে। অনুগ্রহ করে প্রথমে সেগুলি অপসারণ করুন।"
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "মডেল ফ্যাক্টরির মধ্যে অনির্ধারিত ধরন পরিবর্তন সংক্রান্ত সমস্যা হয়েছে। কর্ম সম্পন্ন করতে "
 "ব্যর্থ।"
@@ -196,7 +216,7 @@ msgstr ""
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
-msgstr ""
+msgstr "%s লজিকাল ভলিউম বর্তমানে %s'র উপর মাউন্ট করা রয়েছে। অনুরোধ পূরণ করার জন্য প্রথমে এটি আনমাউন্ট করা আবশ্যক। আপনি কি নিশ্চিতরূপে এটি আনমাউন্ট করতে ইচ্ছুক?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -226,15 +246,12 @@ msgid "%s extents"
 msgstr "%s প্রসারণ"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"নতুন ভলিউম \n"
-"গ্রুপ নির্মাণ করো"
+msgstr "ভলিউম গ্রুপে অবশিষ্ট শূণ্যস্থান:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "চিহ্নিত ভলিউমে অবশিষ্ট স্থান:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -258,33 +275,26 @@ msgid "The %s should only contain number values"
 msgstr "%s-র মান শুধুমাত্র সংখ্যার দ্বারা নিদিষ্ট করা আবশ্যক"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"সর্বোচ্চ প্রকৃত ভলিউম নামক ক্ষেত্রতে শুধুমাত্র ১ থেকে ২৫৬-র মধ্যে কোনো পূর্ণসংখ্যা মান "
-"ব্যবহার করা যাবে।"
+msgstr "সর্বোচ্চ প্রকৃত ভলিউম নামক ক্ষেত্রতে শুধুমাত্র ১ থেকে ২৫৬-র মধ্যে কোনো পূর্ণসংখ্যা মান উল্লেখ করা যাবে"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"সর্বোচ্চ লজিক্যাল ভলিউম নামক ক্ষেত্রতে শুধুমাত্র ১ থেকে ২৫৬-র মধ্যে কোনো পূর্ণসংখ্যা মান "
-"ব্যবহার করা যাবে।"
+msgstr "সর্বোচ্চ লজিক্যাল ভলিউম নামক ক্ষেত্রতে শুধুমাত্র ১ থেকে ২৫৬-র মধ্যে কোনো পূর্ণসংখ্যা মান উল্লেখ করা যাবে"
 
 #: src/InputController.py:149
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
-"আপনি কি নিশ্চিতরূপে %s-কে লজিক্যাল ভলিউম পরিচালনা (LVM) থেকে সরিয়ে ফেলতে ইচ্ছুক?"
+msgstr "আপনি কি নিশ্চিতরূপে %s-কে লজিক্যাল ভলিউম পরিচালনা (LVM) থেকে সরিয়ে ফেলতে ইচ্ছুক?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -293,16 +303,13 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"%s নামক যে প্রকৃত ভলিউম আপনি মুছে ফেলতে ইচ্ছুক, তার প্রসারণ (extent)-এ কয়েকটি "
-"সক্রিয় লজিক্যাল ভলিমের ডাটা ম্যাপ করা রয়েছে। যেহেতু এই ভলিউম গ্রুপের এটি একমাত্র "
-"প্রকৃত ভলিউম এই ডাটা অন্য কোনো স্থানে স্থানাতন্তর করা সম্ভব নয়। সমাধান হিসাবে প্রকৃত "
-"ভলিউম মুছে ফেলার পূর্বে একটি নতুন প্রকৃত ভলিউম যোগ করুন অথবা এই প্রকৃত ভলিউমের সাথে "
-"যুক্ত লজিক্যাল ভলিউমগুলি সরিয়প ফেলুন।"
+"%s নামক যে প্রকৃত ভলিউম আপনি মুছে ফেলতে ইচ্ছুক, সেটির extent-র মধ্যে কয়েকটি "
+"সক্রিয় লজিক্যাল ভলিমের ডাটা ম্যাপ করা রয়েছে। এই ভলিউম গ্রুপের একমাত্র "
+"প্রকৃত ভলিউম হওয়ার ফলে এই ডাটা অন্য কোনো স্থানে স্থানান্তর করা সম্ভব নয়। সমাধান হিসাবে প্রকৃত ভলিউম মুছে ফেলার পূর্বে একটি নতুন প্রকৃত ভলিউম যোগ করুন অথবা এই প্রকৃত ভলিউমের সাথে যুক্ত লজিক্যাল ভলিউমগুলি সরিয়ে ফেলুন।"
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "আপনি কি নিশ্চিতরূপে %s-কে, %s ভলিউম গ্রুপ থেকে সরিয়ে ফেলতে ইচ্ছুক?"
 
 #: src/InputController.py:153
@@ -336,37 +343,32 @@ msgstr ""
 "প্রচেষ্টা করুন। অন্যথা, প্রকৃত প্রসারণে (PE) ডাটা স্থানান্তর কর্ম করা সম্ভব নয়।"
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"dm-mirror মডিউলটি সম্ভবত আপনার সিস্টেমের কার্ণেলে  লোড করা নেই অথবা কার্ণেল dm-"
-"mirror টার্গেট সমর্থন করে না। সমর্থিত হলে \"modprobe dm-mirror\" চালানোর "
+"dm-mirror মডিউলটি সম্ভবত আপনার সিস্টেমের কার্নেলে  লোড করা নেই অথবা কার্নেলের দ্বারা dm-mirror টার্গেট সমর্থন করা হয় না। সমর্থিত হলে \"modprobe dm-mirror\" চালানোর "
 "প্রচেষ্টা করুন। অন্যথা, প্রকৃত প্রসারণে (PE) ডাটা স্থানান্তর কর্ম করা সম্ভব নয়।"
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "আপনি কি নিশ্চিতরূপে লজিক্যাল ভলিউম %s মুছে ফেলতে ইচ্ছুক?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr ""
-"গুরুত্বপূর্ণ সতর্কবাণী: %s লজিক্যাল ভলিউমের উপর %s ফাইল-সিস্টেম উপস্থিত রয়েছে। এটি "
-"বর্তমানে %s-র উপরে মাউন্ট করা হয়েছে। আপনি কি নিশ্চিতরূপে মাউন্ট করা এই ফাইল-"
-"সিস্টেমে উপস্থিত সমস্ত ডাটা মুছে ফেলতে ইচ্ছুক?"
+msgstr "%s লজিক্যাল ভলিউমের উপর %s ফাইল-সিস্টেম স্থাপিত রয়েছে। এবং এটির মধ্যে তথ্য উপস্থিত রয়েছে। আপনি কি নিশ্চিতরূপে %s লজিকাল ভলিউমটি মুছে ফেলতে ইচ্ছুক?"
 
 #: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "%s লজিকাল ভলিউমের মধ্যে %s ডিরেক্টির তথ্য উপস্থিত রয়েছে। এই সমস্ত তথ্য মুছে ফেলা হবে! আপনি কি নিশ্চিতরূপে %s লজিকাল ভলিউমটি মুছে ফেলতে ইচ্ছুক?"
 
 #: src/InputController.py:356
 #, python-format
@@ -374,7 +376,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "%s প্রকৃত ভলিউমের মধ্যে লজিকাল ভলিউম %s'র মিরর লগের মালিকানাধীন extent উপস্থিত রয়েছে। মিরর করা লজিকাল ভলিউম মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
 #: src/InputController.py:359
 #, python-format
@@ -382,28 +384,28 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "%s প্রকৃত ভলিউমের মধ্যে লজিকাল ভলিউম %s'র মিরর ইমেজের মালিকানাধীন extent উপস্থিত রয়েছে। মিরর করা লজিকাল ভলিউম মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
 #: src/InputController.py:362
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "%s প্রকৃত ভলিউমের মধ্যে %s অর্থাত্‍‌ %s'র স্ন্যাপশটের মালিকানাধীন extent উপস্থিত রয়েছে। স্ন্যাপশট মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
 #: src/InputController.py:367
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "%s প্রকৃত ভলিউমের মধ্যে %s অর্থাত্‍‌ %s স্ন্যাপশটের মূল বস্তুর মালিকানাধীন extent উপস্থিত রয়েছে। স্ন্যাপশটের মূল বস্তু মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
 #: src/InputController.py:369
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "%s প্রকৃত ভলিউমের মধ্যে %s অর্থাত্‍‌ %s স্ন্যাপশটের মূল বস্তুর মালিকানাধীন extent উপস্থিত রয়েছে। স্ন্যাপশটের মূল বস্তু মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
 #: src/InputController.py:556
 #, python-format
@@ -414,8 +416,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -434,16 +435,16 @@ msgstr ""
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "আপনার চিহ্নিত পাথ উপস্থিত নেই।"
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "চিহ্নিত পাথ ব্লক ডিভাইস নয়।"
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s আরম্ভ করতে ব্যর্থ"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
@@ -456,13 +457,12 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s প্রসারণ"
+msgstr "Extent মাইগ্রেট করুন"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "অপশন"
 
 #: src/InputController.py:1341
 #, python-format
@@ -470,19 +470,17 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "একটি নতুন লজিক্যাল ভলিউম নির্মাণ করো"
+msgstr "নতুন লজিক্যাল ভলিউম নির্মাণ"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%s সম্পাদনা, %s'র স্ন্যাপশট"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "লজিক্যাল ভলিউম"
+msgstr "লজিক্যাল ভলিউম সম্পাদনা"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -505,8 +503,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1531
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1536
@@ -584,188 +581,133 @@ msgstr ""
 #. ##an lvm command line command phrase.
 #: src/CommandHandler.py:14
 #, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgextend কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgextend কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:15
 #, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:16
 #, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:17
 #, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:18
 #, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:19
 #, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:20
 #, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:21
 #, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
-"vgchange কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
+msgstr "vgchange কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:22
 #, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgreduce কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "vgreduce কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:23
 #, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvmove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "pvmove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:24
 #, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"umount কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "umount command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "umount কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:25
 #, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
-"mount কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgid "mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
+msgstr "mount কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+#, python-format
+msgid "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvresize কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+#, python-format
+msgid "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvrename কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgchange কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+#, python-format
+msgid "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "lvchange কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
-msgstr ""
-"lvremove কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgstr "lvconvert কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"নতুন লজিক্যাল\n"
-"ছলিউম নির্মাণ করো"
+msgstr "লজিকাল ভলিউম নির্মাণ"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "লজিক্যাল ভলিউম"
+msgstr "লজিক্যাল ভলিউমের মাপ পরিবর্তন"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "লজিক্যাল ভলিউম"
+msgstr "লজিক্যাল ভলিউমে মিরর যোগের প্রণালী"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"লজিক্যাল \n"
-"ভলিউম সরিয়ে ফেল"
+msgstr "লজিকাল ভলিউম থেকে মিরর অপসারণের প্রণালী"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "প্রকৃত ভলিউম"
+msgstr "প্রকৃত ভলিউম সক্রিয়করণের প্রণালী"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "ভলিউম গ্রুপ (VG)-এ প্রকৃত ভলিউম যোগ করুন"
+msgstr "ভলিউম গ্রুপে প্রকৃত ভলিউম যোগ করার প্রণালী"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"নতুন ভলিউম \n"
-"গ্রুপ নির্মাণ করো"
+msgstr "ভলিউম গ্রুপ নির্মাণ প্রণালী"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "নতুন ভলিউম গ্রুপ"
+msgstr "ভলিউম গ্রুপ অপসারণের প্রণালী"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "প্রকৃত ভলিউম"
+msgstr "প্রকৃত ভলিউম অপসারণের প্রণালী"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"লজিক্যাল \n"
-"ভলিউম সরিয়ে ফেল"
+msgstr "লজিকাল ভলিউম অপসারণের প্রণালী"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"লজিক্যাল \n"
-"ভলিউম সরিয়ে ফেল"
+msgstr "লজিকাল ভলিউমের নাম পরিবর্তনের প্রণালী"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"ভলিউম গ্রুপ থেকে\n"
-"ভলিউম মুছে ফেল"
+msgstr "ভলিউম গ্রুপ থেকে প্রকৃত ভলিউম অপসারণের প্রণালী"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
@@ -880,9 +822,8 @@ msgid "Mount Point:   "
 msgstr "মাউন্ট-পয়েন্ট:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "মাউন্ট-পয়েন্ট:   "
+msgstr "পুনরায় বুট করার পরে ধার্য করা মাউন্ট-পয়েন্ট:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -937,43 +878,36 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "ভলিউম গ্রুপ"
+msgstr "ভলিউম গ্রুপ কোয়েরি করার প্রণালী"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "লজিক্যাল ভলিউম"
+msgstr "লজিকাল ভলিউম কোয়েরি করার প্রণালী"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "প্রকৃত ভলিউম"
+msgstr "প্রকৃত ভলিউম কোয়েরি করার প্রণালী"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "পার্টিশনের ধরন:   "
+msgstr "ব্যবহারকারীর দ্বারা করা পার্টিশান"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "ফরম্যাট:   "
+msgstr "উল্লেখ্য:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "সত্ত্বা আরম্ভ করো"
+msgstr "ব্যবহারকারীর দ্বারা আরম্ভ করা"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "স্ট্রাইপ-র সংখ্যা:   "
+msgstr "মিরর ইমেজের সংখ্যা:   "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
@@ -989,9 +923,8 @@ msgstr ""
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "ফাইল-সিস্টেম বিনা"
+msgstr "/   Root ফাইল-সিস্টেম"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
@@ -1020,12 +953,9 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"আপনি কি নিশ্চিতরূপে ডিস্ক সত্ত্বা %s-কে সক্রিয় করতে ইচ্ছুক? এই ডিভাইস/পার্টিশনের সমস্ত "
-"ডাটা মুছে যাবে।"
+#, python-format
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "আপনি কি নিশ্চিতরূপে %s ফাঁকা স্থান, %s ডিস্কের উপর সক্রিয় করতে ইচ্ছুক?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1068,9 +998,9 @@ msgid "Unpartitioned space"
 msgstr ""
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "%s-এ উপস্থিত অব্যবহৃত স্থান"
+msgstr "%s-এ উপস্থিত পার্টিশান না করা স্থান"
 
 #: src/lvmui_constants.py:88
 msgid "G"
@@ -1220,9 +1150,8 @@ msgid "Snapshot"
 msgstr ""
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "প্রসারণ"
+msgstr "extent অনুযায়ী প্রদর্শন"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1267,41 +1196,36 @@ msgid "Upgrading %s filesystem to %s"
 msgstr ""
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"vgcreate কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgstr "ফাইল-সিস্টেম নির্মাণে ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"mkfs কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgstr "ফাইল-সিস্টেমের মাপ পরিবর্তন ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"mkfs কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgstr "ফাইল-সিস্টেম পরীক্ষণ ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"vgreduce কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgstr "ফাইল-সিস্টেম আপগ্রেড করতে ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "ফাইল-সিস্টেম বিনা"
+msgstr "অজ্ঞাত ফাইল-সিস্টেম"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1320,7 +1244,6 @@ msgid "GFS (clustered)"
 msgstr ""
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
 msgstr "স্ট্রাইপ করা"
 
@@ -1333,22 +1256,19 @@ msgid "Mirror "
 msgstr ""
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+#, python-format
+msgid "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "dmsetup কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
+msgstr "ls কমান্ড ব্যর্থ। কমান্ড প্রচেষ্টা করেছিল: \"%s\" - সিস্টেমে ত্রুটির বার্তা: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "পার্টিশনের ধরন:   "
+msgstr "পার্টিশান  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1427,9 +1347,8 @@ msgstr ""
 "গ্রুপ নির্মাণ করো"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "বৈশিষ্ট্যাবলী"
+msgstr "বৈশিষ্ট্যাবলী সম্পাদনা"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1448,19 +1367,16 @@ msgid "Extend Volume Group"
 msgstr "ভলিউম গ্রুপ প্রসারিত করো"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "ফরম্যাট:   "
+msgstr "ফরম্যাট"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "নিষ্ক্রিয়"
+msgstr "সক্রিয়করণ"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "সত্ত্বা আরম্ভ করো"
+msgstr "ব্লক ডিভাইস সক্রিয়করণ"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1591,9 +1507,8 @@ msgid ""
 msgstr ""
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "ফাইল-সিস্টেম: "
+msgstr "<b>ফাইল-সিস্টেম</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
@@ -1612,21 +1527,16 @@ msgid "Filesystem is not resizable"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"নতুন ভলিউম \n"
-"গ্রুপ নির্মাণ করো"
+msgstr "ভলিউম গ্রুপ লেবেল উপলব্ধ শূণ্যস্থান"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "অবশিষ্ট স্থান ব্যবহার করো"
+msgstr "অবশিষ্ট স্থানের জন্য লেবেল"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "কিলোবাইট"
+msgstr "কিলোবাইটের ক্ষুদ্রাংশ"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
@@ -1657,32 +1567,28 @@ msgid "Mount"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "মাউন্ট-পয়েন্ট:   "
+msgstr "মাউন্ট-পয়েন্ট: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "মাপ"
+msgstr "মাপের আরম্ভ"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "মাপ"
+msgstr "মাপের সমাপ্তি"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "স্ট্রাইপ করা"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "অবশিষ্ট স্থান ব্যবহার করো"
+msgstr "অবশিষ্ট স্থান ব্যবহার করা হবে"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
@@ -1719,27 +1625,20 @@ msgid "Inherit"
 msgstr ""
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"ভলিউম গ্রুপ থেকে\n"
-"ভলিউম মুছে ফেল"
+msgstr "ভলিউম গ্রুপের উত্তরাধিকার সংক্রান্ত নীতি"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "প্রসারণ"
+msgstr "Extents মাইগ্রেট করার প্রণালী"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
 msgstr ""
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"নির্বাচিত প্রসারণ, ভলিউম\n"
-"থেকে স্থানান্তর করুন"
+msgstr "চিহ্নিত স্থানে extent মাইগ্রেট করুন "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1757,81 +1656,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "মাপ নামক ক্ষেত্রে উল্লেখ করা মান সম্পর্কে সমস্যা রয়েছে। অক্ষর অথবা অন্য কোনো "
-#~ "ধরনের সংকেত চিহ্ন এই মান উল্লেখ করার সময় ব্যবাহর করা যাবে না। শুধুমাত্র সংখ্যায় "
-#~ "লেখা মান প্রযোজ্য।"
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "নতুন লজিক্যাল ভলিউমের জন্য অনুরোধ করা স্থান ভলিউম গ্রুপ %s-এ অবশিষ্ট নেই। এখানে "
-#~ "উপলব্ধ ফাঁকা স্থানের মাপ: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "স্ট্রাইপ (Stripe) মাপের ক্ষেত্র"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "স্ট্রাইপ সংখ্যা উল্লেখকারী ক্ষেত্র"
-
-#~ msgid "40 megabytes"
-#~ msgstr "৪০ মেগাবাইট"
-
-#~ msgid "Create New LV"
-#~ msgstr "নতুন লজিক্যাল ভলিউম (LV) নির্মাণ করো"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "লজিক্যাল ভলিউম \n"
-#~ "প্রসারিত করো"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "মাউন্ট-পয়েন্ট (ফাঁকা হলে LV মাউন্ট করা হবে না):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "নতুন লজিক্যাল ভলিউম (LV)-র নাম:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "স্ট্রাইপ-র সংখ্যা: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "ভলিউম গ্রুপে যোগ করার জন্য ডিস্কের একটি সত্ত্বা নির্বাচন করুন:"
-
-#~ msgid "Size:"
-#~ msgstr "মাপ:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "স্ট্রাইপ (Stripe)-র মাপ:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "VG1-এ অবশিষ্ট অব্যবহৃত স্থান:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "ফাইল-সিস্টেম বিনা"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "LVM-র সাথকে ব্যবহারের জন্য\n"
-#~ " এই প্রসারণ সক্রিয় করা হয়নি।"
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "এই ভলিউমটি কোনো ভলিউম গ্রুপে \n"
-#~ " এখন অবধি বরাদ্দ করা হয়নি।"
