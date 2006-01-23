@@ -37,9 +37,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Veldu sýndardiskhóp til að bæta þessum disk í:"
+msgstr "Veldu sýndardiskhóp til að bæta %s í:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -70,7 +70,7 @@ msgid "Uninitialized Disk Entity"
 msgstr "Óuppsettur diskur"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Veldu disk til að bæta í sýndardiskhópinn %s:"
 
@@ -134,11 +134,12 @@ msgid ""
 msgstr "Hámarksfjölda raundiska í þessum sýndardiskhóp er náð."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "Hámarksfjölda raundiska í þessum sýndardiskhóp er náð."
+msgstr ""
+"Það mega mest vera %s raundiskar í þessum sýndardiskhóp."
 
 #: src/InputController.py:114
 #, fuzzy, python-format
@@ -218,11 +219,8 @@ msgid "%s extents"
 msgstr "%s diskhlutar"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Búa til nýjann \n"
-"sýndardiskahóp"
+msgstr "Laust pláss í þessum sýndardiskhóp:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
@@ -250,7 +248,6 @@ msgid "The %s should only contain number values"
 msgstr "Gildið %s ætti einungis að innihalda tölustafi"
 
 #: src/InputController.py:146
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -259,7 +256,6 @@ msgstr ""
 "milli 1 og 256"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -1050,14 +1046,14 @@ msgstr "Laust"
 
 #: src/lvmui_constants.py:83
 msgid "Free space"
-msgstr ""
+msgstr "Laust pláss"
 
 #: src/lvmui_constants.py:85
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "Diskpláss utan disksneiða"
 
 #: src/lvmui_constants.py:86
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
 msgstr "Ónotað rými á %s"
 
@@ -1198,20 +1194,19 @@ msgstr ""
 
 #: src/renderer.py:385
 msgid "Snapshot of "
-msgstr ""
+msgstr "Skyndimynd af "
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "Upphaf"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "Skyndimynd"
 
 #: src/renderer.py:537
-#, fuzzy
 msgid "extent view"
-msgstr "hlutar"
+msgstr "hlutasýn"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1228,88 +1223,89 @@ msgstr "Ófrumstiltir hlutir"
 #: src/Volume_Tab_View.py:584
 #, python-format
 msgid "%s mirror synchronisation "
-msgstr ""
+msgstr "Samstilling %s speglanna"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "Vinsamlega bíðið meðan disksneiðin er búin til"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Bý til %s skráarkerfið"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Breyti stærð %s skráarkerfisins"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "Yfirferð %s skráarkerfið"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Uppfæri skráarkerfið %s í %s"
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+"Gerð skráarkerfis brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+msgstr ""
+"Stærðarbreyting brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+msgstr ""
+"Yfirferð skráarkerfisins brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: "
+"%s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgreduce skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+"Uppfærsla skráarkerfis brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Ekkert skráarkerfi"
+msgstr "Óþekkt skráarkerfi"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (staðbundið)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (klasað)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (staðbundið)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (klasað)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe "
-msgstr "Strípað"
+msgstr "Strípað "
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1317,23 +1313,24 @@ msgstr "Línuleg möppun"
 
 #: src/Segment.py:109
 msgid "Mirror "
-msgstr ""
+msgstr "Spegill "
 
 #: src/Multipath.py:11
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+msgstr ""
+"dmsetup skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/Multipath.py:12
-#, fuzzy, python-format
+#, python-format
 msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+msgstr "ls skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition  %s"
-msgstr "Disksneiðagerð:   "
+msgstr "Disksneið  %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1401,7 +1398,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Búa til skyndimynd"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1412,13 +1409,12 @@ msgstr ""
 "sýndardiskahóp"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
 msgstr "Eiginleikar"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Sláðu inn slóð að blokkartæki til að frumstilla"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1433,19 +1429,16 @@ msgid "Extend Volume Group"
 msgstr "Stækka sýndardiskhóp"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "Forsnið:   "
+msgstr "Forsníða"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Ófrumstillt"
+msgstr "Frumstilla"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Frumstilla hlutinn"
+msgstr "Frumstilla blokkartæki"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1453,7 +1446,7 @@ msgstr "Frumstilla hlutinn"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Frumstilla _blokkartæki"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1477,7 +1470,7 @@ msgstr "Hámarksfjöldi raundiska: "
 
 #: src/lvui.glade.h:35
 msgid "Meg"
-msgstr "Mega"
+msgstr "Meg"
 
 #: src/lvui.glade.h:36
 msgid ""
@@ -1549,19 +1542,19 @@ msgstr "Veldu sýndardiskhóp til að bæta þessum disk í:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Einhver texti"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "_Hressa"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_Tól"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "stækka sg skilaboð:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1574,56 +1567,58 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Skráarkerfi: "
+msgstr "<b>Skráarkerfi</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>Eiginleikar SD</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Stærð</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Bæta við færslu í /etc/fstab"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "Það er ekki hægt að breyta stærð skráarkerfisins"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
 msgstr ""
-"Búa til nýjann \n"
-"sýndardiskahóp"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "Nota all pláss sem er eftir"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Kílóbæti"
+msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
-msgstr ""
+msgstr "Heiti SD: "
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "Stærð SD:"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "Það er ekki hægt að breyta stærð skyndimynda sýndardiska"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1631,191 +1626,104 @@ msgstr "Línulegt"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Speglað"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "Það er ekki hægt að breyta stærð speglaðra sýndardiska"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Tengja"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point: "
-msgstr "Tengipunktur:   "
+msgstr "Tengipunktur: "
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Tengja við ræsingu"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Stærð"
+msgstr "Stærð byrjun"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Stærð"
+msgstr "Stærð endir"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Strípað"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Nota all pláss sem er eftir"
+msgstr "Nota allt pláss sem er eftir"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes of"
-msgstr ""
+msgstr "strípur af"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Áfangastaður</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Flutningseiginleikar</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "Hvert sem er - ekki útfært"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "Velja sjálfkrafa hvert skal færa"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Samhangandi"
 
 #: src/migrate_extents.glade.h:6
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"Til þess að fjarlægja RD þarf að færa diskhlutana sem eru í \n"
+"notkun annað. Veldu diskhluta, áfangastað og eiginleika."
 
 #: src/migrate_extents.glade.h:8
 msgid "Inherit"
-msgstr ""
+msgstr "Erfa"
 
 #: src/migrate_extents.glade.h:9
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"Fjarlægja drif úr\n"
-"sýndardiskhóp"
+msgstr "Erfa fluttningseiginleika frá sýndardiskhópnum"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "hlutar"
+msgstr "Færa diskhluta"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
+msgstr "Færa hvert sem er þó það hafi slæm áhrif á afköst"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate extents to "
-msgstr ""
-"Færa valda diskhluta\n"
-"úr drifi"
+msgstr "Færa diskhluta í "
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "Nýjir diskhlutar eru við hlið þeirra sem þegar eru til"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Venjulegt"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV "
-msgstr ""
+msgstr "Færa einungis diskbúta sem tilheyra LV"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
-
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "Það kom upp villa í stærðarreitnum. Gildið þar ætti að vera tala sem "
-#~ "inniheldur enga bókstafi eða önnur tákn."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "Umbeðin stærð nýja sýndardisksins er stærri en plássið sem er laust í "
-#~ "sýndardiskhópnum %s. Plássið sem er tiltækt er: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "Stærð strípa"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "Fjöldi strípa"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 megabæti"
-
-#~ msgid "Create New LV"
-#~ msgstr "Búa til nýjann sýndardisk"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "Stækka \n"
-#~ "sýndardisk"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "Tengipunktur (ef autt verður diskurinn ótengdur):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "Heiti nýja sýndardisksins:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "Fjöldi strípa: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "Veldu disk til að bæta í sýndardiskhópinn:"
-
-#~ msgid "Size:"
-#~ msgstr "Stærð:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "Strípustærð:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "Ónotað pláss á VG1:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "Ekkert skráarkerfi"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "Þessi hluti hefur ekki verið \n"
-#~ "frumstilltur til notkunar í LVM."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "Þessum disk hefur ekki verið bætt \n"
-#~ "í sýndardiskhóp ennþá."
+msgstr "Nota almenna skynsemi"
