@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-04-16 16:54+0000\n"
+"PO-Revision-Date: 2006-01-24 16:54+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -142,18 +142,18 @@ msgstr ""
 "Það mega mest vera %s raundiskar í þessum sýndardiskhóp."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Sýndardiskhópurinn %s hefur ekki nægilegt pláss til að flytja gögnin sem eru "
-"á %s. Möguleg lausn er að bæta við raundisk í diskhópinn."
+"Sýndardiskhópurinn %s hefur ekki nægilegt pláss fyrir nýja sýndardiska. "
+"Möguleg lausn er að bæta við raundisk í diskhópinn."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "Skyndimynd af skyndimynd er ekki stutt."
 
 #: src/InputController.py:118
 #, python-format
@@ -161,6 +161,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"Sýndardiskurinn %s hefur skyndimynd %s tengdann við sig. Vinsamlega "
+"fjarlægðu skyndimyndina first."
 
 #: src/InputController.py:119
 #, python-format
@@ -168,6 +170,8 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"Sýndardiskurinn %s hefur skyndimyndir: %s tengdar við sig. Vinsamlega "
+"fjarlægðu skyndimyndina first."
 
 #: src/InputController.py:121
 msgid ""
@@ -190,6 +194,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"Sýndardiskurinn %s er þegar tengdur á %s. Til þess að klára beiðnina þarf "
+"að aftengja hann fyrst. Ertu viss um að þú viljir aftengja hann?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -224,7 +230,7 @@ msgstr "Laust pláss í þessum sýndardiskhóp:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Laust pláss fyrir þennan disk:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -271,7 +277,7 @@ msgid ""
 msgstr "Ertu viss um að þú viljir fjarlægja %s úr sýndardiskstjóranum?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -324,30 +330,28 @@ msgstr ""
 "ekki tiltækar."
 
 #: src/InputController.py:156
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"Eininguna dm-mirror er hvergi að finna í kjarnanum þínum eða kjarninn styður "
-"ekki dm-mirror vinnslu. Ef þetta er stutt skaltu reyna að keyra skipunina "
-"\"modprobe dm-mirror\". Annars eru aðgerðir sem flytja gögn á raundiskum "
-"ekki tiltækar."
+"Eininguna dm-snapshot er hvergi að finna í kjarnanum þínum eða kjarninn styður "
+"ekki dm-snapshot vinnslu. Ef þetta er stutt skaltu reyna að keyra skipunina "
+"\"modprobe dm-snapshot\". Annars eru skyndimyndir ekki studdar "
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Ertu viss um að þú viljir fjarlægja sýndardiskinn %s?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"AÐVÖRUN: Sýndardiskurinn %s inniheldur %s skráarkerfi sem er tengt á %s. "
-"Ertu viss um að þú viljir helda gögnunum sem eru á þessu skráarkerfi?"
+"Sýndardiskurinn %s inniheldur %s skráarkerfi. Öll gögn munu tapast! Ertu "
+"viss um að þú viljir fjarlægja sýndardiskinn %s?"
 
 #: src/InputController.py:160
 #, python-format
@@ -444,45 +448,42 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s diskhlutar"
+msgstr "Færa diskhluta"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "Eiginleikar"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "Búa til skyndimynd af %s"
 
 #: src/InputController.py:1343 src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "Búa til nýjann sýndardisk"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "Sýsla með %s sem er skyndimynd af %s"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "sýndardiska"
+msgstr "Sýsla með sýndardisk"
 
 #: src/InputController.py:1501
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "Sýndardiskstjórinn styður ekki speglun"
 
 #: src/InputController.py:1508
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "Strípaða sýndardiska er ekki hægt að spegla."
 
 #: src/InputController.py:1515
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "Sýndardiska með tengdar skyndimyndir er ekki enn hægt að spegla."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -518,36 +519,36 @@ msgstr ""
 
 #: src/InputController.py:1913
 msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "Heiti sem byrja á \"snapshot\" eða \"pvmove\" eru frátekin."
 
 #: src/InputController.py:1915
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "Heiti sem innihalda \"_mlog\" eða \"_mimage\" eru frátekin."
 
 #: src/InputController.py:1917
 msgid "Names begining with a \"-\" are invalid"
-msgstr ""
+msgstr "Heiti sem byrja á \"-\" eru ógild"
 
 #: src/InputController.py:1919
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "Heitið má hvorki vera \".\" eða \"..\""
 
 #: src/InputController.py:1925
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "Orðabil mega ekki vera í heitum sýndardiska"
 
 #: src/InputController.py:1928
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "Ógilt tákn \"%s\" í heiti sýndardisks"
 
 #: src/InputController.py:1948
 msgid "Please specify mount point"
-msgstr ""
+msgstr "Vinsamlega gefðu upp tengipunkt"
 
 #: src/InputController.py:2010
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "Viltu uppfæra ext2 í ext3 og varðveita gögn á sýndardisknum?"
 
 #: src/InputController.py:2044
 msgid ""
@@ -732,33 +733,24 @@ msgid "Removing Physical Volume"
 msgstr "raundiska"
 
 #: src/CommandHandler.py:261
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Fjarlægja \n"
-"sýndardisk"
+msgstr "Fjarlægji sýndardisk"
 
 #: src/CommandHandler.py:273
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Fjarlægja \n"
-"sýndardisk"
+msgstr "Fjarlægji sýndardisk"
 
 #: src/CommandHandler.py:295
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Fjarlægja drif úr\n"
-"sýndardiskhóp"
+msgstr "Fjarlægji drif úr sýndardiskhóp"
 
 #: src/CommandHandler.py:330
 msgid "Migrating Extents"
-msgstr ""
+msgstr "Flyt diskhluta"
 
 #: src/CommandHandler.py:342
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "Lýk við flutning diskhluta"
 
 #: src/lvm_model.py:46 src/lvmui_constants.py:81
 msgid "Unused"
@@ -865,9 +857,8 @@ msgid "Mount Point:   "
 msgstr "Tengipunktur:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Tengipunktur:   "
+msgstr "Tengipunktur við endurræsingu:   "
 
 #: src/lvm_model.py:86
 msgid "File System:   "
@@ -922,65 +913,57 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:128
-#, fuzzy
 msgid "Quering Volume Groups"
-msgstr "Sýndardiskhópar"
+msgstr "Skoða sýndardiskhópa"
 
 #: src/lvm_model.py:129
-#, fuzzy
 msgid "Quering Logical Volumes"
-msgstr "sýndardiska"
+msgstr "Skoða sýndardiska"
 
 #: src/lvm_model.py:130
-#, fuzzy
 msgid "Quering Physical Volumes"
-msgstr "raundiska"
+msgstr "Skoða raundiska"
 
 #: src/lvm_model.py:268
-#, fuzzy
 msgid "Partition manually"
-msgstr "Disksneiðagerð:   "
+msgstr "Sneiða handvirkt"
 
 #: src/lvm_model.py:304
 msgid "Multipath device"
-msgstr ""
+msgstr "Fjölslóðatæki"
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Note:   "
-msgstr "Forsnið:   "
+msgstr "Athugasemd:   "
 
 #: src/lvm_model.py:307
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Frumstilla hlutinn"
+msgstr "Frumstilla handvirkt"
 
 #: src/lvm_model.py:810
-#, fuzzy
 msgid "Number of mirror images:  "
-msgstr "Fjöldi strípa:   "
+msgstr "Fjöldi spegla:  "
 
 #: src/lvm_model.py:813
 msgid "Snapshots:  "
-msgstr ""
+msgstr "Skyndimyndir:  "
 
 #: src/lvm_model.py:819
 msgid "Snapshot origin:  "
-msgstr ""
+msgstr "Uppruni skyndimyndar:  "
 
 #: src/lvm_model.py:826
 msgid "Snapshot usage:  "
-msgstr ""
+msgstr "Notkun skyndimyndar:  "
 
 #: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
 #: src/lvm_model.py:915
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Ekkert skráarkerfi"
+msgstr "/   Rótarskráarkerfið"
 
 #: src/lvm_model.py:918 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Ekkert"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1005,12 +988,11 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
-"Ertu viss um að þú viljir frumstilla diskinn %s? Öll gögn á honum munu "
-"tapast."
+"Ertu viss um að þú viljir frumstilla diskinn %s af lausu pláss í drifi %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1022,7 +1004,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "Endurles LVM. Vinsamlegast bíðið."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1034,11 +1016,11 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Speglaannáll"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "Get ekki framkvæmt beiðnina"
 
 #: src/lvmui_constants.py:82
 msgid "Free"
