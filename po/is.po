@@ -653,84 +653,69 @@ msgid ""
 msgstr "mount skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
 
 #: src/CommandHandler.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"lvremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+"lvresize skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/CommandHandler.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"lvcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+"lvrename skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/CommandHandler.py:28
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"vgchange skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+"lvchange skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/CommandHandler.py:29
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
 "s"
 msgstr ""
-"lvremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
+"lvconvert skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/CommandHandler.py:77
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Búa til nýjann\n"
-"sýndardisk"
+msgstr "Bý til sýndardisk"
 
 #: src/CommandHandler.py:96 src/CommandHandler.py:113
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "sýndardiska"
+msgstr "Breyti stærð sýndardisks"
 
 #: src/CommandHandler.py:146
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "sýndardiska"
+msgstr "Bæti við spegil á sýndardisk"
 
 #: src/CommandHandler.py:157
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"Fjarlægja \n"
-"sýndardisk"
+msgstr "Fjarlægji spegil af sýndardisk"
 
 #: src/CommandHandler.py:180
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "raundiska"
+msgstr "Frumstilli raundisk"
 
 #: src/CommandHandler.py:191
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Bæta raundisk í sýndardiskhóp"
+msgstr "Bæti raundisk í sýndardiskhóp"
 
 #: src/CommandHandler.py:218
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Búa til nýjann \n"
-"sýndardiskahóp"
+msgstr "Bý til sýndardiskahóp"
 
 #: src/CommandHandler.py:240
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Nýr diskhópur"
+msgstr "Fjarlægi sýndardiskhóp"
 
 #: src/CommandHandler.py:250
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "raundiska"
+msgstr "Fjarlægi raundisk"
 
 #: src/CommandHandler.py:261
 msgid "Removing Logical Volume"
@@ -1580,15 +1565,15 @@ msgstr "Það er ekki hægt að breyta stærð skráarkerfisins"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
-msgstr ""
+msgstr "Laust pláss í sýndardiskhóp merking"
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
-msgstr ""
+msgstr "Laust pláss merking"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
-msgstr ""
+msgstr "Nákvæmni kílóbæta"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name: "
