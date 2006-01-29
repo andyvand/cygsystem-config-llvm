@@ -8,12 +8,12 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-12-02 08:17-0500\n"
-"PO-Revision-Date: 2006-01-09 15:51-0000\n"
-"Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
+"PO-Revision-Date: 2006-01-29 17:42-0500\n"
+"Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: src/InputController.py:36
 #: src/Properties_Renderer.py:24
@@ -744,7 +744,7 @@ msgstr "Поново учитавам LVM. Молим сачекајте."
 #: src/lvmui_constants.py:59
 #, python-format
 msgid "Changes will take effect after computer is restarted. If device %s is used, before restart, data corruption WILL occur. It is advisable to restart your computer now."
-msgstr "Промене ће прећи у дејство после поновног покретања. Ако je уређај %s у употреби, пре поновног покретања, подаци ЋЕ БИТИ искварени. Препоручљиво је да се рачунар поново покрене сада."
+msgstr "Промене ће прећи у дејство после поновног покретања. Ако је уређај %s у употреби, пре поновног покретања, подаци ЋЕ БИТИ искварени. Препоручљиво је да се рачунар поново покрене сада."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
