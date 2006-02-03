@@ -37,12 +37,6 @@
 		<widget class="GtkMenu" id="file1_menu">
 
 		  <child>
-		    <widget class="GtkSeparatorMenuItem" id="separator1">
-		      <property name="visible">True</property>
-		    </widget>
-		  </child>
-
-		  <child>
 		    <widget class="GtkImageMenuItem" id="quit1">
 		      <property name="visible">True</property>
 		      <property name="stock_item">GNOMEUIINFO_MENU_EXIT_ITEM</property>
@@ -70,7 +64,7 @@
 		      <property name="use_underline">True</property>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image75">
+			<widget class="GtkImage" id="image76">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-add</property>
 			  <property name="icon_size">1</property>
@@ -103,7 +97,7 @@
 		      <signal name="activate" handler="on_reload_lvm_activate" last_modification_time="Wed, 29 Jun 2005 17:50:56 GMT"/>
 
 		      <child internal-child="image">
-			<widget class="GtkImage" id="image76">
+			<widget class="GtkImage" id="image77">
 			  <property name="visible">True</property>
 			  <property name="stock">gtk-refresh</property>
 			  <property name="icon_size">1</property>
