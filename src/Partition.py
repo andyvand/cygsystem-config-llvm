@@ -103,9 +103,9 @@ PARTITION_IDs = { -1 : 'NONE',
                   ID_UNKNOWN : _("Unknown")}
 
 # fill out gaps in PARTITION_IDs
-#for i in range(256):
-#    if i not in PARTITION_IDs:
-#        PARTITION_IDs[i] = _("Unknown")
+for i in range(256):
+    if i not in PARTITION_IDs:
+        PARTITION_IDs[i] = _("Unknown")
 
 
 # all size values are in sectors
