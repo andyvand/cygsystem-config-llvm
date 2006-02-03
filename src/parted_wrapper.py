@@ -26,8 +26,8 @@ class Parted:
             # partition num
             part_num = int(words[0])
             # beg, end
-            beg = int(float(words[1]) * 1024 * 1024) / sectorSize
-            end = int(float(words[2]) * 1024 * 1024) / sectorSize - 1
+            beg = self.__to_bytes(words[1]) / sectorSize
+            end = self.__to_bytes(words[2]) / sectorSize - 1
             # bootable
             bootable = False
             for word in words:
@@ -70,3 +70,26 @@ class Parted:
         # add flags - if any
         if part.id == ID_LINUX_LVM:
             print execWithCapture(PARTED, [PARTED, devpath, 'set', str(part.num), 'lvm', 'on', '-s'])
+
+
+
+
+    def __to_bytes(self, word):
+        t = word.strip().lower()
+        multiplier = 1024 * 1024
+        if t.endswith('b'):
+            t = t.rstrip('b')
+            multiplier = 1
+            if t.endswith('k'):
+                t = t.rstrip('k')
+                multiplier = 1024
+            elif t.endswith('m'):
+                t = t.rstrip('m')
+                multiplier = 1024 * 1024
+            elif t.endswith('g'):
+                t = t.rstrip('g')
+                multiplier = 1024 * 1024 * 1024
+            elif t.endswith('t'):
+                t = t.rstrip('t')
+                multiplier = 1024 * 1024 * 1024 * 1024
+        return int(float(t) * multiplier)
