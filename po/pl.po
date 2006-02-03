@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 14:46-0500\n"
-"PO-Revision-Date: 2005-11-22 21:02+0200\n"
+"PO-Revision-Date: 2006-02-03 23:03+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -560,7 +560,6 @@ msgstr ""
 "rozmiar woluminu logicznego do co najwyżej %s lub dodaj woluminy fizyczne."
 
 #: src/InputController.py:1909
-#, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Nazwy zaczynające się od \"snapshot\" lub \"pvmove\" są zarezerwowanymi "
@@ -573,7 +572,6 @@ msgstr ""
 "kluczowymi."
 
 #: src/InputController.py:1913
-#, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Nazwy zaczynające się od \"-\" są nieprawidłowe"
 
@@ -818,9 +816,8 @@ msgid "PV UUID:   "
 msgstr "UUID woluminu fizycznego:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Niezainicjowane:   "
+msgstr "Nieinicjowalne:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -829,7 +826,7 @@ msgstr "Partycja rozszerzona"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Aktualnie używana partycja wymiany"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -848,33 +845,28 @@ msgid "Multipath device"
 msgstr "Urządzenie wielościeżkowe"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Uwaga:   "
+msgstr "Uwaga:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Zainicjuj ręcznie"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Liczba obrazów luster:  "
+msgstr "Liczba obrazów luster:"
 
 #: src/lvm_model.py:792
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Migawki:  "
+msgstr "Migawki:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Oryginał migawki:  "
+msgstr "Oryginał migawki:"
 
 #: src/lvm_model.py:805
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Użycie migawki:  "
+msgstr "Użycie migawki:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
@@ -954,10 +946,10 @@ msgid "Unable to process request"
 msgstr "Nie można przetworzyć żądania"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Polecenie ls nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu "
+"Polecenie %s nie powiodło się. Próbowano wykonać: \"%s\" - komunikat błędu "
 "systemu: %s"
 
 #: src/lvmui_constants.py:84
@@ -978,23 +970,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Miejsce niepodzielone na partycje na %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Bajty"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1127,9 +1116,9 @@ msgstr ""
 "wybrania obszarów."
 
 #: src/renderer.py:385
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Migawka "
+msgstr "Migawka %s"
 
 #: src/renderer.py:487
 msgid "Origin"
@@ -1156,9 +1145,9 @@ msgid "Uninitialized Entities"
 msgstr "Niezainicjowane jednostki"
 
 #: src/Volume_Tab_View.py:632
-#, fuzzy, python-format
+#, python-format
 msgid "%s mirror synchronisation"
-msgstr "synchronizacja lustra %s "
+msgstr "synchronizacja lustra %s"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
@@ -1242,23 +1231,21 @@ msgid "GFS (clustered)"
 msgstr "GFS (klastrowy)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Pasek "
+msgstr "Pasek"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Mapowanie liniowe"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Lustro "
+msgstr "Lustro"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partycja  %s"
+msgstr "Partycja %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1489,11 +1476,12 @@ msgid ""
 "* In this release, mirroring support is \n"
 "available as a Technology Preview"
 msgstr ""
+"* W tym wydaniu obsługa luster jest \n"
+"dostępna jako podgląd technologii"
 
 #: src/lv_edit_props.glade.h:4
-#, fuzzy
 msgid "* Mirrored"
-msgstr "Lustro"
+msgstr "* Lustrzany"
 
 #: src/lv_edit_props.glade.h:5
 msgid ""
@@ -1532,7 +1520,6 @@ msgid "Add entry to /etc/fstab"
 msgstr "Dodaj wpis do /etc/fstab"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
 msgstr "Utwórz nowy wolumin logiczny"
 
@@ -1553,9 +1540,8 @@ msgid "Kilobytes granularity"
 msgstr "Ziarnistość kilobajtów"
 
 #: src/lv_edit_props.glade.h:22
-#, fuzzy
 msgid "LV name:"
-msgstr "Nazwa woluminu logicznego: "
+msgstr "Nazwa woluminu logicznego:"
 
 #: src/lv_edit_props.glade.h:23
 msgid "LV size"
@@ -1578,9 +1564,8 @@ msgid "Mount"
 msgstr "Zamontuj"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Mount point:"
-msgstr "Punkt montowania: "
+msgstr "Punkt montowania:"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Mount when rebooted"
@@ -1603,9 +1588,8 @@ msgid "Use remaining"
 msgstr "Użyj pozostałych"
 
 #: src/lv_edit_props.glade.h:34
-#, fuzzy
 msgid "stripes"
-msgstr "pasków"
+msgstr "paski"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1628,9 +1612,8 @@ msgid "Contiguous"
 msgstr "Sąsiadujący"
 
 #: src/migrate_extents.glade.h:6
-#, fuzzy
 msgid "Destination:"
-msgstr "<b>Cel</b>"
+msgstr "Cel:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1653,9 +1636,8 @@ msgid "Migrate Extents"
 msgstr "Migruj obszary"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate anywhere even if that reduces performance"
-msgstr "Migruj wszędzie, jeśli to zmniejszy wydajność"
+msgstr "Migruj wszędzie, nawet jeśli to zmniejszy wydajność"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1666,153 +1648,9 @@ msgid "Normal"
 msgstr "Normalny"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr "Migruj tylko obszary należące do woluminu logicznego "
+msgstr "Migruj tylko obszary należące do woluminu logicznego"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Użyj we wspólnym znaczeniu"
-
-#~ msgid ""
-#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie vgextend nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie pvcreate nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie pvcreate nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie pvremove nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie lvremove nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie vgremove nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie vgcreate nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
-#~ "%s"
-#~ msgstr ""
-#~ "Polecenie vgcreate nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie vgreduce nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "Polecenie pvmove nie powiodło się. Próbowano wykonać: \"%s\" - komunikat "
-#~ "błędu systemu: %s"
-
-#~ msgid ""
-#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "Polecenie umount nie powiodło się. Próbowano wykonać: \"%s\" - komunikat "
-#~ "błędu systemu: %s"
-
-#~ msgid ""
-#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
-#~ "\""
-#~ msgstr ""
-#~ "Polecenie mount nie powiodło się. Próbowano wykonać: \"%s\" - komunikat "
-#~ "błędu systemu: %s"
-
-#~ msgid ""
-#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie lvresize nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie lvrename nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie lvchange nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid ""
-#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Polecenie lvconvert nie powiodło się. Próbowano wykonać: \"%s\" - "
-#~ "komunikat błędu systemu: %s"
-
-#~ msgid "Swap in use"
-#~ msgstr "Użyta przestrzeń wymiany"
-
-#~ msgid "Quering Volume Groups"
-#~ msgstr "Zapytywanie grup woluminów"
-
-#~ msgid "Quering Logical Volumes"
-#~ msgstr "Zapytywanie woluminów logicznych"
-
-#~ msgid "Quering Physical Volumes"
-#~ msgstr "Zapytywanie woluminów fizycznych"
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
-
-#~ msgid ""
-#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
-#~ "%s"
-#~ msgstr ""
-#~ "Polecenie dmsetup nie powiodło się. Próbowano wykonać: \"%s\" - komunikat "
-#~ "błędu systemu: %s"
-
-#~ msgid "Migrate extents to "
-#~ msgstr "Migruj obszary do "
