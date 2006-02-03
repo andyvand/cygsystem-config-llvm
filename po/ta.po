@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-15 15:50-0400\n"
+"POT-Creation-Date: 2006-02-03 14:46-0500\n"
 "PO-Revision-Date: 2005-03-22 14:39+0530\n"
 "Last-Translator: Jayaradha <njaya@redhat.com>\n"
 "Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
@@ -468,7 +468,7 @@ msgstr ""
 msgid "Create A Snapshot of %s"
 msgstr ""
 
-#: src/InputController.py:1343 src/lv_edit_props.glade.h:14
+#: src/InputController.py:1343
 #, fuzzy
 msgid "Create New Logical Volume"
 msgstr "புதிய லாஜிக்கல் வால்யூமை உருவாக்கவும்."
@@ -483,464 +483,335 @@ msgstr ""
 msgid "Edit Logical Volume"
 msgstr "லாஜிக்கல் வால்யூம்"
 
-#: src/InputController.py:1501
+#: src/InputController.py:1497
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr ""
 
-#: src/InputController.py:1508
+#: src/InputController.py:1504
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr ""
 
-#: src/InputController.py:1515
+#: src/InputController.py:1511
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1522
+#: src/InputController.py:1518
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
 
-#: src/InputController.py:1531
+#: src/InputController.py:1527
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
-#: src/InputController.py:1536
+#: src/InputController.py:1532
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
 
-#: src/InputController.py:1544
+#: src/InputController.py:1540
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
 
-#: src/InputController.py:1549
+#: src/InputController.py:1545
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
 
-#: src/InputController.py:1913
-msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
+#: src/InputController.py:1909
+msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 
-#: src/InputController.py:1915
+#: src/InputController.py:1911
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr ""
 
-#: src/InputController.py:1917
-msgid "Names begining with a \"-\" are invalid"
+#: src/InputController.py:1913
+msgid "Names beginning with a \"-\" are invalid"
 msgstr ""
 
-#: src/InputController.py:1919
+#: src/InputController.py:1915
 msgid "Name can be neither \".\" nor \"..\""
 msgstr ""
 
-#: src/InputController.py:1925
+#: src/InputController.py:1921
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr ""
 
-#: src/InputController.py:1928
+#: src/InputController.py:1924
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr ""
 
-#: src/InputController.py:1948
+#: src/InputController.py:1944
 msgid "Please specify mount point"
 msgstr ""
 
-#: src/InputController.py:2010
+#: src/InputController.py:2006
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 
-#: src/InputController.py:2044
+#: src/InputController.py:2040
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2145
+#: src/InputController.py:2141
 msgid "Mirror not created. Completing remaining tasks."
 msgstr ""
 
-#: src/InputController.py:2194
+#: src/InputController.py:2190
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr ""
 
-#: src/InputController.py:2194
+#: src/InputController.py:2190
 msgid "Do you want to migrate specified extents?"
 msgstr ""
 
-#. ##TRANSLATOR: The first word in each string below is
-#. ##an lvm command line command phrase.
-#: src/CommandHandler.py:14
-#, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgextend கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\" - கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:15
-#, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:16
-#, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:17
-#, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:18
-#, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:19
-#, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:20
-#, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:21
-#, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
-"vgchange கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:22
-#, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:23
-#, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: "
-"%s"
-
-#: src/CommandHandler.py:24
-#, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: "
-"%s"
-
-#: src/CommandHandler.py:25
-#, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
-"umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: "
-"%s"
-
-#: src/CommandHandler.py:26
-#, fuzzy, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:27
-#, fuzzy, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:28
-#, fuzzy, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgchange கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:29
-#, fuzzy, python-format
-msgid ""
-"lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
-"s"
-msgstr ""
-"lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-"செய்தி: %s"
-
-#: src/CommandHandler.py:77
+#: src/CommandHandler.py:55
 #, fuzzy
 msgid "Creating Logical Volume"
 msgstr ""
 "புதிய லாஜிகல் வால்யூமை\n"
 "உருவாக்குகிறது"
 
-#: src/CommandHandler.py:96 src/CommandHandler.py:113
+#: src/CommandHandler.py:74 src/CommandHandler.py:91
 #, fuzzy
 msgid "Resizing Logical Volume"
 msgstr "லாஜிக்கல் வால்யூம்"
 
-#: src/CommandHandler.py:146
+#: src/CommandHandler.py:124
 #, fuzzy
 msgid "Adding Mirror to Logical Volume"
 msgstr "லாஜிக்கல் வால்யூம்"
 
-#: src/CommandHandler.py:157
+#: src/CommandHandler.py:135
 #, fuzzy
 msgid "Removing Mirror from Logical Volume"
 msgstr ""
 "லாஜிக்கல் வால்யூமை\n"
 "நீக்கு"
 
-#: src/CommandHandler.py:180
+#: src/CommandHandler.py:158
 #, fuzzy
 msgid "Initializing Physical Volume"
 msgstr "பிசிக்கல் வால்யூம்"
 
-#: src/CommandHandler.py:191
+#: src/CommandHandler.py:169
 #, fuzzy
 msgid "Adding Physical Volume to Volume Group"
 msgstr "VG யில் பிசிக்கல் வால்யூமை சேர்"
 
-#: src/CommandHandler.py:218
+#: src/CommandHandler.py:196
 #, fuzzy
 msgid "Creating Volume Group"
 msgstr ""
 "புதிய வால்யூம் குழுவை\n"
 "உருவாக்கு."
 
-#: src/CommandHandler.py:240
+#: src/CommandHandler.py:218
 #, fuzzy
 msgid "Removing Volume Group"
 msgstr "புதிய வால்யூம் குழு"
 
-#: src/CommandHandler.py:250
+#: src/CommandHandler.py:228
 #, fuzzy
 msgid "Removing Physical Volume"
 msgstr "பிசிக்கல் வால்யூம்"
 
-#: src/CommandHandler.py:261
+#: src/CommandHandler.py:239
 #, fuzzy
 msgid "Removing Logical Volume"
 msgstr ""
 "லாஜிக்கல் வால்யூமை\n"
 "நீக்கு"
 
-#: src/CommandHandler.py:273
+#: src/CommandHandler.py:251
 #, fuzzy
 msgid "Renaming Logical Volume"
 msgstr ""
 "லாஜிக்கல் வால்யூமை\n"
 "நீக்கு"
 
-#: src/CommandHandler.py:295
+#: src/CommandHandler.py:273
 #, fuzzy
 msgid "Removing Physical Volume from Volume Group"
 msgstr ""
 "வால்யூமிலிருந்து வால்யூம் குழுக்களை\n"
 "நீக்கு"
 
-#: src/CommandHandler.py:330
+#: src/CommandHandler.py:308
 msgid "Migrating Extents"
 msgstr ""
 
-#: src/CommandHandler.py:342
+#: src/CommandHandler.py:320
 msgid "Completing Extent Migration"
 msgstr ""
 
-#: src/lvm_model.py:46 src/lvmui_constants.py:81
+#: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
 msgstr "பயன்படுத்தப்படாத"
 
-#: src/lvm_model.py:47
+#: src/lvm_model.py:46
 msgid "Unused Space"
 msgstr "பயன்படுத்தப்படாத காலியிடம்"
 
-#: src/lvm_model.py:49
+#: src/lvm_model.py:48
 msgid "Unmounted"
 msgstr "வெளியேற்றப்பட்ட"
 
-#: src/lvm_model.py:59
+#: src/lvm_model.py:58
 msgid "Volume Group Name:   "
 msgstr "வால்யூம் குழு இல்லை:   "
 
-#: src/lvm_model.py:60
+#: src/lvm_model.py:59
 msgid "System ID:   "
 msgstr "கணினி ID:   "
 
-#: src/lvm_model.py:61
+#: src/lvm_model.py:60
 msgid "Format:   "
 msgstr "வடிவமை:   "
 
-#: src/lvm_model.py:62 src/lvm_model.py:79 src/lvm_model.py:94
+#: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
 msgstr "பண்புகள்:   "
 
-#: src/lvm_model.py:63
+#: src/lvm_model.py:62
 msgid "Volume Group Size:   "
 msgstr "வால்யூம் குழு அளவு:   "
 
-#: src/lvm_model.py:64
+#: src/lvm_model.py:63
 msgid "Available Space:   "
 msgstr "இருக்கும் காலியிடம்:   "
 
-#: src/lvm_model.py:65
+#: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
 msgstr "பரப்புகளின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:66
+#: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
 msgstr "காலி பரப்புகளின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:67
+#: src/lvm_model.py:66
 msgid "Extent Size:   "
 msgstr "பரப்பின் அளவு:   "
 
-#: src/lvm_model.py:68
+#: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
 msgstr "அனுமதிக்கப்பட்ட அதிகபட்ச பிசிக்கல் வால்யூம்:   "
 
-#: src/lvm_model.py:69
+#: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
 msgstr "பிசிக்கல் வால்யூம்களின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:70
+#: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
 msgstr "அனுமதிக்கப்படட் அதிக பட்ச லாஜிக்கல் வால்யூம்:   "
 
-#: src/lvm_model.py:71
+#: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
 msgstr "லாஜிக்கல் வால்யூம்களின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:72
+#: src/lvm_model.py:71
 msgid "VG UUID:   "
 msgstr "VG UUID:   "
 
-#: src/lvm_model.py:74
+#: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
 msgstr "லாஜிக்கல் வால்யூம் பெயர்:   "
 
-#: src/lvm_model.py:75
+#: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
 msgstr "லாஜிக்கல் வால்யூம் அளவு:  "
 
-#: src/lvm_model.py:76
+#: src/lvm_model.py:75
 msgid "Number of Segments:   "
 msgstr "செக்மன்ட்களின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:77
+#: src/lvm_model.py:76
 msgid "Number of Stripes:   "
 msgstr "Stripeகளின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:78
+#: src/lvm_model.py:77
 msgid "Stripe Size:   "
 msgstr "Stripe அளவு:   "
 
-#: src/lvm_model.py:80
+#: src/lvm_model.py:79
 msgid "LV UUID:   "
 msgstr "LV UUID:   "
 
-#: src/lvm_model.py:82
+#: src/lvm_model.py:81
 msgid "Partition Type:   "
 msgstr "பகிர்வு வகை:   "
 
-#: src/lvm_model.py:83
+#: src/lvm_model.py:82
 msgid "Size:   "
 msgstr "அளவு:   "
 
-#: src/lvm_model.py:84
+#: src/lvm_model.py:83
 msgid "Mount Point:   "
 msgstr "ஏற்றப்புள்ளி:   "
 
-#: src/lvm_model.py:85
+#: src/lvm_model.py:84
 #, fuzzy
 msgid "Mount Point when Rebooted:   "
 msgstr "ஏற்றப்புள்ளி:   "
 
-#: src/lvm_model.py:86
+#: src/lvm_model.py:85
 msgid "File System:   "
 msgstr "கோப்பு முறைமை:   "
 
-#: src/lvm_model.py:88
+#: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
 msgstr "பிசிக்கல் வால்யூம் பெயர்:   "
 
-#: src/lvm_model.py:89
+#: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
 msgstr "பிசிக்கல் வால்யூம் அளவு:   "
 
-#: src/lvm_model.py:90
+#: src/lvm_model.py:89
 msgid "Space Used:   "
 msgstr "பயன்படுத்தப்பட்ட இடம்:   "
 
-#: src/lvm_model.py:91
+#: src/lvm_model.py:90
 msgid "Space Free:   "
 msgstr "காலியிடம்:    "
 
-#: src/lvm_model.py:92
+#: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
 msgstr "மொத்த பிசிக்கல் பரப்பு:   "
 
-#: src/lvm_model.py:93
+#: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
 msgstr "ஒதுக்கப்பட்ட பிசிக்கல் பரப்புகள்:   "
 
-#: src/lvm_model.py:95
+#: src/lvm_model.py:94
 msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
-#: src/lvm_model.py:97
-msgid "Not initializable:   "
-msgstr ""
+#: src/lvm_model.py:96
+#, fuzzy
+msgid "Not initializable:"
+msgstr "துவக்கப்படாத"
 
-#: src/lvm_model.py:98
+#: src/lvm_model.py:97
 msgid "Extended partition"
 msgstr ""
 
+#. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
-msgid "Swap in use"
+msgid "Swap partition currently in use"
 msgstr ""
 
 #: src/lvm_model.py:100
@@ -951,64 +822,49 @@ msgstr ""
 msgid "Autopartition failure"
 msgstr ""
 
-#: src/lvm_model.py:128
-#, fuzzy
-msgid "Quering Volume Groups"
-msgstr "வால்யூம் குழுக்கள்"
-
-#: src/lvm_model.py:129
-#, fuzzy
-msgid "Quering Logical Volumes"
-msgstr "லாஜிக்கல் வால்யூம்"
-
-#: src/lvm_model.py:130
-#, fuzzy
-msgid "Quering Physical Volumes"
-msgstr "பிசிக்கல் வால்யூம்"
-
-#: src/lvm_model.py:268
+#: src/lvm_model.py:251
 #, fuzzy
 msgid "Partition manually"
 msgstr "பகிர்வு வகை:   "
 
-#: src/lvm_model.py:304
+#: src/lvm_model.py:287
 msgid "Multipath device"
 msgstr ""
 
-#: src/lvm_model.py:307
+#: src/lvm_model.py:290
 #, fuzzy
-msgid "Note:   "
+msgid "Note:"
 msgstr "வடிவமை:   "
 
-#: src/lvm_model.py:307
+#: src/lvm_model.py:290
 #, fuzzy
 msgid "Initialize manually"
 msgstr "என்டிட்டியை துவக்கு"
 
-#: src/lvm_model.py:810
+#: src/lvm_model.py:789
 #, fuzzy
-msgid "Number of mirror images:  "
+msgid "Number of mirror images:"
 msgstr "Stripeகளின் எண்ணிக்கை:   "
 
-#: src/lvm_model.py:813
-msgid "Snapshots:  "
+#: src/lvm_model.py:792
+msgid "Snapshots:"
 msgstr ""
 
-#: src/lvm_model.py:819
-msgid "Snapshot origin:  "
+#: src/lvm_model.py:798
+msgid "Snapshot origin:"
 msgstr ""
 
-#: src/lvm_model.py:826
-msgid "Snapshot usage:  "
+#: src/lvm_model.py:805
+msgid "Snapshot usage:"
 msgstr ""
 
-#: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
-#: src/lvm_model.py:915
+#: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
+#: src/lvm_model.py:893
 #, fuzzy
 msgid "/   Root Filesystem"
 msgstr "கோப்புமுறைமை இல்லை"
 
-#: src/lvm_model.py:918 src/Filesystem.py:120
+#: src/lvm_model.py:896 src/Filesystem.py:120
 msgid "None"
 msgstr ""
 
@@ -1070,73 +926,82 @@ msgstr ""
 msgid "Unable to process request"
 msgstr ""
 
-#: src/lvmui_constants.py:82
+#: src/lvmui_constants.py:65
+#, fuzzy, python-format
+msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+
+#: src/lvmui_constants.py:84
 msgid "Free"
 msgstr "காலி"
 
-#: src/lvmui_constants.py:83
+#: src/lvmui_constants.py:85
 msgid "Free space"
 msgstr ""
 
-#: src/lvmui_constants.py:85
+#: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
 msgstr ""
 
-#: src/lvmui_constants.py:86
+#: src/lvmui_constants.py:88
 #, fuzzy, python-format
 msgid "Unpartitioned space on %s"
 msgstr "%s இல் பயன்பாட்டில் இல்லாத காலிஇடம் "
 
-#: src/lvmui_constants.py:88
-msgid "G"
-msgstr "G"
-
-#: src/lvmui_constants.py:89
-msgid "M"
-msgstr "M"
-
 #: src/lvmui_constants.py:90
-msgid "K"
-msgstr "K"
-
-#: src/lvmui_constants.py:91
-msgid "B"
+#, fuzzy
+msgid "GB"
 msgstr "B"
 
+#: src/lvmui_constants.py:91
+#, fuzzy
+msgid "MB"
+msgstr "B"
+
+#: src/lvmui_constants.py:92
+#, fuzzy
+msgid "KB"
+msgstr "B"
+
+#: src/lvmui_constants.py:93
+msgid "Bytes"
+msgstr ""
+
 #. File System Types
-#: src/lvmui_constants.py:95
+#: src/lvmui_constants.py:97
 msgid "No Filesystem"
 msgstr "கோப்புமுறைமை இல்லை"
 
-#: src/lvmui_constants.py:96
+#: src/lvmui_constants.py:98
 msgid "Ext2"
 msgstr "Ext2"
 
-#: src/lvmui_constants.py:97
+#: src/lvmui_constants.py:99
 msgid "Ext3"
 msgstr "Ext3"
 
-#: src/lvmui_constants.py:98
+#: src/lvmui_constants.py:100
 msgid "JFS"
 msgstr "JFS"
 
-#: src/lvmui_constants.py:99
+#: src/lvmui_constants.py:101
 msgid "MSDOS"
 msgstr "MSDOS"
 
-#: src/lvmui_constants.py:100
+#: src/lvmui_constants.py:102
 msgid "Reiserfs"
 msgstr "Reiserfs"
 
-#: src/lvmui_constants.py:101
+#: src/lvmui_constants.py:103
 msgid "VFAT"
 msgstr "VFAT"
 
-#: src/lvmui_constants.py:102
+#: src/lvmui_constants.py:104
 msgid "XFS"
 msgstr "XFS"
 
-#: src/lvmui_constants.py:103
+#: src/lvmui_constants.py:105
 msgid "Cramfs"
 msgstr "Cramfs"
 
@@ -1223,7 +1088,8 @@ msgid ""
 msgstr ""
 
 #: src/renderer.py:385
-msgid "Snapshot of "
+#, python-format
+msgid "Snapshot of %s"
 msgstr ""
 
 #: src/renderer.py:487
@@ -1251,9 +1117,9 @@ msgstr "ஒதுக்கப்படாத வால்யூம்கள்"
 msgid "Uninitialized Entities"
 msgstr "துவக்கப்படாத என்டிட்டிகள்"
 
-#: src/Volume_Tab_View.py:584
+#: src/Volume_Tab_View.py:632
 #, python-format
-msgid "%s mirror synchronisation "
+msgid "%s mirror synchronisation"
 msgstr ""
 
 #. no existing partitions, write
@@ -1338,7 +1204,7 @@ msgstr ""
 
 #: src/Segment.py:44
 #, fuzzy
-msgid "Stripe "
+msgid "Stripe"
 msgstr "Striped"
 
 #: src/Segment.py:68
@@ -1346,25 +1212,12 @@ msgid "Linear Mapping"
 msgstr "லீனியர் மேப்பிங்"
 
 #: src/Segment.py:109
-msgid "Mirror "
+msgid "Mirror"
 msgstr ""
-
-#: src/Multipath.py:11
-#, fuzzy, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
-
-#: src/Multipath.py:12
-#, fuzzy, python-format
-msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/PhysicalVolume.py:142
 #, fuzzy, python-format
-msgid "Partition  %s"
+msgid "Partition %s"
 msgstr "பகிர்வு வகை:   "
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
@@ -1597,6 +1450,16 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
+"* In this release, mirroring support is \n"
+"available as a Technology Preview"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:4
+msgid "* Mirrored"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:5
+msgid ""
 "4\n"
 "8\n"
 "16\n"
@@ -1607,103 +1470,105 @@ msgid ""
 "512"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:10
+#: src/lv_edit_props.glade.h:13
 #, fuzzy
 msgid "<b>Filesystem</b>"
 msgstr "கோப்பு முறை:"
 
-#: src/lv_edit_props.glade.h:11
+#: src/lv_edit_props.glade.h:14
 msgid "<b>LV Properties</b>"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:12
+#: src/lv_edit_props.glade.h:15
 msgid "<b>Size</b>"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:13
+#: src/lv_edit_props.glade.h:16
 msgid "Add entry to /etc/fstab"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:15
+#: src/lv_edit_props.glade.h:17
+#, fuzzy
+msgid "Create New Logical Volume (LV)"
+msgstr "புதிய லாஜிக்கல் வால்யூமை உருவாக்கவும்."
+
+#: src/lv_edit_props.glade.h:18
 msgid "Filesystem is not resizable"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:16
+#: src/lv_edit_props.glade.h:19
 #, fuzzy
 msgid "Free space in Volume Group label"
 msgstr ""
 "புதிய வால்யூம் குழுவை\n"
 "உருவாக்கு."
 
-#: src/lv_edit_props.glade.h:17
+#: src/lv_edit_props.glade.h:20
 #, fuzzy
 msgid "Free space remaining label"
 msgstr "மீதமுள்ள இடத்தை பயன்படுத்து"
 
-#: src/lv_edit_props.glade.h:18
+#: src/lv_edit_props.glade.h:21
 #, fuzzy
 msgid "Kilobytes granularity"
 msgstr "கிலோபைட்கள்"
 
-#: src/lv_edit_props.glade.h:19
-msgid "LV name: "
+#: src/lv_edit_props.glade.h:22
+msgid "LV name:"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:20
+#: src/lv_edit_props.glade.h:23
 msgid "LV size"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:21
+#: src/lv_edit_props.glade.h:24
 msgid "LVs under snapshots are not resizable"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:22
+#: src/lv_edit_props.glade.h:25
 msgid "Linear"
 msgstr "நேர்"
 
-#: src/lv_edit_props.glade.h:23
-msgid "Mirrored"
-msgstr ""
-
-#: src/lv_edit_props.glade.h:24
+#: src/lv_edit_props.glade.h:26
 msgid "Mirrored LVs are not resizable"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:25
-msgid "Mount"
-msgstr ""
-
-#: src/lv_edit_props.glade.h:26
-#, fuzzy
-msgid "Mount point: "
-msgstr "ஏற்றப்புள்ளி:   "
-
 #: src/lv_edit_props.glade.h:27
-msgid "Mount when rebooted"
+msgid "Mount"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
 #, fuzzy
+msgid "Mount point:"
+msgstr "ஏற்றப்புள்ளி:   "
+
+#: src/lv_edit_props.glade.h:29
+msgid "Mount when rebooted"
+msgstr ""
+
+#: src/lv_edit_props.glade.h:30
+#, fuzzy
 msgid "Size beg"
 msgstr "அளவு"
 
-#: src/lv_edit_props.glade.h:29
+#: src/lv_edit_props.glade.h:31
 #, fuzzy
 msgid "Size end"
 msgstr "அளவு"
 
-#: src/lv_edit_props.glade.h:30
+#: src/lv_edit_props.glade.h:32
 msgid "Striped"
 msgstr "Striped"
 
-#: src/lv_edit_props.glade.h:31
+#: src/lv_edit_props.glade.h:33
 #, fuzzy
 msgid "Use remaining"
 msgstr "மீதமுள்ள இடத்தை பயன்படுத்து"
 
-#: src/lv_edit_props.glade.h:32
-msgid "stripes of"
-msgstr ""
+#: src/lv_edit_props.glade.h:34
+#, fuzzy
+msgid "stripes"
+msgstr "Striped"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1726,37 +1591,34 @@ msgid "Contiguous"
 msgstr ""
 
 #: src/migrate_extents.glade.h:6
+msgid "Destination:"
+msgstr ""
+
+#: src/migrate_extents.glade.h:7
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
 
-#: src/migrate_extents.glade.h:8
+#: src/migrate_extents.glade.h:9
 msgid "Inherit"
 msgstr ""
 
-#: src/migrate_extents.glade.h:9
+#: src/migrate_extents.glade.h:10
 #, fuzzy
 msgid "Inherit policy from Volume Group"
 msgstr ""
 "வால்யூமிலிருந்து வால்யூம் குழுக்களை\n"
 "நீக்கு"
 
-#: src/migrate_extents.glade.h:10
+#: src/migrate_extents.glade.h:11
 #, fuzzy
 msgid "Migrate Extents"
 msgstr "பரப்புகள்"
 
-#: src/migrate_extents.glade.h:11
-msgid "Migrate anywhere even if that reduces performace"
-msgstr ""
-
 #: src/migrate_extents.glade.h:12
-#, fuzzy
-msgid "Migrate extents to "
+msgid "Migrate anywhere even if that reduces performance"
 msgstr ""
-"தேர்வு செய்தவைகளை வால்யூமிலிருந்து\n"
-"குறிப்பிடா பரப்புக்கு நகர்த்து"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1767,12 +1629,160 @@ msgid "Normal"
 msgstr ""
 
 #: src/migrate_extents.glade.h:15
-msgid "Only migrate extents belonging to LV "
+#, fuzzy
+msgid "Only migrate extents belonging to LV"
 msgstr ""
+"தேர்வு செய்தவைகளை வால்யூமிலிருந்து\n"
+"குறிப்பிடா பரப்புக்கு நகர்த்து"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr ""
+
+#~ msgid ""
+#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgextend கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\" - கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
+#~ "%s"
+#~ msgstr ""
+#~ "vgchange கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
+#~ "s"
+#~ msgstr ""
+#~ "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
+#~ "s"
+#~ msgstr ""
+#~ "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#~ msgid ""
+#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
+#~ "\""
+#~ msgstr ""
+#~ "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#, fuzzy
+#~ msgid ""
+#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#, fuzzy
+#~ msgid ""
+#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#, fuzzy
+#~ msgid ""
+#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgchange கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#, fuzzy
+#~ msgid ""
+#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
+
+#, fuzzy
+#~ msgid "Quering Volume Groups"
+#~ msgstr "வால்யூம் குழுக்கள்"
+
+#, fuzzy
+#~ msgid "Quering Logical Volumes"
+#~ msgstr "லாஜிக்கல் வால்யூம்"
+
+#, fuzzy
+#~ msgid "Quering Physical Volumes"
+#~ msgstr "பிசிக்கல் வால்யூம்"
+
+#~ msgid "G"
+#~ msgstr "G"
+
+#~ msgid "M"
+#~ msgstr "M"
+
+#~ msgid "K"
+#~ msgstr "K"
+
+#, fuzzy
+#~ msgid ""
+#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
+#~ "%s"
+#~ msgstr ""
+#~ "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+#~ "செய்தி: %s"
 
 #~ msgid ""
 #~ "There is a problem with the value entered in the Size field. The value "

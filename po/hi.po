@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-02 08:17-0500\n"
+"POT-Creation-Date: 2006-02-03 14:46-0500\n"
 "PO-Revision-Date: 2006-02-03 18:31+0530\n"
 "Last-Translator: Rajesh Ranjan <rranjan@redhat.com>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -1504,7 +1504,7 @@ msgstr "मुक्त स्थान शेष स्तर"
 msgid "Kilobytes granularity"
 msgstr "किलोबाइट सूक्ष्मता"
 
-#: src/lv_edit_props.glade.h:19
+#: src/lv_edit_props.glade.h:22
 msgid "LV name:"
 msgstr "LV नाम: "
 
@@ -1528,7 +1528,7 @@ msgstr "मिरर किया LV फिर आकार के योग्�
 msgid "Mount"
 msgstr "आरोह"
 
-#: src/lv_edit_props.glade.h:26
+#: src/lv_edit_props.glade.h:28
 msgid "Mount point:"
 msgstr "आरोह बिंदु:"
 
@@ -1552,7 +1552,7 @@ msgstr "स्ट्राइप किया हुआ"
 msgid "Use remaining"
 msgstr "शेष स्थान का प्रयोग करें"
 
-#: src/lv_edit_props.glade.h:32
+#: src/lv_edit_props.glade.h:34
 msgid "stripes"
 msgstr "स्ट्राइप"
 

@@ -30,14 +30,14 @@ rm -rf %{buildroot}
 %makeinstall
 
 #Uncomment this when translations are done
-#%find_lang %name
+%find_lang %name
 
 %clean
 rm -rf %{buildroot}
 
 #Replace the files line with the one commented out when translations are done
-#%files -f %{name}.lang
-%files
+%files -f %{name}.lang
+#%files
 
 %defattr(-,root,root)
 %doc COPYING
@@ -52,7 +52,7 @@ rm -rf %{buildroot}
 
 %changelog
 * Fri Feb 03 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.11-1.0
-  - Fixes for bz175077,169860,178128 
+  - Fixes for bz175077,169860,178128,161917,171117 
 * Thu Jan 05 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.10-1.0
   - Fix for bz176967
 * Fri Dec 2 2005 Jim Parsons <jparsons@redhat.com> 1.0.9-1.0

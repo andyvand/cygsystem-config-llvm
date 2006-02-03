@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-02 08:17-0500\n"
+"POT-Creation-Date: 2006-02-03 14:46-0500\n"
 "PO-Revision-Date: 2006-01-25 17:00+0530\n"
 "Last-Translator: Jaswinder Singh Phulewala <jaswinderphulewala@yahoo.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
@@ -1510,7 +1510,7 @@ msgstr "ਅਧੂਰੇ ਲੇਬਲ ਵਿੱਚ ਖਾਲੀ ਥਾਂ"
 msgid "Kilobytes granularity"
 msgstr "ਕਿਲੋਬਾਈਟ ਦਾਣੇਦਾਰ"
 
-#: src/lv_edit_props.glade.h:19
+#: src/lv_edit_props.glade.h:22
 msgid "LV name:"
 msgstr "LV ਨਾਂ: "
 
@@ -1534,7 +1534,7 @@ msgstr "ਪ੍ਰਤਿਬਿੰਬਿਤ LVs ਮੁੜ-ਆਕਾਰ ਦੇ ਯ�
 msgid "Mount"
 msgstr "ਮਾਊਂਟ"
 
-#: src/lv_edit_props.glade.h:26
+#: src/lv_edit_props.glade.h:28
 msgid "Mount point:"
 msgstr "ਮਾਊਂਟ ਸਥਿਤੀ:   "
 
@@ -1558,7 +1558,7 @@ msgstr "ਪੱਟੀਦਾਰੇ"
 msgid "Use remaining"
 msgstr "ਬਾਕੀ ਬਚੀ ਵਰਤੋਂ"
 
-#: src/lv_edit_props.glade.h:32
+#: src/lv_edit_props.glade.h:34
 msgid "stripes"
 msgstr "ਪੱਟੀਆਂ"
 

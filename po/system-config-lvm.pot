@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-12-02 08:17-0500\n"
+"POT-Creation-Date: 2006-02-03 14:46-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1382,7 +1382,7 @@ msgstr ""
 msgid "Kilobytes granularity"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:19
+#: src/lv_edit_props.glade.h:22
 msgid "LV name:"
 msgstr ""
 
@@ -1406,7 +1406,7 @@ msgstr ""
 msgid "Mount"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:26
+#: src/lv_edit_props.glade.h:28
 msgid "Mount point:"
 msgstr ""
 
@@ -1430,7 +1430,7 @@ msgstr ""
 msgid "Use remaining"
 msgstr ""
 
-#: src/lv_edit_props.glade.h:32
+#: src/lv_edit_props.glade.h:34
 msgid "stripes"
 msgstr ""
 
