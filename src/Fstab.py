@@ -17,9 +17,7 @@ FSCK = 5
 
 
 FSTAB = '/etc/fstab'
-FSTAB_TMP = '/tmp/fstab.tmp'
-#FSTAB = '/tmp/fstab'
-#FSTAB_TMP = '/tmp/fstab.tmp'
+FSTAB_TMP = '/etc/fstab.tmp.system-config-lvm'
 
     
 def add(dev_path, mnt_point, fstype, options='defaults', dump='1', fsck='2'):
