@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 14:46-0500\n"
-"PO-Revision-Date: 2006-01-29 17:42-0500\n"
+"PO-Revision-Date: 2006-02-04 14:33-0500\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -1041,7 +1041,7 @@ msgstr "Диск ентитет"
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr "Група дискова"
+msgstr "Групу дискова"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
@@ -1140,7 +1140,7 @@ msgstr "Неиницијализовани ентитети"
 #: src/Volume_Tab_View.py:632
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr "усаглашавање %s одраза"
+msgstr "Усаглашавање %s одраза"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
