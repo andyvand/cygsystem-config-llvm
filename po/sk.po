@@ -10,13 +10,13 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 14:46-0500\n"
-"PO-Revision-Date: 2006-02-02 22:55+0100\n"
+"PO-Revision-Date: 2006-02-05 17:30+0100\n"
 "Last-Translator: Mike Karas <zoliqe@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -79,7 +79,6 @@ msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Zvoľte diskové jednotky pre pridanie do skupiny zväzkov %s:"
 
 #: src/InputController.py:92
-#, fuzzy
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -183,6 +182,7 @@ msgstr ""
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
+"Chyba neznámeho prevodu typov v generátore modelu. Nepodarilo sa dokočiť úlohu."
 
 #: src/InputController.py:123
 #, python-format
@@ -229,7 +229,7 @@ msgstr "%s gigabajtov"
 #: src/InputController.py:135
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%d oddielov"
 
 #: src/InputController.py:137
 msgid "Remaining free space in Volume Group:\n"
@@ -241,7 +241,7 @@ msgstr "Zostávajúce miesto pre zväzok:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
-msgstr ""
+msgstr "Oddiely"
 
 #: src/InputController.py:141
 msgid "Gigabytes"
@@ -284,7 +284,7 @@ msgid ""
 msgstr "Ste si úplne istí, že chcete odstrániť %s zo správy logických zväzkov?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -294,7 +294,7 @@ msgid ""
 "Physical Volume."
 msgstr ""
 "Fyzický zväzok nazvaný %s, ktorý chcete odstrániť, obsahuje dáta z aktívných "
-"logických zväzkov"
+"logických zväzkov mapovaných do ich oddielov. Pretože je to jediný fyzický zväzok v skupine zväzkov, nie je kam premiestniť dáta. Odporúčaný postup je najskôr pridať nový fyzický zväzok pred odstránením tohoto, alebo odstránenie logických zväzkov asociovaných s týmto fyzickým zväzkom."
 
 #: src/InputController.py:152
 #, python-format
@@ -329,6 +329,9 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"Modul dm-mirror nebol zatiaľ načítaný do jadra, alebo vaše jadro "
+"nepodporuje dm-mirror cieľ. Ak je podporovaný, skúste spustiť \"modprobe "
+"dm-mirror\". Inak operácie vyžadujúce presun dát na fyzických oddieloch budú nedostupné."
 
 #: src/InputController.py:156
 msgid ""
@@ -370,6 +373,7 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Fyzický zväzok %s obsahuje oddiely patriace do záznamu mirroru logického zväzku %s. Mirrorované logické zväzky nie sú migrovateľné, takže %s nie je odstrániteľný."
 
 #: src/InputController.py:359
 #, python-format
@@ -378,6 +382,7 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Fyzický zväzok %s obsahuje oddiely patriace do obrazu mirroru logického zväzku %s. Mirrorované logické zväzky nie sú migrovateľné, takže %s nie je odstrániteľný."
 
 #: src/InputController.py:362
 #, python-format
@@ -385,6 +390,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"Fyzický zväzok %s obsahuje oddiely patriace %s, snímku %s. Snímky nie sú migrovateľné, takže %s nie je odstrániteľný."
 
 #: src/InputController.py:367
 #, python-format
@@ -392,6 +398,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Fyzický zväzok %s obsahuje oddiely patriace %s, zdroju snímku %s. Zdroje snímkov nie sú migrovateľné, takže %s nie je odstrániteľný."
 
 #: src/InputController.py:369
 #, python-format
@@ -399,6 +406,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Fyzický zväzok %s obsahuje oddiely patriace %s, zdroju snímkov %s. Zdroje snímkov nie sú migrovateľné, takže %s nie je odstrániteľný."
 
 #: src/InputController.py:556
 #, python-format
@@ -421,6 +429,7 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"Fyzický zväzok \"%s\" obsahuje oddiely patriace mirroru. Mirrory nie sú migrovateľné, takže %s nie je odstrániteľný."
 
 #: src/InputController.py:605
 #, python-format
@@ -428,6 +437,7 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"Fyzický zväzok \"%s\" obsahuje oddiely patriace snímku alebo zdroju snímku. Snímky nie sú migrovateľné, takže %s nie je odstrániteľný."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
@@ -444,17 +454,18 @@ msgstr "Inicializácia %s zlyhala"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Prosím najskôr zvoľte nejaké oddiely"
 
 #: src/InputController.py:1022
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"Nie je dostatok voľných oddielov na vykonanie potrebnej migrácie. Problém môžete vyriešiť pridaním ďaľších fyzických zväzkov."
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
-msgstr ""
+msgstr "Migrovať oddiely"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -480,16 +491,15 @@ msgstr "Upraviť logický zväzok"
 
 #: src/InputController.py:1497
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr "Správa logických zväzkov v zásade nepodporuje zrkadlenie"
+msgstr "Správa logických zväzkov v zásade nepodporuje mirroring"
 
 #: src/InputController.py:1504
-#, fuzzy
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr "Stripované logické zväzky nemôžu byť zrkadlené."
+msgstr "Stripované logické zväzky nemôžu byť mirrorované."
 
 #: src/InputController.py:1511
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "Logický zväzok s priradenými snímkami nemôže byť zrkadlený."
+msgstr "Logický zväzok s priradenými snímkami nemôže byť mirrorovaný."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -498,22 +508,22 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Hlavnou podstatou zrkadlenia je ochrana dát v prípade poškodenia pevného "
-"disku. Chcete umiestniť obrazy zrkadiel na rôzne pevné disky?"
+"Hlavnou podstatou mirrorovania je ochrana dát v prípade poškodenia pevného "
+"disku. Chcete umiestniť obrazy mirrorov na rôzne pevné disky?"
 
 #: src/InputController.py:1527
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
-"K dispozícií sú menej ako 3 pevné disky s voľným miestom. Zrkadlenie "
-"zakázané."
+"K dispozícií sú menej ako 3 pevné disky s voľným miestom. Mirroring "
+"zakázaný."
 
 #: src/InputController.py:1532
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Pre povolenie zrkadlenia musí byť voľné miesto najmenej na troch fyzických "
+"Pre povolenie mirroringu musí byť voľné miesto najmenej na troch fyzických "
 "zväzkoch"
 
 #: src/InputController.py:1540
@@ -522,7 +532,7 @@ msgid ""
 "size for mirrors."
 msgstr ""
 "Veľkosť logického zväzku bola upravená na maximálnu možnú veľkosť pre "
-"zrkadlá."
+"mirrory."
 
 #: src/InputController.py:1545
 #, python-format
@@ -530,7 +540,7 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
-"Nedostatok voľného miesta na pridanie zrkadlenia. Znížte veľkosť logického "
+"Nedostatok voľného miesta na pridanie mirroringu. Znížte veľkosť logického "
 "zväzku na najviac %s, alebo pridajte daľší fyzický zväzok."
 
 #: src/InputController.py:1909
@@ -578,15 +588,15 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2141
 msgid "Mirror not created. Completing remaining tasks."
-msgstr "Zrkadlo nie je vytvorené. Dokončujem zostávajúce úlohy."
+msgstr "Mirror nie je vytvorený. Dokončujem zostávajúce úlohy."
 
 #: src/InputController.py:2190
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "Pred pridaním mirroringu musia byť niektoré oddiely migrované."
 
 #: src/InputController.py:2190
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "Chcete migrovať zvolené oddiely?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
@@ -598,11 +608,11 @@ msgstr "Zmena veľkosti logického zväzku"
 
 #: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
-msgstr "Pridávanie zrkadla do logického zväzku"
+msgstr "Pridávanie mirroru do logického zväzku"
 
 #: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
-msgstr "Odstraňovanie zrkadla z logického zväzku"
+msgstr "Odstraňovanie mirroru z logického zväzku"
 
 #: src/CommandHandler.py:158
 msgid "Initializing Physical Volume"
@@ -638,11 +648,11 @@ msgstr "Odstraňovanie fyzického zväzku zo skupiny zväzkov"
 
 #: src/CommandHandler.py:308
 msgid "Migrating Extents"
-msgstr ""
+msgstr "Migrácia oddielov"
 
 #: src/CommandHandler.py:320
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "Dokončenie migrácie oddielu"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -682,15 +692,15 @@ msgstr "Dostupná veľkosť:   "
 
 #: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "Celkový počet oddielov:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "Počet voľných oddielov:   "
 
 #: src/lvm_model.py:66
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Veľkosť oddielu:   "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
@@ -725,12 +735,10 @@ msgid "Number of Segments:   "
 msgstr "Počet segmentov:   "
 
 #: src/lvm_model.py:76
-#, fuzzy
 msgid "Number of Stripes:   "
 msgstr "Počet stripov:   "
 
 #: src/lvm_model.py:77
-#, fuzzy
 msgid "Stripe Size:   "
 msgstr "Veľkosť stripu:   "
 
@@ -776,11 +784,11 @@ msgstr "Voľné miesto:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "Fyzických oddielov celkom:   "
 
 #: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Pridelených fyzických oddielov:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
@@ -909,7 +917,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr "Záznam zrkadla"
+msgstr "Záznam mirroru"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
@@ -1049,6 +1057,7 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Oddiely, ktoré sa pokúšate vybrať, patria do záznamu mirroru logického zväzku %s. Mirrorované logické zväzky nie sú migrovateľné, takže tieto oddiely nemožno vybrať."
 
 #: src/renderer.py:194
 #, python-format
@@ -1057,6 +1066,7 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Oddiely, ktoré sa pokúšate vybrať, patria do obrazu mirroru logického zväzku %s. Mirrorované logické zväzky nie sú migrovateľné, takže tieto oddiely nemožno vybrať."
 
 #: src/renderer.py:196
 #, python-format
@@ -1064,6 +1074,7 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"Oddiely, ktoré sa pokúšate vybrať, patria do %s, snímku %s. Snímky nie sú migrovateľné, takže tieto oddiely nemožno vybrať."
 
 #: src/renderer.py:198
 #, python-format
@@ -1072,6 +1083,7 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"Oddiely, ktoré sa pokúšate vybrať, patria do zdroja snímku %s. Zdroje snímkov nie sú migrovateľné, takže tieto oddiely nemožno vybrať."
 
 #: src/renderer.py:385
 #, python-format
@@ -1088,7 +1100,7 @@ msgstr "Snímok"
 
 #: src/renderer.py:537
 msgid "extent view"
-msgstr ""
+msgstr "pohľad oddielov"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1189,7 +1201,6 @@ msgid "GFS (clustered)"
 msgstr "GFS (klástrovaný)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
 msgstr "Strip"
 
@@ -1199,7 +1210,7 @@ msgstr "Lineárne mapovanie"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr "Zrkadlo"
+msgstr "Mirror"
 
 #: src/PhysicalVolume.py:142
 #, python-format
@@ -1351,6 +1362,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"Migrovať zvolené\n"
+"oddiely zo zväzku"
 
 #: src/lvui.glade.h:38
 msgid "Name for Volume Group: "
@@ -1366,7 +1379,7 @@ msgstr "Nová skupina zväzkov z"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "Veľkosť fyzického zväzku: "
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1433,12 +1446,12 @@ msgid ""
 "* In this release, mirroring support is \n"
 "available as a Technology Preview"
 msgstr ""
-"* V tomto vydaní je podpora zrkadlenia \n"
+"* V tomto vydaní je podpora mirroringu \n"
 "dostupná len ako ukážka technológie"
 
 #: src/lv_edit_props.glade.h:4
 msgid "* Mirrored"
-msgstr "* Zrkadlené"
+msgstr "* Mirrorované"
 
 #: src/lv_edit_props.glade.h:5
 msgid ""
@@ -1514,7 +1527,7 @@ msgstr "Lineárne"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mirrored LVs are not resizable"
-msgstr "Zrkadlené LZy nemôžu meniť veľkosť"
+msgstr "Mirrorované LZy nemôžu meniť veľkosť"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount"
@@ -1537,7 +1550,6 @@ msgid "Size end"
 msgstr "Veľkosť koniec"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "Striped"
 msgstr "Stripovaný"
 
@@ -1546,7 +1558,6 @@ msgid "Use remaining"
 msgstr "Použiť zostávajúce"
 
 #: src/lv_edit_props.glade.h:34
-#, fuzzy
 msgid "stripes"
 msgstr "stripy"
 
@@ -1579,6 +1590,8 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"Pred odstránením FZ budú použité oddiely migrované.\n"
+"Zvoľte cieľ oddielov a politiku migrácie."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
@@ -1590,7 +1603,7 @@ msgstr "Prebrať politiku zo skupiny zväzkov"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
-msgstr ""
+msgstr "Migrovať oddiely"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
@@ -1598,7 +1611,7 @@ msgstr "Migrovať kdekoľvek, aj keď to zníži výkonnosť"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "Nové oddiely boli priložené k už existujúcim"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
@@ -1606,8 +1619,9 @@ msgstr "Normálne"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
-msgstr ""
+msgstr "Migrovať iba oddiely patriace do LZ"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Použiť bežný postup"
+
