@@ -445,7 +445,7 @@ msgid ""
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
 "Raundiskurinn \"%s\" inniheldur diskhluta sem tilheyra skyndimynd eða "
-"upphaf skyndimyndar. Þar sem það er ekki hægt að færa skyndimyndir er "
+"uppruni skyndimyndar. Þar sem það er ekki hægt að færa skyndimyndir er "
 "ekki hægt að eyða %s."
 
 #: src/InputController.py:670
@@ -1108,7 +1108,7 @@ msgstr "Skyndimynd af %s"
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr "Upphaf"
+msgstr "Uppruni"
 
 #: src/renderer.py:493
 msgid "Snapshot"
