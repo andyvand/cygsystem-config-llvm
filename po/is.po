@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 14:46-0500\n"
-"PO-Revision-Date: 2006-01-24 16:54+0000\n"
+"PO-Revision-Date: 2006-02-06 16:54+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -358,6 +358,8 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"Sýndardiskurinn %s inniheldur gögn í möppunni %s. Öll gögn munu tapast! "
+"Ertu viss um að þú viljir fjarlægja sýndardiskinn %s?"
 
 #: src/InputController.py:356
 #, python-format
@@ -366,6 +368,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Raundiskurinn %s inniheldur diskhluta sem tilheyra speglaannál af sýndar"
+"disknum %s. Þar sem það er ekki enn hægt að færa spegla er ekki hægt að "
+"eyða %s."
 
 #: src/InputController.py:359
 #, python-format
@@ -374,6 +379,8 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Raundiskurinn %s inniheldur diskhluta sem tilheyra spegli af sýndardisknum "
+"%s. Þar sem það er ekki enn hægt að færa spegla er ekki hægt að eyða %s."
 
 #: src/InputController.py:362
 #, python-format
@@ -381,6 +388,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"Raundiskurinn %s inniheldur diskhluta sem tilheyra %s sem er skyndimynd "
+"af %s. Þar sem það er ekki enn hægt að færa skyndimyndir er ekki hægt að "
+"eyða %s."
 
 #: src/InputController.py:367
 #, python-format
@@ -388,6 +398,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Raundiskurinn %s inniheldur diskhluta sem tilheyra %s sem er uppruni "
+"skyndimyndar %s. Þar sem það er ekki enn hægt að færa skyndimyndir er ekki "
+"hægt að eyða %s."
 
 #: src/InputController.py:369
 #, python-format
@@ -395,6 +408,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Raundiskurinn %s inniheldur diskhluta sem tilheyra %s sem er uppruni "
+"skyndimyndanna %s. Þar sem það er ekki enn hægt að færa skyndimyndir er ekki "
+"hægt að eyða %s."
 
 #: src/InputController.py:556
 #, python-format
@@ -402,12 +418,16 @@ msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
+"Sýndardiskurinn \"%s\" hefur skyndmyndir sem ekki á að eyða. Þeim verður "
+"að eyða líka."
 
 #: src/InputController.py:571
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
+"\"%s\" sem er uppruni skyndimyndarinnar \"%s\" hefur verið fjarlægð af "
+"lista þess sem á að eyða."
 
 #: src/InputController.py:602
 #, python-format
@@ -415,6 +435,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"Raundiskurinn \"%s\" inniheldur diskhluta sem tilheyra spegli. Þar sem það "
+"er ekki hægt að færa spegla er ekki hægt að eyða %s."
 
 #: src/InputController.py:605
 #, python-format
@@ -422,29 +444,34 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"Raundiskurinn \"%s\" inniheldur diskhluta sem tilheyra skyndimynd eða "
+"upphaf skyndimyndar. Þar sem það er ekki hægt að færa skyndimyndir er "
+"ekki hægt að eyða %s."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "Slóðin sem þú gafst upp er ekki til."
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "Slóðin sem þú gafst upp er ekki blokkartæki."
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "Frumstilling %s brást"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Vinsamlega veldu diskhluta fyrst"
 
 #: src/InputController.py:1022
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"Það er ekki nægilegt magn lausra diskhluta til að klára tilfærsluna. Ef "
+"fleiri raundiskum er bætt við, hverfur þessi vandi."
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
@@ -491,23 +518,29 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
+"Helsti tilgangur speglunar er að varðveita gögn þegar harðir diskar bila. "
+"Viltu ekki setja speglana á mismunandi harða diska?"
 
 #: src/InputController.py:1527
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
+"Það eru færri en 3 diskar með lausu plássi. Slekk á speglun."
 
 #: src/InputController.py:1532
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
+"Það verður að vera laust pláss á að missta kosti þrem raundiskum til "
+"að virkja speglun"
 
 #: src/InputController.py:1540
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
+"Stærð sýndardisksins hefur verið breytt í hámarkið fyrir speglun."
 
 #: src/InputController.py:1545
 #, python-format
@@ -515,9 +548,10 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"Það er ekki nægilegt pláss til að bæta við spegli. Minnkaðu stærð "
+"sýndardisksins í %s eða bættu við raundiskum."
 
 #: src/InputController.py:1909
-#, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr "Heiti sem byrja á \"snapshot\" eða \"pvmove\" eru frátekin."
 
@@ -526,7 +560,6 @@ msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "Heiti sem innihalda \"_mlog\" eða \"_mimage\" eru frátekin."
 
 #: src/InputController.py:1913
-#, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Heiti sem byrja á \"-\" eru ógild"
 
@@ -556,19 +589,21 @@ msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
+"Að breyta skráarkerfinu verður til þess að öll gögn á sýndardisknum tapast! "
+"Ertu viss um að þú viljir halda áfram?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2141
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "Spegill ekki búinn til. Klára verkin sem eftir eru."
 
 #: src/InputController.py:2190
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "Til þess að bæta við spegli þarf að færa suma diskhlutana."
 
 #: src/InputController.py:2190
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "Viltu færa þessa diskhluta?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
@@ -716,7 +751,7 @@ msgstr "Stærð stípa:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr "LV UUID:   "
+msgstr "SD UUID:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
@@ -767,26 +802,25 @@ msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Ófrumstillt"
+msgstr "Ekki frumstillanlegt:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
-msgstr ""
+msgstr "Stækka disksneið"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Diskminnissneiðin er þegar í notkun"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "Óþekkt ræsisneið"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Sjálfvirk sneiðing brást"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
@@ -797,33 +831,28 @@ msgid "Multipath device"
 msgstr "Fjölslóðatæki"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Athugasemd:   "
+msgstr "Athugasemd:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Frumstilla handvirkt"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Fjöldi spegla:  "
+msgstr "Fjöldi spegla:"
 
 #: src/lvm_model.py:792
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Skyndimyndir:  "
+msgstr "Skyndimyndir:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Uppruni skyndimyndar:  "
+msgstr "Uppruni skyndimyndar:"
 
 #: src/lvm_model.py:805
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Notkun skyndimyndar:  "
+msgstr "Notkun skyndimyndar:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
@@ -841,6 +870,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"Öll gögn á disknum %s munu tapast! Ertu viss um að þú viljir frumstilla "
+"hann?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -848,6 +879,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"Tækið %s inniheldur %s skráarkerfið. Öll gögn á því munu tapast! "
+"Ertu viss um að þú viljir frumstilla diskinn %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -855,6 +888,8 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
+"Tækið %s inniheldur gögn úr möppunni %s. Öll gögn í henni munu tapast! "
+"Ertu viss um að þú viljir frumstilla diskinn %s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -870,6 +905,9 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"Þú ert við það að frumstilla diskinn %s sem hefur engar disksneiðar. Þó það "
+"sé ekki nauðsynlegt mælum við með að disksneið verði búin til. Viltu búa til "
+"eina disksneið sem nær yfir allan diskinn?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -882,6 +920,9 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
+"Breytingarnar taka gildi eftir að búið er að endurræsa tölvuna. Ef tækið "
+"%s er notað áður en endurræst er MUN verða gagnatap. Því mælum við með að "
+"þú endurræsir núna."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -892,9 +933,9 @@ msgid "Unable to process request"
 msgstr "Get ekki framkvæmt beiðnina"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "ls skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
+msgstr "%s skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -914,23 +955,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Ónotað rými á %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Bæti"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1002,7 +1040,7 @@ msgstr "Enginn diskur valinn"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Margval"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1027,6 +1065,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Raundiskhlutarnir sem þú ert að reyna að velja tilheyra speglaannál af "
+"sýndardisknum %s. Það er ennþá ekki hægt að færa speglaða sýndardiska svo "
+"ekki er hægt að velja þessa diskhluta."
 
 #: src/renderer.py:194
 #, python-format
@@ -1035,6 +1076,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Raundiskhlutarnir sem þú ert að reyna að velja tilheyra spegli af sýndar"
+"disknum %s. Það er ennþá ekki hægt að færa speglaða sýndardiska svo ekki er "
+"hægt að velja þessa diskhluta."
 
 #: src/renderer.py:196
 #, python-format
@@ -1042,6 +1086,9 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"Raundiskhlutarnir sem þú ert að reyna að velja tilheyra %s sem er skyndimynd "
+"af %s. Það er ekki enn hægt að færa skyndimyndir svo ekki er hægt að velja "
+"þessa diskhluta."
 
 #: src/renderer.py:198
 #, python-format
@@ -1050,11 +1097,14 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"Raundiskhlutarnir sem þú ert að reyna að velja tilheyra skyndimynd af %s. "
+"Það er ekki enn hægt að færa skyndimyndir svo ekki er hægt að velja þessa "
+"diskhluta."
 
 #: src/renderer.py:385
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Skyndimynd af "
+msgstr "Skyndimynd af %s"
 
 #: src/renderer.py:487
 msgid "Origin"
@@ -1081,7 +1131,7 @@ msgid "Uninitialized Entities"
 msgstr "Ófrumstiltir hlutir"
 
 #: src/Volume_Tab_View.py:632
-#, fuzzy, python-format
+#, python-format
 msgid "%s mirror synchronisation"
 msgstr "Samstilling %s speglanna"
 
@@ -1163,23 +1213,21 @@ msgid "GFS (clustered)"
 msgstr "GFS (klasað)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Strípað "
+msgstr "Strípa"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Línuleg möppun"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Spegill "
+msgstr "Spegill"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Disksneið  %s"
+msgstr "Disksneið %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1410,9 +1458,10 @@ msgid ""
 "* In this release, mirroring support is \n"
 "available as a Technology Preview"
 msgstr ""
+"* í þessari útgáfu er speglun virk sem \n"
+"tilraunahugbúnaður"
 
 #: src/lv_edit_props.glade.h:4
-#, fuzzy
 msgid "* Mirrored"
 msgstr "Speglað"
 
@@ -1453,9 +1502,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Bæta við færslu í /etc/fstab"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Búa til nýjann sýndardisk"
+msgstr "Búa til nýjan sýndardisk (SD)"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Filesystem is not resizable"
@@ -1474,9 +1522,8 @@ msgid "Kilobytes granularity"
 msgstr "Nákvæmni kílóbæta"
 
 #: src/lv_edit_props.glade.h:22
-#, fuzzy
 msgid "LV name:"
-msgstr "Heiti SD: "
+msgstr "Heiti SD:"
 
 #: src/lv_edit_props.glade.h:23
 msgid "LV size"
@@ -1499,9 +1546,8 @@ msgid "Mount"
 msgstr "Tengja"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Mount point:"
-msgstr "Tengipunktur: "
+msgstr "Tengipunktur:"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Mount when rebooted"
@@ -1524,9 +1570,8 @@ msgid "Use remaining"
 msgstr "Nota allt pláss sem er eftir"
 
 #: src/lv_edit_props.glade.h:34
-#, fuzzy
 msgid "stripes"
-msgstr "strípur af"
+msgstr "strípur"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1549,9 +1594,8 @@ msgid "Contiguous"
 msgstr "Samhangandi"
 
 #: src/migrate_extents.glade.h:6
-#, fuzzy
 msgid "Destination:"
-msgstr "<b>Áfangastaður</b>"
+msgstr "Áfangastaður:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1574,7 +1618,6 @@ msgid "Migrate Extents"
 msgstr "Færa diskhluta"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate anywhere even if that reduces performance"
 msgstr "Færa hvert sem er þó það hafi slæm áhrif á afköst"
 
@@ -1587,133 +1630,9 @@ msgid "Normal"
 msgstr "Venjulegt"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr "Færa einungis diskbúta sem tilheyra LV"
+msgstr "Færa einungis diskbúta sem tilheyra SD"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Nota almenna skynsemi"
-
-#~ msgid ""
-#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgextend skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "pvcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "pvremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgremove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgcreate skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
-#~ "%s"
-#~ msgstr ""
-#~ "vgchange skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgreduce skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "pvmove skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "umount skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
-#~ "\""
-#~ msgstr ""
-#~ "mount skipunin brást. Skipunin var: %s - Kerfisvilluskilaboð: \"%s\""
-
-#~ msgid ""
-#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvresize skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
-
-#~ msgid ""
-#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvrename skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
-
-#~ msgid ""
-#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvchange skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
-
-#~ msgid ""
-#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvconvert skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
-
-#~ msgid "Quering Volume Groups"
-#~ msgstr "Skoða sýndardiskhópa"
-
-#~ msgid "Quering Logical Volumes"
-#~ msgstr "Skoða sýndardiska"
-
-#~ msgid "Quering Physical Volumes"
-#~ msgstr "Skoða raundiska"
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
-
-#~ msgid ""
-#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
-#~ "%s"
-#~ msgstr ""
-#~ "dmsetup skipunin brást. Skipunin var: \"%s\" - Kerfisvilluskilaboð: %s"
-
-#~ msgid "Migrate extents to "
-#~ msgstr "Færa diskhluta í "
