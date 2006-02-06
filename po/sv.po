@@ -1,5 +1,5 @@
 # Swedish messages for system-config-lvm.
-# Copyright 2004, 2005 Christian Rose <menthos@menthos.com>.
+# Copyright 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
 #
 # $Id$
 #
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 14:46-0500\n"
-"PO-Revision-Date: 2005-10-26 00:11+0200\n"
+"PO-Revision-Date: 2006-02-06 20:20+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -835,7 +835,10 @@ msgstr "Utökad partition"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Växlingspartition som används för tillfället"
+
+msgid "Swap partition"
+msgstr "Växlingspartition"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -979,23 +982,29 @@ msgid "Unpartitioned space on %s"
 msgstr "Opartitionerat utrymme på %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "kB"
+
+msgid "kB"
+msgstr "kB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "byte"
+
+msgid "B"
+msgstr "B"
+
+msgid "bytes"
+msgstr "byte"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1127,13 +1136,10 @@ msgstr ""
 "ögonblicksbild. Ursprung för logiska volymer kan ännu inte migreras, så de "
 "områdena kan inte väljas."
 
-# FIXME: This should be bug reported!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171754
-#
 #: src/renderer.py:385
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Ögonblicksbild av "
+msgstr "Ögonblicksbild av %s"
 
 #: src/renderer.py:487
 msgid "Origin"
@@ -1494,10 +1500,33 @@ msgid ""
 "* In this release, mirroring support is \n"
 "available as a Technology Preview"
 msgstr ""
+"* I denna utgåva är stöd för spegling\n"
+"tillgängligt som en teknikförhandsvisning"
+
+msgid ""
+"* In this release, mirroring support is available as a Technology Preview"
+msgstr ""
+"* I denna utgåva är stöd för spegling tillgängligt som en "
+"teknikförhandsvisning"
+
+msgid ""
+"In this release, mirroring support is \n"
+"available as a Technology Preview"
+msgstr ""
+"I denna utgåva är stöd för spegling\n"
+"tillgängligt som en teknikförhandsvisning"
+
+msgid ""
+"In this release, mirroring support is available as a Technology Preview"
+msgstr ""
+"I denna utgåva är stöd för spegling tillgängligt som en "
+"teknikförhandsvisning"
 
 #: src/lv_edit_props.glade.h:4
-#, fuzzy
 msgid "* Mirrored"
+msgstr "* Speglad"
+
+msgid "Mirrored"
 msgstr "Speglad"
 
 #: src/lv_edit_props.glade.h:5
@@ -1540,9 +1569,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Lägg till post i /etc/fstab"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Skapa ny logisk volym"
+msgstr "Skapa ny logisk volym (LV)"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Filesystem is not resizable"
@@ -1617,12 +1645,11 @@ msgstr "Strimlad"
 msgid "Use remaining"
 msgstr "Använd återstående"
 
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171754
-#
 #: src/lv_edit_props.glade.h:34
-#, fuzzy
 msgid "stripes"
+msgstr "strimlor"
+
+msgid "stripes of"
 msgstr "strimlor av"
 
 #: src/migrate_extents.glade.h:1
@@ -1649,8 +1676,10 @@ msgid "Contiguous"
 msgstr "Sammanhängande"
 
 #: src/migrate_extents.glade.h:6
-#, fuzzy
 msgid "Destination:"
+msgstr "Mål:"
+
+msgid "Destination"
 msgstr "Mål"
 
 # FIXME: Borde felrapporteras.
