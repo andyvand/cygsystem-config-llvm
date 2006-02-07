@@ -152,7 +152,10 @@ class DisplayView:
         while pix_w+20 > 1.01 * vis_w or pix_w+20 < 0.98 * vis_w:
             cyl_w = self.display.get_width()
             if pix_w+20 > 1.01 * vis_w:
-                new_width = cyl_w * 0.8
+                if self.display.get_adjusted_width() > 100:
+                    new_width = cyl_w * 0.8
+                else:
+                    break
             else:
                 new_width = cyl_w * 1.2
             self.display.set_width(new_width)

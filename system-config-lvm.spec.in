@@ -51,6 +51,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Feb 06 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.12-1.0
+  - Under certain conditions, labels might show partially
 * Fri Feb 03 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.11-1.0
   - Fixes for bz175077,169860,178128,161917,171117,175131,178195 
 * Thu Jan 05 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.10-1.0
