@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 14:46-0500\n"
-"PO-Revision-Date: 2005-12-05 11:23+0000\n"
+"PO-Revision-Date: 2006-02-08 10:12+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-POFile-SpellExtra: DISPLAY LV ls Reiserfs XFS VFs pvcreate GV dm VF VG\n"
 "X-POFile-SpellExtra: MSDOS VFAT VL Ext vgcreate LVM modprobe dmsetup UUID\n"
 "X-POFile-SpellExtra: Cramfs lvrename GFS umount ext snapshot lvresize Kilo\n"
-"X-POFile-SpellExtra: ões inicializá\n"
+"X-POFile-SpellExtra: ões inicializá GB\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -569,7 +569,6 @@ msgstr ""
 "tamanho do volume lógico para pelo menos %s ou adicione volumes físicos."
 
 #: src/InputController.py:1909
-#, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Os nomes começados por \"snapshot\" ou \"pvmove\" são palavras reservadas."
@@ -579,7 +578,6 @@ msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "Os nomes que contêm \"_mlog\" ou \"_mimage\" são palavras reservadas."
 
 #: src/InputController.py:1913
-#, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Os nomes que começam por \"-\" são inválidos"
 
@@ -823,9 +821,8 @@ msgid "PV UUID:   "
 msgstr "UUID do VF:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Não inicializável:   "
+msgstr "Não inicializável:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -834,7 +831,7 @@ msgstr "Partição extendida"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Partição de memória virtual em uso"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -853,33 +850,28 @@ msgid "Multipath device"
 msgstr "Dispositivo Multi-Local"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Nota:   "
+msgstr "Nota:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Inicializar manualmente"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Número de imagens de réplicas:  "
+msgstr "Número de imagens de réplicas:"
 
 #: src/lvm_model.py:792
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Imagens:  "
+msgstr "Imagens:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Original da imagem:  "
+msgstr "Original da imagem:"
 
 #: src/lvm_model.py:805
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Utilização da imagem:  "
+msgstr "Utilização da imagem:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
@@ -959,11 +951,9 @@ msgid "Unable to process request"
 msgstr "Não é possível processar o pedido"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"O comando ls falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %"
-"s"
+msgstr "O comando %s falhou. Comando tentado: \"%s\" - Mensagem de Erro do Sistema: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -983,23 +973,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Espaço sem partições em %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Bytes"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1133,9 +1120,9 @@ msgstr ""
 "extensões não podem ser seleccionadas."
 
 #: src/renderer.py:385
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Imagem de "
+msgstr "Imagem do %s"
 
 #: src/renderer.py:487
 msgid "Origin"
@@ -1162,9 +1149,9 @@ msgid "Uninitialized Entities"
 msgstr "Entidades Não Inicializadas"
 
 #: src/Volume_Tab_View.py:632
-#, fuzzy, python-format
+#, python-format
 msgid "%s mirror synchronisation"
-msgstr "sincronização da réplica %s "
+msgstr "sincronização da réplica %s"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
@@ -1248,23 +1235,21 @@ msgid "GFS (clustered)"
 msgstr "GFS (em 'cluster')"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Faixa "
+msgstr "Faixa"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Mapeamento Linear"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Réplica "
+msgstr "Réplica"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partição  %s"
+msgstr "Partição %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1495,11 +1480,12 @@ msgid ""
 "* In this release, mirroring support is \n"
 "available as a Technology Preview"
 msgstr ""
+"* Nesta versão, o suporte de réplicas está\n"
+"disponível como Antevisão da Tecnologia"
 
 #: src/lv_edit_props.glade.h:4
-#, fuzzy
 msgid "* Mirrored"
-msgstr "Replicado"
+msgstr "* Replicado"
 
 #: src/lv_edit_props.glade.h:5
 msgid ""
@@ -1538,9 +1524,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Adicionar o item ao /etc/fstab"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Criar um Novo Volume Lógico"
+msgstr "Criar um Novo Volume Lógico (VL)"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Filesystem is not resizable"
@@ -1559,9 +1544,8 @@ msgid "Kilobytes granularity"
 msgstr "Granularidade em Kilobytes"
 
 #: src/lv_edit_props.glade.h:22
-#, fuzzy
 msgid "LV name:"
-msgstr "Nome do VL: "
+msgstr "Nome do VL:"
 
 #: src/lv_edit_props.glade.h:23
 msgid "LV size"
@@ -1584,9 +1568,8 @@ msgid "Mount"
 msgstr "Montar"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Mount point:"
-msgstr "Ponto de montagem: "
+msgstr "Montado em:"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Mount when rebooted"
@@ -1609,9 +1592,8 @@ msgid "Use remaining"
 msgstr "Usar o restante"
 
 #: src/lv_edit_props.glade.h:34
-#, fuzzy
 msgid "stripes"
-msgstr "faixas de"
+msgstr "faixas"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1634,9 +1616,8 @@ msgid "Contiguous"
 msgstr "Contíguo"
 
 #: src/migrate_extents.glade.h:6
-#, fuzzy
 msgid "Destination:"
-msgstr "<b>Destino</b>"
+msgstr "Destino:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1659,7 +1640,6 @@ msgid "Migrate Extents"
 msgstr "Migrar as Extensões"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate anywhere even if that reduces performance"
 msgstr "Migrar para todo o lado mesmo que reduza a performance"
 
@@ -1672,9 +1652,8 @@ msgid "Normal"
 msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr "Só migrar as extensões que pertencem ao VL "
+msgstr "Só migrar as extensões que pertencem ao VL"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
