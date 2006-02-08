@@ -38,9 +38,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Zvolte skupinu svazků, do které přidat tento fyzický svazek:"
+msgstr "Zvolte skupinu svazků, do které přidat svazek %s:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -71,7 +71,7 @@ msgid "Uninitialized Disk Entity"
 msgstr "Neinicializovaná disková entitu"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Vyberte diskovou entitu, kterou přidat do skupiny svazků %s:"
 
@@ -135,11 +135,12 @@ msgid ""
 msgstr "Počet fyzických svazků v této skupině svazků dosáhl maxima."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "Počet fyzických svazků v této skupině svazků dosáhl maxima."
+msgstr ""
+"Do této skupiny svazků lze přidat ještě %s fyzických oddílů."
 
 #: src/InputController.py:114
 #, fuzzy, python-format
