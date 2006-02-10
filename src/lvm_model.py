@@ -609,7 +609,7 @@ class lvm_model:
         ext_list = pv.get_extent_blocks()
         start1, size1 = 0, 0
         i = 0
-        while i != (len(ext_list) - 1):
+        while i < len(ext_list):
           start2, size2 = ext_list[i].get_start_size()
           if (start1 + size1) == start2:
             start1, size1 = start2, size2
