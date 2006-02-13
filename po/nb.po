@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of system-config-lvm.
 # Copyright (C) 2004-2005, Red Hat, Inc.
-# This file is distributed under the same license as the PACKAGE package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2004-2005.
+# This file is distributed under the same license as the system-config-lvm package.
+# Kjartan Maraas <kmaraas@gnome.org>, 2004-2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-03 14:46-0500\n"
-"PO-Revision-Date: 2005-10-18 23:02+0200\n"
+"PO-Revision-Date: 2006-02-13 11:28+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -718,12 +718,11 @@ msgstr ""
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Ikke initiert"
+msgstr "Kan ikke initieres:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -732,7 +731,7 @@ msgstr "Utvidet partisjon"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Aktiv swap-partisjon"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -740,7 +739,7 @@ msgstr ""
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Feil ved automatisk partisjonering"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
@@ -748,12 +747,11 @@ msgstr "Partisjoner manuelt"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
-msgstr ""
+msgstr "Multipath-enhet"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Merknad:   "
+msgstr "Merknad:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
@@ -863,23 +861,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Ikke partisjonert plass på %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Bytes"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1001,17 +996,17 @@ msgid ""
 msgstr ""
 
 #: src/renderer.py:385
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Rediger %s, et bilde av %s"
+msgstr "Bilde av %s"
 
 #: src/renderer.py:487
 msgid "Origin"
-msgstr ""
+msgstr "Opprinnelse"
 
 #: src/renderer.py:493
 msgid "Snapshot"
-msgstr ""
+msgstr "Bilde"
 
 #: src/renderer.py:537
 msgid "extent view"
@@ -1042,22 +1037,22 @@ msgstr ""
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Oppretter %s-filsystem"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Endrer størrelse på %s-filsystem"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "Sjekker %s-filsystem"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Oppgraderer %s-filsystem til %s"
 
 #: src/Filesystem.py:13
 #, python-format
@@ -1108,21 +1103,19 @@ msgid "GFS (clustered)"
 msgstr "GFS (klynge)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Stripe "
+msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Lineær tilordning"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Speil "
+msgstr "Speil"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
 msgstr "Partisjon %s"
 
@@ -1349,9 +1342,8 @@ msgid ""
 msgstr ""
 
 #: src/lv_edit_props.glade.h:4
-#, fuzzy
 msgid "* Mirrored"
-msgstr "Speilet"
+msgstr "* Speilet"
 
 #: src/lv_edit_props.glade.h:5
 msgid ""
@@ -1364,6 +1356,14 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:13
 msgid "<b>Filesystem</b>"
@@ -1382,9 +1382,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Legg til oppføring i /etc/fstab"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Opprett nytt logisk volum"
+msgstr "Opprett nytt logisk volum (LV)"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Filesystem is not resizable"
@@ -1403,13 +1402,12 @@ msgid "Kilobytes granularity"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:22
-#, fuzzy
 msgid "LV name:"
-msgstr "LV-navn: "
+msgstr "LV-navn:"
 
 #: src/lv_edit_props.glade.h:23
 msgid "LV size"
-msgstr ""
+msgstr "LV-størrelse"
 
 #: src/lv_edit_props.glade.h:24
 msgid "LVs under snapshots are not resizable"
@@ -1428,13 +1426,12 @@ msgid "Mount"
 msgstr "Monter"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Mount point:"
-msgstr "Monteringspunkt: "
+msgstr "Monteringspunkt:"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Monter ved omstart"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Size beg"
@@ -1453,17 +1450,16 @@ msgid "Use remaining"
 msgstr "Bruk gjenværende plass"
 
 #: src/lv_edit_props.glade.h:34
-#, fuzzy
 msgid "stripes"
-msgstr "Stripe "
+msgstr "striper"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Mål</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Migreringspolicy</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1479,7 +1475,7 @@ msgstr "Sammenhengende"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "Mål:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1509,7 +1505,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
@@ -1517,13 +1513,4 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
+msgstr "Bruk vanlig fornuft"
