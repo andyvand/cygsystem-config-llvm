@@ -104,3 +104,7 @@ VFAT_T=_("VFAT")
 XFS_T=_("XFS")
 CRAMFS_T=_("Cramfs")
 
+
+
+# UI support for mirroring
+MIRRORING_UI_SUPPORT = False
