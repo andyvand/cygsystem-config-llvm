@@ -1507,7 +1507,7 @@ class LV_edit_props:
                 return
         # check if lv is origin - no mirroring
         if not self.new:
-            if self.lv.has_snapshots():
+            if self.lv.has_snapshots() and not self.lv.is_mirrored():
                 self.errorMessage(_("Logical Volumes with associated snapshots cannot be mirrored yet."))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 self.update_size_limits()
