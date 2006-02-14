@@ -1452,7 +1452,12 @@ class LV_edit_props:
                 self.mirror_to_diff_hds = None # prompt for option
             self.glade_xml.get_widget('enable_mirroring').set_active(already_mirrored)
         self.mirror_to_diff_hds = False
-
+        if MIRRORING_UI_SUPPORT == False:
+            if self.new:
+                self.glade_xml.get_widget('enable_mirroring').hide()
+            else:
+                self.glade_xml.get_widget('lv_properties_frame').hide()
+        
         # set up mirror limits
         self.on_enable_mirroring(None)
         
@@ -2141,7 +2146,7 @@ class LV_edit_props:
                     self.infoMessage(_("Mirror not created. Completing remaining tasks."))
                 else:
                     # create mirror
-                    self.infoMessage('fixme: addition of mirror not implemented yet, should be ready for U2, I hope :). Completing remaining tasks.')
+                    self.infoMessage(_('Underlaying LVM doesn\'t support addition of mirrors to existing Logical Volumes. Completing remaining tasks.'))
                     #self.command_handler.add_mirroring(self.lv.get_path(), pvlist_from_make_room)
                     pass
             

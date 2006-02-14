@@ -585,9 +585,9 @@ class MirrorSyncProgress:
         
     
     def initiate(self):
-        # mirroring support disabled for now :(
-        return
-    
+        if MIRRORING_UI_SUPPORT == False:
+            return
+        
         # return if timer is already ticking
         if self.timer != 0:
             return
@@ -598,7 +598,7 @@ class MirrorSyncProgress:
     def crank(self):
         # initiate lvprobe if not initiated
         if self.forked_command == None:
-            args = [LVM_BIN_PATH, 'lvs', '--noheadings', '--separator', '\";\"', '-o', 'lv_name,vg_name,lv_attr,copy_percent,move_pv']
+            args = [LVM_BIN_PATH, 'lvs', '--noheadings', '--separator', ';', '-o', 'lv_name,vg_name,lv_attr,copy_percent,move_pv']
             self.forked_command = ForkedCommand(LVM_BIN_PATH, args)
             self.forked_command.fork()
         
