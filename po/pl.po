@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-03 23:03+0200\n"
+"PO-Revision-Date: 2006-02-16 20:47+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -617,6 +617,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"Podwarstwowy LVM nie obsługuje dodawania luster do istniejących woluminów "
+"logicznych. Zakończenie pozostałych zadań."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -1551,9 +1553,8 @@ msgid "Linear"
 msgstr "Liniowy"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
-msgstr "* Lustrzany"
+msgstr "Lustrzany"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1654,10 +1655,3 @@ msgstr "Migruj tylko obszary należące do woluminu logicznego"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Użyj we wspólnym znaczeniu"
-
-#~ msgid ""
-#~ "* In this release, mirroring support is \n"
-#~ "available as a Technology Preview"
-#~ msgstr ""
-#~ "* W tym wydaniu obsługa luster jest \n"
-#~ "dostępna jako podgląd technologii"
