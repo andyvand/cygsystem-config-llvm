@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-03 14:46-0500\n"
+"POT-Creation-Date: 2006-02-16 07:14-0500\n"
 "PO-Revision-Date: 2006-02-04 17:15-0500\n"
 "Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
 "Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
@@ -104,7 +104,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "Esiste già un Gruppo di Volume chiamato %s. Si raccomanda di scegliere un "
 "nome univoco."
@@ -119,7 +120,8 @@ msgstr "Si deve dare un nome al nuovo Gruppo di Volume"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Il mount point %s specificato non esiste. Si desidera crearlo?"
 
 #: src/InputController.py:104
@@ -129,7 +131,8 @@ msgstr "La creazione del mount point %s è fallita inaspettatamente."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr "Questa caratteristica non è ancora stata implementata in questa versione"
+msgstr ""
+"Questa caratteristica non è ancora stata implementata in questa versione"
 
 #: src/InputController.py:108
 msgid ""
@@ -190,7 +193,8 @@ msgstr ""
 "pregato di rimuovere prima gli snapshots."
 
 #: src/InputController.py:121
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Errore di conversione non definito nel model factory. Impossibile completare "
 "l'operazione."
@@ -313,7 +317,8 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Sei sicuro di voler rimuovere %s dal Gruppo di Volume %s ?"
 
 #: src/InputController.py:153
@@ -446,7 +451,8 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", un origine dello snapshot \"%s\", è stato cancellato dalla lista "
 "delle rimozioni."
@@ -521,15 +527,15 @@ msgstr "Edita %s, uno Snapshot di %s"
 msgid "Edit Logical Volume"
 msgstr "Edita Volume Logico"
 
-#: src/InputController.py:1497
+#: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Il Management del Volume Logico in oggetto non supporta il mirroring"
 
-#: src/InputController.py:1504
+#: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Non si può fare il mirror di Volumi Logici in Striping."
 
-#: src/InputController.py:1511
+#: src/InputController.py:1516
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "Non si può ancora effettuare il mirror di Volumi Logici con snapshots "
@@ -537,7 +543,7 @@ msgstr ""
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1518
+#: src/InputController.py:1523
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -546,13 +552,14 @@ msgstr ""
 "danneggiamento del disco rigido. Vuoi porre immagini mirror su dischi rigidi "
 "differenti?"
 
-#: src/InputController.py:1527
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+#: src/InputController.py:1532
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Sono disponibili meno di 3 dischi rigidi con spazio libero. Disabilitare il "
 "mirroring."
 
-#: src/InputController.py:1532
+#: src/InputController.py:1537
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -560,7 +567,7 @@ msgstr ""
 "Ci deve essere spazio libero su almeno tre Volumi Fisici per abilitare il "
 "mirroring"
 
-#: src/InputController.py:1540
+#: src/InputController.py:1545
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -568,7 +575,7 @@ msgstr ""
 "La grandezza del Volume Logico è stata adattata alla massima dimensione "
 "disponibile per i mirrors."
 
-#: src/InputController.py:1545
+#: src/InputController.py:1550
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -577,42 +584,43 @@ msgstr ""
 "Non c'è sufficiente spazio libero per aggiungere il mirroring. Riduci la "
 "misura del Volume Logico ad almeno %s, o ggiungi Volumi Fisici."
 
-#: src/InputController.py:1909
+#: src/InputController.py:1914
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "I nomi che cominciano con \"snapshot\" o \"pvmove\" sono keywords riservate."
+msgstr ""
+"I nomi che cominciano con \"snapshot\" o \"pvmove\" sono keywords riservate."
 
-#: src/InputController.py:1911
+#: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "I nomi che contengono \"_mlog\" o \"_mimage\" sono keywords riservate."
 
-#: src/InputController.py:1913
+#: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "I nomi che cominciano con un \"-\" non sono validi"
 
-#: src/InputController.py:1915
+#: src/InputController.py:1920
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "I nomi non possono essere ne \".\" ne \"..\""
 
-#: src/InputController.py:1921
+#: src/InputController.py:1926
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Gli spazi non sono permessi nei nomi dei Volumi Logici"
 
-#: src/InputController.py:1924
+#: src/InputController.py:1929
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Il caratterre \"%s\" nel nome del Volume Logico non è valido"
 
-#: src/InputController.py:1944
+#: src/InputController.py:1949
 msgid "Please specify mount point"
 msgstr "Sei pregato di specificare un punto di montaggio"
 
-#: src/InputController.py:2006
+#: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "Vuoi eseguire l'aggiornamento da ext2 a ext3 preservando i dati sul Volume "
 "Logico?"
 
-#: src/InputController.py:2040
+#: src/InputController.py:2045
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -621,17 +629,24 @@ msgstr ""
 "Sei sicuro di voler procedere?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2141
+#: src/InputController.py:2146
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Mirror non creato. Completare le operazioni rimanenti."
 
-#: src/InputController.py:2190
+#. create mirror
+#: src/InputController.py:2149
+msgid ""
+"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+"Volumes. Completing remaining tasks."
+msgstr ""
+
+#: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr ""
 "In ordine all'aggiunta di un mirror, alcune estensioni debbono essere "
 "migrate."
 
-#: src/InputController.py:2190
+#: src/InputController.py:2195
 msgid "Do you want to migrate specified extents?"
 msgstr "Vuoi migrare le estensioni specificate?"
 
@@ -923,8 +938,10 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr "Sei veramente sicuro di volere inizializzare %s di spazio libero su disco %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr ""
+"Sei veramente sicuro di volere inizializzare %s di spazio libero su disco %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -963,7 +980,9 @@ msgstr "Impossibile elaborare la richiesta"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Comando %s eseguito senza successo. Si è tentato di eseguire il comando: \"%s\" - Messaggio di Errore di Sistema: %s"
+msgstr ""
+"Comando %s eseguito senza successo. Si è tentato di eseguire il comando: \"%s"
+"\" - Messaggio di Errore di Sistema: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1086,7 +1105,7 @@ msgstr "Non allocato"
 msgid "Uninitialized"
 msgstr "Non inizializzato"
 
-#: src/renderer.py:192
+#: src/renderer.py:195
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
@@ -1097,7 +1116,7 @@ msgstr ""
 "del Volume Logico %s. I Volumi Logici con Mirror non sono ancora migrabili, "
 "così le estensioni non sono selezionabili."
 
-#: src/renderer.py:194
+#: src/renderer.py:197
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to mirror image of "
@@ -1108,7 +1127,7 @@ msgstr ""
 "mirror del Volume Logico %s. I Volumi Logici con Mirror non sono ancora "
 "migrabili, così le estensioni non sono selezionabili."
 
-#: src/renderer.py:196
+#: src/renderer.py:199
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
@@ -1118,7 +1137,7 @@ msgstr ""
 "snapshot di %s. Gli snapshots non sono ancora migrabili, così le estensioni "
 "non sono selezionabili."
 
-#: src/renderer.py:198
+#: src/renderer.py:201
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
@@ -1129,20 +1148,20 @@ msgstr ""
 "snapshot %s. Le origini di snapshot non sono ancora migrabili, così le "
 "estensioni non sono selezionabili."
 
-#: src/renderer.py:385
+#: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
 msgstr "Snapshot di %s"
 
-#: src/renderer.py:487
+#: src/renderer.py:490
 msgid "Origin"
 msgstr "Origine"
 
-#: src/renderer.py:493
+#: src/renderer.py:496
 msgid "Snapshot"
 msgstr "Snapshot"
 
-#: src/renderer.py:537
+#: src/renderer.py:540
 msgid "extent view"
 msgstr "vista estensioni"
 
@@ -1489,18 +1508,6 @@ msgstr "messaggio estensione gv:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
-"* In this release, mirroring support is \n"
-"available as a Technology Preview"
-msgstr ""
-"* In questa versione, il supporto mirroring é \n"
-"disponibile come anteprima tecnologica"
-
-#: src/lv_edit_props.glade.h:4
-msgid "* Mirrored"
-msgstr "* Mirrored"
-
-#: src/lv_edit_props.glade.h:5
-msgid ""
 "4\n"
 "8\n"
 "16\n"
@@ -1519,91 +1526,96 @@ msgstr ""
 "256\n"
 "512"
 
-#: src/lv_edit_props.glade.h:13
+#: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
 msgstr "<b>Filesystem</b>"
 
-#: src/lv_edit_props.glade.h:14
+#: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
 msgstr "<b>Proprietà VL</b>"
 
-#: src/lv_edit_props.glade.h:15
+#: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
 msgstr "<b>Dimensione</b>"
 
-#: src/lv_edit_props.glade.h:16
+#: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
 msgstr "Aggiungi riga in /etc/fstab"
 
-#: src/lv_edit_props.glade.h:17
+#: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
 msgstr "Crea un nuovo Volume Logico (LV)"
 
-#: src/lv_edit_props.glade.h:18
+#: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr "Il filesystem non è ridimensionabile"
 
-#: src/lv_edit_props.glade.h:19
+#: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
 msgstr "Spazio disponibile nel label del Gruppo di Volumi"
 
-#: src/lv_edit_props.glade.h:20
+#: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
 msgstr "Label dello spazio disponibile residuo"
 
-#: src/lv_edit_props.glade.h:21
+#: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
 msgstr "Granularità Kilobytes"
 
-#: src/lv_edit_props.glade.h:22
+#: src/lv_edit_props.glade.h:19
 msgid "LV name:"
 msgstr "Nome VL:"
 
-#: src/lv_edit_props.glade.h:23
+#: src/lv_edit_props.glade.h:20
 msgid "LV size"
 msgstr "Dimensione VL"
 
-#: src/lv_edit_props.glade.h:24
+#: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
 msgstr "I VL sotto snapshots non sono ridimensionabili"
 
-#: src/lv_edit_props.glade.h:25
+#: src/lv_edit_props.glade.h:22
 msgid "Linear"
 msgstr "Lineare"
 
-#: src/lv_edit_props.glade.h:26
+#: src/lv_edit_props.glade.h:23
+#, fuzzy
+msgid "Mirrored"
+msgstr "* Mirrored"
+
+#: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
 msgstr "I VL con Mirror non sono ridimensionabili"
 
-#: src/lv_edit_props.glade.h:27
+#: src/lv_edit_props.glade.h:25
 msgid "Mount"
 msgstr "Mount"
 
-#: src/lv_edit_props.glade.h:28
+#: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
 msgstr "Punto di montaggio:"
 
-#: src/lv_edit_props.glade.h:29
+#: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr "Monta al riavvio"
 
-#: src/lv_edit_props.glade.h:30
+#: src/lv_edit_props.glade.h:28
 msgid "Size beg"
 msgstr "Dimensione (beg)"
 
-#: src/lv_edit_props.glade.h:31
+#: src/lv_edit_props.glade.h:29
 msgid "Size end"
 msgstr "Dimensione finale"
 
-#: src/lv_edit_props.glade.h:32
+#: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Striped"
 
-#: src/lv_edit_props.glade.h:33
+#: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
 msgstr "Usa spazio residuo"
 
-#: src/lv_edit_props.glade.h:34
+#: src/lv_edit_props.glade.h:32
 msgid "stripes"
 msgstr "stripes"
 
@@ -1671,3 +1683,9 @@ msgstr "Migra solo le estensioni appartenenti al VL"
 msgid "Use common sense"
 msgstr "Usa buonsenso"
 
+#~ msgid ""
+#~ "* In this release, mirroring support is \n"
+#~ "available as a Technology Preview"
+#~ msgstr ""
+#~ "* In questa versione, il supporto mirroring é \n"
+#~ "disponibile come anteprima tecnologica"

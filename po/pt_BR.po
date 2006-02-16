@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-03 14:46-0500\n"
+"POT-Creation-Date: 2006-02-16 07:14-0500\n"
 "PO-Revision-Date: 2006-02-05 23:23-0200\n"
 "Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
 "Language-Team: Brazilian Portuguese\n"
@@ -97,8 +97,10 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr ""
+"Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -110,7 +112,8 @@ msgstr "É necessário prover um nome para o novo Grupo de Volume"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "O ponto de montagem %s especificado não existe. Você deseja criá-lo?"
 
 #: src/InputController.py:104
@@ -126,13 +129,15 @@ msgstr "Esta funcionalidade ainda não está implementada nesta versão"
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr ""
+"O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr ""
+"O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:112
 #, python-format
@@ -176,7 +181,8 @@ msgstr ""
 "remova as imagens primeiro."
 
 #: src/InputController.py:121
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Erro de conversão de tipos não definido no model factory. Não foi possível "
 "completar a operação."
@@ -300,7 +306,8 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Você tem certeza que deseja remover %s do Grupo de Volume %s?"
 
 #: src/InputController.py:153
@@ -430,8 +437,10 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr "\"%s \", uma origem da imagem \"%s \", foi removido da lista da remoção."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr ""
+"\"%s \", uma origem da imagem \"%s \", foi removido da lista da remoção."
 
 #: src/InputController.py:602
 #, python-format
@@ -503,21 +512,21 @@ msgstr "Editar %s, uma imagem de %s"
 msgid "Edit Logical Volume"
 msgstr "Editar Volume Lógico"
 
-#: src/InputController.py:1497
+#: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "A gerência de volumes lógicos subjacentes não suporta espelhamento"
 
-#: src/InputController.py:1504
+#: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Os volumes lógicos distribuídos não podem ser espelhados."
 
-#: src/InputController.py:1511
+#: src/InputController.py:1516
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "Vomules lógicos com imagens associadas ainda não podem ser espelhados."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1518
+#: src/InputController.py:1523
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -526,13 +535,14 @@ msgstr ""
 "disco rígido. Você quer colocar imagens espelhadas em discos rígidos "
 "diferentes?"
 
-#: src/InputController.py:1527
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+#: src/InputController.py:1532
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Menos de 3 discos rígidos estão disponíveis com espaço livre. Desabilitando "
 "espelhamento."
 
-#: src/InputController.py:1532
+#: src/InputController.py:1537
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -540,7 +550,7 @@ msgstr ""
 "Deve haver espaço livre ao menos em três volumes físicos para habilitar "
 "espelhamento"
 
-#: src/InputController.py:1540
+#: src/InputController.py:1545
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -548,7 +558,7 @@ msgstr ""
 "O tamanho do volume lógico foi ajustado ao tamanho máximo disponível para "
 "espelhos."
 
-#: src/InputController.py:1545
+#: src/InputController.py:1550
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -557,40 +567,44 @@ msgstr ""
 "Não há espaço livre suficiente para adicionar espelhamento. Reduza o tamanho "
 "do volume lógico até %s, ou adicione volumes físicos."
 
-#: src/InputController.py:1909
+#: src/InputController.py:1914
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "Nomes que comecem com \"snapshot \" ou \"pvmove \" são palavras chave reservadas."
+msgstr ""
+"Nomes que comecem com \"snapshot \" ou \"pvmove \" são palavras chave "
+"reservadas."
 
-#: src/InputController.py:1911
+#: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Nomes contendo \"_mlog \" ou \"_mimage\" são palavras chave reservadas."
+msgstr ""
+"Nomes contendo \"_mlog \" ou \"_mimage\" são palavras chave reservadas."
 
-#: src/InputController.py:1913
+#: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Nomes que comecem com \"-\" são inválidos"
 
-#: src/InputController.py:1915
+#: src/InputController.py:1920
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "O nome não pode ser \".\" nem \"..\""
 
-#: src/InputController.py:1921
+#: src/InputController.py:1926
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Espaços não são permitidos em nomes de Volumes Lógicos"
 
-#: src/InputController.py:1924
+#: src/InputController.py:1929
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Caractere inválido \"%s\" no nome do Volume Lógico"
 
-#: src/InputController.py:1944
+#: src/InputController.py:1949
 msgid "Please specify mount point"
 msgstr "Pro favor especifique um ponto de montagem"
 
-#: src/InputController.py:2006
+#: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr "Você quer atualizar ext2 para ext3 preservando os dados no volume lógico?"
+msgstr ""
+"Você quer atualizar ext2 para ext3 preservando os dados no volume lógico?"
 
-#: src/InputController.py:2040
+#: src/InputController.py:2045
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -599,15 +613,23 @@ msgstr ""
 "tem certeza que deseja prosseguir?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2141
+#: src/InputController.py:2146
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Espelho não criado. Completando tarefas restantes."
 
-#: src/InputController.py:2190
-msgid "In order to add mirroring, some extents need to be migrated."
-msgstr "A fim de adicionar espelhamento, algumas extensões necessitam ser migradas."
+#. create mirror
+#: src/InputController.py:2149
+msgid ""
+"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+"Volumes. Completing remaining tasks."
+msgstr ""
 
-#: src/InputController.py:2190
+#: src/InputController.py:2195
+msgid "In order to add mirroring, some extents need to be migrated."
+msgstr ""
+"A fim de adicionar espelhamento, algumas extensões necessitam ser migradas."
+
+#: src/InputController.py:2195
 msgid "Do you want to migrate specified extents?"
 msgstr "Você deseja migrar as extensões especificadas?"
 
@@ -900,8 +922,10 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr "Você tem certeza que deseja inicializar %s do espaço livre no disco %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr ""
+"Você tem certeza que deseja inicializar %s do espaço livre no disco %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -940,7 +964,9 @@ msgstr "Impossibilitado de processar requisição"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "o comando %s falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do Sistema: %s"
+msgstr ""
+"o comando %s falhou. Tentativa de comando: \"%s\" - Mensagem de Erro do "
+"Sistema: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1063,7 +1089,7 @@ msgstr "Não Alocado"
 msgid "Uninitialized"
 msgstr "Não Inicializado"
 
-#: src/renderer.py:192
+#: src/renderer.py:195
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
@@ -1074,7 +1100,7 @@ msgstr ""
 "do Volume Lógico %s. Volumes Lógicos Espelhados ainda não são migráveis, "
 "portanto as extensões não são selecionáveis."
 
-#: src/renderer.py:194
+#: src/renderer.py:197
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to mirror image of "
@@ -1085,7 +1111,7 @@ msgstr ""
 "do volume lógico %s.Volumes Lógicos Espelhados ainda não são migráveis, "
 "portanto as extensões não são selecionáveis."
 
-#: src/renderer.py:196
+#: src/renderer.py:199
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
@@ -1095,7 +1121,7 @@ msgstr ""
 "%s. As imagens não são migráveis, portanto as extensões não são "
 "selecionáveis."
 
-#: src/renderer.py:198
+#: src/renderer.py:201
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
@@ -1106,20 +1132,20 @@ msgstr ""
 "s. A origem das imagens ainda não são migráveis, portanto as extensões não "
 "são selecionáveis."
 
-#: src/renderer.py:385
+#: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
 msgstr "Imagem de %s"
 
-#: src/renderer.py:487
+#: src/renderer.py:490
 msgid "Origin"
 msgstr "Origem"
 
-#: src/renderer.py:493
+#: src/renderer.py:496
 msgid "Snapshot"
 msgstr "Imagem"
 
-#: src/renderer.py:537
+#: src/renderer.py:540
 msgid "extent view"
 msgstr "visualizar extensões"
 
@@ -1464,18 +1490,6 @@ msgstr "mensagem de extensão vg:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
-"* In this release, mirroring support is \n"
-"available as a Technology Preview"
-msgstr ""
-"* nesta versão, o suporte a espelhamento está \n"
-"disponível como uma prévia da tecnologia"
-
-#: src/lv_edit_props.glade.h:4
-msgid "* Mirrored"
-msgstr "* Espelhado"
-
-#: src/lv_edit_props.glade.h:5
-msgid ""
 "4\n"
 "8\n"
 "16\n"
@@ -1494,91 +1508,96 @@ msgstr ""
 "256\n"
 "512"
 
-#: src/lv_edit_props.glade.h:13
+#: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
 msgstr "<b>Sistema de arquivos</b>"
 
-#: src/lv_edit_props.glade.h:14
+#: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
 msgstr "<b>Propriedades LV</b>"
 
-#: src/lv_edit_props.glade.h:15
+#: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
 msgstr "<b>Tamanho</b>"
 
-#: src/lv_edit_props.glade.h:16
+#: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
 msgstr "Adicionar entrada a /etc/fstab"
 
-#: src/lv_edit_props.glade.h:17
+#: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
 msgstr "Criar Novo Volume Lógico (VL)"
 
-#: src/lv_edit_props.glade.h:18
+#: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr "Sistema de arquivos não é redimensionável"
 
-#: src/lv_edit_props.glade.h:19
+#: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
 msgstr "Espaço livre na etiqueta do Grupo de Volume"
 
-#: src/lv_edit_props.glade.h:20
+#: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
 msgstr "Rótulo do espaço livre restante"
 
-#: src/lv_edit_props.glade.h:21
+#: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
 msgstr "Granularidade em Kilobytes"
 
-#: src/lv_edit_props.glade.h:22
+#: src/lv_edit_props.glade.h:19
 msgid "LV name:"
 msgstr "Nome do VL:"
 
-#: src/lv_edit_props.glade.h:23
+#: src/lv_edit_props.glade.h:20
 msgid "LV size"
 msgstr "Tamanho do LV"
 
-#: src/lv_edit_props.glade.h:24
+#: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
 msgstr "LVs sob imagens não são redimensionáveis"
 
-#: src/lv_edit_props.glade.h:25
+#: src/lv_edit_props.glade.h:22
 msgid "Linear"
 msgstr "Linear"
 
-#: src/lv_edit_props.glade.h:26
+#: src/lv_edit_props.glade.h:23
+#, fuzzy
+msgid "Mirrored"
+msgstr "* Espelhado"
+
+#: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
 msgstr "LVs Espelhado não redimensionável"
 
-#: src/lv_edit_props.glade.h:27
+#: src/lv_edit_props.glade.h:25
 msgid "Mount"
 msgstr "Montar"
 
-#: src/lv_edit_props.glade.h:28
+#: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
 msgstr "Ponto de Montagem:"
 
-#: src/lv_edit_props.glade.h:29
+#: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr "Montar quando reiniciar"
 
-#: src/lv_edit_props.glade.h:30
+#: src/lv_edit_props.glade.h:28
 msgid "Size beg"
 msgstr "Tamanho inicial"
 
-#: src/lv_edit_props.glade.h:31
+#: src/lv_edit_props.glade.h:29
 msgid "Size end"
 msgstr "Tamanho final"
 
-#: src/lv_edit_props.glade.h:32
+#: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Striped"
 
-#: src/lv_edit_props.glade.h:33
+#: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
 msgstr "Usar restante"
 
-#: src/lv_edit_props.glade.h:34
+#: src/lv_edit_props.glade.h:32
 msgid "stripes"
 msgstr "stripes"
 
@@ -1645,6 +1664,13 @@ msgstr "Somente migre extensões pertencentes para VL"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Use o sentido comum"
+
+#~ msgid ""
+#~ "* In this release, mirroring support is \n"
+#~ "available as a Technology Preview"
+#~ msgstr ""
+#~ "* nesta versão, o suporte a espelhamento está \n"
+#~ "disponível como uma prévia da tecnologia"
 
 #~ msgid ""
 #~ "vgextend command failed. Command attempted: \"%s\" - System Error "
@@ -1788,4 +1814,3 @@ msgstr "Use o sentido comum"
 
 #~ msgid "Migrate extents to "
 #~ msgstr "Migrar Extensões para"
-

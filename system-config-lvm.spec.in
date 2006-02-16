@@ -51,6 +51,9 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Thu Feb 16 2006 Jim Parsons <jparsons@redhat.com> 1.0.14-1.0
+  - Remove mirroring support from UI by default. Available with constants
+    in lvmui_constants file by setting MIRRORING_UI_SUPPORT to True
 * Fri Feb 10 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.13-1.0
   - Fix failure to display all unused space
 * Mon Feb 06 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.12-1.0

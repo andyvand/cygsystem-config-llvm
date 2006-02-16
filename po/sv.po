@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-02-03 14:46-0500\n"
+"POT-Creation-Date: 2006-02-16 07:14-0500\n"
 "PO-Revision-Date: 2006-02-06 20:20+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -515,21 +515,21 @@ msgstr "Redigera %s, en ögonblicksbild av %s"
 msgid "Edit Logical Volume"
 msgstr "Redigera logisk volym"
 
-#: src/InputController.py:1497
+#: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Underliggande hanteringen av logiska volymer stöder inte spegling"
 
-#: src/InputController.py:1504
+#: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Strimlade logiska volymer kan inte speglas."
 
-#: src/InputController.py:1511
+#: src/InputController.py:1516
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "Logiska volymer med assiocerade ögonblicksbilder kan inte speglas än."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1518
+#: src/InputController.py:1523
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -537,14 +537,14 @@ msgstr ""
 "Det huvudsakliga syftet med spegling är att skydda data ifall en hårddisk "
 "går sönder. Vill du placera spegelavbilderna på olika hårddiskar?"
 
-#: src/InputController.py:1527
+#: src/InputController.py:1532
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Färre än 3 hårddiskar med ledigt utrymme är tillgängliga. Inaktiverar "
 "spegling."
 
-#: src/InputController.py:1532
+#: src/InputController.py:1537
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -552,7 +552,7 @@ msgstr ""
 "Det måste finnas ledigt utrymme på minst tre fysiska volymer för att "
 "aktivera spegling."
 
-#: src/InputController.py:1540
+#: src/InputController.py:1545
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -560,7 +560,7 @@ msgstr ""
 "Storleken på den logiska volymen har justerats till den största tillgängliga "
 "storleken för speglar."
 
-#: src/InputController.py:1545
+#: src/InputController.py:1550
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -570,43 +570,43 @@ msgstr ""
 "Minska storleken på den logiska volymen till som mest %s, eller lägg till "
 "fysiska volymer."
 
-#: src/InputController.py:1909
+#: src/InputController.py:1914
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Namn som börjar med \"snapshot\" eller \"pvmove\" är reserverade nyckelord."
 
-#: src/InputController.py:1911
+#: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr ""
 "Namn som innehåller \"_mlog\" eller \"_mimage\" är reserverade nyckelord."
 
-#: src/InputController.py:1913
+#: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Namn som börjar med ett \"-\" är ogiltiga"
 
-#: src/InputController.py:1915
+#: src/InputController.py:1920
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Namnet kan varken vara \".\" eller \"..\""
 
-#: src/InputController.py:1921
+#: src/InputController.py:1926
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Mellanrum tillåts inte i namn på logiska volymer"
 
-#: src/InputController.py:1924
+#: src/InputController.py:1929
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Ogiltigt tecken \"%s\" i namn på logisk volym"
 
-#: src/InputController.py:1944
+#: src/InputController.py:1949
 msgid "Please specify mount point"
 msgstr "Ange monteringspunkt"
 
-#: src/InputController.py:2006
+#: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "Vill du uppgradera ext2 till ext3 och bevara data på den logiska volymen?"
 
-#: src/InputController.py:2040
+#: src/InputController.py:2045
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -615,15 +615,22 @@ msgstr ""
 "du säker att du vill fortsätta?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2141
+#: src/InputController.py:2146
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Spegeln skapades inte. Slutför återstående uppgifter."
 
-#: src/InputController.py:2190
+#. create mirror
+#: src/InputController.py:2149
+msgid ""
+"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+"Volumes. Completing remaining tasks."
+msgstr ""
+
+#: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "För att kunna lägga till spegling måste en del områden migreras."
 
-#: src/InputController.py:2190
+#: src/InputController.py:2195
 msgid "Do you want to migrate specified extents?"
 msgstr "Vill du migrera de angivna områdena?"
 
@@ -837,9 +844,6 @@ msgstr "Utökad partition"
 msgid "Swap partition currently in use"
 msgstr "Växlingspartition som används för tillfället"
 
-msgid "Swap partition"
-msgstr "Växlingspartition"
-
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
 msgstr "Främmande startpartition"
@@ -993,17 +997,8 @@ msgstr "MB"
 msgid "KB"
 msgstr "kB"
 
-msgid "kB"
-msgstr "kB"
-
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr "byte"
-
-msgid "B"
-msgstr "B"
-
-msgid "bytes"
 msgstr "byte"
 
 #. File System Types
@@ -1094,7 +1089,7 @@ msgstr "Oallokerad"
 msgid "Uninitialized"
 msgstr "Oinitierad"
 
-#: src/renderer.py:192
+#: src/renderer.py:195
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
@@ -1105,7 +1100,7 @@ msgstr ""
 "volymen %s. Speglade logiska volymer kan ännu inte migreras, så de områdena "
 "kan inte väljas."
 
-#: src/renderer.py:194
+#: src/renderer.py:197
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to mirror image of "
@@ -1116,7 +1111,7 @@ msgstr ""
 "volymen %s. Speglade logiska volymer kan ännu inte migreras, så de områdena "
 "kan inte väljas."
 
-#: src/renderer.py:196
+#: src/renderer.py:199
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
@@ -1125,7 +1120,7 @@ msgstr ""
 "De områden som du försöker välja tillhör %s, en ögonblicksbild av %s. "
 "Ögonblicksbilder kan ännu inte migreras, så de områdena kan inte väljas."
 
-#: src/renderer.py:198
+#: src/renderer.py:201
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
@@ -1136,20 +1131,20 @@ msgstr ""
 "ögonblicksbild. Ursprung för logiska volymer kan ännu inte migreras, så de "
 "områdena kan inte väljas."
 
-#: src/renderer.py:385
+#: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
 msgstr "Ögonblicksbild av %s"
 
-#: src/renderer.py:487
+#: src/renderer.py:490
 msgid "Origin"
 msgstr "Ursprung"
 
-#: src/renderer.py:493
+#: src/renderer.py:496
 msgid "Snapshot"
 msgstr "Ögonblicksbild"
 
-#: src/renderer.py:537
+#: src/renderer.py:540
 msgid "extent view"
 msgstr "områdesvy"
 
@@ -1497,40 +1492,6 @@ msgstr "utöka vg-meddelande:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
-"* In this release, mirroring support is \n"
-"available as a Technology Preview"
-msgstr ""
-"* I denna utgåva är stöd för spegling\n"
-"tillgängligt som en teknikförhandsvisning"
-
-msgid ""
-"* In this release, mirroring support is available as a Technology Preview"
-msgstr ""
-"* I denna utgåva är stöd för spegling tillgängligt som en "
-"teknikförhandsvisning"
-
-msgid ""
-"In this release, mirroring support is \n"
-"available as a Technology Preview"
-msgstr ""
-"I denna utgåva är stöd för spegling\n"
-"tillgängligt som en teknikförhandsvisning"
-
-msgid ""
-"In this release, mirroring support is available as a Technology Preview"
-msgstr ""
-"I denna utgåva är stöd för spegling tillgängligt som en "
-"teknikförhandsvisning"
-
-#: src/lv_edit_props.glade.h:4
-msgid "* Mirrored"
-msgstr "* Speglad"
-
-msgid "Mirrored"
-msgstr "Speglad"
-
-#: src/lv_edit_props.glade.h:5
-msgid ""
 "4\n"
 "8\n"
 "16\n"
@@ -1549,108 +1510,109 @@ msgstr ""
 "256\n"
 "512"
 
-#: src/lv_edit_props.glade.h:13
+#: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
 msgstr "<b>Filsystem</b>"
 
 # FIXME: Borde buggrapporteras!
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
-#: src/lv_edit_props.glade.h:14
+#: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
 msgstr "<b>LV-egenskaper</b>"
 
-#: src/lv_edit_props.glade.h:15
+#: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
 msgstr "<b>Storlek</b>"
 
-#: src/lv_edit_props.glade.h:16
+#: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
 msgstr "Lägg till post i /etc/fstab"
 
-#: src/lv_edit_props.glade.h:17
+#: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
 msgstr "Skapa ny logisk volym (LV)"
 
-#: src/lv_edit_props.glade.h:18
+#: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr "Storleken på filsystemet kan inte ändras"
 
-#: src/lv_edit_props.glade.h:19
+#: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
 msgstr "Etikett för ledigt utrymme i volymgrupp"
 
-#: src/lv_edit_props.glade.h:20
+#: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
 msgstr "Etikett för ledigt återstående utrymme"
 
-#: src/lv_edit_props.glade.h:21
+#: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
 msgstr "Kilobytegranularitet"
 
-#: src/lv_edit_props.glade.h:22
+#: src/lv_edit_props.glade.h:19
 msgid "LV name:"
 msgstr "LV-namn:"
 
 # FIXME: Borde felrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
-#: src/lv_edit_props.glade.h:23
+#: src/lv_edit_props.glade.h:20
 msgid "LV size"
 msgstr "LV-storlek"
 
 # FIXME: Borde felrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
-#: src/lv_edit_props.glade.h:24
+#: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
 msgstr "Storleken på LV:ar under ögonblicksbilder kan inte ändras"
 
-#: src/lv_edit_props.glade.h:25
+#: src/lv_edit_props.glade.h:22
 msgid "Linear"
 msgstr "Linjär"
+
+#: src/lv_edit_props.glade.h:23
+msgid "Mirrored"
+msgstr "Speglad"
 
 # FIXME: Borde buggrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
-#: src/lv_edit_props.glade.h:26
+#: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
 msgstr "Storleken på speglade LV:ar kan inte ändras"
 
-#: src/lv_edit_props.glade.h:27
+#: src/lv_edit_props.glade.h:25
 msgid "Mount"
 msgstr "Montera"
 
-#: src/lv_edit_props.glade.h:28
+#: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
 msgstr "Monteringspunkt:"
 
-#: src/lv_edit_props.glade.h:29
+#: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr "Monteringspunkt efter omstart"
 
-#: src/lv_edit_props.glade.h:30
+#: src/lv_edit_props.glade.h:28
 msgid "Size beg"
 msgstr "Storlek i början"
 
-#: src/lv_edit_props.glade.h:31
+#: src/lv_edit_props.glade.h:29
 msgid "Size end"
 msgstr "Storlek på slutet"
 
-#: src/lv_edit_props.glade.h:32
+#: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Strimlad"
 
-#: src/lv_edit_props.glade.h:33
+#: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
 msgstr "Använd återstående"
 
-#: src/lv_edit_props.glade.h:34
+#: src/lv_edit_props.glade.h:32
 msgid "stripes"
 msgstr "strimlor"
-
-msgid "stripes of"
-msgstr "strimlor av"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1678,9 +1640,6 @@ msgstr "Sammanhängande"
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
 msgstr "Mål:"
-
-msgid "Destination"
-msgstr "Mål"
 
 # FIXME: Borde felrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
@@ -1724,6 +1683,53 @@ msgstr "Migrera endast områden som tillhör LV"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Använd sunt förnuft"
+
+#~ msgid "Swap partition"
+#~ msgstr "Växlingspartition"
+
+#~ msgid "kB"
+#~ msgstr "kB"
+
+#~ msgid "B"
+#~ msgstr "B"
+
+#~ msgid "bytes"
+#~ msgstr "byte"
+
+#~ msgid ""
+#~ "* In this release, mirroring support is \n"
+#~ "available as a Technology Preview"
+#~ msgstr ""
+#~ "* I denna utgåva är stöd för spegling\n"
+#~ "tillgängligt som en teknikförhandsvisning"
+
+#~ msgid ""
+#~ "* In this release, mirroring support is available as a Technology Preview"
+#~ msgstr ""
+#~ "* I denna utgåva är stöd för spegling tillgängligt som en "
+#~ "teknikförhandsvisning"
+
+#~ msgid ""
+#~ "In this release, mirroring support is \n"
+#~ "available as a Technology Preview"
+#~ msgstr ""
+#~ "I denna utgåva är stöd för spegling\n"
+#~ "tillgängligt som en teknikförhandsvisning"
+
+#~ msgid ""
+#~ "In this release, mirroring support is available as a Technology Preview"
+#~ msgstr ""
+#~ "I denna utgåva är stöd för spegling tillgängligt som en "
+#~ "teknikförhandsvisning"
+
+#~ msgid "* Mirrored"
+#~ msgstr "* Speglad"
+
+#~ msgid "stripes of"
+#~ msgstr "strimlor av"
+
+#~ msgid "Destination"
+#~ msgstr "Mål"
 
 #~ msgid "Remaining free space in Volume Group:"
 #~ msgstr "Återstående ledigt utrymme i volymgruppen:"
