@@ -4,18 +4,19 @@
 #
 # David Barzilay <barzilay@redhat.com>, 2004.
 # Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>, 2005, 2006.
+# Rodrigo Padula de Oliveira <rodrigopadula@projetofedora.org>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-05 23:23-0200\n"
-"Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>\n"
+"PO-Revision-Date: 2006-02-16 22:56-0200\n"
+"Last-Translator: Rodrigo Padula de Oliveira <rodrigopadula@projetofedora.org>\n"
 "Language-Team: Brazilian Portuguese\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ISO-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11\n"
+"X-Generator: KBabel 1.11.1\n"
 "Plural-Forms:  nplurals=2; plural=(n > 1);\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
@@ -97,10 +98,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
-"Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "Já existe um Grupo de Volume com o nome %s. Por favor escolha um nome único."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -112,8 +111,7 @@ msgstr "É necessário prover um nome para o novo Grupo de Volume"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "O ponto de montagem %s especificado não existe. Você deseja criá-lo?"
 
 #: src/InputController.py:104
@@ -129,15 +127,13 @@ msgstr "Esta funcionalidade ainda não está implementada nesta versão"
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr "O número de Volumes Lógicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
+msgstr "O número de Volumes Físicos neste Grupo de Volume atingiu seu limite máximo."
 
 #: src/InputController.py:112
 #, python-format
@@ -181,8 +177,7 @@ msgstr ""
 "remova as imagens primeiro."
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Erro de conversão de tipos não definido no model factory. Não foi possível "
 "completar a operação."
@@ -306,8 +301,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Você tem certeza que deseja remover %s do Grupo de Volume %s?"
 
 #: src/InputController.py:153
@@ -437,10 +431,8 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
-"\"%s \", uma origem da imagem \"%s \", foi removido da lista da remoção."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr "\"%s \", uma origem da imagem \"%s \", foi removido da lista da remoção."
 
 #: src/InputController.py:602
 #, python-format
@@ -536,8 +528,7 @@ msgstr ""
 "diferentes?"
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Menos de 3 discos rígidos estão disponíveis com espaço livre. Desabilitando "
 "espelhamento."
@@ -575,8 +566,7 @@ msgstr ""
 
 #: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Nomes contendo \"_mlog \" ou \"_mimage\" são palavras chave reservadas."
+msgstr "Nomes contendo \"_mlog \" ou \"_mimage\" são palavras chave reservadas."
 
 #: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
@@ -601,8 +591,7 @@ msgstr "Pro favor especifique um ponto de montagem"
 
 #: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"Você quer atualizar ext2 para ext3 preservando os dados no volume lógico?"
+msgstr "Você quer atualizar ext2 para ext3 preservando os dados no volume lógico?"
 
 #: src/InputController.py:2045
 msgid ""
@@ -622,12 +611,11 @@ msgstr "Espelho não criado. Completando tarefas restantes."
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
-msgstr ""
+msgstr "Underlaying LVM não suporta a adição dos espelhos aos volumes lógicos existentes. Terminando tarefas restantes."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
-"A fim de adicionar espelhamento, algumas extensões necessitam ser migradas."
+msgstr "A fim de adicionar espelhamento, algumas extensões necessitam ser migradas."
 
 #: src/InputController.py:2195
 msgid "Do you want to migrate specified extents?"
@@ -922,10 +910,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"Você tem certeza que deseja inicializar %s do espaço livre no disco %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "Você tem certeza que deseja inicializar %s do espaço livre no disco %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1814,3 +1800,4 @@ msgstr "Use o sentido comum"
 
 #~ msgid "Migrate extents to "
 #~ msgstr "Migrar Extensões para"
+
