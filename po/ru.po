@@ -1,4 +1,5 @@
-# translation of ru.po to 
+# translation of ru.po to Russian
+# translation of ru.po to
 # translation of ru.po to
 # translation of ru.po to
 # translation of ru.po to
@@ -7,7 +8,7 @@
 # translation of system-config-lvm.pot to Russian
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C)
-# Andrew Martynov <andrewm@inventa.ru>, 2004.
+# Andrew Martynov <andrewm@inventa.ru>, 2004, 2006.
 # Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>, 2006.
 #
 msgid ""
@@ -15,9 +16,9 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-01-12 17:14+1000\n"
-"Last-Translator: Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"PO-Revision-Date: 2006-02-17 16:57+0300\n"
+"Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
+"Language-Team: Russian <fedora-trans-ru@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -414,8 +415,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
-"Физический том %s содержит экстенты, принадлежащие %s (оригиналу снимка %s). "
-"Недоступно выполнение переноса снимков, как следствие, невозможно удалить %s."
+"Физический том %s содержит экстенты, принадлежащие %s (исходному тому снимка "
+"%s). Недоступно выполнение переноса исходного тома снимков, как следствие, "
+"невозможно удалить %s."
 
 #: src/InputController.py:369
 #, python-format
@@ -423,8 +425,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
-"Физический том %s содержит экстенты, принадлежащие %s (оригиналу снимка %s). "
-"Недоступно выполнение переноса снимков, как следствие, невозможно удалить %s."
+"Физический том %s содержит экстенты, принадлежащие %s (исходному тому снимка "
+"%s). Недоступно выполнение переноса исходного тома снимков, как следствие, "
+"невозможно удалить %s."
 
 #: src/InputController.py:556
 #, python-format
@@ -456,8 +459,9 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
-"Физический том %s содержит экстенты, принадлежащие снимку его оригинала. "
-"Недоступно выполнение переноса снимка, как следствие, невозможно удалить %s."
+"Физический том %s содержит экстенты, принадлежащие снимку или исходному тому "
+"снимка. Недоступно выполнение переноса снимка, как следствие, невозможно "
+"удалить %s."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
@@ -569,10 +573,9 @@ msgstr ""
 "Логического тома до %s (как максимум) или же добавьте Физические тома."
 
 #: src/InputController.py:1914
-#, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
-"Имена, начинающиеся с \"snapshot\" или \"pvmove\", являются "
+"Имена, начинающиеся со \"snapshot\" или \"pvmove\", являются "
 "зарезервированными словами."
 
 #: src/InputController.py:1916
@@ -582,9 +585,8 @@ msgstr ""
 "словами."
 
 #: src/InputController.py:1918
-#, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
-msgstr "Имена, начинающиеся с \"-\", некорректны."
+msgstr "Имена, начинающиеся с \"-\", некорректны"
 
 #: src/InputController.py:1920
 msgid "Name can be neither \".\" nor \"..\""
@@ -628,6 +630,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"Низлежащий LVM не поддерживает добавление зеркала к существующему "
+"Логическому тому. Происходит завершение оставшихся задач."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -836,9 +840,8 @@ msgid "PV UUID:   "
 msgstr "UUID Физического тома:  "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Инициализация недоступна:   "
+msgstr "Инициализация недоступна: "
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -847,7 +850,7 @@ msgstr "Расширенный раздел"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Раздел подкачки в данный момент используется"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -866,33 +869,28 @@ msgid "Multipath device"
 msgstr "Устройство с несколькими путями (multipath)"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Замечание:   "
+msgstr "Замечание:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Инициализировать вручную"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Количество образов зеркала:  "
+msgstr "Количество образов зеркала:"
 
 #: src/lvm_model.py:792
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Снимки:  "
+msgstr "Снимки:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Оригинал снимка:  "
+msgstr "Исходный том снимка:"
 
 #: src/lvm_model.py:805
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Использование снимков:  "
+msgstr "Использование снимков:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
@@ -974,10 +972,10 @@ msgid "Unable to process request"
 msgstr "Невозможно обработать запрос"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Сбой команды ls. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
+"Сбой команды %s. Вызов команды: \"%s\" - Системное сообщение об ошибке: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -997,23 +995,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Неразделённое место в %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "Б"
+msgstr "Гб"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "Б"
+msgstr "Мб"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "Б"
+msgstr "Кб"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Байт"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1025,6 +1020,7 @@ msgid "Ext2"
 msgstr "Ext2"
 
 #: src/lvmui_constants.py:99
+#, fuzzy
 msgid "Ext3"
 msgstr "Ext3"
 
@@ -1142,18 +1138,18 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
-"Экстенты, которые вы пытаетесь выбрать, принадлежат оригиналу снимка %s. "
-"Недоступно выполнение переноса оригиналов снимков, как следствие, невозможно "
-"осуществить выбор экстентов."
+"Экстенты, которые вы пытаетесь выбрать, принадлежат исходному тому снимка %"
+"s. Недоступно выполнение переноса оригиналов снимков, как следствие, "
+"невозможно осуществить выбор экстентов."
 
 #: src/renderer.py:388
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Снимок"
+msgstr "Снимок %s"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr "Оригинал"
+msgstr "Исходный том"
 
 #: src/renderer.py:496
 msgid "Snapshot"
@@ -1176,9 +1172,9 @@ msgid "Uninitialized Entities"
 msgstr "Неинициализированные устр-ва"
 
 #: src/Volume_Tab_View.py:632
-#, fuzzy, python-format
+#, python-format
 msgid "%s mirror synchronisation"
-msgstr "синхронизация зеркала %s "
+msgstr "синхронизация зеркала %s"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
@@ -1262,23 +1258,21 @@ msgid "GFS (clustered)"
 msgstr "GFS (clustered)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Чередование "
+msgstr "Чередование"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Без чередования"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Зеркало "
+msgstr "Зеркало"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Раздел: %s"
+msgstr "Раздел %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1502,7 +1496,7 @@ msgstr "_Инструменты"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "сообщение при расширении группы томов:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1538,37 +1532,31 @@ msgstr "<b>Размер</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr "Добавить запись к /etc/fstab"
+msgstr "Добавить запись в /etc/fstab"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Создать Логический том"
+msgstr "Создать новый Логический том (LV)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr "Изменение файловой системы недоступно"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"Создать новую\n"
-"Группу томов"
+msgstr "Метка Свободное место в Группе томов"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "Использовать оставшееся место"
+msgstr "Метка Использовать оставшееся место"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
 msgstr "Разбиение на кБ"
 
 #: src/lv_edit_props.glade.h:19
-#, fuzzy
 msgid "LV name:"
-msgstr "Имя Лог.тома: "
+msgstr "Имя Лог.тома:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
@@ -1583,7 +1571,6 @@ msgid "Linear"
 msgstr "Без чередования"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
 msgstr "Дубликат (зеркало)"
 
@@ -1596,9 +1583,8 @@ msgid "Mount"
 msgstr "Подключить"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Точка подключения: "
+msgstr "Точка подключения:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1606,11 +1592,11 @@ msgstr "Подключить после перезагрузки"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr "Размер (нач.)"
+msgstr "Размер нач"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr "Размер (конец)"
+msgstr "Размер конец"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
@@ -1621,17 +1607,16 @@ msgid "Use remaining"
 msgstr "Использовать оставшееся"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes"
-msgstr "Фрагменты чередования"
+msgstr "полос"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Назначение</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Политика миграции</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1643,52 +1628,47 @@ msgstr "Автоматически выбирать Физ.тома для вы�
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Близкое расположение"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "Назначение:"
 
 #: src/migrate_extents.glade.h:7
-#, fuzzy
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
 "Для удаления Физ.тома необходимо выполнить перенос\n"
-" используемых экстентов.\n"
+"используемых экстентов. Укажите куда выполнить перенос и \n"
+"политику переноса."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr "Наследовать"
+msgstr "Наследование"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"Удалить Том из\n"
-"Группы томов"
+msgstr "Унаследовать политику из Группы томов"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
 msgstr "Перенос экстентов"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate anywhere even if that reduces performance"
 msgstr ""
 "Выполнить перенос в любое место, даже если это уменьшит производительность"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "Новые экстенты являются смежными с существующими"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Обычная"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
 msgstr "Выполнить перенос только принадлежащих Лог.тому экстентов"
 
