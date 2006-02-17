@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-03 15:56+0530\n"
+"PO-Revision-Date: 2006-02-17 19:32+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 
@@ -96,8 +96,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s નામવાળું વોલ્યુમ જૂથ પહેલાથી જ હાજર છે. મહેરબાની કરીને અનન્ય નામ પસંદ કરો."
 
 #: src/InputController.py:98
@@ -110,8 +109,7 @@ msgstr "નવા વોલ્યુમ જૂથ માટે નામ પૂ�
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "સ્પષ્ટ કરેલ માઉન્ટ બિંદુ, %s, અસ્તિત્વમાં નથી. શું તમે એને બનાવવા માંગો છો?"
 
 #: src/InputController.py:104
@@ -177,8 +175,7 @@ msgstr ""
 "સ્નેપશોટને પ્રથમ દૂર કરો."
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "મોડેલ કારખાનામાં નહિં વ્યાખ્યાયિત એવી પ્રકાર રૂપાંતરણની ભૂલ આવી. ક્રિયા પૂરી કરવા સમર્થ "
 "નથી."
@@ -263,23 +260,20 @@ msgstr "%s માત્ર સંખ્યાકીય કિંમતો ધર
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"મહત્તમ ભૌતિક વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
+msgstr "મહત્તમ ભૌતિક વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
 
 #: src/InputController.py:147
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"મહત્તમ લોજીકલ વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
+msgstr "મહત્તમ લોજીકલ વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
 
 #: src/InputController.py:149
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
-"શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને લોજીકલ વોલ્યુમ મેનેજમેન્ટમાંથી દૂર કરવા ઈચ્છો છો?"
+msgstr "શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને લોજીકલ વોલ્યુમ મેનેજમેન્ટમાંથી દૂર કરવા ઈચ્છો છો?"
 
 #: src/InputController.py:151
 #, python-format
@@ -299,8 +293,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને %s વોલ્યુમ જૂથમાંથી દૂર કરવા માંગો છો?"
 
 #: src/InputController.py:153
@@ -425,8 +418,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", સ્નેપશોટ \"%s\" નું મૂળ, નિરાકરણ યાદીમાંથી કાઢી નંખાયેલ છે."
 
 #: src/InputController.py:602
@@ -521,16 +513,14 @@ msgstr ""
 "શું તમે મીરર ઈમેજોને અલગ હાર્ડ ડ્રાઈવો પર મૂકવા માંગો છો?"
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "૩ કરતાં ઓછી હાર્ડ ડ્રાઈવો મુક્ત જગ્યા સાથે ઉપલબ્ધ છે. મીરરીંગ નિષ્ક્રિય કરો."
 
 #: src/InputController.py:1537
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
-"મીરરીંગ સક્રિય કરવા માટે ઓછામાં ઓછા ત્રણ ભૌતિક વોલ્યુમો પર મુક્ત જગ્યા હોવી જ જોઈએ"
+msgstr "મીરરીંગ સક્રિય કરવા માટે ઓછામાં ઓછા ત્રણ ભૌતિક વોલ્યુમો પર મુક્ત જગ્યા હોવી જ જોઈએ"
 
 #: src/InputController.py:1545
 msgid ""
@@ -598,7 +588,7 @@ msgstr "મીરર બની નથી. બાકીની ક્રિયા�
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
-msgstr ""
+msgstr "LVM હેઠળ રહેવાનું હાલના લોજીકલ વોલ્યુમોમાં મીરરોના ઉમેરાને આધાર આપતું નથી. બાકીની ક્રિયાઓ પૂર્ણ કરી રહ્યા છીએ."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -896,8 +886,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "શું તમે ચોક્કસ છો કે તમે %s જેટલી મુક્ત જગ્યા ડિસ્ક %s પર આરંભ કરવા માંગો છો?"
 
 #: src/lvmui_constants.py:55
@@ -1521,9 +1510,8 @@ msgid "Linear"
 msgstr "રેખીય"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
-msgstr "* મીરર થયેલ"
+msgstr "મીરર થયેલ"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1625,9 +1613,3 @@ msgstr "માત્ર LV ને અનુસરતા એક્સટેન્
 msgid "Use common sense"
 msgstr "સામાન્ય બુદ્ધિ વાપરો"
 
-#~ msgid ""
-#~ "* In this release, mirroring support is \n"
-#~ "available as a Technology Preview"
-#~ msgstr ""
-#~ "* આ પ્રકાશનમાં, મીરરીંગ આધાર એ ટેક્નોલોજી \n"
-#~ "પૂર્વદર્શન તરીકે ઉપલબ્ધ છે"
