@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-08 10:12+0000\n"
+"PO-Revision-Date: 2006-02-17 10:05+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -621,7 +621,7 @@ msgstr "A réplica não foi criada. A completar as tarefas restantes."
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
-msgstr ""
+msgstr "O LVM subjacente não suporta a adição de réplicas aos Volumes Lógicos existentes. A terminar as tarefas restantes."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -1557,9 +1557,8 @@ msgid "Linear"
 msgstr "Linear"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
-msgstr "* Replicado"
+msgstr "Replicado"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
