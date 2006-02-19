@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-03 22:57+0100\n"
+"PO-Revision-Date: 2006-02-19 08:43+0100\n"
 "Last-Translator: Szentiványi Gábor <szentivanyi.gabor@ulx.hu>\n"
 "Language-Team: hungarian\n"
 "MIME-Version: 1.0\n"
@@ -41,8 +41,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
-"Jelölje ki, melyik kötetcsoportba kívánja felvenni a(z) %s fizikai kötetet:"
+msgstr "Jelölje ki, melyik kötetcsoportba kívánja felvenni a(z) %s fizikai kötetet:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -97,8 +96,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Már létezik %s nevű kötetcsoport. Válasszon egyedi nevet."
 
 #: src/InputController.py:98
@@ -111,8 +109,7 @@ msgstr "Meg kell adni egy nevet az új kötetcsoport számára"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "A megadott csatolási pont (%s) nem létezik. Szeretné létrehozni?"
 
 #: src/InputController.py:104
@@ -128,15 +125,13 @@ msgstr "Ez a képesség még nincs megvalósítva ebben a verzióban"
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"A kötetcsoportban a logikai kötetek száma elérte a lehetséges maximumot."
+msgstr "A kötetcsoportban a logikai kötetek száma elérte a lehetséges maximumot."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"A kötetcsoportban a fizikai kötetek száma elérte a lehetséges maximumot."
+msgstr "A kötetcsoportban a fizikai kötetek száma elérte a lehetséges maximumot."
 
 #: src/InputController.py:112
 #, python-format
@@ -181,8 +176,7 @@ msgstr ""
 "távolítsa el a pillanatfelvételeket először."
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Típuskonverziós hiba a modellkészítőben. A művelet végrehajtása nem "
 "lehetséges."
@@ -308,8 +302,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 "Biztos benne, hogy el kívánja távolítani a(z) \"%s\" kötetet a(z) \"%s\" "
 "kötetcsoportból?"
@@ -449,8 +442,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", a(z) \"%s\" pillanatfelvétel eredete törölve lett az eltávolítandók "
 "listájáról."
@@ -536,8 +528,7 @@ msgstr "A sávos (striped) logikai kötetek nem tükrözhetők."
 
 #: src/InputController.py:1516
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
-"A pillanatfelvételekhez kötődő logikai kötetek jelenleg nem tükrözhetők."
+msgstr "A pillanatfelvételekhez kötődő logikai kötetek jelenleg nem tükrözhetők."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -550,8 +541,7 @@ msgstr ""
 "esetén. Külön merevlemezre kívánja tenni a tükrözött képmásokat?"
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Kevesebb mint 3 merevlemez érhető el megfelelő szabad területtel. A tükrözés "
 "le lesz tiltva."
@@ -582,18 +572,14 @@ msgstr ""
 "méretét legalább %s értékre vagy adjon hozzá további fizikai köteteket."
 
 #: src/InputController.py:1914
-#, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"A \"snapshot\"-tal vagy \"pvmove\"-val kezdődő nevek foglalt kulcsszavak."
+msgstr "A \"snapshot\"-tal vagy \"pvmove\"-val kezdődő nevek foglalt kulcsszavak."
 
 #: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Az \"_mlog\"-ot vagy \"_mimage\"-t tartalmazó szavak foglalt kulcsszavak."
+msgstr "Az \"_mlog\"-ot vagy \"_mimage\"-t tartalmazó szavak foglalt kulcsszavak."
 
 #: src/InputController.py:1918
-#, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "A \"-\" jellel kezdődő nevek nem érvényesek"
 
@@ -603,8 +589,7 @@ msgstr "A név nem lehet \".\" vagy \"..\""
 
 #: src/InputController.py:1926
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
-"Semmilyen típusú szóköz (whitespace) nem lehet a logaikai kötet nevében"
+msgstr "Semmilyen típusú szóköz (whitespace) nem lehet a logaikai kötet nevében"
 
 #: src/InputController.py:1929
 #, python-format
@@ -632,8 +617,7 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2146
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
-"A tükör nem lett elkészítve. A további feladatok elvégzése folytatódik."
+msgstr "A tükör nem lett elkészítve. A további feladatok elvégzése folytatódik."
 
 #. create mirror
 #: src/InputController.py:2149
@@ -641,6 +625,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"A telepített LVM redszer jelenleg nem támogatja a tükrözések hozzáadását "
+"meglévő logikai kötetekhez (LV). Folytatom a következő feladattal."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -847,9 +833,8 @@ msgid "PV UUID:   "
 msgstr "A FK UUID-je:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Nem inicializálható:   "
+msgstr "Nem inicializálható:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -858,7 +843,7 @@ msgstr "Kiterjesztett partíció"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "A cserepartíció jelenleg használatban van"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -877,33 +862,28 @@ msgid "Multipath device"
 msgstr "Többelérésű (multipath) eszköz"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Megjegyzés:   "
+msgstr "Megjegyzés:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Kézi inicializálás"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Tükörképmások száma:  "
+msgstr "Tükörképmások száma:"
 
 #: src/lvm_model.py:792
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Pillanatfelvételek:  "
+msgstr "Pillanatfelvételek:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Pillanatfelvételek eredete:  "
+msgstr "Pillanatfelvételek eredete:"
 
 #: src/lvm_model.py:805
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Pillanatfelvételek használata:  "
+msgstr "Pillanatfelvételek használata:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
@@ -945,8 +925,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Biztos benne, hogy szeretne inicializálni %s-nyi szabad területet a(z) %s "
 "lemezen?"
@@ -986,9 +965,9 @@ msgid "Unable to process request"
 msgstr "Nem lehet a kérést feldolgozni"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Az ls parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
+msgstr "A(z) %s parancs sikertelen. A teljes parancs: \"%s\" - A rendszerhiba: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1008,23 +987,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Partícionálatlan hely ezen: %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "kB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "bájt"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1158,9 +1134,9 @@ msgstr ""
 "ezért az extenteket nem lehet kiválasztani."
 
 #: src/renderer.py:388
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Az alábbi pillanatfelvétele:"
+msgstr "A(z) %s pillanatfelvétele"
 
 #: src/renderer.py:490
 msgid "Origin"
@@ -1190,9 +1166,9 @@ msgid "Uninitialized Entities"
 msgstr "Inicializálatlan példányok"
 
 #: src/Volume_Tab_View.py:632
-#, fuzzy, python-format
+#, python-format
 msgid "%s mirror synchronisation"
-msgstr "%s tükör szinkronizáció "
+msgstr "%s tükör szinkronizáció"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
@@ -1276,23 +1252,21 @@ msgid "GFS (clustered)"
 msgstr "GFS (fürtözött)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Sáv "
+msgstr "Sáv"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Lineáris hozzárendelés"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
 msgstr "Tükör"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partíció:  %s"
+msgstr "Partíció: %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1555,9 +1529,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Bejegyzés hozzáadása az /etc/fstab-hoz"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Új logikai kötet létrehozása"
+msgstr "Új logikai kötet (LV) létrehozása"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1576,9 +1549,8 @@ msgid "Kilobytes granularity"
 msgstr "Kilobájt granularitás"
 
 #: src/lv_edit_props.glade.h:19
-#, fuzzy
 msgid "LV name:"
-msgstr "Logikai kötet neve: "
+msgstr "Logikai kötet (LV) neve:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
@@ -1605,9 +1577,8 @@ msgid "Mount"
 msgstr "Csatolás"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Csatolási pont: "
+msgstr "Csatolási pont:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1630,9 +1601,8 @@ msgid "Use remaining"
 msgstr "Használja a maradék "
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes"
-msgstr "sáv ebből:"
+msgstr "sáv"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1655,9 +1625,8 @@ msgid "Contiguous"
 msgstr "Folytonos"
 
 #: src/migrate_extents.glade.h:6
-#, fuzzy
 msgid "Destination:"
-msgstr "<b>Cél</b>"
+msgstr "Cél:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1684,9 +1653,8 @@ msgid "Migrate Extents"
 msgstr "Extentek migrálása"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate anywhere even if that reduces performance"
-msgstr "Migráljon bárhová, még ha csökkenti is a teljesítményt"
+msgstr "Migráljon bárhová, még ha az csökkenti is a teljesítményt"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1697,136 +1665,10 @@ msgid "Normal"
 msgstr "Normális"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr "Csak a logikai kötethez tartozó extentek migrálása"
+msgstr "Csak a logikai kötethez (LV) tartozó extentek migrálása"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Józan logika használata"
 
-#~ msgid ""
-#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "A vgextend parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "A pvcreate parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Az lvcreate parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "A pvremove parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Az lvremove parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "A vgremove parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "A vgcreate parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
-#~ "%s"
-#~ msgstr ""
-#~ "A vgchange parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "A vgreduce parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "A pvmove parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "Az umount parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
-#~ "\""
-#~ msgstr ""
-#~ "A mount parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Az lvresize parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Az lvrename parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid ""
-#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Az lvchange parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\"."
-
-#~ msgid ""
-#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Az lvconvert parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid "Swap in use"
-#~ msgstr "Cserepartíció használatban"
-
-#~ msgid "Quering Volume Groups"
-#~ msgstr "Kötetcsoportok lekérdezése"
-
-#~ msgid "Quering Logical Volumes"
-#~ msgstr "Logikai kötetek lekérdezése"
-
-#~ msgid "Quering Physical Volumes"
-#~ msgstr "Fizikai kötetek lekérdezése"
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
-
-#~ msgid ""
-#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
-#~ "%s"
-#~ msgstr ""
-#~ "A dmsetup parancs sikertelen. A parancs: \"%s\". A rendszerhiba: \"%s\""
-
-#~ msgid "Migrate extents to "
-#~ msgstr "Extentek migrálása ide:"
