@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-18 12:24-0500\n"
+"PO-Revision-Date: 2006-02-19 23:48-0500\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
@@ -506,7 +506,7 @@ msgstr "Uredi logički disk"
 
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr "Podležući upravljač logičkih diskova ne podržava odraze"
+msgstr "Potporni upravljač logičkih diskova ne podržava odraze"
 
 #: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -611,7 +611,7 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
-"Podležući LVM ne podržava dodavanje odraza postojećim logičkim "
+"Potporni LVM ne podržava dodavanje odraza postojećim logičkim "
 "diskovima. Završavam ostala zaduženja."
 
 #: src/InputController.py:2195
