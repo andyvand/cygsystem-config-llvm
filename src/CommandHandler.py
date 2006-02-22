@@ -366,5 +366,7 @@ class CommandHandler:
     BLOCKDEV_BIN = '/sbin/blockdev'
     args = [BLOCKDEV_BIN, '--rereadpt', devpath]
     out, err, status = execWithCaptureErrorStatus(BLOCKDEV_BIN, args)
-    print status
-    return (status == 0)
+    if status != 0:
+      return False
+    execWithCaptureProgress('sleep', ['sleep', '1'], _('Rereading partition table'))
+    return True

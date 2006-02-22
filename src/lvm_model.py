@@ -697,7 +697,6 @@ class lvm_model:
               fdisk_devname = path
         part = Partition(seg.beg, seg.end, ID_LINUX_LVM, None, False, seg.sectorSize)
         part_num = self.__block_device_model.add(fdisk_devname, part)
-        print part_num
         self.__block_device_model.saveTable(fdisk_devname)
         new_part = self.__block_device_model.getPartition(fdisk_devname, part_num)
         pv.setPartition((devname, new_part))

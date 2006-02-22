@@ -60,13 +60,13 @@ class Parted:
             sys.exit(1)
         
         # create partition table
-        print execWithCapture(PARTED, [PARTED, devpath, 'mklabel', 'gpt', '-s'])
+        execWithCapture(PARTED, [PARTED, devpath, 'mklabel', 'gpt', '-s'])
         # create partition
         part = parts[0]
         beg = part.beg * part.sectorSize / 1024.0 / 1024 # parted uses Magabytes
         end = part.end * part.sectorSize / 1024.0 / 1024
-        print beg, end
-        print execWithCapture(PARTED, [PARTED, devpath, 'mkpart', 'primary', str(beg), str(end), '-s'])
+        #print beg, end
+        execWithCapture(PARTED, [PARTED, devpath, 'mkpart', 'primary', str(beg), str(end), '-s'])
         # add flags - if any
         if part.id == ID_LINUX_LVM:
             print execWithCapture(PARTED, [PARTED, devpath, 'set', str(part.num), 'lvm', 'on', '-s'])
