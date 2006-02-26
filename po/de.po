@@ -31,12 +31,10 @@ msgid ""
 "  Caught exception: %s\n"
 msgstr ""
 "\n"
-"  Initialisierung der grafischen Oberfläche fehlgeschlagen. "
-"HöchstWahrschein-\n"
-"  lich wurde das Programm nicht unter einer grafischen Oberfläche "
-"aufgerufen.\n"
-"  Bitte starten Sie die grafische Benutzerschnittstelle Ihrer Wahl oder "
-"setzen\n"
+"  Initialisierung der grafischen Oberfläche fehlgeschlagen.\n"
+"	 Höchstwahrscheinlich wurde das Programm nicht unter einer grafischen\n"
+"  Oberfläche aufgerufen.\n"
+"  Bitte starten Sie die grafische Benutzerschnittstelle Ihrer Wahl oder setzen\n"
 "  Sie die DISPLAY-Variable.\n"
 "\n"
 "  Abgefangene Ausnahme: %s\n"
@@ -44,11 +42,10 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr ""
-"Wählen Sie eine Datenträgergruppe, der Sie diesen physischen Datenträger "
-"hinzufügen möchten:"
+"Wählen Sie eine Datenträgergruppe, der Sie %s hinzufügen möchten:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -79,11 +76,11 @@ msgid "Uninitialized Disk Entity"
 msgstr "Nicht initialisiertes Laufwerk"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr ""
-"Wählen Sie ein Laufwerk, das der Datenträgergruppe %s hinzugefügt werden "
-"soll:"
+"Wählen Sie die Laufwerke aus, die der Datenträgergruppe %s hinzugefügt werden "
+"sollen:"
 
 #: src/InputController.py:92
 msgid ""
@@ -91,7 +88,7 @@ msgid ""
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
 "Eine Datenträgergruppe muss aus mindestens zwei physischen Datenträgern "
-"bestehen, um Streifung zu unterstützen. Die Datenträgergruppe erfüllt diese "
+"bestehen, um striping zu unterstützen. Diese Datenträgergruppe erfüllt diese "
 "Anforderung nicht."
 
 #: src/InputController.py:94
@@ -134,7 +131,7 @@ msgstr "Die Erstellung des Einhängepunkt %s ist unerwartet fehlgeschlagen."
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
 msgstr ""
-"Diese Verwendungsmöglichkeit ist in dieser Version noch nicht eingebaut"
+"Diese Funktion ist in dieser Version noch nicht eingebaut"
 
 #: src/InputController.py:108
 msgid ""
@@ -149,55 +146,56 @@ msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr ""
-"Die Anzahl der physikalischen Datenträger in dieser Datenträgergruppe \n"
+"Die Anzahl der physikalischen Datenträger in dieser Datenträgergruppe "
 "hat das Maximum erreicht."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
 msgstr ""
-"Die Anzahl der physikalischen Datenträger in dieser Datenträgergruppe \n"
-"hat das Maximum erreicht."
+"Noch %s physikalische Datenträger können zu dieser Datenträgergruppe "
+"hinzugefügt werden bevor das Maximum erreicht ist."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Das Fassungsvermögen der Datenträgergruppe %s reicht nicht für die Daten auf "
-"%s.\n"
-"Eine mögliche Lösung wäre, einen zusätzlichen physischen Datenträger zur \n"
-"Datenträgergruppe hinzuzufügen."
+"In der Datenträgergruppe %s ist nicht genug Speicherplatz für einen "
+"neuen logischen Datenträger.\n"
+"Eine mögliche Lösung wäre, einen zusätzlichen physischen Datenträger "
+"zur Datenträgergruppe hinzuzufügen."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "Ein Schnappschuss von einem Schnappschuss wird nicht unterstützt."
 
 #: src/InputController.py:118
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
+msgstr "Der logische Datenträger %s ist mit dem Schnappschuss %s verbunden. "
+"Bitte entfernen sie zuerst den Schnappschuss."
 
 #: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
+msgstr "Der logische Datenträger %s ist mit den Schnappschüssen %s verbunden. "
+"Bitte entfernen sie zuerst die Schnappschüsse."
 
 #: src/InputController.py:121
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Fehler - Umwandlung eines undefinierten Typs in Model-Factory. Die Anwendung "
-"konnte\n"
-"nicht beendet werden."
+"konnte nicht beendet werden."
 
 #: src/InputController.py:123
 #, python-format
@@ -207,17 +205,17 @@ msgid ""
 "on this mounted filesystem?"
 msgstr ""
 "DRINGENDE WARNUNG: Der logische Datenträger %s hat ein %s Dateisystem und "
-"dieses\n"
-"ist gerade in %s eingehängt.Sind Sie absolut sicher, dass Sie die Daten "
-"dieses\n"
-"eingehängten Dateisystems verwerfen möchten?"
+"dieses ist gerade unter %s eingehängt.Sind Sie absolut sicher, dass Sie die Daten "
+"dieses eingehängten Dateisystems verwerfen möchten?"
 
 #: src/InputController.py:125
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
-msgstr ""
+msgstr "Der logische Datenträger %s ist derzeit eingehängt unter %s. "
+"Um die Anfrage fertigzustellen, muss er ausgehängt werden."
+"Sind sie sicher das er ausgehängt werden soll?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -244,22 +242,20 @@ msgstr "%s Gigabyte"
 #: src/InputController.py:135
 #, python-format
 msgid "%s extents"
-msgstr "%s Bereiche"
+msgstr "%s Speichereinheiten"
 
 #: src/InputController.py:137
-#, fuzzy
+#
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Neue Datenträger-\n"
-"gruppe erzeugen"
+msgstr "Verbleibender freier Speicher in der Datenträgergruppe:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Verbleibender Speicher für diesen Datenträger:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
-msgstr "Bereiche"
+msgstr "Speichereinheiten"
 
 #: src/InputController.py:141
 msgid "Gigabytes"
@@ -279,21 +275,21 @@ msgid "The %s should only contain number values"
 msgstr "Für %s sind ausschließlich Zahlenwerte erlaubt"
 
 #: src/InputController.py:146
-#, fuzzy
+#
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"Für \"Höchstzahl physischer Datenträger\" sind nur ganze Zahlen von 1 bis "
+"Für \"Maximum physischer Datenträger\" sind nur ganze Zahlen von 1 bis "
 "256 erlaubt"
 
 #: src/InputController.py:147
-#, fuzzy
+#
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"Für \"Höchstzahl logischer Datenträger\" sind nur ganze Zahlen von 1 bis 256 "
+"Für \"Maximum logischer Datenträger\" sind nur ganze Zahlen von 1 bis 256 "
 "erlaubt"
 
 #: src/InputController.py:149
@@ -306,7 +302,7 @@ msgstr ""
 "entfernen möchten?"
 
 #: src/InputController.py:151
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -315,14 +311,11 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"Der physische Datenträger %s, welchen Sie zu entfernen wünschen, beinhaltet "
-"Daten \n"
-"von aktiven logischen Datenträgern. Da es der einzige physische Datenträger\n"
+"Der physische Datenträger %s, den Sie entfernen möchten, beinhaltet Daten "
+"von aktiven logischen Datenträgern. Da es der einzige physische Datenträger "
 "in der Datenträgergruppe ist, können die Daten nicht verschoben werden. Es "
-"wird\n"
-"empfohlen ein neuen physischen Datenträger hinzuzufügen, bevor dieser "
-"entfernt\n"
-"wird, oder die auf diesem physischen Datenträger befindlichen logischen \n"
+"wird empfohlen ein neuen physischen Datenträger hinzuzufügen, bevor dieser "
+"entfernt wird, oder die auf diesem physischen Datenträger befindlichen logischen "
 "Datenträger zu entfernen."
 
 #: src/InputController.py:152
@@ -339,9 +332,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
-"Beim Entfernen des physischen Datenträgers %s aus der Datenträgergruppe %s, "
-"wird\n"
-"diese Datenträgergruppe leer und damit automatisch entfernt. Möchten Sie "
+"Durch das Entfernen des physischen Datenträgers %s aus der Datenträgergruppe %s, "
+"wird diese Datenträgergruppe leer und damit automatisch entfernt. Möchten Sie "
 "fortfahren?"
 
 #: src/InputController.py:154
@@ -351,8 +343,8 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Das Fassungsvermögen der Datenträgergruppe %s reicht nicht für die Daten auf "
-"%s.\n"
+"Der Speicher der Datenträgergruppe %s reicht nicht um die Daten die auf "
+"%s gespeichert sind zu verschieben. "
 "Eine mögliche Lösung wäre, einen zusätzlichen physischen Datenträger zur \n"
 "Datenträgergruppe hinzuzufügen."
 
@@ -364,57 +356,55 @@ msgid ""
 "Physical Extents are unavailable."
 msgstr ""
 "Das dm-mirror Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
-"Kernel unterstützt nicht das dm-mirror Target. Wenn das Modul unterstützt\n"
+"Kernel unterstützt das dm-mirror Target nicht. Wenn das Modul unterstützt\n"
 "wird versuchen Sie \"modeprobe dm-mirror\" auszuführen. Anderenfalls sind\n"
 "Operationen, die das Verschieben von Daten auf physische Datenträger\n"
 "vorraussetzen, nicht möglich."
 
 #: src/InputController.py:156
-#, fuzzy
+#
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"Das dm-mirror Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
-"Kernel unterstützt nicht das dm-mirror Target. Wenn das Modul unterstützt\n"
-"wird versuchen Sie \"modeprobe dm-mirror\" auszuführen. Anderenfalls sind\n"
-"Operationen, die das Verschieben von Daten auf physische Datenträger\n"
-"vorraussetzen, nicht möglich."
+"Das dm-snapshot Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
+"Kernel unterstützt das dm-snapshot Target nicht. Wenn das Modul unterstützt\n"
+"wird versuchen Sie \"modeprobe dm-snapshot\" auszuführen. Anderenfalls ist\n"
+"das Erzeugen von Schnappschüssen nicht möglich."
 
 #: src/InputController.py:158
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
-"Sind Sie ganz sicher, dass Sie den logischen Datenträger %s entfernen "
+msgstr "Sind Sie ganz sicher, dass Sie den logischen Datenträger %s entfernen "
 "möchten?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
-msgid ""
-"Logical volume %s contains %s filesystem. All data on it will be lost! Are "
+#, python-format
+msgid "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr ""
-"DRINGENDE WARNUNG: Der logische Datenträger %s hat ein %s Dateisystem und "
-"dieses\n"
-"ist gerade in %s eingehängt.Sind Sie absolut sicher, dass Sie die Daten "
-"dieses\n"
-"eingehängten Dateisystems verwerfen möchten?"
+msgstr "Der logische Datenträger %s enthält ein %s Dateisystem. "
+"Alle darauf gespeicherten Daten werden gelöscht."
+"Sind sie ganz sicher, dass Sie den logischen Datenträger %s entfernen möchten?"
 
 #: src/InputController.py:160
 #, python-format
-msgid ""
-"Logical volume %s contains data from directory %s. All data in it will be "
+msgid "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "Der logische Datenträger %s Daten aus dem Verzeichnis %s. Alle darin "
+"gespeicherten Daten werden gelöscht! Sind sie ganz sicher, dass Sie den "
+"logischen Datenträger %s entfernen möchten?"
 
 #: src/InputController.py:356
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem "
+"mirror log eines logischen Datenträgers gehören. Gespiegelte logische "
+"Datenträger können momentan noch nicht migriert werden, deswegen kann "
+"%s nicht entfernt werden."
 
 #: src/InputController.py:359
 #, python-format
@@ -422,119 +412,138 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem "
+"gespiegeltem Image des logischen Datenträgers %s gehören. Datenträger können "
+"momentan noch nicht migriert werden, deswegen kann %s nicht entfernt werden."
 
 #: src/InputController.py:362
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
+"einem Schnappschuss von %s, gehören. Schnappschüsse können momentan noch "
+"nicht migriert werden, deswegen kann %s nicht entfernt werden."
 
 #: src/InputController.py:367
 #, python-format
 msgid ""
-"Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
-"s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+"Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. "
+"Snapshot origins are not yet migratable, so %s is not removable."
+msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
+"dem Original von Schnappschuss %s, gehören. Originale eines Schnappschusses "
+"können momentan noch nicht migriert werden, deswegen kann %s nicht entfernt werden."
+
 
 #: src/InputController.py:369
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
+"dem Original der Schnappschüsse %s, gehören. Originale von Schnappschüssen "
+"können momentan noch nicht migriert werden, deswegen kann %s nicht entfernt werden."
 
 #: src/InputController.py:556
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
-msgstr ""
+msgstr "Der logische Datenträger %s hat Schnappschüsse die nicht zum Entfernen "
+"augewählt sind. Sie müssen jedoch ebenfalls entfernt werden."
 
 #: src/InputController.py:571
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgstr "%s, ein Orgiginal von Schnappschuss %s, wurde aus der Liste der zu Entfernenden gelöscht"
 
 #: src/InputController.py:602
-#, python-format
+#, fuzzy, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
-msgstr ""
+msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem"
+"Spiegel gehören. Spiegel können momentan noch nicht migriert werden, deswegen "
+"kann %s nicht entfernt werden."
 
 #: src/InputController.py:605
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
-msgstr ""
+msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem"
+"Schnappschuss oder einem Original eines Schnappschusses gehören. Schnappschüsse "
+"können momentan noch nicht migriert werden, deswegen kann %s nicht entfernt werden."
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "Der Pfad den Sie angegeben haben existiert nicht."
 
+#, fuzzy
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "Der Pfad den Sie angegeben haben ist kein blockorientiertes Gerät."
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "Initialisierung von %s fehlgeschlagen."
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Bitte wählen Sie zuerst einige Speichereinheiten aus."
 
 #: src/InputController.py:1022
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
-msgstr ""
+msgstr "Es sind nicht genügend freie Speichereinheiten vorhanden um die "
+"erforderliche Migration durchzuführen. Fügen sie weiter physische Datenträger "
+"hinzu um das Problem zu lösen."
 
 #: src/InputController.py:1181
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s Bereiche"
+msgstr "Speichereinheiten migrieren"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "Optionen"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "Einen Schnappschuss von %s erzeugen"
 
 #: src/InputController.py:1343
-#, fuzzy
+#
 msgid "Create New Logical Volume"
-msgstr "Neuen logischen Datenträger erzeugen"
+msgstr "Einen neuen logischen Datenträger erzeugen"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "Bearbeiten von %s einem Schnappschuss von %s"
 
 #: src/InputController.py:1349
-#, fuzzy
+#
 msgid "Edit Logical Volume"
-msgstr "Logischer Datenträger"
+msgstr "logischen Datenträger"
 
+#, fuzzy
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "Grundlegende logische Datenträgerverwaltung unterstützt keine Spiegelung"
 
+#, fuzzy
 #: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "\"Striped\" logische Datenträger können nicht gepiegelt werden"
 
 #: src/InputController.py:1516
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "Logische Datenträger mit davon abhängenden Schnappschüssen können momentan "
+"noch nicht gespiegelt werden."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -542,12 +551,14 @@ msgstr ""
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
-msgstr ""
+msgstr "Das primäre Ziel der Spiegelung ist es, Daten im Falle eines "
+"Festplatenausfalls zu schützen. Möchten Sie gespiegelte Abbilder auf verschiedene "
+"Festplatten platzieren?"
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgstr "Weniger als 3 Festplatten mit freiem Speicherplatz sind verfügbar. "
+"Deaktiviere Spiegelung."
 
 #: src/InputController.py:1537
 msgid ""
