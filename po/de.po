@@ -4,6 +4,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Eduard Pech <kongretkrassescheissendreck@simstim.net>, 2004.
 # Marcus Glöckner <mgloeckner@gmail.com>, 2005.
+# Thomas Duske <thodu-rh@vlugnet.org>, 2006.
 #
 msgid ""
 msgstr ""
@@ -560,24 +561,27 @@ msgid "Less than 3 hard drives are available with free space. Disabling mirrorin
 msgstr "Weniger als 3 Festplatten mit freiem Speicherplatz sind verfügbar. "
 "Deaktiviere Spiegelung."
 
+#, fuzzy
 #: src/InputController.py:1537
-msgid ""
-"There must be free space on at least three Physical Volumes to enable "
+msgid "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
+msgstr "Es muss auf mindestens 3 physischen Datenträgern noch freier Speicherplatz "
+"vorhanden sein um Spiegelung zu aktivieren."
 
 #: src/InputController.py:1545
-msgid ""
-"The size of the Logical Volume has been adjusted to the maximum available "
+msgid "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
+msgstr "Die Größe des logischen Datenträgers wurde auf die maximal verfügbare Größe "
+"für Spiegel eingestellt"
 
 #: src/InputController.py:1550
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
-msgstr ""
+msgstr "Es ist nicht genügend freier Speicher vorhanden um Spiegelung hinzuzufügen."
+"Reduzieren Sie die Größe der logischen Datenträger auf höchstens %s oder fügen "
+"Sie physische Datenträger hinzu."
 
 #: src/InputController.py:1914
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
