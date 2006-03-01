@@ -1128,29 +1128,31 @@ msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zu %s, einem "
 
 #: src/renderer.py:201
 #, python-format
-msgid ""
+msgid 
 "The extents that you are attempting to select belong to a snapshot origin %"
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
-msgstr ""
+msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zu dem Original "
+"des Schnappschusses %s. Schnappschüsse können momentan noch nicht migriert werden "
+"deshalb können diese Speichereinheiten nicht ausgewählbar."
 
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "Schnappschuss von %s"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "Original"
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "Schnappschuss"
 
 #: src/renderer.py:540
 #, fuzzy
 msgid "extent view"
-msgstr "Bereiche"
+msgstr "Speichereinheit Ansicht"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1167,94 +1169,93 @@ msgstr "Nicht initialisierte Laufwerke"
 #: src/Volume_Tab_View.py:632
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s Spiegel Synchronisation"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "Bitte warten Sie während die Partition erzeugt wird"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Erzeuge %s Dateisystem"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Passe Größe von Dateisystem %s an"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "Überprüfe %s Dateisystem"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Erweitere %s Dateisystem nach %s"
 
 #: src/Filesystem.py:13
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Anweisung \"vgcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-"System-Fehlermeldung: %s"
+"Erstellung des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\" - "
+"System-Fehlermeldung"
 
 #: src/Filesystem.py:14
-#, fuzzy, python-format
+# python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Anweisung \"mkfs\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-"System-Fehlermeldung: %s"
+"Anpassung der Größe des Dateisystem fehlgeschlagen. Anweisung versuchte: "
+"\"%s\" - System-Fehlermeldung Nachricht: %s"
 
 #: src/Filesystem.py:15
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Anweisung \"mkfs\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-"System-Fehlermeldung: %s"
+"Überprüfen des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\""
+" - System-Fehlermeldung Nachricht: %s"
 
 #: src/Filesystem.py:16
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Anweisung \"vgreduce\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-"System-Fehlermeldung: %s"
+"Erweiterung des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\""
+" - System Error Nachricht: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Kein Dateisystem"
+msgstr "Unbekanntes Dateisystem"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (lokal)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (gebündelt)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (lokal)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (gebündelt)"
 
 #: src/Segment.py:44
 #, fuzzy
 msgid "Stripe"
-msgstr "Streifung"
+msgstr ""
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1262,12 +1263,12 @@ msgstr "Lineare Anordnung"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "Spiegel"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partitionstyp:   "
+msgstr "Partition %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1335,7 +1336,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Schnappschuss erzeugen"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1346,13 +1347,12 @@ msgstr ""
 "gruppe erzeugen"
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Eigenschaften von"
+msgstr "Eigenschaften bearbeiten"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Geben Sie den Pfad, zu dem blockorientierten Gerät das initialisiert werden soll, ein"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1369,19 +1369,16 @@ msgstr ""
 "erweitern"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "Format:   "
+msgstr "Format"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "Nicht initialisiert"
+msgstr "initialisieren"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Initialisiere Laufwerk"
+msgstr "Initialisiere blockorientiertes Gerät"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1389,11 +1386,11 @@ msgstr "Initialisiere Laufwerk"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Initialisiere blockorientiertes Gerät"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
-msgstr "KB"
+msgstr "Kilo"
 
 #: src/lvui.glade.h:31
 msgid "Logical Volume Management"
@@ -1405,22 +1402,21 @@ msgstr "Verwalte Datenträger"
 
 #: src/lvui.glade.h:33
 msgid "Maximum Logical Volumes: "
-msgstr "Höchstzahl logischer Datenträger: "
+msgstr "Maximum logischer Datenträger: "
 
 #: src/lvui.glade.h:34
 msgid "Maximum Physical Volumes: "
-msgstr "Höchstzahl physischer Datenträger"
+msgstr "Maximum physischer Datenträger: "
 
 #: src/lvui.glade.h:35
 msgid "Meg"
-msgstr "MB"
+msgstr "Mega"
 
 #: src/lvui.glade.h:36
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
-msgstr ""
-"Ausgewählte(n) Bereich(e)\n"
+msgstr "Ausgewählte(n) Speicherbereich(e)\n"
 "von Datenträger migrieren"
 
 #: src/lvui.glade.h:38
@@ -1487,19 +1483,20 @@ msgstr ""
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Etwas Text"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "Neu laden"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "Werkzeuge"
 
 #: src/lvui.glade.h:56
+#, fuzzy
 msgid "extend vg message:"
-msgstr ""
+msgstr "erweiterte VG Nachricht:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1512,39 +1509,43 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Dateisystem: "
+msgstr "<b>Dateisystem</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV Eigenschaften</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Größe</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Füge Eintrag zu /etc/fstab hinzu"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Neuen logischen Datenträger erzeugen"
+msgstr "Neuen logischen Datenträger (LV) erzeugen"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "Größe des Dateisystems nicht anpassbar"
 
 #: src/lv_edit_props.glade.h:16
 #, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"Neue Datenträger-\n"
-"gruppe erzeugen"
+msgstr "Freier Speicher in Datenträgergruppe"
 
 #: src/lv_edit_props.glade.h:17
 #, fuzzy
