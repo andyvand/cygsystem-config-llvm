@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-04 22:26+0900\n"
+"PO-Revision-Date: 2006-03-05 21:54+0900\n"
 "Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
 "Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -613,6 +613,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"LVM では既に存在する論理ボリュームにミラーの追加をすることはサポートされ"
+"ていません。残りのタスクを終了します。"
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -1547,9 +1549,8 @@ msgid "Linear"
 msgstr "リニア"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
-msgstr "* ミラーされた"
+msgstr "ミラーされた"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
