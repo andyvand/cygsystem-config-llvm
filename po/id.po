@@ -1,6 +1,6 @@
 # system-config-lvm Bahasa Indonesia (id).
 # File ini didistribusikan di bawah lisensi yang sama dengan paket system-config-lvm.
-# Teguh DC <dheche@brawijaya.ac.id>, 2005.
+# Teguh DC <dheche@brawijaya.ac.id>, 2005-2006.
 #
 # $Id$
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2005-10-29 04:50+0700\n"
+"PO-Revision-Date: 2006-03-11 00:24+0700\n"
 "Last-Translator: Teguh DC <dheche@brawijaya.ac.id>\n"
 "Language-Team: LDP Indonesia <http://linux.or.id>\n"
 "MIME-Version: 1.0\n"
@@ -564,7 +564,6 @@ msgstr ""
 "ukuran dari Volume Logikal menjadi setidaknya %s, atau tambah Volume Fisik."
 
 #: src/InputController.py:1914
-#, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Nama yang dimulai dengan \"snapshot\" atau \"pvmove\" merupakan kata kunci "
@@ -577,7 +576,6 @@ msgstr ""
 "dicadangkan."
 
 #: src/InputController.py:1918
-#, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Nama yang dimulai dengan \"-\" tidak valid"
 
@@ -623,6 +621,9 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"Karena LVM tidak mendukung penambahan mirror ke Volume Logikal yang ada. "
+"Menyelesaikan tugas yang tersisa."
+""
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -830,7 +831,6 @@ msgid "PV UUID:   "
 msgstr "VF UUID:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
 msgstr "Tidak dapat diinisiasi:  "
 
@@ -841,7 +841,7 @@ msgstr "Partisi Perluasan"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Partisi swap sedang dipakai"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -860,33 +860,28 @@ msgid "Multipath device"
 msgstr "Perangkat multipath"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Catatan:   "
+msgstr "Catatan:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Inisiasi secara manual"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
 msgstr "Jumlah image mirror:   "
 
 #: src/lvm_model.py:792
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Snapshot:  "
+msgstr "Snapshot:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Sumber snapshot:  "
+msgstr "Sumber snapshot:"
 
 #: src/lvm_model.py:805
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Penggunaan snapshot:  "
+msgstr "Penggunaan snapshot:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
@@ -967,10 +962,10 @@ msgid "Unable to process request"
 msgstr "Tidak dapat memproses permintaan"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"perintah ls gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan Sistem: %s"
+"perintah %s gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan Sistem: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -990,23 +985,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Ruang yang belum dipartisi dalam %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Byte"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1140,9 +1132,9 @@ msgstr ""
 "dipilih."
 
 #: src/renderer.py:388
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Snapshot dari"
+msgstr "Snapshot dari %s"
 
 #: src/renderer.py:490
 msgid "Origin"
@@ -1169,7 +1161,7 @@ msgid "Uninitialized Entities"
 msgstr "Entiti yang belum diinisiasi"
 
 #: src/Volume_Tab_View.py:632
-#, fuzzy, python-format
+#, python-format
 msgid "%s mirror synchronisation"
 msgstr "sinkronisasi mirror %s"
 
@@ -1255,23 +1247,21 @@ msgid "GFS (clustered)"
 msgstr "GFS (terkluster)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Stripe "
+msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Pemetaan Linier"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Mirror "
+msgstr "Mirror"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partisi:   %s"
+msgstr "Partisi %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1534,9 +1524,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Tambah entri ke /etc/fstab"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Buat Volume Logikal Baru"
+msgstr "Buat Volume Logikal (VL) Baru"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1555,9 +1544,8 @@ msgid "Kilobytes granularity"
 msgstr "Kilobyte granularity"
 
 #: src/lv_edit_props.glade.h:19
-#, fuzzy
 msgid "LV name:"
-msgstr "Nama VL: "
+msgstr "Nama VL:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
@@ -1572,7 +1560,6 @@ msgid "Linear"
 msgstr "Linear"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
 msgstr "Dimirror"
 
@@ -1585,9 +1572,8 @@ msgid "Mount"
 msgstr "Mount"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Mount point: "
+msgstr "Mount point:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1610,7 +1596,6 @@ msgid "Use remaining"
 msgstr "Pergunakan Sisanya"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes"
 msgstr "pecahan dari"
 
@@ -1635,9 +1620,8 @@ msgid "Contiguous"
 msgstr "Berdampingan"
 
 #: src/migrate_extents.glade.h:6
-#, fuzzy
 msgid "Destination:"
-msgstr "<b>Tujuan</b>"
+msgstr "Tujuan:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1660,7 +1644,6 @@ msgid "Migrate Extents"
 msgstr "Migrasi Perluasan"
 
 #: src/migrate_extents.glade.h:12
-#, fuzzy
 msgid "Migrate anywhere even if that reduces performance"
 msgstr "Migrasi kemanapun bahkan jika itu mengurangi performa"
 
@@ -1673,7 +1656,6 @@ msgid "Normal"
 msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
 msgstr "Hanya migrasi perluasan milik VL"
 
