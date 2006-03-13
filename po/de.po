@@ -45,8 +45,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
-"Wählen Sie eine Datenträgergruppe, der Sie %s hinzufügen möchten:"
+msgstr "Wählen Sie eine Datenträgergruppe, der Sie %s hinzufügen möchten:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -246,7 +245,6 @@ msgid "%s extents"
 msgstr "%s Speichereinheiten"
 
 #: src/InputController.py:137
-#
 msgid "Remaining free space in Volume Group:\n"
 msgstr "Verbleibender freier Speicher in der Datenträgergruppe:\n"
 
@@ -276,43 +274,33 @@ msgid "The %s should only contain number values"
 msgstr "Für %s sind ausschließlich Zahlenwerte erlaubt"
 
 #: src/InputController.py:146
-#
-msgid ""
-"The Maximum Physical Volumes field should contain only integer values "
+msgid "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"Für \"Maximum physischer Datenträger\" sind nur ganze Zahlen von 1 bis "
+msgstr "Für \"Maximum physischer Datenträger\" sind nur ganze Zahlen von 1 bis "
 "256 erlaubt"
 
 #: src/InputController.py:147
-#
-msgid ""
-"The Maximum Logical Volumes field should contain only integer values between "
+msgid "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"Für \"Maximum logischer Datenträger\" sind nur ganze Zahlen von 1 bis 256 "
+msgstr "Für \"Maximum logischer Datenträger\" sind nur ganze Zahlen von 1 bis 256 "
 "erlaubt"
 
 #: src/InputController.py:149
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from Logical Volume "
+msgid "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
-"Sind Sie ganz sicher, dass Sie %s aus der logischen Datenträgerverwaltung "
+msgstr "Sind Sie ganz sicher, dass Sie %s aus der logischen Datenträgerverwaltung "
 "entfernen möchten?"
 
 #: src/InputController.py:151
 #, python-format
-msgid ""
-"The Physical Volume named %s, that you wish to remove, has data from active "
+msgid "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
 "Volume in the Volume Group, there is no place to move the data to. "
 "Recommended action is either to add a new Physical Volume before removing "
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
-msgstr ""
-"Der physische Datenträger %s, den Sie entfernen möchten, beinhaltet Daten "
+msgstr "Der physische Datenträger %s, den Sie entfernen möchten, beinhaltet Daten "
 "von aktiven logischen Datenträgern. Da es der einzige physische Datenträger "
 "in der Datenträgergruppe ist, können die Daten nicht verschoben werden. Es "
 "wird empfohlen ein neuen physischen Datenträger hinzuzufügen, bevor dieser "
@@ -321,55 +309,44 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
-"Sind Sie ganz sicher, dass Sie %s aus der Datenträgergruppe %s entfernen "
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr "Sind Sie ganz sicher, dass Sie %s aus der Datenträgergruppe %s entfernen "
 "möchten?"
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Removing Physical Volume %s from the Volume Group %s will leave the Volume "
+msgid "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
-"Durch das Entfernen des physischen Datenträgers %s aus der Datenträgergruppe %s, "
+msgstr "Durch das Entfernen des physischen Datenträgers %s aus der Datenträgergruppe %s, "
 "wird diese Datenträgergruppe leer und damit automatisch entfernt. Möchten Sie "
 "fortfahren?"
 
 #: src/InputController.py:154
 #, python-format
-msgid ""
-"Volume Group %s does not have enough space to move the data stored on %s. A "
+msgid "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
-"Der Speicher der Datenträgergruppe %s reicht nicht um die Daten die auf "
+msgstr "Der Speicher der Datenträgergruppe %s reicht nicht um die Daten die auf "
 "%s gespeichert sind zu verschieben. "
 "Eine mögliche Lösung wäre, einen zusätzlichen physischen Datenträger zur \n"
 "Datenträgergruppe hinzuzufügen."
 
 #: src/InputController.py:155
-msgid ""
-"The dm-mirror module is either not loaded in your kernel, or your kernel "
+msgid "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr ""
-"Das dm-mirror Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
+msgstr "Das dm-mirror Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
 "Kernel unterstützt das dm-mirror Target nicht. Wenn das Modul unterstützt\n"
 "wird versuchen Sie \"modeprobe dm-mirror\" auszuführen. Anderenfalls sind\n"
 "Operationen, die das Verschieben von Daten auf physische Datenträger\n"
 "vorraussetzen, nicht möglich."
 
 #: src/InputController.py:156
-#
-msgid ""
-"The dm-snapshot module is either not loaded in your kernel, or your kernel "
+msgid "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
-msgstr ""
-"Das dm-snapshot Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
+msgstr "Das dm-snapshot Modul ist entweder nicht in Ihrem Kernel geladen oder Ihr\n"
 "Kernel unterstützt das dm-snapshot Target nicht. Wenn das Modul unterstützt\n"
 "wird versuchen Sie \"modeprobe dm-snapshot\" auszuführen. Anderenfalls ist\n"
 "das Erzeugen von Schnappschüssen nicht möglich."
@@ -397,9 +374,8 @@ msgstr "Der logische Datenträger %s Daten aus dem Verzeichnis %s. Alle darin "
 "logischen Datenträger %s entfernen möchten?"
 
 #: src/InputController.py:356
-#, fuzzy, python-format
-msgid ""
-"Physical Volume %s contains extents belonging to a mirror log of Logical "
+#, python-format
+msgid "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem "
@@ -409,8 +385,7 @@ msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem "
 
 #: src/InputController.py:359
 #, python-format
-msgid ""
-"Physical Volume %s contains extents belonging to a mirror image of Logical "
+msgid "Physical Volume %s contains extents belonging to a mirror image of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem "
@@ -419,8 +394,7 @@ msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem "
 
 #: src/InputController.py:362
 #, python-format
-msgid ""
-"Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
+msgid "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
 "einem Schnappschuss von %s, gehören. Schnappschüsse können momentan noch "
@@ -428,18 +402,15 @@ msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
 
 #: src/InputController.py:367
 #, python-format
-msgid ""
-"Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. "
+msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. "
 "Snapshot origins are not yet migratable, so %s is not removable."
 msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
 "dem Original von Schnappschuss %s, gehören. Originale eines Schnappschusses "
 "können momentan noch nicht migriert werden, deswegen kann %s nicht entfernt werden."
 
-
 #: src/InputController.py:369
 #, python-format
-msgid ""
-"Physical Volume %s contains extents belonging to %s, the origin of snapshots "
+msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
 "dem Original der Schnappschüsse %s, gehören. Originale von Schnappschüssen "
@@ -447,22 +418,19 @@ msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu %s, "
 
 #: src/InputController.py:556
 #, python-format
-msgid ""
-"Logical Volume \"%s\" has snapshots that are not selected for removal. They "
+msgid "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr "Der logische Datenträger %s hat Schnappschüsse die nicht zum Entfernen "
 "augewählt sind. Sie müssen jedoch ebenfalls entfernt werden."
 
 #: src/InputController.py:571
-#, fuzzy, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr "%s, ein Orgiginal von Schnappschuss %s, wurde aus der Liste der zu Entfernenden gelöscht"
+#, python-format
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr "%s, ein Orgiginal von Schnappschuss %s, wurde aus der Liste der zu entfernenden Elemente gelöscht"
 
 #: src/InputController.py:602
-#, fuzzy, python-format
-msgid ""
-"Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
+#, python-format
+msgid "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem"
 "Spiegel gehören. Spiegel können momentan noch nicht migriert werden, deswegen "
@@ -470,8 +438,7 @@ msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem"
 
 #: src/InputController.py:605
 #, python-format
-msgid ""
-"Physical Volume \"%s\" contains extents belonging to a snapshot or a "
+msgid "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem"
 "Schnappschuss oder einem Original eines Schnappschusses gehören. Schnappschüsse "
@@ -481,7 +448,6 @@ msgstr "Der physische Datenträger %s enthält Speichereinheiten die zu einem"
 msgid "The path you specified does not exist."
 msgstr "Der Pfad den Sie angegeben haben existiert nicht."
 
-#, fuzzy
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
 msgstr "Der Pfad den Sie angegeben haben ist kein blockorientiertes Gerät."
@@ -496,8 +462,7 @@ msgid "Please select some extents first"
 msgstr "Bitte wählen Sie zuerst einige Speichereinheiten aus."
 
 #: src/InputController.py:1022
-msgid ""
-"There are not enough free extents to perform the necessary migration. Adding "
+msgid "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr "Es sind nicht genügend freie Speichereinheiten vorhanden um die "
 "erforderliche Migration durchzuführen. Fügen sie weiter physische Datenträger "
@@ -517,7 +482,6 @@ msgid "Create A Snapshot of %s"
 msgstr "Einen Schnappschuss von %s erzeugen"
 
 #: src/InputController.py:1343
-#
 msgid "Create New Logical Volume"
 msgstr "Einen neuen logischen Datenträger erzeugen"
 
@@ -527,16 +491,13 @@ msgid "Edit %s, a Snapshot of %s"
 msgstr "Bearbeiten von %s einem Schnappschuss von %s"
 
 #: src/InputController.py:1349
-#
 msgid "Edit Logical Volume"
 msgstr "logischen Datenträger"
 
-#, fuzzy
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Grundlegende logische Datenträgerverwaltung unterstützt keine Spiegelung"
 
-#, fuzzy
 #: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "\"Striped\" logische Datenträger können nicht gepiegelt werden"
@@ -549,8 +510,7 @@ msgstr "Logische Datenträger mit davon abhängenden Schnappschüssen können mo
 #. mirror images placement: diff HDs or anywhere
 #. prompt
 #: src/InputController.py:1523
-msgid ""
-"The primary purpose of mirroring is to protect data in the case of hard "
+msgid "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr "Das primäre Ziel der Spiegelung ist es, Daten im Falle eines "
 "Festplatenausfalls zu schützen. Möchten Sie gespiegelte Abbilder auf verschiedene "
@@ -561,14 +521,12 @@ msgid "Less than 3 hard drives are available with free space. Disabling mirrorin
 msgstr "Weniger als 3 Festplatten mit freiem Speicherplatz sind verfügbar. "
 "Deaktiviere Spiegelung."
 
-#, fuzzy
 #: src/InputController.py:1537
 msgid "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr "Es muss auf mindestens 3 physischen Datenträgern noch freier Speicherplatz "
 "vorhanden sein um Spiegelung zu aktivieren."
 
-#, fuzzy
 #: src/InputController.py:1545
 msgid "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -577,8 +535,7 @@ msgstr "Die Größe des logischen Datenträgers wurde auf die maximal verfügbar
 
 #: src/InputController.py:1550
 #, python-format
-msgid ""
-"There is not enough free space to add mirroring. Reduce size of Logical "
+msgid "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr "Es ist nicht genügend freier Speicher vorhanden um Spiegelung hinzuzufügen."
 "Reduzieren Sie die Größe der logischen Datenträger auf höchstens %s oder fügen "
@@ -619,8 +576,7 @@ msgstr "Möchten Sie von \"ext2\" auf \"ext3\" upgraden und die Daten auf dem "
 "logischen Datenträger erhalten?"
 
 #: src/InputController.py:2045
-msgid ""
-"Changing the filesystem will destroy all data on the Logical Volume! Are you "
+msgid "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr "Die Änderung des Dateisystems wird alle Daten auf dem logischen "
 "Datenträger zerstören. Sind Sie sicher das Sie fortfahren wollen?"
@@ -632,8 +588,7 @@ msgstr "Spiegel nicht erzeugt. Stelle verbleibende Aufgaben fertig."
 
 #. create mirror
 #: src/InputController.py:2149
-msgid ""
-"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+msgid "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr "Das zugrundeliegende LVM unterstützt das Hinzufügen von Spiegeln "
 "zu existierenden logischen Datenträgern nicht. Stelle verbleibende "
@@ -785,12 +740,10 @@ msgid "Number of Segments:   "
 msgstr "Anzahl der Abschnitte:   "
 
 #: src/lvm_model.py:76
-#, fuzzy
 msgid "Number of Stripes:   "
 msgstr "Anzahl der Stripes:   "
 
 #: src/lvm_model.py:77
-#, fuzzy
 msgid "Stripe Size:   "
 msgstr "Größe der Stripes:   "
 
@@ -1097,8 +1050,7 @@ msgstr "Nicht initialisiert"
 
 #: src/renderer.py:195
 #, python-format
-msgid ""
-"The extents that you are attempting to select belong to a mirror log of "
+msgid "The extents that you are attempting to select belong to a mirror log of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zum "
@@ -1108,8 +1060,7 @@ msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zum "
 
 #: src/renderer.py:197
 #, python-format
-msgid ""
-"The extents that you are attempting to select belong to mirror image of "
+msgid "The extents that you are attempting to select belong to mirror image of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zum gespiegelten "
@@ -1119,8 +1070,7 @@ msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zum gespiegelte
 
 #: src/renderer.py:199
 #, python-format
-msgid ""
-"The extents that you are attempting to select belong to %s, a snapshot of %s. "
+msgid "The extents that you are attempting to select belong to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so the extents are not selectable."
 msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zu %s, einem "
 "Schnappschuss von %s. Schnappschüsse können momentan noch nicht migriert werden "
@@ -1128,8 +1078,7 @@ msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zu %s, einem "
 
 #: src/renderer.py:201
 #, python-format
-msgid 
-"The extents that you are attempting to select belong to a snapshot origin %"
+msgid "The extents that you are attempting to select belong to a snapshot origin %"
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr "Die Speichereinheiten die Sie ausgewählt haben gehören zu dem Original "
@@ -1198,38 +1147,30 @@ msgstr "Erweitere %s Dateisystem nach %s"
 
 #: src/Filesystem.py:13
 #, python-format
-msgid ""
-"Creation of filesystem failed. Command attempted: \"%s\" - System Error "
+msgid "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"Erstellung des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\" - "
+msgstr "Erstellung des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\" - "
 "System-Fehlermeldung"
 
 #: src/Filesystem.py:14
 # python-format
-msgid ""
-"Resize of filesystem failed. Command attempted: \"%s\" - System Error "
+msgid "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"Anpassung der Größe des Dateisystem fehlgeschlagen. Anweisung versuchte: "
+msgstr "Anpassung der Größe des Dateisystem fehlgeschlagen. Anweisung versuchte: "
 "\"%s\" - System-Fehlermeldung Nachricht: %s"
 
 #: src/Filesystem.py:15
 #, python-format
-msgid ""
-"Check of filesystem failed. Command attempted: \"%s\" - System Error "
+msgid "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"Überprüfen des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\""
+msgstr "Überprüfen des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\""
 " - System-Fehlermeldung Nachricht: %s"
 
 #: src/Filesystem.py:16
 #, python-format
-msgid ""
-"Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
+msgid "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"Erweiterung des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\""
+msgstr "Erweiterung des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\""
 " - System Error Nachricht: %s"
 
 #: src/Filesystem.py:125
@@ -1253,9 +1194,8 @@ msgid "GFS (clustered)"
 msgstr "GFS (gebündelt)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr ""
+msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1319,19 +1259,15 @@ msgid "Add Physical Volume to VG"
 msgstr "Physischen Datenträger der Datenträgergruppe hinzufügen"
 
 #: src/lvui.glade.h:13
-msgid ""
-"Add to existing \n"
+msgid "Add to existing \n"
 "Volume Group"
-msgstr ""
-"Einer existierenden\n"
+msgstr "Einer existierenden\n"
 "Datenträgergruppe hinzufügen"
 
 #: src/lvui.glade.h:15
-msgid ""
-"Create New\n"
+msgid "Create New\n"
 "Logical Volume"
-msgstr ""
-"Neuen logischen\n"
+msgstr "Neuen logischen\n"
 "Datenträger erzeugen"
 
 #: src/lvui.glade.h:17
@@ -1339,11 +1275,9 @@ msgid "Create Snapshot"
 msgstr "Schnappschuss erzeugen"
 
 #: src/lvui.glade.h:18
-msgid ""
-"Create new \n"
+msgid "Create new \n"
 "Volume Group"
-msgstr ""
-"Neue Datenträger-\n"
+msgstr "Neue Datenträger-\n"
 "gruppe erzeugen"
 
 #: src/lvui.glade.h:20
@@ -1355,17 +1289,14 @@ msgid "Enter path of Block Device to initialize"
 msgstr "Geben Sie den Pfad, zu dem blockorientierten Gerät das initialisiert werden soll, ein"
 
 #: src/lvui.glade.h:22
-msgid ""
-"Extend\n"
+msgid "Extend\n"
 "Volume Group"
-msgstr ""
-"Datenträgengruppe\n"
+msgstr "Datenträgengruppe\n"
 "erweitern"
 
 #: src/lvui.glade.h:24
 msgid "Extend Volume Group"
-msgstr ""
-"Datenträgergruppe \n"
+msgstr "Datenträgergruppe \n"
 "erweitern"
 
 #: src/lvui.glade.h:25
@@ -1386,7 +1317,7 @@ msgstr "Initialisiere Laufwerk"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr "Initialisiere blockorientiertes Gerät"
+msgstr "_Initialisiere blockorientiertes Gerät"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1413,8 +1344,7 @@ msgid "Meg"
 msgstr "Mega"
 
 #: src/lvui.glade.h:36
-msgid ""
-"Migrate Selected\n"
+msgid "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr "Ausgewählte(n) Speicherbereich(e)\n"
 "von Datenträger migrieren"
@@ -1436,49 +1366,38 @@ msgid "Physical Extent Size: "
 msgstr "Größe des physischen Bereichs: "
 
 #: src/lvui.glade.h:42
-msgid ""
-"Remove \n"
+msgid "Remove \n"
 "Logical Volume"
-msgstr ""
-"Entferne\n"
+msgstr "Entferne\n"
 "logischen Datenträger"
 
 #: src/lvui.glade.h:44
-msgid ""
-"Remove Selected\n"
+msgid "Remove Selected\n"
 "Logical Volume(s)"
-msgstr ""
-"Entferne ausgewählte(n)\n"
+msgstr "Entferne ausgewählte(n)\n"
 "logische(n) Datenträger"
 
 #: src/lvui.glade.h:46
-msgid ""
-"Remove Selected\n"
+msgid "Remove Selected\n"
 "Physical Volume(s)"
-msgstr ""
-"Entferne ausgewählte(n)\n"
+msgstr "Entferne ausgewählte(n)\n"
 "physischen Datenträger"
 
 #: src/lvui.glade.h:48
-msgid ""
-"Remove Volume from\n"
+msgid "Remove Volume from\n"
 "Volume Group"
-msgstr ""
-"Entferne Datenträger\n"
+msgstr "Entferne Datenträger\n"
 "aus der Datenträgergruppe"
 
 #: src/lvui.glade.h:50
-msgid ""
-"Remove volume \n"
+msgid "Remove volume \n"
 "from LVM"
-msgstr ""
-"Entferne Datenträger\n"
+msgstr "Entferne Datenträger\n"
 "aus der logischen Datenträgerverwaltung"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
-"Wählen Sie eine Datenträgergruppe, der Sie diesen physischen Datenträger "
+msgstr "Wählen Sie eine Datenträgergruppe, der Sie diesen physischen Datenträger "
 "hinzufügen möchten:"
 
 #: src/lvui.glade.h:53
@@ -1487,14 +1406,13 @@ msgstr "Etwas Text"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr "Neu laden"
+msgstr "_Neu laden"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr "Werkzeuge"
+msgstr "_Werkzeuge"
 
 #: src/lvui.glade.h:56
-#, fuzzy
 msgid "extend vg message:"
 msgstr "erweiterte VG Nachricht:"
 
@@ -1543,31 +1461,28 @@ msgid "Filesystem is not resizable"
 msgstr "Größe des Dateisystems nicht anpassbar"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr "Freier Speicher in Datenträgergruppe"
+msgstr "Free space in Volume Group label" 
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
 msgstr "Verbleibenden Speicherplatz verwenden"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Kilobyte"
+msgstr "Kilobytes granularity"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "LV Name:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV Größe"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "Die Größe von LVs welche einem Schnappschuss zugrunde liegen können nicht verändert werden "
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1575,56 +1490,51 @@ msgstr "Linear"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Gespiegelt"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "Die Größe von gespiegelte LVs kann nicht verändert werden"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Eingehängt"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Einhängepunkt:   "
+msgstr "Einhängepunkt:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Eingehängt nach Neustart"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Größe"
+msgstr "Größe Beginn"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Größe"
+msgstr "Größe Ende"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr "Streifung"
+msgstr "Striped"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
 msgstr "Verbleibenden Speicherplatz verwenden"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes"
-msgstr "Streifung"
+msgstr "stripes"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Ziel</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Migrationsrichtlinie</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1632,60 +1542,54 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "Automatische Auswahl der PVs zum migrieren nach"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Zusammenhängend"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "Ziel:"
 
 #: src/migrate_extents.glade.h:7
-msgid ""
-"In order to remove PV, extents in use have to be migrated.\n"
+msgid "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
-msgstr ""
+msgstr "Um die PVs zu entfernen müssen Speicherbereiche die benutzt "
+"werden migriert werden.\n Wählen sie das Ziel der Speicherbereiche "
+"und die Migrationsrichtlinien."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "erben"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"Entferne Datenträger\n"
-"aus der Datenträgergruppe"
+msgstr "Vererbte Richtlinie von Dateträgergruppe"
 
 #: src/migrate_extents.glade.h:11
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "Bereiche"
+msgstr "Migrierte Speicherbereiche"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "Migriere alles auch wenn es Performance kostet"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "Neue Speicherbereiche grenzen an existierende"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr ""
-"Ausgewählte(n) Bereich(e)\n"
-"von Datenträger migrieren"
+msgstr "Migriere nur Speicherbereiche die zu dem LV gehören"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "Benutze allgemeine Bedeutung"
 
 #~ msgid ""
 #~ "vgextend command failed. Command attempted: \"%s\" - System Error "
