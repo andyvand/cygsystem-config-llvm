@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-27 21:00+0200\n"
+"PO-Revision-Date: 2006-03-13 19:19+0100\n"
 "Last-Translator: Thomas Duske <thodu-rh@vlugnet.org>\n"
 "Language-Team: de <fedora-trans-de@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -1099,9 +1099,8 @@ msgid "Snapshot"
 msgstr "Schnappschuss"
 
 #: src/renderer.py:540
-#, fuzzy
 msgid "extent view"
-msgstr "Speichereinheit Ansicht"
+msgstr "erweiterte Ansicht"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1538,7 +1537,7 @@ msgstr "<b>Migrationsrichtlinie</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "Irgendwo - nicht implementiert"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
