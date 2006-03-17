@@ -64,6 +64,7 @@
 # translation of bn_IN.po to Bangla (INDIA)
 # translation of bn_IN.po to Bangla (INDIA)
 # translation of bn_IN.po to Bangla (INDIA)
+# translation of bn_IN.po to Bangla (INDIA)
 # translation of bn.po to bangla
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
@@ -74,7 +75,7 @@ msgstr ""
 "Project-Id-Version: bn_IN\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-02-04 14:08+0530\n"
+"PO-Revision-Date: 2006-03-17 16:03+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bangla (INDIA) <redhat-translation@bengalinux.org>\n"
 "MIME-Version: 1.0\n"
@@ -163,8 +164,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "%s নামক একটি ভলিউম গ্রুপ বর্তমানে উপস্থিত রয়েছে। অনুগ্রহ করে একটি পৃথক নাম নির্বাচন "
 "করুন।"
@@ -179,10 +179,8 @@ msgstr "নতুন ভলিউম গ্রুপের নাম নির�
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"উল্লিখিত মাউন্ট-পয়েন্ট %s বর্তমানে উপস্থিত নেই। আপনি কি এটি নির্মাণ করতে ইচ্ছুক?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "উল্লিখিত মাউন্ট-পয়েন্ট %s বর্তমানে উপস্থিত নেই। আপনি কি এটি নির্মাণ করতে ইচ্ছুক?"
 
 #: src/InputController.py:104
 #, python-format
@@ -247,8 +245,7 @@ msgstr ""
 "সেগুলি অপসারণ করুন।"
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "মডেল ফ্যাক্টরির মধ্যে অনির্ধারিত ধরন পরিবর্তন সংক্রান্ত সমস্যা হয়েছে। কর্ম সম্পন্ন করতে "
 "ব্যর্থ।"
@@ -350,8 +347,7 @@ msgstr ""
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
-"আপনি কি নিশ্চিতরূপে %s-কে লজিকাল ভলিউম ব্যবস্থা (LVM) থেকে সরিয়ে ফেলতে ইচ্ছুক?"
+msgstr "আপনি কি নিশ্চিতরূপে %s-কে লজিকাল ভলিউম ব্যবস্থা (LVM) থেকে সরিয়ে ফেলতে ইচ্ছুক?"
 
 #: src/InputController.py:151
 #, python-format
@@ -371,8 +367,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "আপনি কি নিশ্চিতরূপে %s-কে, %s ভলিউম গ্রুপ থেকে সরিয়ে ফেলতে ইচ্ছুক?"
 
 #: src/InputController.py:153
@@ -500,8 +495,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", অর্থাত্‍‌ \"%s\" স্ন্যাপশটের মূল বস্তুটি, অপসারণের জন্য চিহ্নিত বস্তুর তালিকা "
 "থেকে মুছে ফেলা হয়েছে।"
@@ -599,8 +593,7 @@ msgstr ""
 "উদ্দেশ্য। আপনি কি বিভিন্ন হার্ড-ড্রাইভের মধ্যে মিরর ইমেজ স্থাপন করতে ইচ্ছুক?"
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "শূণ্যস্থান সমেত উপলব্ধ হার্ড-ড্রাইভের সংখ্যা ৩'র কম। মিররিং নিষ্ক্রিয় করা হচ্ছে।"
 
 #: src/InputController.py:1537
@@ -613,8 +606,7 @@ msgstr "মিররিং'র জন্য অন্তত তিনটি প�
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
-"মিররগুলির জন্য লজিকাল ভলিউমের মাপ সর্বাধিক উপলব্ধ মাপ হিসাবে পরিবর্তন করা আবশ্যক।"
+msgstr "মিররগুলির জন্য লজিকাল ভলিউমের মাপ সর্বাধিক উপলব্ধ মাপ হিসাবে পরিবর্তন করা আবশ্যক।"
 
 #: src/InputController.py:1550
 #, python-format
@@ -656,8 +648,7 @@ msgstr "অনুগ্রহ করে মাউন্ট-পয়েন্ট �
 
 #: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"লজিকাল ভলিউমের তথ্য অক্ষত রেখে আপনি কি ext2 থেকে ext3-তে আপগ্রেড করতে ইচ্ছুক?"
+msgstr "লজিকাল ভলিউমের তথ্য অক্ষত রেখে আপনি কি ext2 থেকে ext3-তে আপগ্রেড করতে ইচ্ছুক?"
 
 #: src/InputController.py:2045
 msgid ""
@@ -677,7 +668,7 @@ msgstr "মিরর নির্মাণ করা হয়নি। অবশ�
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
-msgstr ""
+msgstr "নিম্নস্থিত LVM'র দ্বারা বিদ্যমান লজিকাল ভলিউমে মিরর যোগ করার ব্যবস্থা সমর্থিত হয় না। অবশিষ্ট কর্ম সমাপ্ত করা হচ্ছে।"
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -975,8 +966,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "আপনি কি নিশ্চিতরূপে %s ফাঁকা স্থান, %s ডিস্কের উপর সক্রিয় করতে ইচ্ছুক?"
 
 #: src/lvmui_constants.py:55
@@ -1611,9 +1601,8 @@ msgid "Linear"
 msgstr "সমান্তরাল"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
-msgstr "* মিরর করা"
+msgstr "মিরর করা"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1715,9 +1704,3 @@ msgstr "শুধুমাত্র LV'র মালিকানাধীন এ
 msgid "Use common sense"
 msgstr "সাধারণ বিচার বিবেচনা প্রয়োগ করা হবে"
 
-#~ msgid ""
-#~ "* In this release, mirroring support is \n"
-#~ "available as a Technology Preview"
-#~ msgstr ""
-#~ "* বর্তমান রিলিজে, প্রযুক্তিগত প্রিভিউ \n"
-#~ "হিসাবে মিররিং সমর্থন ব্যবস্থা পেশ করা হয়েছে"
