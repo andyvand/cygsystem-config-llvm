@@ -1,20 +1,20 @@
 # translation of system-config-lvm to Dutch
 # This file is distributed under the same license as the system-config-lvm package.
-# Copyright (C) 2005 Free Software Foundation, Inc.
-# Peter van Egdom <p.van.egdom@gmail.com>, 2005.
+# Copyright (C) 2005, 2006 Free Software Foundation, Inc.
 #
+# Peter van Egdom <p.van.egdom@gmail.com>, 2005, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2005-12-07 22:39+0100\n"
+"PO-Revision-Date: 2006-04-03 22:08+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
+"X-Generator: KBabel 1.11.1\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -399,7 +399,7 @@ msgstr "Het door u opgegeven pad is geen block device."
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "Initialisatie van %s is mislukt"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
@@ -443,7 +443,7 @@ msgstr ""
 
 #: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "Striped Logical Volumes kunnen niet worden ge-mirrored."
 
 #: src/InputController.py:1516
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
@@ -482,7 +482,6 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1914
-#, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Namen die beginnen met \"snapshot\" of \"pvmove\" zijn gereserveerde "
@@ -495,7 +494,6 @@ msgstr ""
 "sleutelwoorden."
 
 #: src/InputController.py:1918
-#, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Namen die beginnen met een \"-\" zijn ongeldig"
 
@@ -565,7 +563,7 @@ msgstr ""
 
 #: src/CommandHandler.py:158
 msgid "Initializing Physical Volume"
-msgstr ""
+msgstr "Initialiseren van Physical Volume"
 
 #: src/CommandHandler.py:169
 msgid "Adding Physical Volume to Volume Group"
@@ -577,19 +575,19 @@ msgstr "Aanmaken van volume group"
 
 #: src/CommandHandler.py:218
 msgid "Removing Volume Group"
-msgstr ""
+msgstr "Verwijderen van Volume Group"
 
 #: src/CommandHandler.py:228
 msgid "Removing Physical Volume"
-msgstr ""
+msgstr "Verwijderen van Physical Volume"
 
 #: src/CommandHandler.py:239
 msgid "Removing Logical Volume"
-msgstr ""
+msgstr "Verwijderen van Logical Volume"
 
 #: src/CommandHandler.py:251
 msgid "Renaming Logical Volume"
-msgstr ""
+msgstr "Hernoemen van Logical Volume"
 
 #: src/CommandHandler.py:273
 msgid "Removing Physical Volume from Volume Group"
@@ -649,7 +647,7 @@ msgstr "Aantal vrije extents:   "
 
 #: src/lvm_model.py:66
 msgid "Extent Size:   "
-msgstr ""
+msgstr "Extent grootte:   "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
@@ -744,9 +742,8 @@ msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Niet-initialiseerbaar:   "
+msgstr "Niet-initialiseerbaar:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -774,33 +771,28 @@ msgid "Multipath device"
 msgstr "Multipath device"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Let op:   "
+msgstr "Let op:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Initialiseer handmatig"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Aantal mirror images:  "
+msgstr "Aantal mirror images:"
 
 #: src/lvm_model.py:792
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Snapshots:  "
+msgstr "Snapshots:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Snapshot van "
+msgstr "Snapshot oorsprong:"
 
 #: src/lvm_model.py:805
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Snapshot gebruik:  "
+msgstr "Snapshot gebruik:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
@@ -865,7 +857,7 @@ msgstr "Mirror log"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "Niet in staat om aanvraag te verwerken"
 
 #: src/lvmui_constants.py:65
 #, python-format
@@ -890,23 +882,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Niet-gepartioneerde ruimte op %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Bytes"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -994,7 +983,7 @@ msgstr "Niet-toegewezen"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "Niet-geïnitialiseerd"
 
 #: src/renderer.py:195
 #, python-format
@@ -1028,13 +1017,13 @@ msgid ""
 msgstr ""
 
 #: src/renderer.py:388
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Snapshot van "
+msgstr "Snapshot van %s"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "Oorsprong"
 
 #: src/renderer.py:496
 msgid "Snapshot"
@@ -1135,23 +1124,21 @@ msgid "GFS (clustered)"
 msgstr "GFS (geclustered)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Stripe "
+msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr ""
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Mirror "
+msgstr "Mirror"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partitioneer %s"
+msgstr ""
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1332,12 +1319,16 @@ msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Verwijder Volume van\n"
+"Volume Group"
 
 #: src/lvui.glade.h:50
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Verwijder volume \n"
+"van LVM"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
@@ -1396,9 +1387,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Voeg item toe aan /etc/fstab"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Nieuw logical volume aanmaken"
+msgstr "Nieuw Logical Volume (LV) aanmaken"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1417,9 +1407,8 @@ msgid "Kilobytes granularity"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:19
-#, fuzzy
 msgid "LV name:"
-msgstr "LV naam: "
+msgstr "LV naam:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
@@ -1434,9 +1423,8 @@ msgid "Linear"
 msgstr "Lineair"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
-msgstr "Mirror "
+msgstr "Mirrored"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1447,9 +1435,8 @@ msgid "Mount"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Aankoppelpunt: "
+msgstr "Aankoppelpunt:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1465,16 +1452,15 @@ msgstr "Eind grootte"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr ""
+msgstr "Striped"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr ""
+msgstr "Gebruik wat is overgebleven"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes"
-msgstr "Stripe "
+msgstr "stripes"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1497,9 +1483,8 @@ msgid "Contiguous"
 msgstr ""
 
 #: src/migrate_extents.glade.h:6
-#, fuzzy
 msgid "Destination:"
-msgstr "<b>Bestemming</b>"
+msgstr "Bestemming:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1512,11 +1497,11 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "Overnemen"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
-msgstr ""
+msgstr "Policy overnemen van Volume Group"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
@@ -1535,9 +1520,8 @@ msgid "Normal"
 msgstr "Normaal"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr "Migreer alleen extents die deel uitmaken van LV"
+msgstr "Migreer alleen extents die deel uitmaken van een LV"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
