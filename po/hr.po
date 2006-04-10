@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-04-06 05:29+0100\n"
+"PO-Revision-Date: 2006-04-10 04:33+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Renato Pavicic <renato@translator-shop.org>\n"
 "MIME-Version: 1.0\n"
@@ -163,17 +163,17 @@ msgstr ""
 #: src/InputController.py:132
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s megabajta"
 
 #: src/InputController.py:133
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s kilobajta"
 
 #: src/InputController.py:134
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s gigabajta"
 
 #: src/InputController.py:135
 #, python-format
@@ -194,15 +194,15 @@ msgstr ""
 
 #: src/InputController.py:141
 msgid "Gigabytes"
-msgstr ""
+msgstr "Gigabajta"
 
 #: src/InputController.py:142
 msgid "Megabytes"
-msgstr ""
+msgstr "Megabajta"
 
 #: src/InputController.py:143
 msgid "Kilobytes"
-msgstr ""
+msgstr "Kilobajta"
 
 #: src/InputController.py:145
 #, python-format
@@ -321,7 +321,7 @@ msgstr ""
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "Initializacija %s nije uspjela"
 
 #: src/InputController.py:985
 #: src/InputController.py:988
@@ -338,7 +338,7 @@ msgstr ""
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "Opcije"
 
 #: src/InputController.py:1341
 #, python-format
@@ -347,7 +347,7 @@ msgstr ""
 
 #: src/InputController.py:1343
 msgid "Create New Logical Volume"
-msgstr ""
+msgstr "Izrada novog logičkog obujma"
 
 #: src/InputController.py:1346
 #, python-format
@@ -356,7 +356,7 @@ msgstr ""
 
 #: src/InputController.py:1349
 msgid "Edit Logical Volume"
-msgstr ""
+msgstr "Uređivanje logičkog obujma"
 
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -420,7 +420,7 @@ msgstr ""
 
 #: src/InputController.py:1949
 msgid "Please specify mount point"
-msgstr ""
+msgstr "Odredite točku pristupa"
 
 #: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -450,52 +450,52 @@ msgstr ""
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
-msgstr ""
+msgstr "Izrada logičkog obujma"
 
 #: src/CommandHandler.py:74
 #: src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
-msgstr ""
+msgstr "Promjena veličine logičkog obujma"
 
 #: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
-msgstr ""
+msgstr "Dodavanje zrcala logičkom obujmu"
 
 #: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
+msgstr "Uklanjanje zrcala iz logičkog obujma"
 
 #: src/CommandHandler.py:158
 msgid "Initializing Physical Volume"
-msgstr ""
+msgstr "Inicijalizacija fizičkog obujma"
 
 #: src/CommandHandler.py:169
 msgid "Adding Physical Volume to Volume Group"
-msgstr ""
+msgstr "Dodavanje fizičkog obujma u grupu obujma"
 
 #: src/CommandHandler.py:196
 msgid "Creating Volume Group"
-msgstr ""
+msgstr "Izraga grupe obujma"
 
 #: src/CommandHandler.py:218
 msgid "Removing Volume Group"
-msgstr ""
+msgstr "Uklanjanja grupe obujma"
 
 #: src/CommandHandler.py:228
 msgid "Removing Physical Volume"
-msgstr ""
+msgstr "Uklanjanje fizičkog obujma"
 
 #: src/CommandHandler.py:239
 msgid "Removing Logical Volume"
-msgstr ""
+msgstr "Uklanjanje logičkog obujma"
 
 #: src/CommandHandler.py:251
 msgid "Renaming Logical Volume"
-msgstr ""
+msgstr "Preimenovanje logičkog obujma"
 
 #: src/CommandHandler.py:273
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
+msgstr "Uklanjanje fizičkog obujma iz grupe obujma"
 
 #: src/CommandHandler.py:308
 msgid "Migrating Extents"
@@ -508,33 +508,33 @@ msgstr ""
 #: src/lvm_model.py:45
 #: src/lvmui_constants.py:83
 msgid "Unused"
-msgstr ""
+msgstr "Neiskorišteno"
 
 #: src/lvm_model.py:46
 msgid "Unused Space"
-msgstr ""
+msgstr "Neiskorišteni prostor"
 
 #: src/lvm_model.py:48
 msgid "Unmounted"
-msgstr ""
+msgstr "Nije pristupljeno"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Naziv grupe obujma:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr ""
+msgstr "ID sustava:  "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
-msgstr ""
+msgstr "Oblik:     "
 
 #: src/lvm_model.py:61
 #: src/lvm_model.py:78
 #: src/lvm_model.py:93
 msgid "Attributes:   "
-msgstr ""
+msgstr "Atributi:     "
 
 #: src/lvm_model.py:62
 msgid "Volume Group Size:   "
@@ -602,31 +602,31 @@ msgstr ""
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
-msgstr ""
+msgstr "Vrsta particije:   "
 
 #: src/lvm_model.py:82
 msgid "Size:   "
-msgstr ""
+msgstr "Veličina:   "
 
 #: src/lvm_model.py:83
 msgid "Mount Point:   "
-msgstr ""
+msgstr "Točka pristupa:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
-msgstr ""
+msgstr "Točka pristupa pri ponovnom pokretanju:   "
 
 #: src/lvm_model.py:85
 msgid "File System:   "
-msgstr ""
+msgstr "Datotečni sustav:   "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "Naziv fizičkog obujma:   "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "Veličina fizičkog obujma:   "
 
 #: src/lvm_model.py:89
 msgid "Space Used:   "
@@ -679,7 +679,7 @@ msgstr ""
 
 #: src/lvm_model.py:290
 msgid "Note:"
-msgstr ""
+msgstr "Npoamena:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
@@ -780,19 +780,19 @@ msgstr ""
 
 #: src/lvmui_constants.py:90
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
 msgid "KB"
-msgstr ""
+msgstr "kB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Bajtova"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -801,35 +801,35 @@ msgstr ""
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
-msgstr ""
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:99
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:100
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvmui_constants.py:101
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:102
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:103
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:104
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvmui_constants.py:105
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
@@ -1028,47 +1028,47 @@ msgstr ""
 #: src/lvui.glade.h:1
 #: src/lv_edit_props.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
@@ -1224,7 +1224,7 @@ msgstr ""
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "_Alati"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
@@ -1241,6 +1241,14 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
