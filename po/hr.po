@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-04-10 04:33+0100\n"
+"PO-Revision-Date: 2006-04-12 03:40+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Renato Pavicic <renato@translator-shop.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,13 +30,19 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Inicijalizacija grafičkog okruženja nije moguća. Vjerojatan uzrok\n"
+"  problema je da alat nije bio pokrenut putem grafičkog okruženja.\n"
+"  Pokrenite grafičko sučelje ili podesite varijablu DISPLAY.\n"
+"                                                                                \n"
+"  Uhvaćeno odstupanje: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
+msgstr "Odaberite grupu obujma kojemu će %s biti pridodan:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -56,74 +62,74 @@ msgstr "Valičina"
 
 #: src/InputController.py:86
 msgid "Entity Type"
-msgstr ""
+msgstr "Vrsta entiteta"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "Nedodjeljen fizički obujam"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "Neinicijaliziran entitet diska"
 
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
+msgstr "Odaberite entitete diskova koje želite dodati u grupu obujma %s:"
 
 #: src/InputController.py:92
 msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "Da bi bio oduzimanje bilo podržano, grupa obujma mora se sastojati od dva ili više fizičkih obujma. Ova grupa obujma ne ispunjava ovaj zahtijev."
 
 #: src/InputController.py:94
 #, python-format
 msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
-msgstr ""
+msgstr "Logički obujam naziva %s već postoji u u ovoj grupi obujma. Odaberite drugi jedinstveni naziv."
 
 #: src/InputController.py:96
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "Logički obujam naziva %s već postoji. Odaberite drugi jedinstveni naziv."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "Novom logičkom obujmu potrebno je dati naziv."
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "Novoj logičkoj grupi obujma potrebno je dati naziv."
 
 #: src/InputController.py:102
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "Točka pristupa %s ne postoji u obliku kako je određena. Želite li ju izraditi?"
 
 #: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "Izrada točke pristupa %s neočekivano nije uspjela."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "Ova mogućnost trenutno nije implementiratna u ovoj verziji."
 
 #: src/InputController.py:108
 msgid "The number of Logical Volumes in this Volume Group has reached its maximum limit."
-msgstr ""
+msgstr "Broj logičkih obujma u ovoj grupi obujma dostigao je najveći dopušteni iznos."
 
 #: src/InputController.py:110
 msgid "The number of Physical Volumes in this Volume Group has reached its maximum limit."
-msgstr ""
+msgstr "Broj fizičkih obujma u ovoj grupi obujma dostigao je najveći dopušteni iznos."
 
 #: src/InputController.py:112
 #, python-format
 msgid "At most %s Physical Volumes can be added to this Volume Group before the limit is reached."
-msgstr ""
+msgstr "Ovoj je grupi obujma moguće dodati najviše %s fizičkih obujma."
 
 #: src/InputController.py:114
 #, python-format
 msgid "Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group."
-msgstr ""
+msgstr "U grupi obujma %s ne postoji dovoljno prostora za nove logičke obujme. Moguće rješenje problema predstavlja dodavanje fizičkih obujma u grupu obujma."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
@@ -141,24 +147,24 @@ msgstr ""
 
 #: src/InputController.py:121
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "Nedefinirana pogreška pretvaranja vrste pri tvornici modela. Nije moguće završiti zadatak."
 
 #: src/InputController.py:123
 #, python-format
 msgid "BIG WARNING: Logical Volume %s has an %s file system on it and is currently mounted on %s. Are you absolutely certain that you wish to discard the data on this mounted filesystem?"
-msgstr ""
+msgstr "VELIKO UPOZORENJE: Logički obujam %s sadrži datotečni sustav %s, kojemu je trenutno pristupljeno putem %s. Jeste li potpuno sigurni da želite uništiti podatke na ovom pristupljenom datotečnom sustavu?"
 
 #: src/InputController.py:125
 #, python-format
 msgid "Logical Volume %s is currently mounted on %s. In order to complete request, it has to be unmounted. Are you sure you want it unmounted?"
-msgstr ""
+msgstr " Logičkom obujmu %s trenutno je pristupljeno putem %s. Da bi se zahtijev mogao ispuniti potrebno ga je napustiti. Jeste li sigurni da ga želite napustiti?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:131
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "Neiskorišteni prostor na %s"
 
 #: src/InputController.py:132
 #, python-format
@@ -182,11 +188,11 @@ msgstr ""
 
 #: src/InputController.py:137
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
+msgstr "Preostalo slobodnog prostora u grupi obujma:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Preostalo slobodnog prostora u ovom obujmu:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -207,30 +213,30 @@ msgstr "Kilobajta"
 #: src/InputController.py:145
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s mora sadržavati samo brojčane vrijednosti."
 
 #: src/InputController.py:146
 msgid "The Maximum Physical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Polje najvećeg dopuštenog broja fizičkih obujma može sadržavati samo cijele brojeve između 1 i 256."
 
 #: src/InputController.py:147
 msgid "The Maximum Logical Volumes field should contain only integer values between 1 and 256"
-msgstr ""
+msgstr "Polje najvećeg dopuštenog broja logičkih obujma može sadržavati samo cijele brojeve između 1 i 256."
 
 #: src/InputController.py:149
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr ""
+msgstr "Jeste li poptuno sigurni da iz upravljanja logičkim obujmima želite ukloniti %s?"
 
 #: src/InputController.py:151
-#, python-format
+#, fuzzy, python-format
 msgid "The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data to. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume."
-msgstr ""
+msgstr "Fizički obujam %s, a kojeg želite ukloniti, sadrži podatke iz aktivnih logičkih obujma mapiranih"
 
 #: src/InputController.py:152
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "Jeste li poptuno sigurni da želite ukloniti %s iz grupe obujma %s?"
 
 #: src/InputController.py:153
 #, python-format
@@ -574,19 +580,19 @@ msgstr ""
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "Naziv logičkog obujma:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "Veličina logičkog obujma:   "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "Broj segmenata:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
@@ -598,7 +604,7 @@ msgstr ""
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
@@ -646,7 +652,7 @@ msgstr ""
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
@@ -667,11 +673,11 @@ msgstr ""
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Automatsko particioniranje nije uspjelo"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
-msgstr ""
+msgstr "Ručno particioniranje"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
@@ -711,7 +717,7 @@ msgstr ""
 #: src/lvm_model.py:896
 #: src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "Nijedan"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -741,7 +747,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "Ponovno učitavanje LVM-a. Pričekajte..."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -750,7 +756,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Zapisnik zrcala"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
@@ -763,11 +769,11 @@ msgstr ""
 
 #: src/lvmui_constants.py:84
 msgid "Free"
-msgstr ""
+msgstr "Slobodno"
 
 #: src/lvmui_constants.py:85
 msgid "Free space"
-msgstr ""
+msgstr "Slobodan prostor"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
@@ -797,7 +803,7 @@ msgstr "Bajtova"
 #. File System Types
 #: src/lvmui_constants.py:97
 msgid "No Filesystem"
-msgstr ""
+msgstr "Nema datotečnog sustava"
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
@@ -833,22 +839,22 @@ msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "Svojstva za"
 
 #: src/Properties_Renderer.py:43
 #: src/renderer.py:37
 msgid "Physical Volume"
-msgstr ""
+msgstr "Fizički obujam"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44
 #: src/renderer.py:36
 msgid "Logical Volume"
-msgstr ""
+msgstr "Logički obujam"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "Nedodjeljeni obujam"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:43
@@ -860,34 +866,34 @@ msgstr ""
 #: src/Properties_Renderer.py:49
 #: src/renderer.py:38
 msgid "Volume Group"
-msgstr ""
+msgstr "Grupa obujma"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
-msgstr ""
+msgstr "Nema odabranog obujma"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Višestruki odabir"
 
 #: src/renderer.py:39
 #: src/Volume_Tab_View.py:46
 msgid "Logical View"
-msgstr ""
+msgstr "Logički prikaz"
 
 #: src/renderer.py:40
 #: src/Volume_Tab_View.py:45
 msgid "Physical View"
-msgstr ""
+msgstr "Fizički prikaz"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr ""
+msgstr "Nedodjeljeno"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "Nije inicijalizirano"
 
 #: src/renderer.py:195
 #, python-format
@@ -916,7 +922,7 @@ msgstr ""
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "Izvor"
 
 #: src/renderer.py:496
 msgid "Snapshot"
@@ -928,11 +934,11 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
-msgstr ""
+msgstr "Grupe obujma"
 
 #: src/Volume_Tab_View.py:43
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "Nedodjeljeni obujmi"
 
 #: src/Volume_Tab_View.py:44
 msgid "Uninitialized Entities"
@@ -994,7 +1000,7 @@ msgstr ""
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (lokalno)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
@@ -1002,7 +1008,7 @@ msgstr ""
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (lokalno)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
@@ -1023,7 +1029,7 @@ msgstr ""
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition %s"
-msgstr ""
+msgstr "Particija %s"
 
 #: src/lvui.glade.h:1
 #: src/lv_edit_props.glade.h:1
@@ -1098,7 +1104,7 @@ msgstr ""
 
 #: src/lvui.glade.h:20
 msgid "Edit Properties"
-msgstr ""
+msgstr "Uredi svojstva"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1136,7 +1142,7 @@ msgstr ""
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
-msgstr ""
+msgstr "Kilo"
 
 #: src/lvui.glade.h:31
 msgid "Logical Volume Management"
@@ -1156,7 +1162,7 @@ msgstr ""
 
 #: src/lvui.glade.h:35
 msgid "Meg"
-msgstr ""
+msgstr "Meg"
 
 #: src/lvui.glade.h:36
 msgid ""
@@ -1288,11 +1294,11 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "LV naziv:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV veličina"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
