@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-04-12 19:12+0100\n"
-"Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
+"PO-Revision-Date: 2006-04-14 09:21+0100\n"
+"Last-Translator: Renato Pavicic <www.translator-shop.org>\n"
 "Language-Team: Renato Pavicic <renato@translator-shop.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -1026,7 +1026,7 @@ msgstr ""
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "Zrcalo"
 
 #: src/PhysicalVolume.py:142
 #, python-format
@@ -1128,19 +1128,19 @@ msgstr ""
 
 #: src/lvui.glade.h:26
 msgid "Initialize"
-msgstr ""
+msgstr "Inicijalizacija"
 
 #: src/lvui.glade.h:27
 msgid "Initialize Block Device"
-msgstr ""
+msgstr "Inicijalizacija blok uređaja"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
-msgstr ""
+msgstr "Inicijalizacija entiteta"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Inicijalizacija _blok uređaja"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1148,19 +1148,19 @@ msgstr "Kilo"
 
 #: src/lvui.glade.h:31
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "Upravljanje logičkim volumenima"
 
 #: src/lvui.glade.h:32
 msgid "Manage Volumes"
-msgstr ""
+msgstr "Upravljanje volumenima"
 
 #: src/lvui.glade.h:33
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "Najviše logičih volumena: "
 
 #: src/lvui.glade.h:34
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "Najviše fizičkih volumena: "
 
 #: src/lvui.glade.h:35
 msgid "Meg"
@@ -1174,7 +1174,7 @@ msgstr ""
 
 #: src/lvui.glade.h:38
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "Naziv grupe volumena: "
 
 #: src/lvui.glade.h:39
 msgid "New Volume Group"
