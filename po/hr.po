@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-04-14 09:21+0100\n"
-"Last-Translator: Renato Pavicic <www.translator-shop.org>\n"
-"Language-Team: Renato Pavicic <renato@translator-shop.org>\n"
+"PO-Revision-Date: 2006-04-16 06:24+0100\n"
+"Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
+"Language-Team: Renato Pavicic <www.translator-shop.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -184,7 +184,7 @@ msgstr "%s gigabajta"
 #: src/InputController.py:135
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s opsega"
 
 #: src/InputController.py:137
 msgid "Remaining free space in Volume Group:\n"
@@ -196,7 +196,7 @@ msgstr "Preostalo slobodnog prostora u ovom volumenu:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
-msgstr ""
+msgstr "Opsezi"
 
 #: src/InputController.py:141
 msgid "Gigabytes"
@@ -276,27 +276,27 @@ msgstr "Logički volumen %s sadrži podatke iz mape %s. Svi podaci u njoj bit ć
 #: src/InputController.py:356
 #, python-format
 msgid "Physical Volume %s contains extents belonging to a mirror log of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "Fizički volumen %s sadrži opsege koji pripadaju zrcalnom zapisniku logičkog volumena %s.  S obzirom da zrcalne logičke volumene još uvijek nije moguće preseljavati, nije moguće ukloniti %s."
 
 #: src/InputController.py:359
 #, python-format
 msgid "Physical Volume %s contains extents belonging to a mirror image of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "Fizički volumen %s sadrži opsege koji pripadaju zrcalnoj preslici logičkog volumena %s. S obzirom da zrcalne logičke volumene još uvijek nije moguće preseljavati, nije moguće ukloniti %s."
 
 #: src/InputController.py:362
-#, python-format
+#, fuzzy, python-format
 msgid "Physical Volume %s contains extents belonging to %s, a snapshot of %s. Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "Fizički volumen %s sadrži opsege koji pripadaju %s, snapshot od %s. S obzirom da Snapshots  još uvijek nije moguće preseljavati, nije moguće ukloniti %s."
 
 #: src/InputController.py:367
-#, python-format
+#, fuzzy, python-format
 msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "Fizički volumen %s sadrži opsege koji pripadaju %s, izvoru snapshot-a od %s. S obzirom da izvore Snapshots  još uvijek nije moguće preseljavati, nije moguće ukloniti %s."
 
 #: src/InputController.py:369
-#, python-format
+#, fuzzy, python-format
 msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "Fizički volumen %s sadrži opsege koji pripadaju %s, izvoru snapshot-ova od %s. S obzirom da izvore Snapshots  još uvijek nije moguće preseljavati, nije moguće ukloniti %s."
 
 #: src/InputController.py:556
 #, python-format
@@ -334,15 +334,15 @@ msgstr "Initializacija %s nije uspjela"
 #: src/InputController.py:985
 #: src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Prvo je potrebno odabrati opseg."
 
 #: src/InputController.py:1022
 msgid "There are not enough free extents to perform the necessary migration. Adding more physical volumes would solve the problem."
-msgstr ""
+msgstr "Za izvršavanje potrebnih preseljenja nema dovoljno slobodnih opsega. Problem se može riješiti dodavanjem fizičkih volumena."
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
-msgstr ""
+msgstr "Preseljenje opsega"
 
 #: src/InputController.py:1307
 msgid "Options"
@@ -399,7 +399,7 @@ msgstr "Veličina logičkih volumena prilagođena je najvećoj raspoloživoj vel
 #: src/InputController.py:1550
 #, python-format
 msgid "There is not enough free space to add mirroring. Reduce size of Logical Volume to at most %s, or add Physical Volumes."
-msgstr ""
+msgstr "Nema dovoljno slobodnog prostora za dodavanje zrcaljenja. Smanjite veličinu logičkog volumena na najviše %s ili dodajte još neki fizički volumen."
 
 #: src/InputController.py:1914
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
@@ -407,24 +407,24 @@ msgstr ""
 
 #: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "Nazivi koji sadržavaju \"_mlog\" ili \"_mimage\" rezervirani su za ključne riječi."
 
 #: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
-msgstr ""
+msgstr "Nazivi koji započinju s \"-\" nisu ispravni."
 
 #: src/InputController.py:1920
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "Naziv ne može biti \".\" niti \"..\""
 
 #: src/InputController.py:1926
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "Prazna mjesta (razmaci) nisu dopušteni u nazivima logičkih volumena."
 
 #: src/InputController.py:1929
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "Neispravan znak \"%s\" u nazivu logičkog volumena"
 
 #: src/InputController.py:1949
 msgid "Please specify mount point"
