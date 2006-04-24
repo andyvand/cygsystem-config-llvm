@@ -3,20 +3,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Jayaradha N <njaya@redhat.com>, 2004, 2005.
+# Felix <ifelix@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2005-03-22 14:39+0530\n"
-"Last-Translator: Jayaradha <njaya@redhat.com>\n"
-"Language-Team: Tamil <zhakanini@yahoogroups.com>\n"
+"PO-Revision-Date: 2006-04-24 17:44+0530\n"
+"Last-Translator: Felix <ifelix@redhat.com>\n"
+"Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
@@ -96,8 +97,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s என்ற பெயரில் வால்யூம் குழு ஏற்கெனவே உள்லது. வேறு பெயரை தேர்வு செய்யவும்."
 
 #: src/InputController.py:98
@@ -110,8 +110,7 @@ msgstr "வால்யூம் குழுவின் பெயரை கு
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "சிறப்பு ஏற்றப்புள்ளி , %s, ஏற்கெனவே உள்ளது. இதை உருவாக்க விருப்பமா?"
 
 #: src/InputController.py:104
@@ -177,8 +176,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "மாதிரி தொழிற்சாலையில் குறிப்பிடப்படாத வகை மாற்றம் நிகழ்துள்ளது. வேலையை முடிக்க "
 "முடியவில்லை."
@@ -301,8 +299,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s ஐ %s வால்யூம் குழுவிலிருந்து நீக்க விருப்பமா?"
 
 #: src/InputController.py:153
@@ -413,8 +410,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -461,7 +457,7 @@ msgstr "%s பரப்புகள்"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "விருப்பங்கள்"
 
 #: src/InputController.py:1341
 #, python-format
@@ -504,8 +500,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1537
@@ -873,7 +868,7 @@ msgstr "கோப்புமுறைமை இல்லை"
 
 #: src/lvm_model.py:896 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "ஒன்றுமில்லை"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -899,8 +894,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "%s வட்டு என்டிட்டியை துவக்க விருப்பமா? device/partition இல் உள்ள அனைத்து தகவல்களையும் "
 "இழக்க நேரிடும்."
@@ -915,7 +909,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVMஐ மீண்டும் ஏற்றுகிறது. கொஞ்சம் பொறுமை காக்கவும்."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -936,8 +930,7 @@ msgstr ""
 #: src/lvmui_constants.py:65
 #, fuzzy, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+msgstr "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -957,19 +950,16 @@ msgid "Unpartitioned space on %s"
 msgstr "%s இல் பயன்பாட்டில் இல்லாத காலிஇடம் "
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
@@ -1108,9 +1098,8 @@ msgid "Snapshot"
 msgstr ""
 
 #: src/renderer.py:540
-#, fuzzy
 msgid "extent view"
-msgstr "பரப்புகள்"
+msgstr "விரிவான பார்வை"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
@@ -1168,16 +1157,14 @@ msgstr ""
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+msgstr "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/Filesystem.py:15
 #, fuzzy, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+msgstr "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/Filesystem.py:16
 #, fuzzy, python-format
@@ -1189,30 +1176,28 @@ msgstr ""
 "செய்தி: %s"
 
 #: src/Filesystem.py:125
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "கோப்புமுறைமை இல்லை"
+msgstr "தெரியாத கோப்பு அமைப்பு"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (இருப்பிடம்)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (கொத்தாக்கப்பட்ட)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (இருப்பிடம்)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (கொத்தாக்கப்பட்ட)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "Striped"
+msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1220,12 +1205,12 @@ msgstr "லீனியர் மேப்பிங்"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "கண்ணாடி"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "பகிர்வு வகை:   "
+msgstr "பகிர்வு %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1293,7 +1278,7 @@ msgstr ""
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "நொடிப்பு உருவாக்கு"
 
 #: src/lvui.glade.h:18
 msgid ""
@@ -1304,9 +1289,8 @@ msgstr ""
 "உருவாக்கு."
 
 #: src/lvui.glade.h:20
-#, fuzzy
 msgid "Edit Properties"
-msgstr "பண்புகள்"
+msgstr "பண்புகளை தொகு"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
@@ -1325,19 +1309,16 @@ msgid "Extend Volume Group"
 msgstr "நீட்டிக்கப்பட்ட தொகுதிக்குழு"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Format"
-msgstr "வடிவமை:   "
+msgstr "வடிவம்"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Initialize"
-msgstr "துவக்கப்படாத"
+msgstr "ஆரம்பித்தல்"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "என்டிட்டியை துவக்கு"
+msgstr "தடுக்கும் சாதனங்களை துவக்கு"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
@@ -1345,7 +1326,7 @@ msgstr "என்டிட்டியை துவக்கு"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "தடுக்கும் சாதனத்தை துவக்கு(_B)"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1441,15 +1422,15 @@ msgstr "இந்த PV இல் சேர்க வேண்டிய வா�
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "சில உரை"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "மீண்டும் ஏற்று (_R)"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "கருவிகள்(_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
@@ -1466,61 +1447,62 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "கோப்பு முறை:"
+msgstr "<b>கோப்பு முறை</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV பண்புகள்</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>அளவு</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr " /etc/fstab க்கு உள்ளீடுகளை சேர்"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "புதிய லாஜிக்கல் வால்யூமை உருவாக்கவும்."
+msgstr "புதிய தருக்கமுறை வட்டினை உருவாக்கவும் (LV)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "கோப்பு முறை மறுஅளவிட முடியாதது"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"புதிய வால்யூம் குழுவை\n"
-"உருவாக்கு."
+msgstr "வட்டு குழு பெயரில் உள்ள இடைவெளி"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "மீதமுள்ள இடத்தை பயன்படுத்து"
+msgstr "வட்டிலுள்ள மீதமுள்ள இடம்"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "கிலோபைட்கள்"
+msgstr "கிலோபைட்கள் சிறுமணிச்செறிவு"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "LV பெயர்:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV அளவு"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "LVs நொடிப்புகளுக்கு கீழ் மறு அளவிடப்படாதது"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1528,7 +1510,7 @@ msgstr "நேர்"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "கண்ணாடியாக்கப்பட்ட"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1536,48 +1518,43 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "ஏற்று"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "ஏற்றப்புள்ளி:   "
+msgstr "ஏற்றப்புள்ளி:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "மீண்டும் தொடங்கும் போது ஏற்று"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "அளவு"
+msgstr "கோரப்பட்ட அளவு"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "அளவு"
+msgstr "அளவு முடிவு"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Striped"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "மீதமுள்ள இடத்தை பயன்படுத்து"
+msgstr "மீதமுள்ளதைப் பயன்படுத்து"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes"
-msgstr "Striped"
+msgstr "stripes"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>சேருமிடம்</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>இடம்பெயர்வு கொள்கை</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1589,11 +1566,11 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "அருகாமை"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "சேருமிடம்:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1603,19 +1580,15 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "மரபு வழி"
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"வால்யூமிலிருந்து வால்யூம் குழுக்களை\n"
-"நீக்கு"
+msgstr "வட்டுக்குழுவிலிருந்து மரபு வழி கொள்கை"
 
 #: src/migrate_extents.glade.h:11
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "பரப்புகள்"
+msgstr "பெயர்வு விரிவுகள்"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
@@ -1627,7 +1600,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "சாதாரணம்"
 
 #: src/migrate_extents.glade.h:15
 #, fuzzy
@@ -1638,227 +1611,5 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "பொது அறிவை பயன்படுத்து"
 
-#~ msgid ""
-#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgextend கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\" - கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "pvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "pvremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgremove  கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
-#~ "%s"
-#~ msgstr ""
-#~ "vgchange கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "pvmove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
-#~ "\""
-#~ msgstr ""
-#~ "umount கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgchange கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvremove கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#, fuzzy
-#~ msgid "Quering Volume Groups"
-#~ msgstr "வால்யூம் குழுக்கள்"
-
-#, fuzzy
-#~ msgid "Quering Logical Volumes"
-#~ msgstr "லாஜிக்கல் வால்யூம்"
-
-#, fuzzy
-#~ msgid "Quering Physical Volumes"
-#~ msgstr "பிசிக்கல் வால்யூம்"
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
-
-#, fuzzy
-#~ msgid ""
-#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
-#~ "%s"
-#~ msgstr ""
-#~ "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
-#~ "செய்தி: %s"
-
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "அளவு புலத்தில் உள்ளிட்ட மதிப்பில் சிக்கல். அளவு எண் எழுத்துக்களாக அல்லது குறியீடுகளாக "
-#~ "இல்லாமல் எண்களாக இருக்க வேண்டும். "
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "லாஜிக்கல் வால்யூமிற்கு வால்யூம் குழு %s இன் அளவை விட அதிக அளவு தேவை என "
-#~ "குறிப்பிடப்பட்டுள்லது. தற்போது காலியாக உள்ள இடத்தின் அளவு:"
-
-#~ msgid "Stripe Size field"
-#~ msgstr "Stripe அளவு புலம்"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "Stripe புலங்களின் எண்ணிக்கை"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 மெகாபைட்கள்"
-
-#~ msgid "Create New LV"
-#~ msgstr "புதிய LV ஐ உருவாக்கவும்"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "லாஜிக்கல் வால்யூம்\n"
-#~ "பரப்பு"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "ஏற்றப்புள்ளி (காலி எனில், LV ஏற்றப்படாது):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "புதிய LV இன் பெயர்:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "Stripeகளின் எண்ணிக்கை:"
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "வால்யூம் குழுவுடன் சேர்க்க வேண்டிய வட்டு என்டிட்டியை தேர்வு செய்யவும்."
-
-#~ msgid "Size:"
-#~ msgstr "அளவு:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "Stripe அளவு:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "VG1 இல் உள்ள பயன்படுத்தப்படாத காலியிடம்:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "கோப்பு முறை இல்லை"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "இந்த பரப்பு இன்னும் LVM உடன்\n"
-#~ "துவக்கப்படவில்லை."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "இந்த வால்யூம் வால்யூம் குழுவுடன் இன்னும் \n"
-#~ "ஒதுக்கப்படவில்லை."
