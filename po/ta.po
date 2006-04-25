@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-04-24 17:44+0530\n"
+"PO-Revision-Date: 2006-04-25 19:53+0530\n"
 "Last-Translator: Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -429,20 +429,20 @@ msgstr ""
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "நீங்கள் குறிப்பிட்ட பாதை இல்லை"
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "நீங்கள் குறிப்பட்ட பாதை தடுக்கும் சாதனத்தை கொண்டிருக்கும்."
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s ஐ ஆரம்பிப்பது தோல்வியடைந்தது"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "முதலில் சில விரிவுகளை தேர்வு செய்யவும்"
 
 #: src/InputController.py:1022
 msgid ""
@@ -462,22 +462,20 @@ msgstr "விருப்பங்கள்"
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s ன் ஒரு நொடிப்பினை உருவாக்கவும்"
 
 #: src/InputController.py:1343
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "புதிய லாஜிக்கல் வால்யூமை உருவாக்கவும்."
+msgstr "புதிய தருக்க தொகுதியை உருவாக்கவும்."
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%s ஐ தொகு, %s ன் ஒரு நொடிப்பு"
 
 #: src/InputController.py:1349
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "லாஜிக்கல் வால்யூம்"
+msgstr "தருக்க தொகுதியை தொகு"
 
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -532,11 +530,11 @@ msgstr ""
 
 #: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
-msgstr ""
+msgstr "\"-\" ஆல் துவங்கும் பெயர்கள் தவறானதாகும்"
 
 #: src/InputController.py:1920
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "பெயர் \".\" அல்லது \"..\"ஆக இருக்காது"
 
 #: src/InputController.py:1926
 msgid "Whitespaces are not allowed in Logical Volume names"
@@ -549,7 +547,7 @@ msgstr ""
 
 #: src/InputController.py:1949
 msgid "Please specify mount point"
-msgstr ""
+msgstr "ஏற்றப்புள்ளிகளை குறிப்பிடவும்"
 
 #: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -579,7 +577,7 @@ msgstr ""
 
 #: src/InputController.py:2195
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "குறிப்பிட்ட விரிவாக்கத்தை இடம்பெயர செய்ய வேண்டுமா?"
 
 #: src/CommandHandler.py:55
 #, fuzzy
@@ -655,11 +653,11 @@ msgstr ""
 
 #: src/CommandHandler.py:308
 msgid "Migrating Extents"
-msgstr ""
+msgstr "விரிவாக்கம் இடம்பெயர்கிறது"
 
 #: src/CommandHandler.py:320
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "விரிவாக்க இடம்பெயர்வு முடிக்கப்பட்டது"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -803,13 +801,12 @@ msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "துவக்கப்படாத"
+msgstr "துவக்கப்படாத:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
-msgstr ""
+msgstr "விரிவாக்கப்பட்ட பகிர்வு"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
@@ -818,53 +815,48 @@ msgstr ""
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "அந்நிய பூட் பகிர்வு"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "தானியக்க பகிர்வு தோல்வியடைந்தது"
 
 #: src/lvm_model.py:251
-#, fuzzy
 msgid "Partition manually"
-msgstr "பகிர்வு வகை:   "
+msgstr "கைமுறையாக பகிர்வு செய்"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
-msgstr ""
+msgstr "பல்வழி சாதனம்"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "வடிவமை:   "
+msgstr "குறிப்பு:"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Initialize manually"
-msgstr "என்டிட்டியை துவக்கு"
+msgstr "கைமுறையாக ஆரம்பிக்கிறது"
 
 #: src/lvm_model.py:789
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Stripeகளின் எண்ணிக்கை:   "
+msgstr "கண்ணாடி உருக்களின் எண்ணிக்கை:"
 
 #: src/lvm_model.py:792
 msgid "Snapshots:"
-msgstr ""
+msgstr "நொடிப்புகள்:"
 
 #: src/lvm_model.py:798
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "நொடிப்பு ஆரம்பம்:"
 
 #: src/lvm_model.py:805
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "நொடிப்பு பயன்பாடு:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "கோப்புமுறைமை இல்லை"
+msgstr "/   ரூட் கோப்பு முறைமை"
 
 #: src/lvm_model.py:896 src/Filesystem.py:120
 msgid "None"
@@ -921,11 +913,11 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "கண்ணாடி பதிவு"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "கோரிக்கையை செயல்படுத்த முடியவில்லை"
 
 #: src/lvmui_constants.py:65
 #, fuzzy, python-format
@@ -938,16 +930,16 @@ msgstr "காலி"
 
 #: src/lvmui_constants.py:85
 msgid "Free space"
-msgstr ""
+msgstr "வெற்று இடம்"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "பகிரப்படாத இடம்"
 
 #: src/lvmui_constants.py:88
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
-msgstr "%s இல் பயன்பாட்டில் இல்லாத காலிஇடம் "
+msgstr "%s இல் பகிரப்படாத இடம்"
 
 #: src/lvmui_constants.py:90
 msgid "GB"
@@ -963,7 +955,7 @@ msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "பைட்ஸ்"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1035,7 +1027,7 @@ msgstr "வால்யூம் எதுவும் தேர்வு செ
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "பல தேர்ந்தெடுப்பு"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
@@ -1087,15 +1079,15 @@ msgstr ""
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "%s ன் நொடிப்பு"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "ஆரம்பம்"
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "நொடிப்பு"
 
 #: src/renderer.py:540
 msgid "extent view"
@@ -1116,32 +1108,32 @@ msgstr "துவக்கப்படாத என்டிட்டிகள�
 #: src/Volume_Tab_View.py:632
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s கண்ணாடி ஒருங்கிணைத்தல்"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "பகிர்வு உருவாகும் வரை காத்திருக்கவும்"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s கோப்பு முறைமை உருவாக்கப்படுகிறது"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s கோப்பு முறை மறுஅளவிடப்படுகிறது"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s கோப்பு முறை சோதிக்கப்படுகிறது"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s கோப்பு முறை %sக்கு மேம்படுத்தப்படுகிறது"
 
 #: src/Filesystem.py:13
 #, fuzzy, python-format
@@ -1434,7 +1426,7 @@ msgstr "கருவிகள்(_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "vg செய்தியை விரிவாக்கு:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1558,7 +1550,7 @@ msgstr "<b>இடம்பெயர்வு கொள்கை</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "எங்கும்-செயல்படுத்தப்படவில்லை"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
