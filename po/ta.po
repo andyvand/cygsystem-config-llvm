@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-04-25 19:53+0530\n"
+"PO-Revision-Date: 2006-04-28 13:12+0530\n"
 "Last-Translator: Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,9 +41,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "இந்த PV இல் சேர்க வேண்டிய வால்யூம் குழு:"
+msgstr "இந்த %s இல் சேர்க்க வேண்டிய தொகுதிக் குழு:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -74,9 +74,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "துவக்கப்படாத வட்டு என்டிட்டி"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "%s வால்யூம் குழுவை சேர்க்க வட்டை தேர்வு செய்யவும்"
+msgstr "%s தொகுதி குழுவை சேர்க்க வட்டு உட்பொருளை தேர்வு செய்யவும்:"
 
 #: src/InputController.py:92
 msgid ""
@@ -139,27 +139,27 @@ msgstr ""
 "கடந்துவிட்டது."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
 msgstr ""
-"இந்த தொகுதிக்குழுவில் உள்ள பிசிக்கல் தொகுதிக்குழுக்களின் எண்ணிக்கை அதிக பட்ச எண்ணிக்கையை "
-"கடந்துவிட்டது."
+"இந்த தொகுதிக்குழுவில் உள்ள %s பருப்பொருள் தொகுதிக்குழுக்களின் எண்ணிக்கை அதிகபட்ச "
+"எண்ணிக்கையை கடந்துவிட்டது."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"வால்யூம் குழு %s இல் %s இல் சேமிக்கப்பட்ட தகவல்களை நகர்த்த போதிய இடமில்லை. எனவே கூடுதல் "
-"பிசிக்கல் தொகுதிக்குவை வால்யூம் குழுவுடன் சேர்க்கவும்."
+"தொகுதிக் குழு %s இல் சேமிக்கப்பட்ட தகவல்களை நகர்த்த போதிய இடமில்லை. எனவே கூடுதல் "
+"பருப்பொருள் தொகுதிக்குழுவை தொகுதிக்குழுவுடன் சேர்க்கவும்."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "ஒரு நொடிப்புக்குள் நொடிப்பு துணைபுரிவதில்லை."
 
 #: src/InputController.py:118
 #, python-format
@@ -197,6 +197,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"தருக்க தொகுதி %s தற்போது %s யுடன் ஏற்றப்பட்டுள்ளது. கோரிக்கையை முடிக்கும் பொருட்டு, "
+"அது ஏற்ற நீக்கம் செய்யப்பட வேண்டும். அதனை ஏற்ற நீக்கம் செய்ய வேண்டுமா?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -226,15 +228,12 @@ msgid "%s extents"
 msgstr "%s பரப்புகள்"
 
 #: src/InputController.py:137
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"புதிய வால்யூம் குழுவை\n"
-"உருவாக்கு."
+msgstr "தொகுதிக்குழுவிலுள்ள மீதமுள்ள இடம்:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "இந்த தொகுதியிலுள்ள மீதமுள்ள இடம்:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
@@ -349,13 +348,13 @@ msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "நீங்கள் %s லாஜிக்கல் வால்யூமை நீக்க முற்பட்டுள்ளீர்கள் என்பதை அறிவீர்களா?"
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"எச்சரிக்கை :தொகுதிக்குழு %s இல் %s கோப்பு முறை %s இல் ஏற்றப்பட்டுள்ளது. இந்த ஏற்றப்பட்ட "
-"கோப்பு அமைப்பில் உள்ள தகவல்களை சிதைக்க நிச்சயமாக விரும்புகிறீர்களா?"
+"தருக்க தொகுதி %s கோப்பு முறையை %sல் தரவுகளை கொண்டுள்ளது. அனைத்து தரவுகளும் அழிக்கப்படும்! "
+"தருக்க தொகுதி %s ஐ கட்டாயம் நீக்க வேண்டுமா?"
 
 #: src/InputController.py:160
 #, python-format
@@ -363,6 +362,8 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"தருக்க தொகுதி %s அடைவு %sல் தரவுகளை கொண்டுள்ளது. அனைத்து தரவுகளும் அழிக்கப்படும்! "
+"தருக்க தொகுதி %s ஐ கட்டாயம் நீக்க வேண்டுமா?"
 
 #: src/InputController.py:356
 #, python-format
@@ -573,7 +574,7 @@ msgstr ""
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "கணித்தலை சேர்க்க, சில விரிவாக்கங்களை இடம்பெயர செய்ய வேண்டும்."
 
 #: src/InputController.py:2195
 msgid "Do you want to migrate specified extents?"
@@ -811,7 +812,7 @@ msgstr "விரிவாக்கப்பட்ட பகிர்வு"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "மாற்று பகிர்வு தற்போது பயனில் உள்ளது"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -869,6 +870,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"வட்டு உட்பொருள் %s லிலுள்ள அனைத்து தரவுகளும் இழக்கப்படும்! நீங்கள் "
+"இதனை ஆரம்பிக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -876,6 +879,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"வட்டு உட்பொருள் %s கோப்பு முறைமை %s ஐ கொண்டுள்ளது. அதிலுள்ள அனைத்து தரவுகளும் இழக்கப்படும்!"
+"வட்டு உட்பொருள் %s ஐ  நீங்கள் ஆரம்பிக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -883,6 +888,8 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
+"வட்டு உட்பொருள் %s அடைவு %s ஐ கொண்டுள்ளது. அதிலுள்ள அனைத்து தரவுகளும் இழக்கப்படும்!"
+"வட்டு உட்பொருள் %s ஐ  நீங்கள் ஆரம்பிக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:54
 #, fuzzy, python-format
@@ -1286,7 +1293,7 @@ msgstr "பண்புகளை தொகு"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "ஆரம்பிக்க தடுக்கப்பட்ட சாதனத்தின் பாதையை உள்ளிடவும்"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1506,7 +1513,7 @@ msgstr "கண்ணாடியாக்கப்பட்ட"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "கணிக்கப்பட்ட LV களை மறுஅளவிட இயலாது"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
@@ -1554,7 +1561,7 @@ msgstr "எங்கும்-செயல்படுத்தப்படவ�
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "இடம்பெயர செய்ய தானாக PV களை தேர்வு செய்யவும்"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
