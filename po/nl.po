@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: 2006-04-27 23:21+0200\n"
+"PO-Revision-Date: 2006-05-01 21:43+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -126,7 +126,7 @@ msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr ""
-"Het aantal Physical Volumes in deze Volume Group heeft zijn maximumbereikt."
+"Het aantal Physical Volumes in deze Volume Group heeft zijn maximum bereikt."
 
 #: src/InputController.py:112
 #, python-format
@@ -144,6 +144,9 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
+"Volume Group %s heeft niet genoeg ruimte voor nieuwe Logical Volumes. Een "
+"mogelijke oplossing zou kunnen zijn om een additionele Physical Volume toe te "
+"voegen aan de Volume Group."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
@@ -155,6 +158,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"Logical Volume %s heeft op dit moment de snapshot %s geassocieerd. Verwijder "
+"eerst de snapshot."
 
 #: src/InputController.py:119
 #, python-format
@@ -162,6 +167,8 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"Logical Volume %s heeft op dit moment de snapshots: %s geassocieerd. "
+"Verwijder eerst de snapshots."
 
 #: src/InputController.py:121
 msgid ""
@@ -182,6 +189,9 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"Logical Volume %s is op dit moment aangekoppeld op %s. Om verder te gaan met "
+"de gevraagde actie dient het te worden afgekoppeld. Weet u zeker dat u het "
+"wilt afkoppelen?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -244,19 +254,23 @@ msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"Het maximum Physical Volumes veld dient alleen integer waarden tussen 1 en "
+"256 te bevatten"
 
 #: src/InputController.py:147
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
+"Het maximum Logical Volumes veld dient alleen integer waarden tussen 1 en 256 "
+"te bevatten"
 
 #: src/InputController.py:149
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr "Weet u zeker dat uw %s wilt verwijderen uit Logical Volume Management?"
+msgstr "Weet u zeker dat u %s wilt verwijderen uit Logical Volume Management?"
 
 #: src/InputController.py:151
 #, python-format
@@ -273,7 +287,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "Weet u zeker dat u %s wilt verwijderen uit de %s Volume Group?"
 
 #: src/InputController.py:153
 #, python-format
@@ -308,7 +322,7 @@ msgstr ""
 #: src/InputController.py:158
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "Weet u zeker dat u Logical Volume %s wilt verwijderen?"
 
 #: src/InputController.py:159
 #, python-format
@@ -501,11 +515,11 @@ msgstr "Namen die beginnen met een \"-\" zijn ongeldig"
 
 #: src/InputController.py:1920
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "Naam kan niet \".\" of \"..\" zijn"
 
 #: src/InputController.py:1926
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "Witruimte is niet toegestaan in Logical Volume namen"
 
 #: src/InputController.py:1929
 #, python-format
@@ -545,7 +559,7 @@ msgstr ""
 
 #: src/InputController.py:2195
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "Wilt u de opgegeven extents migreren?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
@@ -553,7 +567,7 @@ msgstr "Aanmaken van Logical Volume"
 
 #: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
-msgstr ""
+msgstr "Aanpassen van de grootte van het Logical Volume"
 
 #: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
@@ -831,7 +845,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
+msgstr "Weet u zeker dat u %s aan vrije ruimte wilt initialiseren op disk %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1065,7 +1079,7 @@ msgstr "Aanmaken van %s bestandssysteem"
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Aanpassen van de grootte van het %s bestandssysteem"
 
 #: src/Filesystem.py:11
 #, python-format
