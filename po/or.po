@@ -1,20 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# translation of or.po to Oriya
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Subhransu Behera <sbehera@redhat.com>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-05-11 12:17+0530\n"
+"Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
+"Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -33,7 +34,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
+msgstr "%s କୁ ଏଠାରେ ଯୋଗ କରିବା ପାଇଁ ଗୋଟିଏ ପ୍ରବଳତା ସମୂହ ର ଚୟନ କରନ୍ତୁ"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -45,28 +46,28 @@ msgstr ""
 #. ##some context.
 #: src/InputController.py:84
 msgid "Name"
-msgstr ""
+msgstr "ନାମ"
 
 #: src/InputController.py:85
 msgid "Size"
-msgstr ""
+msgstr "ଆକାର"
 
 #: src/InputController.py:86
 msgid "Entity Type"
-msgstr ""
+msgstr "ବସ୍ତୁ ର ପ୍ରକାର"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "ବଣ୍ଟା ଯାଇ ନ ଥିବା ଭୌତିକ ପ୍ରବଳତା ବଣ୍ଟା ଯାଇ ନାହିଁ"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "ପ୍ରାରମ୍ଭିକରଣ କରା ଯାଇ ନ ଥିବା ଡିସ୍କ ବସ୍ତୁ"
 
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
+msgstr "%s ପ୍ରବଳତା ସମୂହ ରେ ଯୋଗ କରିବା ପାଇଁ ଡିସ୍କ ବସ୍ତୁ ମାନଙ୍କ ର ଚୟନ କରନ୍ତୁ"
 
 #: src/InputController.py:92
 msgid ""
@@ -83,8 +84,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 
 #: src/InputController.py:98
@@ -97,8 +97,7 @@ msgstr ""
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
 
 #: src/InputController.py:104
@@ -156,8 +155,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:123
@@ -180,68 +178,70 @@ msgstr ""
 #: src/InputController.py:131
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "%s ରେ ଅବ୍ଯବହ୍ରୁତ ଖାଲି ସ୍ଥାନ"
 
 #: src/InputController.py:132
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s ମେଗା-ବାଇଟ୍ସ"
 
 #: src/InputController.py:133
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s କିଲୋ-ବାଇଟ୍ସ"
 
 #: src/InputController.py:134
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s ଗିଗା-ବାଇଟ୍ସ"
 
 #: src/InputController.py:135
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s ସୀମା"
 
 #: src/InputController.py:137
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ରେ ବଳକା ଖାଲି ସ୍ଥାନ:\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "ଏହି ପ୍ରବଳତା ପାଇଁ ବଳକା ସ୍ଥାନ:\n"
 
 #: src/InputController.py:140
 msgid "Extents"
-msgstr ""
+msgstr "ସୀମା"
 
 #: src/InputController.py:141
 msgid "Gigabytes"
-msgstr ""
+msgstr "ଗିଗା-ବାଇଟ୍ସ"
 
 #: src/InputController.py:142
 msgid "Megabytes"
-msgstr ""
+msgstr "ମେଗା-ବାଇଟ୍ସ"
 
 #: src/InputController.py:143
 msgid "Kilobytes"
-msgstr ""
+msgstr "କିଲୋ-ବାଇଟ୍ସ"
 
 #: src/InputController.py:145
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s କେବଳ ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ କରିବା ଉଚିତ"
 
 #: src/InputController.py:146
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"ସର୍ବାଧିକ ଭୌତିକ ପ୍ରବଳତା କ୍ଷେତ୍ର ଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ କରିବା ଉଚିତ"
 
 #: src/InputController.py:147
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
+"ସର୍ବାଧିକ ତାର୍କିକ ପ୍ରବଳତା କ୍ଷେତ୍ର ଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ କରିବା ଉଚିତ"
 
 #: src/InputController.py:149
 #, python-format
@@ -263,8 +263,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
 #: src/InputController.py:153
@@ -362,8 +361,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -382,20 +380,20 @@ msgstr ""
 
 #: src/InputController.py:670
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଟି ଅବସ୍ଥିତ ନାହିଁ"
 
 #: src/InputController.py:677
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଟି ଗୋଟିଏ ଅବରୋଧୀ ଉପକରଣ ନୁହେଁ"
 
 #: src/InputController.py:748
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s ର ବୈଧିକରଣ ବିଫଳ ହୋଇ ଗଲା"
 
 #: src/InputController.py:985 src/InputController.py:988
 msgid "Please select some extents first"
-msgstr ""
+msgstr "ଦୟାକରି କିଛି ପରିମାଣ କୁ ପ୍ରଥମେ ଚୟନ କରନ୍ତୁ"
 
 #: src/InputController.py:1022
 msgid ""
@@ -405,29 +403,29 @@ msgstr ""
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
-msgstr ""
+msgstr "ଏହି ପରିସୀମା କୁ ଛାଡି ଦିଅ"
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "ପସନ୍ଦ ମାନ"
 
 #: src/InputController.py:1341
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s ପାଇଁ ଗୋଟିଏ ଆଶୁଚିତ୍ର ସ୍ରୁଷ୍ଟି କରନ୍ତୁ"
 
 #: src/InputController.py:1343
 msgid "Create New Logical Volume"
-msgstr ""
+msgstr "ନୂତନ ତାର୍କିକ ପ୍ରବଳତା କୁ ସ୍ରୁଷ୍ଟି କରନ୍ତୁ"
 
 #: src/InputController.py:1346
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%s କୁ ସମ୍ପାଦନ କରନ୍ତୁ, %s ର ଗୋଟିଏ ଆଶୁଚିତ୍ର"
 
 #: src/InputController.py:1349
 msgid "Edit Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା କୁ ସମ୍ପାଦନ କରନ୍ତୁ"
 
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -450,8 +448,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1537
@@ -500,7 +497,7 @@ msgstr ""
 
 #: src/InputController.py:1949
 msgid "Please specify mount point"
-msgstr ""
+msgstr "ଦୟାକରି ସ୍ଥାପନ ବିନ୍ଦୁ କୁ ଉଲ୍ଲଖିତ କରନ୍ତୁ"
 
 #: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -534,236 +531,236 @@ msgstr ""
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା କୁ ସ୍ରୁଷ୍ଟି କରୁଅଛି"
 
 #: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ର ଆକାର କୁ ପରିବର୍ତ୍ତନ କରନ୍ତୁ"
 
 #: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ରେ ପ୍ରତିଫଳକ କୁ ଯୋଗ କରୁଅଛି"
 
 #: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ରୁ ପ୍ରତିଫଳକ କୁ ଅପସାରଣ କରୁଅଛି"
 
 #: src/CommandHandler.py:158
 msgid "Initializing Physical Volume"
-msgstr ""
+msgstr "ଭୌତିକ ପ୍ରବଳତା କୁ ପ୍ରାରମ୍ଭ କରୁଅଛି"
 
 #: src/CommandHandler.py:169
 msgid "Adding Physical Volume to Volume Group"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ରେ ଭୌତିକ ପ୍ରବଳତା କୁ ଯୋଗ କରୁଅଛି"
 
 #: src/CommandHandler.py:196
 msgid "Creating Volume Group"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ କୁ ସ୍ରୁଷ୍ଟି କରୁଅଛି"
 
 #: src/CommandHandler.py:218
 msgid "Removing Volume Group"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ କୁ ଅପସାରଣ କରୁଅଛି"
 
 #: src/CommandHandler.py:228
 msgid "Removing Physical Volume"
-msgstr ""
+msgstr "ଭୌତିକ ପ୍ରବଳତା କୁ ଅପସାରଣ କରୁଅଛି"
 
 #: src/CommandHandler.py:239
 msgid "Removing Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା କୁ ଅପସାରଣ କରୁଅଛି"
 
 #: src/CommandHandler.py:251
 msgid "Renaming Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ର ନାମ କୁ ପରିବର୍ତ୍ତିତ କରୁଅଛି"
 
 #: src/CommandHandler.py:273
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ରୁ ଭୌତିକ ପ୍ରବଳତା କୁ ଅପସାରଣ କରୁଅଛି"
 
 #: src/CommandHandler.py:308
 msgid "Migrating Extents"
-msgstr ""
+msgstr "ଏହି ପରିସୀମା କୁ ଛାଡି ଦିଅ"
 
 #: src/CommandHandler.py:320
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "ପରିସୀମା କୁ ଛାଡିବା ସମ୍ପୂର୍ଣ୍ଣ ହେଉ ଅଛି"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
-msgstr ""
+msgstr "ଅବ୍ଯବହ୍ରୁତ"
 
 #: src/lvm_model.py:46
 msgid "Unused Space"
-msgstr ""
+msgstr "ଅବ୍ଯବହ୍ରୁତ ଖାଲି ସ୍ଥାନ"
 
 #: src/lvm_model.py:48
 msgid "Unmounted"
-msgstr ""
+msgstr "ଅସ୍ଥାପିତ"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ର ନାମ:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr ""
+msgstr "ତନ୍ତ୍ର ର ପରିଚୟ:   "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
-msgstr ""
+msgstr "ସଜ୍ଜିକରଣ ଶୈଳୀ:   "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
-msgstr ""
+msgstr "ଗୁଣ ମାନ:   "
 
 #: src/lvm_model.py:62
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ର ଆକାର:   "
 
 #: src/lvm_model.py:63
 msgid "Available Space:   "
-msgstr ""
+msgstr "ଉପଲବ୍ଧ ଖାଲି ସ୍ଥାନ:   "
 
 #: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "ସର୍ବମୋଟ ପରିମାଣ:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "କେତେ ପରିମାଣ ମାଗଣା ରେ ଉପଲବ୍ଧ:   "
 
 #: src/lvm_model.py:66
 msgid "Extent Size:   "
-msgstr ""
+msgstr "ପରିସୀମା ର ଆକାର:   "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "ସର୍ବାଧିକ ସ୍ବୀକ୍ରୁତ ଭୌତିକ ପ୍ରବଳତା:   "
 
 #: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "ଭୌତିକ ପ୍ରବଳତା ର ସଂଖ୍ଯା:   "
 
 #: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "ସର୍ବାଧିକ ସ୍ବୀକ୍ରୁତ ତାର୍କିକ ପ୍ରବଳତା:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ର ସଂଖ୍ଯା:   "
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ର ନାମ:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ର ଆକାର:   "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "ଅନୁଭାଗ ମାନଙ୍କ ର ସଂଖ୍ଯା:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "ରେଖା ମାନଙ୍କ ର ସଂଖ୍ଯା:   "
 
 #: src/lvm_model.py:77
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "ରେଖା ର ଆକାର:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
-msgstr ""
+msgstr "ବିଭାଜନ ର ପ୍ରକାର:   "
 
 #: src/lvm_model.py:82
 msgid "Size:   "
-msgstr ""
+msgstr "ଆକାର:   "
 
 #: src/lvm_model.py:83
 msgid "Mount Point:   "
-msgstr ""
+msgstr "ସ୍ଥାପନ ବିନ୍ଦୁ:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
-msgstr ""
+msgstr "ପୁନଃ ଚାଳନ କରା ଗଲା ସମୟ ରେ ସ୍ଥାପନ ବିନ୍ଦୁ:   "
 
 #: src/lvm_model.py:85
 msgid "File System:   "
-msgstr ""
+msgstr "ଫାଇଲ ତନ୍ତ୍ର:   "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "ଭୌତିକ ପ୍ରବଳତା ର ନାମ:   "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "ଭୌତିକ ପ୍ରବଳତା ର ଆକାର:   "
 
 #: src/lvm_model.py:89
 msgid "Space Used:   "
-msgstr ""
+msgstr "ବ୍ଯବହ୍ରୁତ ଖାଲି ସ୍ଥାନ:   "
 
 #: src/lvm_model.py:90
 msgid "Space Free:   "
-msgstr ""
+msgstr "ଖାଲି ସ୍ଥାନ:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "ସମ୍ପୂର୍ଣ୍ଣ ଭୌତିକ ପରିମାଣ:   "
 
 #: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "ବଣ୍ଟା ଯାଇ ଥିବା ଭୌତିକ ପରିମାଣ:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
-msgstr ""
+msgstr "ଅପ୍ରାରମ୍ଭିକୀୟ:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
-msgstr ""
+msgstr "ବିସ୍ତାରିତ ବିଭାଜନ"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "ବର୍ତମାନ ବ୍ଯବହ୍ରୁତ ହେଉଥିବା ବିଭାଜନ କୁ ଅଦଳ ବଦଳ କରନ୍ତୁ"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "ବୈଦେଶିକ ବୁଟ ବିଭାଜନ"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "ସ୍ବୟଂଚାଳିତ ବିଭାଜନ ଟି ବିଫଳ ହୋଇ ଗଲା"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
-msgstr ""
+msgstr "ସ୍ବହସ୍ତ ରେ ବିଭାଜନ କରନ୍ତୁ"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
-msgstr ""
+msgstr "ବହୁପଥିକ ଉପକରଣ"
 
 #: src/lvm_model.py:290
 msgid "Note:"
-msgstr ""
+msgstr "ଦ୍ରଷ୍ଟବ୍ଯ:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
-msgstr ""
+msgstr "ସ୍ବହସ୍ତ ରେ ପ୍ରାରମ୍ଭିକରଣ କରନ୍ତୁ"
 
 #: src/lvm_model.py:789
 msgid "Number of mirror images:"
@@ -771,24 +768,24 @@ msgstr ""
 
 #: src/lvm_model.py:792
 msgid "Snapshots:"
-msgstr ""
+msgstr "ଆଶୁଚିତ୍ର:"
 
 #: src/lvm_model.py:798
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "ଆଶୁଚିତ୍ର ର ଉତ୍ମତ୍ତି:"
 
 #: src/lvm_model.py:805
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "ଆଶୁଚିତ୍ର ର ବ୍ଯବହାର ବିଧି:"
 
 #: src/lvm_model.py:828 src/lvm_model.py:834 src/lvm_model.py:877
 #: src/lvm_model.py:893
 msgid "/   Root Filesystem"
-msgstr ""
+msgstr "/   ପ୍ରମୂଖ ଚାଳକ ର ଫାଇଲ ତନ୍ତ୍ର"
 
 #: src/lvm_model.py:896 src/Filesystem.py:120
 msgid "None"
-msgstr ""
+msgstr "କିଛି ନୁହେଁ"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -814,8 +811,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
@@ -828,7 +824,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "ଏଲଭିଏମ କୁ ପୁନର୍ଧାରଣ କରୁୁଅଛି | ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ"
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -840,11 +836,11 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "ପ୍ରତିଫଳକ ଲଗ"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "ଅନୁରୋଧ କୁ ସଂସାଧନ କରିବା ପାଇଁ ଅସମର୍ଥ"
 
 #: src/lvmui_constants.py:65
 #, python-format
@@ -853,124 +849,124 @@ msgstr ""
 
 #: src/lvmui_constants.py:84
 msgid "Free"
-msgstr ""
+msgstr "ମାଗଣା"
 
 #: src/lvmui_constants.py:85
 msgid "Free space"
-msgstr ""
+msgstr "ମାଗଣା ଖାଲି ସ୍ଥାନ"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "ଅବିଭାଜିତ ଖାଲି ସ୍ଥାନ"
 
 #: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
-msgstr ""
+msgstr "%s ରେ ଅବିଭାଜିତ ଖାଲି ସ୍ଥାନ"
 
 #: src/lvmui_constants.py:90
 msgid "GB"
-msgstr ""
+msgstr "ଗିଗା-ବାଇଟ୍"
 
 #: src/lvmui_constants.py:91
 msgid "MB"
-msgstr ""
+msgstr "ମେଗା-ବାଇଟ୍"
 
 #: src/lvmui_constants.py:92
 msgid "KB"
-msgstr ""
+msgstr "କିଲୋ-ବାଇଟ୍"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "ବାଇଟ୍ସ"
 
 #. File System Types
 #: src/lvmui_constants.py:97
 msgid "No Filesystem"
-msgstr ""
+msgstr "କୌଣସି ଫାଇଲ ତନ୍ତ୍ର ଉପଲବ୍ଧ ନାହିଁ"
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
-msgstr ""
+msgstr "Ext୨"
 
 #: src/lvmui_constants.py:99
 msgid "Ext3"
-msgstr ""
+msgstr "Ext୩"
 
 #: src/lvmui_constants.py:100
 msgid "JFS"
-msgstr ""
+msgstr "ଜେ.ଏଫ୍.ଏସ୍."
 
 #: src/lvmui_constants.py:101
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:102
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:103
 msgid "VFAT"
-msgstr ""
+msgstr "ଭି-ଫ୍ଯାଟ୍"
 
 #: src/lvmui_constants.py:104
 msgid "XFS"
-msgstr ""
+msgstr "ଏକ୍ସ.ଏଫ୍.ଏସ୍."
 
 #: src/lvmui_constants.py:105
 msgid "Cramfs"
-msgstr ""
+msgstr "କ୍ରାମ୍ଫସ୍"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "ଗୁଣଧର୍ମ ପାଇଁ"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr ""
+msgstr "ଭୌତିକ ପ୍ରବଳତା"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "ବଣ୍ଟା ଯାଇ ନ ଥିବା ପ୍ରବଳତା"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
-msgstr ""
+msgstr "ଡିସ୍କ ର ବସ୍ତୁ"
 
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
-msgstr ""
+msgstr "କୌଣସି ପ୍ରବଳତା ର ଚୟନ କରାଯାଇ ନାହିଁ"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "ଏକାଧିକ ଚୟନ"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:46
 msgid "Logical View"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରଦର୍ଶନ"
 
 #: src/renderer.py:40 src/Volume_Tab_View.py:45
 msgid "Physical View"
-msgstr ""
+msgstr "ଭୌତିକ ପ୍ରଦର୍ଶନ"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr ""
+msgstr "ବଣ୍ଟା ଯାଇ ନଥିବା"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "ପ୍ରାରମ୍ଭିକରଣ କରା ଯାଇ ନଥିବା"
 
 #: src/renderer.py:195
 #, python-format
@@ -1496,3 +1492,4 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr ""
+
