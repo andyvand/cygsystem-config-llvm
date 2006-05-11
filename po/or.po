@@ -962,11 +962,11 @@ msgstr "ଭୌତିକ ପ୍ରଦର୍ଶନ"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr "ବଣ୍ଟା ଯାଇ ନଥିବା"
+msgstr "ବଣ୍ଟା ଯାଇ ନ ଥିବା"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr "ପ୍ରାରମ୍ଭିକରଣ କରା ଯାଇ ନଥିବା"
+msgstr "ପ୍ରାରମ୍ଭିକରଣ କରା ଯାଇ ନ ଥିବା"
 
 #: src/renderer.py:195
 #, python-format
@@ -1002,61 +1002,61 @@ msgstr ""
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "%s ର ଆଶୁଚିତ୍ର"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "ଉତ୍ପତ୍ତି"
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "ଆଶୁଚିତ୍ର"
 
 #: src/renderer.py:540
 msgid "extent view"
-msgstr ""
+msgstr "ପରିସୀମା ର ପ୍ରଦର୍ଶନ"
 
 #: src/Volume_Tab_View.py:42
 msgid "Volume Groups"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ମାନ"
 
 #: src/Volume_Tab_View.py:43
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "ବଣ୍ଟା ଯାଇ ନ ଥିବା ପ୍ରବଳତା ମାନ"
 
 #: src/Volume_Tab_View.py:44
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "ପ୍ରାରମ୍ଭିକରଣ କରା ଯାଇ ନ ଥିବା ବସ୍ତୁ ମାନ"
 
 #: src/Volume_Tab_View.py:632
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s ଦର୍ପଣ ର ସମକାଳନ"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "ଦୟାକରି ବିଭାଜନ ଟି ସ୍ରୁଷ୍ଟ ହେବା ପର୍ଯ୍ଯନ୍ତ ଅପେକ୍ଷା କରନ୍ତୁ"
 
 #: src/Filesystem.py:9
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s ଫାଇଲ ତନ୍ତ୍ର କୁ ସ୍ରୁଷ୍ଟି କରୁଅଛି"
 
 #: src/Filesystem.py:10
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s ଫାଇଲ ତନ୍ତ୍ର ର ଆକାର କୁ ପରିବର୍ତ୍ତନ କରୁଅଛି"
 
 #: src/Filesystem.py:11
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s ଫାଇଲ ତନ୍ତ୍ର କୁ ଯାଞ୍ଚ କରୁଅଛି"
 
 #: src/Filesystem.py:12
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s ଫାଇଲ ତନ୍ତ୍ର କୁ %s ରେ ଉନ୍ନୟନ କରୁଅଛି"
 
 #: src/Filesystem.py:13
 #, python-format
@@ -1088,172 +1088,180 @@ msgstr ""
 
 #: src/Filesystem.py:125
 msgid "Unknown filesystem"
-msgstr ""
+msgstr "ଅଜଣା ଫାଇଲ ତନ୍ତ୍ର"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "ଜି.ଏଫ୍.ଏସ୍.୨ (ସ୍ଥାନୀୟ)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "ଜି.ଏଫ୍.ଏସ୍.୨ (କ୍ଲଷ୍ଟର୍ଡ)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "ଜି.ଏଫ୍.ଏସ୍. (ସ୍ଥାନୀୟ)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "ଜି.ଏଫ୍.ଏସ୍. (କ୍ଲଷ୍ଟର୍ଡ)"
 
 #: src/Segment.py:44
 msgid "Stripe"
-msgstr ""
+msgstr "ରେଖା"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
-msgstr ""
+msgstr "ସଳଖ ପ୍ରତିଚିତ୍ରଣ"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "ଦର୍ପଣ"
 
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition %s"
-msgstr ""
+msgstr "%s ବିଭାଜନ"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "୧୦୨୪"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "୧୨୮"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "୧୬"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "୨"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "୨୫୬"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "୩୨"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "୪"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr ""
+msgstr "୫୧୨"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr ""
+msgstr "୬୪"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr ""
+msgstr "୮"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "ଭି.ଜି. ରେ ଭୌତିକ ପ୍ରବଳତା କୁ ଯୋଗ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:13
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"ଅବସ୍ଥିତ ପ୍ରବଳତା ସମୂହ ରେ \n"
+"ଯୋଗ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:15
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"ନୂତନ ତାର୍କିକ ପ୍ରବଳତା କୁ \n"
+"ସ୍ରୁଷ୍ଟି କରନ୍ତୁ"
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
-msgstr ""
+msgstr "ଆଶୁଚିତ୍ର କୁ ସ୍ରୁଷ୍ଟି କରନ୍ତୁ"
 
 #: src/lvui.glade.h:18
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"ନୂତନ ପ୍ରବଳତା କୁ \n"
+"ସ୍ରୁଷ୍ଟି କରନ୍ତୁ"
 
 #: src/lvui.glade.h:20
 msgid "Edit Properties"
-msgstr ""
+msgstr "ଗୁଣଧର୍ମ ର ସମ୍ପାଦନ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:21
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "ଅବରୋଧୀ ଉପକରଣ ର ପ୍ରାରମ୍ଭିକରଣ ପାଇଁ ପଥ କୁ ଭରଣ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:22
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"ପ୍ରବଳତା ସମୂହ କୁ \n"
+"ବିସ୍ତାର କରନ୍ତୁ"
 
 #: src/lvui.glade.h:24
 msgid "Extend Volume Group"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ କୁ ବିସ୍ତାର କରନ୍ତୁ"
 
 #: src/lvui.glade.h:25
 msgid "Format"
-msgstr ""
+msgstr "ସଜ୍ଜିକରଣ ଶୈଳୀ"
 
 #: src/lvui.glade.h:26
 msgid "Initialize"
-msgstr ""
+msgstr "ପ୍ରାରମ୍ଭିକରଣ"
 
 #: src/lvui.glade.h:27
 msgid "Initialize Block Device"
-msgstr ""
+msgstr "ଅବରୋଧୀ ଉପକରଣ ମାନଙ୍କ ର ପ୍ରାରମ୍ଭିକରଣ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
-msgstr ""
+msgstr "ବସ୍ତୁ ର ପ୍ରାରମ୍ଭିକରଣ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:29
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "ଅବରୋଧୀ ଉପକରଣ ମାନଙ୍କ ର ପ୍ରାରମ୍ଭିକରଣ କରନ୍ତୁ (_B)"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
-msgstr ""
+msgstr "କିଲୋ"
 
 #: src/lvui.glade.h:31
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "ତାର୍କିକ ପ୍ରବଳତା ର ପରିଚାଳନା"
 
 #: src/lvui.glade.h:32
 msgid "Manage Volumes"
-msgstr ""
+msgstr "ପ୍ରବଳତା ର ପରିଚାଳନା କରନ୍ତୁ"
 
 #: src/lvui.glade.h:33
 msgid "Maximum Logical Volumes: "
-msgstr ""
+msgstr "ସର୍ବାଧିକ ତାର୍କିକ ପ୍ରବଳତା:"
 
 #: src/lvui.glade.h:34
 msgid "Maximum Physical Volumes: "
-msgstr ""
+msgstr "ସର୍ବାଧିକ ଭୌତିକ ପ୍ରବଳତା:"
 
 #: src/lvui.glade.h:35
 msgid "Meg"
-msgstr ""
+msgstr "ମେଗା"
 
 #: src/lvui.glade.h:36
 msgid ""
@@ -1263,49 +1271,59 @@ msgstr ""
 
 #: src/lvui.glade.h:38
 msgid "Name for Volume Group: "
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ପାଇଁ ନାମ"
 
 #: src/lvui.glade.h:39
 msgid "New Volume Group"
-msgstr ""
+msgstr "ନୂତନ ପ୍ରବଳତା ସମୂହ"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "ନୂତନ ପ୍ରବଳତା ସମୂହ ର ଫର୍ମ"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "ଭୌତିକ ପରିସୀମା ର ଆକାର:"
 
 #: src/lvui.glade.h:42
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"ତାର୍କିକ ପ୍ରବଳତା କୁ \n"
+"ଅପସାରଣ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:44
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"ଚୟିତ ତାର୍କିକ ପ୍ରବଳତା କୁ \n"
+"ଅପସାରଣ କରନ୍ତୁ (_s)"
 
 #: src/lvui.glade.h:46
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"ଚୟିତ ଭୌତିକ ପ୍ରବଳତା କୁ \n"
+"ଅପସାରଣ କରନ୍ତୁ (_s)"
 
 #: src/lvui.glade.h:48
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"ପ୍ରବଳତା ସମୂହ ରୁ ପ୍ରବଳତା କୁ \n"
+"ଅପସାରଣ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:50
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"ଏଲ.ଭି.ଏମ୍. ରୁ ପ୍ରବଳତା କୁ \n"
+"ଅପସାରଣ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
@@ -1313,19 +1331,19 @@ msgstr ""
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "କିଛି ବ୍ଯାଖ୍ଯାନ"
 
 #: src/lvui.glade.h:54
 msgid "_Reload"
-msgstr ""
+msgstr "ପୁନର୍ଧାରଣ କରନ୍ତୁ (_R)"
 
 #: src/lvui.glade.h:55
 msgid "_Tools"
-msgstr ""
+msgstr "ଉପକରଣ ମାନ (_T)"
 
 #: src/lvui.glade.h:56
 msgid "extend vg message:"
-msgstr ""
+msgstr "ବିସ୍ରୁତ ଭି.ଜି. ସନ୍ଦେଶ:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1338,34 +1356,42 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"୪\n"
+"୮\n"
+"୧୬\n"
+"୩୨\n"
+"୬୪\n"
+"୧୨୮\n"
+"୨୫୬\n"
+"୫୧୨"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
-msgstr ""
+msgstr "<b>ଫାଇଲ ତନ୍ତ୍ର</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>ଏଲ.ଭି. ଗୁଣଧର୍ମ</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>ଆକାର</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab ରେ ବସ୍ତୁ କୁ ଯୋଗ କରନ୍ତୁ"
 
 #: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
-msgstr ""
+msgstr "ନୂତନ ଲଗଇନ୍ ପ୍ରବଳତା କୁ ସ୍ରୁଷ୍ଟି କରନ୍ତୁ (LV)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "ଫାଇଲ ତନ୍ତ୍ର ର ଆକାର ଅପରିବର୍ତ୍ତନୀୟ ଅଟେ"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
-msgstr ""
+msgstr "ପ୍ରବଳତା ସମୂହ ଲେବଲ ରେ ଖାଲି ସ୍ଥାନ"
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
@@ -1377,11 +1403,11 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "ଏଲ.ଭି. ନାମ:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "ଏଲ.ଭି. ଆକାର"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1389,11 +1415,11 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
-msgstr ""
+msgstr "ସଳଖ"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "ପ୍ରତିଫଳିତ"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1401,15 +1427,15 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "ସ୍ଥାପନ"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
-msgstr ""
+msgstr "ସ୍ଥାପନ ବିନ୍ଦୁ:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "ପୁନଃ ଚାଳନ ସମୟ ରେ ସ୍ଥାପନ କରନ୍ତୁ"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
@@ -1429,7 +1455,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
-msgstr ""
+msgstr "ରେଖା ମାନ"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1449,11 +1475,11 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "ନିକଟସ୍ଥ"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "ଗନ୍ତବ୍ଯ:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1491,5 +1517,5 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "ସାଧାରଣ ଜ୍ଞାନ କୁ ବ୍ଯବହାର କରନ୍ତୁ"
 
