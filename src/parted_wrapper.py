@@ -15,7 +15,11 @@ class Parted:
     def getPartitions(self, devpath):
         sectorSize = FDisk().getDeviceGeometry(devpath)[1]
         parts = list()
-        res = execWithCapture(PARTED, [PARTED, devpath, 'print', '-s'])
+        # try new format
+        res, status = execWithCaptureStatus(PARTED, [PARTED, devpath, 'unit', 'b', 'print', '-s'])
+        if status != 0:
+            # try old format
+            res, status = execWithCaptureStatus(PARTED, [PARTED, devpath, 'print', '-s'])
         lines = res.splitlines()
         for line in lines:
             if not re.match('^[0-9]', line):
@@ -77,19 +81,24 @@ class Parted:
     def __to_bytes(self, word):
         t = word.strip().lower()
         multiplier = 1024 * 1024
-        if t.endswith('b'):
+        if t.endswith('b') or t.endswith('B'):
             t = t.rstrip('b')
+            t = t.rstrip('B')
             multiplier = 1
-            if t.endswith('k'):
+            if t.endswith('k') or t.endswith('K'):
                 t = t.rstrip('k')
+                t = t.rstrip('K')
                 multiplier = 1024
-            elif t.endswith('m'):
+            elif t.endswith('m') or t.endswith('M'):
+                t = t.rstrip('M')
                 t = t.rstrip('m')
                 multiplier = 1024 * 1024
-            elif t.endswith('g'):
+            elif t.endswith('g') or t.endswith('G'):
+                t = t.rstrip('G')
                 t = t.rstrip('g')
                 multiplier = 1024 * 1024 * 1024
-            elif t.endswith('t'):
+            elif t.endswith('t') or t.endswith('T'):
+                t = t.rstrip('T')
                 t = t.rstrip('t')
                 multiplier = 1024 * 1024 * 1024 * 1024
         return int(float(t) * multiplier)
