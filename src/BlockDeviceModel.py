@@ -16,8 +16,11 @@ class BlockDeviceModel:
         self.__devices = dict()
         fd = fdisk_wrapper.FDisk()
         for devname in fd.getDeviceNames():
-            bd = BlockDevice(devname)
-            self.__devices[devname] = bd
+            try:
+                bd = BlockDevice(devname)
+                self.__devices[devname] = bd
+            except:
+                pass
     
     def reload(self):
         for devname in self.__devices:

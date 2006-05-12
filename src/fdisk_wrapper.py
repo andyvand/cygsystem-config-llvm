@@ -61,28 +61,23 @@ class FDisk:
                 if (words[len(words) - 1] == 'bytes'):
                     sectorSize = int(words[len(words) - 2])
                 else:
-                    print 'bad fdisk output for device ' + devname
-                    sys.exit()
+                    raise 'bad fdisk output for device ' + devname
             elif re.match('.* [0-9]* sectors/track, [0-9]* cylinders, total [0-9]* sectors', line):
                 words = line.split()
                 if (words[len(words) - 1] == 'sectors') and (words[len(words) - 3] == 'total'):
                     sectors = int(words[len(words) - 2])
                 else:
-                    print 'bad fdisk output for device ' + devname
-                    sys.exit()
+                    raise 'bad fdisk output for device ' + devname
                 if words[3].rstrip(',') == 'sectors/track':
                     spt = int(words[2])
                 else:
-                    print 'bad fdisk output for device ' + devname
-                    sys.exit()
+                    raise 'bad fdisk output for device ' + devname
                 if words[5].rstrip(',') == 'cylinders':
                     cyls = int(words[4])
                 else:
-                    print 'bad fdisk output for device ' + devname
-                    sys.exit()
+                    raise 'bad fdisk output for device ' + devname
         if sectors == None or sectorSize == None or spt == None or cyls == None:
-            print 'bad fdisk output for device ' + devname
-            sys.exit()
+            raise 'bad fdisk output for device ' + devname
         return [sectors, sectorSize, cyls, spt, sectors/cyls]
     
     
