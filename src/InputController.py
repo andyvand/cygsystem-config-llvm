@@ -226,7 +226,7 @@ class InputController:
     self.ok_new_vg_button.connect("clicked",self.ok_new_vg)
     self.cancel_new_vg_button = self.glade_xml.get_widget('cancel_new_vg_button')
     self.cancel_new_vg_button.connect("clicked", self.cancel_new_vg)
-
+    
     ##Buttons and fields...
     self.new_vg_name = self.glade_xml.get_widget('new_vg_name')
     self.new_vg_max_pvs = self.glade_xml.get_widget('new_vg_max_pvs')
@@ -235,6 +235,7 @@ class InputController:
     self.new_vg_radio_meg = self.glade_xml.get_widget('radiobutton1')
     self.new_vg_radio_meg.connect('clicked', self.change_new_vg_radio)
     self.new_vg_radio_kilo = self.glade_xml.get_widget('radiobutton2')
+    self.new_vg_clustered = self.glade_xml.get_widget('clustered_butt')
 
   def on_new_vg(self, button):
     self.prep_new_vg_dlg()
@@ -298,14 +299,20 @@ class InputController:
     
     extent_idx = self.new_vg_extent_size.get_history()
     phys_extent_units_meg =  self.new_vg_radio_meg.get_active()
-
+    
+    clustered = self.new_vg_clustered.get_active()
+    if clustered:
+        msg = _("In order for Volume Group to be safely used in clustered environment, lvm2-cluster rpm has to be installed, and clvmd service has to be running")
+        self.infoMessage(msg)
+    
     try:
         self.command_handler.create_new_vg(Name_request,
                                            str(max_physical_volumes),
                                            str(max_logical_volumes),
                                            ACCEPTABLE_EXTENT_SIZES[extent_idx],
                                            phys_extent_units_meg,
-                                           pv.get_path())
+                                           pv.get_path(),
+                                           clustered)
     except CommandError, e:
         self.errorMessage(e.getMessage())
     
@@ -1105,7 +1112,7 @@ class InputController:
   def infoMessage(self, message):
       dlg = gtk.MessageDialog(None, 0,
                               gtk.MESSAGE_INFO,
-                              gtk.BUTTONS_YES_NO,
+                              gtk.BUTTONS_OK,
                               message)
       dlg.show_all()
       rc = dlg.run()

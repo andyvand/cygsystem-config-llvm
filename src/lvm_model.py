@@ -729,6 +729,13 @@ class lvm_model:
     text_list = list()
     text_list.append(VG_NAME)
     text_list.append(words[VG_NAME_IDX])
+    
+    text_list.append(_("Clustered:   "))
+    if vg.clustered():
+      text_list.append(_("True"))
+    else:
+      text_list.append(_("False"))
+    
     text_list.append(VG_SYSID)
     text_list.append(words[VG_SYSID_IDX])
     text_list.append(VG_FMT)

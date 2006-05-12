@@ -15,10 +15,14 @@ class VolumeGroup(Volume):
     
     self.lvs = {}
     self.pvs = {}
-  
+    
     self.max_pvs = pvs_max
     self.max_lvs = lvs_max
     
+  
+  def clustered(self):
+    return 'c' in self.get_attr()
+  
   
   def get_max_lvs(self):
     return self.max_lvs

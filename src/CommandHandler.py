@@ -171,7 +171,7 @@ class CommandHandler:
       raise CommandError('FATAL', COMMAND_FAILURE % ("vgextend",cmdstr,err))
 
   def create_new_vg(self, name, max_phys, max_log, extent_size, is_unit_megs,
-                    pv):
+                    pv, clustered=False):
 
     if is_unit_megs:
       units_arg = 'm'
@@ -189,6 +189,11 @@ class CommandHandler:
     args.append(max_phys)
     args.append("-s")
     args.append(size_arg)
+    args.append('-c')
+    if clustered:
+      args.append('y')
+    else:
+      args.append('n')
     args.append(name.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
