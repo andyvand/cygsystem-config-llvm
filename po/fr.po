@@ -100,8 +100,10 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Un Groupe de Volumes nommé %s existe déjà. Veuillez choisir un autre nom."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr ""
+"Un Groupe de Volumes nommé %s existe déjà. Veuillez choisir un autre nom."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -113,7 +115,8 @@ msgstr "Vous devez spécifier un nom pour le nouveau Groupe de Volumes"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Le point de montage spécifié, %s, n'existe pas. Voulez-vous le créer ?"
 
 #: src/InputController.py:104
@@ -184,7 +187,8 @@ msgstr ""
 "supprimer les instantanés en premier."
 
 #: src/InputController.py:121
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Erreur de conversion de type non définie en usine. Impossible d'achever la "
 "tâche."
@@ -309,8 +313,10 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr "Etes-vous absolument sûr de vouloir supprimer %s du Groupe de Volumes %s ?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr ""
+"Etes-vous absolument sûr de vouloir supprimer %s du Groupe de Volumes %s ?"
 
 #: src/InputController.py:153
 #, python-format
@@ -442,7 +448,8 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", une origine de l'instantané \"%s\", a été supprimé de la liste de "
 "suppression."
@@ -520,7 +527,8 @@ msgstr "Editer le Volume Logique"
 
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr "La gestion de Volumes Logiques sous-jacent ne supporte pas la mise en miroir."
+msgstr ""
+"La gestion de Volumes Logiques sous-jacent ne supporte pas la mise en miroir."
 
 #: src/InputController.py:1509
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -544,7 +552,8 @@ msgstr ""
 "des disques durs différents ?"
 
 #: src/InputController.py:1532
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Moins de trois disques durs sont disponibles avec de l'espace libre. "
 "Désactivation de la mise en miroir."
@@ -576,11 +585,14 @@ msgstr ""
 
 #: src/InputController.py:1914
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "Les noms commençant par \"snapshot\" ou \"pvmove\" sont des mots-clés réservés."
+msgstr ""
+"Les noms commençant par \"snapshot\" ou \"pvmove\" sont des mots-clés "
+"réservés."
 
 #: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Les noms contenant \"_mlog\" ou \"_mimage\" sont des mots-clés réservés."
+msgstr ""
+"Les noms contenant \"_mlog\" ou \"_mimage\" sont des mots-clés réservés."
 
 #: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
@@ -628,8 +640,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
-"Le LVM courant ne supporte pas l'ajout de miroirs aux volumes "
-"logiques existants. Exécution des tâches suivantes."
+"Le LVM courant ne supporte pas l'ajout de miroirs aux volumes logiques "
+"existants. Exécution des tâches suivantes."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -927,7 +939,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "Souhaitez-vous initialiser %s de l'espace libre sur le disque %s?"
 
 #: src/lvmui_constants.py:55
@@ -967,7 +980,9 @@ msgstr "Impossible de traiter la requête"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "La commande %s a échoué. Commande essayée : \"%s\" - Message d'erreur système : %s"
+msgstr ""
+"La commande %s a échoué. Commande essayée : \"%s\" - Message d'erreur "
+"système : %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1665,4 +1680,3 @@ msgstr "Uniquement migrer les étendues appartenant au VL"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Utiliser du bon sens "
-

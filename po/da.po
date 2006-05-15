@@ -97,8 +97,10 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr ""
+"Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -110,7 +112,8 @@ msgstr "Et navn skal angives for den nye delarkivgruppe"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Det angivne monteringspunkt %s, findes ikke. Vil du oprette det?"
 
 #: src/InputController.py:104
@@ -177,8 +180,10 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr "Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
+msgstr ""
+"Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
 
 #: src/InputController.py:123
 #, python-format
@@ -299,7 +304,8 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Er du helt sikker på at du vil fjerne %s fra delarkivgruppen %s?"
 
 #: src/InputController.py:153
@@ -413,7 +419,8 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -500,7 +507,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1532
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1537
@@ -864,8 +872,10 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr "Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr ""
+"Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1575,4 +1585,3 @@ msgstr "Migrér kun områder der tilhører LV"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr ""
-

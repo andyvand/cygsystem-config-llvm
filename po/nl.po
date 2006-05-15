@@ -145,8 +145,8 @@ msgid ""
 "Volume Group."
 msgstr ""
 "Volume Group %s heeft niet genoeg ruimte voor nieuwe Logical Volumes. Een "
-"mogelijke oplossing zou kunnen zijn om een additionele Physical Volume toe te "
-"voegen aan de Volume Group."
+"mogelijke oplossing zou kunnen zijn om een additionele Physical Volume toe "
+"te voegen aan de Volume Group."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
@@ -262,8 +262,8 @@ msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"Het maximum Logical Volumes veld dient alleen integer waarden tussen 1 en 256 "
-"te bevatten"
+"Het maximum Logical Volumes veld dient alleen integer waarden tussen 1 en "
+"256 te bevatten"
 
 #: src/InputController.py:149
 #, python-format

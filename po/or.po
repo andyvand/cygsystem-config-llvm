@@ -15,7 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -84,7 +85,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 
 #: src/InputController.py:98
@@ -97,7 +99,8 @@ msgstr ""
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
 
 #: src/InputController.py:104
@@ -155,7 +158,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:123
@@ -234,14 +238,16 @@ msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"ସର୍ବାଧିକ ଭୌତିକ ପ୍ରବଳତା କ୍ଷେତ୍ର ଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ କରିବା ଉଚିତ"
+"ସର୍ବାଧିକ ଭୌତିକ ପ୍ରବଳତା କ୍ଷେତ୍ର ଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ "
+"କରିବା ଉଚିତ"
 
 #: src/InputController.py:147
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"ସର୍ବାଧିକ ତାର୍କିକ ପ୍ରବଳତା କ୍ଷେତ୍ର ଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ କରିବା ଉଚିତ"
+"ସର୍ବାଧିକ ତାର୍କିକ ପ୍ରବଳତା କ୍ଷେତ୍ର ଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ "
+"କରିବା ଉଚିତ"
 
 #: src/InputController.py:149
 #, python-format
@@ -263,7 +269,8 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
 #: src/InputController.py:153
@@ -361,7 +368,8 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -448,7 +456,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1532
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1537
@@ -811,7 +820,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
@@ -1518,4 +1528,3 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "ସାଧାରଣ ଜ୍ଞାନ କୁ ବ୍ଯବହାର କରନ୍ତୁ"
-

@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -164,8 +164,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
-"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo uklonite "
-"snimak."
+"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo "
+"uklonite snimak."
 
 #: src/InputController.py:119
 #, python-format
@@ -189,9 +189,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je montirana "
-"na %s. Da li ste potpuno sigurni da želite odbaciti podatke na ovom "
-"montiranom sistemu datoteka?"
+"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je "
+"montirana na %s. Da li ste potpuno sigurni da želite odbaciti podatke na "
+"ovom montiranom sistemu datoteka?"
 
 #: src/InputController.py:125
 #, python-format
@@ -263,16 +263,16 @@ msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"Polje „Najviše fizičkih diskova“ bi trebalo da sadrži samo cele brojeve između "
-"1 i 256"
+"Polje „Najviše fizičkih diskova“ bi trebalo da sadrži samo cele brojeve "
+"između 1 i 256"
 
 #: src/InputController.py:147
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"Polje „Najviše logičkih diskova“ bi trebalo da sadrži samo cele brojeve između "
-"1 i 256"
+"Polje „Najviše logičkih diskova“ bi trebalo da sadrži samo cele brojeve "
+"između 1 i 256"
 
 #: src/InputController.py:149
 #, python-format
@@ -297,14 +297,14 @@ msgstr ""
 "logičkog(ih) diska(ova) mapirane na svoj opseg. Zato što je to jedini "
 "fizički disk u grupi diskova, ne postoji mesto na koje bi se podaci "
 "premestili. Preporučena akcija je ili dodavanje novog fizičkog diska pre "
-"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom disku."
+"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom "
+"disku."
 
 #: src/InputController.py:152
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
-"Da li ste sasvim sigurni da želite ukloniti %s iz %s grupe diskova?"
+msgstr "Da li ste sasvim sigurni da želite ukloniti %s iz %s grupe diskova?"
 
 #: src/InputController.py:153
 #, python-format
@@ -322,8 +322,8 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %s. "
-"Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
+"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %"
+"s. Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
 
 #: src/InputController.py:155
 msgid ""
@@ -344,8 +344,8 @@ msgid ""
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
 "dm-snapshotr modul ili nije učitan u jezgro ili Vaše jezgro ne podržava dm-"
-"snapshot metu. Ako je podržana, pokušajte pokrenuti „modprobe dm-mirror“. Ako "
-"nije, pravljenje snimka nije dostupno."
+"snapshot metu. Ako je podržana, pokušajte pokrenuti „modprobe dm-mirror“. "
+"Ako nije, pravljenje snimka nije dostupno."
 
 #: src/InputController.py:158
 #, python-format
@@ -416,8 +416,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
-"Fizički disk %s sadrži opsege koji pripadaju %s, a koji je poreklo snimaka "
-"%s. Porekla snimaka još uvek nisu preseljiva, stoga se %s ne može uklanjati."
+"Fizički disk %s sadrži opsege koji pripadaju %s, a koji je poreklo snimaka %"
+"s. Porekla snimaka još uvek nisu preseljiva, stoga se %s ne može uklanjati."
 
 #: src/InputController.py:556
 #, python-format
@@ -432,8 +432,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
-"„%s“, poreklo snimka „%s“, je izbrisano sa liste za uklanjanje."
+msgstr "„%s“, poreklo snimka „%s“, je izbrisano sa liste za uklanjanje."
 
 #: src/InputController.py:602
 #, python-format
@@ -475,8 +474,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
-"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. Problem "
-"bi se rešio dodavanjem još fizičkih diskova."
+"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. "
+"Problem bi se rešio dodavanjem još fizičkih diskova."
 
 #: src/InputController.py:1181
 msgid "Migrate extents"
@@ -514,7 +513,8 @@ msgstr "Isprepleteni logički diskovi se ne mogu preslikavati."
 
 #: src/InputController.py:1516
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "Odraz za logičke diskove sa pridruženim snimcima se još uvek ne može "
+msgstr ""
+"Odraz za logičke diskove sa pridruženim snimcima se još uvek ne može "
 "napraviti."
 
 #. mirror images placement: diff HDs or anywhere
@@ -524,8 +524,9 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju otkazivanja "
-"čvrstog diska. Da li želite postaviti odraze na različite čvrste diskove?"
+"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju "
+"otkazivanja čvrstog diska. Da li želite postaviti odraze na različite čvrste "
+"diskove?"
 
 #: src/InputController.py:1532
 msgid ""
@@ -539,8 +540,8 @@ msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se uključilo "
-"pravljenje odraza"
+"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se "
+"uključilo pravljenje odraza"
 
 #: src/InputController.py:1545
 msgid ""
@@ -565,7 +566,8 @@ msgstr ""
 
 #: src/InputController.py:1916
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
+msgstr ""
+"Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
 
 #: src/InputController.py:1918
 msgid "Names beginning with a \"-\" are invalid"
@@ -590,15 +592,16 @@ msgstr "Molim naznačite tačku za montiranje"
 
 #: src/InputController.py:2011
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr "Da li želite da nadogradite ext2 na ext3 čuvajući podatke na logičkom disku?"
+msgstr ""
+"Da li želite da nadogradite ext2 na ext3 čuvajući podatke na logičkom disku?"
 
 #: src/InputController.py:2045
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da li "
-"ste sigurni da želite nastaviti?"
+"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da "
+"li ste sigurni da želite nastaviti?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2146
@@ -611,8 +614,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
-"Potporni LVM ne podržava dodavanje odraza postojećim logičkim "
-"diskovima. Završavam ostala zaduženja."
+"Potporni LVM ne podržava dodavanje odraza postojećim logičkim diskovima. "
+"Završavam ostala zaduženja."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -939,8 +942,8 @@ msgid ""
 "computer now."
 msgstr ""
 "Promene će preći u dejstvo posle ponovnog pokretanja. Ako je uređaj %s u "
-"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo je "
-"da se računar ponovo pokrene sada."
+"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo "
+"je da se računar ponovo pokrene sada."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -953,7 +956,8 @@ msgstr "Ne mogu da obradim zahtev"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "%s naredba neuspela. Pokušana naredba: „%s“ - Poruka sistemske greške: %s"
+msgstr ""
+"%s naredba neuspela. Pokušana naredba: „%s“ - Poruka sistemske greške: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1083,8 +1087,8 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
-"Opsezi koje želite da izaberete pripadaju dnevniku odraza za logički disk "
-"%s. Odrazi logičkih diskova još uvek nisu preseljivi, stoga se opsezi ne mogu "
+"Opsezi koje želite da izaberete pripadaju dnevniku odraza za logički disk %"
+"s. Odrazi logičkih diskova još uvek nisu preseljivi, stoga se opsezi ne mogu "
 "izabrati."
 
 #: src/renderer.py:197

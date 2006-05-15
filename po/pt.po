@@ -621,7 +621,9 @@ msgstr "A réplica não foi criada. A completar as tarefas restantes."
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
-msgstr "O LVM subjacente não suporta a adição de réplicas aos Volumes Lógicos existentes. A terminar as tarefas restantes."
+msgstr ""
+"O LVM subjacente não suporta a adição de réplicas aos Volumes Lógicos "
+"existentes. A terminar as tarefas restantes."
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."

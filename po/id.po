@@ -623,7 +623,6 @@ msgid ""
 msgstr ""
 "Karena LVM tidak mendukung penambahan mirror ke Volume Logikal yang ada. "
 "Menyelesaikan tugas yang tersisa."
-""
 
 #: src/InputController.py:2195
 msgid "In order to add mirroring, some extents need to be migrated."
