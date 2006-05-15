@@ -5,6 +5,14 @@ import os
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
 from CommandError import *
 
+import xml
+import xml.dom
+from xml.dom import minidom
+
+import gtk
+import gtk.glade
+from lvmui_constants import PROGNAME, INSTALLDIR
+
 
 CREATING_FS=_("Creating %s filesystem")
 RESIZING_FS=_("Resizing %s filesystem")
@@ -45,14 +53,17 @@ def get_fs(path):
 
 def get_filesystems():
     # NoFS has to be first
-    return [NoFS(), ext3(), ext2(), gfs2_local(), gfs2_clustered(), gfs_local(), gfs_clustered()]
+    return [NoFS(), ext3(), ext2(), gfs2(), gfs2_clustered(), gfs(), gfs_clustered()]
 
 
 class Filesystem:
     def __init__(self, name, creatable, editable, mountable,
                  extendable_online, extendable_offline,
-                 reducible_online, reducible_offline):
+                 reducible_online, reducible_offline,
+                 fsname):
         self.name = name
+        self.fsname = fsname
+        
         self.creatable = creatable
         self.editable = editable
         self.mountable = mountable
@@ -91,14 +102,17 @@ class Filesystem:
     def probe(self, path):
         return False
     
+    def set_clustered(self, clustered):
+        return
     
-    def check_mountable(self, name, module):
+    
+    def check_mountable(self, fsname, module):
         mountable = False
         out = execWithCapture('/bin/cat', ['/bin/cat', '/proc/filesystems'])
-        if re.search(name, out, re.I):
+        if re.search(fsname, out, re.I):
             mountable = True
         if mountable == False:
-            out, status = execWithCaptureStatus('/bin/modprobe', ['/bin/modprobe', '-n', module])
+            out, status = execWithCaptureStatus('/sbin/modprobe', ['/sbin/modprobe', '-n', module])
             if status == 0:
                 mountable = True
         return mountable
@@ -118,13 +132,15 @@ class Filesystem:
 class NoFS(Filesystem):
     def __init__(self):
         Filesystem.__init__(self, _('None'), True, False, False, 
-                            True, True, True, True)
+                            True, True, True, True,
+                            'none')
         
 
 class Unknown(Filesystem):
     def __init__(self, name=_('Unknown filesystem'), mountable=False):
         Filesystem.__init__(self, name, False, False, mountable,
-                            False, False, False, False)
+                            False, False, False, False,
+                            'unknown')
         
         
 class ext3(Filesystem):
@@ -134,8 +150,9 @@ class ext3(Filesystem):
         resize_offline = self.check_paths(['/sbin/e2fsck', '/sbin/resize2fs'])
         extend_online = self.check_path('/usr/sbin/ext2online')
         
-        Filesystem.__init__(self, 'ext3', creatable, True, mountable, 
-                            extend_online, resize_offline, False, resize_offline)
+        Filesystem.__init__(self, 'Ext3', creatable, True, mountable, 
+                            extend_online, resize_offline, False, resize_offline,
+                            'ext3')
         
     
     def probe(self, path):
@@ -239,8 +256,9 @@ class ext2(Filesystem):
         mountable = self.check_mountable('ext2', 'ext2')
         resize_offline = self.check_paths(['/sbin/e2fsck', '/sbin/resize2fs'])
         
-        Filesystem.__init__(self, 'ext2', creatable, True, mountable, 
-                            False, resize_offline, False, resize_offline)
+        Filesystem.__init__(self, 'Ext2', creatable, True, mountable, 
+                            False, resize_offline, False, resize_offline,
+                            'ext2')
         self.upgradable = True
         
     
@@ -343,98 +361,22 @@ class ext2(Filesystem):
         return None
     
 
-class gfs2_local(Filesystem):
-    def __init__(self):
-        creatable = self.check_path('/sbin/gfs2_mkfs')
-        mountable = self.check_mountable('gfs2', 'gfs2')
-        extendable_online = self.check_path('/sbin/gfs2_grow')
-        
-        Filesystem.__init__(self, _("GFS2 (local)"), creatable, False, mountable, 
-                            extendable_online, False, False, False)
-        
-    
-    def probe(self, path):
-        if self.check_path('/sbin/gfs2_tool'):
-            args = ['/sbin/gfs2_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('proto')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs2_tool', args)
-            if r == 0:
-                if 'lock_nolock' in o:
-                    return True
-        return False
-    
-    def create(self, path):
-        MKFS_GFS_BIN='/sbin/gfs2_mkfs'
-        args = [MKFS_GFS_BIN]
-        args.append('-j')
-        args.append('1')
-        args.append('-p')
-        args.append('lock_nolock')
-        args.append('-O')
-        args.append(path)
-        cmdstr = ' '.join(args)
-        msg = CREATING_FS % (self.name)
-        o,e,r = execWithCaptureErrorStatusProgress(MKFS_GFS_BIN, args, msg)
-        if r != 0:
-            raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
-    
-    def extend_online(self, dev_path):
-        args = ['/sbin/gfs2_grow']
-        args.append(dev_path)
-        cmdstr = ' '.join(args)
-        msg = RESIZING_FS % (self.name)
-        o,e,r = execWithCaptureErrorStatusProgress('/sbin/gfs2_grow', args, msg)
-        if r != 0:
-            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
-    
 
-class gfs2_clustered(Filesystem):
-    def __init__(self):
-        creatable = False
-        mountable = self.check_mountable('gfs2', 'gfs2')
-        
-        Filesystem.__init__(self, _("GFS2 (clustered)"), creatable, False, mountable, 
-                            False, False, False, False)
-        
-    
-    def probe(self, path):
-        if self.check_path('/sbin/gfs2_tool'):
-            args = ['/sbin/gfs2_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('proto')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs2_tool', args)
-            if r == 0:
-                if 'lock_dlm' in o or 'lock_gulm' in o:
-                    return True
-        return False
-    
-
-class gfs_local(Filesystem):
+class gfs(Filesystem):
     def __init__(self):
         creatable = self.check_path('/sbin/gfs_mkfs')
         mountable = self.check_mountable('gfs', 'gfs')
         extendable_online = self.check_path('/sbin/gfs_grow')
         
         Filesystem.__init__(self, _("GFS (local)"), creatable, False, mountable, 
-                            extendable_online, False, False, False)
+                            extendable_online, False, False, False,
+                            'gfs')
         
     
     def probe(self, path):
-        if self.check_path('/sbin/gfs_tool'):
-            args = ['/sbin/gfs_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('proto')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
-            if r == 0:
-                if 'lock_nolock' in o:
-                    return True
+        l_type = self.__get_gfs_lock_type(path)
+        if l_type == 'nolock':
+            return True
         return False
     
     def create(self, path):
@@ -461,17 +403,11 @@ class gfs_local(Filesystem):
         if r != 0:
             raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
     
-
-class gfs_clustered(Filesystem):
-    def __init__(self):
-        creatable = False
-        mountable = self.check_mountable('gfs', 'gfs')
-        
-        Filesystem.__init__(self, _("GFS (clustered)"), creatable, False, mountable, 
-                            False, False, False, False)
-        
+    def set_clustered(self, clustered):
+        if clustered:
+            self.creatable = False
     
-    def probe(self, path):
+    def __get_gfs_lock_type(self, path):
         if self.check_path('/sbin/gfs_tool'):
             args = ['/sbin/gfs_tool']
             args.append('sb')
@@ -480,8 +416,499 @@ class gfs_clustered(Filesystem):
             cmdstr = ' '.join(args)
             o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
             if r == 0:
-                if 'lock_dlm' in o or 'lock_gulm' in o:
-                    return True
+                if 'lock_dlm' in o:
+                    return 'dlm'
+                elif 'lock_gulm' in o:
+                    return 'gulm'
+                elif 'lock_nolock' in o:
+                    return 'nolock'
+        return None
+    
+
+
+class gfs_clustered(Filesystem):
+    def __init__(self):
+        creatable = self.check_path('/sbin/gfs_mkfs')
+        mountable = self.check_mountable('gfs', 'gfs')
+        extendable_online = self.check_path('/sbin/gfs_grow')
+        
+        # gui stuff
+        gladepath = 'Filesystem.glade'
+        if not os.path.exists(gladepath):
+            gladepath = "%s/%s" % (INSTALLDIR, gladepath)
+        gtk.glade.bindtextdomain(PROGNAME)
+        self.glade_xml = gtk.glade.XML (gladepath, domain=PROGNAME)
+        self.dlg = self.glade_xml.get_widget('new_gfs_props')
+        
+        self.clustername_entry  = self.glade_xml.get_widget('clustername')
+        self.gfsname_entry      = self.glade_xml.get_widget('gfsname')
+        self.journals_spin      = self.glade_xml.get_widget('journals')
+        self.lock_dlm_butt      = self.glade_xml.get_widget('lock_dlm')
+        self.lock_gulm_butt     = self.glade_xml.get_widget('lock_gulm')
+        self.locking_box        = self.glade_xml.get_widget('locking_box')
+        
+        # populate new GFS form
+        clustername = self.__get_cluster_name()
+        nodes_num = self.__get_cluster_nodes_num()
+        lock_type = self.__get_cluster_lock_type()
+        if clustername != None:
+            self.clustername_entry.set_text(clustername)
+            self.journals_spin.set_value(nodes_num)
+            if lock_type == 'dlm':
+                self.lock_dlm_butt.set_active(True)
+            elif lock_type == 'gulm':
+                self.lock_gulm_butt.set_active(True)
+            self.clustername_entry.set_sensitive(False)
+            self.locking_box.set_sensitive(False)
+            pass
+        
+        # mountable only if cluster is quorate, and kernel supports GFS
+        if mountable:
+            mountable = self.__is_cluster_running(clustername)
+        
+        Filesystem.__init__(self, _("GFS (clustered)"), creatable, False, mountable, 
+                            extendable_online, False, False, False,
+                            'gfs')
+    
+    def probe(self, path):
+        gfs_lock = self.__get_gfs_lock_type(path)
+        if gfs_lock == 'dlm' or gfs_lock == 'gulm':
+            if self.mountable:
+                c_name = self.__get_cluster_name()
+                c_lock = self.__get_cluster_lock_type()
+                c_running = self.__is_cluster_running(c_name)
+                gfs_clustername = self.__get_gfs_table_name(path)[0]
+                self.mountable = (gfs_clustername == c_name) and c_running and (gfs_lock == c_lock)
+            return True
         return False
+    
+    def create(self, path):
+        if not self.creatable:
+            raise "not creatable"
+        
+        try:
+            valid = False
+            while not valid:
+                rc = self.dlg.run()
+                if rc == gtk.RESPONSE_OK:
+                    valid = True
+                    msg = ''
+                    illegal_chars = ';:\'"/?.>,<]}[{ =+)(*&^%$#@!`~'
+                    c_name = self.clustername_entry.get_text().strip()
+                    g_name = self.gfsname_entry.get_text().strip()
+                    for c in illegal_chars:
+                        if c in c_name:
+                            msg = _("Cluster name contains illegal character " + c)
+                            valid = False
+                        if c in g_name:
+                            msg = _("GFS name contains illegal character " + c)
+                            valid = False
+                    if len(c_name) == 0:
+                        msg = _("Missing Cluster Name")
+                        valid = False
+                    elif len(g_name) == 0:
+                        msg = _("Missing GFS Name")
+                        valid = False
+                    if not valid:
+                        self.__errorMessage(msg)
+                    else:
+                        j_num = self.journals_spin.get_value_as_int()
+                        table = c_name + ':' + g_name
+                        locking_type = 'lock_'
+                        if self.lock_dlm_butt.get_active():
+                            locking_type += 'dlm'
+                        elif self.lock_gulm_butt.get_active():
+                            locking_type += 'gulm'
+        except:
+            self.dlg.hide()
+            raise
+        self.dlg.hide()
+        
+        MKFS_GFS_BIN='/sbin/gfs_mkfs'
+        args = [MKFS_GFS_BIN]
+        args.append('-j')
+        args.append(str(j_num))
+        args.append('-p')
+        args.append(locking_type)
+        args.append('-t')
+        args.append(table)
+        args.append('-O')
+        args.append(path)
+        cmdstr = ' '.join(args)
+        msg = CREATING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress(MKFS_GFS_BIN, args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
+    
+    def extend_online(self, dev_path):
+        args = ['/sbin/gfs_grow']
+        args.append(dev_path)
+        cmdstr = ' '.join(args)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/gfs_grow', args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+    
+    def set_clustered(self, clustered, path=None):
+        pass
+    
+    
+    def __get_gfs_lock_type(self, path):
+        if self.check_path('/sbin/gfs_tool'):
+            args = ['/sbin/gfs_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
+            if r == 0:
+                if 'lock_dlm' in o:
+                    return 'dlm'
+                elif 'lock_gulm' in o:
+                    return 'gulm'
+                elif 'lock_nolock' in o:
+                    return 'nolock'
+        return None
+    def __get_gfs_table_name(self, path):
+        if self.check_path('/sbin/gfs_tool'):
+            args = ['/sbin/gfs_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('table')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
+            if r == 0:
+                words = o.strip().split()
+                if len(words) == 6:
+                    return words[5].strip('\"').split(':')
+        return (None, None)
+    
+    
+    def __get_cluster_name(self):
+        return self.__get_cluster_info()[0]
+    def __get_cluster_lock_type(self):
+        return self.__get_cluster_info()[1]
+    def __get_cluster_nodes_num(self):
+        return self.__get_cluster_info()[2]
+    def __get_cluster_info(self):
+        try:
+            c_conf = minidom.parseString(file('/etc/cluster/cluster.conf').read(10000000)).firstChild
+            name = c_conf.getAttribute('name')
+            lock = None
+            nodes_num = 0
+            for node in c_conf.childNodes:
+                if node.nodeType == xml.dom.Node.ELEMENT_NODE:
+                    if node.nodeName == 'cman':
+                        lock = 'dlm'
+                    elif node.nodeName == 'gulm':
+                        lock = 'gulm'
+                    elif node.nodeName == 'clusternodes':
+                        nodes = node
+                        for node in nodes.childNodes:
+                            if node.nodeType == xml.dom.Node.ELEMENT_NODE:
+                                if node.nodeName == 'clusternode':
+                                    nodes_num += 1
+            if lock != None:
+                return (name, lock, nodes_num)
+        except:
+            pass
+        return (None, None, None)
+    def __is_cluster_running(self, clustername):
+        if clustername == None:
+            return False
+        try:
+            args = ['/sbin/magma_tool', 'quorum']
+            o, e, s = execWithCaptureErrorStatus('/sbin/magma_tool', args)
+            if s == 0:
+                if o.find('Quorate') != -1:
+                    return True
+        except:
+            pass
+        return False
+    
+    def __errorMessage(self, message):
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+                                message)
+        dlg.show_all()
+        rc = dlg.run()
+        dlg.destroy()
+        return rc
+
+    
+
+
+class gfs2(Filesystem):
+    def __init__(self):
+        creatable = self.check_path('/sbin/gfs2_mkfs')
+        mountable = self.check_mountable('gfs2', 'gfs2')
+        extendable_online = self.check_path('/sbin/gfs2_grow')
+        
+        Filesystem.__init__(self, _("GFS2 (local)"), creatable, False, mountable, 
+                            extendable_online, False, False, False,
+                            'gfs2')
+        
+    
+    def probe(self, path):
+        l_type = self.__get_gfs_lock_type(path)
+        if l_type == 'nolock':
+            return True
+        return False
+    
+    def create(self, path):
+        MKFS_GFS_BIN='/sbin/gfs2_mkfs'
+        args = [MKFS_GFS_BIN]
+        args.append('-j')
+        args.append('1')
+        args.append('-p')
+        args.append('lock_nolock')
+        args.append('-O')
+        args.append(path)
+        cmdstr = ' '.join(args)
+        msg = CREATING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress(MKFS_GFS_BIN, args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
+    
+    def extend_online(self, dev_path):
+        args = ['/sbin/gfs2_grow']
+        args.append(dev_path)
+        cmdstr = ' '.join(args)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/gfs2_grow', args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+    
+    def set_clustered(self, clustered):
+        if clustered:
+            self.creatable = False
+    
+    def __get_gfs_lock_type(self, path):
+        if self.check_path('/sbin/gfs2_tool'):
+            args = ['/sbin/gfs2_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs2_tool', args)
+            if r == 0:
+                if 'lock_dlm' in o:
+                    return 'dlm'
+                elif 'lock_gulm' in o:
+                    return 'gulm'
+                elif 'lock_nolock' in o:
+                    return 'nolock'
+        return None
+    
+
+
+class gfs2_clustered(Filesystem):
+    def __init__(self):
+        creatable = self.check_path('/sbin/gfs2_mkfs')
+        mountable = self.check_mountable('gfs2', 'gfs2')
+        extendable_online = self.check_path('/sbin/gfs2_grow')
+        
+        # gui stuff
+        gladepath = 'Filesystem.glade'
+        if not os.path.exists(gladepath):
+            gladepath = "%s/%s" % (INSTALLDIR, gladepath)
+        gtk.glade.bindtextdomain(PROGNAME)
+        self.glade_xml = gtk.glade.XML (gladepath, domain=PROGNAME)
+        self.dlg = self.glade_xml.get_widget('new_gfs_props')
+        
+        self.clustername_entry  = self.glade_xml.get_widget('clustername')
+        self.gfsname_entry      = self.glade_xml.get_widget('gfsname')
+        self.journals_spin      = self.glade_xml.get_widget('journals')
+        self.lock_dlm_butt      = self.glade_xml.get_widget('lock_dlm')
+        self.lock_gulm_butt     = self.glade_xml.get_widget('lock_gulm')
+        self.locking_box        = self.glade_xml.get_widget('locking_box')
+        
+        # populate new GFS form
+        clustername = self.__get_cluster_name()
+        nodes_num = self.__get_cluster_nodes_num()
+        lock_type = self.__get_cluster_lock_type()
+        if clustername != None:
+            self.clustername_entry.set_text(clustername)
+            self.journals_spin.set_value(nodes_num)
+            if lock_type == 'dlm':
+                self.lock_dlm_butt.set_active(True)
+            elif lock_type == 'gulm':
+                self.lock_gulm_butt.set_active(True)
+            self.clustername_entry.set_sensitive(False)
+            self.locking_box.set_sensitive(False)
+            pass
+        
+        # mountable only if cluster is quorate, and kernel supports GFS
+        if mountable:
+            mountable = self.__is_cluster_running(clustername)
+        
+        Filesystem.__init__(self, _("GFS2 (clustered)"), creatable, False, mountable, 
+                            extendable_online, False, False, False,
+                            'gfs2')
+    
+    def probe(self, path):
+        gfs_lock = self.__get_gfs_lock_type(path)
+        if gfs_lock == 'dlm' or gfs_lock == 'gulm':
+            if self.mountable:
+                c_name = self.__get_cluster_name()
+                c_lock = self.__get_cluster_lock_type()
+                c_running = self.__is_cluster_running(c_name)
+                gfs_clustername = self.__get_gfs_table_name(path)[0]
+                self.mountable = (gfs_clustername == c_name) and c_running and (gfs_lock == c_lock)
+            return True
+        return False
+    
+    def create(self, path):
+        if not self.creatable:
+            raise "not creatable"
+        
+        try:
+            valid = False
+            while not valid:
+                rc = self.dlg.run()
+                if rc == gtk.RESPONSE_OK:
+                    valid = True
+                    msg = ''
+                    illegal_chars = ';:\'"/?.>,<]}[{ =+)(*&^%$#@!`~'
+                    c_name = self.clustername_entry.get_text().strip()
+                    g_name = self.gfsname_entry.get_text().strip()
+                    for c in illegal_chars:
+                        if c in c_name:
+                            msg = _("Cluster name contains illegal character " + c)
+                            valid = False
+                        if c in g_name:
+                            msg = _("GFS name contains illegal character " + c)
+                            valid = False
+                    if len(c_name) == 0:
+                        msg = _("Missing Cluster Name")
+                        valid = False
+                    elif len(g_name) == 0:
+                        msg = _("Missing GFS Name")
+                        valid = False
+                    if not valid:
+                        self.__errorMessage(msg)
+                    else:
+                        j_num = self.journals_spin.get_value_as_int()
+                        table = c_name + ':' + g_name
+                        locking_type = 'lock_'
+                        if self.lock_dlm_butt.get_active():
+                            locking_type += 'dlm'
+                        elif self.lock_gulm_butt.get_active():
+                            locking_type += 'gulm'
+        except:
+            self.dlg.hide()
+            raise
+        self.dlg.hide()
+        
+        MKFS_GFS_BIN='/sbin/gfs2_mkfs'
+        args = [MKFS_GFS_BIN]
+        args.append('-j')
+        args.append(str(j_num))
+        args.append('-p')
+        args.append(locking_type)
+        args.append('-t')
+        args.append(table)
+        args.append('-O')
+        args.append(path)
+        cmdstr = ' '.join(args)
+        msg = CREATING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress(MKFS_GFS_BIN, args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
+    
+    def extend_online(self, dev_path):
+        args = ['/sbin/gfs2_grow']
+        args.append(dev_path)
+        cmdstr = ' '.join(args)
+        msg = RESIZING_FS % (self.name)
+        o,e,r = execWithCaptureErrorStatusProgress('/sbin/gfs2_grow', args, msg)
+        if r != 0:
+            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+    
+    def set_clustered(self, clustered, path=None):
+        pass
+    
+    
+    def __get_gfs_lock_type(self, path):
+        if self.check_path('/sbin/gfs2_tool'):
+            args = ['/sbin/gfs2_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('proto')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs2_tool', args)
+            if r == 0:
+                if 'lock_dlm' in o:
+                    return 'dlm'
+                elif 'lock_gulm' in o:
+                    return 'gulm'
+                elif 'lock_nolock' in o:
+                    return 'nolock'
+        return None
+    def __get_gfs_table_name(self, path):
+        if self.check_path('/sbin/gfs2_tool'):
+            args = ['/sbin/gfs2_tool']
+            args.append('sb')
+            args.append(path)
+            args.append('table')
+            cmdstr = ' '.join(args)
+            o,e,r = execWithCaptureErrorStatus('/sbin/gfs2_tool', args)
+            if r == 0:
+                words = o.strip().split()
+                if len(words) == 6:
+                    return words[5].strip('\"').split(':')
+        return (None, None)
+    
+    
+    def __get_cluster_name(self):
+        return self.__get_cluster_info()[0]
+    def __get_cluster_lock_type(self):
+        return self.__get_cluster_info()[1]
+    def __get_cluster_nodes_num(self):
+        return self.__get_cluster_info()[2]
+    def __get_cluster_info(self):
+        try:
+            c_conf = minidom.parseString(file('/etc/cluster/cluster.conf').read(10000000)).firstChild
+            name = c_conf.getAttribute('name')
+            lock = None
+            nodes_num = 0
+            for node in c_conf.childNodes:
+                if node.nodeType == xml.dom.Node.ELEMENT_NODE:
+                    if node.nodeName == 'cman':
+                        lock = 'dlm'
+                    elif node.nodeName == 'gulm':
+                        lock = 'gulm'
+                    elif node.nodeName == 'clusternodes':
+                        nodes = node
+                        for node in nodes.childNodes:
+                            if node.nodeType == xml.dom.Node.ELEMENT_NODE:
+                                if node.nodeName == 'clusternode':
+                                    nodes_num += 1
+            if lock != None:
+                return (name, lock, nodes_num)
+        except:
+            pass
+        return (None, None, None)
+    def __is_cluster_running(self, clustername):
+        if clustername == None:
+            return False
+        try:
+            args = ['/sbin/magma_tool', 'quorum']
+            o, e, s = execWithCaptureErrorStatus('/sbin/magma_tool', args)
+            if s == 0:
+                if o.find('Quorate') != -1:
+                    return True
+        except:
+            pass
+        return False
+    
+    def __errorMessage(self, message):
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+                                message)
+        dlg.show_all()
+        rc = dlg.run()
+        dlg.destroy()
+        return rc
 
     

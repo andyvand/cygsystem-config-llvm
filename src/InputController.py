@@ -1296,6 +1296,8 @@ class LV_edit_props:
             else:
                 self.mount = True
             self.mount_at_reboot = (self.mountpoint_at_reboot != None)
+        for fs_name in self.filesystems:
+            self.filesystems[fs_name].set_clustered(vg.clustered())
         
         gladepath = 'lv_edit_props.glade'
         if not os.path.exists(gladepath):
@@ -2001,13 +2003,17 @@ class LV_edit_props:
             
             # make filesystem
             if not self.snapshot:
-                filesys_new.create(lv_path)
+                try:
+                    filesys_new.create(lv_path)
+                except CommandError, e:
+                    self.command_handler.remove_lv(lv_path)
+                    raise e
             
             # mount
             if mount_new:
-                self.command_handler.mount(lv_path, mountpoint_new)
+                self.command_handler.mount(lv_path, mountpoint_new, filesys_new.fsname)
             if mount_at_reboot_new:
-                Fstab.add(lv_path, mountpoint_new, filesys_new.name)
+                Fstab.add(lv_path, mountpoint_new, filesys_new.fsname)
         else:
             ### edit LV ###
             
@@ -2169,13 +2175,16 @@ class LV_edit_props:
                     filesys_new.create(lv_path)
             
             # mount
+            fsname = self.fs.fsname
+            if filesys_change:
+                fsname = filesys_new.fsname
             if mount_new and not mounted:
-                self.command_handler.mount(lv_path, mountpoint_new)
+                self.command_handler.mount(lv_path, mountpoint_new, fsname)
             # remove old fstab entry
             Fstab.remove(self.mount_point)
             if mount_at_reboot_new:
                 # add new entry
-                Fstab.add(lv_path, mountpoint_new, filesys_new.name)
+                Fstab.add(lv_path, mountpoint_new, fsname)
                 
         return True
     

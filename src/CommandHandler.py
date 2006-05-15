@@ -136,9 +136,11 @@ class CommandHandler:
     if res != 0:
       raise CommandError('FATAL', COMMAND_FAILURE % ("lvconvert",cmdstr,err))
   
-  def mount(self, dev_path, mnt_point): 
+  def mount(self, dev_path, mnt_point, fstype): 
     cmd_args = list()
     cmd_args.append("/bin/mount")
+    cmd_args.append('-t')
+    cmd_args.append(fstype)
     cmd_args.append(dev_path)
     cmd_args.append(mnt_point)
     cmdstr = ' '.join(cmd_args)
