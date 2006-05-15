@@ -824,7 +824,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr "ଏଲଭିଏମ କୁ ପୁନର୍ଧାରଣ କରୁୁଅଛି | ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ"
+msgstr "ଏଲଭିଏମ କୁ ପୁନର୍ଧାରଣ କରୁୁଅଛି । ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ"
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1509,7 +1509,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "ସାଧାରଣ"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
