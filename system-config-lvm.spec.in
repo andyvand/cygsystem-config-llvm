@@ -51,6 +51,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Thu Jun 01 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.18-1.0
+  - Version bump
 * Fri May 12 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.17-1.0
   - Fixes for 175077, 171117, 175131, 176967, enable mirroring, 159455, 159456
 * Thu Feb 16 2006 Jim Parsons <jparsons@redhat.com> 1.0.16-1.0
