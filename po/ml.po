@@ -1,20 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# translation of ml.po to Malayalam
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Ani Peter <apeter@redhat.com>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-02-16 07:14-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-06-12 13:10+0530\n"
+"Last-Translator: Ani Peter <apeter@redhat.com>\n"
+"Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
@@ -33,7 +34,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
+msgstr "%s ചേര്‍ക്കുന്നതിനായി വോള്യം ഗ്രൂപ്പ് തിരഞ്ഞെടുക്കുക:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -45,28 +46,28 @@ msgstr ""
 #. ##some context.
 #: src/InputController.py:84
 msgid "Name"
-msgstr ""
+msgstr "പേര്"
 
 #: src/InputController.py:85
 msgid "Size"
-msgstr ""
+msgstr "വലിപ്പം"
 
 #: src/InputController.py:86
 msgid "Entity Type"
-msgstr ""
+msgstr "എന്‍റ്റിറ്റി ടൈപ്പ്"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "അലോക്കേറ്റ് ചെയ്തിട്ടില്ലാത്ത ഫിസിക്കല്‍ വോള്യം"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "ഇനിഷ്യലൈസ് ചെയ്തിട്ടില്ലാത്ത ഡിസ്ക്ക് എന്‍റിറ്റി"
 
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
+msgstr "%s എന്ന വോള്യം ഗ്രൂപ്പിലേക്ക് ചേര്‍ക്കുന്നതിനായി ഡിസ്ക്ക് എന്‍റിറ്റികളെ തിരഞ്ഞെടുക്കുക: "
 
 #: src/InputController.py:92
 msgid ""
@@ -80,31 +81,33 @@ msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
+"ഈ വോള്യം ഗ്രൂപ്പില്‍ %s എന്ന പേരില്‍ ഒരു ലോജിക്കല്‍ വോള്യം നിലവിലുണ്ട്.  ഒരേ പേരില്‍ പല "
+"വോള്യം ഗ്രൂപ്പുകള്‍ പാടില്ല."
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
+"%s എന്ന പേരില്‍ ഒരു ലോജിക്കല്‍ വോള്യം നിലവിലുണ്ട്.  ഒരേ പേരില്‍ പല "
+"വോള്യം ഗ്രൂപ്പുകള്‍ പാടില്ല."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "പുതിയ ലോജിക്കല്‍ വോള്യമിന് ഒരു പേര് കൊടുത്തിരിക്കണം"
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "പുതിയ വോള്യം ഗ്രൂപ്പിന് ഒരു പേര് കൊടുത്തിരിക്കണം"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "നിര്‍ദ്ദേശിച്ചിട്ടുളള മൌണ്ട് പോയിന്‍റ് %s നിലവില്ല. അത് ഉണ്ടാക്കണമെന്ന് നിങ്ങള്‍ക്ക് ആഗ്രഹമുണ്ടോ?"
 
 #: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "അപ്രതീക്ഷിതമായി %s എന്ന മൌണ്ട് പോയിന്‍റിന്‍റെ നിര്‍മ്മാണം പരാജയപ്പെട്ടിരിക്കുന്നു."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
@@ -114,20 +117,20 @@ msgstr ""
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "ഈ വോള്യം ഗ്രൂപ്പിലെ ലോജിക്കല്‍ വോള്യമിന്‍റെ എണ്ണം അധിര് കവിഞ്ഞിരിക്കുന്നു."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "ഈ വോള്യം ഗ്രൂപ്പിലെ ഫിസിക്കല്‍ വോള്യമിന്‍റെ എണ്ണം അധിര് കവിഞ്ഞിരിക്കുന്നു."
 
 #: src/InputController.py:112
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr ""
+msgstr "ഈ വോള്യം ഗ്രൂപ്പിലേക്ക് %sല്‍ കൂടുതല്‍ ഫിസിക്കല്‍ വോള്യമുകള്‍ ചേര്‍ക്കുവാന്‍ കഴിയില്ല."
 
 #: src/InputController.py:114
 #, python-format
@@ -136,10 +139,13 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
+"%s എന്ന വോള്യം ഗ്രൂപ്പില്‍ ഇനി പുതിയ ലോജിക്കല്‍ വോള്യമുകള്‍ക്കായ് മതിയായ സ്ഥലം "
+"ലഭ്യമല്ല. ഇത് സാധ്യമാക്കുന്നതിനായി വോള്യം ഗ്രൂപ്പിലേക്ക് ഒരു ഫിസിക്കല്‍ വോള്യം കൂടുതല്‍ ചേര്‍ക്കുന്നതാവും "
+"ഉചിതം."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "ഒരു സ്നാപ്പ്ഷോട്ടിന്‍റെ മറ്റൊരു സ്നാപ്പ്ഷോട്ട് ലഭ്യമല്ല."
 
 #: src/InputController.py:118
 #, python-format
@@ -147,6 +153,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"%s എന്ന ലോജിക്കല്‍ വോള്യമിന് സ്നാപ്പ്ഷോട്ടുകള്‍ ലഭ്യമാണ്: %s currently associated with it. ദയവായി "
+"ആദ്യം തന്നെ സ്നാപ്പ്ഷോട്ട് നീക്കം ചെയ്യുക."
 
 #: src/InputController.py:119
 #, python-format
@@ -154,10 +162,11 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"%s എന്ന ലോജിക്കല്‍ വോള്യമിന് സ്നാപ്പ്ഷോട്ടുകള്‍ ലഭ്യമാണ്: %s currently associated with it. ദയവായി "
+"ആദ്യം തന്നെ സ്നാപ്പ്ഷോട്ടുകള്‍ നീക്കം ചെയ്യുക."
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:123
@@ -167,6 +176,8 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"പ്രധാനമായ മുന്നറിയ: %s എന്ന ലോജിക്കല്‍ വോള്യമില്‍ %s എന്ന ഫൈല്‍ സിസ്റ്റമുണ്ട് മാത്രമല്ല, "
+"നിലവില്‍ %sലേക്ക് മൌണ്ട് ചെയ്തിരിക്കുകയാണ്. മൌണ്ട് ചെയ്തിട്ടുളള ഈ ഫൈല്‍ സിസ്റ്റമിലുളള വിവരങ്ങള്‍ നഷ്ടപ്പെടുത്തണം എന്ന് നിങ്ങള്‍ക്ക് ഉറപ്പാണോ?"
 
 #: src/InputController.py:125
 #, python-format
@@ -174,57 +185,60 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"%s എന്ന ലോജിക്കല്‍ വോള്യം നിലവില്‍ %sലേക്ക് മൌണ്ട് ചെയ്തിരിക്കുകയാണ്. നിങ്ങളുടെ ആവശ്യം "
+"സാധ്യമാക്കുന്നതിനായി ഇത് അണ്‍മൌണ്ട് ചെയ്യേണ്ടതുണ്ട്. അങ്ങനെ ചെയ്യണമെന്ന് നിങ്ങള്‍ക്ക് "
+"ഉറപ്പാണോ?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:131
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "%sല്‍ ഉപയോഗത്തിലില്ലാത്ത സ്ഥലം"
 
 #: src/InputController.py:132
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s മെഗാബൈറ്റുകള്‍"
 
 #: src/InputController.py:133
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s കിലോബൈറ്റുകള്‍"
 
 #: src/InputController.py:134
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s ഗിഗാബൈറ്റുകള്‍"
 
 #: src/InputController.py:135
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s എക്സ്റ്റന്‍ഡുകള്‍"
 
 #: src/InputController.py:137
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
+msgstr "വോള്യം ഗ്രൂപ്പില്‍ ഇനി മിച്ചമുളള ഫ്രീ സ്പെയ്സ് :\n"
 
 #: src/InputController.py:138
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "ഈ വോള്യമില്‍ ഇനി മിച്ചമുളള സ്പെയ്സ് :\n"
 
 #: src/InputController.py:140
 msgid "Extents"
-msgstr ""
+msgstr "എക്സ്റ്റന്‍ഡുകള്‍"
 
 #: src/InputController.py:141
 msgid "Gigabytes"
-msgstr ""
+msgstr "ഗിഗാബൈറ്റുകള്‍"
 
 #: src/InputController.py:142
 msgid "Megabytes"
-msgstr ""
+msgstr "മെഗാബൈറ്റുകള്‍"
 
 #: src/InputController.py:143
 msgid "Kilobytes"
-msgstr ""
+msgstr "കിലോബൈറ്റുകള്‍"
 
 #: src/InputController.py:145
 #, python-format
@@ -263,8 +277,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
 #: src/InputController.py:153
@@ -362,8 +375,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -409,7 +421,7 @@ msgstr ""
 
 #: src/InputController.py:1307
 msgid "Options"
-msgstr ""
+msgstr "ഉപാധികള്‍"
 
 #: src/InputController.py:1341
 #, python-format
@@ -418,7 +430,7 @@ msgstr ""
 
 #: src/InputController.py:1343
 msgid "Create New Logical Volume"
-msgstr ""
+msgstr "പുതിയ ലോജിക്കല്‍ വോള്യം ഉണ്ടാക്കുക"
 
 #: src/InputController.py:1346
 #, python-format
@@ -427,7 +439,7 @@ msgstr ""
 
 #: src/InputController.py:1349
 msgid "Edit Logical Volume"
-msgstr ""
+msgstr "ലോജിക്കല്‍ വോള്യമില്‍ മാറ്റം വരുത്തുക"
 
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -450,8 +462,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1537
@@ -654,7 +665,7 @@ msgstr ""
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
@@ -678,7 +689,7 @@ msgstr ""
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
@@ -726,7 +737,7 @@ msgstr ""
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
@@ -814,8 +825,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
@@ -870,19 +880,19 @@ msgstr ""
 
 #: src/lvmui_constants.py:90
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "ബൈറ്റുകള്‍"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -891,39 +901,39 @@ msgstr ""
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
-msgstr ""
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:99
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:100
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvmui_constants.py:101
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:102
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:103
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:104
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvmui_constants.py:105
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "Properties for"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
@@ -1096,23 +1106,23 @@ msgstr ""
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (local)"
 
 #: src/Filesystem.py:399
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (clustered)"
 
 #: src/Filesystem.py:423
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (local)"
 
 #: src/Filesystem.py:470
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (clustered)"
 
 #: src/Segment.py:44
 msgid "Stripe"
-msgstr ""
+msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1129,51 +1139,51 @@ msgstr ""
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "Add Physical Volume to VG"
 
 #: src/lvui.glade.h:13
 msgid ""
@@ -1257,7 +1267,7 @@ msgstr ""
 
 #: src/lvui.glade.h:35
 msgid "Meg"
-msgstr ""
+msgstr "Meg"
 
 #: src/lvui.glade.h:36
 msgid ""
@@ -1342,18 +1352,26 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
-msgstr ""
+msgstr "<b>Filesystem</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV Properties</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Size</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
@@ -1437,15 +1455,15 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Destination</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Migration Policy</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "Anywhere - not implemented"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
@@ -1496,3 +1514,4 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr ""
+
