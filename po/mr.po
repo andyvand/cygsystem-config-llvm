@@ -1,3 +1,22 @@
+# translation of mr.po to Marathi
+# This file is distributed under the same license as the PACKAGE package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Rahul Bhalerao <rbhalera@redhat.com>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mr\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-02-16 07:14-0500\n"
+"PO-Revision-Date: 2006-06-13 15:27+0530\n"
+"Last-Translator: Rahul Bhalerao <rbhalera@redhat.com>\n"
+"Language-Team: Marathi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:30
 #, python-format
@@ -30,12 +49,14 @@ msgid "Name"
 msgstr ""
 
 #: src/InputController.py:85
+#, fuzzy
 msgid "Size"
-msgstr ""
+msgstr "आकार"
 
 #: src/InputController.py:86
+#, fuzzy
 msgid "Entity Type"
-msgstr ""
+msgstr "प्रकार"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
@@ -65,8 +86,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 
 #: src/InputController.py:98
@@ -79,8 +99,7 @@ msgstr ""
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
 
 #: src/InputController.py:104
@@ -138,8 +157,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:123
@@ -245,8 +263,7 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
 #: src/InputController.py:153
@@ -286,17 +303,19 @@ msgstr ""
 
 #: src/InputController.py:159
 #, python-format
+#, fuzzy
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "सर्व?"
 
 #: src/InputController.py:160
 #, python-format
+#, fuzzy
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "सर्व?"
 
 #: src/InputController.py:356
 #, python-format
@@ -344,8 +363,7 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -367,8 +385,9 @@ msgid "The path you specified does not exist."
 msgstr ""
 
 #: src/InputController.py:677
+#, fuzzy
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "यंत्र."
 
 #: src/InputController.py:748
 #, python-format
@@ -399,17 +418,20 @@ msgid "Create A Snapshot of %s"
 msgstr ""
 
 #: src/InputController.py:1343
+#, fuzzy
 msgid "Create New Logical Volume"
-msgstr ""
+msgstr "नविन"
 
 #: src/InputController.py:1346
 #, python-format
+#, fuzzy
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "संपादन करा"
 
 #: src/InputController.py:1349
+#, fuzzy
 msgid "Edit Logical Volume"
-msgstr ""
+msgstr "तार्किक खंड संपादा"
 
 #: src/InputController.py:1502
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -432,8 +454,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1532
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1537
@@ -485,8 +506,9 @@ msgid "Please specify mount point"
 msgstr ""
 
 #: src/InputController.py:2011
+#, fuzzy
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "ext2 ext3?"
 
 #: src/InputController.py:2045
 msgid ""
@@ -531,8 +553,9 @@ msgid "Removing Mirror from Logical Volume"
 msgstr ""
 
 #: src/CommandHandler.py:158
+#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr ""
+msgstr "आरंभित आहे"
 
 #: src/CommandHandler.py:169
 msgid "Adding Physical Volume to Volume Group"
@@ -587,20 +610,23 @@ msgid "Volume Group Name:   "
 msgstr ""
 
 #: src/lvm_model.py:59
+#, fuzzy
 msgid "System ID:   "
-msgstr ""
+msgstr "प्रणाली "
 
 #: src/lvm_model.py:60
+#, fuzzy
 msgid "Format:   "
-msgstr ""
+msgstr "स्वरुप(फॉरमॅट) "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
 msgstr ""
 
 #: src/lvm_model.py:62
+#, fuzzy
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "आकार "
 
 #: src/lvm_model.py:63
 msgid "Available Space:   "
@@ -611,12 +637,14 @@ msgid "Total Number of Extents:   "
 msgstr ""
 
 #: src/lvm_model.py:65
+#, fuzzy
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "मुक्त "
 
 #: src/lvm_model.py:66
+#, fuzzy
 msgid "Extent Size:   "
-msgstr ""
+msgstr "आकार "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
@@ -643,8 +671,9 @@ msgid "Logical Volume Name:   "
 msgstr ""
 
 #: src/lvm_model.py:74
+#, fuzzy
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "आकार "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
@@ -655,20 +684,23 @@ msgid "Number of Stripes:   "
 msgstr ""
 
 #: src/lvm_model.py:77
+#, fuzzy
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "आकार "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
 msgstr ""
 
 #: src/lvm_model.py:81
+#, fuzzy
 msgid "Partition Type:   "
-msgstr ""
+msgstr "विभाजन प्रकार "
 
 #: src/lvm_model.py:82
+#, fuzzy
 msgid "Size:   "
-msgstr ""
+msgstr "आकार "
 
 #: src/lvm_model.py:83
 msgid "Mount Point:   "
@@ -679,24 +711,27 @@ msgid "Mount Point when Rebooted:   "
 msgstr ""
 
 #: src/lvm_model.py:85
+#, fuzzy
 msgid "File System:   "
-msgstr ""
+msgstr "प्रणाली "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
 msgstr ""
 
 #: src/lvm_model.py:88
+#, fuzzy
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "आकार "
 
 #: src/lvm_model.py:89
 msgid "Space Used:   "
 msgstr ""
 
 #: src/lvm_model.py:90
+#, fuzzy
 msgid "Space Free:   "
-msgstr ""
+msgstr "मुक्त "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
@@ -715,25 +750,30 @@ msgid "Not initializable:"
 msgstr ""
 
 #: src/lvm_model.py:97
+#, fuzzy
 msgid "Extended partition"
-msgstr ""
+msgstr "विस्तारित विभाजन"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
+#, fuzzy
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "विभाजन"
 
 #: src/lvm_model.py:100
+#, fuzzy
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "विदेश विभाजन"
 
 #: src/lvm_model.py:101
+#, fuzzy
 msgid "Autopartition failure"
-msgstr ""
+msgstr "स्वयंविभाजन"
 
 #: src/lvm_model.py:251
+#, fuzzy
 msgid "Partition manually"
-msgstr ""
+msgstr "विभाजन स्वहस्ते"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
@@ -744,8 +784,9 @@ msgid "Note:"
 msgstr ""
 
 #: src/lvm_model.py:290
+#, fuzzy
 msgid "Initialize manually"
-msgstr ""
+msgstr "स्वहस्ते"
 
 #: src/lvm_model.py:789
 msgid "Number of mirror images:"
@@ -769,44 +810,48 @@ msgid "/   Root Filesystem"
 msgstr ""
 
 #: src/lvm_model.py:896 src/Filesystem.py:120
+#, fuzzy
 msgid "None"
-msgstr ""
+msgstr "काही नाही"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
 #, python-format
+#, fuzzy
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
+msgstr "सर्व?"
 
 #: src/lvmui_constants.py:52
 #, python-format
+#, fuzzy
 msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
-msgstr ""
+msgstr "सर्व?"
 
 #: src/lvmui_constants.py:53
 #, python-format
+#, fuzzy
 msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
-msgstr ""
+msgstr "सर्व?"
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
 #, python-format
+#, fuzzy
 msgid ""
 "You are about to initialize unpartitioned disk %s. It is advisable, although "
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
-msgstr ""
+msgstr "विभाजन विभाजन?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -830,16 +875,19 @@ msgstr ""
 
 #: src/lvmui_constants.py:65
 #, python-format
+#, fuzzy
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "प्रणाली चूक"
 
 #: src/lvmui_constants.py:84
+#, fuzzy
 msgid "Free"
-msgstr ""
+msgstr "मुक्त"
 
 #: src/lvmui_constants.py:85
+#, fuzzy
 msgid "Free space"
-msgstr ""
+msgstr "मुक्त जागा"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
@@ -851,8 +899,9 @@ msgid "Unpartitioned space on %s"
 msgstr ""
 
 #: src/lvmui_constants.py:90
+#, fuzzy
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
 msgid "MB"
@@ -868,8 +917,9 @@ msgstr ""
 
 #. File System Types
 #: src/lvmui_constants.py:97
+#, fuzzy
 msgid "No Filesystem"
-msgstr ""
+msgstr "नाही"
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
@@ -931,8 +981,9 @@ msgstr ""
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
+#, fuzzy
 msgid "No Volume Selected"
-msgstr ""
+msgstr "नाही"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
@@ -1021,8 +1072,9 @@ msgstr ""
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:197
+#, fuzzy
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "विभाजन"
 
 #: src/Filesystem.py:9
 #, python-format
@@ -1046,35 +1098,40 @@ msgstr ""
 
 #: src/Filesystem.py:13
 #, python-format
+#, fuzzy
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "प्रणाली चूक"
 
 #: src/Filesystem.py:14
 #, python-format
+#, fuzzy
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "प्रणाली चूक"
 
 #: src/Filesystem.py:15
 #, python-format
+#, fuzzy
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "प्रणाली चूक"
 
 #: src/Filesystem.py:16
 #, python-format
+#, fuzzy
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "सुधारणा करा प्रणाली चूक"
 
 #: src/Filesystem.py:125
+#, fuzzy
 msgid "Unknown filesystem"
-msgstr ""
+msgstr "अपरिचित"
 
 #: src/Filesystem.py:352
 msgid "GFS2 (local)"
@@ -1106,8 +1163,9 @@ msgstr ""
 
 #: src/PhysicalVolume.py:142
 #, python-format
+#, fuzzy
 msgid "Partition %s"
-msgstr ""
+msgstr "विभाजन"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1154,20 +1212,23 @@ msgid "8"
 msgstr ""
 
 #: src/lvui.glade.h:12
+#, fuzzy
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "जोडा"
 
 #: src/lvui.glade.h:13
+#, fuzzy
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr ""
+msgstr "जोडा"
 
 #: src/lvui.glade.h:15
+#, fuzzy
 msgid ""
 "Create New\n"
 "Logical Volume"
-msgstr ""
+msgstr "नविन"
 
 #: src/lvui.glade.h:17
 msgid "Create Snapshot"
@@ -1180,12 +1241,14 @@ msgid ""
 msgstr ""
 
 #: src/lvui.glade.h:20
+#, fuzzy
 msgid "Edit Properties"
-msgstr ""
+msgstr "संपादन करा"
 
 #: src/lvui.glade.h:21
+#, fuzzy
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "यंत्र"
 
 #: src/lvui.glade.h:22
 msgid ""
@@ -1198,24 +1261,27 @@ msgid "Extend Volume Group"
 msgstr ""
 
 #: src/lvui.glade.h:25
+#, fuzzy
 msgid "Format"
-msgstr ""
+msgstr "स्वरुप(फॉरमॅट)"
 
 #: src/lvui.glade.h:26
 msgid "Initialize"
 msgstr ""
 
 #: src/lvui.glade.h:27
+#, fuzzy
 msgid "Initialize Block Device"
-msgstr ""
+msgstr "यंत्र"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Entity"
 msgstr ""
 
 #: src/lvui.glade.h:29
+#, fuzzy
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "यंत्र"
 
 #: src/lvui.glade.h:30
 msgid "Kilo"
@@ -1252,46 +1318,54 @@ msgid "Name for Volume Group: "
 msgstr ""
 
 #: src/lvui.glade.h:39
+#, fuzzy
 msgid "New Volume Group"
-msgstr ""
+msgstr "नविन"
 
 #: src/lvui.glade.h:40
+#, fuzzy
 msgid "New Volume Group Form"
-msgstr ""
+msgstr "नविन"
 
 #: src/lvui.glade.h:41
+#, fuzzy
 msgid "Physical Extent Size: "
-msgstr ""
+msgstr "आकार "
 
 #: src/lvui.glade.h:42
+#, fuzzy
 msgid ""
 "Remove \n"
 "Logical Volume"
-msgstr ""
+msgstr "काढून टाका"
 
 #: src/lvui.glade.h:44
+#, fuzzy
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
-msgstr ""
+msgstr "काढून टाका"
 
 #: src/lvui.glade.h:46
+#, fuzzy
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
-msgstr ""
+msgstr "काढून टाका"
 
 #: src/lvui.glade.h:48
+#, fuzzy
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
-msgstr ""
+msgstr "काढून टाका"
 
 #: src/lvui.glade.h:50
+#, fuzzy
 msgid ""
 "Remove volume \n"
 "from LVM"
-msgstr ""
+msgstr "काढून टाका"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
@@ -1334,28 +1408,33 @@ msgid "<b>LV Properties</b>"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:12
+#, fuzzy
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b> आकार</b>"
 
 #: src/lv_edit_props.glade.h:13
+#, fuzzy
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "जोडा"
 
 #: src/lv_edit_props.glade.h:14
+#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr ""
+msgstr "नविन"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:16
+#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
+msgstr "मुक्त"
 
 #: src/lv_edit_props.glade.h:17
+#, fuzzy
 msgid "Free space remaining label"
-msgstr ""
+msgstr "मुक्त"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
@@ -1398,12 +1477,14 @@ msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
+#, fuzzy
 msgid "Size beg"
-msgstr ""
+msgstr "आकार"
 
 #: src/lv_edit_props.glade.h:29
+#, fuzzy
 msgid "Size end"
-msgstr ""
+msgstr "आकार"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
@@ -1464,8 +1545,9 @@ msgid "Migrate anywhere even if that reduces performance"
 msgstr ""
 
 #: src/migrate_extents.glade.h:13
+#, fuzzy
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "नविन"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
@@ -1478,3 +1560,4 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr ""
+
