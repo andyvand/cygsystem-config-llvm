@@ -2,7 +2,7 @@
 Summary: A utility for graphically configuring Logical Volumes.
 Name: @PACKAGE@
 Version: @VERSION@
-Release: 1.0
+Release: 1.2.FC6
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
 License: GPL
@@ -14,6 +14,7 @@ Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas
 Requires: lvm2 >= 2.00.20
 Requires: rhpl >= 0.148.2
 Requires: python >= 2.3
+BuildRequires: perl(XML::Parser) gettext
 
 %description
 system-config-lvm is a utility for graphically configuring Logical Volumes.

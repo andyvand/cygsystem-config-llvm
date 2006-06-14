@@ -18,7 +18,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
 "\n"
 "\n"
 
@@ -99,7 +100,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s என்ற பெயரில் வால்யூம் குழு ஏற்கெனவே உள்லது. வேறு பெயரை தேர்வு செய்யவும்."
 
 #: src/InputController.py:98
@@ -112,7 +114,8 @@ msgstr "வால்யூம் குழுவின் பெயரை கு
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "சிறப்பு ஏற்றப்புள்ளி , %s, ஏற்கெனவே உள்ளது. இதை உருவாக்க விருப்பமா?"
 
 #: src/InputController.py:104
@@ -178,7 +181,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:121
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "மாதிரி தொழிற்சாலையில் குறிப்பிடப்படாத வகை மாற்றம் நிகழ்துள்ளது. வேலையை முடிக்க "
 "முடியவில்லை."
@@ -263,8 +267,8 @@ msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"அதிகபட்ச பருப்பொருள் தொகுதிகள் புலம் 1 லிருந்து 256 க்குட்பட்ட இயல் எண்களை மட்டும் கொண்டிருக்க "
-"வேண்டும்."
+"அதிகபட்ச பருப்பொருள் தொகுதிகள் புலம் 1 லிருந்து 256 க்குட்பட்ட இயல் எண்களை மட்டும் "
+"கொண்டிருக்க வேண்டும்."
 
 #: src/InputController.py:147
 msgid ""
@@ -298,7 +302,8 @@ msgstr ""
 
 #: src/InputController.py:152
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s ஐ %s வால்யூம் குழுவிலிருந்து நீக்க விருப்பமா?"
 
 #: src/InputController.py:153
@@ -411,7 +416,8 @@ msgstr ""
 
 #: src/InputController.py:571
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:602
@@ -498,7 +504,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1532
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1537
@@ -862,7 +869,8 @@ msgstr "ஒன்றுமில்லை"
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr "வட்டு உட்பொருள் %s லிலுள்ள அனைத்து தரவுகளும் இழக்கப்படும்! நீங்கள் இதனை ஆரம்பிக்க வேண்டுமா?"
+msgstr ""
+"வட்டு உட்பொருள் %s லிலுள்ள அனைத்து தரவுகளும் இழக்கப்படும்! நீங்கள் இதனை ஆரம்பிக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -884,7 +892,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "வெற்று இட வட்டு %s டுடன் %sஐ துவக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:55
@@ -918,7 +927,8 @@ msgstr "கோரிக்கையை செயல்படுத்த மு�
 #: src/lvmui_constants.py:65
 #, fuzzy, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+msgstr ""
+"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1145,14 +1155,16 @@ msgstr ""
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+msgstr ""
+"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/Filesystem.py:15
 #, fuzzy, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+msgstr ""
+"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/Filesystem.py:16
 #, fuzzy, python-format
@@ -1600,4 +1612,3 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "பொது அறிவை பயன்படுத்து"
-
