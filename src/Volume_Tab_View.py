@@ -17,6 +17,9 @@ from lvmui_constants import *
 from WaitMsg import WaitMsg
 from execute import ForkedCommand, execWithCapture
 
+from Cluster import Cluster
+
+
 import stat
 import gettext
 _ = gettext.gettext
@@ -64,6 +67,10 @@ class Volume_Tab_View:
             if ps_out.find('clvmd') == -1:
                 msg = _("LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not running. Start daemon with command:\nservice clvmd start \nor, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
                 should_exit = True
+            else:
+                if not Cluster().running():
+                    msg = _("LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\nEither wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
+                    should_exit = True
         else:
             msg = _("%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/lvm/lvm.conf).")
             msg = msg % PROGNAME
