@@ -2,7 +2,7 @@
 Summary: A utility for graphically configuring Logical Volumes.
 Name: @PACKAGE@
 Version: @VERSION@
-Release: 1.2.FC6
+Release: 1.0%{?dist}
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
 License: GPL
@@ -52,6 +52,8 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Jul 10 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.19-1.0
+  - Version bump
 * Thu Jun 01 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.18-1.0
   - Version bump
 * Fri May 12 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.17-1.0
