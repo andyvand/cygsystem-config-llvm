@@ -114,6 +114,7 @@ EXCEEDING_MAX_PVS=_("At most %s Physical Volumes can be added to this Volume Gro
 NOT_ENOUGH_SPACE_FOR_NEW_LV=_("Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 
 ALREADY_A_SNAPSHOT=_("A snapshot of a snapshot is not supported.")
+CANNOT_SNAPSHOT_A_MIRROR=_("A snapshot of a mirrored Logical Volume is not supported.")
 
 CANNOT_REMOVE_UNDER_SNAPSHOT=_("Logical volume %s has snapshot %s currently associated with it. Please remove the snapshot first.")
 CANNOT_REMOVE_UNDER_SNAPSHOTS=_("Logical volume %s has snapshots: %s currently associated with it. Please remove snapshots first.")
@@ -1058,15 +1059,18 @@ class InputController:
           return
       
       # checks
-      if self.command_handler.is_dm_snapshot_loaded() == False:
-          self.errorMessage(NO_DM_SNAPSHOT)
+      if lv.is_snapshot():
+          self.errorMessage(ALREADY_A_SNAPSHOT)
+          return
+      if lv.is_mirrored():
+          self.errorMessage(CANNOT_SNAPSHOT_A_MIRROR)
           return
       t_exts, u_exts, f_exts = vg.get_extent_total_used_free()
       if f_exts == 0:
           self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vg.get_name())
           return
-      if lv.is_snapshot():
-          self.errorMessage(ALREADY_A_SNAPSHOT)
+      if self.command_handler.is_dm_snapshot_loaded() == False:
+          self.errorMessage(NO_DM_SNAPSHOT)
           return
       
       dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler, True)
