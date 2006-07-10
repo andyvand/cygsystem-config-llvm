@@ -15,11 +15,21 @@ class Parted:
     def getPartitions(self, devpath):
         sectorSize = FDisk().getDeviceGeometry(devpath)[1]
         parts = list()
-        # try new format
-        res, status = execWithCaptureStatus(PARTED, [PARTED, devpath, 'unit', 'b', 'print', '-s'])
+        
+        args = [PARTED, devpath]
+        if self.version() >= '1.6.23' :
+            # parted versioned 1.6.23 and above has command "unit",
+            # 1.6.22 and bellow displays in MBs
+            args.append('unit')
+            args.append('b')
+        args.append('print')
+        args.append('-s')
+        res, status = execWithCaptureStatus(PARTED, args)
         if status != 0:
-            # try old format
-            res, status = execWithCaptureStatus(PARTED, [PARTED, devpath, 'print', '-s'])
+            msg = 'parted failed on ' + devpath
+            print msg
+            raise msg
+        
         lines = res.splitlines()
         for line in lines:
             if not re.match('^[0-9]', line):
@@ -79,6 +89,10 @@ class Parted:
 
 
     def __to_bytes(self, word):
+        # parted versioned 1.6.23 and above has command "unit",
+        # 1.6.22 and bellow displays in MBs
+        # this function handles both
+        
         t = word.strip().lower()
         multiplier = 1024 * 1024
         if t.endswith('b') or t.endswith('B'):
@@ -102,3 +116,12 @@ class Parted:
                 t = t.rstrip('t')
                 multiplier = 1024 * 1024 * 1024 * 1024
         return int(float(t) * multiplier)
+
+
+    def version(self):
+        res, status = execWithCaptureStatus(PARTED, [PARTED, '-v'])
+        res = res.strip()
+        words = res.split()
+        if len(words) != 3:
+            raise "unable to get parted version"
+        return words[2]
