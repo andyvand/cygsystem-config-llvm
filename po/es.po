@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-10 22:30-0300\n"
+"PO-Revision-Date: 2006-07-11 18:28-0300\n"
 "Last-Translator: Domingo E. Becker <beckerde@hotmail.com>\n"
 "Language-Team: Spanish <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -995,6 +995,8 @@ msgid ""
 "LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\n"
 "Either wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM fue configurado para usar el mecanismo de Bloqueo de Cluster, pero el cluster no está completo.\n"
+"Puede esperar a que el cluster esté completo o bien deshabilitar el bloqueo de cluster (locking_type=1 en /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
