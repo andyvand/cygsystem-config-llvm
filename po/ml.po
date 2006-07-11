@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-11 09:49+0530\n"
+"PO-Revision-Date: 2006-07-11 09:56+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
@@ -1398,9 +1398,8 @@ msgid "New Volume Group"
 msgstr "പുതിയ വോള്യം ഗ്രൂപ്പ്"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "ഫിസിക്കല്‍ എക്സ്റ്റന്‍റ് വലിപ്പം: "
+msgstr "Physical Extent Size"
 
 #: src/lvui.glade.h:42
 msgid ""
