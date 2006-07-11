@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-06-29 18:38+0530\n"
+"PO-Revision-Date: 2006-07-11 09:49+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 "\n"
 
@@ -88,10 +88,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
-"%s എന്ന പേരില്‍ ഒരു ലോജിക്കല്‍ വോള്യം നിലവിലുണ്ട്.  ഒരേ പേരില്‍ പല വോള്യം ഗ്രൂപ്പുകള്‍ പാടില്ല."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "%s എന്ന പേരില്‍ ഒരു ലോജിക്കല്‍ വോള്യം നിലവിലുണ്ട്.  ഒരേ പേരില്‍ പല വോള്യം ഗ്രൂപ്പുകള്‍ പാടില്ല."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -103,10 +101,8 @@ msgstr "പുതിയ വോള്യം ഗ്രൂപ്പിന് ഒര
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"നിര്‍ദ്ദേശിച്ചിട്ടുളള മൌണ്ട് പോയിന്‍റ് %s നിലവില്ല. അത് ഉണ്ടാക്കണമെന്ന് നിങ്ങള്‍ക്ക് ആഗ്രഹമുണ്ടോ?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "നിര്‍ദ്ദേശിച്ചിട്ടുളള മൌണ്ട് പോയിന്‍റ് %s നിലവില്ല. അത് ഉണ്ടാക്കണമെന്ന് നിങ്ങള്‍ക്ക് ആഗ്രഹമുണ്ടോ?"
 
 #: src/InputController.py:104
 #, python-format
@@ -151,9 +147,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "ഒരു സ്നാപ്പ്ഷോട്ടിന്‍റെ മറ്റൊരു സ്നാപ്പ്ഷോട്ട് ലഭ്യമല്ല."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "ഒരു സ്നാപ്പ്ഷോട്ടിന്‍റെ മറ്റൊരു സ്നാപ്പ്ഷോട്ട് ലഭ്യമല്ല."
+msgstr "ഒരു മിറര്‍ ചെയ്ത ലോജിക്കല്‍ വോള്യമിന്‍റെ സ്നാപ്പ്ഷോട്ട് ലഭ്യമല്ല."
 
 #: src/InputController.py:119
 #, python-format
@@ -174,8 +169,7 @@ msgstr ""
 "ദയവായി ആദ്യം തന്നെ സ്നാപ്പ്ഷോട്ടുകള്‍ നീക്കം ചെയ്യുക."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:124
@@ -290,8 +284,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s എന്ന ലോജിക്കല്‍ വോള്യമില്‍ നിന്നും %s നീക്കം ചെയ്യണമെന്ന് നിങ്ങള്‍ക്ക് ഉറപ്പാണോ?"
 
 #: src/InputController.py:154
@@ -406,10 +399,8 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 
 #: src/InputController.py:610
 #, python-format
@@ -495,8 +486,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1550
@@ -526,8 +516,7 @@ msgstr ""
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"\"_mlog\" അല്ലെങ്കില്‍ \"_mimage\" എന്നിവയുളള പേരുകള്‍ റിസേര്‍വ് ചെയ്തിട്ടുളള കീവേര്‍ഡുകളാണ്."
+msgstr "\"_mlog\" അല്ലെങ്കില്‍ \"_mimage\" എന്നിവയുളള പേരുകള്‍ റിസേര്‍വ് ചെയ്തിട്ടുളള കീവേര്‍ഡുകളാണ്."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -552,8 +541,7 @@ msgstr "മൌണ്ട് പോയിന്‍റ് വ്യക്തമാ�
 
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"ext2ല്‍ നിന്നും ext3ലേക്ക് അപ്ഗ്രേഡ് ചെയ്യുന്പോള്‍ ലോജിക്കല്‍ വോള്യമിലുളള വിവരങ്ങള്‍ സംരക്ഷിക്കണമോ?"
+msgstr "ext2ല്‍ നിന്നും ext3ലേക്ക് അപ്ഗ്രേഡ് ചെയ്യുന്പോള്‍ ലോജിക്കല്‍ വോള്യമിലുളള വിവരങ്ങള്‍ സംരക്ഷിക്കണമോ?"
 
 #: src/InputController.py:2062
 msgid ""
@@ -640,9 +628,8 @@ msgid "Completing Extent Migration"
 msgstr ""
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "എസ്റ്റന്‍റഡ് പാര്‍ട്ടീഷന്‍"
+msgstr "Rereading partition table"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -882,8 +869,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
@@ -917,8 +903,7 @@ msgstr ""
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"%s command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1311,9 +1296,8 @@ msgstr ""
 "ചേര്‍ക്കുക"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (clustered)"
+msgstr "Clustered"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1392,14 +1376,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "ഏറ്റവും കൂടുതല്‍ ലോജിക്കല്‍ വോള്യമുകള്‍: "
+msgstr "Maximum Logical Volumes"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "ഏറ്റവും കൂടുതല്‍ ഫിസിക്കല്‍ വോള്യമുകള്‍: "
+msgstr "Maximum Physical Volumes"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1469,9 +1451,8 @@ msgid "Some text"
 msgstr "ചില ടെക്സ്റ്റ്"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "വോള്യം ഗ്രൂപ്പിന്‍റെ പേര്:   "
+msgstr "Volume Group Name"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1659,8 +1640,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "വോള്യം ഗ്രൂപ്പിന് പേര്: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "പുതിയ വോള്യം ഗ്രൂപ്പ് ഫോറം"
