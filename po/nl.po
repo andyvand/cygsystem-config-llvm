@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-05-01 21:43+0200\n"
+"PO-Revision-Date: 2006-07-12 23:06+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,6 +27,13 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  Niet in staat om de grafische omgeving te starten. De meest\n"
+"  waarschijnlijke oorzaak van het mislukken is dat het programma niet is\n"
+"  gestart in een grafische omgeving. Start uw grafische gebruikersinterface\n"
+"  of stel uw DISPLAY-variabele in.\n"
+"                                                                                \n"
+"  De volgende uitzondering is opgetreden: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -153,9 +160,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Een snapshot van een snapshot is niet ondersteund."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Een snapshot van een snapshot is niet ondersteund."
+msgstr "Een snapshot van een mirrored Logical Volume is niet ondersteund."
 
 #: src/InputController.py:119
 #, python-format
@@ -629,9 +635,8 @@ msgid "Completing Extent Migration"
 msgstr ""
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Extended partitie"
+msgstr "Opnieuw inlezen van de partitietabel"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -763,11 +768,11 @@ msgstr "Vrije ruimte:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
-msgstr "Totaal physical extents:   "
+msgstr "Totaal Physical Extents:   "
 
 #: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "Toegewezen Physical Extents:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
@@ -812,15 +817,15 @@ msgstr "Initialiseer handmatig"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Geclusterd:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Waar"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Onwaar"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1121,7 +1126,7 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Geclusterd VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1131,7 +1136,7 @@ msgstr "%s mirror-synchronisatie"
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "Even geduld terwijl de partitie wordt gemaakt"
 
 #: src/Filesystem.py:20
 #, python-format
@@ -1193,11 +1198,11 @@ msgstr "GFS (lokaal)"
 
 #: src/Filesystem.py:472
 msgid "GFS (clustered)"
-msgstr "GFS (geclustered)"
+msgstr "GFS (geclusterd)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Clusternaam bevat een ongeldig teken "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
@@ -1205,11 +1210,11 @@ msgstr ""
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Ontbrekende clusternaam"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Ontbrekende GFS-naam"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1225,7 +1230,7 @@ msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
-msgstr ""
+msgstr "Lineaire mapping"
 
 #: src/Segment.py:109
 msgid "Mirror"
@@ -1234,7 +1239,7 @@ msgstr "Mirror"
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition %s"
-msgstr ""
+msgstr "Partitie %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1291,9 +1296,8 @@ msgid ""
 msgstr ""
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (geclustered)"
+msgstr "Geclusterd"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1367,17 +1371,15 @@ msgstr "Beheer volumes"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Markeer Volume Group als 'clustered'"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Maximum Logical Volumes: "
+msgstr "Maximum Logical Volumes"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Maximum Physical Volumes: "
+msgstr "Maximum Physical Volumes"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1394,9 +1396,8 @@ msgid "New Volume Group"
 msgstr "Nieuwe Volume Group"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Physical extent grootte: "
+msgstr "Physical Extent grootte"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1440,12 +1441,11 @@ msgstr "Selecteer een Volume Group om deze PV aan toe te voegen:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Zomaar wat tekst"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Volume Group naam:   "
+msgstr "Volume Group naam"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1533,7 +1533,7 @@ msgstr "Lineair"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr "Ge-mirrored"
+msgstr "Mirrored"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
