@@ -1,7 +1,7 @@
 # translation of pt_BR.po to  Brazilian Portuguese
 # translation of pt_BR.po to Brazilian Portuguese
 # This file is distributed under the same license as the PACKAGE package.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Copyright (C) 2006 THE PACKAGE'S COPYRIGHT HOLDER.
 # David Barzilay <barzilay@redhat.com>, 2004.
 # Rodrigo Padula de Oliveira <rodrigopadula@gmail.com>, 2005, 2006.
 # Rodrigo Padula de Oliveira <rodrigopadula@projetofedora.org>, 2006.
@@ -12,14 +12,13 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-07 22:25-0300\n"
-"Last-Translator: Alexandre Cavedon <alexandre.cavedon@gmail.com>\n"
+"PO-Revision-Date: 2006-07-12 00:40-0300\n"
+"Last-Translator: Igor Pires Soares <igorsoares@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <fedora-trans-pt-br@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.2\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -166,9 +165,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Uma imagem de uma imagem não é suportada."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Uma imagem de uma imagem não é suportada."
+msgstr "Uma imagem de um Volume Lógico espelhado não é suportada."
 
 #: src/InputController.py:119
 #, python-format
@@ -388,6 +386,8 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"Para que o Grupo de Volumes seja usado com segurança em um ambiente agrupado, "
+"o rpm lvm2-cluster tem que estar instalado e o serviço clvmd tem que estar rodando."
 
 #: src/InputController.py:364
 #, python-format
@@ -704,9 +704,8 @@ msgid "Completing Extent Migration"
 msgstr "Completando Migração de Extensões"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Partição Extendida"
+msgstr "Relendo tabela de partições"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -887,15 +886,15 @@ msgstr "Inicialize manualmente"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Agrupado:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Verdadeiro"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Falso"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1198,6 +1197,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"As travas do LVM estão desabilitadas!!! \n"
+"Pode ocorrer um corrompimento maciço dos dados."
+"Habilitar travas (locking_type=1 ou 2 em /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1206,6 +1208,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"O LVM está configurado para usar o mecanismo Cluster Locking, mas o daemon "
+"clvmd não está rodando. Inicialize o daemon com este comando:\n"
+"service clvmd start \n"
+"ou, desabilite as travas do cluster (locking_type=1 em /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1214,6 +1220,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"O LVM está configurado para usar o mecanismo Cluster Locking, mas o "
+"cluster não está com quorum suficiente."
+"Espere até que o cluster fique com quorum suficiente ou desabilite as "
+"travas do cluster (locking_type=1 em /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1221,10 +1231,12 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s suporta apenas travas baseadas em arquivos e clusters (locking_type=1 ou 2"
+"em /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "GV Agrupado"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1306,19 +1318,19 @@ msgstr "GFS (agrupado)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "O nome do cluster contém caracteres inválidos "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "O nome do GFS contém caracteres inválidos "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Nome do Cluster Faltando"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Nome do GFS faltando"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1402,9 +1414,8 @@ msgstr ""
 "de Volume existente"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (agrupado)"
+msgstr "Agrupado"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1483,14 +1494,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Volumes Lógicos Máximos: "
+msgstr "Volumes Lógicos Máximos"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Volumes Físicos Máximos: "
+msgstr "Volumes Físicos Máximos"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1509,9 +1518,8 @@ msgid "New Volume Group"
 msgstr "Novo Grupo de Volume"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Tamanho da Extensão Física: "
+msgstr "Tamanho da Extensão Física"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1562,9 +1570,8 @@ msgid "Some text"
 msgstr "Algum texto"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Nome do Grupo de Volume:   "
+msgstr "Nome do Grupo de Volume"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
