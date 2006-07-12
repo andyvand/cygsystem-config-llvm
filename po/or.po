@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-05-11 12:17+0530\n"
+"PO-Revision-Date: 2006-07-12 15:59+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
@@ -85,8 +85,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 
 #: src/InputController.py:98
@@ -99,8 +98,7 @@ msgstr ""
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
 
 #: src/InputController.py:104
@@ -162,8 +160,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:124
@@ -273,8 +270,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
 #: src/InputController.py:154
@@ -378,8 +374,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:610
@@ -466,8 +461,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1550
@@ -605,9 +599,8 @@ msgid "Completing Extent Migration"
 msgstr "ପରିସୀମା କୁ ଛାଡିବା ସମ୍ପୂର୍ଣ୍ଣ ହେଉ ଅଛି"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "ବିସ୍ତାରିତ ବିଭାଜନ"
+msgstr "ବିଭାଜନ ସାରଣୀକୁ ପୁନଃପଠନ କରୁଅଛି"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -847,8 +840,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
@@ -1267,9 +1259,8 @@ msgstr ""
 "ଯୋଗ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "ଜି.ଏଫ୍.ଏସ୍. (କ୍ଲଷ୍ଟର୍ଡ)"
+msgstr "ଏକତ୍ରିତ କରାଗଲା"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1348,14 +1339,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "ସର୍ବାଧିକ ତାର୍କିକ ପ୍ରବଳତା:"
+msgstr "ସର୍ବାଧିକ ତାର୍କିକ ପ୍ରବଳତା"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "ସର୍ବାଧିକ ଭୌତିକ ପ୍ରବଳତା:"
+msgstr "ସର୍ବାଧିକ ଭୌତିକ ପ୍ରବଳତା"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1372,9 +1361,8 @@ msgid "New Volume Group"
 msgstr "ନୂତନ ପ୍ରବଳତା ସମୂହ"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "ଭୌତିକ ପରିସୀମା ର ଆକାର:"
+msgstr "ଭୌତିକ ପରିସୀମା ର ଆକାର"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1425,9 +1413,8 @@ msgid "Some text"
 msgstr "କିଛି ବ୍ଯାଖ୍ଯାନ"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "ପ୍ରବଳତା ସମୂହ ର ନାମ:   "
+msgstr "ପ୍ରବଳତା ସମୂହ ର ନାମ"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1615,8 +1602,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr "ସାଧାରଣ ଜ୍ଞାନ କୁ ବ୍ଯବହାର କରନ୍ତୁ"
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "ପ୍ରବଳତା ସମୂହ ପାଇଁ ନାମ"
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "ନୂତନ ପ୍ରବଳତା ସମୂହ ର ଫର୍ମ"
