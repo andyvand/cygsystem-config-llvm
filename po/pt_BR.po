@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-12 00:40-0300\n"
+"PO-Revision-Date: 2006-07-12 15:57-0300\n"
 "Last-Translator: Igor Pires Soares <igorsoares@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <fedora-trans-pt-br@redhat.com>\n"
 "MIME-Version: 1.0\n"
@@ -116,7 +116,8 @@ msgstr "É necessário fornecer um nome para o novo Grupo de Volume"
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr "O ponto de montagem %s especificado não existe. Você deseja criá-lo?"
+msgstr ""
+"O ponto de montagem %s especificado não existe. Você deseja criá-lo?"
 
 #: src/InputController.py:104
 #, python-format
@@ -583,8 +584,7 @@ msgstr ""
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"Nomes que comecem com \"snapshot \" ou \"pvmove \" não podem ser utilizados. "
+msgstr "Nomes que comecem com \"snapshot \" ou \"pvmove \" não podem ser utilizados. "
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
@@ -613,8 +613,7 @@ msgstr "Por favor especifique um ponto de montagem"
 
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"Você quer atualizar ext2 para ext3 preservando os dados no volume lógico?"
+msgstr "Você quer atualizar ext2 para ext3 preservando os dados no volume lógico?"
 
 #: src/InputController.py:2062
 msgid ""
@@ -1491,7 +1490,7 @@ msgstr "Gerenciar Volumes"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Marcar Grupo de Volumes como 'agrupado'"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
