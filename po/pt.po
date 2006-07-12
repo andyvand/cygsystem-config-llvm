@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-17 10:05+0000\n"
+"PO-Revision-Date: 2006-07-12 19:13+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -164,9 +164,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Não é suportada uma imagem de uma imagem."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Não é suportada uma imagem de uma imagem."
+msgstr "Não é suportada uma imagem de um volume lógico replicado."
 
 #: src/InputController.py:119
 #, python-format
@@ -383,7 +382,7 @@ msgstr ""
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
-msgstr ""
+msgstr "Para o Grupo de Volumes poder ser usado em segurança num ambiente de 'cluster', o RPM do lvm2-cluster deverá estar instalado e o serviço clvmd deverá estar a correr"
 
 #: src/InputController.py:364
 #, python-format
@@ -701,9 +700,8 @@ msgid "Completing Extent Migration"
 msgstr "A Completar a Migração da Extensão"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Partição extendida"
+msgstr "A ler de novo a tabela de partições"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -884,15 +882,15 @@ msgstr "Inicializar manualmente"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Em 'cluster':   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Verdadeiro"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Falso"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1193,6 +1191,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Os bloqueios do LVM estão desactivados!!!\n"
+"Poderá ocorrer uma danificação massiva dos dados.\n"
+"Activar o bloqueio (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1201,6 +1202,9 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas o servidor 'clvmd' não está a correr. Inicie o servidor com o comando:\n"
+"service clvmd start \n"
+"ou desligue o bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1209,17 +1213,19 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas o 'cluster' não tem membros suficientes.\n"
+"Tanto poderá esperar até o 'cluster' tem nós suficientes ou desligue o bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
 msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
-msgstr ""
+msgstr "O %s só suporta o bloqueio baseado em ficheiros e no 'cluster' (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "GV no 'Cluster'"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1301,19 +1307,19 @@ msgstr "GFS (em 'cluster')"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "O nome do 'cluster' contém um carácter inválido "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "O nome do GFS contém um carácter inválido "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Falta o Nome do 'Cluster'"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Falta o Nome do GFS"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1397,9 +1403,8 @@ msgstr ""
 "de Volumes existente"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (em 'cluster')"
+msgstr "Em 'cluster'"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1475,17 +1480,15 @@ msgstr "Gerir Volumes"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Marcar o Grupo de Volumes como 'Em Cluster'"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Máximo de Volumes Lógicos: "
+msgstr "Máximo de Volumes Lógicos"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Máximo de Volumes Físicos: "
+msgstr "Máximo de Volumes Físicos"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1504,9 +1507,8 @@ msgid "New Volume Group"
 msgstr "Novo Grupo de Volumes"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Tamanho das Extensões Físicas: "
+msgstr "Tamanho das Extensões Físicas"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1557,9 +1559,8 @@ msgid "Some text"
 msgstr "Algum texto"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Nome do Grupo de Volumes:   "
+msgstr "Nome do Grupo de Volumes"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
