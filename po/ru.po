@@ -1,12 +1,4 @@
-# translation of ru.po to 
-# translation of ru.po to
 # translation of ru.po to Russian
-# translation of ru.po to
-# translation of ru.po to
-# translation of ru.po to
-# translation of ru.po to
-# translation of ru.po to
-# translation of ru.po to
 # translation of system-config-lvm.pot to Russian
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C)
@@ -18,9 +10,9 @@ msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-04-13 16:48+1000\n"
-"Last-Translator: Yuliya Poyarkova <ypoyarko@brisbane.redhat.com>\n"
-"Language-Team:  <ru@li.org>\n"
+"PO-Revision-Date: 2006-07-13 09:13+0400\n"
+"Last-Translator: Andrew Martynov <andrewm@inventa.ru>\n"
+"Language-Team: Russian <fedora-trans-ru@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -169,9 +161,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Не поддерживается создание снимка уже существующего снимка тома."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Не поддерживается создание снимка уже существующего снимка тома."
+msgstr "Не поддерживается создание снимка зеркального Логического тома."
 
 #: src/InputController.py:119
 #, python-format
@@ -390,6 +381,9 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"Для того, чтобы Группа томов была безопасно задействована в кластерном "
+"окружении необходимо установить rpm пакет lvm2-cluster и запустить службу "
+"clvmd"
 
 #: src/InputController.py:364
 #, python-format
@@ -713,9 +707,8 @@ msgid "Completing Extent Migration"
 msgstr "Завершение переноса экстентов"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Расширенный раздел"
+msgstr "Перечитывается раблица разделов"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -896,15 +889,15 @@ msgstr "Инициализировать вручную"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "В кластере:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Верно"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Не верно"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1050,7 +1043,6 @@ msgid "Ext2"
 msgstr "Ext2"
 
 #: src/lvmui_constants.py:99
-#, fuzzy
 msgid "Ext3"
 msgstr "Ext3"
 
@@ -1207,6 +1199,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Блокировки LVM отключены!!! \n"
+"Возможно существенное повреждение данных.\n"
+"Включите блокировки (locking_type=1 или 2 в /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1215,6 +1210,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM настроен на использование механизма Блокировок кластера, но демон clvmd "
+"не запущен. Запустите демон командой:\n"
+"service clvmd start \n"
+"или выключите блокировки кластера (locking_type=1 в /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1223,6 +1222,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM настроен на использование механизма Блокировок Кластера, но кластер не "
+"находится в состоянии кворума.\n"
+"Дождитесь пока будет собран кворум кластера или отключите блокировки "
+"кластера (locking_type=1 в /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1230,10 +1233,12 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s поддерживает только блокировки на основе файлов или кластера "
+"(locking_type=1 или 2 в /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Клатеризованная Гр. томов"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1307,35 +1312,35 @@ msgstr "Неизвестная файловая система"
 
 #: src/Filesystem.py:374
 msgid "GFS (local)"
-msgstr "GFS (local)"
+msgstr "GFS (локальная)"
 
 #: src/Filesystem.py:472
 msgid "GFS (clustered)"
-msgstr "GFS (clustered)"
+msgstr "GFS (в кластере)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Имя кластера содержит недопустимые символы"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Имя GFS содержит недопустимые символы"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Отсутствует имя кластера"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Отсутствует имя GFS"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
-msgstr "GFS2 (local)"
+msgstr "GFS2 (локальная)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
-msgstr "GFS2 (clustered)"
+msgstr "GFS2 (в кластере)"
 
 #: src/Segment.py:44
 msgid "Stripe"
@@ -1411,9 +1416,8 @@ msgstr ""
 "Группу томов"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (clustered)"
+msgstr "В кластере"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1489,17 +1493,15 @@ msgstr "Управление томами"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Отметить Группу томов как 'участвующую в кластере'"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Максимум Логических томов: "
+msgstr "Максимум Логических томов"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Максимум Физических томов: "
+msgstr "Максимум Физических томов"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1518,9 +1520,8 @@ msgid "New Volume Group"
 msgstr "Новая Группа томов"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Размер физического экстента: "
+msgstr "Размер физического экстента"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1571,9 +1572,8 @@ msgid "Some text"
 msgstr "Какой-либо текст"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Имя Группы томов:   "
+msgstr "Имя Группы томов"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1770,3 +1770,4 @@ msgstr "На основе здравого смысла"
 
 #~ msgid "New Volume Group Form"
 #~ msgstr "Новая Группа томов"
+
