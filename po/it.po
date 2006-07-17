@@ -1,3 +1,10 @@
+# translation of it.po to 
+# translation of it.po to
+# translation of it.po to
+# translation of it.po to
+# translation of it.po to
+# translation of it.po to
+# translation of it.po to
 # translation of it.po to Italiano
 # translation of it.po to
 # translation of it.po to
@@ -8,21 +15,21 @@
 # translation of system-config-lvm.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER.
-#
 # Lorenzo Stobbione <lorenzo.stobbione@clsengineering.it>, 2004.
 # Francesco Tombolini <tombo@adamantio.net>, 2005, 2006.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-16 22:56-0500\n"
-"Last-Translator: Francesco Tombolini <tombo@adamantio.net>\n"
-"Language-Team: Italiano <fedora-trans-it@redhat.com>\n"
+"PO-Revision-Date: 2006-07-17 07:37+0200\n"
+"Last-Translator: \n"
+"Language-Team:  <it@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.1\n"
+"X-Generator: KBabel 1.9.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
@@ -104,8 +111,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "Esiste già un Gruppo di Volume chiamato %s. Si raccomanda di scegliere un "
 "nome univoco."
@@ -120,8 +126,7 @@ msgstr "Si deve dare un nome al nuovo Gruppo di Volume"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Il mount point %s specificato non esiste. Si desidera crearlo?"
 
 #: src/InputController.py:104
@@ -131,8 +136,7 @@ msgstr "La creazione del mount point %s è fallita inaspettatamente."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr ""
-"Questa caratteristica non è ancora stata implementata in questa versione"
+msgstr "Questa caratteristica non è ancora stata implementata in questa versione"
 
 #: src/InputController.py:108
 msgid ""
@@ -175,9 +179,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Uno snapshot si uno snapshot non è supportato."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Uno snapshot si uno snapshot non è supportato."
+msgstr "Non è supportato lo snapshot di un Volume Logico speculare."
 
 #: src/InputController.py:119
 #, python-format
@@ -198,8 +201,7 @@ msgstr ""
 "pregato di rimuovere prima gli snapshots."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Errore di conversione non definito nel model factory. Impossibile completare "
 "l'operazione."
@@ -322,8 +324,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Sei sicuro di voler rimuovere %s dal Gruppo di Volume %s ?"
 
 #: src/InputController.py:154
@@ -399,6 +400,9 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"Per poter utilizzare il Gruppo di Volume in modo sicuro all'interno di un ambiente "
+"'clustered', l'rpm lvm2-cluster deve essere installato, ed il servizio clvmd deve essere "
+"in esecuzione"
 
 #: src/InputController.py:364
 #, python-format
@@ -462,8 +466,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", un origine dello snapshot \"%s\", è stato cancellato dalla lista "
 "delle rimozioni."
@@ -564,8 +567,7 @@ msgstr ""
 "differenti?"
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Sono disponibili meno di 3 dischi rigidi con spazio libero. Disabilitare il "
 "mirroring."
@@ -597,8 +599,7 @@ msgstr ""
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"I nomi che cominciano con \"snapshot\" o \"pvmove\" sono keywords riservate."
+msgstr "I nomi che cominciano con \"snapshot\" o \"pvmove\" sono keywords riservate."
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
@@ -720,9 +721,8 @@ msgid "Completing Extent Migration"
 msgstr "Completamento Migrazione Estensioni"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Partizione estesa"
+msgstr "Rilettura tabella partizione"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -903,15 +903,15 @@ msgstr "Inizializzazione manuale"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Clustered:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Vero"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Falso"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -968,10 +968,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"Sei veramente sicuro di volere inizializzare %s di spazio libero su disco %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "Sei veramente sicuro di volere inizializzare %s di spazio libero su disco %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1213,6 +1211,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"I blocchi LVM sono stati disabilitati!!! \n"
+"È possibile che si verifichi una corruzione di dati molto elevata.\n"
+"Abilitare blocco (locking_type=1 o 2 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1221,6 +1222,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM è stato configurato per utilizzare il meccanismo di Blocco del Cluster, ma il demone "
+"clvmd non è in esecuzione. Avviate il demone con il comando:\n"
+"service clvmd start, \n"
+"oppure disabilitate il blocco del cluster (locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1236,10 +1241,12 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s supporta il blocco basato sul cluster e sul file (locking_type=1 o 2 in /etc/"
+"lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "VG Clustered"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1321,19 +1328,19 @@ msgstr "GFS (clustered)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Il nome del Cluster contiene un carattere illegale"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Il nome del GFS contiene un carattere illegale"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Nome cluster mancante"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Nome GFS mancante"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1417,9 +1424,8 @@ msgstr ""
 "Gruppo di Volume esistente"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (clustered)"
+msgstr "Clustered"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1497,17 +1503,15 @@ msgstr "Gestisci i Volumi"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Segna Gruppo di Volume come 'clustered'"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Massimo numero di Volumi Logici: "
+msgstr "Volumi Logici massimi"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Massimo numero di Volumi Fisici: "
+msgstr "Volumi Fisici massimi"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1526,9 +1530,8 @@ msgid "New Volume Group"
 msgstr "Nuovo Gruppo di Volume"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Dimensione Estensione Fisica: "
+msgstr "Dimensione Estensione Fisica"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1579,9 +1582,8 @@ msgid "Some text"
 msgstr "Testo"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Nome Gruppo di Volume:   "
+msgstr "Nome Gruppo di Volume"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1771,8 +1773,3 @@ msgstr "Migra solo le estensioni appartenenti al VL"
 msgid "Use common sense"
 msgstr "Usa buonsenso"
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Nome del Gruppo di Volume: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Finestra di dialogo Nuovo Gruppo di Volume"
