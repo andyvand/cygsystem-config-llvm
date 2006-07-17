@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-17 19:32+0530\n"
+"PO-Revision-Date: 2006-07-17 09:17+0530\n"
 "Last-Translator: Ankit Patel <ankit@redhat.com>\n"
 "Language-Team: Gujarati <fedora-trans-gu@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 "\n"
@@ -97,8 +97,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s નામવાળું વોલ્યુમ જૂથ પહેલાથી જ હાજર છે. મહેરબાની કરીને અનન્ય નામ પસંદ કરો."
 
 #: src/InputController.py:98
@@ -111,8 +110,7 @@ msgstr "નવા વોલ્યુમ જૂથ માટે નામ પૂ�
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "સ્પષ્ટ કરેલ માઉન્ટ બિંદુ, %s, અસ્તિત્વમાં નથી. શું તમે એને બનાવવા માંગો છો?"
 
 #: src/InputController.py:104
@@ -160,9 +158,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "સ્નેપશોટનો સ્નેપશોધ આધારભૂત નથી."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "સ્નેપશોટનો સ્નેપશોધ આધારભૂત નથી."
+msgstr "મીરરવાળા લોજીકલ વોલ્યુમોનો સ્નેપશોટ આધારભૂત નથી."
 
 #: src/InputController.py:119
 #, python-format
@@ -183,8 +180,7 @@ msgstr ""
 "સ્નેપશોટને પ્રથમ દૂર કરો."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "મોડેલ કારખાનામાં નહિં વ્યાખ્યાયિત એવી પ્રકાર રૂપાંતરણની ભૂલ આવી. ક્રિયા પૂરી કરવા સમર્થ "
 "નથી."
@@ -269,23 +265,20 @@ msgstr "%s માત્ર સંખ્યાકીય કિંમતો ધર
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
-"મહત્તમ ભૌતિક વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
+msgstr "મહત્તમ ભૌતિક વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
 
 #: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"મહત્તમ લોજીકલ વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
+msgstr "મહત્તમ લોજીકલ વોલ્યુમો ક્ષેત્ર માત્ર ૧ અને ૨૫૬ વચ્ચેની પૂર્ણાંક કિંમતો જ ધરાવતું હોવું જોઈએ"
 
 #: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
-"શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને લોજીકલ વોલ્યુમ મેનેજમેન્ટમાંથી દૂર કરવા ઈચ્છો છો?"
+msgstr "શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને લોજીકલ વોલ્યુમ મેનેજમેન્ટમાંથી દૂર કરવા ઈચ્છો છો?"
 
 #: src/InputController.py:152
 #, python-format
@@ -305,8 +298,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "શું તમે કંઈક અંશે ચોક્કસ છો કે તમે %s ને %s વોલ્યુમ જૂથમાંથી દૂર કરવા માંગો છો?"
 
 #: src/InputController.py:154
@@ -377,7 +369,7 @@ msgstr ""
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
-msgstr ""
+msgstr "વોલ્યુમ જૂથને ક્લસ્ટરવાળા પર્યાવરણમાં સુરક્ષિત રીતે વાપરવા માટે, lvm2-cluster rpm સ્થાપિત થયેલ હોવી જ જોઈએ, અને clvmd સેવા ચાલી રહી હોવી જોઈએ"
 
 #: src/InputController.py:364
 #, python-format
@@ -437,8 +429,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", સ્નેપશોટ \"%s\" નું મૂળ, નિરાકરણ યાદીમાંથી કાઢી નંખાયેલ છે."
 
 #: src/InputController.py:610
@@ -533,16 +524,14 @@ msgstr ""
 "શું તમે મીરર ઈમેજોને અલગ હાર્ડ ડ્રાઈવો પર મૂકવા માંગો છો?"
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "૩ કરતાં ઓછી હાર્ડ ડ્રાઈવો મુક્ત જગ્યા સાથે ઉપલબ્ધ છે. મીરરીંગ નિષ્ક્રિય કરો."
 
 #: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
-"મીરરીંગ સક્રિય કરવા માટે ઓછામાં ઓછા ત્રણ ભૌતિક વોલ્યુમો પર મુક્ત જગ્યા હોવી જ જોઈએ"
+msgstr "મીરરીંગ સક્રિય કરવા માટે ઓછામાં ઓછા ત્રણ ભૌતિક વોલ્યુમો પર મુક્ત જગ્યા હોવી જ જોઈએ"
 
 #: src/InputController.py:1558
 msgid ""
@@ -679,9 +668,8 @@ msgid "Completing Extent Migration"
 msgstr "એક્સટેન્ટ રૂપાંતરણ પૂર્ણ કરી રહ્યા છીએ"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "વિસ્તૃત પાર્ટીશન"
+msgstr "પાર્ટીશન કોષ્ટક પુનઃવાંચી રહ્યું છે"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -862,15 +850,15 @@ msgstr "જાતે આરંભ કરો"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "ક્લસ્ટરવાળું:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "ખરું"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "ખોટું"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -927,8 +915,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "શું તમે ચોક્કસ છો કે તમે %s જેટલી મુક્ત જગ્યા ડિસ્ક %s પર આરંભ કરવા માંગો છો?"
 
 #: src/lvmui_constants.py:55
@@ -1166,6 +1153,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM તાળાઓ નિષ્ક્રિય કરેલ છે!!! \n"
+"ખરાબ માહિતી ભંગાણ થશે.\n"
+"તાળું મારવાનું સક્રિય કરો (/etc/lvm/lvm.conf માં locking_type=1 અથવા 2)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1174,6 +1164,9 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM એ ક્લસ્ટર તાળાં પદ્ધતિ વાપરવા માટે રૂપરેખાંકિત થયેલ છે, પરંતુ clvmd ડિમન ચાલી રહ્યું નથી. ડિમનને આદેશ સાથે શરૂ કરો:\n"
+"service clvmd start \n"
+"અથવા, ક્લસ્ટરને તાળું મારવાનું બંધ કરો (/etc/lvm/lvm.conf માં locking_type=1)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1182,17 +1175,19 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM એ ક્લસ્ટર તાળાં પદ્ધતિ વાપરવા માટે રૂપરેખાંકિત થયેલ છે, પરંતુ ક્લસ્ટર એ quorate નથી.\n"
+"ક્યાં તો જ્યાં સુધી ક્લસ્ટર quorate નહિં થાય અથવા ક્લસ્ટર તાળું મારવાનું બંધ નહિં થાય ત્યાં સુધી રાહ જુઓ (/etc/lvm/lvm.conf માં locking_type=1)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
 msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
-msgstr ""
+msgstr "%s માત્ર ફાઈલ અને ક્લસ્ટર આધારિત તાળું મારવાની ક્રિયાને આધાર આપે છે (/etc/lvm/lvm.conf માં locking_type=1 અથવા 2)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "ક્લસ્ટરવાળું VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1266,19 +1261,19 @@ msgstr "GFS (ક્લસ્ટરવાળી)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "ક્લસ્ટર નામ અયોગ્ય અક્ષર સમાવે છે "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS નામ અયોગ્ય અક્ષર સમાવે છે "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "ગુમ થયેલ ક્લસ્ટર નામ"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "ગુમ થયેલ GFS નામ"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1362,9 +1357,8 @@ msgstr ""
 "ઉમેરો"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (ક્લસ્ટરવાળી)"
+msgstr "ક્લસ્ટરવાળું"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1440,17 +1434,15 @@ msgstr "વોલ્યુમ વ્યવસ્થા કરો"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "વોલ્યુમ જૂથને 'ક્લસ્ટરવાળા' તરીકે ચિહ્નિત કરો"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "મહત્તમ લોજીકલ વોલ્યુમો: "
+msgstr "મહત્તમ લોજીકલ વોલ્યુમો"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "મહત્તમ ભૌતિક વોલ્યુમો: "
+msgstr "મહત્તમ ભૌતિક વોલ્યુમો"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1469,9 +1461,8 @@ msgid "New Volume Group"
 msgstr "નવું વોલ્યુમ જૂથ"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "ભૌતિક વિસ્તરણ માપ: "
+msgstr "ભૌતિક એક્સટેન્ટ માપ"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1522,9 +1513,8 @@ msgid "Some text"
 msgstr "અમુક લખાણ"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "વોલ્યુમ જૂથ નામ:   "
+msgstr "વોલ્યુમ જૂથ નામ"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1714,8 +1704,3 @@ msgstr "માત્ર LV ને અનુસરતા એક્સટેન્
 msgid "Use common sense"
 msgstr "સામાન્ય બુદ્ધિ વાપરો"
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "વોલ્યુમ જૂથ માટે નામ: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "નવું વોલ્યુમ જૂથ ફોર્મ"
