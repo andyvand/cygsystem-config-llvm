@@ -1,26 +1,26 @@
-# translation of fr.po to 
+# translation of fr.po to
 # translation of fr.po to French
-# translation of system-config-lvm.po to French
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
 # Boris de Laage <bdelaage@free.fr>, 2004.
 # Jean-Paul Aubry <jpaubry@redhat.com>, 2004.
 # Samuel Mutel <samuel.mutel@free.fr>, 2005.
 # Audrey Simons <asimons@redhat.com>, 2005, 2006.
 # Damien Durand <splinux@fedoraproject.org>, 2006.
-#
+# Thomas Canniot <thomas.canniot@laposte.net>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-13 00:15+0100\n"
-"Last-Translator: \n"
-"Language-Team:  <fr@li.org>\n"
+"PO-Revision-Date: 2006-07-22 18:55+0200\n"
+"Last-Translator: Thomas Canniot <thomas.canniot@laposte.net>\n"
+"Language-Team: French <fedora-trans-fr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.2\n"
 
 #: src/InputController.py:36
 #: src/Properties_Renderer.py:24
@@ -1004,7 +1004,7 @@ msgstr ""
 msgid ""
 "LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\n"
 "Either wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
+msgstr "LVM est configuré pour utiliser le mécanisme de verrouillage de cluster, mais le cluster n'est pas en position quorate.<br> Patientez que le cluster soit en position quorate ou déverrouiller le.(locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1013,7 +1013,7 @@ msgstr "%s supporte sulement les fichiers et groupe basé sur un verron (locking
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Clustered VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1526,9 +1526,4 @@ msgstr "Uniquement migrer les étendues appartenant au VL"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Utiliser du bon sens "
-
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Nom pour le Groupe de Volumes : "
-#~ msgid "New Volume Group Form"
-#~ msgstr "Forme du nouveau groupe de volumes"
 
