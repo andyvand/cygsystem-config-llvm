@@ -1,3 +1,4 @@
+# translation of de.po to 
 # translation of de.po to de
 # translation of system-config-lvm.po to de
 # This file is distributed under the same license as the PACKAGE package.
@@ -5,19 +6,20 @@
 # Eduard Pech <kongretkrassescheissendreck@simstim.net>, 2004.
 # Marcus Glöckner <mgloeckner@gmail.com>, 2005.
 # Thomas Duske <thodu-rh@vlugnet.org>, 2006.
+# Timo Trinks <ttrinks@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-03-13 19:19+0100\n"
-"Last-Translator: Thomas Duske <thodu-rh@vlugnet.org>\n"
-"Language-Team: de <fedora-trans-de@redhat.com>\n"
+"PO-Revision-Date: 2006-08-04 14:21+1000\n"
+"Last-Translator: Timo Trinks <ttrinks@redhat.com>\n"
+"Language-Team:  <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
+"X-Generator: KBabel 1.9.1\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
@@ -103,8 +105,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "Eine Datenträgergruppe namens %s existiert bereits. Bitte wählen Sie einen "
 "eindeutigen Namen."
@@ -119,10 +120,8 @@ msgstr "Die neue Datenträgergruppe muss benannt werden"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"Der angegebene Einhängepunkt %s existiert nicht. Möchten Sie ihn erzeugen?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "Der angegebene Einhängepunkt %s existiert nicht. Möchten Sie ihn erzeugen?"
 
 #: src/InputController.py:104
 #, python-format
@@ -175,9 +174,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Ein Schnappschuss von einem Schnappschuss wird nicht unterstützt."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Ein Schnappschuss von einem Schnappschuss wird nicht unterstützt."
+msgstr "Ein Schnappschuss eines gespiegelten logischen Datenträgers wird nicht unterstützt."
 
 #: src/InputController.py:119
 #, python-format
@@ -198,8 +196,7 @@ msgstr ""
 "entfernen sie zuerst die Schnappschüsse."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Fehler - Umwandlung eines undefinierten Typs in Model-Factory. Die Anwendung "
 "konnte nicht beendet werden."
@@ -294,7 +291,7 @@ msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"Für \"Maximum logischer Datenträger\" sind nur ganze Zahlen von 1 bis 256 "
+"Für Maximum logischer Datenträger sind nur ganze Zahlen von 1 bis 256 "
 "erlaubt"
 
 #: src/InputController.py:150
@@ -325,8 +322,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 "Sind Sie ganz sicher, dass Sie %s aus der Datenträgergruppe %s entfernen "
 "möchten?"
@@ -408,7 +404,7 @@ msgstr ""
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
-msgstr ""
+msgstr "Damit die Datenträgergruppe sicher in einer Cluster-Umgebung genutzt werden kann, muß das lvm2-cluster-RPM installiert werden und der clvmd-Dienst laufen"
 
 #: src/InputController.py:364
 #, python-format
@@ -418,7 +414,7 @@ msgid ""
 "removable."
 msgstr ""
 "Der physische Datenträger %s enthält Speichereinheiten die zu einem mirror "
-"log eines logischen Datenträgers gehören. Gespiegelte logische Datenträger "
+"log eines logischen Datenträgers %s gehören. Gespiegelte logische Datenträger "
 "können momentan noch nicht migriert werden, deswegen kann %s nicht entfernt "
 "werden."
 
@@ -476,8 +472,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "%s, ein Orgiginal von Schnappschuss %s, wurde aus der Liste der zu "
 "entfernenden Elemente gelöscht"
@@ -557,8 +552,7 @@ msgstr "logischen Datenträger"
 
 #: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
-"Grundlegende logische Datenträgerverwaltung unterstützt keine Spiegelung"
+msgstr "Grundlegende logische Datenträgerverwaltung unterstützt keine Spiegelung"
 
 #: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -582,8 +576,7 @@ msgstr ""
 "verschiedene Festplatten platzieren?"
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Weniger als 3 Festplatten mit freiem Speicherplatz sind verfügbar. "
 "Deaktiviere Spiegelung."
@@ -680,8 +673,7 @@ msgstr ""
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
-"Um Spiegelung hinzuzufügen müssen einige Speichereinheiten migriert werden"
+msgstr "Um Spiegelung hinzuzufügen müssen einige Speichereinheiten migriert werden"
 
 #: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
@@ -744,9 +736,8 @@ msgid "Completing Extent Migration"
 msgstr "Schließe Migration der Speichereinheiten ab"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Erweiterte Partition"
+msgstr "Partitionstabelle wird neu eingelesen"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -927,15 +918,15 @@ msgstr "Initialisiere manuell"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Geclustert:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Richtig"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Falsch"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -979,8 +970,8 @@ msgid ""
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
 "Die Datenträgereinheit %s enthält ein %s Dateisystem. Alle Daten die sich "
-"darauf befinden Daten gehen dabei verloren! Sind Sie sicher das Sie die "
-"Datenträgereinheit initialisieren möchten?"
+"darauf befinden, gehen dabei verloren! Sind Sie sicher, dass Sie die "
+"Datenträgereinheit %s initialisieren möchten?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -988,14 +979,13 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
-"Die Datenträgereinheit %s enthält Daten aus dem Verzeichnis %s. Alle Daten "
-"die sich darin befinden gehen dabei verloren. Sind Sie sicher das sie die "
-"Datenträgereinheit initialisieren wollen."
+"Die Datenträgereinheit %s enthält Daten aus dem Verzeichnis %s. Alle Daten,"
+"die sich darin befinden, gehen dabei verloren. Sind Sie sicher das sie die "
+"Datenträgereinheit %s initialisieren wollen?"
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Sind Sie sicher, dass Sie %s freien Speicher auf Festplatte %s "
 "initialisieren möchten?"
@@ -1242,6 +1232,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM Lockings sind deaktiviert!!!\n"
+"Erhebliche Datenverfälschung kann auftreten.\n"
+"Bitte aktivieren Sie Locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1250,6 +1243,9 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM ist so konfiguriert, dass es den Cluster-Locking-Mechanismus nutzt, aber der clvmd-Daemon läuft nicht. Starten Sie den Daemon mit dem Befehl:\n"
+"service clvmd start \n"
+"oder schalten Sie Cluster Locking aus (locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1258,17 +1254,19 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM ist so konfiguriert, dass es den Cluster-Locking-Mechanismus nutzt, aber das Cluster ist nicht handlungsfähig.\n"
+"Bitte warten Sie entweder, bis das Cluster handlungsfähig ist oder schalten Sie das Cluster Locking aus (locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
 msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
-msgstr ""
+msgstr "%s unterstützt lediglich datei- und clusterbasiertes Locking (locking_type=1 oder 2 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Geclusterte VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1307,7 +1305,7 @@ msgid ""
 "Message: %s"
 msgstr ""
 "Erstellung des Dateisystems fehlgeschlagen. Anweisung versuchte: \"%s\" - "
-"System-Fehlermeldung"
+"System-Fehlermeldung: %s"
 
 # python-format
 #: src/Filesystem.py:25
@@ -1347,23 +1345,23 @@ msgstr "GFS (lokal)"
 
 #: src/Filesystem.py:472
 msgid "GFS (clustered)"
-msgstr "GFS (gebündelt)"
+msgstr "GFS (geclustert)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Der Name des Clusters enthält illegale Zeichen"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Der GFS-Name enthält illegale Zeichen"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Fehlender Clustername"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Fehlender GFS-Name"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1371,7 +1369,7 @@ msgstr "GFS2 (lokal)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
-msgstr "GFS2 (gebündelt)"
+msgstr "GFS2 (geclustert)"
 
 #: src/Segment.py:44
 msgid "Stripe"
@@ -1447,9 +1445,8 @@ msgstr ""
 "Datenträgergruppe hinzufügen"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (gebündelt)"
+msgstr "Geclustert"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1529,17 +1526,15 @@ msgstr "Verwalte Datenträger"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Volume Gruppe als geclustert markieren"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Maximum logischer Datenträger: "
+msgstr "Maximum logischer Datenträger"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Maximum physischer Datenträger: "
+msgstr "Maximum physischer Datenträger"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1558,9 +1553,8 @@ msgid "New Volume Group"
 msgstr "Neue Datenträgergruppe"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Größe des physischen Bereichs: "
+msgstr "Größe des physikalischen Bereichs"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1613,9 +1607,8 @@ msgid "Some text"
 msgstr "Etwas Text"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Name der Datenträgergruppe:   "
+msgstr "Name der Datenträgergruppe"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1808,248 +1801,3 @@ msgstr "Migriere nur Speicherbereiche die zu dem LV gehören"
 msgid "Use common sense"
 msgstr "Benutze allgemeine Bedeutung"
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Name der Datenträgergruppe: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Formular für neue Datenträgergruppe"
-
-#~ msgid ""
-#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"vgextend\" fehlgeschlagen. Anweisung versuchte: \"%s\" \n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"pvcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\" \n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"lvcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"pvremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"lvremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"vgremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"vgcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
-#~ "%s"
-#~ msgstr ""
-#~ "Anweisung \"vgchange\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"vgreduce\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "Anweisung \"pvmove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "Anweisung \"umount\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
-#~ "\""
-#~ msgstr ""
-#~ "Anweisung \"mount\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"lvremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"lvcreate\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"vgchange\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "Anweisung \"lvremove\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#, fuzzy
-#~ msgid "Quering Volume Groups"
-#~ msgstr "Datenträgergruppen"
-
-#, fuzzy
-#~ msgid "Quering Logical Volumes"
-#~ msgstr "Logischer Datenträger"
-
-#, fuzzy
-#~ msgid "Quering Physical Volumes"
-#~ msgstr "Physischer Datenträger"
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
-
-#, fuzzy
-#~ msgid ""
-#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
-#~ "%s"
-#~ msgstr ""
-#~ "Anweisung \"mkfs\" fehlgeschlagen. Anweisung versuchte: \"%s\"\n"
-#~ "System-Fehlermeldung: %s"
-
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "Es gibt ein Problem mit dem Wert im Feld Größe. Der Wert sollte aus \n"
-#~ "Zahlen bestehen ohne Buchstaben oder andersartigen Symbolen."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "Die angeforderte Größe für den neuen logischen Datenträger übersteigtden "
-#~ "verfügbaren Speicherplatz in der Datenträgergruppe %s. Der verfügbare "
-#~ "Speicherplatz beträgt: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "Streifengröße"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "Streifenanzahl"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 Megabyte"
-
-#~ msgid "Create New LV"
-#~ msgstr "Neuen logischen Datenträger erzeugen"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "Logischen Datenträger\n"
-#~ "erweitern"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr ""
-#~ "Einhängepunkt (wenn nicht angegeben, wird das logische Laufwerk nicht "
-#~ "eingehängt):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "Name für den neuen logischen Datenträger:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "Streifenanzahl: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr ""
-#~ "Wählen Sie ein Laufwerk, das Sie der Datenträgergruppe hinzufügen möchten:"
-
-#~ msgid "Size:"
-#~ msgstr "Größe:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "Streifengröße:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "Freier Speicherplatz auf Datenträgergruppe 1:"
-
-#~ msgid "ext2"
-#~ msgstr "Ext2"
-
-#~ msgid "ext3"
-#~ msgstr "Ext3"
-
-#~ msgid "No File System"
-#~ msgstr "Kein Dateisystem"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "Dieser Bereich ist noch nicht \n"
-#~ " initialisiert für eine Verwendung \n"
-#~ " durch die logische Datenträgerverwaltung."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "Dieser Datenträger ist noch keiner \n"
-#~ " Datenträgergruppe zugeteilt."
-
-#~ msgid "Autobackup?"
-#~ msgstr "Automatische Sicherung?"
-
-#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
-#~ msgstr "Hier ankreuzen, wenn Sie einen Eintrag in /etc/fstab wünschen"
-
-#~ msgid "Resizable?"
-#~ msgstr "Größenänderung zulassen?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
