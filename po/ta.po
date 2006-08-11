@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-05-25 18:14+0530\n"
+"PO-Revision-Date: 2006-08-11 15:39+0530\n"
 "Last-Translator: Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 "\n"
 "\n"
 "\n"
@@ -100,8 +100,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s என்ற பெயரில் வால்யூம் குழு ஏற்கெனவே உள்லது. வேறு பெயரை தேர்வு செய்யவும்."
 
 #: src/InputController.py:98
@@ -114,8 +113,7 @@ msgstr "வால்யூம் குழுவின் பெயரை கு
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "சிறப்பு ஏற்றப்புள்ளி , %s, ஏற்கெனவே உள்ளது. இதை உருவாக்க விருப்பமா?"
 
 #: src/InputController.py:104
@@ -186,8 +184,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "மாதிரி தொழிற்சாலையில் குறிப்பிடப்படாத வகை மாற்றம் நிகழ்துள்ளது. வேலையை முடிக்க "
 "முடியவில்லை."
@@ -307,8 +304,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "%s ஐ %s வால்யூம் குழுவிலிருந்து நீக்க விருப்பமா?"
 
 #: src/InputController.py:154
@@ -353,9 +349,9 @@ msgstr ""
 "பிசிகல் நீட்டிப்புக்கு நகர்த்தும் முறை இல்லை."
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "நீங்கள் %s லாஜிக்கல் வால்யூமை நீக்க முற்பட்டுள்ளீர்கள் என்பதை அறிவீர்களா?"
+msgstr "நீங்கள் %s தருக்க தொகுதியை நீக்க முயற்சிக்கிறீர்கள் என்பதை அறிவீர்களா?"
 
 #: src/InputController.py:160
 #, python-format
@@ -427,8 +423,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:610
@@ -515,8 +510,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1550
@@ -540,11 +534,11 @@ msgstr ""
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "\"snapshot\" or \"pvmove\" என ஆரம்பிக்கும் பெயர்கள் முன்பதியப்பட்ட முக்கிய சொற்களாகும்."
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "\"_mlog\" or \"_mimage\" போன்ற பெயர்களை கொண்டவை முன்பதியப்பட்ட முக்கிய சொற்களாகும்."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -556,12 +550,12 @@ msgstr "பெயர் \".\" அல்லது \"..\"ஆக இருக்க
 
 #: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "தருக்க தொகுதி பெயர்களில் இடைவெளி அனுமதிக்கப்படுவதில்லை"
 
 #: src/InputController.py:1942
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "தவறான எழுத்து \"%s\" தருக்க தொகுதி பெயரில் உள்ளது"
 
 #: src/InputController.py:1962
 msgid "Please specify mount point"
@@ -569,7 +563,7 @@ msgstr "ஏற்றப்புள்ளிகளை குறிப்பி�
 
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "தருக்க தொகுதியில் ext2 லிருந்து ext3ஆக மேம்படுத்தி தரவுகளை பாதுகாக்க வேண்டுமா?"
 
 #: src/InputController.py:2062
 msgid ""
@@ -580,7 +574,7 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "பிரதிபலிப்பு உருவாக்கப்படவில்லை. மீதமுள்ள பணிகளை முடிக்கவும்."
 
 #. create mirror
 #: src/InputController.py:2166
@@ -606,63 +600,44 @@ msgid "Resizing Logical Volume"
 msgstr "தருக்க தொகுதி மறுஅளவிடப்படுகிறது"
 
 #: src/CommandHandler.py:124
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "லாஜிக்கல் வால்யூம்"
+msgstr "தருக்க தொகுதியில் பிரதிபலிப்பை சேர்க்கிறது"
 
 #: src/CommandHandler.py:135
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"லாஜிக்கல் வால்யூமை\n"
-"நீக்கு"
+msgstr "தருக்க தொகுதியிலிருந்து பிரதிபலிப்பை நீக்குகிறது"
 
 #: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
 msgstr "பருப்பொருள் தொகுதியை துவக்குகிறது"
 
 #: src/CommandHandler.py:171
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "VG யில் பிசிக்கல் வால்யூமை சேர்"
+msgstr "தொகுதி குழுவில் பருநிலை தொகுதியை சேர்க்கிறது"
 
 #: src/CommandHandler.py:203
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"புதிய வால்யூம் குழுவை\n"
-"உருவாக்கு."
+msgstr "தொகுதி குழுவை உருவாக்குகிறது"
 
 #: src/CommandHandler.py:225
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "புதிய வால்யூம் குழு"
+msgstr "தொகுதி குழுவை நீக்குகிறது"
 
 #: src/CommandHandler.py:235
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "பிசிக்கல் வால்யூம்"
+msgstr "பருநிலை தொகுதியை நீக்குகிறது"
 
 #: src/CommandHandler.py:246
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"லாஜிக்கல் வால்யூமை\n"
-"நீக்கு"
+msgstr "தருக்க தொகுதியை நீக்குகிறது"
 
 #: src/CommandHandler.py:258
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"லாஜிக்கல் வால்யூமை\n"
-"நீக்கு"
+msgstr "தருக்க தொகுதியை மறுபெயரிடுகிறது"
 
 #: src/CommandHandler.py:280
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"வால்யூமிலிருந்து வால்யூம் குழுக்களை\n"
-"நீக்கு"
+msgstr "தொகுதி குழுவிலிருந்து பருநிலை தொகுதியை நீக்குகிறது"
 
 #: src/CommandHandler.py:315
 msgid "Migrating Extents"
@@ -673,9 +648,8 @@ msgid "Completing Extent Migration"
 msgstr "விரிவாக்க இடம்பெயர்வு முடிக்கப்பட்டது"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "விரிவாக்கப்பட்ட பகிர்வு"
+msgstr "பகிர்தல் அட்டவணையை மீண்டும் படிக்கிறது"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -856,15 +830,15 @@ msgstr "கைமுறையாக ஆரம்பிக்கிறது"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "கொத்திடப்பட்டது:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "சரி"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "தவறு"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -897,8 +871,7 @@ msgstr "ஒன்றுமில்லை"
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
-"வட்டு உட்பொருள் %s லிலுள்ள அனைத்து தரவுகளும் இழக்கப்படும்! நீங்கள் இதனை ஆரம்பிக்க வேண்டுமா?"
+msgstr "வட்டு உட்பொருள் %s லிலுள்ள அனைத்து தரவுகளும் இழக்கப்படும்! நீங்கள் இதனை ஆரம்பிக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -920,8 +893,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "வெற்று இட வட்டு %s டுடன் %sஐ துவக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:55
@@ -953,10 +925,9 @@ msgid "Unable to process request"
 msgstr "கோரிக்கையை செயல்படுத்த முடியவில்லை"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+msgstr "%s கட்டளை செயலிழக்கப்பட்டது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1171,7 +1142,7 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "கொத்திடப்பட்ட VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1204,37 +1175,39 @@ msgid "Upgrading %s filesystem to %s"
 msgstr "%s கோப்பு முறை %sக்கு மேம்படுத்தப்படுகிறது"
 
 #: src/Filesystem.py:24
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgcreate கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+"கோப்பு முறைமையை உருவாக்க முடியவில்லை. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
 "செய்தி: %s"
 
 #: src/Filesystem.py:25
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+"கோப்பு முறைமையை மறு அளவிட முடியவில்லை. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+"செய்தி: %s"
 
 #: src/Filesystem.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"mkfs கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை செய்தி: %s"
+"கோப்பு முறையை சோதிக்க முடியவில்லை. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+"செய்தி: %s"
 
 #: src/Filesystem.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"vgreduce கட்டளை தோல்வியுற்றது. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
+"கோப்பு முறையை மேம்படுத்த முடியவில்லை. கட்டளை முயற்சி செய்யப்பட்டது: \"%s\"- கணினி பிழை "
 "செய்தி: %s"
 
 #: src/Filesystem.py:143
@@ -1251,19 +1224,19 @@ msgstr "GFS (கொத்தாக்கப்பட்ட)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "கொத்து பெயர் தவறான எழுத்துக்களை கொண்டுள்ளது"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS பெயர் தவறான எழுத்துக்களை கொண்டுள்ளது"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "விடுபட்ட கொத்து பெயர்"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "விடுபட்ட GFS பெயர்"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1347,9 +1320,8 @@ msgstr ""
 "குழுவுடன் சேர்"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (கொத்தாக்கப்பட்ட)"
+msgstr "கொத்திடப்பட்டது"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1425,17 +1397,15 @@ msgstr "வால்யூம்களை கையாள்"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "தொகுதி குழுவை கொத்திடப்பட்டது என குறிக்கவும்"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "அதிகபட்ச லாஜிக்கல் வால்யூம்:"
+msgstr "அதிகபட்ச தருக்க தொகுதிகள்"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "அதிகபட்ச பிசிக்கல் வால்யூம்:"
+msgstr "அதிகபட்ச பருநிலை தொகுதிகள்"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1454,9 +1424,8 @@ msgid "New Volume Group"
 msgstr "புதிய வால்யூம் குழு"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "பிசிக்கல் பரப்பளவு:"
+msgstr "பருநிலை விரிவாக்க அளவு"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1507,9 +1476,8 @@ msgid "Some text"
 msgstr "சில உரை"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "வால்யூம் குழு இல்லை:   "
+msgstr "தொகுதி குழு பெயர்"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1690,18 +1658,10 @@ msgid "Normal"
 msgstr "சாதாரணம்"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr ""
-"தேர்வு செய்தவைகளை வால்யூமிலிருந்து\n"
-"குறிப்பிடா பரப்புக்கு நகர்த்து"
+msgstr "LVயுடன் உள்ள விரிவாக்கங்களை மட்டும் இடம்பெயர செய்கிறது"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "பொது அறிவை பயன்படுத்து"
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "வால்யூம் குழுவின் பெயர்:"
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "புதிய வால்யூம் குழுவிலிருந்து "
