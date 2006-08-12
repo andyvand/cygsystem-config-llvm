@@ -101,16 +101,16 @@ msgstr "名為 %s 的 Volume 群組已經存在。請選擇一個獨一無二的
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr "您必須賦予新邏輯 Volume 一個名稱"
+msgstr "您必須為新邏輯 Volume 賦予名稱"
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr "您必須賦予新 Volume 群組一個名稱"
+msgstr "您必須為新 Volume 群組賦予名稱"
 
 #: src/InputController.py:102
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr "指定的掛載點 %s 不存在。您想要建立這掛載點嗎？"
+msgstr "沒有指定的掛載點 %s。要建立這個掛載點嗎？"
 
 #: src/InputController.py:104
 #, python-format
@@ -183,7 +183,7 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"重要警告：邏輯 Volume %s 上面已經有了 %s 檔案系統，目前掛載於 %s 上。您是否百"
+"嚴重警告：邏輯 Volume %s 上面已經有了 %s 檔案系統，目前掛載於 %s 上。您是否百"
 "分之百確定要移除這個已掛載檔案系統上的所有檔案？"
 
 #: src/InputController.py:126
@@ -434,11 +434,11 @@ msgstr ""
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
-msgstr "您指定的路徑不存在。"
+msgstr "沒有您指定的路徑。"
 
 #: src/InputController.py:685
 msgid "The path you specified is not a Block Device."
-msgstr "您指定的路徑並不是磁區裝置。"
+msgstr "您指定的路徑並不是區塊裝置。"
 
 #: src/InputController.py:756
 #, python-format
@@ -466,16 +466,16 @@ msgstr "選項"
 #: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr "建立一份 %s 的快照"
+msgstr "建立 %s 的快照"
 
 #: src/InputController.py:1356
 msgid "Create New Logical Volume"
-msgstr "建立新的邏輯 Volume"
+msgstr "建立新邏輯 Volume"
 
 #: src/InputController.py:1359
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr "編輯一份在快照 %s 的 %s"
+msgstr "編輯 %s，%s 的快照"
 
 #: src/InputController.py:1362
 msgid "Edit Logical Volume"
@@ -644,21 +644,20 @@ msgid "Completing Extent Migration"
 msgstr "正在完成範圍轉移"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "延伸的分割區"
+msgstr "正在重新讀取分割表"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
-msgstr "未使用的"
+msgstr "未使用"
 
 #: src/lvm_model.py:46
 msgid "Unused Space"
-msgstr "未使用的空間"
+msgstr "未使用空間"
 
 #: src/lvm_model.py:48
 msgid "Unmounted"
-msgstr "已卸載的"
+msgstr "已卸載"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
@@ -794,7 +793,7 @@ msgstr "不能初始化:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
-msgstr "延伸的分割區"
+msgstr "延伸分割區"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
@@ -827,15 +826,15 @@ msgstr "手動式初始"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "已叢集:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "真"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "假"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -856,7 +855,7 @@ msgstr "快照用法:"
 #: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
 #: src/lvm_model.py:899
 msgid "/   Root Filesystem"
-msgstr "/   Root 的檔案系統"
+msgstr "/   Root 檔案系統"
 
 #: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
@@ -905,7 +904,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr "重新載入 LVM 中，請稍候。"
+msgstr "正在重新載入 LVM，請稍候。"
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -1045,11 +1044,11 @@ msgstr "實體檢視"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr "未分配的"
+msgstr "未分配"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr "未初始化的"
+msgstr "未初始化"
 
 #: src/renderer.py:195
 #, python-format
@@ -1111,11 +1110,11 @@ msgstr "Volume 群組"
 
 #: src/Volume_Tab_View.py:46
 msgid "Unallocated Volumes"
-msgstr "未分配的 Volume"
+msgstr "未分配 Volume"
 
 #: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
-msgstr "未初始化的個體"
+msgstr "未初始化個體"
 
 #: src/Volume_Tab_View.py:63
 msgid ""
@@ -1211,7 +1210,7 @@ msgstr "升級檔案系統失敗。嘗試的指令：\"%s\" - 系統錯誤訊息
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
-msgstr "未知的檔案系統"
+msgstr "不知名檔案系統"
 
 #: src/Filesystem.py:374
 msgid "GFS (local)"
@@ -1223,19 +1222,19 @@ msgstr "GFS (叢集)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "叢集名稱包含不可接受的字元"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS 名稱包含不可接受的字元"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "缺少叢集名稱"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "缺少 GFS 名稱"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1243,7 +1242,7 @@ msgstr "GFS2 (本機)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
-msgstr "GFS2 (叢集)"
+msgstr "GFS2 (已叢集)"
 
 #: src/Segment.py:44
 msgid "Stripe"
@@ -1319,16 +1318,15 @@ msgstr ""
 "Volume 群組中"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (叢集)"
+msgstr "已叢集"
 
 #: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
-"建立新的\n"
+"建立新\n"
 "邏輯 Volume"
 
 #: src/lvui.glade.h:18
@@ -1340,16 +1338,16 @@ msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
-"建立新的 \n"
+"建立新 \n"
 "Volume 群組"
 
 #: src/lvui.glade.h:21
 msgid "Edit Properties"
-msgstr "編輯屬性："
+msgstr "編輯屬性"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
-msgstr "請輸入磁區裝置之路徑以作初始化"
+msgstr "請輸入區塊裝置之路徑以作初始化"
 
 #: src/lvui.glade.h:23
 msgid ""
@@ -1373,7 +1371,7 @@ msgstr "初始化"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Block Device"
-msgstr "初始化磁區裝置"
+msgstr "初始化區塊裝置"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
@@ -1381,7 +1379,7 @@ msgstr "初始化個體"
 
 #: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
-msgstr "初始化磁區裝置(_B)"
+msgstr "初始化區塊裝置(_B)"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
@@ -1397,17 +1395,15 @@ msgstr "管理 Volume"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "將 Volume 群組標記為『已叢集』"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "最大邏輯 Volume ："
+msgstr "最大邏輯 Volume"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "最大實際 Volume ："
+msgstr "最大實體 Volume"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1419,16 +1415,15 @@ msgid ""
 "Extent(s) From Volume"
 msgstr ""
 "從 Volume 中轉移\n"
-"選擇的範圍"
+"選取的範圍"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
 msgstr "新 volume 群組"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "實體範圍的大小： "
+msgstr "實體範圍的大小"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1436,23 +1431,23 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "移除 \n"
-"邏輯磁區"
+"邏輯 Volume"
 
 #: src/lvui.glade.h:44
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
-"移除選擇的\n"
-"邏輯磁區"
+"移除選取的\n"
+"邏輯 Volume"
 
 #: src/lvui.glade.h:46
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
-"移除選擇的\n"
-"實體磁區"
+"移除選取的\n"
+"實體 Volume"
 
 #: src/lvui.glade.h:48
 msgid ""
@@ -1467,7 +1462,7 @@ msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
-"從 LVM 中\n"
+"從 LVM\n"
 "移除 Volume"
 
 #: src/lvui.glade.h:52
@@ -1479,9 +1474,8 @@ msgid "Some text"
 msgstr "一些文字"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Volume 群組名稱：   "
+msgstr "Volume 群組名稱"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1493,7 +1487,7 @@ msgstr "工具(_T)"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
-msgstr "延伸 vg 訊息"
+msgstr "延伸 vg 訊息:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1533,7 +1527,7 @@ msgstr "在 /etc/fstab 中加入項目"
 
 #: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
-msgstr "建立新的邏輯 Volume (LV)"
+msgstr "建立新邏輯 Volume (LV)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1617,7 +1611,7 @@ msgstr "<b>轉移政策</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr "任何地方 - 還未執行"
+msgstr "任何地方 - 還未實作"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
