@@ -708,7 +708,7 @@ msgstr "Завершение переноса экстентов"
 
 #: src/CommandHandler.py:378
 msgid "Rereading partition table"
-msgstr "Перечитывается раблица разделов"
+msgstr "Перечитывается таблица разделов"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
