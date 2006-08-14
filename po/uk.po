@@ -1,7 +1,7 @@
 # Ukrainian translation of system-config-lvm.
 # Copyright (C) 2005 Free Software Foundation
 # This file is distributed under the same license as the system-config-lvm package.
-# Maxim Dziumanenko <mvd@mylinux.com.ua>, 2005.
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2005-2006
 #
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
 "PO-Revision-Date: 2006-04-03 00:07+0300\n"
-"Last-Translator: Maxim V. Dziumanenko <mvd@mylinux.ua>\n"
+"Last-Translator: Maxim V. Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -154,9 +154,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Не підтримується створення знімку вже існуючого знімку."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Не підтримується створення знімку вже існуючого знімку."
+msgstr "Не підтримується створення знімку дзеркального логічного тому."
 
 #: src/InputController.py:119
 #, python-format
@@ -370,6 +369,9 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"Щоб Група томів була безпечно задіяна у кластерному "
+"оточенні необхідно встановити rpm пакет lvm2-cluster та запустити службу "
+"clvmd"
 
 #: src/InputController.py:364
 #, python-format
@@ -687,9 +689,8 @@ msgid "Completing Extent Migration"
 msgstr "Завершення переміщення екстентів"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Розширений розділ"
+msgstr "Перечитується таблиця розділів"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -870,15 +871,15 @@ msgstr "Ініціалізувати вручну"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "У кластері:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Вірно"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Не вірно"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1178,6 +1179,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Блокування LVM вимкнено!!! \n"
+"Можливо істотне пошкодження даних.\n"
+"Увімкніть блокування (locking_type=1 або 2 у /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1186,6 +1190,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM налаштовано на використання механізму Блокування кластера, але демон clvmd "
+"не запущено. Запустіть демон командою:\n"
+"service clvmd start \n"
+"або вимкніть блокування кластера (locking_type=1 у /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1194,6 +1202,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM налаштовано на використання механізму Блокування Кластера, але кластер не "
+"знаходиться у стані кворуму.\n"
+"Дочекайтесь доки буде зібрано кворум кластера або вимкніть блокування "
+"кластера (locking_type=1 у /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1201,10 +1213,13 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s підтримує лише блокування на основі файлів чи кластера "
+"(locking_type=1 або 2 у /etc/lvm/lvm.conf)."
+
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Кластерізована Гр. томів"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1286,19 +1301,19 @@ msgstr "GFS (кластер)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Назва кластера містить неприпустимі символи"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Назва GFS містить неприпустимі символи"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Відсутня назва кластера"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Відсутня назва GFS"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1382,9 +1397,8 @@ msgstr ""
 "групу томів"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (кластер)"
+msgstr "У кластері"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1460,17 +1474,15 @@ msgstr "Керування томами"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Позначити групу томів як так що 'приймає участь у кластері'"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Максимум логічних томів: "
+msgstr "Максимум логічних томів"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Максимум фізичних томів: "
+msgstr "Максимум фізичних томів"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1489,9 +1501,8 @@ msgid "New Volume Group"
 msgstr "Нова група томів"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Розмір фізичного екстенту: "
+msgstr "Розмір фізичного екстенту"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1542,9 +1553,8 @@ msgid "Some text"
 msgstr "Деякий текст"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Назва групи томів:   "
+msgstr "Назва групи томів"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
