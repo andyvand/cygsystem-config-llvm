@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-17 11:41+1000\n"
+"PO-Revision-Date: 2006-08-20 00:10+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
 "Language-Team: Chinese, Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1122,6 +1122,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM 鎖定功能已經停用！\n"
+"這可能會導致大量資料損毀。\n"
+"啟用鎖定（在 /etc/lvm/lvm.conf 中，設定 locking_type=1 或 2）。"
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1130,6 +1133,9 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM 設定為使用叢集鎖定機制，但 clvmd 系統程式並不在執行中。請用以下指令啟動系統程式：\n"
+"service clvmd start\n"
+"或關閉叢集鎖定（在 /etc/lvm/lvm.conf 中，設定 locking_type=1）。"
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1138,17 +1144,19 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM 設定為使用叢集鎖定機制，但叢集數量不足。\n"
+"請等到叢集數量足夠，或關閉叢集鎖定（在 /etc/lvm/lvm.conf 中，設定 locking_type=1）。"
 
 #: src/Volume_Tab_View.py:75
 #, python-format
 msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
-msgstr ""
+msgstr "%s 只支援以檔案或叢集為主的鎖定（在 /etc/lvm/lvm.conf 中，設定 locking_type=1 或 2）。"
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "叢集的 VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
