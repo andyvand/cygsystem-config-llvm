@@ -1,24 +1,24 @@
 # Swedish messages for system-config-lvm.
 # Copyright 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
-#
 # $Id$
-#
 # Terminologi
 # -----------
 # extents	= områden (enligt Tomas G.:s förslag)
 # stripe 	= strimla (enligt Tomas G. och Göran U.)
-#
+# Christian Rose <menthos@menthos.com>, 2006.
+# 
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-16 23:59+0100\n"
-"Last-Translator: Christian Rose <menthos@menthos.com>\n"
+"PO-Revision-Date: 2006-08-22 13:15-0400\n"
+"Last-Translator: Magnus Larsson <fedoratrans@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -161,9 +161,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "En ögonblicksbild av en ögonblicksbild stöds inte."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "En ögonblicksbild av en ögonblicksbild stöds inte."
+msgstr "En ögonblicksbild av en speglad, logisk volym stöds inte."
 
 #: src/InputController.py:119
 #, python-format
@@ -387,6 +386,8 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"För att volymgruppen ska kunna användas säkert i en klustrad miljö, "
+"lvm2-cluster rpm måste vara installerad och clvmd tjänsten vara startad"
 
 #: src/InputController.py:364
 #, python-format
@@ -704,9 +705,8 @@ msgid "Completing Extent Migration"
 msgstr "Slutför migrering av områden"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Utökad partition"
+msgstr "Läs om partitiontabellen"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -888,15 +888,15 @@ msgstr "Initiera manuellt"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Klustrad:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Sant"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Falskt"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1196,6 +1196,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM lås är inaktiverade!!! \n"
+"Massiv datakorruption kan inträffa.\n"
+"Aktivera låsning (locking_type=1 eller 2 i /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1204,6 +1207,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM är konfigurerad att använda Cluster Locking mekanismen, men clvmd demonen är "
+"inte igång. Starta demonen med kommandot:\n"
+"service clvmd start \n"
+"eller, stäng av klusterlåsning (locking_type=1 i /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1212,6 +1219,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM är konfigurerat att använda Cluster Locking mekanismen, men klustret är inte "
+"quorate.\n"
+"Antingen vänta tills klustret är quorate eller stäng av klusterlåsning "
+"(locking_type=1 i /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1219,10 +1230,12 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s stöder bara fil- och klusterbaserad låsning (locking_type=1 eller 2 i /etc/"
+"lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Klustrad VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1304,19 +1317,19 @@ msgstr "GFS (klustrat)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Klusternamn innehåller otillåtet tecken "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS-namn innehåller otillåtet tecken "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Saknar klusternamn"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Saknar GFS-namn"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1400,9 +1413,8 @@ msgstr ""
 "befintlig volymgrupp"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (klustrat)"
+msgstr "Klustrad"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1477,19 +1489,16 @@ msgid "Manage Volumes"
 msgstr "Hantera volymer"
 
 #: src/lvui.glade.h:34
-#, fuzzy
 msgid "Mark Volume Group as 'clustered'"
-msgstr "Namn på volymgrupp:"
+msgstr "Markera volymgruppen som 'klustrad'"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Maximalt antal logiska volymer:"
+msgstr "Maximalt antal logiska volymer"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Maximalt antal fysiska volymer:"
+msgstr "Maximalt antal fysiska volymer"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1508,9 +1517,8 @@ msgid "New Volume Group"
 msgstr "Ny volymgrupp"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Storlek på fysiskt område:"
+msgstr "Storlek på fysiskt område"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1561,9 +1569,8 @@ msgid "Some text"
 msgstr "En del text"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Namn på volymgrupp:"
+msgstr "Namn på volymgrupp"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
