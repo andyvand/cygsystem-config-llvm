@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-21 16:54+0000\n"
+"PO-Revision-Date: 2006-08-23 16:54+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
 "MIME-Version: 1.0\n"
@@ -155,9 +155,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Skyndimynd af skyndimynd er ekki stutt."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Skyndimynd af skyndimynd er ekki stutt."
+msgstr "Skyndimynd af spegluðum sýndardisk er ekki stutt."
 
 #: src/InputController.py:119
 #, python-format
@@ -371,6 +370,8 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"Til að hægt sé að nota diskhópinn í klösuðu umhverfi á öruggan máta þarf "
+"lvm2-cluster pakkinn að vera inni og clvmd þjónustan virk."
 
 #: src/InputController.py:364
 #, python-format
@@ -679,9 +680,8 @@ msgid "Completing Extent Migration"
 msgstr "Lýk við flutning diskhluta"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Stækka disksneið"
+msgstr "Endurles disksneiðatöfluna"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -862,15 +862,15 @@ msgstr "Frumstilla handvirkt"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Klasað:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Satt"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Falskt"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1192,10 +1192,12 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s styður einungis skráa og klasalæsingar (locking_type=1 eða 2 í /etc/"
+"lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Klasaður diskhópur"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1273,19 +1275,19 @@ msgstr "GFS (klasað)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Klasaheitið inniheldur ógilt tákn "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS heitið inniheldur ógilt tákn"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Klasaheitið vantar"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "GFS heitið vantar"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1369,9 +1371,8 @@ msgstr ""
 "sem þegar er til"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (klasað)"
+msgstr "Klasað"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1447,17 +1448,15 @@ msgstr "Stýra drifum"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Merkja diskhópinn klasaðann"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Hámarksfjöldi sýndardiska: "
+msgstr "Hámarksfjöldi sýndardiska"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Hámarksfjöldi raundiska: "
+msgstr "Hámarksfjöldi raundiska"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1476,9 +1475,8 @@ msgid "New Volume Group"
 msgstr "Nýr diskhópur"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Stærð diskhluta: "
+msgstr "Stærð diskhluta"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1529,9 +1527,8 @@ msgid "Some text"
 msgstr "Einhver texti"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Heiti sýndardiskhóps:   "
+msgstr "Heiti sýndardiskhóps"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1720,9 +1717,3 @@ msgstr "Færa einungis diskbúta sem tilheyra SD"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Nota almenna skynsemi"
-
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Heiti sýndardiskhópsins: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Sniðmát nýs diskhóps"
