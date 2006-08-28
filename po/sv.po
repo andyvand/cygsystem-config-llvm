@@ -18,7 +18,7 @@ msgstr ""
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -386,8 +386,8 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
-"För att volymgruppen ska kunna användas säkert i en klustrad miljö, "
-"lvm2-cluster rpm måste vara installerad och clvmd tjänsten vara startad"
+"För att volymgruppen ska kunna användas säkert i en klustrad miljö, lvm2-"
+"cluster rpm måste vara installerad och clvmd tjänsten vara startad"
 
 #: src/InputController.py:364
 #, python-format
@@ -1207,8 +1207,8 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM är konfigurerad att använda Cluster Locking mekanismen, men clvmd demonen är "
-"inte igång. Starta demonen med kommandot:\n"
+"LVM är konfigurerad att använda Cluster Locking mekanismen, men clvmd "
+"demonen är inte igång. Starta demonen med kommandot:\n"
 "service clvmd start \n"
 "eller, stäng av klusterlåsning (locking_type=1 i /etc/lvm/lvm.conf)."
 
@@ -1219,8 +1219,8 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM är konfigurerat att använda Cluster Locking mekanismen, men klustret är inte "
-"quorate.\n"
+"LVM är konfigurerat att använda Cluster Locking mekanismen, men klustret är "
+"inte quorate.\n"
 "Antingen vänta tills klustret är quorate eller stäng av klusterlåsning "
 "(locking_type=1 i /etc/lvm/lvm.conf)."
 
@@ -1230,8 +1230,8 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
-"%s stöder bara fil- och klusterbaserad låsning (locking_type=1 eller 2 i /etc/"
-"lvm/lvm.conf)."
+"%s stöder bara fil- och klusterbaserad låsning (locking_type=1 eller 2 i /"
+"etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
