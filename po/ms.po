@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-14 23:39+0800\n"
+"PO-Revision-Date: 2006-08-30 07:47+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -520,7 +520,7 @@ msgstr "Melengkapkan Pemindahan Extent"
 #: src/CommandHandler.py:378
 #, fuzzy
 msgid "Rereading partition table"
-msgstr "Partisyen dilanjutkan"
+msgstr "Edit partisyen: /dev/%s"
 
 #: src/lvm_model.py:45
 #: src/lvmui_constants.py:83
@@ -715,12 +715,14 @@ msgid "Clustered:   "
 msgstr ""
 
 #: src/lvm_model.py:735
+#, fuzzy
 msgid "True"
-msgstr ""
+msgstr "betul"
 
 #: src/lvm_model.py:737
+#, fuzzy
 msgid "False"
-msgstr ""
+msgstr "Salah!"
 
 #: src/lvm_model.py:795
 #, fuzzy
@@ -799,7 +801,7 @@ msgstr "Log Ralat"
 #: src/lvmui_constants.py:63
 #, fuzzy
 msgid "Unable to process request"
-msgstr "Fail dalam proses: %d"
+msgstr "Tidak dapat memproses namapengguna %s. Ralat: %m."
 
 #: src/lvmui_constants.py:65
 #, python-format
@@ -1022,8 +1024,9 @@ msgid "%s only supports file and cluster based locking (locking_type=1 or 2 in /
 msgstr ""
 
 #: src/Volume_Tab_View.py:262
+#, fuzzy
 msgid "Clustered VG"
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1092,23 +1095,27 @@ msgstr "GFS - Global File System"
 
 #: src/Filesystem.py:504
 #: src/Filesystem.py:748
+#, fuzzy
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Nama pengguna '%s' mengandungi aksara tidak sah pada kedudukan %d."
 
 #: src/Filesystem.py:507
 #: src/Filesystem.py:751
+#, fuzzy
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Nama pengguna '%s' mengandungi aksara tidak sah pada kedudukan %d."
 
 #: src/Filesystem.py:510
 #: src/Filesystem.py:754
+#, fuzzy
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Kehilangan Nama Pengguna"
 
 #: src/Filesystem.py:513
 #: src/Filesystem.py:757
+#, fuzzy
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Kehilangan Nama Pengguna"
 
 #: src/Filesystem.py:618
 #, fuzzy
@@ -1116,8 +1123,9 @@ msgid "GFS2 (local)"
 msgstr "CDROM lokal"
 
 #: src/Filesystem.py:716
+#, fuzzy
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "Menyahlekap failsistem GFS2 (malas): "
 
 #: src/Segment.py:44
 msgid "Stripe"
@@ -1358,7 +1366,7 @@ msgstr "Teks Placeholder."
 #: src/lvui.glade.h:54
 #, fuzzy
 msgid "Volume Group Name"
-msgstr "Nama Kumpulan Volum:"
+msgstr "Nama Kumpulan _Volum:"
 
 #: src/lvui.glade.h:55
 #, fuzzy
@@ -1373,9 +1381,7 @@ msgstr "Alat"
 #: src/lvui.glade.h:57
 #, fuzzy
 msgid "extend vg message:"
-msgstr ""
-"Lebihkan\n"
-"Kumpulan Volum"
+msgstr "Papar mesej ini"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1466,19 +1472,16 @@ msgid "Mount"
 msgstr "Lekap"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Titik Lekapan"
+msgstr "Titik lekapan:"
 
 #: src/lv_edit_props.glade.h:27
-#, fuzzy
 msgid "Mount when rebooted"
-msgstr "Titik Lekapan apabila Diulangboot:"
+msgstr "Lekap apabila diulangboot"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "_Saiz (MB):"
+msgstr "Minta saiz"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
@@ -1557,9 +1560,4 @@ msgstr "Hanya pindah eksten kepunyaan LV"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Guna common sense"
-
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Nama untuk Kumpulan Volum:"
-#~ msgid "New Volume Group Form"
-#~ msgstr "Borang Kumpulan Volum Baru"
 
