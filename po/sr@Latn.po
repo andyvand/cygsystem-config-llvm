@@ -8,12 +8,12 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-19 23:48-0500\n"
+"PO-Revision-Date: 2006-08-29 13:00-0400\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -159,9 +159,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Snimak snimka nije podržan."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Snimak snimka nije podržan."
+msgstr "Snimak odraza logičkog diska nije podržan."
 
 #: src/InputController.py:119
 #, python-format
@@ -169,8 +168,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
-"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo "
-"uklonite snimak."
+"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo uklonite "
+"snimak."
 
 #: src/InputController.py:120
 #, python-format
@@ -194,9 +193,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je "
-"montirana na %s. Da li ste potpuno sigurni da želite odbaciti podatke na "
-"ovom montiranom sistemu datoteka?"
+"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je montirana "
+"na %s. Da li ste potpuno sigurni da želite odbaciti podatke na ovom "
+"montiranom sistemu datoteka?"
 
 #: src/InputController.py:126
 #, python-format
@@ -302,8 +301,7 @@ msgstr ""
 "logičkog(ih) diska(ova) mapirane na svoj opseg. Zato što je to jedini "
 "fizički disk u grupi diskova, ne postoji mesto na koje bi se podaci "
 "premestili. Preporučena akcija je ili dodavanje novog fizičkog diska pre "
-"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom "
-"disku."
+"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom disku."
 
 #: src/InputController.py:153
 #, python-format
@@ -327,8 +325,8 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %"
-"s. Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
+"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %s. "
+"Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
 
 #: src/InputController.py:156
 msgid ""
@@ -380,6 +378,8 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"Da bi se grupa diskova mogla bezbedno koristiti u učvorenom okruženju, lvm2-"
+"cluster paket mora biti instaliran, i clvmd servis mora da je pokrenut"
 
 #: src/InputController.py:364
 #, python-format
@@ -400,8 +400,7 @@ msgid ""
 "removable."
 msgstr ""
 "Fizički disk %s sadrži opsege koji pripadaju odrazu logičkog diska %s. "
-"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može "
-"uklanjati."
+"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može uklanjati."
 
 #: src/InputController.py:370
 #, python-format
@@ -485,8 +484,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
-"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. "
-"Problem bi se rešio dodavanjem još fizičkih diskova."
+"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. Problem "
+"bi se rešio dodavanjem još fizičkih diskova."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -535,9 +534,8 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju "
-"otkazivanja čvrstog diska. Da li želite postaviti odraze na različite čvrste "
-"diskove?"
+"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju otkazivanja "
+"čvrstog diska. Da li želite postaviti odraze na različite čvrste diskove?"
 
 #: src/InputController.py:1545
 msgid ""
@@ -551,8 +549,8 @@ msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se "
-"uključilo pravljenje odraza"
+"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se uključilo "
+"pravljenje odraza"
 
 #: src/InputController.py:1558
 msgid ""
@@ -577,8 +575,7 @@ msgstr ""
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
+msgstr "Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -611,8 +608,8 @@ msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da "
-"li ste sigurni da želite nastaviti?"
+"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da li "
+"ste sigurni da želite nastaviti?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
@@ -693,9 +690,8 @@ msgid "Completing Extent Migration"
 msgstr "Završavam preseljenje opsega"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Proširena particija"
+msgstr "Čitam tabelu particija"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -876,15 +872,15 @@ msgstr "Ručna inicijalizacija"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Učvoren:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Tačno"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Netačno"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -970,8 +966,8 @@ msgid ""
 "computer now."
 msgstr ""
 "Promene će preći u dejstvo posle ponovnog pokretanja. Ako je uređaj %s u "
-"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo "
-"je da se računar ponovo pokrene sada."
+"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo je "
+"da se računar ponovo pokrene sada."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1183,6 +1179,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Zaključavanje LVM-a je neomogućeno!!! \n"
+"Masovna korupcija podataka se može dogoditi.\n"
+"Omogući zaključavanje (locking_type=1 ili 2 u /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1191,6 +1190,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM je podešen da koristi Zaključavanje čvorova mehanizam, ali clvdm demon nije "
+"pokrenut. Pokrenite demon sa komandom:\n"
+"service clvmd start \n"
+"ili, ugasite zaključavanje čvora (locking_type=1 u /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1199,6 +1202,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM je podešen da koristi Zaključavanje čvora mehanizam, ali čvor nije"
+"u kvorumu.\n"
+"Ili sačekajte da čvor uđe u kvorum ili isključite zaključavanje čvora "
+"(locking_type=1 u /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1206,10 +1213,12 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s podržava samo zaključavanje zasnovano na datotekama i čvorovima "
+"(locking_type=1 ili 2 u /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Učvorena GD"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1291,19 +1300,19 @@ msgstr "GFS (učvoren)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Ime čvora sadrži ne dozvoljene znakove "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Ime GFS-a sadrši ne dozvoljene znakove "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Ime čvora nedostaje"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Ime GFS-a nedostaje"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1387,9 +1396,8 @@ msgstr ""
 "grupi diskova"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (učvoren)"
+msgstr "Učvoren"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1465,17 +1473,15 @@ msgstr "Upravlja diskovima"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Označi grupu diskova kao „učvorene“"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
 msgstr "Najviše logičkih diskova: "
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Najviše fizičkih diskova: "
+msgstr "Najviše fizičkih diskova"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1494,9 +1500,8 @@ msgid "New Volume Group"
 msgstr "Nova grupa doskova"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Veličina fizičkog opsega: "
+msgstr "Veličina fizičkog opsega"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1547,9 +1552,8 @@ msgid "Some text"
 msgstr "Neki tekst"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Ime grupe diskova:   "
+msgstr "Ime grupe diskova"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
