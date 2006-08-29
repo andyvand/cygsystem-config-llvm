@@ -8,12 +8,12 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-19 23:48-0500\n"
+"PO-Revision-Date: 2006-08-29 13:00-0400\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bit"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -159,9 +159,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "Снимак снимка није подржан."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Снимак снимка није подржан."
+msgstr "Снимак одраза логичког диска није подржан."
 
 #: src/InputController.py:119
 #, python-format
@@ -379,6 +378,8 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"Да би се група дискова могла безбедно користити у учвореном окружењу, lvm2-"
+"cluster пакет мора бити инсталиран, и clvmd сервис мора да је покренут"
 
 #: src/InputController.py:364
 #, python-format
@@ -689,9 +690,8 @@ msgid "Completing Extent Migration"
 msgstr "Завршавам пресељење опсега"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Проширена партиција"
+msgstr "Читам табелу партиција"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -872,15 +872,15 @@ msgstr "Ручна иницијализација"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Учворен:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Тачно"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Нетачно"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -1179,6 +1179,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Закључавање LVM-а је неомогућено!!! \n"
+"Масовна корупција података се може догодити.\n"
+"Омогући закључавање (locking_type=1 или 2 у /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1187,6 +1190,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM је подешен да користи Закључавање чворова механизам, али clvdm демон није "
+"покренут. Покрените демон са командом:\n"
+"service clvmd start \n"
+"или, угасите закључавање чвора (locking_type=1 у /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1195,6 +1202,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM је подешен да користи Закључавање чвора механизам, али чвор није"
+"у кворуму.\n"
+"Или сачекајте да чвор уђе у кворум или искључите закључавање чвора "
+"(locking_type=1 у /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1202,10 +1213,12 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s подржава само закључавање засновано на датотекама и чворовима "
+"(locking_type=1 или 2 у /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Учворена ГД"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
@@ -1287,19 +1300,19 @@ msgstr "GFS (учворен)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Име чвора садржи не дозвољене знакове "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Име GFS-а садрши не дозвољене знакове "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Име чвора недостаје"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Име GFS-a недостаје"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1383,9 +1396,8 @@ msgstr ""
 "групи дискова"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (учворен)"
+msgstr "Учворен"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1461,17 +1473,15 @@ msgstr "Управља дисковима"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Означи групу дискова као „учворене“"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
 msgstr "Највише логичких дискова: "
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Највише физичких дискова: "
+msgstr "Највише физичких дискова"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1490,9 +1500,8 @@ msgid "New Volume Group"
 msgstr "Нова група доскова"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Величина физичког опсега: "
+msgstr "Величина физичког опсега"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1543,9 +1552,8 @@ msgid "Some text"
 msgstr "Неки текст"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Име групе дискова:   "
+msgstr "Име групе дискова"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
