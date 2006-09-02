@@ -713,7 +713,7 @@ msgstr ""
 
 #: src/lvm_model.py:85
 msgid "File System:   "
-msgstr "Σύστημα Αρχείων:   "
+msgstr "Σύστημα αρχείων:   "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
@@ -729,7 +729,7 @@ msgstr ""
 
 #: src/lvm_model.py:90
 msgid "Space Free:   "
-msgstr "Ελεύθερος Χώρος:   "
+msgstr "Ελεύθερος χώρος:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
