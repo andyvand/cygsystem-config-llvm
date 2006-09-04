@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-08-30 07:47+0800\n"
+"PO-Revision-Date: 2006-08-31 21:58+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1441,14 +1441,12 @@ msgid "Kilobytes granularity"
 msgstr "Kilobyte"
 
 #: src/lv_edit_props.glade.h:19
-#, fuzzy
 msgid "LV name:"
-msgstr "Nama Pengguna"
+msgstr "Nama LV:"
 
 #: src/lv_edit_props.glade.h:20
-#, fuzzy
 msgid "LV size"
-msgstr "_Saiz (MB):"
+msgstr "Saiz LV"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1459,9 +1457,8 @@ msgid "Linear"
 msgstr "Linear"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
-msgstr "Cermin"
+msgstr "Dicermin"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
