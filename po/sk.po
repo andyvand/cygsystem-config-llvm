@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-29 14:32+0100\n"
+"PO-Revision-Date: 2006-09-04 08:47+0100\n"
 "Last-Translator: Mike Karas <zoliqe@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@linux.sk>\n"
 "MIME-Version: 1.0\n"
@@ -453,9 +453,8 @@ msgstr "Zrkadlo nebolo vytvorené. Dokončujem zvyšné úlohy."
 
 #. create mirror
 #: src/InputController.py:2166
-#, fuzzy
 msgid "Underlaying LVM doesn't support addition of mirrors to existing Logical Volumes. Completing remaining tasks."
-msgstr "Súčasná SLZ nepodporuje pridávanie zrkadiel do existujúcich logických zväzkov. Dokončujú sa zvyšné úlohy."
+msgstr "Použitá SLZ nepodporuje pridávanie zrkadiel do existujúcich logických zväzkov. Dokončujú sa zvyšné úlohy."
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -992,13 +991,12 @@ msgstr ""
 "alebo, vypnite klástrové zámky (locking_type=1 v /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
-#, fuzzy
 msgid ""
 "LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\n"
 "Either wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"SLZ je nastavená pre použitie mechanizmu klástrových zámkov, ale kláster  nie je quorate.\n"
-"Počkajte pokiaľ kláster bude quorate alebo vypnite klástrové zámky (locking_type=1 v /etc/lvm/lvm.conf)."
+"SLZ je nastavená pre použitie mechanizmu klástrových zámkov, ale kláster  nie je na to pripravený.\n"
+"Počkajte pokiaľ kláster bude pripravený alebo vypnite klástrové zámky (locking_type=1 v /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
