@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-12 01:16+0100\n"
+"PO-Revision-Date: 2006-09-19 22:19+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Renato Pavicic <www.translator-shop.org>\n"
 "MIME-Version: 1.0\n"
@@ -961,7 +961,7 @@ msgstr "Nedodijeljeni volumeni"
 
 #: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
-msgstr "Neinicijalizirani entiteti"
+msgstr "Neinicijaliziran entiteti"
 
 #: src/Volume_Tab_View.py:63
 msgid ""
@@ -969,7 +969,7 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM zaključavanja su unemogućena!!! \n"
+"LVM zaključavanja su onemogućena!!! \n"
 "Može doći do masovnog oštećivanja podataka.\n"
 "Omogućite zaključavanje (locking_type=1 ili 2 u /etc/lvm/lvm.conf)."
 
@@ -1080,7 +1080,7 @@ msgstr "Nedostaje naziv skupine"
 #: src/Filesystem.py:513
 #: src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr "Nedostaej GFS naziv"
+msgstr "Nedostaje GFS naziv"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
@@ -1242,7 +1242,7 @@ msgstr "Upravljanje volumenima"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr "Frupu volumena označiti kao 'u skupini'"
+msgstr "Grupu volumena označiti kao 'u skupini'"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
