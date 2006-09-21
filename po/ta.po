@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-08-11 15:39+0530\n"
+"PO-Revision-Date: 2006-09-21 17:12+0530\n"
 "Last-Translator: Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,8 +35,8 @@ msgid ""
 "  Caught exception: %s\n"
 msgstr ""
 "\n"
-"  வரைகலை சூழலை துவக்க முடியவில்லை. இந்த தோல்விக்கு\n"
-"  காரணம் கருவிகள் வரைகலை சூழலை கொண்டு இயக்க படவில்லை. உங்கள்\n"
+"  வரைகலை சூழலை துவக்க முடியவில்லை. இந்த செயலிழப்புக்கு\n"
+"  காரணம் கருவிகள் வரைகலை சூழலை கொண்டு இயக்கப்படவில்லை. உங்கள்\n"
 "  வரைகலை பயனர் இடைமுகத்தை துவக்கவும் அல்லது DISPLAY மாறியை அமைக்கவும்.\n"
 "                                                                                \n"
 "  பிழை கண்டுபிடிக்கப்பட்டது: %s\n"
@@ -46,7 +46,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "இந்த %s இல் சேர்க்க வேண்டிய தொகுதிக் குழு:"
+msgstr "இந்த %s இல் சேர்க்க வேண்டிய தொகுதி குழு:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -70,7 +70,7 @@ msgstr "என்டிட்டி வகை"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr "ஒதுக்கப்படாத கொள்ளளவு"
+msgstr "ஒதுக்கப்படாத பருநிலை தொகுதி"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
