@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-09-19 22:19+0100\n"
+"PO-Revision-Date: 2006-09-24 00:32+0100\n"
 "Last-Translator: Renato Pavicic <renato@translator-shop.org>\n"
 "Language-Team: Renato Pavicic <www.translator-shop.org>\n"
 "MIME-Version: 1.0\n"
@@ -672,7 +672,7 @@ msgstr "Proširena particija"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr "Zamijeni s trenutno upotrebljavanom particijom"
+msgstr "Trenutno upotrebljavana razmjenska particija"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
