@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-09-21 17:12+0530\n"
+"PO-Revision-Date: 2006-09-25 16:59+0530\n"
 "Last-Translator: Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -165,9 +165,8 @@ msgid "A snapshot of a snapshot is not supported."
 msgstr "ஒரு நொடிப்புக்குள் நொடிப்பு துணைபுரிவதில்லை."
 
 #: src/InputController.py:117
-#, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "ஒரு நொடிப்புக்குள் நொடிப்பு துணைபுரிவதில்லை."
+msgstr "ஒரு பிரதிபலிப்பு தருக்க தொகுதியின் நொடிப்பு துணைபுரிவதில்லை."
 
 #: src/InputController.py:119
 #, python-format
@@ -288,7 +287,7 @@ msgid ""
 msgstr "%s லாஜிக்கல் வால்யூம் மேலாண்மையை நீக்க விருப்பமா?"
 
 #: src/InputController.py:152
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -297,10 +296,11 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"நீங்கள் நீக்க விரும்பும், பிசிக்கல் தொகுதிக்குழு %s, இல் செயலில் உல்ல லாஜிகல் "
-"தொகுதிக்குழுவின் தகவல்கள் உள்ளது. இது பிசிக்கல் தொகுதிக்குழுவாக இருப்பதால், தகவலை "
-"நகர்த்த இடம் இருக்காது. எனவே புதிய இதை நீக்கும் முன் பிசிக்கல் தொகுதிக்குழுவை சேர்க்கலாம் "
-"அல்லது லாஜிக்கல் தொகுதிக்குழுவோடு தொடர்புடைய பிசிக்கல் தொகுதிக்குழுவை நீக்கலாம்."
+"நீங்கள் நீக்க விரும்பும், பருநிலை தொகுதி குழு %s, இல் செயலில் உள்ள தருக்க "
+"தொகுதி(கள்) அதன் விரிவாக்கத்துடன் ஒப்பிடப்பட்டுள்ளது. ஏனெனில் இது "
+"தொகுதி குழுவில் பருநிலை தொகுதியாக இருப்பதால், தரவினை நகர்த்த இடம் "
+"இல்லை. எனவே இதனை நீக்கும் முன் ஒரு புதிய பருநிலை தொகுதியை சேர்க்கலாம் "
+"அல்லது பருநிலை தொகுதிகளோடு தொடர்புடைய பருநிலை தொகுதியை நீக்கலாம்."
 
 #: src/InputController.py:153
 #, python-format
@@ -338,15 +338,14 @@ msgstr ""
 "பிசிகல் நீட்டிப்புக்கு நகர்த்தும் முறை இல்லை."
 
 #: src/InputController.py:157
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"dm-mirror உங்கள் கர்னலில் ஏற்றப்படவில்லை அல்லது உங்கள் இதற்கான ஆதரவு உங்கள் கர்னலில் இல்லை. "
-"ஆதரவு இருந்தால் \"modprobe dm-mirror\" ஐ இயக்கி முயற்சிக்கவும். அல்லது, தகவலை "
-"பிசிகல் நீட்டிப்புக்கு நகர்த்தும் முறை இல்லை."
+"dm-mirror உங்கள் கர்னலில் ஏற்றப்படவில்லை அல்லது உங்கள் இதற்கான துணை "
+"உங்கள் கர்னலில் இல்லை. துணைபுரிந்தால் \"modprobe dm-mirror\" ஐ இயக்கி "
+"முயற்சிக்கவும். இல்லையேல், நொடிப்புகள் உருவாக்கம் இல்லை."
 
 #: src/InputController.py:159
 #, python-format
@@ -1139,6 +1138,8 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s மட்டுமே துணைபுரியும் கோப்பு மற்றும் கொத்து அடிப்படையான பூட்டாகும் (locking_type=1 or 2 in /etc/"
+"lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
@@ -1647,11 +1648,11 @@ msgstr "பெயர்வு விரிவுகள்"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "அதன் செயல்திறன் குறைந்தாலும் எங்காவது இடம்பெயர செய்யவும்"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "புதிய விரிவாக்கங்கள் ஏற்கனவே உள்ளவைகளுக்கு அருகில் உள்ளது"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
