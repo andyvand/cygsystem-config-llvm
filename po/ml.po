@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-11 09:56+0530\n"
+"PO-Revision-Date: 2006-09-26 14:58+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
@@ -111,7 +111,7 @@ msgstr "അപ്രതീക്ഷിതമായി %s എന്ന മൌണ�
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "ഈ സവിശേഷത ഈ വേര്‍ഷനില്‍ ഉല്‍പ്പെടുത്തിയിട്ടില്ല"
 
 #: src/InputController.py:108
 msgid ""
@@ -431,7 +431,7 @@ msgstr "%sന്‍റെ ഇനിഷ്യലൈസേഷന്‍ പരാ�
 
 #: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
-msgstr ""
+msgstr "ദയവായി ആദ്യം എക്സ്റ്റന്‍റുകള്‍ തിരഞ്ഞെടുക്കുക"
 
 #: src/InputController.py:1030
 msgid ""
@@ -442,6 +442,8 @@ msgstr ""
 #: src/InputController.py:1192
 msgid "Migrate extents"
 msgstr ""
+"എക്സറ്റന്‍റുകള്‍\n"
+"മറ്റൊരിടത്തേക്ക് മാറ്റുക"
 
 #: src/InputController.py:1320
 msgid "Options"
@@ -622,14 +624,20 @@ msgstr "വോള്യം ഗ്രൂപ്പില്‍ നിന്നു�
 #: src/CommandHandler.py:315
 msgid "Migrating Extents"
 msgstr ""
+"എക്സറ്റന്‍റുകള്‍\n"
+"മറ്റൊരിടത്തേക്ക് മാറ്റുന്നു"
 
 #: src/CommandHandler.py:327
 msgid "Completing Extent Migration"
 msgstr ""
+"എക്സറ്റന്‍റുകള്‍ മറ്റൊരിടത്തേക്ക്\n"
+"മാറ്റിയിരിക്കുന്നു"
 
 #: src/CommandHandler.py:378
 msgid "Rereading partition table"
-msgstr "Rereading partition table"
+msgstr ""
+"പാര്‍ട്ടീഷന്‍ ടേബിള്‍ വീണ്ടും\n"
+"വായിക്കുന്നു"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -637,7 +645,7 @@ msgstr "ഉപയോഗിക്കാത്തത്"
 
 #: src/lvm_model.py:46
 msgid "Unused Space"
-msgstr "ഉപയോഗിക്കാത്ത സ്പെയ്സ്"
+msgstr "ഉപയോഗിക്കാത്ത സ്ഥലം"
 
 #: src/lvm_model.py:48
 msgid "Unmounted"
@@ -681,7 +689,7 @@ msgstr "എക്സ്റ്റന്‍റിന്‍റെ വലിപ്�
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "Maximum Allowed Physical Volumes:   "
+msgstr "ഏറ്റവും കൂടുതല്‍ അനുവാദ്യമായ ഫിസിക്കല്‍ വോള്യമുകള്‍:   "
 
 #: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
@@ -689,7 +697,7 @@ msgstr "ഫിസിക്കല്‍ വോള്യമുകളുടെ എ�
 
 #: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "Maximum Allowed Logical Volumes:   "
+msgstr "ഏറ്റവും കൂടുതല്‍ അനുവാദ്യമായ ലോജിക്കല്‍ വോള്യമുകള്‍:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
@@ -810,15 +818,15 @@ msgstr "നിങ്ങള്‍ സ്വന്തമായി ഇനിഷ്�
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "ക്ളസ്റ്റേര്‍ഡ്:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "ട്രൂ"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "ഫോള്‍സ്"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -903,7 +911,7 @@ msgstr ""
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "%s കമാന്‍ഡ് പരാജയപ്പെട്ടു. കമാന്‍ഡ് ശ്രമിച്ചു: \"%s\" - സിസ്റ്റത്തില്‍ നിന്നുളള സന്ദേശം: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -977,7 +985,7 @@ msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr "Properties for"
+msgstr "വിശേഷതകള്‍"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
@@ -1115,15 +1123,17 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s ഫയലും ക്ളസ്റ്റര്‍ ബെയിസ്ഡ് ലോക്കിങും മാത്രം പിന്തുണയ്ക്കുന്നു (/etc/lvm/lvm.conf-ല്‍ "
+"locking_type=1 അല്ലെങ്കില്‍ 2 )."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "ക്ളസ്റ്റേര്‍ഡ് VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s മിറര്‍ സിന്‍ക്രോണൈസേഷന്‍"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
@@ -1156,8 +1166,8 @@ msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Creation of filesystem failed. Command attempted: \"%s\" - System Error "
-"Message: %s"
+"ഫയല്‍ സിസ്റ്റം ഉണ്ടാക്കല്‍ പരാജയപ്പെട്ടു. കമാന്‍ഡ് വീണ്ടും ശ്രമിച്ചു: \"%s\" - സിസ്റ്റത്തിന്‍റെ "
+"പിഴക് കാണിക്കുന്ന സന്ദേശം: %s"
 
 #: src/Filesystem.py:25
 #, python-format
@@ -1165,8 +1175,8 @@ msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Resize of filesystem failed. Command attempted: \"%s\" - System Error "
-"Message: %s"
+"ഫയല്‍ സിസ്റ്റത്തിന്‍റെ വലിപ്പം മാറ്റുന്നതില്‍ പരാജയപ്പെട്ടു. കമാന്‍ഡ് വീണ്ടും ശ്രമിച്ചു: "
+"\"%s\" - സിസ്റ്റത്തിന്‍റെ പിഴക് കാണിക്കുന്ന സന്ദേശം: %s"
 
 #: src/Filesystem.py:26
 #, python-format
@@ -1174,8 +1184,8 @@ msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Check of filesystem failed. Command attempted: \"%s\" - System Error "
-"Message: %s"
+"ഫയല്‍ സിസ്റ്റം പരിശോധന പരാജയപ്പെട്ടു. കമാന്‍ഡ് വീണ്ടും ശ്രമിച്ചു: \"%s\" - സിസ്റ്റത്തിന്‍റെ "
+"പിഴക് കാണിക്കുന്ന സന്ദേശം: %s"
 
 #: src/Filesystem.py:27
 #, python-format
@@ -1183,8 +1193,8 @@ msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
-"Message: %s"
+"ഫയല്‍ സിസ്റ്റം പുതുക്കല്‍ പരാജയപ്പെട്ടു. കമാന്‍ഡ് വീണ്ടും ശ്രമിച്ചു: \"%s\" - സിസ്റ്റത്തിന്‍റെ "
+"പിഴക് കാണിക്കുന്ന സന്ദേശം: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
@@ -1192,39 +1202,39 @@ msgstr "അപരിചിയതമായ ഫയല്‍സിസ്റ്റ�
 
 #: src/Filesystem.py:374
 msgid "GFS (local)"
-msgstr "GFS (local)"
+msgstr "GFS (ലോക്കല്‍)"
 
 #: src/Filesystem.py:472
 msgid "GFS (clustered)"
-msgstr "GFS (clustered)"
+msgstr "GFS (ക്ളസ്റ്റേര്‍ഡ്)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "ക്ളസ്റ്ററിന്‍റെ പേരില്‍ തെറ്റായ അക്ഷരമുണ്ട്"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS-ന്‍റെ പേരില്‍ തെറ്റായ അക്ഷരമുണ്ട്"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "ക്ളസ്റ്ററിന്‍റെ പേര് ലഭ്യമല്ല"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "GFS പേര് ലഭ്യമല്ല"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
-msgstr "GFS2 (local)"
+msgstr "GFS2 (ലോക്കല്‍)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
-msgstr "GFS2 (clustered)"
+msgstr "GFS2 (ക്ളസ്റ്റേര്‍ഡ്)"
 
 #: src/Segment.py:44
 msgid "Stripe"
-msgstr "Stripe"
+msgstr "സ്ട്രൈപ്പ്"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1297,7 +1307,7 @@ msgstr ""
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
-msgstr "Clustered"
+msgstr "ക്ളസ്റ്റേര്‍ഡ്"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1357,7 +1367,7 @@ msgstr "എന്‍റിറ്റി ഇനിഷ്യലൈസ് ചെയ�
 
 #: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
-msgstr "ബ്ളോക്ക് (_B) ഡിവൈസ് ഇനിഷ്യലൈസ് ചെയ്യുക"
+msgstr "ബ്ളോക്ക് ഡിവൈസ് ഇനിഷ്യലൈസ് ചെയ്യുക (_B)"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
@@ -1373,15 +1383,15 @@ msgstr "വോള്യമുകള്‍ കൈകാര്യം ചെയ്�
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "വോള്യം ഗ്രൂപ്പ് 'ക്ളസ്റ്റേര്‍ഡ്' ആയി അടയാളപ്പെടുത്തുക"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
-msgstr "Maximum Logical Volumes"
+msgstr "ഏറ്റവും കൂടുതല്‍ ലോജിക്കല്‍ വോള്യമുകള്‍"
 
 #: src/lvui.glade.h:36
 msgid "Maximum Physical Volumes"
-msgstr "Maximum Physical Volumes"
+msgstr "ഏറ്റവും കൂടുതല്‍ ഫിസിക്കല്‍ വോള്യമുകള്‍"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1392,6 +1402,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"വോള്യമില്‍ നിന്നും തിരഞ്ഞെടുത്ത\n"
+"എക്സ്റ്റെന്‍റുകളുടെ സ്ഥലം മാറ്റുക"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
@@ -1399,7 +1411,9 @@ msgstr "പുതിയ വോള്യം ഗ്രൂപ്പ്"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size"
-msgstr "Physical Extent Size"
+msgstr ""
+"ഫിസിക്കല്‍ എക്സ്റ്റന്‍റിന്‍റെ\n"
+"വലിപ്പം"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1451,7 +1465,7 @@ msgstr "ചില ടെക്സ്റ്റ്"
 
 #: src/lvui.glade.h:54
 msgid "Volume Group Name"
-msgstr "Volume Group Name"
+msgstr "വോള്യം ഗ്രൂപ്പിന്‍റെ പേര്"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1515,7 +1529,7 @@ msgstr "വോള്യം ഗ്രൂപ്പ് ലേബലില്‍ ഫ
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
-msgstr ""
+msgstr "ബാക്കിയുളള ശൂന്യമായ സ്ഥലത്തിന്‍റെ ലേബല്‍"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
@@ -1532,6 +1546,8 @@ msgstr "LVയുടെ വലിപ്പം"
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
 msgstr ""
+"സ്നാപ്ഷോട്ടുകളുടെ കീഴിലുളള LV-കളുടെ വലിപ്പം\n"
+"മാറ്റുവാന്‍ സാധ്യമല്ല"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1539,11 +1555,13 @@ msgstr "ലീനിയര്‍"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr "Mirrored"
+msgstr "മിറര്‍ഡ്"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
 msgstr ""
+"മിറര്‍ഡ് LV-കളുടെ വലിപ്പം\n"
+"മാറ്റുവാന്‍ സാധ്യമല്ല"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
@@ -1559,31 +1577,31 @@ msgstr "റീബൂട്ട് ചെയ്ത് വരുന്പോള്�
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr ""
+msgstr "വലിപ്പത്തിന്‍റെ തുടക്കം"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr ""
+msgstr "വലിപ്പത്തിന്‍റെ അവസാനം"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr ""
+msgstr "സ്ട്രിപ്ഡ്"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr ""
+msgstr "ബാക്കി ഉപയോഗിക്കുക"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
-msgstr ""
+msgstr "സ്ട്രൈപ്പുകള്‍"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr "<b>Destination</b>"
+msgstr "<b>ലക്ഷ്യസ്ഥാനം</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr "<b>Migration Policy</b>"
+msgstr "<b>മാറ്റുന്നതിനുളള പോളിസി</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1592,32 +1610,38 @@ msgstr "Anywhere - not implemented"
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
 msgstr ""
+"PV-കള്‍ ഓട്ടോമാറ്റിക്കായി എങ്ങോട്ട് മാറ്റണമെന്ന്\n"
+"തിരഞ്ഞെടുക്കുക"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "തുടര്‍ച്ചയുളള"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr "Destination:"
+msgstr "ലക്ഷ്യസ്ഥാനം:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PV നീക്കം ചെയ്യുന്നതിനായി, ഉപയോഗത്തിലുളള എക്സ്റ്റന്‍റുകളുടെ സ്ഥലം മാറ്റേണ്ടതാണ്.\n"
+"എക്സ്റ്റന്‍റുകളുടെ എവിടേക്ക് മാറ്റണമെന്നും അതിനുളള പോളിസിയും തിരഞ്ഞെടുക്കുക"
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "ലഭ്യമാക്കുക"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
-msgstr ""
+msgstr "വോള്യം ഗ്രൂപ്പില്‍ നിന്നും പോളിസി ലഭ്യമാക്കുക"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
 msgstr ""
+"എക്സറ്റന്‍റുകള്‍ മറ്റൊരിടത്തേക്ക്\n"
+"മാറ്റുക"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
@@ -1625,7 +1649,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "പുതിയ എക്സ്റ്റന്‍റുകള്‍ പഴയവയുടെ അടുത്താണ്"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
@@ -1633,9 +1657,9 @@ msgstr "സാധാരണ"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
-msgstr ""
+msgstr "LV-യുമായി ബന്ധമുളള എക്സ്റ്റന്‍റുകള്‍ മാത്രം മാറ്റുക"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "സാമാന്യ ബുദ്ധി ഉപയോഗിക്കുക"
 
