@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ta\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-09-26 13:18+0530\n"
+"PO-Revision-Date: 2006-09-26 15:12+0530\n"
 "Last-Translator: Felix <ifelix@redhat.com>\n"
 "Language-Team: Tamil <ta@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -451,6 +451,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"பருநிலை தொகுதி \"%s\" ஒரு பிரதிபலிப்புக்கான விரிவாக்கத்தை கொண்டுள்ளது. பிரதிபலிப்பு "
+"இடம்பெயர செய்யக்கூடியது அல்ல, எனவே %s நீக்கக்கூடியது அல்ல."
 
 #: src/InputController.py:613
 #, python-format
@@ -458,6 +460,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"பருநிலை தொகுதி \"%s\" ஒரு நொடிப்பு அல்லது நொடிப்பின் ஆரம்பத்திற்கான விரிவாக்கத்தை "
+"கொண்டுள்ளது. நொடிப்புகள் இடம்பெயர செய்யக்கூடியது அல்ல, எனவே %s நீக்கக்கூடியது அல்ல."
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
@@ -481,6 +485,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"தேவையான இடம்பெயர செய்ய போதுமான விரிவாக்கங்கள் இல்லை. கூடுதல் பருநிலை தொகுதிகளை "
+"சேர்த்தால் சிக்கலை சரி செய்யலாம்."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -527,22 +533,26 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
+"பிரதிபிலிப்பின் முதன்மையான அவசியம் நிலைவட்டு செயலிழக்கப்பட்டால் தகவல்களை "
+"பாதுகாப்பதாகும். நீங்கள் வேறு நிலைவட்டுக்களில் பிரதிபலிப்பு உருக்களை வைக்க வேண்டுமா?"
 
 #: src/InputController.py:1545
 msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgstr "3 நிலை வட்டுகளுக்கும் குறைவானவை வெற்று இடங்களுடன் உள்ளது. பிரதிபலிப்பினை செயல்நீக்குகிறது."
 
 #: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
+msgstr "பிரதிபலிப்பினை செயல்படுத்த குறைந்தது மூன்று பருநிலை தொகுதியாவது வெற்று இடங்களை கொண்டிருக்க வேண்டும்"
 
 #: src/InputController.py:1558
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
+"தருக்க தொகுதியின் அளவு பிரதிபலிப்புகளுக்கு இருக்கும் அதிகபட்ச அளவுக்கு "
+"சரி செய்யப்படும்."
 
 #: src/InputController.py:1563
 #, python-format
@@ -550,6 +560,8 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"பிரதிபலிப்பை சேர்க்க போதிய வெற்று இடம் இல்லை. தருக்க தொகுதியின் இடத்தை %s தற்கு "
+"குறைக்கவும், அல்லது பருநிலை தொகுதிகளை சேர்க்கவும்."
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
@@ -589,6 +601,8 @@ msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
+"கோப்பு முறைமையை மாற்றினால் தருக்க தொகுதியிலுள்ள அனைத்து தகவல்களும் இழக்கப்படும்! "
+"அதனை தொடர வேண்டுமா?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
@@ -601,6 +615,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"LVM ஏற்கனவே உள்ள தருக்க தொகுதிகளுக்கு கூடுதல் பிரதிபலிப்பு துணையை வழங்காது. "
+"மீதமுள்ள பணிகளை முடிக்கிறது."
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -922,6 +938,9 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"பகிர்வு செய்யப்படாத வட்டு %s ஐ துவக்க வேண்டும். இதில் ஒரு பகிர்வினை "
+"உருவாக்க வேண்டாம் என அறிவுறுத்தப்படுகிறது. முழு இயக்கியிலும் ஒரு "
+"ஒற்றை பகிர்வினை உருவாக்க வேண்டுமா?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -934,6 +953,9 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
+"கணினியை மீண்டும் துவக்கும் போது மாற்றங்கள் செயலுக்கு வரும். சாதனம் %s மீண்டும் "
+"துவக்குவதற்கு முன், பயன்படுத்தப்பட்டால், தரவு இழப்பு ஏற்படும். எனவே உங்கள் கணினியை "
+"இப்போது மீண்டும் துவக்க அறிவுறுத்தப்படுகிறது."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1076,6 +1098,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"நீங்கள் தேர்ந்தெடுக்க முயற்சிக்கும் விரிவாக்கங்கள் ஒரு தருக்க தொகுதி %s யின் "
+"பிரதிபலிப்பு பதிவாகும். பிரதிபலிக்கப்பட்ட தருக்க தொகுதிகள் இதுவரை இடம்பெயர செய்யக்கூடியதல்ல, "
+"எனவே விரிவாக்கங்கள் தேர்ந்தெடுக்கக்கூடியதாக இல்லை."
 
 #: src/renderer.py:197
 #, python-format
@@ -1084,6 +1109,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"நீங்கள் தேர்ந்தெடுக்க முயற்சிக்கும் விரிவாக்கங்கள் ஒரு தருக்க தொகுதி %s யின் "
+"பிரதிபலிப்பு உரு ஆகும். பிரதிபலிக்கப்பட்ட தருக்க தொகுதிகள் இதுவரை இடம்பெயர செய்யக்கூடியதல்ல, "
+"எனவே விரிவாக்கங்கள் தேர்ந்தெடுக்கக்கூடியதாக இல்லை."
 
 #: src/renderer.py:199
 #, python-format
@@ -1091,6 +1119,9 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"நீங்கள் தேர்ந்தெடுக்க முயற்சிக்கும் விரிவாக்கங்கள் %s இன் உடையது ஒரு %s யின் நொடிப்பாகும்."
+"நொடிப்புகள் இதுவரை இடம்பெயர செய்யக்கூடியதல்ல, எனவே விரிவாக்கங்கள் "
+"தேர்ந்தெடுக்கக்கூடியதாக இல்லை."
 
 #: src/renderer.py:201
 #, python-format
@@ -1099,6 +1130,9 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"நீங்கள் தேர்ந்தெடுக்க முயற்சிக்கும் விரிவாக்கங்கள் ஒரு நொடிப்பின் ஆரம்பம் %s ஆகும்."
+"நொடிப்பு ஆரம்பங்கள் இதுவரை இடம்பெயர செய்யக்கூடியதல்ல, எனவே விரிவாக்கங்கள் "
+"தேர்ந்தெடுக்கக்கூடியதாக இல்லை."
 
 #: src/renderer.py:388
 #, python-format
@@ -1146,6 +1180,10 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM கொத்தினை பூட்டும் தொழில்நுட்பத்தை பயன்படுத்த கட்டமைக்கப்படுகிறது, ஆனால் "
+"clvmd டீமான் இயக்கத்தில் இல்லை. டீமானை பின்வரும் கட்டளையால் துவக்கவும்.\n"
+"service clvmd start \n"
+"அல்லது கொத்து பூட்டுதலை செயலிழக்கவும் (locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
