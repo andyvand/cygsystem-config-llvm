@@ -5,15 +5,16 @@
 # Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004, 2005, 2006.
 # kiyoto james hashida <khashida@brisbane.redhat.com>, 2006.
 # Kiyoto James Hashida <khashida@redhat.com>, 2006.
+# Noriko Mizumoto <noriko@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-13 15:16\n"
-"Last-Translator: Kiyoto James Hashida <khashida@redhat.com>\n"
-"Language-Team: Japanese <ja@li.org>\n"
+"PO-Revision-Date: 2006-09-29 11:58+1000\n"
+"Last-Translator: Noriko Mizumoto <noriko@redhat.com>\n"
+"Language-Team: Japanese <doc-i18n-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -72,13 +73,14 @@ msgstr "割り当てられない物理ボリューム"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr "初期化不能なディスクエンティティー"
+msgstr ""
+"初期化不能なディスク\n"
+"エンティティー"
 
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
-"%s ボリュームグループに加えるためにディスクのエンティティーを選んでください:"
+msgstr "%s ボリュームグループに加えるためにディスクのエンティティーを選んでください:"
 
 #: src/InputController.py:92
 msgid ""
@@ -99,8 +101,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "%s という名前のボリュームグループは既に存在しています。一意的な名前を選んでく"
 "ださい。"
@@ -115,8 +116,7 @@ msgstr "名前は新しいボリュームグループに対して与えられな
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "特定されたマウントポイント、%s が存在しません。作成しますか?"
 
 #: src/InputController.py:104
@@ -186,8 +186,7 @@ msgstr ""
 "す。最初にスナップショットを削除してください。"
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "モデルファクトリーで定義されていない変換エラー。タスクを完了することができま"
 "せん。"
@@ -305,8 +304,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "本当に %s をボリュームグループ %s から外してもよろしいですか?"
 
 #: src/InputController.py:154
@@ -447,10 +445,8 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
-"\"%s\" は、スナップショット \"%s\" の基点であり、削除リストから削除されます。"
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr "\"%s\" は、スナップショット \"%s\" の基点であり、削除リストから削除されます。"
 
 #: src/InputController.py:610
 #, python-format
@@ -547,8 +543,7 @@ msgstr ""
 "す。異なったハードドライブ上にミラーイメージを置きますか?"
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "3 つ以下のハードドライブが空きスペースとして利用できます。ミラーリングを不可"
 "にします。"
@@ -565,8 +560,7 @@ msgstr ""
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
-"論理ボリュームの大きさがミラーとして利用できる最大サイズに調整されます。"
+msgstr "論理ボリュームの大きさがミラーとして利用できる最大サイズに調整されます。"
 
 #: src/InputController.py:1563
 #, python-format
@@ -608,8 +602,7 @@ msgstr "マウントポイントを指定してください"
 
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"論理ボリュームのデータを保持したまま ext2 を ext3 にアップグレードしますか?"
+msgstr "論理ボリュームのデータを保持したまま ext2 を ext3 にアップグレードしますか?"
 
 #: src/InputController.py:2062
 msgid ""
@@ -635,8 +628,7 @@ msgstr ""
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
-"ミラーを追加するには、いくつかのエクステントを移動させる必要があります。"
+msgstr "ミラーを追加するには、いくつかのエクステントを移動させる必要があります。"
 
 #: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
@@ -922,8 +914,7 @@ msgstr "注意"
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
-"ディスクエンティティ %s の全てのデータが失われます! それでも初期化しますか?"
+msgstr "ディスクエンティティ %s の全てのデータが失われます! それでも初期化しますか?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -945,8 +936,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "ディスク %s の空き領域 %s を初期化してもかまいませんか?"
 
 #: src/lvmui_constants.py:55
@@ -986,8 +976,7 @@ msgstr "プロセス要求の無効"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"%s コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
+msgstr "%s コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセージ: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1180,7 +1169,9 @@ msgstr "割り当てられていないボリューム"
 
 #: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
-msgstr "初期化されていないエンティティー"
+msgstr ""
+"初期化されていない\n"
+"エンティティー"
 
 #: src/Volume_Tab_View.py:63
 msgid ""
@@ -1753,3 +1744,4 @@ msgstr "LV に属するエクステントの移動のみ"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "常識の使用"
+
