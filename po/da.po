@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-03-13 23:01+0100\n"
+"PO-Revision-Date: 2006-10-01 02:22+0200\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
 "Language-Team:  <da@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -97,10 +97,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
-"Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -112,8 +110,7 @@ msgstr "Et navn skal angives for den nye delarkivgruppe"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Det angivne monteringspunkt %s, findes ikke. Vil du oprette det?"
 
 #: src/InputController.py:104
@@ -184,10 +181,8 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
-"Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgstr "Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
 
 #: src/InputController.py:124
 #, python-format
@@ -308,8 +303,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Er du helt sikker på at du vil fjerne %s fra delarkivgruppen %s?"
 
 #: src/InputController.py:154
@@ -429,8 +423,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:610
@@ -517,8 +510,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1550
@@ -656,9 +648,8 @@ msgid "Completing Extent Migration"
 msgstr ""
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Udvidet partition"
+msgstr "Genindlæser partitionstabel"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -899,10 +890,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1410,14 +1399,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Maksimum antal logiske delarkiver: "
+msgstr "Maksimum antal logiske delarkiver"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Maksimum antal fysiske delarkiver: "
+msgstr "Maksimum antal fysiske delarkiver"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1436,9 +1423,8 @@ msgid "New Volume Group"
 msgstr "Ny delarkivgruppe"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Størrelse på fysisk område:"
+msgstr "Størrelse på fysisk område"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1489,9 +1475,8 @@ msgid "Some text"
 msgstr ""
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Navn på delarkivgruppe:   "
+msgstr "Navn på delarkivgruppe"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1671,8 +1656,3 @@ msgstr "Migrér kun områder der tilhører LV"
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Navn på delarkivgruppe: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Formular for ny delarkivgruppe"
