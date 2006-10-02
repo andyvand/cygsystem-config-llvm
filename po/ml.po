@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-09-26 14:58+0530\n"
+"PO-Revision-Date: 2006-10-02 13:40+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam\n"
 "MIME-Version: 1.0\n"
@@ -76,6 +76,8 @@ msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
 msgstr ""
+"സ്ട്രൈപ്പിങ് പിന്തുണയ്ക്കുന്നതിനായി ഒരു വോള്യം ഗ്രൂപ്പില്‍ രണ്ടോ അതിലധികമോ ഫിസിക്കല്‍ വോള്യമുകള്‍ "
+"ഉണ്ടാവണം. ഈ വോള്യം ഗ്രൂപ്പിന് നിങ്ങളുടെ ആവശ്യം നിറവേറ്റുവാന്‍ കഴിയുകയില്ല."
 
 #: src/InputController.py:94
 #, python-format
@@ -170,7 +172,7 @@ msgstr ""
 
 #: src/InputController.py:122
 msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgstr "മോഡല്‍ ഫാക്ടറിയില്‍ അവ്യക്തമായ ടൈപ്പ് കണ്‍‍വേര്‍ഷന്‍ പിശക്. ജോലി തീര്‍ക്കുവാന്‍ സാധ്യമാകില്ല."
 
 #: src/InputController.py:124
 #, python-format
@@ -473,11 +475,11 @@ msgstr ""
 
 #: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "സ്ട്രെപ് ചെയ്ത ലോജിക്കല്‍ വോള്യമുകള്‍ മിറര്‍ ചെയ്യുവാന്‍ സാധ്യമല്ല."
 
 #: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "സ്നാപ്ഷോട്ടുകളോടു കൂടിയുളള ലോജിക്കല്‍ വോള്യമുകള്‍ മിറര്‍ ചെയ്യുവാന്‍ സാധ്യമാകില്ല."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -489,19 +491,23 @@ msgstr ""
 
 #: src/InputController.py:1545
 msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgstr "ഉപയോഗിക്കാത്ത ഹാര്‍ഡ് ഡ്രൈവുകള്‍ 3-ല്‍ കുറവാണ്. അതിനാല്‍ മിററിങ് അപ്രാപ്യമാക്കുക."
 
 #: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
+"മിററിങ് അനുവദിക്കുന്നതിനായി കുറഞ്ഞത് ഉപയോഗിക്കാത്ത 3 ഹാര്‍ഡ് ഡ്രൈവുകള്‍ എങ്കിലും "
+"വേണ്ടതാണ്."
 
 #: src/InputController.py:1558
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
+"ലോജിക്കല്‍ വോള്യമുകളുടെ വലിപ്പം ലഭ്യമായ മിററുകളുടെ ഏറ്റവും കൂടുതല്‍ വലിപ്പമായി "
+"മാറ്റിയിരിക്കുന്നു."
 
 #: src/InputController.py:1563
 #, python-format
@@ -509,6 +515,8 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"മിററിങ് ചേര്‍ക്കുന്നതിനായി മതിയായ സ്ഥലം ലഭ്യമല്ല. ഒന്നുകില്‍ കുറഞ്ഞത് %s എന്ന വലിപ്പത്തിലേക്ക് "
+"ലോജിക്കല്‍ വോള്യമുകള്‍ ആക്കുക അല്ലെങ്കില്‍ ഫിസിക്കല്‍ വോള്യമുകള്‍ ചേര്‍ക്കുക."
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
@@ -556,7 +564,7 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "മിറര്‍ ഉണ്ടാക്കുവാന്‍ സാധ്യമായില്ല. ബാക്കിയുളള ജോലികള്‍ തീര്‍ക്കുന്നു."
 
 #. create mirror
 #: src/InputController.py:2166
@@ -564,14 +572,16 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"ലഭ്യമായ LVM-കള്‍ നിലവിലുളള ലോജിക്കല്‍ വോള്യമിലേക്ക് മിററുകള്‍ ചേര്‍ക്കുന്നതിനായി "
+"പിന്തുണയ്ക്കില്ല. ബാക്കിയുളള ജോലികള്‍ പൂര്‍ത്തിയാക്കുന്നു."
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "മിററിങ് ചേര്‍ക്കുന്നതിനായി, ചില എക്സറ്റന്‍റുകള്‍ മാറ്റേണ്ടതാണ്."
 
 #: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "പറഞ്ഞിരിക്കുന്ന എകസ്റ്റന്‍റുകള്‍ മാറ്റണമോ?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
@@ -781,7 +791,7 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
-msgstr ""
+msgstr "ഇനിഷ്യലൈസ് ചെയ്യുവാന്‍ സാധ്യമല്ല:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -838,11 +848,11 @@ msgstr "സ്നാപ്പ്ഷോട്ടുകള്‍:"
 
 #: src/lvm_model.py:804
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "സ്നാപ്ഷോട്ട് ഒറിജിന്‍:"
 
 #: src/lvm_model.py:811
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "സ്നാപ്ഷോട്ട് ഉപയോഗിക്കേണ്ട വിധം:"
 
 #: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
 #: src/lvm_model.py:899
@@ -906,7 +916,7 @@ msgstr "മിറര്‍ ലോഗ്"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "ആവശ്യപ്പെട്ടത് പ്രവര്‍ത്തിപ്പിക്കുവാന്‍ സാധ്യമായില്ല"
 
 #: src/lvmui_constants.py:65
 #, python-format
@@ -1032,7 +1042,7 @@ msgstr "അലോക്കേറ്റ് ചെയ്തിട്ടില്�
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "ഇനിഷ്യലൈസ് ചെയ്യാത്തവ"
 
 #: src/renderer.py:195
 #, python-format
@@ -1092,7 +1102,7 @@ msgstr "അലോക്കേറ്റ് ചെയ്തിട്ടില്�
 
 #: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "ഇനിഷ്യലൈസ് ചെയ്യാത്ത എന്‍റിന്‍റികള്‍"
 
 #: src/Volume_Tab_View.py:63
 msgid ""
@@ -1100,6 +1110,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM ലോക്കുകള്‍ അപ്രാപ്യമാക്കുക!!! \n"
+"അനവധി ഡേറ്റകള്‍ നഷ്ടമാകാം.\n"
+"ലോക്കിങ് സജ്ജമാക്കുക (/etc/lvm/lvm.conf-ല്‍ locking_type=1 അല്ലെങ്കില്‍ 2)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1645,7 +1658,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "എവിടേക്കെങ്കിലും മാറ്റുന്നത് ഫലം കുറയ്ക്കുമെങ്കിലും, അത് ചെയ്യുക"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
