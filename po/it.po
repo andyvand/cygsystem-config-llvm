@@ -111,7 +111,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "Esiste già un Gruppo di Volume chiamato %s. Si raccomanda di scegliere un "
 "nome univoco."
@@ -126,7 +127,8 @@ msgstr "Si deve dare un nome al nuovo Gruppo di Volume"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Il mount point %s specificato non esiste. Si desidera crearlo?"
 
 #: src/InputController.py:104
@@ -136,7 +138,8 @@ msgstr "La creazione del mount point %s è fallita inaspettatamente."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr "Questa caratteristica non è ancora stata implementata in questa versione"
+msgstr ""
+"Questa caratteristica non è ancora stata implementata in questa versione"
 
 #: src/InputController.py:108
 msgid ""
@@ -201,7 +204,8 @@ msgstr ""
 "pregato di rimuovere prima gli snapshots."
 
 #: src/InputController.py:122
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Errore di conversione non definito nel model factory. Impossibile completare "
 "l'operazione."
@@ -324,7 +328,8 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Sei sicuro di voler rimuovere %s dal Gruppo di Volume %s ?"
 
 #: src/InputController.py:154
@@ -400,9 +405,9 @@ msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
-"Per poter utilizzare il Gruppo di Volume in modo sicuro all'interno di un ambiente "
-"'clustered', l'rpm lvm2-cluster deve essere installato, ed il servizio clvmd deve essere "
-"in esecuzione"
+"Per poter utilizzare il Gruppo di Volume in modo sicuro all'interno di un "
+"ambiente 'clustered', l'rpm lvm2-cluster deve essere installato, ed il "
+"servizio clvmd deve essere in esecuzione"
 
 #: src/InputController.py:364
 #, python-format
@@ -466,7 +471,8 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", un origine dello snapshot \"%s\", è stato cancellato dalla lista "
 "delle rimozioni."
@@ -567,7 +573,8 @@ msgstr ""
 "differenti?"
 
 #: src/InputController.py:1545
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Sono disponibili meno di 3 dischi rigidi con spazio libero. Disabilitare il "
 "mirroring."
@@ -599,7 +606,8 @@ msgstr ""
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "I nomi che cominciano con \"snapshot\" o \"pvmove\" sono keywords riservate."
+msgstr ""
+"I nomi che cominciano con \"snapshot\" o \"pvmove\" sono keywords riservate."
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
@@ -968,8 +976,10 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr "Sei veramente sicuro di volere inizializzare %s di spazio libero su disco %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr ""
+"Sei veramente sicuro di volere inizializzare %s di spazio libero su disco %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1222,10 +1232,11 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM è stato configurato per utilizzare il meccanismo di Blocco del Cluster, ma il demone "
-"clvmd non è in esecuzione. Avviate il demone con il comando:\n"
+"LVM è stato configurato per utilizzare il meccanismo di Blocco del Cluster, "
+"ma il demone clvmd non è in esecuzione. Avviate il demone con il comando:\n"
 "service clvmd start, \n"
-"oppure disabilitate il blocco del cluster (locking_type=1 in /etc/lvm/lvm.conf)."
+"oppure disabilitate il blocco del cluster (locking_type=1 in /etc/lvm/lvm."
+"conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1234,10 +1245,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM è configurata per usare il meccanismo Cluster Locking, ma il cluster non è "
-"quorate.\n"
-"Potete sia attendere sino a che il cluster sia quorate o disattivare il cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
+"LVM è configurata per usare il meccanismo Cluster Locking, ma il cluster non "
+"è quorate.\n"
+"Potete sia attendere sino a che il cluster sia quorate o disattivare il "
+"cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1245,8 +1256,8 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
-"%s supporta il blocco basato sul cluster e sul file (locking_type=1 o 2 in /etc/"
-"lvm/lvm.conf)."
+"%s supporta il blocco basato sul cluster e sul file (locking_type=1 o 2 in /"
+"etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
@@ -1776,4 +1787,3 @@ msgstr "Migra solo le estensioni appartenenti al VL"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Usa buonsenso"
-

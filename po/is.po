@@ -1192,8 +1192,8 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
-"%s styður einungis skráa og klasalæsingar (locking_type=1 eða 2 í /etc/"
-"lvm/lvm.conf)."
+"%s styður einungis skráa og klasalæsingar (locking_type=1 eða 2 í /etc/lvm/"
+"lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"

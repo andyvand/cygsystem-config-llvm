@@ -41,7 +41,8 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Jelölje ki, melyik kötetcsoportba kívánja felvenni a(z) %s fizikai kötetet:"
+msgstr ""
+"Jelölje ki, melyik kötetcsoportba kívánja felvenni a(z) %s fizikai kötetet:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -96,7 +97,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Már létezik %s nevű kötetcsoport. Válasszon egyedi nevet."
 
 #: src/InputController.py:98
@@ -109,7 +111,8 @@ msgstr "Meg kell adni egy nevet az új kötetcsoport számára"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "A megadott csatolási pont (%s) nem létezik. Szeretné létrehozni?"
 
 #: src/InputController.py:104
@@ -125,13 +128,15 @@ msgstr "Ez a képesség még nincs megvalósítva ebben a verzióban"
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "A kötetcsoportban a logikai kötetek száma elérte a lehetséges maximumot."
+msgstr ""
+"A kötetcsoportban a logikai kötetek száma elérte a lehetséges maximumot."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr "A kötetcsoportban a fizikai kötetek száma elérte a lehetséges maximumot."
+msgstr ""
+"A kötetcsoportban a fizikai kötetek száma elérte a lehetséges maximumot."
 
 #: src/InputController.py:112
 #, python-format
@@ -180,7 +185,8 @@ msgstr ""
 "távolítsa el a pillanatfelvételeket először."
 
 #: src/InputController.py:122
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Típuskonverziós hiba a modellkészítőben. A művelet végrehajtása nem "
 "lehetséges."
@@ -306,7 +312,8 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 "Biztos benne, hogy el kívánja távolítani a(z) \"%s\" kötetet a(z) \"%s\" "
 "kötetcsoportból?"
@@ -389,7 +396,8 @@ msgid ""
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
 "Ahhoz, hogy egy kötetcsoportot biztonságosan lehessen használni fürtözött "
-"környezetben, az lvm2-cluster rpm-et kell telepíteni és a clvmd szolgáltatásnak futnia kell"
+"környezetben, az lvm2-cluster rpm-et kell telepíteni és a clvmd "
+"szolgáltatásnak futnia kell"
 
 #: src/InputController.py:364
 #, python-format
@@ -454,7 +462,8 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", a(z) \"%s\" pillanatfelvétel eredete törölve lett az eltávolítandók "
 "listájáról."
@@ -540,7 +549,8 @@ msgstr "A sávos (striped) logikai kötetek nem tükrözhetők."
 
 #: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "A pillanatfelvételekhez kötődő logikai kötetek jelenleg nem tükrözhetők."
+msgstr ""
+"A pillanatfelvételekhez kötődő logikai kötetek jelenleg nem tükrözhetők."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -553,7 +563,8 @@ msgstr ""
 "esetén. Külön merevlemezre kívánja tenni a tükrözött képmásokat?"
 
 #: src/InputController.py:1545
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Kevesebb mint 3 merevlemez érhető el megfelelő szabad területtel. A tükrözés "
 "le lesz tiltva."
@@ -585,11 +596,13 @@ msgstr ""
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "A \"snapshot\"-tal vagy \"pvmove\"-val kezdődő nevek foglalt kulcsszavak."
+msgstr ""
+"A \"snapshot\"-tal vagy \"pvmove\"-val kezdődő nevek foglalt kulcsszavak."
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Az \"_mlog\"-ot vagy \"_mimage\"-t tartalmazó szavak foglalt kulcsszavak."
+msgstr ""
+"Az \"_mlog\"-ot vagy \"_mimage\"-t tartalmazó szavak foglalt kulcsszavak."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -601,7 +614,8 @@ msgstr "A név nem lehet \".\" vagy \"..\""
 
 #: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr "Semmilyen típusú szóköz (whitespace) nem lehet a logaikai kötet nevében"
+msgstr ""
+"Semmilyen típusú szóköz (whitespace) nem lehet a logaikai kötet nevében"
 
 #: src/InputController.py:1942
 #, python-format
@@ -629,7 +643,8 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
-msgstr "A tükör nem lett elkészítve. A további feladatok elvégzése folytatódik."
+msgstr ""
+"A tükör nem lett elkészítve. A további feladatok elvégzése folytatódik."
 
 #. create mirror
 #: src/InputController.py:2166
@@ -953,7 +968,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Biztos benne, hogy szeretne inicializálni %s-nyi szabad területet a(z) %s "
 "lemezen?"
@@ -995,7 +1011,8 @@ msgstr "Nem lehet a kérést feldolgozni"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "A(z) %s parancs sikertelen. A teljes parancs: \"%s\" - A rendszerhiba: %s"
+msgstr ""
+"A(z) %s parancs sikertelen. A teljes parancs: \"%s\" - A rendszerhiba: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1211,9 +1228,11 @@ msgid ""
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
 "Az LVM úgy van beállítva, hogy fürtzárolási (cluster locking) mechanizmust "
-"használjon, de a clvmd démon jelenleg nem fut. Indítsa el a démont az alábbi paranccsal:\n"
+"használjon, de a clvmd démon jelenleg nem fut. Indítsa el a démont az alábbi "
+"paranccsal:\n"
 "service clvmd start \n"
-"vagy kapcsolja ki a fürtzárolást (locking_type=1 a /etc/lvm/lvm.conf fájlban)."
+"vagy kapcsolja ki a fürtzárolást (locking_type=1 a /etc/lvm/lvm.conf "
+"fájlban)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1224,8 +1243,8 @@ msgid ""
 msgstr ""
 "Az LVM úgy van beállítva, hogy fürtzárolási (cluster locking) mechanizmust "
 "használjon, de a fürt jelenleg nem szavazóképes.\n"
-"Várjon, amíg a fürt szavazóképes lesz, vagy kapcsolja ki a "
-"a fürtzárolást (locking_type=1 a /etc/lvm/lvm.conf fájlban)."
+"Várjon, amíg a fürt szavazóképes lesz, vagy kapcsolja ki a a fürtzárolást "
+"(locking_type=1 a /etc/lvm/lvm.conf fájlban)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1233,8 +1252,8 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
-"A(z) %s csak fájl és fürt alapú zárolást támogat "
-"(locking_type=1 vagy 2 az /etc/ lvm/lvm.conf fájlban)."
+"A(z) %s csak fájl és fürt alapú zárolást támogat (locking_type=1 vagy 2 az /"
+"etc/ lvm/lvm.conf fájlban)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
@@ -1766,4 +1785,3 @@ msgstr "Csak a logikai kötethez (LV) tartozó extentek migrálása"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Józan logika használata"
-

@@ -383,7 +383,10 @@ msgstr ""
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
-msgstr "Para o Grupo de Volumes poder ser usado em segurança num ambiente de 'cluster', o RPM do lvm2-cluster deverá estar instalado e o serviço clvmd deverá estar a correr"
+msgstr ""
+"Para o Grupo de Volumes poder ser usado em segurança num ambiente de "
+"'cluster', o RPM do lvm2-cluster deverá estar instalado e o serviço clvmd "
+"deverá estar a correr"
 
 #: src/InputController.py:364
 #, python-format
@@ -1203,7 +1206,8 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas o servidor 'clvmd' não está a correr. Inicie o servidor com o comando:\n"
+"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas "
+"o servidor 'clvmd' não está a correr. Inicie o servidor com o comando:\n"
 "service clvmd start \n"
 "ou desligue o bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
 
@@ -1214,15 +1218,19 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas o 'cluster' não tem membros suficientes.\n"
-"Tanto poderá esperar até o 'cluster' tem nós suficientes ou desligue o bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
+"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas "
+"o 'cluster' não tem membros suficientes.\n"
+"Tanto poderá esperar até o 'cluster' tem nós suficientes ou desligue o "
+"bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
 msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
-msgstr "O %s só suporta o bloqueio baseado em ficheiros e no 'cluster' (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
+msgstr ""
+"O %s só suporta o bloqueio baseado em ficheiros e no "
+"'cluster' (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"

@@ -1770,4 +1770,3 @@ msgstr "На основе здравого смысла"
 
 #~ msgid "New Volume Group Form"
 #~ msgstr "Новая Группа томов"
-

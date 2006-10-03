@@ -22,8 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.2\n"
 
-#: src/InputController.py:36
-#: src/Properties_Renderer.py:24
+#: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
 #, python-format
 msgid ""
@@ -36,7 +35,8 @@ msgid ""
 msgstr ""
 "\n"
 "  Impossible d'initialiser l'environnement graphique. Il semble que l'outil\n"
-"  n'ait pas été exécuté dans un environnement graphique. Veuillez soit lancer\n"
+"  n'ait pas été exécuté dans un environnement graphique. Veuillez soit "
+"lancer\n"
 "  votre interface utilisateur graphique, soit définir la variable DISPLAY.\n"
 "                                                                                \n"
 "  Exception trouvée: %s\n"
@@ -82,22 +82,29 @@ msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Selectionnez une entité disque à ajouter au Groupe de Volumes %s:"
 
 #: src/InputController.py:92
-msgid "A Volume Group must be made up of two or more Physical Volumes to support striping. This Volume Group does not meet that requirement."
+msgid ""
+"A Volume Group must be made up of two or more Physical Volumes to support "
+"striping. This Volume Group does not meet that requirement."
 msgstr ""
-"Un Groupe de Volumes doit être constitué d'au moins deux Volumes Physiques pour supporter\n"
+"Un Groupe de Volumes doit être constitué d'au moins deux Volumes Physiques "
+"pour supporter\n"
 "le mode stripping. Ce Groupe de Volume ne satisfait pas cette contrainte."
 
 #: src/InputController.py:94
 #, python-format
-msgid "A Logical Volume with the name %s already exists in this Volume Group. Please choose a unique name."
+msgid ""
+"A Logical Volume with the name %s already exists in this Volume Group. "
+"Please choose a unique name."
 msgstr ""
 "Un Volume Logique nommé %s existe déjà dans ce Groupe de Volumes.\n"
 "Veuillez choisir un autre nom."
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Un Groupe de Volumes nommé %s existe déjà. Veuillez choisir un autre nom."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr ""
+"Un Groupe de Volumes nommé %s existe déjà. Veuillez choisir un autre nom."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -109,7 +116,8 @@ msgstr "Vous devez spécifier un nom pour le nouveau Groupe de Volumes"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Le point de montage spécifié, %s, n'existe pas. Voulez-vous le créer ?"
 
 #: src/InputController.py:104
@@ -122,22 +130,40 @@ msgid "This capability is not yet implemented in this version"
 msgstr "Cette possibilité n'est pas encore implémente dans cette version"
 
 #: src/InputController.py:108
-msgid "The number of Logical Volumes in this Volume Group has reached its maximum limit."
-msgstr "Le nombre de Volumes Logiques dans ce Groupe de Volumes a atteint sa limite maximum."
+msgid ""
+"The number of Logical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+"Le nombre de Volumes Logiques dans ce Groupe de Volumes a atteint sa limite "
+"maximum."
 
 #: src/InputController.py:110
-msgid "The number of Physical Volumes in this Volume Group has reached its maximum limit."
-msgstr "Le nombre de Volumes Physiques dans ce Groupe de Volumes a atteint sa limite maximum."
+msgid ""
+"The number of Physical Volumes in this Volume Group has reached its maximum "
+"limit."
+msgstr ""
+"Le nombre de Volumes Physiques dans ce Groupe de Volumes a atteint sa limite "
+"maximum."
 
 #: src/InputController.py:112
 #, python-format
-msgid "At most %s Physical Volumes can be added to this Volume Group before the limit is reached."
-msgstr "%s Volumes Physiques, au maximum, peuvent être ajoutés à ce Groupe de Volumes avant que la limite soit atteinte."
+msgid ""
+"At most %s Physical Volumes can be added to this Volume Group before the "
+"limit is reached."
+msgstr ""
+"%s Volumes Physiques, au maximum, peuvent être ajoutés à ce Groupe de "
+"Volumes avant que la limite soit atteinte."
 
 #: src/InputController.py:114
 #, python-format
-msgid "Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group."
-msgstr "Le Groupe de Volumes %s n'a pas suffisamment d'espace libre pour créer un nouveau volume logique. Une solution possible serait d'ajouter un Volume Physique supplémentaire au Groupe de Volumes"
+msgid ""
+"Volume Group %s does not have enough space for new Logical Volumes. A "
+"possible solution would be to add an additional Physical Volume to the "
+"Volume Group."
+msgstr ""
+"Le Groupe de Volumes %s n'a pas suffisamment d'espace libre pour créer un "
+"nouveau volume logique. Une solution possible serait d'ajouter un Volume "
+"Physique supplémentaire au Groupe de Volumes"
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
@@ -149,27 +175,48 @@ msgstr "L'instantané d'un groupe de volume reflété n'est pas supporté."
 
 #: src/InputController.py:119
 #, python-format
-msgid "Logical volume %s has snapshot %s currently associated with it. Please remove the snapshot first."
-msgstr "L'instantané %s est couramment associé au volume logique %s. Veuillez supprimer l'instantané en premier."
+msgid ""
+"Logical volume %s has snapshot %s currently associated with it. Please "
+"remove the snapshot first."
+msgstr ""
+"L'instantané %s est couramment associé au volume logique %s. Veuillez "
+"supprimer l'instantané en premier."
 
 #: src/InputController.py:120
 #, python-format
-msgid "Logical volume %s has snapshots: %s currently associated with it. Please remove snapshots first."
-msgstr "Les instantanés %s sont couramment associés au volume logique %s. Veuillez supprimer les instantanés en premier."
+msgid ""
+"Logical volume %s has snapshots: %s currently associated with it. Please "
+"remove snapshots first."
+msgstr ""
+"Les instantanés %s sont couramment associés au volume logique %s. Veuillez "
+"supprimer les instantanés en premier."
 
 #: src/InputController.py:122
-msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr "Erreur de conversion de type non définie en usine. Impossible d'achever la tâche."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
+msgstr ""
+"Erreur de conversion de type non définie en usine. Impossible d'achever la "
+"tâche."
 
 #: src/InputController.py:124
 #, python-format
-msgid "BIG WARNING: Logical Volume %s has an %s file system on it and is currently mounted on %s. Are you absolutely certain that you wish to discard the data on this mounted filesystem?"
-msgstr "GROS AVERTISSEMENT : le Volume Logique %s a un système de fichiers %s et est actuellement monté sur %s. Etes-vous absolument certain de vouloir renoncer aux données sur ce système de fichiers monté ?"
+msgid ""
+"BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
+"mounted on %s. Are you absolutely certain that you wish to discard the data "
+"on this mounted filesystem?"
+msgstr ""
+"GROS AVERTISSEMENT : le Volume Logique %s a un système de fichiers %s et est "
+"actuellement monté sur %s. Etes-vous absolument certain de vouloir renoncer "
+"aux données sur ce système de fichiers monté ?"
 
 #: src/InputController.py:126
 #, python-format
-msgid "Logical Volume %s is currently mounted on %s. In order to complete request, it has to be unmounted. Are you sure you want it unmounted?"
-msgstr "Le Volume Logique %s est couramment monté sur %s. Afin de terminer la requête, il doit être démonté. Souhaitez-vous qu'il soit démonté ?"
+msgid ""
+"Logical Volume %s is currently mounted on %s. In order to complete request, "
+"it has to be unmounted. Are you sure you want it unmounted?"
+msgstr ""
+"Le Volume Logique %s est couramment monté sur %s. Afin de terminer la "
+"requête, il doit être démonté. Souhaitez-vous qu'il soit démonté ?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -228,49 +275,96 @@ msgid "The %s should only contain number values"
 msgstr "Le %s ne peut contenir qu'une valeur numérique"
 
 #: src/InputController.py:147
-msgid "The Maximum Physical Volumes field should contain only integer values between 1 and 256"
+msgid ""
+"The Maximum Physical Volumes field should contain only integer values "
+"between 1 and 256"
 msgstr ""
 "Le champs Volumes Physiques Maximum ne peut contenir qu'une valeur entière\n"
 "comprise entre 1 et 256"
 
 #: src/InputController.py:148
-msgid "The Maximum Logical Volumes field should contain only integer values between 1 and 256"
+msgid ""
+"The Maximum Logical Volumes field should contain only integer values between "
+"1 and 256"
 msgstr ""
 "Le champs Volumes Logiques Maximum ne peut contenir qu'une valeur entière\n"
 "comprise entre 1 et 256"
 
 #: src/InputController.py:150
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from Logical Volume Management?"
-msgstr "Etes-vous absolument sûr de vouloir supprimer %s du gestionnaire de Volumes Logiques ?"
+msgid ""
+"Are you quite certain that you wish to remove %s from Logical Volume "
+"Management?"
+msgstr ""
+"Etes-vous absolument sûr de vouloir supprimer %s du gestionnaire de Volumes "
+"Logiques ?"
 
 #: src/InputController.py:152
 #, python-format
-msgid "The Physical Volume named %s, that you wish to remove, has data from active Logical Volume(s) mapped to its extents. Because it is the only Physical Volume in the Volume Group, there is no place to move the data to. Recommended action is either to add a new Physical Volume before removing this one, or else remove the Logical Volumes that are associated with this Physical Volume."
-msgstr "Le Volume Physique nommé %s, que vous voulez supprimer, contient des données de Volume(s) Logique(s) mappées sur son étendue . Puisque c'est le seul Volume Physique dans le Groupe de Volumes, il n'y a aucun endroit où déplacer les données. L'action recommandée est soit d'ajouter un nouveau Volume Physique avant de supprimer celui-là, ou de supprimer les Volumes Logiques qui sont associés à ce Volume Physique."
+msgid ""
+"The Physical Volume named %s, that you wish to remove, has data from active "
+"Logical Volume(s) mapped to its extents. Because it is the only Physical "
+"Volume in the Volume Group, there is no place to move the data to. "
+"Recommended action is either to add a new Physical Volume before removing "
+"this one, or else remove the Logical Volumes that are associated with this "
+"Physical Volume."
+msgstr ""
+"Le Volume Physique nommé %s, que vous voulez supprimer, contient des données "
+"de Volume(s) Logique(s) mappées sur son étendue . Puisque c'est le seul "
+"Volume Physique dans le Groupe de Volumes, il n'y a aucun endroit où "
+"déplacer les données. L'action recommandée est soit d'ajouter un nouveau "
+"Volume Physique avant de supprimer celui-là, ou de supprimer les Volumes "
+"Logiques qui sont associés à ce Volume Physique."
 
 #: src/InputController.py:153
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr "Etes-vous absolument sûr de vouloir supprimer %s du Groupe de Volumes %s ?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr ""
+"Etes-vous absolument sûr de vouloir supprimer %s du Groupe de Volumes %s ?"
 
 #: src/InputController.py:154
 #, python-format
-msgid "Removing Physical Volume %s from the Volume Group %s will leave the Volume group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr "Supprimer le Volume Physique %s du Groupe de Volumes %s laissera le Groupe de Volumes vide, et il sera supprimé aussi. Voulez-vous continuer ?"
+msgid ""
+"Removing Physical Volume %s from the Volume Group %s will leave the Volume "
+"group empty, and it will be removed as well. Do you wish to proceed?"
+msgstr ""
+"Supprimer le Volume Physique %s du Groupe de Volumes %s laissera le Groupe "
+"de Volumes vide, et il sera supprimé aussi. Voulez-vous continuer ?"
 
 #: src/InputController.py:155
 #, python-format
-msgid "Volume Group %s does not have enough space to move the data stored on %s. A possible solution would be to add an additional Physical Volume to the Volume Group."
-msgstr "Le Groupe de Volumes %s n'a pas suffisamment d'espace libre pour déplacer les données stockées sur %s. Une solution possible serait d'ajouter un Volume Physique supplémentaire au Groupe de Volumes"
+msgid ""
+"Volume Group %s does not have enough space to move the data stored on %s. A "
+"possible solution would be to add an additional Physical Volume to the "
+"Volume Group."
+msgstr ""
+"Le Groupe de Volumes %s n'a pas suffisamment d'espace libre pour déplacer "
+"les données stockées sur %s. Une solution possible serait d'ajouter un "
+"Volume Physique supplémentaire au Groupe de Volumes"
 
 #: src/InputController.py:156
-msgid "The dm-mirror module is either not loaded in your kernel, or your kernel does not support the dm-mirror target. If it is supported, try running \"modprobe dm-mirror\". Otherwise, operations that require moving data on Physical Extents are unavailable."
-msgstr "Le module dm-mirror est soit non chargé dans votre noyau, soit votre noyau ne supporte pas la cible dm-mirror. S'il est supporté, essayer de lancer \"modprobe dm-mirror\". Sinon, les opérations qui nécessitent de déplacer des données sur les Extensions Physiques sont indisponibles"
+msgid ""
+"The dm-mirror module is either not loaded in your kernel, or your kernel "
+"does not support the dm-mirror target. If it is supported, try running "
+"\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
+"Physical Extents are unavailable."
+msgstr ""
+"Le module dm-mirror est soit non chargé dans votre noyau, soit votre noyau "
+"ne supporte pas la cible dm-mirror. S'il est supporté, essayer de lancer "
+"\"modprobe dm-mirror\". Sinon, les opérations qui nécessitent de déplacer "
+"des données sur les Extensions Physiques sont indisponibles"
 
 #: src/InputController.py:157
-msgid "The dm-snapshot module is either not loaded in your kernel, or your kernel does not support the dm-snapshot target. If it is supported, try running \"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
-msgstr "Le module dm-mirror est soit non chargé dans votre noyau, soit votre noyau ne supporte pas la cible dm-mirror. S'il est supporté, essayer de lancer \"modprobe dm-mirror\". Sinon, les opérations qui nécessitent de déplacer des données sur les Extensions Physiques sont indisponibles"
+msgid ""
+"The dm-snapshot module is either not loaded in your kernel, or your kernel "
+"does not support the dm-snapshot target. If it is supported, try running "
+"\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
+msgstr ""
+"Le module dm-mirror est soit non chargé dans votre noyau, soit votre noyau "
+"ne supporte pas la cible dm-mirror. S'il est supporté, essayer de lancer "
+"\"modprobe dm-mirror\". Sinon, les opérations qui nécessitent de déplacer "
+"des données sur les Extensions Physiques sont indisponibles"
 
 #: src/InputController.py:159
 #, python-format
@@ -279,62 +373,119 @@ msgstr "Etes-vous absolument sûr de vouloir supprimer le Volume Logique %s ?"
 
 #: src/InputController.py:160
 #, python-format
-msgid "Logical volume %s contains %s filesystem. All data on it will be lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr "AVERTISSEMENT IMPORTANT : le Volume Logique %s a un système de fichiers %s. Toutes les données seront perdues ! Etes-vous absolument certain de vouloir supprimer  le volume logique %s ?"
+msgid ""
+"Logical volume %s contains %s filesystem. All data on it will be lost! Are "
+"you quite certain that you wish to remove logical volume %s?"
+msgstr ""
+"AVERTISSEMENT IMPORTANT : le Volume Logique %s a un système de fichiers %s. "
+"Toutes les données seront perdues ! Etes-vous absolument certain de vouloir "
+"supprimer  le volume logique %s ?"
 
 #: src/InputController.py:161
 #, python-format
-msgid "Logical volume %s contains data from directory %s. All data in it will be lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr "Le volume logique %s contient des données du répertoire %s. Toutes ses données seront perdues ! Souhaitez-vous supprimer le volume logique %s ?"
+msgid ""
+"Logical volume %s contains data from directory %s. All data in it will be "
+"lost! Are you quite certain that you wish to remove logical volume %s?"
+msgstr ""
+"Le volume logique %s contient des données du répertoire %s. Toutes ses "
+"données seront perdues ! Souhaitez-vous supprimer le volume logique %s ?"
 
 #: src/InputController.py:306
-msgid "In order for Volume Group to be safely used in clustered environment, lvm2-cluster rpm has to be installed, and clvmd service has to be running"
-msgstr "Afin que le Groupe de Volume soit utilisé sans risque dans un environnement groupé (cluster), le rpm lvm2-cluster à besoin d'être installé et le service dvmd lancé"
+msgid ""
+"In order for Volume Group to be safely used in clustered environment, lvm2-"
+"cluster rpm has to be installed, and clvmd service has to be running"
+msgstr ""
+"Afin que le Groupe de Volume soit utilisé sans risque dans un environnement "
+"groupé (cluster), le rpm lvm2-cluster à besoin d'être installé et le service "
+"dvmd lancé"
 
 #: src/InputController.py:364
 #, python-format
-msgid "Physical Volume %s contains extents belonging to a mirror log of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not removable."
-msgstr "Le Volume Physique %s contient des étendues appartenant à un journal miroir du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent pas encore être migrés. %s ne peut donc pas être supprimé."
+msgid ""
+"Physical Volume %s contains extents belonging to a mirror log of Logical "
+"Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
+"removable."
+msgstr ""
+"Le Volume Physique %s contient des étendues appartenant à un journal miroir "
+"du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent pas "
+"encore être migrés. %s ne peut donc pas être supprimé."
 
 #: src/InputController.py:367
 #, python-format
-msgid "Physical Volume %s contains extents belonging to a mirror image of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not removable."
-msgstr "Le Volume Physique %s contient des étendues appartenant à une image miroir du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent pas encore être migrés. %s ne peut donc pas être supprimé."
+msgid ""
+"Physical Volume %s contains extents belonging to a mirror image of Logical "
+"Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
+"removable."
+msgstr ""
+"Le Volume Physique %s contient des étendues appartenant à une image miroir "
+"du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent pas "
+"encore être migrés. %s ne peut donc pas être supprimé."
 
 #: src/InputController.py:370
 #, python-format
-msgid "Physical Volume %s contains extents belonging to %s, a snapshot of %s. Snapshots are not yet migratable, so %s is not removable."
-msgstr "Le Volume Physique %s contient des étendues appartenant à %s, un instantané de %s. Les instantanés ne peuvent pas encore être migrés. %s ne peut donc pas être supprimé."
+msgid ""
+"Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
+"Snapshots are not yet migratable, so %s is not removable."
+msgstr ""
+"Le Volume Physique %s contient des étendues appartenant à %s, un instantané "
+"de %s. Les instantanés ne peuvent pas encore être migrés. %s ne peut donc "
+"pas être supprimé."
 
 #: src/InputController.py:375
 #, python-format
-msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr "Le Volume Physique %s contient des étendues appartenant à %s, l'origine de l'instantané %s. Les origines d'instantanés ne peuvent pas encore être migrées. %s ne peut donc pas être supprimé."
+msgid ""
+"Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
+"s. Snapshot origins are not yet migratable, so %s is not removable."
+msgstr ""
+"Le Volume Physique %s contient des étendues appartenant à %s, l'origine de "
+"l'instantané %s. Les origines d'instantanés ne peuvent pas encore être "
+"migrées. %s ne peut donc pas être supprimé."
 
 #: src/InputController.py:377
 #, python-format
-msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr "Le Volume Physique %s contient des étendues appartenant à %s, l'origine d'instantanés %s. Les origines d'instantanés ne peuvent pas encore être migrées. %s ne peut donc pas être supprimé."
+msgid ""
+"Physical Volume %s contains extents belonging to %s, the origin of snapshots "
+"%s. Snapshot origins are not yet migratable, so %s is not removable."
+msgstr ""
+"Le Volume Physique %s contient des étendues appartenant à %s, l'origine "
+"d'instantanés %s. Les origines d'instantanés ne peuvent pas encore être "
+"migrées. %s ne peut donc pas être supprimé."
 
 #: src/InputController.py:564
 #, python-format
-msgid "Logical Volume \"%s\" has snapshots that are not selected for removal. They must be removed as well."
-msgstr "Le Volume Logique \"%s\" a des instantanés qui ne sont pas sélectionnés pour la suppression. Ils doivent également être supprimés."
+msgid ""
+"Logical Volume \"%s\" has snapshots that are not selected for removal. They "
+"must be removed as well."
+msgstr ""
+"Le Volume Logique \"%s\" a des instantanés qui ne sont pas sélectionnés pour "
+"la suppression. Ils doivent également être supprimés."
 
 #: src/InputController.py:579
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr "\"%s\", une origine de l'instantané \"%s\", a été supprimé de la liste de suppression."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr ""
+"\"%s\", une origine de l'instantané \"%s\", a été supprimé de la liste de "
+"suppression."
 
 #: src/InputController.py:610
 #, python-format
-msgid "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are not migratable, so %s is not removable."
-msgstr "Le Volume Physique \"%s\" contient les étendues appartenant à un miroir. Les miroirs ne peuvent pas être migrés. %s ne peut donc pas être supprimé."
+msgid ""
+"Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
+"not migratable, so %s is not removable."
+msgstr ""
+"Le Volume Physique \"%s\" contient les étendues appartenant à un miroir. Les "
+"miroirs ne peuvent pas être migrés. %s ne peut donc pas être supprimé."
 
 #: src/InputController.py:613
 #, python-format
-msgid "Physical Volume \"%s\" contains extents belonging to a snapshot or a snapshot's origin. Snapshots are not migratable, so %s is not removable."
-msgstr "Le Volume Physique \"%s\" contient des étendues appartenant à un instantané ou l'origine d'un instantané. Les instantanés ne peuvent pas être migrés. %s ne peut donc pas être supprimé."
+msgid ""
+"Physical Volume \"%s\" contains extents belonging to a snapshot or a "
+"snapshot's origin. Snapshots are not migratable, so %s is not removable."
+msgstr ""
+"Le Volume Physique \"%s\" contient des étendues appartenant à un instantané "
+"ou l'origine d'un instantané. Les instantanés ne peuvent pas être migrés. %s "
+"ne peut donc pas être supprimé."
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
@@ -349,14 +500,18 @@ msgstr "Le chemin spécifié n'est pas un périphérique bloc."
 msgid "Initialization of %s failed"
 msgstr "Échec de l'initialisation de %s"
 
-#: src/InputController.py:993
-#: src/InputController.py:996
+#: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
 msgstr "Veuillez tout d'abord sélectionner des étendues"
 
 #: src/InputController.py:1030
-msgid "There are not enough free extents to perform the necessary migration. Adding more physical volumes would solve the problem."
-msgstr "Il n'existe pas assez d'étendues libres pour effectuer la migration nécessaire. L'ajout de volumes physiques supplémentaires résoudra ce problème."
+msgid ""
+"There are not enough free extents to perform the necessary migration. Adding "
+"more physical volumes would solve the problem."
+msgstr ""
+"Il n'existe pas assez d'étendues libres pour effectuer la migration "
+"nécessaire. L'ajout de volumes physiques supplémentaires résoudra ce "
+"problème."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -386,7 +541,8 @@ msgstr "Editer le Volume Logique"
 
 #: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr "La gestion de Volumes Logiques sous-jacent ne supporte pas la mise en miroir."
+msgstr ""
+"La gestion de Volumes Logiques sous-jacent ne supporte pas la mise en miroir."
 
 #: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -394,38 +550,63 @@ msgstr "Les Volumes Logiques par bandes ne peuvent pas être mis en miroir."
 
 #: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "Les Volumes Logiques avec des instantanés associés ne peuvent pas encore être mis en miroir."
+msgstr ""
+"Les Volumes Logiques avec des instantanés associés ne peuvent pas encore "
+"être mis en miroir."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
 #: src/InputController.py:1536
-msgid "The primary purpose of mirroring is to protect data in the case of hard drive failure. Do you want to place mirror images onto different hard drives?"
-msgstr "Le but principal de la mise en miroir est de protéger les données dans le cas d'un échec du disque dur. Souhaitez-vous placer les images miroir sur des disques durs différents ?"
+msgid ""
+"The primary purpose of mirroring is to protect data in the case of hard "
+"drive failure. Do you want to place mirror images onto different hard drives?"
+msgstr ""
+"Le but principal de la mise en miroir est de protéger les données dans le "
+"cas d'un échec du disque dur. Souhaitez-vous placer les images miroir sur "
+"des disques durs différents ?"
 
 #: src/InputController.py:1545
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr "Moins de trois disques durs sont disponibles avec de l'espace libre. Désactivation de la mise en miroir."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgstr ""
+"Moins de trois disques durs sont disponibles avec de l'espace libre. "
+"Désactivation de la mise en miroir."
 
 #: src/InputController.py:1550
-msgid "There must be free space on at least three Physical Volumes to enable mirroring"
-msgstr "De l'espace libre doit exister sur au moins trois Volumes Physiques pour permettre la mise en miroir"
+msgid ""
+"There must be free space on at least three Physical Volumes to enable "
+"mirroring"
+msgstr ""
+"De l'espace libre doit exister sur au moins trois Volumes Physiques pour "
+"permettre la mise en miroir"
 
 #: src/InputController.py:1558
-msgid "The size of the Logical Volume has been adjusted to the maximum available size for mirrors."
-msgstr "La taille du Volume Logique a été ajustée à la taille disponible maximum pour les miroirs."
+msgid ""
+"The size of the Logical Volume has been adjusted to the maximum available "
+"size for mirrors."
+msgstr ""
+"La taille du Volume Logique a été ajustée à la taille disponible maximum "
+"pour les miroirs."
 
 #: src/InputController.py:1563
 #, python-format
-msgid "There is not enough free space to add mirroring. Reduce size of Logical Volume to at most %s, or add Physical Volumes."
-msgstr "Il n'y a pas assez d'espace libre pour ajouter le mode miroir. Réduisez la taille du Volume Logique à, au moins, %s, ou ajoutez des Volumes Physiques."
+msgid ""
+"There is not enough free space to add mirroring. Reduce size of Logical "
+"Volume to at most %s, or add Physical Volumes."
+msgstr ""
+"Il n'y a pas assez d'espace libre pour ajouter le mode miroir. Réduisez la "
+"taille du Volume Logique à, au moins, %s, ou ajoutez des Volumes Physiques."
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "Les noms commençant par \"snapshot\" ou \"pvmove\" sont des mots-clés réservés."
+msgstr ""
+"Les noms commençant par \"snapshot\" ou \"pvmove\" sont des mots-clés "
+"réservés."
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Les noms contenant \"_mlog\" ou \"_mimage\" sont des mots-clés réservés."
+msgstr ""
+"Les noms contenant \"_mlog\" ou \"_mimage\" sont des mots-clés réservés."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -450,11 +631,17 @@ msgstr "Spécifiez le point de montage"
 
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr "Souhaitez-vous mettre à niveau ext2 vers ext3 en conservant les données sur le Volume Logique ?"
+msgstr ""
+"Souhaitez-vous mettre à niveau ext2 vers ext3 en conservant les données sur "
+"le Volume Logique ?"
 
 #: src/InputController.py:2062
-msgid "Changing the filesystem will destroy all data on the Logical Volume! Are you sure you want to proceed?"
-msgstr "Modifier le système de fichiers détruira toutes les données sur le Volume Logique ! Souhaitez-vous continuer ?"
+msgid ""
+"Changing the filesystem will destroy all data on the Logical Volume! Are you "
+"sure you want to proceed?"
+msgstr ""
+"Modifier le système de fichiers détruira toutes les données sur le Volume "
+"Logique ! Souhaitez-vous continuer ?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
@@ -463,8 +650,12 @@ msgstr "Miroir non créé. Exécution des tâches suivantes."
 
 #. create mirror
 #: src/InputController.py:2166
-msgid "Underlaying LVM doesn't support addition of mirrors to existing Logical Volumes. Completing remaining tasks."
-msgstr "Le LVM courant ne supporte pas l'ajout de miroirs aux volumes logiques existants. Exécution des tâches suivantes."
+msgid ""
+"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+"Volumes. Completing remaining tasks."
+msgstr ""
+"Le LVM courant ne supporte pas l'ajout de miroirs aux volumes logiques "
+"existants. Exécution des tâches suivantes."
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -478,8 +669,7 @@ msgstr "Souhaitez-vous migrer les étendues spécifiées ?"
 msgid "Creating Logical Volume"
 msgstr "Création d'un Volume Logique"
 
-#: src/CommandHandler.py:74
-#: src/CommandHandler.py:91
+#: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
 msgstr "Redimensionnement du Volume Logique"
 
@@ -535,8 +725,7 @@ msgstr "Migration d'étendues"
 msgid "Rereading partition table"
 msgstr "Relecture de la table de partition"
 
-#: src/lvm_model.py:45
-#: src/lvmui_constants.py:83
+#: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
 msgstr "Disponible"
 
@@ -560,9 +749,7 @@ msgstr "ID Système :"
 msgid "Format:   "
 msgstr "Format : "
 
-#: src/lvm_model.py:61
-#: src/lvm_model.py:78
-#: src/lvm_model.py:93
+#: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
 msgstr "Atributs :   "
 
@@ -743,43 +930,59 @@ msgstr "Origine de l'instantané :"
 msgid "Snapshot usage:"
 msgstr "Utilisation de l'instantané :"
 
-#: src/lvm_model.py:834
-#: src/lvm_model.py:840
-#: src/lvm_model.py:883
+#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
 #: src/lvm_model.py:899
 msgid "/   Root Filesystem"
 msgstr "/   Système de Fichiers racine"
 
-#: src/lvm_model.py:902
-#: src/Filesystem.py:137
+#: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
 msgstr "Aucun"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
 #, python-format
-msgid "All data on disk entity %s will be lost! Are you certain that you wish to initialize it?"
-msgstr "Toutes les données sur l'entité de disque %s seront perdues ! Souhaitez-vous l'initialiser ?"
+msgid ""
+"All data on disk entity %s will be lost! Are you certain that you wish to "
+"initialize it?"
+msgstr ""
+"Toutes les données sur l'entité de disque %s seront perdues ! Souhaitez-vous "
+"l'initialiser ?"
 
 #: src/lvmui_constants.py:52
 #, python-format
-msgid "Disk entity %s contains %s filesystem. All data on it will be lost! Are you certain that you wish to initialize disk entity %s?"
-msgstr "L'entité de disque %s contient le système de fichiers %s. Toutes les données seront perdues ! Souhaitez-vous initialiser l'entité de disque %s ?"
+msgid ""
+"Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
+"certain that you wish to initialize disk entity %s?"
+msgstr ""
+"L'entité de disque %s contient le système de fichiers %s. Toutes les données "
+"seront perdues ! Souhaitez-vous initialiser l'entité de disque %s ?"
 
 #: src/lvmui_constants.py:53
 #, python-format
-msgid "Disk entity %s contains data from directory %s. All data in it will be lost! Are you certain that you wish to initialize disk entity %s?"
-msgstr "L'entité de disque %s contient des données du répertoire %s. Toutes les données seront perdues ! Souhaitez-vous initialiser l'entité de disque %s ?"
+msgid ""
+"Disk entity %s contains data from directory %s. All data in it will be lost! "
+"Are you certain that you wish to initialize disk entity %s?"
+msgstr ""
+"L'entité de disque %s contient des données du répertoire %s. Toutes les "
+"données seront perdues ! Souhaitez-vous initialiser l'entité de disque %s ?"
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "Souhaitez-vous initialiser %s de l'espace libre sur le disque %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
-msgid "You are about to initialize unpartitioned disk %s. It is advisable, although not required, to create a partition on it. Do you want to create a single partition encompassing the whole drive?"
-msgstr "Vous êtes sur le point d'initialiser le disque non partitionné %s. Il est recommandé, bien que cela ne soit pas requis, d'y créer une partition. Souhaitez-vous créer une seule partition sur tout le disque ?"
+msgid ""
+"You are about to initialize unpartitioned disk %s. It is advisable, although "
+"not required, to create a partition on it. Do you want to create a single "
+"partition encompassing the whole drive?"
+msgstr ""
+"Vous êtes sur le point d'initialiser le disque non partitionné %s. Il est "
+"recommandé, bien que cela ne soit pas requis, d'y créer une partition. "
+"Souhaitez-vous créer une seule partition sur tout le disque ?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -787,8 +990,14 @@ msgstr "Rechargement de LVM. Veuillez patienter."
 
 #: src/lvmui_constants.py:59
 #, python-format
-msgid "Changes will take effect after computer is restarted. If device %s is used, before restart, data corruption WILL occur. It is advisable to restart your computer now."
-msgstr "Les changements prendront effet après le redémarrage de l'ordinateur. Si le périphérique %s est utilisé, avant le redémarrage, la corruption de données SE PRODUIRA. Il est recommandé de redémarrer maintenant votre ordinateur."
+msgid ""
+"Changes will take effect after computer is restarted. If device %s is used, "
+"before restart, data corruption WILL occur. It is advisable to restart your "
+"computer now."
+msgstr ""
+"Les changements prendront effet après le redémarrage de l'ordinateur. Si le "
+"périphérique %s est utilisé, avant le redémarrage, la corruption de données "
+"SE PRODUIRA. Il est recommandé de redémarrer maintenant votre ordinateur."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -801,7 +1010,9 @@ msgstr "Impossible de traiter la requête"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "La commande %s a échoué. Commande essayée : \"%s\" - Message d'erreur système : %s"
+msgstr ""
+"La commande %s a échoué. Commande essayée : \"%s\" - Message d'erreur "
+"système : %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -877,14 +1088,12 @@ msgstr "Cramfs"
 msgid "Properties for"
 msgstr "Propertiétés pour"
 
-#: src/Properties_Renderer.py:43
-#: src/renderer.py:37
+#: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
 msgstr "Volume Physique"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
-#: src/Properties_Renderer.py:44
-#: src/renderer.py:36
+#: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
 msgstr "Volume Logique"
 
@@ -892,15 +1101,12 @@ msgstr "Volume Logique"
 msgid "Unallocated Volume"
 msgstr "Volume Non Alloué"
 
-#: src/Properties_Renderer.py:46
-#: src/renderer.py:43
+#: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
 msgstr "Entité Disque"
 
-#: src/Properties_Renderer.py:47
-#: src/Properties_Renderer.py:48
-#: src/Properties_Renderer.py:49
-#: src/renderer.py:38
+#: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
+#: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
 msgstr "Groupe de Volumes"
 
@@ -913,13 +1119,11 @@ msgstr "Aucun Volume Sélectionné"
 msgid "Multiple selection"
 msgstr "Sélection multiple"
 
-#: src/renderer.py:39
-#: src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:49
 msgid "Logical View"
 msgstr "Vue Logique"
 
-#: src/renderer.py:40
-#: src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:48
 msgid "Physical View"
 msgstr "Vue PHysique"
 
@@ -933,23 +1137,46 @@ msgstr "Non Initialisé"
 
 #: src/renderer.py:195
 #, python-format
-msgid "The extents that you are attempting to select belong to a mirror log of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the extents are not selectable."
-msgstr "Les étendues que vous essayez de sélectionner appartiennent à un journal miroir du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent pas encore être migrés. Les étendues ne peuvent donc pas être sélectionnées."
+msgid ""
+"The extents that you are attempting to select belong to a mirror log of "
+"Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
+"extents are not selectable."
+msgstr ""
+"Les étendues que vous essayez de sélectionner appartiennent à un journal "
+"miroir du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent "
+"pas encore être migrés. Les étendues ne peuvent donc pas être sélectionnées."
 
 #: src/renderer.py:197
 #, python-format
-msgid "The extents that you are attempting to select belong to mirror image of Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the extents are not selectable."
-msgstr "Les étendues que vous essayez de sélectionner appartiennent à une image miroir du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent pas encore être migrés. Les étendues ne peuvent donc pas être sélectionnées."
+msgid ""
+"The extents that you are attempting to select belong to mirror image of "
+"Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
+"extents are not selectable."
+msgstr ""
+"Les étendues que vous essayez de sélectionner appartiennent à une image "
+"miroir du Volume Logique %s. Les Volumes Logiques mis en miroir ne peuvent "
+"pas encore être migrés. Les étendues ne peuvent donc pas être sélectionnées."
 
 #: src/renderer.py:199
 #, python-format
-msgid "The extents that you are attempting to select belong to %s, a snapshot of %s. Snapshots are not yet migratable, so the extents are not selectable."
-msgstr "Les étendues que vous essayez de sélectionner appartiennent à %s, un instantané de %s. Les instantanés ne peuvent pas encore être migrés. Les étendues ne peuvent donc pas être sélectionnées."
+msgid ""
+"The extents that you are attempting to select belong to %s, a snapshot of %"
+"s. Snapshots are not yet migratable, so the extents are not selectable."
+msgstr ""
+"Les étendues que vous essayez de sélectionner appartiennent à %s, un "
+"instantané de %s. Les instantanés ne peuvent pas encore être migrés. Les "
+"étendues ne peuvent donc pas être sélectionnées."
 
 #: src/renderer.py:201
 #, python-format
-msgid "The extents that you are attempting to select belong to a snapshot origin %s. Snapshot origins are not yet migratable, so the extents are not selectable."
-msgstr "Les étendues que vous essayez de sélectionner appartiennent à l'origine d'un instantané %s. Les origines d'instantanés ne peuvent pas encore être migrées. Les étendues ne peuvent donc pas être sélectionnées."
+msgid ""
+"The extents that you are attempting to select belong to a snapshot origin %"
+"s. Snapshot origins are not yet migratable, so the extents are not "
+"selectable."
+msgstr ""
+"Les étendues que vous essayez de sélectionner appartiennent à l'origine d'un "
+"instantané %s. Les origines d'instantanés ne peuvent pas encore être "
+"migrées. Les étendues ne peuvent donc pas être sélectionnées."
 
 #: src/renderer.py:388
 #, python-format
@@ -992,24 +1219,36 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:68
 msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not running. Start daemon with command:\n"
+"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
+"running. Start daemon with command:\n"
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM est configuré pour utiliser un dispositif de verouillage Groupe mais ne le démon clvmd n'est pas lancé. Lancé le démont avec la commande: \n"
+"LVM est configuré pour utiliser un dispositif de verouillage Groupe mais ne "
+"le démon clvmd n'est pas lancé. Lancé le démont avec la commande: \n"
 "service clvmd start \n"
 "ou désactivé le verrouillage du groupe (locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr "LVM est configuré pour utiliser le mécanisme de verrouillage de cluster, mais le cluster n'est pas en position quorate.<br> Patientez que le cluster soit en position quorate ou déverrouiller le.(locking_type=1 in /etc/lvm/lvm.conf)."
+"LVM is configured to use Cluster Locking mechanism, but cluster is not "
+"quorate.\n"
+"Either wait until cluster is quorate or turn off cluster locking "
+"(locking_type=1 in /etc/lvm/lvm.conf)."
+msgstr ""
+"LVM est configuré pour utiliser le mécanisme de verrouillage de cluster, "
+"mais le cluster n'est pas en position quorate.<br> Patientez que le cluster "
+"soit en position quorate ou déverrouiller le.(locking_type=1 in /etc/lvm/lvm."
+"conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
-msgid "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr "%s supporte sulement les fichiers et groupe basé sur un verron (locking_type=1 or 2 in /etc/lvm/lvm.conf)"
+msgid ""
+"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
+"lvm/lvm.conf)."
+msgstr ""
+"%s supporte sulement les fichiers et groupe basé sur un verron "
+"(locking_type=1 or 2 in /etc/lvm/lvm.conf)"
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
@@ -1047,23 +1286,39 @@ msgstr "Mise à niveau du système de fichiers %s à %s"
 
 #: src/Filesystem.py:24
 #, python-format
-msgid "Creation of filesystem failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "La création du système de fichiers a échoué. Commande : \"%s\" - Message d'Erreur Système : %s"
+msgid ""
+"Creation of filesystem failed. Command attempted: \"%s\" - System Error "
+"Message: %s"
+msgstr ""
+"La création du système de fichiers a échoué. Commande : \"%s\" - Message "
+"d'Erreur Système : %s"
 
 #: src/Filesystem.py:25
 #, python-format
-msgid "Resize of filesystem failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Le redimensionnement du système de fichiers a échoué. Commande : \"%s\" - Message d'Erreur Système : %s"
+msgid ""
+"Resize of filesystem failed. Command attempted: \"%s\" - System Error "
+"Message: %s"
+msgstr ""
+"Le redimensionnement du système de fichiers a échoué. Commande : \"%s\" - "
+"Message d'Erreur Système : %s"
 
 #: src/Filesystem.py:26
 #, python-format
-msgid "Check of filesystem failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "La vérification du système de fichiers a échoué. Commande : \"%s\" - Message d'Erreur Système : %s"
+msgid ""
+"Check of filesystem failed. Command attempted: \"%s\" - System Error "
+"Message: %s"
+msgstr ""
+"La vérification du système de fichiers a échoué. Commande : \"%s\" - Message "
+"d'Erreur Système : %s"
 
 #: src/Filesystem.py:27
 #, python-format
-msgid "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "Échec de la mise à niveau du système de fichiers. Commande : \"%s\" - Message d'Erreur Système : %s"
+msgid ""
+"Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
+"Message: %s"
+msgstr ""
+"Échec de la mise à niveau du système de fichiers. Commande : \"%s\" - "
+"Message d'Erreur Système : %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
@@ -1077,23 +1332,19 @@ msgstr "GFS (local)"
 msgid "GFS (clustered)"
 msgstr "GFS (en cluster)"
 
-#: src/Filesystem.py:504
-#: src/Filesystem.py:748
+#: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
 msgstr "Le nom du groupe contient des caractères non permis"
 
-#: src/Filesystem.py:507
-#: src/Filesystem.py:751
+#: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
 msgstr "Le nom GFS contient des caractères non permis"
 
-#: src/Filesystem.py:510
-#: src/Filesystem.py:754
+#: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
 msgstr "Nom du groupe absent"
 
-#: src/Filesystem.py:513
-#: src/Filesystem.py:757
+#: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
 msgstr "Nom GFS absent"
 
@@ -1122,8 +1373,7 @@ msgstr "Miroir"
 msgid "Partition %s"
 msgstr "Partition %s"
 
-#: src/lvui.glade.h:1
-#: src/lv_edit_props.glade.h:1
+#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
 msgstr "*"
 
@@ -1492,7 +1742,8 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
-"Afin de supprimer le Volume Physique, les étendues utilisées doivent être migrées.\n"
+"Afin de supprimer le Volume Physique, les étendues utilisées doivent être "
+"migrées.\n"
 "Sélectionnez la destion des étendues et la politique de migration."
 
 #: src/migrate_extents.glade.h:9
@@ -1526,4 +1777,3 @@ msgstr "Uniquement migrer les étendues appartenant au VL"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Utiliser du bon sens "
-
