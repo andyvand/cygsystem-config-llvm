@@ -1,21 +1,21 @@
 # translation of or.po to Oriya
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Subhransu Behera <sbehera@redhat.com>, 2006.
 #
+# Subhransu Behera <sbehera@redhat.com>, 2006.
 msgid ""
 msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-12 15:59+0530\n"
+"PO-Revision-Date: 2006-10-11 18:42+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 
@@ -86,8 +86,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 
 #: src/InputController.py:98
@@ -100,8 +99,7 @@ msgstr ""
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
 
 #: src/InputController.py:104
@@ -163,8 +161,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 
 #: src/InputController.py:124
@@ -274,8 +271,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
 #: src/InputController.py:154
@@ -379,8 +375,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:610
@@ -467,8 +462,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1550
@@ -847,8 +841,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
@@ -1156,6 +1149,8 @@ msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"ଫାଇଲତନ୍ତ୍ରର ଉନ୍ନୟନ ବିଫଳ। ପ୍ରଚେଷ୍ଟା କରାଯାଇଥିବା ନିର୍ଦ୍ଦେଶ: \"%s\" - ତନ୍ତ୍ର ତୃଟି "
+"ସନ୍ଦେଶ: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
@@ -1171,15 +1166,15 @@ msgstr "ଜି.ଏଫ୍.ଏସ୍. (କ୍ଲଷ୍ଟର୍ଡ)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "କ୍ଲଷ୍ଟର ନାମ ଅବୈଧ ଅକ୍ଷର ଧାରଣ କରିଅଛି"
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS ନାମ ଅବୈଧ ଅକ୍ଷର ଧାରଣ କରିଅଛି"
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "କ୍ଲଷ୍ଟର ନାମ ଅନୁପସ୍ଥିତ"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
@@ -1344,7 +1339,7 @@ msgstr "ପ୍ରବଳତା ର ପରିଚାଳନା କରନ୍ତୁ"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "ଘନଫଳ ସମୂହକୁ 'ସ୍ତରୀଭୂତ' ଭାବରେ ସୂଚୀତ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
@@ -1363,6 +1358,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"ଚୟିତ ପରିସର ମାନଙ୍କୁ ଘନଫଳରୁ\n"
+"ଉତ୍ପ୍ରବାସିତ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
@@ -1414,7 +1411,7 @@ msgstr ""
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "ଏହି PV କୁ ଏହା ସହିତ ଯୋଗ କରିବା ପାଇଁ ଗୋଟିଏ ଘନଫଳ ସମୂହକୁ ଚୟନ କରନ୍ତୁ:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
@@ -1486,11 +1483,11 @@ msgstr "ପ୍ରବଳତା ସମୂହ ଲେବଲ ରେ ଖାଲି ସ�
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
-msgstr ""
+msgstr "ଖାଲି ସ୍ଥାନ ବଳକା ସୂଚକ"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
-msgstr ""
+msgstr "କିଲୋ-ବାଇଟ ସଂକ୍ଷିପ୍ତୀକରଣ"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
@@ -1502,7 +1499,7 @@ msgstr "ଏଲ.ଭି. ଆକାର"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "ଆଲୋକଚିତ୍ରରେ ଥିବା LV ମାନଙ୍କର ଆକାରକୁ ପରିବର୍ତ୍ତନ କରିହେବ ନାହିଁ"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1514,7 +1511,7 @@ msgstr "ପ୍ରତିଫଳିତ"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "ପ୍ରତିଫଳିତ LV ମାନଙ୍କର ଆକାର ପରିବର୍ତ୍ତନ କରିହେବ ନାହିଁ"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
@@ -1530,19 +1527,19 @@ msgstr "ପୁନଃ ଚାଳନ ସମୟ ରେ ସ୍ଥାପନ କରନ�
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr ""
+msgstr "ଆକାର ଅନୁମତି"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr ""
+msgstr "ଆକାର ଶେଷ"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr ""
+msgstr "ଗାରଗାରିଆ"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr ""
+msgstr "ବଳକା ବ୍ଯବହାର କରନ୍ତୁ"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
@@ -1550,19 +1547,19 @@ msgstr "ରେଖା ମାନ"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>ଗନ୍ତବ୍ଯ ସ୍ଥଳ</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>ଉତ୍ପ୍ରବାସନ ନୀତି</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "ଯେ କୌଣସି ସ୍ଥାନରେ - ନିଷ୍ପାଦିତ ହୋଇ ନ ଥିବା"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "ଏଠାକୁ ଉତ୍ପ୍ରବାସନ କରିବା ପାଇଁ ସ୍ବୟଂଚାଳିତ ଭାବରେ PV ମାନଙ୍କୁ ଚୟନ କରନ୍ତୁ"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
@@ -1577,26 +1574,28 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PV କୁ ଅପସାରଣ କରିବା ପାଇଁ, ବ୍ଯବହୃତ ପରିସର ମାନଙ୍କୁ ଉତ୍ପ୍ରବାସନ କରିବାକୁ ହେବ।\n"
+"ପରିସର ମାନଙ୍କର ଗନ୍ତବ୍ଯ ସ୍ଥଳ ଏବଂ ଉତ୍ପ୍ରବାସନ ନୀତି ଚୟନ କରନ୍ତୁ।"
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "ଅଧିକାର କରନ୍ତୁ"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
-msgstr ""
+msgstr "ଘନଫଳ ସମୂହରୁ ନୀତି ଅଧିକାର କରନ୍ତୁ"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
-msgstr ""
+msgstr "ପରିସର ମାନଙ୍କୁ ଉତ୍ପ୍ରବାସିତ କରନ୍ତୁ"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "ଯେ କୌଣସି ସ୍ଥାନକୁ ଉତ୍ପ୍ରବାସିତ କରନ୍ତୁ ଯଦିଚ ଏହା ପ୍ରଦର୍ଶନ ହ୍ରାସ କରିବ"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "ନୂତନ ପରିସର ଗୁଡିକ ଅବସ୍ଥିତ ପରିସର ମାନଙ୍କ ନିକଟବର୍ତ୍ତୀ ଅଟନ୍ତି"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
@@ -1604,8 +1603,9 @@ msgstr "ସାଧାରଣ"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
-msgstr ""
+msgstr "କେବଳ LV ଅଂଶଭୂକ୍ତ ପରିସରକୁ ଉତ୍ପ୍ରବାସିତ କରନ୍ତୁ"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr "ସାଧାରଣ ଜ୍ଞାନ କୁ ବ୍ଯବହାର କରନ୍ତୁ"
+msgstr "ସାଧାରଣ ଜ୍ଞାନ ବ୍ଯବହାର କରନ୍ତୁ"
+
