@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-10-13 06:07+0530\n"
+"PO-Revision-Date: 2006-10-13 06:41+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
@@ -306,7 +306,7 @@ msgstr ""
 #: src/InputController.py:153
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "ଆପଣ ପୂରାପୂରି ନିଶ୍ତିତ କି ଆପଣ %s ଘନଫଳ ସମୂହରୁ %s କୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:154
 #, python-format
@@ -314,6 +314,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"%s ଭୌତିକ ଘନଫଳକୁ %s ଘନଫଳ ସମୂହରୁ ଅପସାରଣ କଲେ, ଘନଫଳ ସମୂହଟି ଖାଲି ହୋଇଯିବ, "
+"ଏବଂ ଆହୁରି ମଧ୍ଯ ଏହା ଅପସାରିତ ହୋଇଯିବ। ଆପଣ ଜାରି ରଖିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:155
 #, python-format
@@ -322,6 +324,8 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
+"%s ଘନଫଳ ସମୂହରେ ସଂରକ୍ଷିତ ତଥ୍ଯ %s କୁ ଘୁଞ୍ଚାଇବା ପାଇଁ ଯଥେଷ୍ଟ ସ୍ଥାନ ନାହିଁ। ଘନଫଳ ସମୂହରେ "
+"ଗୋଟିଏ ଅତିରିକ୍ତ ଭୌତିକ ଘନଫଳ ସମୂହ ଯୋଗ କରିବା ଗୋଟିଏ ସମ୍ଭାବ୍ଯ ସମାଧାନ ହୋଇପାରେ।"
 
 #: src/InputController.py:156
 msgid ""
@@ -341,7 +345,7 @@ msgstr ""
 #: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "ଆପଣ ପୂରାପୂରି ନିଶ୍ଚିତ କି ଆପଣ %s ତାର୍କିକ ଘନଫଳକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:160
 #, python-format
@@ -349,6 +353,8 @@ msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"%s ତାର୍କିକ ଘନଫଳ %s ଫାଇଲତନ୍ତ୍ର ଧାରଣ କରିଅଛି। ଏଥିରେ ଥିବା ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ ହୋଇଯିବ! "
+"ଆପଣ ପୂରାପୂରି ନିଶ୍ଚିତ କି ଆପଣ %s ତାର୍କିକ ଘନଫଳକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:161
 #, python-format
@@ -356,12 +362,16 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"%s ତାର୍କିକ ଘନଫଳ %s ଡିରେକ୍ଟୋରିରେ ଥିବା ତଥ୍ଯ ଧାରଣ କରିଅଛି। ଏଥିରେ ଥିବା ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ "
+"ହୋଇଯିବ! ଆପଣ ପୂରାପୂରି ନିଶ୍ଚିତ କି ଆପଣ %s ତାର୍କିକ ଘନଫଳକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:306
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, and clvmd service has to be running"
 msgstr ""
+"ଏକତ୍ରିତ ପରିବେଶରେ ସୁରକ୍ଷିତ ଭାବରେ ତାର୍କିକ ଘନଫଳର ବ୍ଯବହାର ପାଇଁ, lvm2-"
+"cluster rpm ସ୍ଥାପିତ ହୋଇଥିବା ଆବଶ୍ଯକ, ଏବଂ clvmd ସେବା ଚାଲୁଥିବା ଆବଶ୍ଯକ"
 
 #: src/InputController.py:364
 #, python-format
@@ -370,6 +380,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"%s ଭୌତିକ ଘନଫଳ %s ତାର୍କିକ ଘନଫଳର ଗୋଟିଏ ପ୍ରତଫଳିତ ଲଗ ସହିତ ସମ୍ପୃକ୍ତ ଥିବା "
+"ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। ପ୍ରତିଫଳିତ ତାର୍କିକ ଘନଫଳ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, "
+"ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
 #: src/InputController.py:367
 #, python-format
@@ -378,6 +391,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"%s ଭୌତିକ ଘନଫଳ %s ତାର୍କିକ ଘନଫଳର ଗୋଟିଏ ପ୍ରତଫଳିତ ପ୍ରତିଛବି ସହିତ ସମ୍ପୃକ୍ତ ଥିବା "
+"ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। ପ୍ରତିଫଳିତ ତାର୍କିକ ଘନଫଳ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, "
+"ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
 #: src/InputController.py:370
 #, python-format
@@ -385,6 +401,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"%s ଭୌତିକ ଘନଫଳ %s (%s ର ଗୋଟିଏ ଆଲୋକଚିତ୍ର) ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ "
+"ଧାରଣ କରିଅଛି। ଆଲୋକଚିତ୍ର ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ "
+"ନୁହେଁ।"
 
 #: src/InputController.py:375
 #, python-format
@@ -392,6 +411,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"%s ଭୌତିକ ଘନଫଳ %s (%s ଆଲୋକଚିତ୍ର ମାନଙ୍କର ଉତ୍ସ) ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ ଧାରଣ "
+"କରିଅଛି। ଆଲୋକଚିତ୍ର ଉତ୍ସ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
 #: src/InputController.py:377
 #, python-format
@@ -399,6 +420,8 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"%s ଭୌତିକ ଘନଫଳ %s (%s ଆଲୋକଚିତ୍ର ମାନଙ୍କର ଉତ୍ସ) ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ ଧାରଣ "
+"କରିଅଛି। ଆଲୋକଚିତ୍ର ଉତ୍ସ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
 #: src/InputController.py:564
 #, python-format
@@ -406,11 +429,13 @@ msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
+"\"%s\" ତାର୍କିକ ଘନଫଳ ନିକଟରେ ଆଲୋକଚିତ୍ର ମାନ ଅଛି ଯାହାକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚୟନ "
+"କରାଯାଇ ନାହିଁ। ଆହୁରି ମଧ୍ଯ ସେମାନଙ୍କୁ ଅପସାରଣ କରାଯିବା ଉଚିତ।"
 
 #: src/InputController.py:579
 #, python-format
 msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgstr "\"%s\", \"%s\" ଆଲୋକଚିତ୍ରର ଉତ୍ସ, କୁ ଅପସାରଣ ତାଲିକାରୁ କାଢି ଦିଆଯାଇଛି।"
 
 #: src/InputController.py:610
 #, python-format
@@ -418,6 +443,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"\"%s\" ଭୌତିକ ଘନଫଳ ଗୋଟିଏ ପ୍ରତିଫଳନ ସହିତ ସମ୍ପୃକ୍ତ ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। "
+"ପ୍ରତିଫଳନ ଗୁଡିକ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
 #: src/InputController.py:613
 #, python-format
@@ -428,16 +455,16 @@ msgstr ""
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
-msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଟି ଅବସ୍ଥିତ ନାହିଁ"
+msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଅବସ୍ଥିତ ନାହିଁ।"
 
 #: src/InputController.py:685
 msgid "The path you specified is not a Block Device."
-msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଟି ଗୋଟିଏ ଅବରୋଧୀ ଉପକରଣ ନୁହେଁ"
+msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଗୋଟିଏ ଅବରୋଧୀ ଉପକରଣ ନୁହେଁ।"
 
 #: src/InputController.py:756
 #, python-format
 msgid "Initialization of %s failed"
-msgstr "%s ର ବୈଧିକରଣ ବିଫଳ ହୋଇ ଗଲା"
+msgstr "%s ର ବୈଧିକରଣ ବିଫଳ"
 
 #: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
@@ -798,11 +825,11 @@ msgstr "ବୈଦେଶିକ ବୁଟ ବିଭାଜନ"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr "ସ୍ବୟଂଚାଳିତ ବିଭାଜନ ଟି ବିଫଳ ହୋଇ ଗଲା"
+msgstr "ସ୍ବତଃ ବିଭାଜନ ବିଫଳ"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
-msgstr "ସ୍ବହସ୍ତ ରେ ବିଭାଜନ କରନ୍ତୁ"
+msgstr "ହସ୍ତକୃତ ଭାବରେ ବିଭାଜନ କରନ୍ତୁ"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
@@ -814,7 +841,7 @@ msgstr "ଦ୍ରଷ୍ଟବ୍ଯ:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
-msgstr "ସ୍ବହସ୍ତ ରେ ପ୍ରାରମ୍ଭିକରଣ କରନ୍ତୁ"
+msgstr "ହସ୍ତକୃତ ଭାବରେ ପ୍ରାରମ୍ଭିକରଣ କରନ୍ତୁ"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
