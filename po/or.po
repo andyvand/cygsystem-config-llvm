@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-10-13 06:41+0530\n"
+"PO-Revision-Date: 2006-10-13 07:05+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
@@ -452,6 +452,9 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"\"%s\" ଭୌତିକ ଘନଫଳ ଗୋଟିଏ ଆଲୋକଚିତ୍ର କିମ୍ବା ଗୋଟିଏ ଆଲୋକଚିତ୍ରର ଉତ୍ସ ସହିତ ସମ୍ପୃକ୍ତ "
+"ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। ଆଲୋକଚିତ୍ର ଗୁଡକ ଅତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ "
+"ନୁହେଁ।"
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
@@ -475,6 +478,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"ଦରକାରୀ ଉତ୍ପ୍ରବାସନକୁ ପ୍ରଦର୍ଶନ କରିବା ପାଇଁ ଯଥେଷ୍ଟ ଖାଲି ପରିସର ନାହିଁ। ଅଧିକ ଭୌତିକ "
+"ପ୍ରବଳତାର ସଂଯୋଗ ଏହି ସମସ୍ଯାକୁ ସମାଧାନ କରିଦେବ।"
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -504,15 +509,15 @@ msgstr "ତାର୍କିକ ପ୍ରବଳତାକୁ ସମ୍ପାଦନ 
 
 #: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "ନିମ୍ନରେ ଥିବା ତାର୍କିକ ପ୍ରବଳତା ପରିଚାଳନା ପ୍ରତିଫଳନକୁ ସମର୍ଥ କରେ ନାହିଁ"
 
 #: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "ଗାରଗାରିଆ ତାର୍କିକ ପ୍ରବଳତାକୁ ପ୍ରତିଫଳିତ କରିହେବ ନାହିଁ।"
 
 #: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "ସମ୍ମିଳିତ ଆଲୋକଚିତ୍ର ମାନଙ୍କ ସହିତ ତାର୍କିକ ଘନଫଳକୁ ଏ ପର୍ଯ୍ଯନ୍ତ ପ୍ରତିଫଳିତ କରାଯାଇ ନାହିଁ।"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -521,22 +526,28 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
+"ହାର୍ଡ ଡ୍ରାଇଭ ବିଫଳ ସମୟରେ ପ୍ରତିଫଳନର ମୌଳିକ କାର୍ଯ୍ଯ ହେଉଛି ତଥ୍ଯ ସୁରକ୍ଷିତ କରିବ। "
+"ଆପଣ ବିଭିନ୍ନ ହାର୍ଡ ଡ୍ରାଇଭରେ ପ୍ରତିଫଳକ ପ୍ରତିଛବି ମାନଙ୍କୁ ରଖିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
 #: src/InputController.py:1545
 msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgstr "ଖାଲିସ୍ଥାନ ବିଶିଷ୍ଟ ୩ ରୁ କମ ହାର୍ଡ ଡ୍ରାଇଭ ଉପଲବ୍ଧ। ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ନିଷ୍କ୍ରିୟ କରୁଅଛି।"
 
 #: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
+"ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ସକ୍ରିୟ କରିବା ପାଇଁ ସେଠାରେ ଅତିକମରେ ଖାଲିସ୍ଥାନ ବିଶିଷ୍ଟ ତିନିଟି "
+"ଭୌତିକ ଘନଫଳ ଥିବା ଉଚିତ"
 
 #: src/InputController.py:1558
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
+"ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟା ପାଇଁ ତାର୍କିକ ଘନଫଳର ଆକାରକୁ ସର୍ବାଧିକ ଉପଲବ୍ଧ ଆକାର ସହିତ "
+"ଯଥାପୁଯକ୍ତ କରନ୍ତୁ।"
 
 #: src/InputController.py:1563
 #, python-format
@@ -544,14 +555,16 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ଯୋଗ କରିବା ପାଇଁ ସେଠାରେ ଯଥେଷ୍ଟ ସ୍ଥାନ ନାହିଁ। ତାର୍କିକକୁ ଘନଫଳର "
+"ଆକାରକୁ ସର୍ବାଧିକ %s ପର୍ଯ୍ଯନ୍ତ ହ୍ରାସ କରନ୍ତୁ, କିମ୍ବା ଭୌତିକ ଘନଫଳ ଗୁଡିକୁ ଯୋଗ କରନ୍ତୁ।"
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "\"snapshot\" କିମ୍ବା \"pvmove\" ଦ୍ବାରା ପ୍ରାରମ୍ଭିତ ନାମ ଗୁଡିକ ସଂରକ୍ଷିତ ସୂଚକ ଶବ୍ଦ ଅଟନ୍ତି।"
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "\"_mlog\" କିମ୍ବା \"_mimage\" ଧାରଣ କରିଥିବା ନାମ ଗୁଡିକ ସଂରକ୍ଷିତ ସୂଚକ ଶବ୍ଦ ଅଟନ୍ତି।"
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -597,6 +610,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"ନିମ୍ନରେ ଥିବା LVM ଅବସ୍ଥିତ ଭୌତିକ ଘନଫଳରେ ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାର ସଂଯୋଗକୁ ସମର୍ଥ "
+"କରେନାହିଁ। ବଳକା କାର୍ଯ୍ଯ ମାନଙ୍କୁ ସମ୍ପୂର୍ଣ୍ଣ କରୁଅଛି।"
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
