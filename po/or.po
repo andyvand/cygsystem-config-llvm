@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-10-13 07:05+0530\n"
+"PO-Revision-Date: 2006-10-13 07:43+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
@@ -902,6 +902,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"%s ଡିସ୍କ ବସ୍ତୁର ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ ହୋଇଯିବ! ଆପଣ ନିଶ୍ଚିତ କି ଆପଣ ଏହାକୁ ପ୍ରାରମ୍ଭିକୃତ କରିବା "
+"ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -909,6 +911,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"%s ଡିସ୍କ ବସ୍ତୁ %s ଫାଇଲତନ୍ତ୍ରକୁ ଧାରଣ କରିଅଛି। ଏଥିରେ ଥିବା ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ ହୋଇଯିବ! "
+"ଆପଣ ନିଶ୍ତିତ କି ଆପଣ %s ଡିସ୍କ ବସ୍ତୁକୁ ପ୍ରାରମ୍ଭିକୃତ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -916,6 +920,8 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
+"%s ଡିସ୍କ ବସ୍ତୁ %s ଡିରେକ୍ଟୋରିରେ ଥିବା ତଥ୍ଯ ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। ଏଥିରେ ଥିବା ସମସ୍ତ ତଥ୍ଯ "
+"ନଷ୍ଟ ହୋଇଯିବ! ଆପଣ ନିଶ୍ତିତ କି ଆପଣ %s ଡିସ୍କ ବସ୍ତୁକୁ ପ୍ରାରମ୍ଭିକୃତ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -929,6 +935,9 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"ଆପଣ ଅବିଭାଜିତ ଡିସ୍କ %s କୁ ସ୍ଥାପନ କରିବା ପାଇଁ ଯାଉଛନ୍ତି। ଯଦିଚ ଆବଶ୍ଯକ ନୁହେଁ, ଏଥିରେ "
+"ଗୋଟିଏ ବିଭାଜନ ସୃଷ୍ଟି କରିବା ପରାମର୍ଶିତ। ଆପଣ ସମଗ୍ର ଡ୍ରାଇଭକୁ ଆଧାରୀଭୂତ କରି ଗୋଟିଏ "
+"ବିଭାଜନ ସୃଷ୍ଟି କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -941,6 +950,9 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
+"କମ୍ପୁଟରଟି ପୁନଃପ୍ରାରମ୍ଭ ହୋଇ ସାରିବା ପରେ ପରିବର୍ତ୍ତନ ଗୁଡିକ ପ୍ରଭାବିତ ହେବେ। ଯଦି %s ଉପକରଣଟି "
+"ପୁନଃପ୍ରାରମ୍ଭ ହେବା ପୂର୍ବରୁ ବ୍ଯବହୃତ ହେଉଛି, ତାହାହେଲେ ତଥ୍ଯ ବିନ୍ଯାସ ହେବ। ଆପଣଙ୍କ କମ୍ପୁଟରକୁ "
+"ପୁନଃପ୍ରାରମ୍ଭ କରିବା ପରାମର୍ଶିତ।"
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
