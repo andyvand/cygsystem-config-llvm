@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-10-12 14:00+0530\n"
+"PO-Revision-Date: 2006-10-13 06:07+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -159,11 +160,11 @@ msgstr ""
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "ଗୋଟିଏ ଆଲୋକଚିତ୍ରର ଆଲୋକଚିତ୍ର ଉଠାଇବା ସମର୍ଥିତ ନୁହେଁ।"
 
 #: src/InputController.py:117
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr ""
+msgstr "ଗୋଟିଏ ପ୍ରତିଫଳିତ ତାର୍କିକ ଘନଫଳର ଆଲୋକଚିତ୍ର ଉଠାଇବା ସମର୍ଥିତ ନୁହେଁ।"
 
 #: src/InputController.py:119
 #, python-format
@@ -171,6 +172,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
+"ବର୍ତ୍ତମାନ %s ତାର୍କିକ ଘଲଫଳରେ ତାହା ସହିତ ସମ୍ପୃକ୍ତ %s ଆଲୋକଚିତ୍ର ଅଛି। ଦୟାକରି "
+"ପ୍ରଥମେ ଆଲୋକଚିତ୍ରକୁ ଅପସାରଣ କରନ୍ତୁ।"
 
 #: src/InputController.py:120
 #, python-format
@@ -178,10 +181,14 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
+"ବର୍ତ୍ତମାନ %s ତାର୍କିକ ଘଲଫଳରେ ତାହା ସହିତ ସମ୍ପୃକ୍ତ ଆଲୋକଚିତ୍ର ଗୁଡିକ ଅଛି: %s। ଦୟାକରି "
+"ପ୍ରଥମେ ଆଲୋକଚିତ୍ର ମାନଙ୍କୁ ଅପସାରଣ କରନ୍ତୁ।"
 
 #: src/InputController.py:122
 msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
+"ନମୁନା କାରଖାନାରେ ଅପରିଭାଷିତ ପ୍ରକାର ରୂପାନ୍ତରଣ ତୃଟି। କାର୍ଯ୍ଯ ସମ୍ପନ୍ନ କରିବାରେ "
+"ଅସମର୍ଥ।"
 
 #: src/InputController.py:124
 #, python-format
@@ -190,6 +197,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"ବଡ ଚେତାବନୀ: %s ତାର୍କିକ ଘନଫଳରେ %s ଫାଇଲତନ୍ତ୍ର ଅଛି ଏବଂ ଏହାକୁ ବର୍ତ୍ତମାନ %s ରେ "
+"ଆରୋହିତ କରାଯାଇଛି। ଆପଣ ସମ୍ପୂର୍ଣ୍ଣ ଭାବରେ ନିଶ୍ଚିତ କି ଆପଣ ଏହି ଆରୋହିତ ଫାଇଲତନ୍ତ୍ରରେ "
+"ତଥ୍ଯ ପ୍ରତ୍ଯାଖ୍ଯାନ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:126
 #, python-format
@@ -197,6 +207,9 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"%s ତାର୍କିକ ଘନଫଳ ବର୍ତ୍ତମାନ %s ରେ ଆରୋହିତ ହୋଇଛି। ନିବେଦନକୁ ସମ୍ପନ୍ନ କରିବା ପାଇଁ, "
+"ଏହାକୁ ଅନାରୋହିତ କରିବା ପାଇଁ ହେବ। ଆପଣ ନିଶ୍ତିତ କି ଆପଣ ଏହାକୁ ଅନାରୋହିତ କରିବା "
+"ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -276,6 +289,8 @@ msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
+"ଆପଣ ପୂରାପୂରି ନିଶ୍ତିତ କି ଆପଣ ତାର୍କିକ ଘନଫଳ ପରିଚାଳନାରୁ %s କୁ ଅପସାରଣ କରିବା "
+"ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:152
 #, python-format
