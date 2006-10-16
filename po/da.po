@@ -98,8 +98,10 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr "Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr ""
+"Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -111,7 +113,8 @@ msgstr "Et navn skal angives for den nye delarkivgruppe"
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Det angivne monteringspunkt %s, findes ikke. Vil du oprette det?"
 
 #: src/InputController.py:104
@@ -173,8 +176,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
-"Logiske volymen %s har i øjeblikket øjebliksbilledet %s tilknyttet "
-"den. Fjern øjebliksbilledet først."
+"Logiske volymen %s har i øjeblikket øjebliksbilledet %s tilknyttet den. "
+"Fjern øjebliksbilledet først."
 
 #: src/InputController.py:120
 #, python-format
@@ -182,12 +185,14 @@ msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr ""
-"Logiske volymen %s har i øjeblikket øjebliksbillederne: %s tilknyttet "
-"den. Fjern øjebliksbillederne først."
+"Logiske volymen %s har i øjeblikket øjebliksbillederne: %s tilknyttet den. "
+"Fjern øjebliksbillederne først."
 
 #: src/InputController.py:122
-msgid "Undefined type conversion error in model factory. Unable to complete task."
-msgstr "Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
+msgstr ""
+"Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
 
 #: src/InputController.py:124
 #, python-format
@@ -311,7 +316,8 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Er du helt sikker på at du vil fjerne %s fra delarkivgruppen %s?"
 
 #: src/InputController.py:154
@@ -407,9 +413,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
-"Den fysiske volymen %s indeholder områder som tilhører en spejlafbildning af den "
-"logiske volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så %s "
-"kan ikke fjernes."
+"Den fysiske volymen %s indeholder områder som tilhører en spejlafbildning af "
+"den logiske volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så "
+"%s kan ikke fjernes."
 
 #: src/InputController.py:370
 #, python-format
@@ -417,8 +423,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
-"Den fysiske volymen %s indeholder områder som tilhører %s, et øjebliksbillede "
-"af %s. Øjebliksbilleder kan endnu ikke migreres, så %s kan ikke fjernes."
+"Den fysiske volymen %s indeholder områder som tilhører %s, et "
+"øjebliksbillede af %s. Øjebliksbilleder kan endnu ikke migreres, så %s kan "
+"ikke fjernes."
 
 #: src/InputController.py:375
 #, python-format
@@ -427,8 +434,8 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
 "Den fysiske volymen %s indeholder områder som tilhører %s, oprindelsen for "
-"øjebliksbilledet %s. Oprindelser for øjebliksbilleder kan endnu ikke migreres, "
-"så %s kan ikke fjernes."
+"øjebliksbilledet %s. Oprindelser for øjebliksbilleder kan endnu ikke "
+"migreres, så %s kan ikke fjernes."
 
 #: src/InputController.py:377
 #, python-format
@@ -451,7 +458,8 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", en oprindelse for øjebliksbilledet \"%s\", er fjernet fra "
 "slettelisten."
@@ -471,9 +479,9 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
-"Den fysiske volymen \"%s\" indeholder områder som tilhører et øjebliksbillede "
-"eller oprindelsen for et øjebliksbillede. Øjebliksbilleder kan endnu ikke "
-"migreres, så %s kan ikke fjernes."
+"Den fysiske volymen \"%s\" indeholder områder som tilhører et "
+"øjebliksbillede eller oprindelsen for et øjebliksbillede. Øjebliksbilleder "
+"kan endnu ikke migreres, så %s kan ikke fjernes."
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
@@ -498,8 +506,7 @@ msgid ""
 "more physical volumes would solve the problem."
 msgstr ""
 "Der findes ikke tilstrækkeligt med ledige områder for at udføre den "
-"nødvendige migrering. At tilføje flere fysiske volymer skulle løse "
-"problemet."
+"nødvendige migrering. At tilføje flere fysiske volymer skulle løse problemet."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -537,7 +544,8 @@ msgstr "Strimlede logiske volymer kan ikke spejles."
 
 #: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "Logiske volymer med associerede øjebliksbilleder kan ikke spejles endnu."
+msgstr ""
+"Logiske volymer med associerede øjebliksbilleder kan ikke spejles endnu."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -546,14 +554,14 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Det væsentligste formål med spejling er at beskytte data hvis en disk "
-"går i stykker. Vil du placere spejlafbildningerne på forskellige diske?"
+"Det væsentligste formål med spejling er at beskytte data hvis en disk går i "
+"stykker. Vil du placere spejlafbildningerne på forskellige diske?"
 
 #: src/InputController.py:1545
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
-"Mindre end 3 diske med fri plads er tilgængelige. Deaktiverer "
-"spejling."
+"Mindre end 3 diske med fri plads er tilgængelige. Deaktiverer spejling."
 
 #: src/InputController.py:1550
 msgid ""
@@ -577,17 +585,18 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
-"Der er ikke nok fri plads til at tilføje spejling. "
-"Formindsk størrelsen på den logiske volymen til højst %s, eller tilføj "
-"fysiske volymer."
+"Der er ikke nok fri plads til at tilføje spejling. Formindsk størrelsen på "
+"den logiske volymen til højst %s, eller tilføj fysiske volymer."
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "Navne som begynder med \"snapshot\" eller \"pvmove\" er reserverede nøgleord."
+msgstr ""
+"Navne som begynder med \"snapshot\" eller \"pvmove\" er reserverede nøgleord."
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Navne som indeholder \"_mlog\" eller \"_mimage\" er reserverede nøgleord."
+msgstr ""
+"Navne som indeholder \"_mlog\" eller \"_mimage\" er reserverede nøgleord."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -633,8 +642,8 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
-"Underliggende LVM understøtter ikke at spejl af eksisterende logiske "
-"volymer tilføjes. Færdiggører resterende opgaver."
+"Underliggende LVM understøtter ikke at spejl af eksisterende logiske volymer "
+"tilføjes. Færdiggører resterende opgaver."
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -935,8 +944,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
-"Diskentiteten %s indeholder %s-filsystem. Alle data på det vil gå tabt! "
-"Er du sikker på at du vil initiere diskentiteten %s?"
+"Diskentiteten %s indeholder %s-filsystem. Alle data på det vil gå tabt! Er "
+"du sikker på at du vil initiere diskentiteten %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -944,13 +953,15 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
-"Diskentiteten %s indeholder data fra kataloget %s. Alle data i dette vil "
-"gå tabt! Er du sikker på at du vil initiere diskentiteten %s?"
+"Diskentiteten %s indeholder data fra kataloget %s. Alle data i dette vil gå "
+"tabt! Er du sikker på at du vil initiere diskentiteten %s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr "Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr ""
+"Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -959,8 +970,9 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
-"Du er ved at initiere den upartitionerede disk %s. Det tilrådes, omend det ikke er nødvendigt, at oprette en partition på disken. Ønsker du at oprette en enkelt "
-"partition der omfatter hele drevet?"
+"Du er ved at initiere den upartitionerede disk %s. Det tilrådes, omend det "
+"ikke er nødvendigt, at oprette en partition på disken. Ønsker du at oprette "
+"en enkelt partition der omfatter hele drevet?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
@@ -973,8 +985,9 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
-"Ændringerne vil træde i kraft efter at maskinen er genstartet. Hvis enhed %s bruges "
-"før genstart, så VIL data blive ødelagt. Det tilrådes at genstarte din maskine nu."
+"Ændringerne vil træde i kraft efter at maskinen er genstartet. Hvis enhed %s "
+"bruges før genstart, så VIL data blive ødelagt. Det tilrådes at genstarte "
+"din maskine nu."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1120,8 +1133,8 @@ msgid ""
 "extents are not selectable."
 msgstr ""
 "De områder som du forsøger at vælge tilhører en spejl-log for den logiske "
-"volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så disse områder "
-"kan ikke vælges."
+"volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så disse "
+"områder kan ikke vælges."
 
 #: src/renderer.py:197
 #, python-format
@@ -1130,9 +1143,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
-"De områder som du forsøger at vælge tilhører en spejlafbildning for den logiske "
-"volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så disse områder "
-"kan ikke vælges."
+"De områder som du forsøger at vælge tilhører en spejlafbildning for den "
+"logiske volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så "
+"disse områder kan ikke vælges."
 
 #: src/renderer.py:199
 #, python-format
@@ -1151,8 +1164,8 @@ msgid ""
 "selectable."
 msgstr ""
 "De områder som du forsøger at vælge tilhører %s som er oprindelsen for et "
-"øjebliksbillede. Oprindelser for logiske volymer kan endnu ikke migreres, så disse "
-"områder kan ikke vælges."
+"øjebliksbillede. Oprindelser for logiske volymer kan endnu ikke migreres, så "
+"disse områder kan ikke vælges."
 
 #: src/renderer.py:388
 #, python-format
@@ -1200,8 +1213,8 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM er konfigureret til at bruge Cluster Locking mekanismen, men clvmd-dæmonen "
-"kører ikke. Start dæmonen med kommandoen:\n"
+"LVM er konfigureret til at bruge Cluster Locking mekanismen, men clvmd-"
+"dæmonen kører ikke. Start dæmonen med kommandoen:\n"
 "service clvmd start \n"
 "eller luk klyngelåsning ned (locking_type=1 i /etc/lvm/lvm.conf)."
 
@@ -1223,8 +1236,8 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
-"%s understøtter kun fil- og klyngebaseret låsning (locking_type=1 eller 2 "
-"i /etc/lvm/lvm.conf)."
+"%s understøtter kun fil- og klyngebaseret låsning (locking_type=1 eller 2 i /"
+"etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
@@ -1328,6 +1341,7 @@ msgstr "Mangler GFS-navn"
 msgid "GFS2 (local)"
 msgstr "GFS2 (lokalt)"
 
+#: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (klynget)"
 
@@ -1772,4 +1786,3 @@ msgstr "Migrér kun områder der tilhører LV"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Brug sund fornuft"
-
