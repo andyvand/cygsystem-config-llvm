@@ -52,6 +52,9 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Oct 16 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.20-1.0
+  - Updated translation files
+
 * Mon Jul 10 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.19-1.0
   - Version bump
 
