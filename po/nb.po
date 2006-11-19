@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-02-21 15:38+0100\n"
+"PO-Revision-Date: 2006-11-19 20:24+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
@@ -598,9 +598,8 @@ msgid "Completing Extent Migration"
 msgstr ""
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Utvidet partisjon"
+msgstr "Leser partisjonstabell på nytt"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -616,15 +615,15 @@ msgstr "Ikke montert"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "Navn på volumgruppe: "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr ""
+msgstr "System-ID:   "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
-msgstr ""
+msgstr "Format:   "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
@@ -1260,9 +1259,8 @@ msgstr ""
 "volumgruppe"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (klynge)"
+msgstr "Klynge"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1274,7 +1272,7 @@ msgstr ""
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Lag øyeblikksbilde"
 
 #: src/lvui.glade.h:19
 msgid ""
@@ -1290,7 +1288,7 @@ msgstr "Rediger egenskaper"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Oppgi sti til blokkenhet som skal initieres"
 
 #: src/lvui.glade.h:23
 msgid ""
@@ -1341,14 +1339,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Maksimalt antall logiske volumer: "
+msgstr "Maksimalt antall logiske volum"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Maksimalt antall logiske volumer: "
+msgstr "Maksimalt antall fysiske volum"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1390,18 +1386,24 @@ msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Fjern valgt(e)\n"
+"fysiske volum"
 
 #: src/lvui.glade.h:48
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"Fjern volum fra\n"
+"volumgruppe"
 
 #: src/lvui.glade.h:50
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"Fjern volum \n"
+"fra LVM"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
@@ -1409,20 +1411,19 @@ msgstr ""
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Tekst"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Volumgruppe"
+msgstr "Navn på volumgruppe"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
-msgstr ""
+msgstr "Les _på nytt"
 
 #: src/lvui.glade.h:56
 msgid "_Tools"
-msgstr ""
+msgstr "Verk_tøy"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
@@ -1474,7 +1475,7 @@ msgstr "Filsystemet kan ikke endre størrelse"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
-msgstr ""
+msgstr "Ledig plass i etikett for volumgruppe"
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
@@ -1601,6 +1602,3 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Bruk vanlig fornuft"
-
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Navn for volumgruppe: "
