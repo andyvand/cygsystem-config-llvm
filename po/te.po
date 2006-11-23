@@ -1,20 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# translation of te.po to Telugu
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+# Sree Ganesh <sthottem@redhat.com>, 2006.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2006-11-22 15:23+0530\n"
+"Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -33,7 +33,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
+msgstr "%s కలపటానికి ఒక వాల్యూం సమూహాన్ని ఎన్నుకోండి:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -45,28 +45,28 @@ msgstr ""
 #. ##some context.
 #: src/InputController.py:84
 msgid "Name"
-msgstr ""
+msgstr "పేరు"
 
 #: src/InputController.py:85
 msgid "Size"
-msgstr ""
+msgstr "పరిమాణం"
 
 #: src/InputController.py:86
 msgid "Entity Type"
-msgstr ""
+msgstr "అస్తిత్వ రకం"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "కేటాయించని భౌతిక వాల్యూం"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "ప్రాధమికత లేని డిస్కు అస్తిత్వం"
 
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
+msgstr "%s వాల్యూం సమూహానికి కలపటానికి డిస్కు అస్తిత్వాలను ఎన్నుకోండి:"
 
 #: src/InputController.py:92
 msgid ""
@@ -85,30 +85,30 @@ msgstr ""
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "%s పేరుతో వాల్యూం సమూహం ఇప్పటికే ఉంది. దయచేసి ఒక పేరును ఎన్నుకోండి."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "కొత్త తార్కిక వాల్యూంకి ఒక పేరును తప్పక సమకూర్చాలి"
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "కొత్త తార్కిక వాల్యూంకి ఒక పేరును తప్పక సమకూర్చాలి"
 
 #: src/InputController.py:102
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "ఈ తెల్పబడిన మౌటు పాయింటు, %s, లేదు. మీరు దాన్ని సృష్టించాలనుకుంటున్నారా?"
 
 #: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "%s మౌంటు పాయింటును సృష్టించటం అనుకోని విధంగా‌విఫలమైంది."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "ఈ సామర్ధ్యం ఇంకా ఈ ప్రతిలో అనువర్తించబడలేదు"
 
 #: src/InputController.py:108
 msgid ""
