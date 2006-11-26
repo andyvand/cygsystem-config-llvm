@@ -23,7 +23,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2005-12-11 17:24+0100\n"
+"PO-Revision-Date: 2006-11-26 17:52+0100\n"
 "Last-Translator: Josep Puigdemont <josep.puigdemont@gmail.com>\n"
 "Language-Team: Catalan <fedora@softcatala.org>\n"
 "MIME-Version: 1.0\n"
@@ -654,9 +654,8 @@ msgid "Completing Extent Migration"
 msgstr "S'està completant la migració de les extensions"
 
 #: src/CommandHandler.py:378
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "Partició estesa"
+msgstr "S'està tornant a llegir la taula de particions"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -748,7 +747,7 @@ msgstr ""
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr "LV UUID:   "
+msgstr "UUID del VL:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
@@ -799,9 +798,8 @@ msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "No inicialitzable:   "
+msgstr "No inicialitzable:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -829,45 +827,42 @@ msgid "Multipath device"
 msgstr "Dispositiu multicamí"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Nota:   "
+msgstr "Nota:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Inicialitza manualment"
 
+# FIXME
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "Enclustrat:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Cert"
 
+# Fals
 #: src/lvm_model.py:737
 msgid "False"
 msgstr ""
 
 #: src/lvm_model.py:795
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Nombre de imatges mirall:   "
+msgstr "Nombre d'imatges mirall:"
 
 #: src/lvm_model.py:798
-#, fuzzy
 msgid "Snapshots:"
-msgstr "Instantànies:  "
+msgstr "Instantànies:"
 
 #: src/lvm_model.py:804
-#, fuzzy
 msgid "Snapshot origin:"
-msgstr "Origen de les instantànies:  "
+msgstr "Origen de les instantànies:"
 
 #: src/lvm_model.py:811
-#, fuzzy
 msgid "Snapshot usage:"
-msgstr "Ús de les instanànies:  "
+msgstr "Ús de les instanànies:"
 
 #: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
 #: src/lvm_model.py:899
@@ -940,10 +935,10 @@ msgid "Unable to process request"
 msgstr "No s'ha pogut processar la petició"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"Ha fallat l'ordre ls. S'ha provat amb l'ordre «%s» - Missatge d'error del "
+"Ha fallat l'ordre %s. S'ha provat l'ordre «%s» - Missatge d'error del "
 "sistema: %s"
 
 #: src/lvmui_constants.py:84
@@ -964,23 +959,20 @@ msgid "Unpartitioned space on %s"
 msgstr "Espai sense partir a %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "Bytes"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1102,9 +1094,9 @@ msgid ""
 msgstr ""
 
 #: src/renderer.py:388
-#, fuzzy, python-format
+#, python-format
 msgid "Snapshot of %s"
-msgstr "Instantània de "
+msgstr "Instantània de %s"
 
 #: src/renderer.py:490
 msgid "Origin"
@@ -1276,14 +1268,13 @@ msgid "Linear Mapping"
 msgstr "Mapat lineal"
 
 #: src/Segment.py:109
-#, fuzzy
 msgid "Mirror"
-msgstr "Mirall "
+msgstr "Mirall"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partició  %s"
+msgstr "Partició %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1341,10 +1332,10 @@ msgstr ""
 "Afegeix a un grup \n"
 "de volum existent"
 
+# FIXME
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (clustered)"
+msgstr "Enclustrat"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1356,7 +1347,7 @@ msgstr ""
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Crea una instantània"
 
 #: src/lvui.glade.h:19
 msgid ""
@@ -1423,14 +1414,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Màxim nombre de volums lògics: "
+msgstr "Màxim nombre de volums lògics"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Màxim nombre de volums físics: "
+msgstr "Màxim nombre de volums físics"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1449,9 +1438,8 @@ msgid "New Volume Group"
 msgstr "Nou grup de volum"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Mida física de l'extensió: "
+msgstr "Mida física de l'extensió"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1502,9 +1490,8 @@ msgid "Some text"
 msgstr "Text"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Nom del grup de volum:   "
+msgstr "Nom del grup de volum"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1544,7 +1531,7 @@ msgstr "<b>Sistema de fitxers</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr "<b>Propietats LV</b>"
+msgstr "<b>Propietats del VL</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
@@ -1555,9 +1542,8 @@ msgid "Add entry to /etc/fstab"
 msgstr "Afegeix una entrada a /etc/fstab"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Crea un nou volum lògic"
+msgstr "Crea un nou volum lògic (VL)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1576,13 +1562,12 @@ msgid "Kilobytes granularity"
 msgstr "Granulació dels kKilobytes"
 
 #: src/lv_edit_props.glade.h:19
-#, fuzzy
 msgid "LV name:"
-msgstr "Nom del LV: "
+msgstr "Nom del VL:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr "Mida del LV"
+msgstr "Mida del VL"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1593,13 +1578,12 @@ msgid "Linear"
 msgstr "Lineal"
 
 #: src/lv_edit_props.glade.h:23
-#, fuzzy
 msgid "Mirrored"
 msgstr "Emmirallat"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr "No es pot canviar la mida dels LV emmirallats"
+msgstr "No es pot canviar la mida dels VL emmirallats"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
@@ -1690,9 +1674,8 @@ msgid "Normal"
 msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr "Migra les extensions a"
+msgstr "Migra només les extensions pertanyents al VL"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
