@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: te1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-11-23 14:03+0530\n"
+"PO-Revision-Date: 2006-12-08 15:31+0530\n"
 "Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  గ్రాఫికల్ అంతర్ముఖాన్ని సంస్థాపించటం కుదరదు. ఎక్కువగా విఫలమవ్వటానికి\n"
+"  ఆ సాధనం గ్రాఫికల్ వాతావరణంలో ఉపయోగించకపోవటం కావచ్చు. దయచేసి మీ\n"
+"  చిత్ర సంబంధ అంతర్ముఖాన్ని ప్రారంభించండి లేదా మీ ప్రదర్శన వేరిబులును అమర్చండి.\n"
+"                                                                                \n"
+"  చేరే ఐచ్ఛికం: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -82,13 +88,11 @@ msgstr ""
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr ""
-"ఈ %s పేరుతో ఒక తార్కిక వాల్యూం ఇప్పటికే వాల్యూం సమూహంలో ఉంది. దయచేసి ఒక సమిష్టి పేరును ఎన్నుకోండి."
+msgstr "ఈ %s పేరుతో ఒక తార్కిక వాల్యూం ఇప్పటికే వాల్యూం సమూహంలో ఉంది. దయచేసి ఒక సమిష్టి పేరును ఎన్నుకోండి."
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s పేరుతో వాల్యూం సమూహం ఇప్పటికే ఉంది. దయచేసి ఒక పేరును ఎన్నుకోండి."
 
 #: src/InputController.py:98
@@ -101,8 +105,7 @@ msgstr "కొత్త తార్కిక వాల్యూంకి ఒక
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "ఈ తెల్పబడిన మౌటు పాయింటు, %s, లేదు. మీరు దాన్ని సృష్టించాలనుకుంటున్నారా?"
 
 #: src/InputController.py:104
@@ -156,20 +159,17 @@ msgstr "mirrored తార్కిక వాల్యూం స్నాప్ 
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
-"తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
+msgstr "తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
 
 #: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
-"తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
+msgstr "తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "మోడల్ ఫ్యాక్టరులో నిర్వచించబడని మార్పు దోషం. పనిని పూర్తి చేయటం కుదరదు."
 
 #: src/InputController.py:124
@@ -251,20 +251,20 @@ msgstr "ఈ %s మాత్రమే సంఖ్యాపర విలువల
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
+msgstr "ఫైలైన గరిష్ఠ భౌతిక విలువల సంఖ్య కేవలం 1 మరియూ 256ల మధ్య సంఖ్యలను కలిగి ఉండాలి"
 
 #: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
+msgstr "ఫైలైన గరిష్ఠ తార్కిక విలువల సంఖ్య కేవలం 1 మరియూ 256ల మధ్య సంఖ్యలను కలిగి ఉండాలి"
 
 #: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
+msgstr "మీరు తార్కిక వాల్యూం నిర్వహణ %s నుండీ తొలగించదలచినవాటినుండీ బయటకు రావాలనుకుంటున్నారా?"
 
 #: src/InputController.py:152
 #, python-format
@@ -279,8 +279,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 
 #: src/InputController.py:154
@@ -384,8 +383,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:610
@@ -404,20 +402,20 @@ msgstr ""
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "మీరు తెలిపిన మార్గం లేదు."
 
 #: src/InputController.py:685
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "మీరు తెలిపిన మార్గం బ్లాక్ సాధనం కాదు."
 
 #: src/InputController.py:756
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s సంస్థాపన విఫలమైంది"
 
 #: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
-msgstr ""
+msgstr "దయచేసి కొంత విస్తృతులను మొదట ఎన్నుకోండి"
 
 #: src/InputController.py:1030
 msgid ""
@@ -427,33 +425,33 @@ msgstr ""
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
-msgstr ""
+msgstr "వలసవచ్చిన విస్తృతులు"
 
 #: src/InputController.py:1320
 msgid "Options"
-msgstr ""
+msgstr "ఐచ్ఛికాలు"
 
 #: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s స్నాప్ షాటును సృష్టించు"
 
 #: src/InputController.py:1356
 msgid "Create New Logical Volume"
-msgstr ""
+msgstr "కొత్త తార్కిక విలువను సృష్టించు"
 
 #: src/InputController.py:1359
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%sని కూర్చు, %s యొక్క స్నాప్ షాట్"
 
 #: src/InputController.py:1362
 msgid "Edit Logical Volume"
-msgstr ""
+msgstr "తార్కిక విలువను కూర్చు"
 
 #: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "కింద పేర్కొనబడిన తార్కిక విలువల నిర్వహణ mirroringకి మద్దతివ్వటంలేదు"
 
 #: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -472,15 +470,14 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgstr "ఖాళీతో 3 హార్డు డ్రైవుల కంటే తక్కువైనవి అందుబాటులో ఉన్నాయి. mirroring కుదరదు."
 
 #: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
+msgstr "mirroring సాధ్యంచేయటానికి తప్పక కనీసం 3 భౌతిక విలువలలో ఖాళీ ఉండాలి"
 
 #: src/InputController.py:1558
 msgid ""
@@ -505,24 +502,24 @@ msgstr ""
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
-msgstr ""
+msgstr "\"-\"తో ప్రారంభమయ్యే పేర్లు విలువైనవి కావు"
 
 #: src/InputController.py:1933
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "పేర్లు \".\" కానీ \"..\" కానీ కావాలి"
 
 #: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "తార్కిక వాల్యూం పేర్లలో ఖాళీ అనుమతించబడదు"
 
 #: src/InputController.py:1942
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "తార్కిక వాల్యూం పేరులో \"%s\" సరికాని అక్షరం"
 
 #: src/InputController.py:1962
 msgid "Please specify mount point"
-msgstr ""
+msgstr "దయచేసి మౌంటు పాయింటును తెలపండి"
 
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -537,7 +534,7 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "మిర్రర్ సృష్టించబడింది. దోషాలను కనుగొనే పని పూర్తయ్యింది."
 
 #. create mirror
 #: src/InputController.py:2166
@@ -552,11 +549,11 @@ msgstr ""
 
 #: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "తెలిపిన విస్తృతులకు మీరు వెళ్లాలనుకుంటున్నారా?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
-msgstr ""
+msgstr "తార్కిక విలువను సృష్టిస్తోంది"
 
 #: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
@@ -564,269 +561,269 @@ msgstr ""
 
 #: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
-msgstr ""
+msgstr "తార్కివ వాల్యూంకి మిర్రరును కలుపుతోంది"
 
 #: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
+msgstr "తార్కిక వాల్యూంనుండీ మిర్రరును తొలగిస్తోంది"
 
 #: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
-msgstr ""
+msgstr "భౌతిక వాల్యూంను సంస్థాపిస్తోంది"
 
 #: src/CommandHandler.py:171
 msgid "Adding Physical Volume to Volume Group"
-msgstr ""
+msgstr "వాల్యూం సమూహానికి భౌతిక వాల్యూంను కలుపుతోంది"
 
 #: src/CommandHandler.py:203
 msgid "Creating Volume Group"
-msgstr ""
+msgstr "వాల్యూం సమూహాన్ని సృష్టిస్తోంది"
 
 #: src/CommandHandler.py:225
 msgid "Removing Volume Group"
-msgstr ""
+msgstr "వాల్యూం సమూహాన్ని తొలగిస్తోంది"
 
 #: src/CommandHandler.py:235
 msgid "Removing Physical Volume"
-msgstr ""
+msgstr "భౌతిక వాల్యూంను తొలగిస్తోంది"
 
 #: src/CommandHandler.py:246
 msgid "Removing Logical Volume"
-msgstr ""
+msgstr "తార్కిక వాల్యూంను తొలగిస్తోంది"
 
 #: src/CommandHandler.py:258
 msgid "Renaming Logical Volume"
-msgstr ""
+msgstr "తార్కిక వాల్యూంకి తిరిగి పేరుపెడుతోంది"
 
 #: src/CommandHandler.py:280
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
+msgstr "వాల్యూం సమూహం నుండీ భౌతిక వాల్యూంను తొలగిస్తోంది"
 
 #: src/CommandHandler.py:315
 msgid "Migrating Extents"
-msgstr ""
+msgstr "వలస విస్తృతి"
 
 #: src/CommandHandler.py:327
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "వలస విస్తృతి పూర్తిచేస్తోంది"
 
 #: src/CommandHandler.py:378
 msgid "Rereading partition table"
-msgstr ""
+msgstr "విభజన పట్టికను తిరిగి చదువుతోంది"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
-msgstr ""
+msgstr "ఉపయోగించనిది"
 
 #: src/lvm_model.py:46
 msgid "Unused Space"
-msgstr ""
+msgstr "ఉపయోగించని ఖాళీ"
 
 #: src/lvm_model.py:48
 msgid "Unmounted"
-msgstr ""
+msgstr "మౌంటుచేయబడలేదు"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "వాల్యూం సమూహం పేరు:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr ""
+msgstr "కంప్యూటరు ఐడి:   "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
-msgstr ""
+msgstr "ఆకృతి:   "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
-msgstr ""
+msgstr "గుణాలు:   "
 
 #: src/lvm_model.py:62
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "వాల్యూం సమూహ పరిమాణం:   "
 
 #: src/lvm_model.py:63
 msgid "Available Space:   "
-msgstr ""
+msgstr "అందుబాటులో ఉన్న ఖాళీ:   "
 
 #: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "విస్తృతుల మొత్తం సంఖ్య:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "ఉచిత విస్తృతుల సంఖ్య:   "
 
 #: src/lvm_model.py:66
 msgid "Extent Size:   "
-msgstr ""
+msgstr "విస్తృతి పరిమాణం:   "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "గరిష్టంగా అనుమతించబడిన భౌతిక వాల్యూంలు:   "
 
 #: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "భౌతిక వాల్యూంల సంఖ్య:   "
 
 #: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "గరిష్టంగా అనుమతించబడ్డ తార్కిక వాల్యూంలు:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "తార్కిక వాల్యూంల సంఖ్య:   "
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "తార్కిక వాల్యూం పేరు:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "తార్కిక వాల్యూం పరిమాణం:   "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "అంశాల సంఖ్య:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "ముక్కల సంఖ్య:   "
 
 #: src/lvm_model.py:77
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "ముక్క పరిమాణం:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
-msgstr ""
+msgstr "విభజన రకం:   "
 
 #: src/lvm_model.py:82
 msgid "Size:   "
-msgstr ""
+msgstr "పరిమాణం:   "
 
 #: src/lvm_model.py:83
 msgid "Mount Point:   "
-msgstr ""
+msgstr "మౌంటు పాయింటు:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
-msgstr ""
+msgstr "పునఃప్రారంభించేటప్పటి మౌంటు పాయింటు:   "
 
 #: src/lvm_model.py:85
 msgid "File System:   "
-msgstr ""
+msgstr "ఫైలు విధానం:   "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "భౌతిక వాల్యూం పేరు:   "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "భౌతిక వాల్యూం పరిమాణం:   "
 
 #: src/lvm_model.py:89
 msgid "Space Used:   "
-msgstr ""
+msgstr "ఉపయోగించిన ఖాళీ:   "
 
 #: src/lvm_model.py:90
 msgid "Space Free:   "
-msgstr ""
+msgstr "వాడని ఖాళీ:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "మొత్తం భౌతిక విస్తరణలు:   "
 
 #: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "కేటాయించబడిన భౌతిక విస్తరణలు:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
-msgstr ""
+msgstr "సంస్థాపించదగ్గది కాదు:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
-msgstr ""
+msgstr "విస్థరించబడిన విభజన"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "స్వాప్ విభజన ప్రస్తుతం వాడుకలో ఉంది"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "ఫారిన్ బూట్ విభజన"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "స్వయంచాలక విభజన విఫలమైంది"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
-msgstr ""
+msgstr "మానవీయ విభజన"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
-msgstr ""
+msgstr "బహుళమార్గ సాధనం"
 
 #: src/lvm_model.py:290
 msgid "Note:"
-msgstr ""
+msgstr "సూచన:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
-msgstr ""
+msgstr "మానవీయంగా ప్రారంభించు"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "క్లస్టర్డు:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "నిజం"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "తప్పు"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
-msgstr ""
+msgstr "మిర్రర్ చిత్రాల సంఖ్య:"
 
 #: src/lvm_model.py:798
 msgid "Snapshots:"
-msgstr ""
+msgstr "స్నాప్ షాట్లు:"
 
 #: src/lvm_model.py:804
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "స్నాప్ షాట్ మూలం:"
 
 #: src/lvm_model.py:811
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "స్నాప్ షాట్ వాడుక:"
 
 #: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
 #: src/lvm_model.py:899
 msgid "/   Root Filesystem"
-msgstr ""
+msgstr "/   రూటు ఫైళ్లవిధానం"
 
 #: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
-msgstr ""
+msgstr "ఏదీకాదు"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -852,8 +849,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 
 #: src/lvmui_constants.py:55
@@ -866,7 +862,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVMను తిరిగి లోడుచేస్తోంది. దయచేసి వేచి ఉండండి."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -878,137 +874,137 @@ msgstr ""
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "మిర్రర్ ప్రవేశం"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "విధాన అభ్యర్ధనకు సాధ్యంకాదు"
 
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "%s ఆదేశం విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు సమాచార దోషం: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
-msgstr ""
+msgstr "ఉచితం"
 
 #: src/lvmui_constants.py:85
 msgid "Free space"
-msgstr ""
+msgstr "ఉచిత ఖాళీ"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "విభజింపబడని ఖాళీ"
 
 #: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
-msgstr ""
+msgstr "%sలో విభజించబడని ఖాళీ"
 
 #: src/lvmui_constants.py:90
 msgid "GB"
-msgstr ""
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "బైట్లు"
 
 #. File System Types
 #: src/lvmui_constants.py:97
 msgid "No Filesystem"
-msgstr ""
+msgstr "ఏ ఫైలువిధానమూ లేదు"
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
-msgstr ""
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:99
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:100
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvmui_constants.py:101
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:102
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:103
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:104
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvmui_constants.py:105
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "కోసం లక్షణాలు"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr ""
+msgstr "భౌతిక వాల్యూం"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
-msgstr ""
+msgstr "తార్కిక వాల్యూం"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "కేటాయించబడని వాల్యూం"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
-msgstr ""
+msgstr "డిస్కు ఎంటిటీ"
 
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr ""
+msgstr "వాల్యూం సమూహం"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
-msgstr ""
+msgstr "ఏ వాల్యూం ఎన్నిక కాబడలేదు"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "బహుళ ఎన్నిక"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:49
 msgid "Logical View"
-msgstr ""
+msgstr "తార్కిక దృశ్యం"
 
 #: src/renderer.py:40 src/Volume_Tab_View.py:48
 msgid "Physical View"
-msgstr ""
+msgstr "భౌతిక దృశ్యం"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr ""
+msgstr "కేటాయించబడలేదు"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "ప్రారంభించబడలేదు"
 
 #: src/renderer.py:195
 #, python-format
@@ -1044,31 +1040,31 @@ msgstr ""
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "%s యొక్క స్నాప్ షాట్"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "మూలం"
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "స్నాప్ షాట్"
 
 #: src/renderer.py:540
 msgid "extent view"
-msgstr ""
+msgstr "ఇశ్యాన్ని విస్తృతం చేయి"
 
 #: src/Volume_Tab_View.py:45
 msgid "Volume Groups"
-msgstr ""
+msgstr "వాల్యూం సమూహాలు"
 
 #: src/Volume_Tab_View.py:46
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "కేటాయించబడని వాల్యూంలు"
 
 #: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "ప్రారంభించబడని ప్రవేశాలు"
 
 #: src/Volume_Tab_View.py:63
 msgid ""
@@ -1112,41 +1108,41 @@ msgstr ""
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "విభజన సృష్టించబడుతున్నప్పుడు దయచేసి వేచి ఉండండి"
 
 #: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s ఫైలు విధానాన్ని సృష్టిస్తోంది"
 
 #: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s ఫైళ్లవిధానాన్ని తిరిగి పరిమాణీకరించు"
 
 #: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s ఫైళ్ల విధానాన్ని శోధిస్తోంది"
 
 #: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s ఫైలు విధానాన్ని %s ఎగుమతిచేస్తోంది"
 
 #: src/Filesystem.py:24
 #, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ఫైలువిధానం సృష్టించటం విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
 
 #: src/Filesystem.py:25
 #, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ఫైలువిధాన పునఃపరిమాణీకరణ విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
 
 #: src/Filesystem.py:26
 #, python-format
@@ -1164,15 +1160,15 @@ msgstr ""
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
-msgstr ""
+msgstr "తెలియని ఫైలు విధానం"
 
 #: src/Filesystem.py:374
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (స్థానికం)"
 
 #: src/Filesystem.py:472
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (clustered)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
@@ -1213,51 +1209,51 @@ msgstr ""
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition %s"
-msgstr ""
+msgstr "%s విభజన"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
@@ -1309,11 +1305,11 @@ msgstr ""
 
 #: src/lvui.glade.h:26
 msgid "Format"
-msgstr ""
+msgstr "ఆకృతి"
 
 #: src/lvui.glade.h:27
 msgid "Initialize"
-msgstr ""
+msgstr "ప్రారంభించు"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Block Device"
@@ -1434,22 +1430,30 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
-msgstr ""
+msgstr "<b>ఫైళ్లవిధానం</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV లక్షణాలు</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>పరిమాణం</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab ప్రవేశాన్ని కలుపు"
 
 #: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
@@ -1588,3 +1592,4 @@ msgstr ""
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr ""
+
