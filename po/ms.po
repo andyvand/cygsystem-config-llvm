@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-11-19 22:11+0800\n"
+"PO-Revision-Date: 2006-12-09 03:04+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1091,7 +1091,7 @@ msgstr "CDROM lokal"
 #: src/Filesystem.py:472
 #, fuzzy
 msgid "GFS (clustered)"
-msgstr "Sokongan GFS Nod Tunggal"
+msgstr "modul kernel gfs"
 
 #: src/Filesystem.py:504
 #: src/Filesystem.py:748
@@ -1259,7 +1259,7 @@ msgstr "Mulakan Entiti"
 #: src/lvui.glade.h:28
 #, fuzzy
 msgid "Initialize Block Device"
-msgstr "Jadikan Peranti RAID."
+msgstr "Peranti Blok Rangkaian GFS"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
@@ -1268,7 +1268,7 @@ msgstr "Mulakan Entiti"
 #: src/lvui.glade.h:30
 #, fuzzy
 msgid "Initialize _Block Device"
-msgstr "Jadikan Peranti RAID."
+msgstr "Peranti Blok Rangkaian GFS"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
@@ -1364,9 +1364,8 @@ msgid "Some text"
 msgstr "Teks Placeholder."
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Nama Kumpulan _Volum:"
+msgstr "Nama Kumpulan Volum"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
