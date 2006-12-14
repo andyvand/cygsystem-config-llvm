@@ -8,12 +8,13 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-08-29 13:00-0400\n"
+"PO-Revision-Date: 2006-12-14 13:56-0500\n"
 "Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
 "Language-Team: Serbian (sr) <fedora@prevod.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 0.10.1\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -168,8 +169,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
-"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo "
-"uklonite snimak."
+"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo uklonite "
+"snimak."
 
 #: src/InputController.py:120
 #, python-format
@@ -193,9 +194,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je "
-"montirana na %s. Da li ste potpuno sigurni da želite odbaciti podatke na "
-"ovom montiranom sistemu datoteka?"
+"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je montirana "
+"na %s. Da li ste potpuno sigurni da želite odbaciti podatke na ovom "
+"montiranom sistemu datoteka?"
 
 #: src/InputController.py:126
 #, python-format
@@ -301,8 +302,7 @@ msgstr ""
 "logičkog(ih) diska(ova) mapirane na svoj opseg. Zato što je to jedini "
 "fizički disk u grupi diskova, ne postoji mesto na koje bi se podaci "
 "premestili. Preporučena akcija je ili dodavanje novog fizičkog diska pre "
-"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom "
-"disku."
+"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom disku."
 
 #: src/InputController.py:153
 #, python-format
@@ -326,8 +326,8 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %"
-"s. Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
+"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %s. "
+"Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
 
 #: src/InputController.py:156
 msgid ""
@@ -401,17 +401,14 @@ msgid ""
 "removable."
 msgstr ""
 "Fizički disk %s sadrži opsege koji pripadaju odrazu logičkog diska %s. "
-"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može "
-"uklanjati."
+"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može uklanjati."
 
 #: src/InputController.py:370
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
-"Fizički disk %s sadrži opsege koji pripadaju %s, a koji je snimak %s.Snimci "
-"još uvek nisu preseljivi, stoga se %s ne može uklanjati."
+msgstr "Fizički disk %s sadrži opsege koji pripadaju %s, a koji je snimak %s. Snimci još uvek nisu preseljivi, stoga se %s ne može uklanjati."
 
 #: src/InputController.py:375
 #, python-format
@@ -486,8 +483,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
-"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. "
-"Problem bi se rešio dodavanjem još fizičkih diskova."
+"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. Problem "
+"bi se rešio dodavanjem još fizičkih diskova."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -536,9 +533,8 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju "
-"otkazivanja čvrstog diska. Da li želite postaviti odraze na različite čvrste "
-"diskove?"
+"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju otkazivanja "
+"čvrstog diska. Da li želite postaviti odraze na različite čvrste diskove?"
 
 #: src/InputController.py:1545
 msgid ""
@@ -552,8 +548,8 @@ msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se "
-"uključilo pravljenje odraza"
+"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se uključilo "
+"pravljenje odraza"
 
 #: src/InputController.py:1558
 msgid ""
@@ -578,12 +574,11 @@ msgstr ""
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
+msgstr "Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
-msgstr "Imena koja počinju sa „-“ nisu ispravna."
+msgstr "Imena koja počinju sa „-“ nisu ispravna"
 
 #: src/InputController.py:1933
 msgid "Name can be neither \".\" nor \"..\""
@@ -591,7 +586,7 @@ msgstr "Ime ne može biti ni „.“ niti „..“"
 
 #: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr "Razmak nije dozvoljen u imenu logičkog diska."
+msgstr "Razmak nije dozvoljen u imenu logičkog diska"
 
 #: src/InputController.py:1942
 #, python-format
@@ -612,8 +607,8 @@ msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da "
-"li ste sigurni da želite nastaviti?"
+"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da li "
+"ste sigurni da želite nastaviti?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
@@ -715,7 +710,7 @@ msgstr "Ime grupe diskova:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr "ID sistema:  "
+msgstr "ID sistema:   "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
@@ -723,43 +718,43 @@ msgstr "Format:   "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
-msgstr "Atributi:     "
+msgstr "Atributi:   "
 
 #: src/lvm_model.py:62
 msgid "Volume Group Size:   "
-msgstr "Veličina grupe diskova: "
+msgstr "Veličina grupe diskova:   "
 
 #: src/lvm_model.py:63
 msgid "Available Space:   "
-msgstr "Slobodni prostor:  "
+msgstr "Slobodni prostor:   "
 
 #: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
-msgstr "Ukupan broj opsega:        "
+msgstr "Ukupan broj opsega:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
-msgstr "Broj slobodnih opsega:    "
+msgstr "Broj slobodnih opsega:   "
 
 #: src/lvm_model.py:66
 msgid "Extent Size:   "
-msgstr "Veličina opsega: "
+msgstr "Veličina opsega:   "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr "Najveći broj dozvoljenih fizičkih diskova: "
+msgstr "Najveći broj dozvoljenih fizičkih diskova:   "
 
 #: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
-msgstr "Broj fizičkih diskova:        "
+msgstr "Broj fizičkih diskova:   "
 
 #: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr "Najviše dozvoljenih logičkih diskova: "
+msgstr "Najviše dozvoljenih logičkih diskova:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
-msgstr "Broj logičkih diskova:       "
+msgstr "Broj logičkih diskova:   "
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
@@ -767,63 +762,63 @@ msgstr "UUID GD-a:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
-msgstr "Ime logičkog diska:    "
+msgstr "Ime logičkog diska:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
-msgstr "Veličina logičkog diska: "
+msgstr "Veličina logičkog diska:   "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
-msgstr "Broj delova:          "
+msgstr "Broj delova:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
-msgstr "Broj traka:          "
+msgstr "Broj traka:   "
 
 #: src/lvm_model.py:77
 msgid "Stripe Size:   "
-msgstr "Veličina trake: "
+msgstr "Veličina trake:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr "UUID LD-a: "
+msgstr "UUID LD-a:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
-msgstr "Vrsta particije:  "
+msgstr "Vrsta particije:   "
 
 #: src/lvm_model.py:82
 msgid "Size:   "
-msgstr "Veličina: "
+msgstr "Veličina:   "
 
 #: src/lvm_model.py:83
 msgid "Mount Point:   "
-msgstr "Tačka za montiranje: "
+msgstr "Tačka za montiranje:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
-msgstr "Tačka za montiranje kada se ponovno pokrene: "
+msgstr "Tačka za montiranje kada se ponovno pokrene:   "
 
 #: src/lvm_model.py:85
 msgid "File System:   "
-msgstr "Sistem datoteka: "
+msgstr "Sistem datoteka:   "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
-msgstr "Ime fizičkog diska:     "
+msgstr "Ime fizičkog diska:   "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
-msgstr "Veličina fizičkog diska: "
+msgstr "Veličina fizičkog diska:   "
 
 #: src/lvm_model.py:89
 msgid "Space Used:   "
-msgstr "Upotrebljen prostor: "
+msgstr "Upotrebljen prostor:   "
 
 #: src/lvm_model.py:90
 msgid "Space Free:   "
-msgstr "Slobodan prostor: "
+msgstr "Slobodan prostor:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
@@ -831,11 +826,11 @@ msgstr "Ukupno fizičkih opsega:   "
 
 #: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
-msgstr "Dodeljeni fizički opsezi:      "
+msgstr "Dodeljeni fizički opsezi:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr "UUID FD-a: "
+msgstr "UUID FD-a:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
@@ -970,8 +965,8 @@ msgid ""
 "computer now."
 msgstr ""
 "Promene će preći u dejstvo posle ponovnog pokretanja. Ako je uređaj %s u "
-"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo "
-"je da se računar ponovo pokrene sada."
+"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo je "
+"da se računar ponovo pokrene sada."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1481,7 +1476,7 @@ msgstr "Označi grupu diskova kao „učvorene“"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
-msgstr "Najviše logičkih diskova: "
+msgstr "Najviše logičkih diskova"
 
 #: src/lvui.glade.h:36
 msgid "Maximum Physical Volumes"
@@ -1625,7 +1620,7 @@ msgstr "Oznaka preostalog slobodnog prostora"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
-msgstr "Granulacija u Kilobajtima"
+msgstr "Granularnost u kilobajtima"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
@@ -1712,7 +1707,7 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
-"Da bi ste uklonili FD, opsezi moraju biti preseljeni.\n"
+"Da biste uklonili FD, opsezi moraju biti preseljeni.\n"
 "Izaberi odredište i polisu za preselenje opsega."
 
 #: src/migrate_extents.glade.h:9
