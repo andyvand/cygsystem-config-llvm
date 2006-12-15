@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-12-15 16:58+0530\n"
+"PO-Revision-Date: 2006-12-15 18:58+0530\n"
 "Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -510,7 +510,7 @@ msgstr "\"snapshot\" లేదా \"pvmove\"లతో ప్రారంభమ�
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "\"_mlog\" లేదా \"_mimage\" లతో కలిగి ఉన్న పేర్లు కేటాయించిన కీపదాలు."
+msgstr "\"_mlog\" లేదా \"_mimage\" లతో కలిగి ఉన్న పేర్లు కేటాయించిన కీపదాలు. (_m)"
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -1112,6 +1112,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM క్లస్టర్ లాకింగ్ విధానానికి ఆకృతీకరించబడింది, కానీ క్లస్ట్రర్ "
+"quorate చేయబడలేదు.\n"
+"క్లస్టరు quorate చేయబడేదాకా వేచిఉండండి లేదా క్లస్టరు లాకింగుని టర్నాఫ్ చేయండి "
+"(locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
@@ -1119,15 +1123,17 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s మాత్రమే మద్దతిచ్చే ఫైలు మరియూ క్లస్టరు ఆధారిత లాకింగ్ (locking_type=1 or 2 in /etc/"
+"lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "క్లస్టర్డ్ విజి"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s మిర్రర్ సమకాలీకరణ"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
@@ -1173,14 +1179,14 @@ msgstr "ఫైలువిధాన పునఃపరిమాణీకరణ �
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ఫైలు విధాన పరిశిలన విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
 
 #: src/Filesystem.py:27
 #, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ఫైలు విధానాన్ని నవీకరించటం విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
@@ -1196,44 +1202,44 @@ msgstr "GFS (clustered)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "క్లస్టరు పేరు చెల్లని అక్షరాలను కలిగి ఉంది "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS పేరు చెల్లని అక్షరాలను కలిగిఉంది "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "క్లస్టరు పేరు తప్పిపోయింది"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "GFS పేరు తప్పిపోయింది"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (స్థానికం)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (క్లస్టర్డు)"
 
 #: src/Segment.py:44
 msgid "Stripe"
-msgstr ""
+msgstr "పట్టీ"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
-msgstr ""
+msgstr "సమాన మాపింగ్"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "మిర్రర్"
 
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition %s"
-msgstr "%s విభజన"
+msgstr "విభజన %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1281,51 +1287,59 @@ msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "భౌతిక వాల్యూంను VGకి కలుపు"
 
 #: src/lvui.glade.h:13
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"ఉన్న వాల్యూం \n"
+"సమూహాన్ని కలుపు"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
-msgstr ""
+msgstr "క్లస్టర్డు"
 
 #: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"కొత్త తార్కిక\n"
+"వాల్యూంని సృష్టించు"
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr ""
+msgstr "స్నాప్ షాట్ సృష్టించు"
 
 #: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"కొత్త వాల్యూం \n"
+"సమూహాన్ని సృష్టించు"
 
 #: src/lvui.glade.h:21
 msgid "Edit Properties"
-msgstr ""
+msgstr "లక్షణాలను కూర్చు"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "సంస్థాపనకు బాక్ సాధనం మార్గాన్ని ఇవ్వండి"
 
 #: src/lvui.glade.h:23
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"విఇతి చేయబడ్డ\n"
+"వాల్యూం సమూహం"
 
 #: src/lvui.glade.h:25
 msgid "Extend Volume Group"
-msgstr ""
+msgstr "విస్తృతం చేయబడ్డ వాల్యూం సమూహం"
 
 #: src/lvui.glade.h:26
 msgid "Format"
@@ -1337,111 +1351,123 @@ msgstr "ప్రారంభించు"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Block Device"
-msgstr ""
+msgstr "బ్లాక్ సాధనం సంస్థాపించు"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
-msgstr ""
+msgstr "సంస్థాపించబడ్డ అస్తిత్వం"
 
 #: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "బ్లాక్ సాధనాన్ని సంస్థాపించు (_B)"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
-msgstr ""
+msgstr "కిలో"
 
 #: src/lvui.glade.h:32
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "తార్కిక వాల్యూం నిర్వహణ"
 
 #: src/lvui.glade.h:33
 msgid "Manage Volumes"
-msgstr ""
+msgstr "నిర్వహణా వాల్యూంలు"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "'clustered'గా వాల్యూం సమూహాన్ని గుర్తించు"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
-msgstr ""
+msgstr "గరిష్ఠ తార్కిక వాల్యూంలు"
 
 #: src/lvui.glade.h:36
 msgid "Maximum Physical Volumes"
-msgstr ""
+msgstr "గరిష్ఠ భౌతిక వాల్యూంలు"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
-msgstr ""
+msgstr "Meg"
 
 #: src/lvui.glade.h:38
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"వాల్యూం నుండీ\n"
+"ఎన్నిక చేయబడ్డ విస్తృతం(ల)ను వలస పంపు"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
-msgstr ""
+msgstr "కొత్త వాల్యూం సమూహం"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size"
-msgstr ""
+msgstr "భౌతిక విస్తృతి పరిమాణం"
 
 #: src/lvui.glade.h:42
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"తార్కిక \n"
+"వాల్యూంను తొలగించు"
 
 #: src/lvui.glade.h:44
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"ఎన్నిక చేయబడ్డ\n"
+"తార్కిక వాల్యూం(ల)ను తొలగించు"
 
 #: src/lvui.glade.h:46
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"ఎన్నికచేయబడ్డ\n"
+"భౌతిక వాల్యూం(ల)ను తొలగించు"
 
 #: src/lvui.glade.h:48
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"వాల్యూంను\n"
+"వాల్యూం సమూహంనుండీ తొలగించు"
 
 #: src/lvui.glade.h:50
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"వాల్యూంను \n"
+"LVMనుండీ తొలగించు"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "ఈ PVకి కలపటానికి ఒక వాల్యూం సమూహాన్ని ఎన్నుకోండి:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "కొంత పాఠం"
 
 #: src/lvui.glade.h:54
 msgid "Volume Group Name"
-msgstr ""
+msgstr "వాల్యూం సమూహం పేరు"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
-msgstr ""
+msgstr "తిరిగి లోడు చేయి (_R)"
 
 #: src/lvui.glade.h:56
 msgid "_Tools"
-msgstr ""
+msgstr "సాధనాలు (_T)"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
-msgstr ""
+msgstr "vg సమాచారాన్ని విసృతం చేయి:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1481,139 +1507,141 @@ msgstr "/etc/fstab ప్రవేశాన్ని కలుపు"
 
 #: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
-msgstr ""
+msgstr "కొత్త తార్కిక వాల్యూం (LV)ను సృష్టించు"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "ఫైలు విధానం తిరిగి పరిమాణీకరించ తగినది కాదు"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
-msgstr ""
+msgstr "వాల్యూం సమూహం లేబుల్లో ఖాళీ"
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
-msgstr ""
+msgstr "మిగిలిన లేబుల్లో ఖాళీ"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
-msgstr ""
+msgstr "కొలోబైట్ల granularity"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "LV పేరు:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV పరిమాణం"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "స్నాప్ షాట్సు కింది LVsలు పునఃపరిమాణీకరించదగ్గవికావు"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
-msgstr ""
+msgstr "సమకాలీన"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "మిర్రర్డు"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "మిర్రరుడు LVలు పునఃపరిమాణీకరించదగ్గవికావు"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "మౌంటు"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
-msgstr ""
+msgstr "మౌంటు పాయింటు:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "రీబూట్ చేసేటప్పుడు మౌంటు చేయి"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr ""
+msgstr "పరిమాణ బెగ్"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr ""
+msgstr "పరిమాణం చివర"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr ""
+msgstr "Striped"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr ""
+msgstr "మిగులును ఉపయోగించు"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
-msgstr ""
+msgstr "stripeలు"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Destination</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>వలస విధానం</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "ఎక్కడా - అమలుకాలేదు"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "వలసకి స్వయంచాలకంగా ఎన్నుకోబడ్డ PVలు"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Contiguous"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "Destination:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PVని తొలగించటానికి, వలస పంపబడటానికి కలిగి ఉన్న విస్తృతులు.\n"
+"విస్తృతాల destination మరియూ వలస విధానాన్ని ఎన్నుకో."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "సహజసిద్ధ"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
-msgstr ""
+msgstr "వాల్యూం సమూహం నుండీ సహజ సిద్ధ విధానం"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
-msgstr ""
+msgstr "వలస విస్తృతులు"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "ఒకవేళ అది క్రియాశీలతను తగ్గించినప్పటికీ ఎక్కడికైనా వలస వెళ్లు"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "ఉన్న దానికి కొత్త విస్తృతాలు విశేషణాలుగా ఉన్నాయి"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "సాధారణం"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
-msgstr ""
+msgstr "కేవలం వలస విస్తృతులు మాత్రమే LVకి చెందేవి"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "ఆదేశ సెన్సును వాడు"
 
