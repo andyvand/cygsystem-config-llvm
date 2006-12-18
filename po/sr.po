@@ -408,7 +408,9 @@ msgstr ""
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr "Физички диск %s садржи опсеге који припадају %s, а који је снимак %s. Снимци још увек нису пресељиви, стога се %s не може уклањати."
+msgstr ""
+"Физички диск %s садржи опсеге који припадају %s, а који је снимак %s. Снимци "
+"још увек нису пресељиви, стога се %s не може уклањати."
 
 #: src/InputController.py:375
 #, python-format

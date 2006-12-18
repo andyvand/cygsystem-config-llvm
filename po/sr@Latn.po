@@ -169,8 +169,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
-"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo uklonite "
-"snimak."
+"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo "
+"uklonite snimak."
 
 #: src/InputController.py:120
 #, python-format
@@ -194,9 +194,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je montirana "
-"na %s. Da li ste potpuno sigurni da želite odbaciti podatke na ovom "
-"montiranom sistemu datoteka?"
+"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je "
+"montirana na %s. Da li ste potpuno sigurni da želite odbaciti podatke na "
+"ovom montiranom sistemu datoteka?"
 
 #: src/InputController.py:126
 #, python-format
@@ -302,7 +302,8 @@ msgstr ""
 "logičkog(ih) diska(ova) mapirane na svoj opseg. Zato što je to jedini "
 "fizički disk u grupi diskova, ne postoji mesto na koje bi se podaci "
 "premestili. Preporučena akcija je ili dodavanje novog fizičkog diska pre "
-"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom disku."
+"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom "
+"disku."
 
 #: src/InputController.py:153
 #, python-format
@@ -326,8 +327,8 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %s. "
-"Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
+"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %"
+"s. Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
 
 #: src/InputController.py:156
 msgid ""
@@ -401,14 +402,17 @@ msgid ""
 "removable."
 msgstr ""
 "Fizički disk %s sadrži opsege koji pripadaju odrazu logičkog diska %s. "
-"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može uklanjati."
+"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može "
+"uklanjati."
 
 #: src/InputController.py:370
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr "Fizički disk %s sadrži opsege koji pripadaju %s, a koji je snimak %s. Snimci još uvek nisu preseljivi, stoga se %s ne može uklanjati."
+msgstr ""
+"Fizički disk %s sadrži opsege koji pripadaju %s, a koji je snimak %s. Snimci "
+"još uvek nisu preseljivi, stoga se %s ne može uklanjati."
 
 #: src/InputController.py:375
 #, python-format
@@ -483,8 +487,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
-"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. Problem "
-"bi se rešio dodavanjem još fizičkih diskova."
+"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. "
+"Problem bi se rešio dodavanjem još fizičkih diskova."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -533,8 +537,9 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju otkazivanja "
-"čvrstog diska. Da li želite postaviti odraze na različite čvrste diskove?"
+"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju "
+"otkazivanja čvrstog diska. Da li želite postaviti odraze na različite čvrste "
+"diskove?"
 
 #: src/InputController.py:1545
 msgid ""
@@ -548,8 +553,8 @@ msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se uključilo "
-"pravljenje odraza"
+"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se "
+"uključilo pravljenje odraza"
 
 #: src/InputController.py:1558
 msgid ""
@@ -574,7 +579,8 @@ msgstr ""
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
+msgstr ""
+"Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
@@ -607,8 +613,8 @@ msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da li "
-"ste sigurni da želite nastaviti?"
+"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da "
+"li ste sigurni da želite nastaviti?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
@@ -965,8 +971,8 @@ msgid ""
 "computer now."
 msgstr ""
 "Promene će preći u dejstvo posle ponovnog pokretanja. Ako je uređaj %s u "
-"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo je "
-"da se računar ponovo pokrene sada."
+"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo "
+"je da se računar ponovo pokrene sada."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"

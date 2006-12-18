@@ -11,6 +11,7 @@ BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Requires: /sbin/chkconfig
 Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas 
+Requires: urw-fonts
 Requires: lvm2 >= 2.00.20
 Requires: rhpl >= 0.148.2
 Requires: python >= 2.3
@@ -53,8 +54,9 @@ rm -rf %{buildroot}
 
 %changelog
 * Mon Dec 18 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.21-1.0
+  - Fixed 216569 (some messages not localized)
   - Fixed 218126 (Can't resize ext3 fs online)
-  - Resolves: bz218126
+  - Resolves: bz216569, bz218126
 
 * Mon Oct 16 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.20-1.0
   - Updated translation files

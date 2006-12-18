@@ -1180,8 +1180,8 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
-"LVM er stilltur til að nota klasalæsingar en clvmd þjónustan er ekki "
-"í gangi. Þú getur ræst hana með:\n"
+"LVM er stilltur til að nota klasalæsingar en clvmd þjónustan er ekki í "
+"gangi. Þú getur ræst hana með:\n"
 "service clvmd start \n"
 "eða slökkva á klasalæsingum (locking_type=1 in /etc/lvm/lvm.conf)."
 
@@ -1193,8 +1193,8 @@ msgid ""
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
 "LVM er stilltur til að nota klasalæsingar en klasinn er ekki í lagi.\n"
-"Annað hvort þarftu að bíða þangað til klasinn er kominn í lag eða "
-"slökkva á klasalæsingum (locking_type=1 in /etc/lvm/lvm.conf)."
+"Annað hvort þarftu að bíða þangað til klasinn er kominn í lag eða slökkva á "
+"klasalæsingum (locking_type=1 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
