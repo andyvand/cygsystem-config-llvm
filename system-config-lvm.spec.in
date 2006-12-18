@@ -52,6 +52,10 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Dec 18 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.21-1.0
+  - Fixed 218126 (Can't resize ext3 fs online)
+  - Resolves: bz218126
+
 * Mon Oct 16 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.20-1.0
   - Updated translation files
 

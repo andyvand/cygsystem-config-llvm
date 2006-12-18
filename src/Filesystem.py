@@ -151,7 +151,7 @@ class ext3(Filesystem):
         creatable = self.check_path('/sbin/mkfs.ext3')
         mountable = self.check_mountable('ext3', 'ext3')
         resize_offline = self.check_paths(['/sbin/e2fsck', '/sbin/resize2fs'])
-        extend_online = self.check_path('/usr/sbin/ext2online')
+        extend_online, dummy = self.__extend_online_cmd()
         
         Filesystem.__init__(self, 'Ext3', creatable, True, mountable, 
                             extend_online, resize_offline, False, resize_offline,
@@ -176,14 +176,27 @@ class ext3(Filesystem):
             raise CommandError('FATAL', FSCREATE_FAILURE % (cmdstr,e))
     
     def extend_online(self, dev_path):
-        args = list()
-        args.append('/usr/sbin/ext2online')
-        args.append(dev_path)
+        dummy, cmd = self.__extend_online_cmd()
+        args = [cmd, dev_path]
         cmdstr = ' '.join(args)
         msg = RESIZING_FS % (self.name)
-        o,e,r = execWithCaptureErrorStatusProgress('/usr/sbin/ext2online', args, msg)
-        if r != 0:
-            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr,e))
+        o, e, s = execWithCaptureErrorStatusProgress(cmd, args, msg)
+        if s != 0:
+            raise CommandError('FATAL', FSRESIZE_FAILURE % (cmdstr, e))
+    def __extend_online_cmd(self):
+        # if ext2online is present, use it
+        cmd = '/usr/sbin/ext2online'
+        if self.check_path(cmd):
+            return (True, cmd)
+        # resize2fs 1.39 and above are also able to online extend ext3
+        try:
+            cmd = '/sbin/resize2fs'
+            o, e, s = execWithCaptureErrorStatus(cmd, [cmd])
+            if (s == 0 or s == 1) and float(e.strip().split()[1]) >= 1.39:
+                return (True, cmd)
+        except:
+            pass
+        return (False, None)
     
     def reduce_online(self, dev_path, new_size_bytes):
         # not supported
