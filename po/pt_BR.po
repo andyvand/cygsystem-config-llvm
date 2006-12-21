@@ -863,7 +863,7 @@ msgstr "Partição Swap atualmente em uso"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr "Partição de inicialização extrangeira"
+msgstr "Partição de inicialização estrangeira"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
