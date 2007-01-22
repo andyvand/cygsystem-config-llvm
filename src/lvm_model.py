@@ -128,17 +128,20 @@ PV_UUID_IDX = 8
 
 
 LVS_HAS_ALL_OPTION = False
-out, status = execWithCaptureStatus(LVM_BIN_PATH, [LVM_BIN_PATH, 'lvs', '--all'])
-if status == 0:
-  LVS_HAS_ALL_OPTION = True
-
 LVS_HAS_MIRROR_OPTIONS = False
-LVS_HAS_MIRROR_OPTIONS = LVS_HAS_ALL_OPTION
 
 
 class lvm_model:
   
   def __init__(self):
+    global LVS_HAS_ALL_OPTION
+    global LVS_HAS_MIRROR_OPTIONS
+    
+    out, status = execWithCaptureStatus(LVM_BIN_PATH, [LVM_BIN_PATH, 'lvs', '--all'])
+    if status == 0:
+      LVS_HAS_ALL_OPTION = True
+    LVS_HAS_MIRROR_OPTIONS = LVS_HAS_ALL_OPTION
+    
     self.__block_device_model = BlockDeviceModel()
     self.__VGs = {}
     self.__PVs = []
@@ -993,17 +996,19 @@ class lvm_model:
   
   def is_mirroring_supported(self):
     return LVS_HAS_MIRROR_OPTIONS
+
+
   
-  def get_locking_type(self):
-    conf = open('/etc/lvm/lvm.conf')
-    
-    lines = conf.readlines()
-    for line in lines:
-      words = line.split()
-      if len(words) < 3:
-        continue
-      if words[0] == 'locking_type':
-        if words[1] == '=':
-          locking_type = int(words[2])
-          return locking_type
-    return None
+def lvm_conf_get_locking_type():
+  conf = open('/etc/lvm/lvm.conf')
+  
+  lines = conf.readlines()
+  for line in lines:
+    words = line.split()
+    if len(words) < 3:
+      continue
+    if words[0] == 'locking_type':
+      if words[1] == '=':
+        locking_type = int(words[2])
+        return locking_type
+  return None

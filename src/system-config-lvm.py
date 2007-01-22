@@ -45,8 +45,8 @@ except RuntimeError, e:
   Caught exception: %s
 """) % e
     sys.exit(-1)
-                                                                                
-from lvm_model import lvm_model
+
+from lvm_model import lvm_model, lvm_conf_get_locking_type
 from Volume_Tab_View import Volume_Tab_View
 from lvmui_constants import *
 
@@ -57,14 +57,49 @@ gnome.program_init (PROGNAME, VERSION)
 gnome.app_version = VERSION
 FORMALNAME=_("system-config-lvm")
 ABOUT_VERSION=_("%s %s") % ('system-config-lvm',VERSION)
-                                                                                
+
+
+from execute import execWithCapture
+from Cluster import Cluster
+
+
+
 ###############################################
 class baselvm:
   def __init__(self, glade_xml, app):
+    
+    
+    # check locking type
+    locking_type = lvm_conf_get_locking_type()
+    if locking_type != 1:
+        should_exit = False
+        if locking_type == 0:
+            msg = _("LVM locks are disabled!!! \nMassive data corruption may occur.\nEnable locking (locking_type=1, 2 or 3 in /etc/lvm/lvm.conf).")
+            should_exit = True
+        elif locking_type == 2 or locking_type == 3:
+            ps_out = execWithCapture('/bin/ps', ['/bin/ps', '-A'])
+            if ps_out.find('clvmd') == -1:
+                msg = _("LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not running. Start daemon with command:\nservice clvmd start \nor, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
+                should_exit = True
+            else:
+                if not Cluster().running():
+                    msg = _("LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\nEither wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
+                    should_exit = True
+        else:
+            msg = _("%s only supports file and cluster based lockings (locking_type=1, 2 or 3 in /etc/lvm/lvm.conf).")
+            msg = msg % PROGNAME
+            should_exit = True
+        if should_exit:
+            dlg = gtk.MessageDialog(None, 0,
+                                    gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+                                    msg)
+            dlg.run()
+            sys.exit(10)
 
+    
     #Need to suppress the spewing of file descriptor errors to terminal
     os.environ["LVM_SUPPRESS_FD_WARNINGS"] = "1"
- 
+
     self.lvmm = lvm_model()
                                                                                 
     self.main_win = app

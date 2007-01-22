@@ -53,6 +53,10 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Mon Jan 22 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.0.22-1.0
+  - Fixed 223518 (s-c-lvm fails to probe CS5 properly)
+  - Resolves: bz223518
+
 * Mon Dec 18 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.21-1.0
   - Fixed 216569 (some messages not localized)
   - Fixed 218126 (Can't resize ext3 fs online)

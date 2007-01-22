@@ -303,7 +303,7 @@ class InputController:
     
     clustered = self.new_vg_clustered.get_active()
     if clustered:
-        msg = _("In order for Volume Group to be safely used in clustered environment, lvm2-cluster rpm has to be installed, and clvmd service has to be running")
+        msg = _("In order for Volume Group to be safely used in clustered environment, lvm2-cluster rpm has to be installed, `lvmconf --enable-cluster` has to be executed and clvmd service has to be running")
         self.infoMessage(msg)
     
     try:
@@ -327,6 +327,7 @@ class InputController:
       self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
       self.new_vg_radio_meg.set_active(True)
       self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
+      self.new_vg_clustered.set_active(False)
 
   def change_new_vg_radio(self, button):
       menu = self.new_vg_extent_size.get_menu()

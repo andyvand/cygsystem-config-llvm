@@ -7,6 +7,8 @@ import xml
 import xml.dom
 from xml.dom import minidom
 
+import os
+
 
 class Cluster:
     
@@ -26,7 +28,7 @@ class Cluster:
         try:
             c_conf = minidom.parseString(file('/etc/cluster/cluster.conf').read(10000000)).firstChild
             name = c_conf.getAttribute('name')
-            lock = None
+            lock = 'dlm'
             nodes_num = 0
             for node in c_conf.childNodes:
                 if node.nodeType == xml.dom.Node.ELEMENT_NODE:
@@ -40,7 +42,7 @@ class Cluster:
                             if node.nodeType == xml.dom.Node.ELEMENT_NODE:
                                 if node.nodeName == 'clusternode':
                                     nodes_num += 1
-            if lock != None:
+            if nodes_num != 0:
                 return (name, lock, nodes_num)
         except:
             pass
@@ -50,6 +52,7 @@ class Cluster:
         if self.get_name() == None:
             return False
         try:
+            # try magma_tool
             args = ['/sbin/magma_tool', 'quorum']
             o, e, s = execWithCaptureErrorStatus('/sbin/magma_tool', args)
             if s == 0:
@@ -57,4 +60,35 @@ class Cluster:
                     return True
         except:
             pass
-        return False
+        
+        try:
+            # try cman_tool
+            cman_tool_path = '/sbin/cman_tool'
+            if os.access(cman_tool_path, os.X_OK) == False:
+                cman_tool_path = '/usr/sbin/cman_tool'
+            args = [cman_tool_path, 'status']
+            o, e, s = execWithCaptureErrorStatus(cman_tool_path, args)
+            if s != 0:
+                return False
+            
+            quorum = -1
+            votes  = -1
+            lines  = o.splitlines()
+            for line in lines:
+                words = line.split()
+                if len(words) < 2:
+                    continue
+                if words[0] == 'Quorum:':
+                    quorum = int(words[1])
+                elif words[0] == 'Total_votes:':
+                    votes = int(words[1])
+                if len(words) < 3:
+                    continue
+                if words[0] == 'Total' and words[1] == 'votes:':
+                    votes = int(words[2])
+            if quorum <= 0 or votes < 0:
+                raise 'Unable to retrieve cluster quorum info'
+            return votes >= quorum
+        except:
+            return False
+        
