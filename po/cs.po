@@ -1187,7 +1187,7 @@ msgid ""
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
 "LVM je nakonfigurováno, aby používalo zamykání pro clustery, ale cluster "
-"nemá kvórum.\n"
+"nemá dostatečné kvórum (hlasování v clusteru není z důvodu nízkého počtu platné).\n"
 "Buď počkejte, dokud cluster nebude mít kvórum nebo vypněte clusterové zámky "
 "(locking_type=1 v /etc/lvm/lvm.conf)."
 
@@ -1197,109 +1197,106 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s podporuje pouze souborové nebo clusterové zamykání (locking_type=1 or 2 v /etc/"
+"lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
-msgstr ""
+msgstr "Clusterované VG"
 
 #: src/Volume_Tab_View.py:648
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s synchronizace zrcadla"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "Počkejte prosím, až bude vytvořen oddíl"
 
 #: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "Vytváření systému souborů %s"
 
 #: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "Změna velikosti systému souborů %s"
 
 #: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "Kontroluji systém souborů %s"
 
 #: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Aktualizuji systém souborů z %s na %s"
 
 #: src/Filesystem.py:24
-#, fuzzy, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Příkaz vgcreate selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
+"Vytvoření systému souborů selhalo. Spouštěný příkaz: \"%s\" - Systémová chybová zpráva: %s"
 
 #: src/Filesystem.py:25
-#, fuzzy, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Příkaz mkfs selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
+"Změna velikosti systému souborů selhala. Spouštěný příkaz: \"%s\" - Systémová chybová zpráva: %s"
 
 #: src/Filesystem.py:26
-#, fuzzy, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Příkaz mkfs selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
+"Kontrola systému souborů selhala. Spouštěný příkaz: \"%s\" - Systémová chybová zpráva: %s"
 
 #: src/Filesystem.py:27
-#, fuzzy, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Příkaz vgreduce selhal. Zkoušený příkaz: \"%s\" - Zpráva systému o chybě: %s"
+"Aktualizace systému souborů selhala. Spouštěný příkaz: \"%s\" - Systémová chybová zpráva: %s"
 
 #: src/Filesystem.py:143
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Žádný systém souborů"
+msgstr "Neznámý systém souborů"
 
 #: src/Filesystem.py:374
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (místní)"
 
 #: src/Filesystem.py:472
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (clusterovaný)"
 
 #: src/Filesystem.py:504 src/Filesystem.py:748
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "Jméno clusteru obsahuje nepřípustný znak "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "Jméno GFS obsahuje nepřípustný znak "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Chybí jméno clusteru"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Chybí jméno GFS"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (místní)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (clusterovaný)"
 
 #: src/Segment.py:44
 msgid "Stripe"
@@ -1311,11 +1308,11 @@ msgstr "Lineární mapování"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "Zrcadlo"
 
 #: src/PhysicalVolume.py:142
 msgid "Partition %s"
-msgstr "Oddílu %s"
+msgstr "Oddíl %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1363,7 +1360,7 @@ msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr "Přidat fyzický svazek do skupiny svazků"
+msgstr "Přidat fyzický svazek (PV) do skupiny svazků (VG)"
 
 #: src/lvui.glade.h:13
 msgid ""
@@ -1371,11 +1368,11 @@ msgid ""
 "Volume Group"
 msgstr ""
 "Přidat do existující \n"
-"skupiny svazků"
+"skupiny svazků (VG)"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
-msgstr ""
+msgstr "Clusterovaný"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1383,11 +1380,11 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "Vytvořit nový\n"
-"logický svazek"
+"logický svazek (LV)"
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr ""
+msgstr "Vytvořit snímek (snapshot)"
 
 #: src/lvui.glade.h:19
 msgid ""
@@ -1395,43 +1392,39 @@ msgid ""
 "Volume Group"
 msgstr ""
 "Vytvořit novou \n"
-"skupinu svazků"
+"skupinu svazků (VG)"
 
 #: src/lvui.glade.h:21
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Vlastnosti"
+msgstr "Změnit vlastnosti"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Vložte cestu k blokovému zařízení, které má být inicializováno"
 
 #: src/lvui.glade.h:23
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
-"Rozšířit\n"
-"skupinu svazků"
+"Zvětšit\n"
+"skupinu svazků (VG)"
 
 #: src/lvui.glade.h:25
 msgid "Extend Volume Group"
-msgstr "Rozšířit skupinu svazků"
+msgstr "Zvětšit skupinu svazků (VG)"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Format"
-msgstr "Formát: "
+msgstr "Formát"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize"
-msgstr "Neinicializováno"
+msgstr "Inicializovat"
 
 #: src/lvui.glade.h:28
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Inicializovat entitu"
+msgstr "Inicializovat blokové zařízení"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
@@ -1439,7 +1432,7 @@ msgstr "Inicializovat entitu"
 
 #: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
-msgstr ""
+msgstr "Inicializovat _blokové zařízení"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
@@ -1455,17 +1448,15 @@ msgstr "Spravovat svazky"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "Označit skupinu svazků (VG) jako 'clusterovanou'"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Maximum logických svazků: "
+msgstr "Maximum logických svazků (LV)"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Maximum fyzických svazků: "
+msgstr "Maximum fyzických svazků (PV)"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1476,16 +1467,16 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
-"Převést vybrané\n"
+"Migrovat vybrané\n"
 "extenty ze svazku"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
-msgstr "Nová skupina svazků"
+msgstr "Nová skupina svazků (VG)"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size"
-msgstr "Velikost fyzického extentu"
+msgstr "Velikost fyzického extentu (PV)"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1493,15 +1484,15 @@ msgid ""
 "Logical Volume"
 msgstr ""
 "Odstranit \n"
-"logický svazek"
+"logický svazek (LV)"
 
 #: src/lvui.glade.h:44
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
-"Odstranit vybrané<\n"
-"logické svazky"
+"Odstranit vybrané\n"
+"logické svazky (LV)"
 
 #: src/lvui.glade.h:46
 msgid ""
@@ -1509,7 +1500,7 @@ msgid ""
 "Physical Volume(s)"
 msgstr ""
 "Odstranit vybrané\n"
-"fyzické svazky"
+"fyzické svazky (PV)"
 
 #: src/lvui.glade.h:48
 msgid ""
@@ -1517,7 +1508,7 @@ msgid ""
 "Volume Group"
 msgstr ""
 "Odstranit svazek\n"
-"ze skupiny svazků"
+"ze skupiny svazků (VG)"
 
 #: src/lvui.glade.h:50
 msgid ""
@@ -1529,28 +1520,27 @@ msgstr ""
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr "Zvolte skupinu svazků, do které přidat tento fyzický svazek:"
+msgstr "Zvolte skupinu svazků (VG), do které přidat tento fyzický svazek (PV):"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "Nějaký text"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Název skupiny svazků: "
+msgstr "Název skupiny svazků (VG)"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
-msgstr ""
+msgstr "_Znovunačíst"
 
 #: src/lvui.glade.h:56
 msgid "_Tools"
-msgstr ""
+msgstr "_Nástroje"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
-msgstr ""
+msgstr "Rozšiřování VG"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1563,61 +1553,62 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Systém souborů: "
+msgstr "<b>Systém souborů</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>Vlastnosti LV</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>Velikost</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "Přidat záznam do /etc/fstab"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Vytvořit nový logický svazek"
+msgstr "Vytvořit nový logický svazek (LV)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "Velikost systému souborů nelze změnit"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr ""
-"Vytvořit novou \n"
-"skupinu svazků"
+msgstr "Volné místo v názvu skupiny svazků (VG)"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "Použít zbývající prostor"
+msgstr "Zbývající místo v názvu"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Kilobajtů"
+msgstr "Kilobajtová granularita"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "Jméno LV:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "Velikost LV"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "U LV se snímkem (snapshot) nelze měnit velikost"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1625,64 +1616,59 @@ msgstr "Lineární"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "Zrcadleno"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "U zrcadlených LV nelze měnit velikost"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "Připojit"
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Místo připojení: "
+msgstr "Místo připojení:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "Připojit po restartu"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Velikost"
+msgstr "Velikost zač."
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Velikost"
+msgstr "Velikost konce"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Stripován"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Použít zbývající prostor"
+msgstr "Použít zbývající"
 
 #: src/lv_edit_props.glade.h:32
-#, fuzzy
 msgid "stripes"
-msgstr "Stripován"
+msgstr "stripy"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>Cíl</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>Politika migrace</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "Kdekoliv - není implementováno"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "Automaticky zvolit PV, kam migrovat"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
@@ -1690,7 +1676,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "Cíl:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
@@ -1703,11 +1689,8 @@ msgid "Inherit"
 msgstr ""
 
 #: src/migrate_extents.glade.h:10
-#, fuzzy
 msgid "Inherit policy from Volume Group"
-msgstr ""
-"Odstranit svazek\n"
-"ze skupiny svazků"
+msgstr "Dědit politiku ze skupiny svazků (VG)"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
