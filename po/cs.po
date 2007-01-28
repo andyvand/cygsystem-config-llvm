@@ -1684,7 +1684,7 @@ msgid ""
 "Select extents' destination and migration policy."
 msgstr ""
 "Aby bylo možné smazat PV, musí být migrovány extenty.\n"
-"Zvolte cíl pro migraci extentů a politiku migrace."
+"Zvolte cíl pro migraci extentů a metodu migrace."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
@@ -1692,7 +1692,7 @@ msgstr "Dědit"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
-msgstr "Dědit politiku ze skupiny svazků (VG)"
+msgstr "Dědit metodu ze skupiny svazků (VG)"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
