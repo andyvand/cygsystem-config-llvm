@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-01-27 14:07+0100\n"
+"PO-Revision-Date: 2007-01-28 10:42+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1644,7 +1644,7 @@ msgstr "Velikost konce"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr "Stripován"
+msgstr "Stripovaný"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
@@ -1672,7 +1672,7 @@ msgstr "Automaticky zvolit PV, kam migrovat"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Souvislý"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
@@ -1683,10 +1683,12 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"Aby bylo možné smazat PV, musí být migrovány extenty.\n"
+"Zvolte cíl pro migraci extentů a politiku migrace."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "Dědit"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
@@ -1698,15 +1700,15 @@ msgstr "Migrovat extenty"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "Migrovat kamkoliv, i když to sníží výkon"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr ""
+msgstr "Nové extenty sousedí s původními"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "Normální"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
@@ -1714,4 +1716,4 @@ msgstr "Migrovat jen extenty patřící LV"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "Použít zdravý rozum"
