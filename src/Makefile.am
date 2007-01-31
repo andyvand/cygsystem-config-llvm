@@ -27,6 +27,8 @@ WaitMsg.py	\
 Multipath.py	\
 utilities.py	\
 Cluster.py      \
+iscsi.py	\
+iscsi.glade	\
 pixmaps/UV.xpm	\
 pixmaps/VG.xpm	\
 pixmaps/LV.xpm	\
@@ -35,7 +37,7 @@ pixmaps/grad3.xpm	\
 pixmaps/lv_icon.png	\
 system-config-lvm.py
 
-GLADE_FILES = lvui.glade migrate_extents.glade lv_edit_props.glade Filesystem.glade
+GLADE_FILES = lvui.glade migrate_extents.glade lv_edit_props.glade Filesystem.glade iscsi.glade
 
 EXTRA_DIST = $(PYTHON_FILES) $(GLADE_FILES)
 
@@ -82,6 +84,8 @@ install-exec-local:
 	install -m 0640 $(srcdir)/Multipath.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/utilities.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Cluster.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/iscsi.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/iscsi.glade  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/pixmaps/PV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/LV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/UV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/

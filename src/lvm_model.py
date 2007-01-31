@@ -150,6 +150,11 @@ class lvm_model:
     progress = ProgressPopup(RELOAD_LVM_MESSAGE)
     progress.start()
     
+    # clean-up everything
+    self.__block_device_model = BlockDeviceModel()
+    self.__VGs = {}
+    self.__PVs = []
+    
     # first query VolumeGroups
     self.__VGs = {}
     for vg in self.__query_VGs():
@@ -945,6 +950,27 @@ class lvm_model:
     # append old props
     for prop in end:
       text_list.append(prop)
+    
+    try:
+      # add scsi_id and iscsi properties
+      device = pv.getDevnames()[0]
+      devname = pv.extract_name(device)
+      SCSI_ID_BIN = '/sbin/scsi_id'
+      args = [SCSI_ID_BIN, '-g', '-u', '-s', '/block/' + devname]
+      o, e, s = execWithCaptureErrorStatus(SCSI_ID_BIN, args)
+      text_list.append(_("SCSI ID:   "))
+      if s == 0:
+        text_list.append(o.strip())
+      else:
+        text_list.append(_("NONE"))
+      ISCSI_BIN = '/sbin/iscsi-device'
+      if os.access(ISCSI_BIN, os.X_OK):
+        o, e, s = execWithCaptureErrorStatus(ISCSI_BIN, [ISCSI_BIN, device])
+        if s == 0:
+          text_list.append(_("iSCSI Device:   "))
+          text_list.append(_("True"))
+    except:
+      pass
     
     return text_list
   
