@@ -952,22 +952,25 @@ class lvm_model:
       text_list.append(prop)
     
     try:
-      # add scsi_id and iscsi properties
+      # add scsi dev info
       device = pv.getDevnames()[0]
       devname = pv.extract_name(device)
       SCSI_ID_BIN = '/sbin/scsi_id'
-      args = [SCSI_ID_BIN, '-g', '-u', '-s', '/block/' + devname]
+      args = [SCSI_ID_BIN, '-g', '-i', '-u', '-s', '/block/' + devname]
       o, e, s = execWithCaptureErrorStatus(SCSI_ID_BIN, args)
-      text_list.append(_("SCSI ID:   "))
       if s == 0:
-        text_list.append(o.strip())
-      else:
-        text_list.append(_("NONE"))
+        scsi_addr, scsi_id = o.strip().split()
+        scsi_addr = scsi_addr.strip(':')
+        text_list.append(_("SCSI Address:  "))
+        text_list.append(scsi_addr)
+        text_list.append(_("SCSI ID:  "))
+        text_list.append(scsi_id)
+      # iSCSI
       ISCSI_BIN = '/sbin/iscsi-device'
       if os.access(ISCSI_BIN, os.X_OK):
         o, e, s = execWithCaptureErrorStatus(ISCSI_BIN, [ISCSI_BIN, device])
         if s == 0:
-          text_list.append(_("iSCSI Device:   "))
+          text_list.append(_("iSCSI Device:  "))
           text_list.append(_("True"))
     except:
       pass
