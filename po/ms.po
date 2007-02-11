@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-01-22 01:28+0800\n"
+"PO-Revision-Date: 2007-02-11 21:47+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1266,9 +1266,8 @@ msgid "Initialize Entity"
 msgstr "Mulakan Entiti"
 
 #: src/lvui.glade.h:30
-#, fuzzy
 msgid "Initialize _Block Device"
-msgstr "Peranti Blok Rangkaian GFS"
+msgstr "Mulakan Peranti _Blok"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
@@ -1287,14 +1286,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Volum Logikal Maksimum:"
+msgstr "Volum Logikal Maksimum"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Volum Fizikal Maksimum:"
+msgstr "Volum Fizikal Maksimum"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1389,6 +1386,14 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
