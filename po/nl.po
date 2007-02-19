@@ -1,20 +1,20 @@
 # translation of system-config-lvm to Dutch
 # This file is distributed under the same license as the system-config-lvm package.
-# Copyright (C) 2005, 2006 Free Software Foundation, Inc.
+# Copyright (C) 2005, 2006, 2007 Free Software Foundation, Inc.
 #
-# Peter van Egdom <p.van.egdom@gmail.com>, 2005, 2006.
+# Peter van Egdom <p.van.egdom@gmail.com>, 2005, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-12 23:06+0200\n"
+"PO-Revision-Date: 2007-02-19 23:20+0100\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -193,6 +193,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
+"GROTE WAARSCHUWING: Logical Volume %s heeft een %s bestandssysteem en is "
+"momenteel aangekoppeld op %s. Weet u absoluut zeker dat u de data op dit "
+"aangekoppelde bestandssysteem wilt verwerpen?"
 
 #: src/InputController.py:126
 #, python-format
@@ -341,6 +344,8 @@ msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"Logical Volume %s bevat %s bestandssysteem. Alle data hierop zal verloren "
+"raken! Weet u zeker dat u Logical Volume %s wilt verwijderen?"
 
 #: src/InputController.py:161
 #, python-format
@@ -398,6 +403,8 @@ msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
+"Logical Volume \"%s\" heeft snapshots die niet zijn geselecteerd om "
+"verwijderd te worden. Ook deze dienen verwijderd te worden."
 
 #: src/InputController.py:579
 #, python-format
@@ -444,7 +451,7 @@ msgstr ""
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
-msgstr "Migreer extents"
+msgstr "Extents migreren"
 
 #: src/InputController.py:1320
 msgid "Options"
@@ -453,7 +460,7 @@ msgstr "Opties"
 #: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr "Maak een snapshot van %s"
+msgstr "Snapshot van %s aanmaken"
 
 #: src/InputController.py:1356
 msgid "Create New Logical Volume"
@@ -492,6 +499,8 @@ msgstr ""
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
+"Er zijn minder dan 3 harde schijven beschikbaar met vrije ruimte. Mirroring "
+"wordt uitgeschakeld."
 
 #: src/InputController.py:1550
 msgid ""
@@ -592,7 +601,7 @@ msgstr "Toevoegen van mirror aan Logical Volume"
 
 #: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
+msgstr "Verwijderen van mirror van Logical Volume"
 
 #: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
@@ -600,7 +609,7 @@ msgstr "Initialiseren van Physical Volume"
 
 #: src/CommandHandler.py:171
 msgid "Adding Physical Volume to Volume Group"
-msgstr ""
+msgstr "Toevoegen van Physical Volume aan Volume Group"
 
 #: src/CommandHandler.py:203
 msgid "Creating Volume Group"
@@ -624,7 +633,7 @@ msgstr "Hernoemen van Logical Volume"
 
 #: src/CommandHandler.py:280
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
+msgstr "Verwijderen van Physical Volume van Volume Group"
 
 #: src/CommandHandler.py:315
 msgid "Migrating Extents"
@@ -789,7 +798,7 @@ msgstr "Extended partitie"
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Swap-partitie momenteel in gebruik"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -801,7 +810,7 @@ msgstr "Automatisch partitioneren mislukt"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
-msgstr "Partitioneer handmatig"
+msgstr "Handmatig partitioneren"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
@@ -813,7 +822,7 @@ msgstr "Let op:"
 
 #: src/lvm_model.py:290
 msgid "Initialize manually"
-msgstr "Initialiseer handmatig"
+msgstr "Handmatig initialiseren"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
@@ -859,6 +868,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"Alle data op disk-entiteit %s zal verloren raken! Weet u zeker dat u het wilt "
+"initialiseren?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -890,7 +901,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "Herladen van LVM. Even geduld."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -998,7 +1009,7 @@ msgstr "Logical Volume"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr "Niet-toegewezen volume"
+msgstr "Niet-toegewezen Volume"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
@@ -1088,7 +1099,7 @@ msgstr "Volume Groups"
 
 #: src/Volume_Tab_View.py:46
 msgid "Unallocated Volumes"
-msgstr "Niet-toegewezen volumes"
+msgstr "Niet-toegewezen Volumes"
 
 #: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
@@ -1287,13 +1298,15 @@ msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr "Voeg Physical Volume aan VG toe"
+msgstr "Physical Volume aan VG toevoegen"
 
 #: src/lvui.glade.h:13
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"Aan bestaande \n"
+"Volume Group toevoegen"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
@@ -1332,10 +1345,12 @@ msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"Volume Group\n"
+"uitbreiden"
 
 #: src/lvui.glade.h:25
 msgid "Extend Volume Group"
-msgstr ""
+msgstr "Volume Group uitbreiden"
 
 #: src/lvui.glade.h:26
 msgid "Format"
@@ -1347,15 +1362,15 @@ msgstr "Initialiseren"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Block Device"
-msgstr "Initialiseer block device"
+msgstr "Block device initialiseren"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
-msgstr "Initialiseer entiteit"
+msgstr "Entiteit initialiseren"
 
 #: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
-msgstr "Initialiseer _block device"
+msgstr "_Block device initialiseren"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
@@ -1367,11 +1382,11 @@ msgstr "Logical Volume Management"
 
 #: src/lvui.glade.h:33
 msgid "Manage Volumes"
-msgstr "Beheer volumes"
+msgstr "Volumes beheren"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr "Markeer Volume Group als 'clustered'"
+msgstr "Volume Group als 'clustered' markeren"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
@@ -1390,6 +1405,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"Geselecteerde extends\n"
+"van Volume migreren"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
@@ -1404,36 +1421,40 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
-"Verwijder \n"
-"Logical Volume"
+"Logical Volume\n"
+"verwijderen"
 
 #: src/lvui.glade.h:44
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"Geselecteerde Logical\n"
+"Volume(s) verwijderen"
 
 #: src/lvui.glade.h:46
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"Geselecteerde Physical\n"
+"Volume(s) verwijderen"
 
 #: src/lvui.glade.h:48
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
-"Verwijder Volume van\n"
-"Volume Group"
+"Volume van Volume\n"
+"Group verwijderen"
 
 #: src/lvui.glade.h:50
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
-"Verwijder volume \n"
-"van LVM"
+"Volume van \n"
+"LVM verwijderen"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
@@ -1449,7 +1470,7 @@ msgstr "Volume Group naam"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
-msgstr ""
+msgstr "_Herladen"
 
 #: src/lvui.glade.h:56
 msgid "_Tools"
@@ -1493,7 +1514,7 @@ msgstr "<b>Grootte</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr "Voeg item toe aan /etc/fstab"
+msgstr "Item aan /etc/fstab toevoegen"
 
 #: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
@@ -1581,11 +1602,11 @@ msgstr "<b>Migratiebeleid</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "Overal - niet geïmplementeerd"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "Automatisch PV's kiezen om naar toe te migreren"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
@@ -1614,7 +1635,7 @@ msgstr "Policy overnemen van Volume Group"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
-msgstr "Migreer extents"
+msgstr "Extents migreren"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
