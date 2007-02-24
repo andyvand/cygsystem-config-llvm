@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-02-19 23:20+0100\n"
+"PO-Revision-Date: 2007-02-24 10:13+0100\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -185,6 +185,7 @@ msgstr ""
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
+"Ongedefinieerde type-conversie fout. Niet in staat om de taak te voltooien."
 
 #: src/InputController.py:124
 #, python-format
@@ -309,6 +310,8 @@ msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
 msgstr ""
+"Het verwijderen van Physical Volume %s uit de Volume Group %s zal de Volume "
+"Group leeg maken, ook de Volume Group zal worden verwijderd. Wilt u doorgaan?"
 
 #: src/InputController.py:155
 #, python-format
@@ -317,6 +320,9 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
+"Volume Group %s heeft niet genoeg ruimte om de opgeslagen data op %s te "
+"verplaatsen. Een mogelijke oplossing zou kunnen zijn om een additioneel "
+"Physical Volume aan de Volume Group toe te voegen."
 
 #: src/InputController.py:156
 msgid ""
@@ -1027,7 +1033,7 @@ msgstr "Geen volume geselecteerd"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Meervoudige selectie"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:49
 msgid "Logical View"
@@ -1111,6 +1117,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"LVM-locks zijn uitgezet!!! \n"
+"Er kan grote data-corruptie plaatsvinden.\n"
+"Zet locking aan (locking_type=1 of 2 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1134,6 +1143,8 @@ msgid ""
 "%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
 "lvm/lvm.conf)."
 msgstr ""
+"%s heeft alleen ondersteuning voor bestand- en cluster-gebaseerde locking "
+"(locking_type=1 of 2 in /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:262
 msgid "Clustered VG"
@@ -1167,7 +1178,7 @@ msgstr "Controleren van het %s bestandssysteem"
 #: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "Bijwerken van %s bestandssysteem naar %s"
 
 #: src/Filesystem.py:24
 #, python-format
@@ -1175,6 +1186,8 @@ msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"Aanmaken van het bestandssysteem is mislukt. Uitgevoerd commando: \"%s\" "
+"- Systeemfoutmelding: %s"
 
 #: src/Filesystem.py:25
 #, python-format
@@ -1182,6 +1195,8 @@ msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"Aanpassen van de grootte van het bestandssysteem is mislukt. Uitgevoerd "
+"commando: \"%s\" - Systeemfoutmelding: %s"
 
 #: src/Filesystem.py:26
 #, python-format
@@ -1189,8 +1204,8 @@ msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"De controle van het bestandssysteem is mislukt. Gebruikt commando: \"%s\" - "
-"Foutmelding van het systeem: %s"
+"Controle van het bestandssysteem is mislukt. Gebruikt commando: \"%s\" - "
+"Systeemfoutmelding: %s"
 
 #: src/Filesystem.py:27
 #, python-format
@@ -1198,6 +1213,8 @@ msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"Bijwerken van het bestandssysteem is mislukt. Uitgevoerd commando: \"%s\" "
+"- Systeemfoutmelding: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
