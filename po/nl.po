@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-02-24 10:13+0100\n"
+"PO-Revision-Date: 2007-03-03 09:22+0100\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -359,6 +359,8 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
+"Logical Volume %s bevat gegevens uit map %s. Alle gegevens hierin zullen "
+"verloren raken! Weet u zeker dat u Logical Volume %s wilt verwijderen?"
 
 #: src/InputController.py:306
 msgid ""
@@ -417,6 +419,8 @@ msgstr ""
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
+"\"%s\", een oorsprong van snapshot \"%s\", is verwijderd uit de lijst met te "
+"verwijderen items."
 
 #: src/InputController.py:610
 #, python-format
@@ -454,6 +458,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"Er zijn niet genoeg vrije extents om de noodzakelijke migratie uit te voeren. "
+"Het toevoegen van meer Physical Volumes zal het probleem oplossen."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -565,6 +571,8 @@ msgstr "Geef aankoppelpunt op"
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
+"Wilt u ext2 naar ext3 bijwerken en daarbij de gegevens behouden op het "
+"Logical Volume?"
 
 #: src/InputController.py:2062
 msgid ""
@@ -928,7 +936,7 @@ msgstr "Niet in staat om aanvraag te verwerken"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "Commando %s is mislukt. Gebruikt commando: \"%s\" - Systeemfoutmelding: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1186,7 +1194,7 @@ msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Aanmaken van het bestandssysteem is mislukt. Uitgevoerd commando: \"%s\" "
+"Aanmaken van het bestandssysteem is mislukt. Gebruikt commando: \"%s\" "
 "- Systeemfoutmelding: %s"
 
 #: src/Filesystem.py:25
@@ -1195,7 +1203,7 @@ msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Aanpassen van de grootte van het bestandssysteem is mislukt. Uitgevoerd "
+"Aanpassen van de grootte van het bestandssysteem is mislukt. Gebruikt "
 "commando: \"%s\" - Systeemfoutmelding: %s"
 
 #: src/Filesystem.py:26
@@ -1213,7 +1221,7 @@ msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Bijwerken van het bestandssysteem is mislukt. Uitgevoerd commando: \"%s\" "
+"Bijwerken van het bestandssysteem is mislukt. Gebruikt commando: \"%s\" "
 "- Systeemfoutmelding: %s"
 
 #: src/Filesystem.py:143
@@ -1234,7 +1242,7 @@ msgstr "Clusternaam bevat een ongeldig teken "
 
 #: src/Filesystem.py:507 src/Filesystem.py:751
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS-naam bevat ongeldig teken "
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
@@ -1355,7 +1363,7 @@ msgstr "Eigenschappen bewerken"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
-msgstr ""
+msgstr "Geef het pad op van het te initialiseren block device"
 
 #: src/lvui.glade.h:23
 msgid ""
@@ -1563,7 +1571,7 @@ msgstr "LV grootte"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "De grootte van LVs binnen snapshots is niet aanpasbaar"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1627,7 +1635,7 @@ msgstr "Automatisch PV's kiezen om naar toe te migreren"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "Aaneengesloten"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
@@ -1656,7 +1664,7 @@ msgstr "Extents migreren"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "Overal migreren zelfs als dat de prestaties verminderd"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
