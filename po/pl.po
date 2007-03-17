@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-07-11 17:28+0200\n"
+"PO-Revision-Date: 2007-03-17 17:33+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -282,7 +282,7 @@ msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr ""
-"Czy jesteś pewny, że chcesz usunąć %s z Zarządzania woluminami logicznymi "
+"Czy na pewno chcesz usunąć %s z Zarządzania woluminami logicznymi "
 "LVM?"
 
 #: src/InputController.py:152
@@ -305,7 +305,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr "Czy jesteś pewny, że chcesz usunąć %s z grupy woluminów %s?"
+msgstr "Czy na pewno chcesz usunąć %s z grupy woluminów %s?"
 
 #: src/InputController.py:154
 #, python-format
@@ -353,7 +353,7 @@ msgstr ""
 #: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr "Czy jesteś pewny, że chcesz usunąć wolumin logiczny %s?"
+msgstr "Czy na pewno chcesz usunąć wolumin logiczny %s?"
 
 #: src/InputController.py:160
 #, python-format
@@ -362,7 +362,7 @@ msgid ""
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
 "Wolumin logiczny %s ma utworzony system plików %s. Wszystkie dane zostaną "
-"utracone! Czy jesteś pewny, że chcesz usunąć wolumin logiczny %s?"
+"utracone! Czy na pewno chcesz usunąć wolumin logiczny %s?"
 
 #: src/InputController.py:161
 #, python-format
@@ -371,7 +371,7 @@ msgid ""
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
 "Wolumin logiczny %s zawiera dane z folderu %s. Wszystkie dane zostaną "
-"utracone! Czy jesteś pewny, że chcesz usunąć wolumin logiczny %s?"
+"utracone! Czy na pewno chcesz usunąć wolumin logiczny %s?"
 
 #: src/InputController.py:306
 msgid ""
@@ -531,8 +531,6 @@ msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "Woluminy logiczne z dołączonymi migawkami jeszcze nie mogą być lustrami."
 
-#. mirror images placement: diff HDs or anywhere
-#. prompt
 #: src/InputController.py:1536
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
@@ -616,15 +614,13 @@ msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Zmiana systemu plików usunie wszystkie dane na woluminie logicznym! Czy "
-"jesteś pewny, że chcesz kontynuować?"
+"Zmiana systemu plików usunie wszystkie dane na woluminie logicznym! Czy na "
+"pewno chcesz kontynuować?"
 
-#. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Lustro nie zostało utworzone. Zakończenie pozostałych zadań."
 
-#. create mirror
 #: src/InputController.py:2166
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
@@ -915,14 +911,13 @@ msgstr "/   Główny system plików"
 msgid "None"
 msgstr "Brak"
 
-#. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
 #, python-format
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
-"Wszystkie dane na dysku %s zostaną utracone! Czy jesteś pewny, że chcesz go "
+"Wszystkie dane na dysku %s zostaną utracone! Czy na pewno chcesz go "
 "zainicjować?"
 
 #: src/lvmui_constants.py:52
@@ -932,7 +927,7 @@ msgid ""
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
 "Dysk %s zawiera system plików %s. Wszystkie dane na dysku %s zostaną "
-"utracone! Czy jesteś pewny, że chcesz zainicjować dysk %s?"
+"utracone! Czy na pewno chcesz zainicjować dysk %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -941,13 +936,13 @@ msgid ""
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
 "Dysk %s zawiera dane z folderu %s. Wszystkie dane na dysku %s zostaną "
-"utracone! Czy jesteś pewny, że chcesz zainicjować dysk %s?"
+"utracone! Czy na pewno chcesz zainicjować dysk %s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
 msgid ""
 "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr "Jesteś pewny, że chcesz zainicjować wolne miejsce na dysku %s?"
+msgstr "Jesteś na pewno chcesz zainicjować wolne miejsce na dysku %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1068,7 +1063,6 @@ msgstr "Właściwości dla"
 msgid "Physical Volume"
 msgstr "Wolumin fizyczny"
 
-#. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
 msgstr "Wolumin logiczny"
@@ -1086,7 +1080,6 @@ msgstr "Dysk"
 msgid "Volume Group"
 msgstr "Grupa woluminów"
 
-#. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
 msgstr "Nie wybrano żadnego woluminu."
@@ -1234,7 +1227,6 @@ msgstr "Klastrowa grupa woluminów"
 msgid "%s mirror synchronisation"
 msgstr "synchronizacja lustra %s"
 
-#. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
 msgstr "Proszę czekać, trwa tworzenie partycji"
