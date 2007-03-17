@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-03-17 22:06+0200\n"
+"PO-Revision-Date: 2007-03-18 01:23+0200\n"
 "Last-Translator: Ville-Pekka Vainio <vpivaini@cs.helsinki.fi>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/InputController.py:36
 #: src/Properties_Renderer.py:24
@@ -133,21 +133,21 @@ msgstr "Taltioryhmässä %s ei ole riittävästi tilaa uusille loogisille taltio
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr "Tilannekuvan ottamista tilannekuvasta ei tueta."
+msgstr "Tilannevedoksen ottamista toisesta tilannevedoksesta ei tueta."
 
 #: src/InputController.py:117
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "Peilatusta loogisesta taltiosta ei voi ottaa vedosta."
+msgstr "Peilatusta loogisesta taltiosta ei voi ottaa tilannevedosta."
 
 #: src/InputController.py:119
 #, python-format
 msgid "Logical volume %s has snapshot %s currently associated with it. Please remove the snapshot first."
-msgstr "Loogiseen taltioon %s on liitetty vedos %s. Poista vedos ensin."
+msgstr "Loogiseen taltioon %s on liitetty tilannevedos %s. Poista vedos ensin."
 
 #: src/InputController.py:120
 #, python-format
 msgid "Logical volume %s has snapshots: %s currently associated with it. Please remove snapshots first."
-msgstr "Loogisesta taltiosta %s on vedoksia: %s on tällä hetkellä liitetty siihen. Poista vedokset ensin."
+msgstr "Loogisesta taltiosta %s on tilannevedoksia: %s on tällä hetkellä liitetty siihen. Poista vedokset ensin."
 
 #: src/InputController.py:122
 msgid "Undefined type conversion error in model factory. Unable to complete task."
@@ -259,7 +259,7 @@ msgstr "Moduulia dm-mirror ei ole ladattu tai ydin ei tue dm-mirror-kohdetta. Jo
 
 #: src/InputController.py:157
 msgid "The dm-snapshot module is either not loaded in your kernel, or your kernel does not support the dm-snapshot target. If it is supported, try running \"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
-msgstr "Moduulia dm-snapshot ei ole ladattu tai ydin ei tue dm-snapshot-kohdetta. Jos se on tuettu, yritä komennon ”modprobe dm-snapshot” suorittamista. Muutoin vedosten luominen ei toimi."
+msgstr "Moduulia dm-snapshot ei ole ladattu tai ydin ei tue dm-snapshot-kohdetta. Jos se on tuettu, yritä komennon ”modprobe dm-snapshot” suorittamista. Muutoin tilannevedosten luominen ei toimi."
 
 #: src/InputController.py:159
 #, python-format
@@ -293,27 +293,27 @@ msgstr "Fyysinen taltio %s sisältää varausyksiköitä, jotka kuuluvat loogise
 #: src/InputController.py:370
 #, python-format
 msgid "Physical Volume %s contains extents belonging to %s, a snapshot of %s. Snapshots are not yet migratable, so %s is not removable."
-msgstr "Fyysinen taltio %s sisältää varausyksiköitä, jotka kuuluvat kohteeseen %s, joka on kohteen %s tilannekuva. Tilannekuvia ei voi vielä siirtää, joten kohdetta %s ei voi poistaa."
+msgstr "Fyysinen taltio %s sisältää varausyksiköitä, jotka kuuluvat kohteeseen %s, joka on kohteen %s tilannevedos. Tilannevedoksia ei voi vielä siirtää, joten kohdetta %s ei voi poistaa."
 
 #: src/InputController.py:375
 #, python-format
 msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshot %s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr "Fyysinen taltio %s sisältää varausyksiköitä, jotka kuuluvat kohteeseen %s, joka on tilannekuvan %s lähde. Tilannekuvien lähteitä ei voi vielä siirtää, joten kohdetta %s ei voi poistaa."
+msgstr "Fyysinen taltio %s sisältää varausyksiköitä, jotka kuuluvat kohteeseen %s, joka on tilannevedoksen %s lähde. Tilannevedoksien lähteitä ei voi vielä siirtää, joten kohdetta %s ei voi poistaa."
 
 #: src/InputController.py:377
 #, python-format
 msgid "Physical Volume %s contains extents belonging to %s, the origin of snapshots %s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr "Fyysinen taltio %s sisältää varausyksiköitä, jotka kuuluvat kohteeseen %s, joka on tilannekuvien %s lähde. Tilannekuvien lähteitä ei voi vielä siirtää, joten kohdetta %s ei voi poistaa."
+msgstr "Fyysinen taltio %s sisältää varausyksiköitä, jotka kuuluvat kohteeseen %s, joka on tilannevedoksien %s lähde. Tilannevedoksien lähteitä ei voi vielä siirtää, joten kohdetta %s ei voi poistaa."
 
 #: src/InputController.py:564
 #, python-format
 msgid "Logical Volume \"%s\" has snapshots that are not selected for removal. They must be removed as well."
-msgstr "Loogisella taltiolla ”%s” on tilannekuvia, joita ei ole valittu poistettaviksi. Myös ne täytyy poistaa."
+msgstr "Loogisella taltiolla ”%s” on tilannevedoksia, joita ei ole valittu poistettaviksi. Myös ne täytyy poistaa."
 
 #: src/InputController.py:579
 #, python-format
 msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr "”%s”, tilannekuvan ”%s” lähde, on poistettu poistolistalta."
+msgstr "”%s”, tilannevedoksen ”%s” lähde, on poistettu poistolistalta."
 
 #: src/InputController.py:610
 #, python-format
@@ -323,7 +323,7 @@ msgstr "Fyysinen taltio ”%s” sisältää varausyksiköitä, jotka kuuluvat p
 #: src/InputController.py:613
 #, python-format
 msgid "Physical Volume \"%s\" contains extents belonging to a snapshot or a snapshot's origin. Snapshots are not migratable, so %s is not removable."
-msgstr "Fyysinen taltio ”%s” sisältää varausyksiköitä, jotka kuuluvat tilannekuvaan tai tilannekuvan lähteeseen. Tilannekuvia ei voi siirtää, joten kohdetta %s ei voi poistaa."
+msgstr "Fyysinen taltio ”%s” sisältää varausyksiköitä, jotka kuuluvat tilannevedokseen tai tilannevedoksen lähteeseen. Tilannevedoksia ei voi siirtää, joten kohdetta %s ei voi poistaa."
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
@@ -358,7 +358,7 @@ msgstr "Asetukset"
 #: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr "Luo tilannekuva kohteesta %s"
+msgstr "Luo tilannevedos kohteesta %s"
 
 #: src/InputController.py:1356
 msgid "Create New Logical Volume"
@@ -367,7 +367,7 @@ msgstr "Luo uusi looginen taltio"
 #: src/InputController.py:1359
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr "Muokkaa kohdetta %s, joka on tilannekuva kohteesta %s"
+msgstr "Muokkaa kohdetta %s, joka on tilannevedos kohteesta %s"
 
 #: src/InputController.py:1362
 msgid "Edit Logical Volume"
@@ -383,7 +383,7 @@ msgstr "Lomitettuja loogisia taltioita ei voi peilata."
 
 #: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "Loogisia taltioita, joihin on liitetty tilannekuvia, ei voi vielä peilata."
+msgstr "Loogisia taltioita, joihin on liitetty tilannevedoksia, ei voi vielä peilata."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -693,9 +693,8 @@ msgid "Partition manually"
 msgstr "Osioi manuaalisesti"
 
 #: src/lvm_model.py:287
-#, fuzzy
 msgid "Multipath device"
-msgstr "RAID-laite"
+msgstr "Monipolkuinen (multipath) laite"
 
 #: src/lvm_model.py:290
 msgid "Note:"
@@ -723,15 +722,15 @@ msgstr "Peililevykuvien määrä:"
 
 #: src/lvm_model.py:798
 msgid "Snapshots:"
-msgstr "Tilannekuvat:"
+msgstr "Tilannevedokset:"
 
 #: src/lvm_model.py:804
 msgid "Snapshot origin:"
-msgstr "Tilannekuvan alkuperä:"
+msgstr "Tilannevedoksen alkuperä:"
 
 #: src/lvm_model.py:811
 msgid "Snapshot usage:"
-msgstr "Tilannekuvan käyttöaste:"
+msgstr "Tilannevedoksen käyttöaste:"
 
 #: src/lvm_model.py:834
 #: src/lvm_model.py:840
@@ -935,12 +934,12 @@ msgstr "Varausyksiköt, joita yrität valita, kuuluvat loogisen taltion %s peili
 #: src/renderer.py:199
 #, python-format
 msgid "The extents that you are attempting to select belong to %s, a snapshot of %s. Snapshots are not yet migratable, so the extents are not selectable."
-msgstr "Varausyksiköt, joita yrität valita, kuuluvat kohteeseen %s, joka on kohteen %s tilannekuva. Tilannekuvia ei voi vielä siirtää, joten varausyksiköitä ei voi valita."
+msgstr "Varausyksiköt, joita yrität valita, kuuluvat kohteeseen %s, joka on kohteen %s tilannevedos. Tilannevedoksia ei voi vielä siirtää, joten varausyksiköitä ei voi valita."
 
 #: src/renderer.py:201
 #, python-format
 msgid "The extents that you are attempting to select belong to a snapshot origin %s. Snapshot origins are not yet migratable, so the extents are not selectable."
-msgstr "Varausyksiköt, joita yrität valita, kuuluvat tilannekuvan lähteeseen %s. Tilannekuvan lähteitä ei voi vielä siirtää, joten varausyksiköitä ei voi valita."
+msgstr "Varausyksiköt, joita yrität valita, kuuluvat tilannevedoksen lähteeseen %s. Tilannevedoksen lähteitä ei voi vielä siirtää, joten varausyksiköitä ei voi valita."
 
 #: src/renderer.py:388
 #, python-format
@@ -1103,10 +1102,10 @@ msgstr "GFS2 (klusteroitu)"
 msgid "Stripe"
 msgstr "Lomitus"
 
+# tarkista
 #: src/Segment.py:68
-#, fuzzy
 msgid "Linear Mapping"
-msgstr "X Modifier Mapping"
+msgstr "Lineaarimuunnos"
 
 #: src/Segment.py:109
 msgid "Mirror"
@@ -1167,37 +1166,38 @@ msgid "Add Physical Volume to VG"
 msgstr "Lisää fyysinen taltio taltioryhmään"
 
 #: src/lvui.glade.h:13
-#, fuzzy
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr "Ei voitu lisätä ryhmää: ryhmä on jo olemassa"
+msgstr ""
+"Lisää olemassa olevaan\n"
+"taltioryhmään"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
 msgstr "Klusteroitu"
 
 #: src/lvui.glade.h:16
-#, fuzzy
 msgid ""
 "Create New\n"
 "Logical Volume"
-msgstr "Ei uutta arkiston osaa, poistutaan.\n"
+msgstr ""
+"Luo uusi\n"
+"taltioryhmä"
 
 #: src/lvui.glade.h:18
-#, fuzzy
 msgid "Create Snapshot"
-msgstr "Otosnimi"
+msgstr "Luo tilannevedos"
 
 #: src/lvui.glade.h:19
-#, fuzzy
 msgid ""
 "Create new \n"
 "Volume Group"
-msgstr "Napsauta tästä luodaksesi uuden ryhmän"
+msgstr ""
+"Luo uusi\n"
+"taltioryhmä"
 
 #: src/lvui.glade.h:21
-#, fuzzy
 msgid "Edit Properties"
 msgstr "Muokkaa ominaisuuksia"
 
@@ -1206,69 +1206,61 @@ msgid "Enter path of Block Device to initialize"
 msgstr "Syötä lohkolaitteen polku alustaaksesi"
 
 #: src/lvui.glade.h:23
-#, fuzzy
 msgid ""
 "Extend\n"
 "Volume Group"
-msgstr "Luo uusi ryhmä"
+msgstr ""
+"Laajenna\n"
+"taltioryhmää"
 
 #: src/lvui.glade.h:25
-#, fuzzy
 msgid "Extend Volume Group"
-msgstr "_Taltioryhmän nimi:"
+msgstr "Laajenna taltioryhmää"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Format"
-msgstr "Alusta"
+msgstr "Muoto"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize"
-msgstr "&Alusta"
+msgstr "Alusta"
 
 #: src/lvui.glade.h:28
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "%s: ei ole lohkolaite\n"
+msgstr "Alusta lohkolaite"
 
+# tarkista, mitä on entity
 #: src/lvui.glade.h:29
-#, fuzzy
 msgid "Initialize Entity"
-msgstr "HTML-entiteetti: %1"
+msgstr "Alusta levy"
 
 #: src/lvui.glade.h:30
-#, fuzzy
 msgid "Initialize _Block Device"
-msgstr "%s: ei ole lohkolaite\n"
+msgstr "Alusta _lohkolaite"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
 msgstr "kilo"
 
 #: src/lvui.glade.h:32
-#, fuzzy
 msgid "Logical Volume Management"
-msgstr "Asetetaan LVM:"
+msgstr "Looginen taltioiden hallinta"
 
 #: src/lvui.glade.h:33
-#, fuzzy
 msgid "Manage Volumes"
-msgstr "Loogiset taltiot"
+msgstr "Hallitse taltioita"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
 msgstr "Merkitse taltioryhmä ”klusteroiduksi”"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Palauta oletusäänenvoimakkuudet"
+msgstr "Loogisten taltioiden enimmäismäärä"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Ei riittävästi fyysisiä taltioita"
+msgstr "Fyysisten taltioiden enimmäismäärä"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1283,35 +1275,36 @@ msgstr ""
 "varausyksiköt taltiolta"
 
 #: src/lvui.glade.h:40
-#, fuzzy
 msgid "New Volume Group"
-msgstr "_Taltioryhmän nimi:"
+msgstr "Uusi taltioryhmä"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Vahvista fyysisen varausyksikön muutos"
+msgstr "Fyysisen varausyksikön koko"
 
 #: src/lvui.glade.h:42
-#, fuzzy
 msgid ""
 "Remove \n"
 "Logical Volume"
-msgstr "Luo looginen taltio"
+msgstr ""
+"Poista\n"
+"looginen taltio"
 
 #: src/lvui.glade.h:44
-#, fuzzy
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
-msgstr "Poista valittujen kuvien kommentit"
+msgstr ""
+"Poista valitut\n"
+"loogiset taltiot"
 
 #: src/lvui.glade.h:46
-#, fuzzy
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
-msgstr "Poista valittujen kuvien kommentit"
+msgstr ""
+"Poista valitut\n"
+"fyysiset taltiot"
 
 #: src/lvui.glade.h:48
 msgid ""
@@ -1322,40 +1315,36 @@ msgstr ""
 "taltioryhmästä"
 
 #: src/lvui.glade.h:50
-#, fuzzy
 msgid ""
 "Remove volume \n"
 "from LVM"
-msgstr "Luo taltioryhmä (LVM)"
+msgstr ""
+"Poista taltio\n"
+"LVM:stä"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
 msgstr "Valitse taltioryhmä, johon tämä fyysinen taltio lisätään:"
 
 #: src/lvui.glade.h:53
-#, fuzzy
 msgid "Some text"
-msgstr "Paikanpitäjäteksti."
+msgstr "Jotain tekstiä"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "_Taltioryhmän nimi:"
+msgstr "Taltioryhmän nimi"
 
 #: src/lvui.glade.h:55
-#, fuzzy
 msgid "_Reload"
-msgstr "Päi_vitä"
+msgstr "_Lataa uudelleen"
 
 #: src/lvui.glade.h:56
-#, fuzzy
 msgid "_Tools"
-msgstr "Työka_lut"
+msgstr "_Työkalut"
 
 #: src/lvui.glade.h:57
-#, fuzzy
 msgid "extend vg message:"
-msgstr "Encode Message Ignored"
+msgstr "laajenna taltioryhmää -viesti:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1378,62 +1367,52 @@ msgstr ""
 "512"
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Tiedostojärjestelmä"
+msgstr "<b>Tiedostojärjestelmä</b>"
 
 #: src/lv_edit_props.glade.h:11
-#, fuzzy
 msgid "<b>LV Properties</b>"
-msgstr "Käyttäjän ominaisuudet"
+msgstr "<b>Loogisen taltion ominaisuudet</b>"
 
 #: src/lv_edit_props.glade.h:12
-#, fuzzy
 msgid "<b>Size</b>"
 msgstr "<b>Koko</b>"
 
 #: src/lv_edit_props.glade.h:13
-#, fuzzy
 msgid "Add entry to /etc/fstab"
-msgstr "Lisää tietue automaattisesti tietokantaan"
+msgstr "Lisää tietue tiedostoon /etc/fstab"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Uusi osio vai looginen taltio?"
+msgstr "Luo uusi looginen taltio (LV)"
 
 #: src/lv_edit_props.glade.h:15
-#, fuzzy
 msgid "Filesystem is not resizable"
-msgstr "Protokolla %1 ei ole tiedostojärjestelmä"
+msgstr "Tiedostojärjestelmän kokoa ei voi muuttaa"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
 msgstr "Vapaa tila taltioryhmässä nimeltä"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "KP_Välilyönti"
+msgstr "Vapaata tilaa jäljellä nimiöllä"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Apuviivaston rakeisuus"
+msgstr "Kilotavujen rakeisuus"
 
 #: src/lv_edit_props.glade.h:19
-#, fuzzy
 msgid "LV name:"
-msgstr "Koko nimi:"
+msgstr "Loogisen taltion nimi:"
 
 #: src/lv_edit_props.glade.h:20
-#, fuzzy
 msgid "LV size"
-msgstr "_Koko (Mt):"
+msgstr "Loogisen taltion koko"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr "Tilannekuvien alaisten loogisien taltioiden kokoa ei voi muuttaa"
+msgstr "Tilannevedosten alaisten loogisien taltioiden kokoa ei voi muuttaa"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1456,56 +1435,48 @@ msgid "Mount point:"
 msgstr "Liitospiste:"
 
 #: src/lv_edit_props.glade.h:27
-#, fuzzy
 msgid "Mount when rebooted"
-msgstr "Liitä irrotettavat _mediat asemaan laitettaessa"
+msgstr "Liitä kun käynnistetään uudelleen"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "_Koko (Mt):"
+msgstr "Koon alku"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Loppusylint_eri:"
+msgstr "Koon loppu"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "Lomitettu"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "/Aikaa jäljellä"
+msgstr "Käytä jäljellä olevaa"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
 msgstr "levyä"
 
 #: src/migrate_extents.glade.h:1
-#, fuzzy
 msgid "<b>Destination</b>"
-msgstr "Kohde"
+msgstr "<b>Kohde</b>"
 
 #: src/migrate_extents.glade.h:2
-#, fuzzy
 msgid "<b>Migration Policy</b>"
-msgstr "Lähetyskäytäntö:"
+msgstr "<b>Siirtokäytäntö</b>"
 
 #: src/migrate_extents.glade.h:3
-#, fuzzy
 msgid "Anywhere - not implemented"
-msgstr "Ei toteutettu."
+msgstr "Missä tahansa - ei toteutettu."
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
 msgstr "Valitse automaattisesti fyysiset taltiot, joihin siirretään"
 
 #: src/migrate_extents.glade.h:5
-#, fuzzy
 msgid "Contiguous"
-msgstr "Väriltään yhtenäisten alueiden löytäminen"
+msgstr "Yhtenäinen"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
@@ -1528,9 +1499,8 @@ msgid "Inherit policy from Volume Group"
 msgstr "Peri tapa taltioryhmältä"
 
 #: src/migrate_extents.glade.h:11
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "Muunna muotoon %s"
+msgstr "Siirrä varausyksiköt"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
@@ -1549,7 +1519,6 @@ msgid "Only migrate extents belonging to LV"
 msgstr "Siirrä vain varausyksiköt, jotka kuuluvat loogiseen taltioon"
 
 #: src/migrate_extents.glade.h:16
-#, fuzzy
 msgid "Use common sense"
-msgstr "(Ei yhteisiä yhdyssanoja)"
+msgstr "Käytä tervettä järkeä"
 
