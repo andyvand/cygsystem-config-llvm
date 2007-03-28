@@ -1,21 +1,20 @@
-# translation of bg.po to Bulgarian
-# translation of system-config-lvm.po to Bulgarian
+# translation of system-config-lvm.pot to Bulgarian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Doncho N. Gunchev <mr700@globalnet.bg>, 2004, 2005.
 #
+# Doncho N. Gunchev <gunchev@gmail.com>, 2004, 2005, 2007.
 msgid ""
 msgstr ""
-"Project-Id-Version: bg\n"
+"Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2005-03-04 23:09+0200\n"
-"Last-Translator: Doncho N. Gunchev <mr700@globalnet.bg>\n"
-"Language-Team: Bulgarian <Bulgarian translators' team <dict@fsa-bg.org>>\n"
+"PO-Revision-Date: 2007-03-28 14:01+0300\n"
+"Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
+"Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:33
@@ -39,9 +38,9 @@ msgstr ""
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
-#, fuzzy, python-format
+#, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "Изберете към коя група томове да се добави този ФТ:"
+msgstr "Изберете към коя група томове да се добави %s:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -72,9 +71,9 @@ msgid "Uninitialized Disk Entity"
 msgstr "Не-инициализиран дисков елемент"
 
 #: src/InputController.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "Изберете дисков елемент за добавка към група томове %s:"
+msgstr "Изберете дисков елемент за добавяне групата томове %s:"
 
 #: src/InputController.py:92
 msgid ""
@@ -95,8 +94,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Група томове с име %s вече съществува. Моля изберете уникално име."
 
 #: src/InputController.py:98
@@ -109,10 +107,8 @@ msgstr "Необходимо е име за новата група томове
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
 
 #: src/InputController.py:104
 #, python-format
@@ -136,29 +132,32 @@ msgid ""
 msgstr "Броя физически томове в тази група стигна своя максимален брой."
 
 #: src/InputController.py:112
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr "Броя физически томове в тази група стигна своя максимален брой."
+msgstr ""
+"Максимум %s Физически Тома могат да бъдат добавени към Групата Томове "
+"преди достигане на лимита."
 
 #: src/InputController.py:114
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Група томове %s няма достатъчно свободно място за да поеме данните от %s. "
-"Възможно решение е добавянето на допълнителни физически томове към групата."
+"Група томове %s няма достатъчно свободно място нови логически томове. "
+"Възможно решение е добавянето на допълнителни физически томове към "
+"групата."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "Моментно състояние на моментно състояние не се поддръжа."
 
 #: src/InputController.py:117
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr ""
+msgstr "Моментно състояние на огледален логически том не се поддържа."
 
 #: src/InputController.py:119
 #, python-format
@@ -175,8 +174,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Недефинирано конвертиране на тип в model factory. Невъзможно е завършването "
 "на задачата."
@@ -227,15 +225,12 @@ msgid "%s extents"
 msgstr "%s разширения"
 
 #: src/InputController.py:138
-#, fuzzy
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
-"Създаване нова \n"
-"група томове"
+msgstr "Оставащо свободно място в групата томове:\n"
 
 #: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "Оставащо място за този том:\n"
 
 #: src/InputController.py:141
 msgid "Extents"
@@ -259,22 +254,20 @@ msgid "The %s should only contain number values"
 msgstr "%s следва да съдържа само цифрови стойности"
 
 #: src/InputController.py:147
-#, fuzzy
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"Полето максимален брой физически томове следва да съдържа само цели числа в "
-"интервала от 1 до 256"
+"Полето максимален брой физически томове следва да съдържа само "
+"цели числа в интервала от 1 до 256"
 
 #: src/InputController.py:148
-#, fuzzy
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"Полето максимален брой логически томове следва да съдържа само цели числа в "
-"интервала от 1 до 256"
+"Полето максимален брой логически томове следва да съдържа само цели числа "
+"в интервала от 1 до 256"
 
 #: src/InputController.py:150
 #, python-format
@@ -304,8 +297,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Напълно сигурен ли сте, че искате да махнете %s от група томове %s?"
 
 #: src/InputController.py:154
@@ -425,8 +417,7 @@ msgstr ""
 
 #: src/InputController.py:579
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 
 #: src/InputController.py:610
@@ -516,8 +507,7 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1545
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 
 #: src/InputController.py:1550
@@ -927,8 +917,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, fuzzy, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Съвсем сигурен ли сте, че искате да инициализирате дисковия елемент %s? "
 "Всички данни на това устройство/дял ще бъдат загубени."
@@ -1729,231 +1718,3 @@ msgstr ""
 msgid "Use common sense"
 msgstr ""
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Име на групата томове: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Форма за нова група томове"
-
-#~ msgid ""
-#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата vgextend не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата pvcreate не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата pvcreate не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата pvremove не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата lvremove не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата pvremove не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата vgcreate не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
-#~ "%s"
-#~ msgstr ""
-#~ "командата vgcreate не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата vgreduce не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#~ msgid ""
-#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "командата pvmove не успя. Опитана команда: \"%s\" - системно съобщение за "
-#~ "грешка: %s"
-
-#~ msgid ""
-#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "командата umount не успя. Опитана команда: \"%s\" - системно съобщение за "
-#~ "грешка: %s"
-
-#~ msgid ""
-#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
-#~ "\""
-#~ msgstr ""
-#~ "командата umount не успя. Опитана команда: \"%s\" - системно съобщение за "
-#~ "грешка: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата lvremove не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата pvcreate не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата vgcreate не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#, fuzzy
-#~ msgid ""
-#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "командата lvremove не успя. Опитана команда: \"%s\" - системно съобщение "
-#~ "за грешка: %s"
-
-#, fuzzy
-#~ msgid "Quering Volume Groups"
-#~ msgstr "Групи томове"
-
-#, fuzzy
-#~ msgid "Quering Logical Volumes"
-#~ msgstr "Логически том"
-
-#, fuzzy
-#~ msgid "Quering Physical Volumes"
-#~ msgstr "Физически том"
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
-
-#, fuzzy
-#~ msgid ""
-#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
-#~ "%s"
-#~ msgstr ""
-#~ "командата pvmove не успя. Опитана команда: \"%s\" - системно съобщение за "
-#~ "грешка: %s"
-
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "В полето за размер е въведена грешна стойност. Това поле следва да "
-#~ "съдържа цифрова стойност без букви и/или други символи."
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "Изисквания размер за новия логически том надвишава свободното място на "
-#~ "група томове %s. Свободното място е: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "Размер за поле на редуване"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "Брой полета за редуване"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 мегабайта"
-
-#~ msgid "Create New LV"
-#~ msgstr "Създаване нов ЛТ"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "Разширяване\n"
-#~ "логически том"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "Точка на монтиране (при празна ЛТ няма да се монтира):"
-
-#~ msgid "Name for new LV:"
-#~ msgstr "Име за нов ЛТ:"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "Брой полета за редуване: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr "Изберете дисков елемент за добавяне към групата томове:"
-
-#~ msgid "Size:"
-#~ msgstr "Размер:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "Размер на поле за редуване:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "Свободно място на ГТ1:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "Няма файлова система"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "Това разширение все още не е \n"
-#~ " инициализиран за употреба с МЛТ."
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "Този том не е зачислен \n"
-#~ " към група томове все още."
