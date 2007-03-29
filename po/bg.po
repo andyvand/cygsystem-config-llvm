@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-03-29 21:51+0300\n"
+"PO-Revision-Date: 2007-03-29 22:10+0300\n"
 "Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
 "Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
 "MIME-Version: 1.0\n"
@@ -385,6 +385,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Физическия том %s съдържа разширения принадлежащи на огледален дневник "
+"на логически том %s. Логическите томове с огледала все още не могат да се "
+"мигрират, което прави %s не-премахваем."
 
 #: src/InputController.py:367
 #, python-format
@@ -393,6 +396,9 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
+"Физическия том %s съдържа разширения принадлежащи на огледален образ "
+"на логически том %s. Логическите томове с огледала все още не могат да се "
+"мигрират, което прави %s не-премахваем."
 
 #: src/InputController.py:370
 #, python-format
@@ -400,6 +406,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
+"Физическия том %s съдържа разширения принадлежащи на %s, моментно "
+"състояние на %s. Моментните състояния все още не могат да се мигрират, "
+"което прави %s не-премахваем."
 
 #: src/InputController.py:375
 #, python-format
@@ -407,6 +416,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Физическия том %s съдържа разширения принадлежащи на %s, източника "
+"моментното състояние %s. Източниците на моментни състояния все още не "
+"могат да се мигрират, което прави %s не-премахваем."
 
 #: src/InputController.py:377
 #, python-format
@@ -414,6 +426,9 @@ msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
+"Физическия том %s съдържа разширения принадлежащи на %s, източника "
+"моментните състояния %s. Източниците на моментни състояния все още не "
+"могат да се мигрират, което прави %s не-премахваем."
 
 #: src/InputController.py:564
 #, python-format
@@ -421,11 +436,13 @@ msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
+"Логическия том \"%s\" има моментни състояния, които не са избрани за премахване. "
+"Трябва и те да бъдат премахнати."
 
 #: src/InputController.py:579
 #, python-format
 msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgstr "\"%s\", източника на моментно състояние \"%s\" бе изваден от списъка за премахване."
 
 #: src/InputController.py:610
 #, python-format
@@ -433,6 +450,8 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr ""
+"Физическия том \"%s\" съдържа разширения принадлежащи на огледало. "
+"Огледалата не могат да се мигрират, което прави %s не-премахваем."
 
 #: src/InputController.py:613
 #, python-format
@@ -440,29 +459,34 @@ msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
+"Физическия том \"%s\" съдържа разширения принадлежащи на моментно "
+"състояние или източник на такъв. Моментните състояния не могат да се "
+"мигрират, което прави %s не-премахваем."
 
 #: src/InputController.py:678
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "Указания път не съществува."
 
 #: src/InputController.py:685
 msgid "The path you specified is not a Block Device."
-msgstr ""
+msgstr "Указания път не е блоково устройство."
 
 #: src/InputController.py:756
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "Инициализацията на %s не успя"
 
 #: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
-msgstr ""
+msgstr "Първо трябва да се изберат разширения"
 
 #: src/InputController.py:1030
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
+"Няма достатъчно свободни разширения за изпълнение на миграцията. Добавянето "
+"на още физически томове би решило проблема."
 
 #: src/InputController.py:1192
 msgid "Migrate extents"
@@ -492,7 +516,7 @@ msgstr "Редакция на логически том"
 
 #: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "Лежащия отдолу мениджмънт на логически томове не поддържа огледала"
 
 #: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -500,7 +524,7 @@ msgstr "Изстисканите логически томове не могат
 
 #: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "Логически томове с асоциирани моментни състояния не могат да имат огледала все още."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -509,22 +533,29 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
+"Главното приложение на огледалата е, да защитят данните в случай на "
+"отказ на твърд диск. Да бъдат ли разположени огледалните образи на "
+"различни твърди дискове?"
 
 #: src/InputController.py:1545
 msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgstr "Налични са по-малко от 3 твърди диска със свободно място. Изключване на огледалата."
 
 #: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
+"Трябва да има свободно място на поне три физически тома за включване "
+"на огледалата"
 
 #: src/InputController.py:1558
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
+"Размера на логическия том бе настроен до максимално достъпния за "
+"огледала размер."
 
 #: src/InputController.py:1563
 #, python-format
