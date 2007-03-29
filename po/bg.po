@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-03-28 14:01+0300\n"
+"PO-Revision-Date: 2007-03-29 12:14+0300\n"
 "Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
 "Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
 "MIME-Version: 1.0\n"
@@ -279,7 +279,7 @@ msgstr ""
 "томове?"
 
 #: src/InputController.py:152
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -288,12 +288,12 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
-"Физическия том с име %s, който искате да премахнете, съдържа данни от активен"
-"(ни) логически дял(ове) разположени върху неговите разширения. Понеже той е "
-"единствения физически дял в групата томове, няма къде да бъдат преместени "
-"данните. Препоръчително е, или да добавите нов физически том преди "
-"премахването на този, или да премахнете логическите томове асоциирани с този "
-"физически том."
+"Физическия том с име %s, който искате да премахнете, съдържа данни от "
+"активни логически дялове разположени върху неговите разширения. Понеже "
+"той е единствения физически дял в групата томове, няма къде да бъдат "
+"преместени данните. Препоръчва се или да добавите нов физически том "
+"преди премахването на този, или да премахнете логическите томове "
+"асоциирани с този физически том."
 
 #: src/InputController.py:153
 #, python-format
@@ -332,31 +332,28 @@ msgstr ""
 "разширения са недостъпниe."
 
 #: src/InputController.py:157
-#, fuzzy
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"Модула dm-mirror или не е зареден в ядрото, или Вашето ядро не поддържа dm-"
-"mirror. Ако се поддържа, опитайте да изпълните\"modprobe dm-mirror\". В "
-"противен случай, операциите изискващи преместване на данни на физически "
-"разширения са недостъпниe."
+"Модула dm-snapshot или не е зареден в ядрото, или ядро Ви не поддържа "
+"dm-snapshot. Ако се поддържа, опитайте се да изпълните \"modprobe "
+"dm-snapshot\". В противен случай не може да се създават моментни систояния."
 
 #: src/InputController.py:159
-#, fuzzy, python-format
+#, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Напълно сигурен ли сте, че искате да премахнете логическия том %s?"
 
 #: src/InputController.py:160
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"ВАЖНО ПРЕДУПРЕЖДЕНИЕ: Логическия том %s съдържа %s файлова система, която в "
-"момента е монтирана в %s. Абсолютно сигурни ли сте, че желаете да се "
-"откажете от данните на тази файлова система?"
+"Логическия том %s съдържа %s файлова система. Всички данни от нея ще бъдат "
+"загубени! Абсолютно сигурни ли сте, че желаете да премахнете %s?"
 
 #: src/InputController.py:161
 #, python-format
@@ -458,33 +455,30 @@ msgid ""
 msgstr ""
 
 #: src/InputController.py:1192
-#, fuzzy
 msgid "Migrate extents"
-msgstr "%s разширения"
+msgstr "Мигриране на разширения"
 
 #: src/InputController.py:1320
 msgid "Options"
-msgstr ""
+msgstr "Опции"
 
 #: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "Създаване моментно състояние на %s"
 
 #: src/InputController.py:1356
-#, fuzzy
 msgid "Create New Logical Volume"
 msgstr "Създаване на нов логически том"
 
 #: src/InputController.py:1359
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "Редакция на %s, моментно състояние на %s"
 
 #: src/InputController.py:1362
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "Логически том"
+msgstr "Редакция на логически том"
 
 #: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
@@ -589,76 +583,52 @@ msgid "Do you want to migrate specified extents?"
 msgstr ""
 
 #: src/CommandHandler.py:55
-#, fuzzy
 msgid "Creating Logical Volume"
-msgstr ""
-"Създаване на нов\n"
-"логически том"
+msgstr "Създаване на логически том"
 
 #: src/CommandHandler.py:74 src/CommandHandler.py:91
-#, fuzzy
 msgid "Resizing Logical Volume"
-msgstr "Логически том"
+msgstr "Преоразмеряване на логически том"
 
 #: src/CommandHandler.py:124
-#, fuzzy
 msgid "Adding Mirror to Logical Volume"
-msgstr "Логически том"
+msgstr "Добавяне на огледало към логически том"
 
 #: src/CommandHandler.py:135
-#, fuzzy
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
-"Премахване \n"
-"логически том"
+msgstr "Премахване на огледало на логически том"
 
 #: src/CommandHandler.py:160
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "Физически том"
+msgstr "Инициализиране на физически том"
 
 #: src/CommandHandler.py:171
-#, fuzzy
 msgid "Adding Physical Volume to Volume Group"
-msgstr "Добавяне на физически том към ГТ"
+msgstr "Добавяне на физически том към група томове"
 
 #: src/CommandHandler.py:203
-#, fuzzy
 msgid "Creating Volume Group"
-msgstr ""
-"Създаване нова \n"
-"група томове"
+msgstr "Създаване на група томове"
 
 #: src/CommandHandler.py:225
-#, fuzzy
 msgid "Removing Volume Group"
-msgstr "Нова група томове"
+msgstr "Премахване на група томове"
 
 #: src/CommandHandler.py:235
-#, fuzzy
 msgid "Removing Physical Volume"
-msgstr "Физически том"
+msgstr "Премахване на физически том"
 
 #: src/CommandHandler.py:246
-#, fuzzy
 msgid "Removing Logical Volume"
-msgstr ""
-"Премахване \n"
-"логически том"
+msgstr "Премахване на логически том"
 
 #: src/CommandHandler.py:258
-#, fuzzy
 msgid "Renaming Logical Volume"
-msgstr ""
-"Премахване \n"
-"логически том"
+msgstr "Преименуване на логически том"
 
 #: src/CommandHandler.py:280
-#, fuzzy
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
-"Премахване том от\n"
-"група томове"
+msgstr "Премахване на физически том от група томове"
 
 #: src/CommandHandler.py:315
 msgid "Migrating Extents"
@@ -777,9 +747,8 @@ msgid "Mount Point:   "
 msgstr "Точка на монтиране:   "
 
 #: src/lvm_model.py:84
-#, fuzzy
 msgid "Mount Point when Rebooted:   "
-msgstr "Точка на монтиране:   "
+msgstr "Точка на монтиране след рестарт:   "
 
 #: src/lvm_model.py:85
 msgid "File System:   "
@@ -814,9 +783,8 @@ msgid "PV UUID:   "
 msgstr "ФТ UUID:   "
 
 #: src/lvm_model.py:96
-#, fuzzy
 msgid "Not initializable:"
-msgstr "Неинициализиран"
+msgstr "Неинициализируем:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -836,23 +804,20 @@ msgid "Autopartition failure"
 msgstr ""
 
 #: src/lvm_model.py:251
-#, fuzzy
 msgid "Partition manually"
-msgstr "Тип дял:   "
+msgstr "Ръчно разделяне на дялове"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
 msgstr ""
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Note:"
-msgstr "Формат:   "
+msgstr "Забележка:"
 
 #: src/lvm_model.py:290
-#, fuzzy
 msgid "Initialize manually"
-msgstr "Инициал. на елемент"
+msgstr "Ръчна инициализация"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
@@ -867,9 +832,8 @@ msgid "False"
 msgstr ""
 
 #: src/lvm_model.py:795
-#, fuzzy
 msgid "Number of mirror images:"
-msgstr "Брой полета за редуване:   "
+msgstr "Брой огледални образи:"
 
 #: src/lvm_model.py:798
 msgid "Snapshots:"
@@ -885,9 +849,8 @@ msgstr ""
 
 #: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
 #: src/lvm_model.py:899
-#, fuzzy
 msgid "/   Root Filesystem"
-msgstr "Няма файлова система"
+msgstr "/   Главна файлова система"
 
 #: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
@@ -916,11 +879,9 @@ msgid ""
 msgstr ""
 
 #: src/lvmui_constants.py:54
-#, fuzzy, python-format
+#, python-format
 msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"Съвсем сигурен ли сте, че искате да инициализирате дисковия елемент %s? "
-"Всички данни на това устройство/дял ще бъдат загубени."
+msgstr "Съвсем сигурен ли сте, че искате да инициализирате %s свободно масто на диск %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -951,10 +912,10 @@ msgid "Unable to process request"
 msgstr ""
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
 msgstr ""
-"командата pvmove не успя. Опитана команда: \"%s\" - системно съобщение за "
+"командата %s не успя. Опитана команда: \"%s\" - системно съобщение за "
 "грешка: %s"
 
 #: src/lvmui_constants.py:84
@@ -970,28 +931,25 @@ msgid "Unpartitioned space"
 msgstr ""
 
 #: src/lvmui_constants.py:88
-#, fuzzy, python-format
+#, python-format
 msgid "Unpartitioned space on %s"
 msgstr "Свободно място на %s"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
-msgstr "B"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-#, fuzzy
 msgid "MB"
-msgstr "B"
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
-#, fuzzy
 msgid "KB"
-msgstr "B"
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "байта"
 
 #. File System Types
 #: src/lvmui_constants.py:97
@@ -1063,7 +1021,7 @@ msgstr "Не е избран том"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "Няколко избора"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:49
 msgid "Logical View"
@@ -1126,9 +1084,8 @@ msgid "Snapshot"
 msgstr ""
 
 #: src/renderer.py:540
-#, fuzzy
 msgid "extent view"
-msgstr "разширения"
+msgstr "преглед на разширенията"
 
 #: src/Volume_Tab_View.py:45
 msgid "Volume Groups"
@@ -1243,9 +1200,8 @@ msgstr ""
 "грешка: %s"
 
 #: src/Filesystem.py:143
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Няма файлова система"
+msgstr "Непозната файлова система"
 
 #: src/Filesystem.py:374
 msgid "GFS (local)"
@@ -1265,24 +1221,23 @@ msgstr ""
 
 #: src/Filesystem.py:510 src/Filesystem.py:754
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "Липсва име на клъстер"
 
 #: src/Filesystem.py:513 src/Filesystem.py:757
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "Липсва GFS име"
 
 #: src/Filesystem.py:618
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (локално)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (клъстер)"
 
 #: src/Segment.py:44
-#, fuzzy
 msgid "Stripe"
-msgstr "редуващ се"
+msgstr "Парче"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
@@ -1290,12 +1245,12 @@ msgstr "Линейна връзка"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "Огледало"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Тип дял:   "
+msgstr "Дял %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1378,9 +1333,8 @@ msgstr ""
 "група томове"
 
 #: src/lvui.glade.h:21
-#, fuzzy
 msgid "Edit Properties"
-msgstr "Свойства на"
+msgstr "Редакция на свойствата"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
@@ -1399,19 +1353,16 @@ msgid "Extend Volume Group"
 msgstr "Разширяване на групата"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Format"
-msgstr "Формат:   "
+msgstr "Формат"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize"
-msgstr "Неинициализиран"
+msgstr "Инициализация"
 
 #: src/lvui.glade.h:28
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Инициал. на елемент"
+msgstr "Инициализация на блоково устройство"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
@@ -1438,14 +1389,12 @@ msgid "Mark Volume Group as 'clustered'"
 msgstr ""
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "Максимум логически томове: "
+msgstr "Максимум логически томове"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "Максимум физически томове: "
+msgstr "Максимум физически томове"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1464,9 +1413,8 @@ msgid "New Volume Group"
 msgstr "Нова група томове"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "Размер на физическо разширение: "
+msgstr "Размер на физическо разширение"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1517,9 +1465,8 @@ msgid "Some text"
 msgstr ""
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "Име на група томове:   "
+msgstr "Име на група томове"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1546,9 +1493,8 @@ msgid ""
 msgstr ""
 
 #: src/lv_edit_props.glade.h:10
-#, fuzzy
 msgid "<b>Filesystem</b>"
-msgstr "Файлова система: "
+msgstr "<b>Файлова система</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
@@ -1563,9 +1509,8 @@ msgid "Add entry to /etc/fstab"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "Създаване на нов логически том"
+msgstr "Създаване на нов логически том (ЛТ)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1584,9 +1529,8 @@ msgid "Free space remaining label"
 msgstr "Ползване оставащото място"
 
 #: src/lv_edit_props.glade.h:18
-#, fuzzy
 msgid "Kilobytes granularity"
-msgstr "Килобайта"
+msgstr "Гранулярност в килобайта"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
@@ -1617,32 +1561,28 @@ msgid "Mount"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:26
-#, fuzzy
 msgid "Mount point:"
-msgstr "Точка на монтиране:   "
+msgstr "Точка на монтиране:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
 msgstr ""
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "Размер"
+msgstr "Нач.р-р"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "Размер"
+msgstr "Кр.р-р"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
 msgstr "редуващ се"
 
 #: src/lv_edit_props.glade.h:31
-#, fuzzy
 msgid "Use remaining"
-msgstr "Ползване оставащото място"
+msgstr "Ползване на остатъка"
 
 #: src/lv_edit_props.glade.h:32
 #, fuzzy
@@ -1691,9 +1631,8 @@ msgstr ""
 "група томове"
 
 #: src/migrate_extents.glade.h:11
-#, fuzzy
 msgid "Migrate Extents"
-msgstr "разширения"
+msgstr "Мигриране на разширения"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
@@ -1708,11 +1647,8 @@ msgid "Normal"
 msgstr ""
 
 #: src/migrate_extents.glade.h:15
-#, fuzzy
 msgid "Only migrate extents belonging to LV"
-msgstr ""
-"Мигриране избраните\n"
-"разширения от тома"
+msgstr "Мигриране само разширенията на ЛТ"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
