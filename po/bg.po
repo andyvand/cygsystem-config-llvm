@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-03-29 22:10+0300\n"
+"PO-Revision-Date: 2007-03-29 22:54+0300\n"
 "Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
 "Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
 "MIME-Version: 1.0\n"
@@ -385,7 +385,7 @@ msgid ""
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
-"Физическия том %s съдържа разширения принадлежащи на огледален дневник "
+"Физическия том %s съдържа разширения принадлежащи на журнал на огледало "
 "на логически том %s. Логическите томове с огледала все още не могат да се "
 "мигрират, което прави %s не-премахваем."
 
@@ -516,7 +516,7 @@ msgstr "Редакция на логически том"
 
 #: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr "Лежащия отдолу мениджмънт на логически томове не поддържа огледала"
+msgstr "Стоящото отдолу управление на логически томове не поддържа огледала"
 
 #: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -563,50 +563,54 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
+"Няма достатъчно място за добавяне на огледало. Размера на логическия том трябва "
+"да бъде намален до максимум %s или бъдат добавени физическите томове."
 
 #: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "Имената, започващи с \"snapshot\" or \"pvmove\", са запазени ключови думи."
 
 #: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "Имената, съдържащи \"_mlog\" или \"_mimage\", са запазени ключови думи."
 
 #: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
-msgstr ""
+msgstr "Имената, започващи с \"-\", са невалидни"
 
 #: src/InputController.py:1933
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "Името не може да бъде нито \".\", нито \"..\""
 
 #: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "Не са позволени празни пространства в името на логически том"
 
 #: src/InputController.py:1942
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "Невалиден знак \"%s\" в името на логическия том"
 
 #: src/InputController.py:1962
 msgid "Please specify mount point"
-msgstr ""
+msgstr "Моля укажете точка на монтиране"
 
 #: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
+msgstr "Да се обнови ли ext2 до ext3 запазвайки всички данни на логическия том?"
 
 #: src/InputController.py:2062
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
+"Смяната на файловата система ще разруши всички данни на логическия том! "
+"Сигурни ли сте, че искате да продължите?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "Огледалото не бе създадено. Приключване на останалите задачи."
 
 #. create mirror
 #: src/InputController.py:2166
@@ -614,14 +618,17 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
+"Лежащото отдолу управление на логически томове не поддържа "
+"добавяне на огледала към съществуващи логически томове. "
+"Приключване на оставащите задачи."
 
 #: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "Някои разширения трябва да се мигрират за да се добави огледало."
 
 #: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "Да бъдат ли мигрирани указаните разширения?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
@@ -673,15 +680,15 @@ msgstr "Премахване на физически том от група то
 
 #: src/CommandHandler.py:315
 msgid "Migrating Extents"
-msgstr ""
+msgstr "Мигриране на разширения"
 
 #: src/CommandHandler.py:327
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "Приключване мигрирането на разширения"
 
 #: src/CommandHandler.py:378
 msgid "Rereading partition table"
-msgstr ""
+msgstr "Преаранжиране таблицата на дяловете"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -829,20 +836,20 @@ msgstr "Неинициализируем:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
-msgstr ""
+msgstr "Разширен дял"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "Swap дял, в момента в употреба"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "Чужд дял за начално зареждане"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "Провал на автоматичното разделяне на дялове"
 
 #: src/lvm_model.py:251
 msgid "Partition manually"
@@ -850,7 +857,7 @@ msgstr "Ръчно разделяне на дялове"
 
 #: src/lvm_model.py:287
 msgid "Multipath device"
-msgstr ""
+msgstr "Устройство с няколко достъпа (multipath)"
 
 #: src/lvm_model.py:290
 msgid "Note:"
@@ -862,15 +869,15 @@ msgstr "Ръчна инициализация"
 
 #: src/lvm_model.py:733
 msgid "Clustered:   "
-msgstr ""
+msgstr "В клъстер:   "
 
 #: src/lvm_model.py:735
 msgid "True"
-msgstr ""
+msgstr "Истина"
 
 #: src/lvm_model.py:737
 msgid "False"
-msgstr ""
+msgstr "Лъжа"
 
 #: src/lvm_model.py:795
 msgid "Number of mirror images:"
@@ -878,15 +885,15 @@ msgstr "Брой огледални образи:"
 
 #: src/lvm_model.py:798
 msgid "Snapshots:"
-msgstr ""
+msgstr "Моментни състояния:"
 
 #: src/lvm_model.py:804
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "Източник на състоянието:"
 
 #: src/lvm_model.py:811
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "Използване на състоянието:"
 
 #: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
 #: src/lvm_model.py:899
@@ -895,7 +902,7 @@ msgstr "/   Главна файлова система"
 
 #: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
-msgstr ""
+msgstr "Няма"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -904,6 +911,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
+"Всички данни на дисковия елемент %s ще бъдат загубени! Сигурни ли сте, "
+"че искате да го инициализирате?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -911,6 +920,9 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
+"Дисковия елемент %s съдържа файлова система %s. Всички данни в нея "
+"ще бъдат изгубени! Сигурни ли сте, че искате да инициализирате "
+"дисковия елемент %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -918,6 +930,9 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
+"Дисковия елемент %s съдържа данни от директория %s. Всички данни, от "
+"нея, ще бъдат загубени! Сигурни ли сте, че искате да инициализирате "
+"дисковия елемент %s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -931,10 +946,13 @@ msgid ""
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
 msgstr ""
+"Предстои инициализиране на не-разделен на дялове диск%s. Препоръчително е, "
+"въпреки че не се изисква, да бъде създаден дял на него. Да бъде ли създаден "
+"един дял, обхващащ цялото устройство?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "Презареждане управлението на логически томове. Моля изчакайте."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -943,14 +961,17 @@ msgid ""
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
 msgstr ""
+"Changes will take effect after computer is restarted. If device %s is used, "
+"before restart, data corruption WILL occur. It is advisable to restart your "
+"computer now."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "Дневник на огледалата"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "Не може да бъде обработена заявката"
 
 #: src/lvmui_constants.py:65
 #, python-format
@@ -965,11 +986,11 @@ msgstr "Свободно"
 
 #: src/lvmui_constants.py:85
 msgid "Free space"
-msgstr ""
+msgstr "Свободно място"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "Незаделено място"
 
 #: src/lvmui_constants.py:88
 #, python-format
@@ -1087,6 +1108,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Разширенията, които се опитвате да изберете, принадлежат на журнал на "
+"огледало на логически том %s. Логически томове с огледало все още не могат "
+"да бъдат мигрирани, което прави разширенията неизбираеми."
 
 #: src/renderer.py:197
 #, python-format
@@ -1095,6 +1119,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
+"Разширенията, които се опитвате да изберете, принадлежат на образ на "
+"огледало на логически том %s. Логически томове с огледало все още не могат "
+"да бъдат мигрирани, което прави разширенията неизбираеми."
 
 #: src/renderer.py:199
 #, python-format
@@ -1102,6 +1129,9 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
+"Разширенията, които се опитвате да изберете, принадлежат на %s, "
+"моментно състояние на %s. Моментните състояния все още не могат "
+"да бъдат мигрирани, което прави разширенията неизбираеми."
 
 #: src/renderer.py:201
 #, python-format
@@ -1110,19 +1140,22 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
+"Разширенията, които се опитвате да изберете, принадлежат на източник "
+"%s на моментно състояние. Моментните състояния все още не могат "
+"да бъдат мигрирани, което прави разширенията неизбираеми."
 
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "Моментно състояние на %s"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "Източник"
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "Моментно състояние"
 
 #: src/renderer.py:540
 msgid "extent view"
@@ -1146,6 +1179,9 @@ msgid ""
 "Massive data corruption may occur.\n"
 "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Блокировките за управлението на логически томове са изключени!!! \n"
+"Може да възникнат масивни повреди на данните.\n"
+"Включете блокировките (locking_type=1 или 2 в /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:68
 msgid ""
@@ -1154,6 +1190,11 @@ msgid ""
 "service clvmd start \n"
 "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Управлението на логически томове е настроено да ползва механизъм за "
+"блокировка от клъстер, но демона clvmd не работи. Трябва да се стартира "
+"демона с:\n"
+"service clvmd start \n"
+"или изключи блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:72
 msgid ""
@@ -1162,6 +1203,10 @@ msgid ""
 "Either wait until cluster is quorate or turn off cluster locking "
 "(locking_type=1 in /etc/lvm/lvm.conf)."
 msgstr ""
+"Управлението на логически томове е настроено да ползва механизъм за "
+"блокировка от клъстер, клъстера не е в състояние на кворум:\n"
+"Трябва да се изчака клъстера да постигне кворум или да се изключи "
+"блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
 
 #: src/Volume_Tab_View.py:75
 #, python-format
