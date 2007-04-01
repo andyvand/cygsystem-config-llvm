@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-02-11 21:47+0800\n"
+"PO-Revision-Date: 2007-04-01 18:19+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1215,9 +1215,8 @@ msgstr ""
 "Baru"
 
 #: src/lvui.glade.h:18
-#, fuzzy
 msgid "Create Snapshot"
-msgstr "Cipta Petikan %s"
+msgstr "Cipta Snapshot"
 
 #: src/lvui.glade.h:19
 msgid ""
@@ -1252,14 +1251,12 @@ msgid "Format"
 msgstr "Format"
 
 #: src/lvui.glade.h:27
-#, fuzzy
 msgid "Initialize"
-msgstr "Mulakan Entiti"
+msgstr "Mulakan"
 
 #: src/lvui.glade.h:28
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "Peranti Blok Rangkaian GFS"
+msgstr "Mulakan Peranti Blok"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
