@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-04-01 18:19+0800\n"
+"PO-Revision-Date: 2007-04-08 23:32+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1123,9 +1123,8 @@ msgid "GFS2 (local)"
 msgstr "CDROM lokal"
 
 #: src/Filesystem.py:716
-#, fuzzy
 msgid "GFS2 (clustered)"
-msgstr "Melekap sistemfail GFS2: "
+msgstr "GFS2 (gugusan)"
 
 #: src/Segment.py:44
 msgid "Stripe"
@@ -1140,9 +1139,9 @@ msgid "Mirror"
 msgstr "Cermin"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "Partisyen"
+msgstr "Partisyen %s"
 
 #: src/lvui.glade.h:1
 #: src/lv_edit_props.glade.h:1
@@ -1202,9 +1201,8 @@ msgstr ""
 "sedia ada"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS - Global File System"
+msgstr "Gugusan"
 
 #: src/lvui.glade.h:16
 msgid ""
