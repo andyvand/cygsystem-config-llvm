@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2007-04-08 23:32+0800\n"
+"PO-Revision-Date: 2007-04-14 23:21+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1107,20 +1107,17 @@ msgstr "Nama pengguna '%s' mengandungi aksara tidak sah pada kedudukan %d."
 
 #: src/Filesystem.py:510
 #: src/Filesystem.py:754
-#, fuzzy
 msgid "Missing Cluster Name"
-msgstr "Kehilangan Nama Pengguna"
+msgstr "Nama Gugusan Tiada"
 
 #: src/Filesystem.py:513
 #: src/Filesystem.py:757
-#, fuzzy
 msgid "Missing GFS Name"
-msgstr "Kehilangan Nama Pengguna"
+msgstr "Nama GFS Tiada"
 
 #: src/Filesystem.py:618
-#, fuzzy
 msgid "GFS2 (local)"
-msgstr "CDROM lokal"
+msgstr "GFS2 (tempatan)"
 
 #: src/Filesystem.py:716
 msgid "GFS2 (clustered)"
