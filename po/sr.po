@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-12-14 13:56-0500\n"
-"Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
-"Language-Team: Serbian (sr) <fedora@prevod.org>\n"
+"PO-Revision-Date: 2007-05-01 23:24-0000\n"
+"Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
+"Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 0.10.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
@@ -375,14 +376,14 @@ msgstr ""
 "бити изгубљени! Да ли сте сасвим сигурни да желите уклонити логички диск %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Да би се група дискова могла безбедно користити у учвореном окружењу, lvm2-"
-"cluster пакет мора бити инсталиран, и clvmd сервис мора да је покренут"
+"cluster пакет мора бити инсталиран, мора се извршити „lvmconf --enable-"
+"cluster“ и clvmd сервис мора бити покренут"
 
 #: src/InputController.py:365
 #, python-format
@@ -912,12 +913,11 @@ msgstr "Ништа"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI адреса:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ID система:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1711,54 +1711,3 @@ msgstr "Само пресели опсеге који припадају ЛД-у
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Користи разум"
-
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Закључавање LVM-а је неомогућено!!! \n"
-#~ "Масовна корупција података се може догодити.\n"
-#~ "Омогући закључавање (locking_type=1 или 2 у /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM је подешен да користи Закључавање чворова механизам, али clvdm демон "
-#~ "није покренут. Покрените демон са командом:\n"
-#~ "service clvmd start \n"
-#~ "или, угасите закључавање чвора (locking_type=1 у /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM је подешен да користи Закључавање чвора механизам, али чвор нијеу "
-#~ "кворуму.\n"
-#~ "Или сачекајте да чвор уђе у кворум или искључите закључавање чвора "
-#~ "(locking_type=1 у /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s подржава само закључавање засновано на датотекама и чворовима "
-#~ "(locking_type=1 или 2 у /etc/lvm/lvm.conf)."
-
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Име за групу дискова: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Нови образац за групу дискова"
-
-#~ msgid ""
-#~ "* In this release, mirroring support is \n"
-#~ "available as a Technology Preview"
-#~ msgstr ""
-#~ "* У овом издању, подршка за пресликавање \n"
-#~ "је доступна као преглед будуће технологије"
