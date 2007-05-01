@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-07-12 19:13+0100\n"
+"PO-Revision-Date: 2007-05-01 20:35+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -380,15 +380,11 @@ msgstr ""
 "perdidos! Tem mesmo a certeza que deseja remover o volume lógico %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
-msgstr ""
-"Para o Grupo de Volumes poder ser usado em segurança num ambiente de "
-"'cluster', o RPM do lvm2-cluster deverá estar instalado e o serviço clvmd "
-"deverá estar a correr"
+msgstr "Para o Grupo de Volumes poder ser usado em segurança num ambiente de 'cluster', o RPM do lvm2-cluster deverá estar instalado, deverá ser executado o programa `lvmconf --enable-cluster` e o serviço clvmd deverá estar a correr"
 
 #: src/InputController.py:365
 #, python-format
@@ -925,12 +921,11 @@ msgstr "Nenhum"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "Endereço SCSI:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ID do sistema:   "
+msgstr "ID de SCSI:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
