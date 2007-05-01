@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2006-07-12 19:13+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <morais@kde.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-POFile-SpellExtra: conf lvm Clusters Cluster\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -380,15 +380,17 @@ msgstr ""
 "perdidos! Tem mesmo a certeza que deseja remover o volume lógico %s?"
 
 #: src/InputController.py:306
+#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
 "Para o Grupo de Volumes poder ser usado em segurança num ambiente de "
 "'cluster', o RPM do lvm2-cluster deverá estar instalado e o serviço clvmd "
 "deverá estar a correr"
 
-#: src/InputController.py:364
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -399,7 +401,7 @@ msgstr ""
 "('mirror') do volume lógico %s. Os volumes lógicos replicados ainda não "
 "podem ser migrados, como tal o %s não pode ser removido."
 
-#: src/InputController.py:367
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -410,7 +412,7 @@ msgstr ""
 "('mirror') do volume lógico %s. Os volumes lógicos replicados ainda não "
 "podem ser migrados, como tal o %s não pode ser removido."
 
-#: src/InputController.py:370
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -419,7 +421,7 @@ msgstr ""
 "O volume físico %s contém extensões que pertencem a %s, uma imagem de %s. As "
 "imagens ainda não podem ser migradas, como tal o %s não pode ser removido."
 
-#: src/InputController.py:375
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -429,7 +431,7 @@ msgstr ""
 "%s. Os originais das imagens ainda não podem ser migrados, como tal o %s não "
 "pode ser removido."
 
-#: src/InputController.py:377
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -439,7 +441,7 @@ msgstr ""
 "imagens %s. Os originais das imagens ainda não podem ser migrados, como tal "
 "o %s não pode ser removido."
 
-#: src/InputController.py:564
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -448,14 +450,14 @@ msgstr ""
 "O volume lógico \"%s\" tem imagens que não estão seleccionadas para serem "
 "removidas. Elas serão removidas também."
 
-#: src/InputController.py:579
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "O \"%s\", o original da imagem \"%s\", foi retirado da lista de remoção."
 
-#: src/InputController.py:610
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -465,7 +467,7 @@ msgstr ""
 "('mirror'). As réplicas não podem ser migradas, como tal o %s não pode ser "
 "removido."
 
-#: src/InputController.py:613
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -475,24 +477,24 @@ msgstr ""
 "original de uma imagem. As imagens não podem ser migradas, como tal o %s não "
 "pode ser removido."
 
-#: src/InputController.py:678
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "O local que indicou não existe."
 
-#: src/InputController.py:685
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "O local que indicou não é um dispositivo em bloco."
 
-#: src/InputController.py:756
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "A inicialização do %s foi mal-sucedida"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "Seleccione por favor algumas extensões primeiro"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -500,48 +502,48 @@ msgstr ""
 "Não existem extensões suficientes para efectuar a migração necessária. A "
 "adição de mais volumes físicos poderia resolver o problema."
 
-#: src/InputController.py:1192
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "Migrar as extensões"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "Opções"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Criar uma Imagem de %s"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "Criar um Novo Volume Lógico"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Editar o %s, uma Imagem de %s"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "Editar o Volume Lógico"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "A Gestão de Volumes Lógicos subjacente não suporta a replicação"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Os volumes lógicos repartidos ('striped') não podem ser replicados."
 
-#: src/InputController.py:1529
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "Os volumes lógicos com imagens associadas ainda não podem ser replicados."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1536
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -550,14 +552,14 @@ msgstr ""
 "disco rígido. Deseja colocar as imagens das réplicas em discos rígidos "
 "diferentes?"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Estão disponíveis menos de 3 discos rígidos com espaço livre. A desactivar a "
 "replicação."
 
-#: src/InputController.py:1550
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -565,7 +567,7 @@ msgstr ""
 "Terá de existir espaço livre em pelo menos três volumes físicos para activar "
 "a replicação"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -573,7 +575,7 @@ msgstr ""
 "O tamanho dos volumes lógicos foi ajustado para o tamanho máximo disponível "
 "das réplicas."
 
-#: src/InputController.py:1563
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -582,42 +584,42 @@ msgstr ""
 "Não existe espaço livre suficiente para adicionar a replicação. Reduza o "
 "tamanho do volume lógico para pelo menos %s ou adicione volumes físicos."
 
-#: src/InputController.py:1927
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Os nomes começados por \"snapshot\" ou \"pvmove\" são palavras reservadas."
 
-#: src/InputController.py:1929
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "Os nomes que contêm \"_mlog\" ou \"_mimage\" são palavras reservadas."
 
-#: src/InputController.py:1931
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Os nomes que começam por \"-\" são inválidos"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "O nome não poderá ser \".\" nem \"..\""
 
-#: src/InputController.py:1939
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Os espaços em branco não são permitidos nos nomes dos volumes lógicos"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "O carácter \"%s\" é inválido nos nomes dos volumes lógicos"
 
-#: src/InputController.py:1962
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "Indique por favor o ponto de montagem"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "Deseja actualizar o ext2 para ext3, preservando os dados no volume lógico?"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -626,12 +628,12 @@ msgstr ""
 "lógico! Tem a certeza que deseja prosseguir?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2163
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "A réplica não foi criada. A completar as tarefas restantes."
 
 #. create mirror
-#: src/InputController.py:2166
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
@@ -639,11 +641,11 @@ msgstr ""
 "O LVM subjacente não suporta a adição de réplicas aos Volumes Lógicos "
 "existentes. A terminar as tarefas restantes."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "Para adicionar a replicação, algumas extensões terão de ser migradas."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "Deseja migrar as extensões indicadas?"
 
@@ -683,27 +685,27 @@ msgstr "A Remover o Grupo de Volumes"
 msgid "Removing Physical Volume"
 msgstr "A Remover o Volume Físico"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "A Remover o Volume Lógico"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "A Mudar o Nome do Volume Lógico"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "A Remover Volume Físico do Grupo de Volumes"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "A Migrar as Extensões"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "A Completar a Migração da Extensão"
 
-#: src/CommandHandler.py:378
+#: src/CommandHandler.py:383
 msgid "Rereading partition table"
 msgstr "A ler de novo a tabela de partições"
 
@@ -868,58 +870,67 @@ msgstr "Partição de arranque legada"
 msgid "Autopartition failure"
 msgstr "Erro de particionamento automático"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "Particionar manualmente"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "Dispositivo Multi-Local"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "Nota:"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "Inicializar manualmente"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "Em 'cluster':   "
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743
 msgid "True"
 msgstr "Verdadeiro"
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "Falso"
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "Número de imagens de réplicas:"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "Imagens:"
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "Original da imagem:"
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "Utilização da imagem:"
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/  Sistema de Ficheiros de Raiz"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "Nenhum"
+
+#: src/lvm_model.py:964
+msgid "SCSI Address:  "
+msgstr ""
+
+#: src/lvm_model.py:966
+#, fuzzy
+msgid "SCSI ID:  "
+msgstr "ID do sistema:   "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1101,11 +1112,11 @@ msgstr "Nenhum Volume Seleccionado"
 msgid "Multiple selection"
 msgstr "Selecção múltipla"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "Vista Lógica"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "Vista Física"
 
@@ -1177,66 +1188,23 @@ msgstr "Imagem"
 msgid "extent view"
 msgstr "janela de extensões"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "Grupos de Volumes"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "Volumes Não Alocados"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
 msgstr "Entidades Não Inicializadas"
 
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr ""
-"Os bloqueios do LVM estão desactivados!!!\n"
-"Poderá ocorrer uma danificação massiva dos dados.\n"
-"Activar o bloqueio (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas "
-"o servidor 'clvmd' não está a correr. Inicie o servidor com o comando:\n"
-"service clvmd start \n"
-"ou desligue o bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', mas "
-"o 'cluster' não tem membros suficientes.\n"
-"Tanto poderá esperar até o 'cluster' tem nós suficientes ou desligue o "
-"bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr ""
-"O %s só suporta o bloqueio baseado em ficheiros e no "
-"'cluster' (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
 msgstr "GV no 'Cluster'"
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
 msgstr "sincronização da réplica %s"
@@ -1306,35 +1274,35 @@ msgstr ""
 msgid "Unknown filesystem"
 msgstr "Sistema de ficheiros desconhecido"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS (local)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS (em 'cluster')"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
 msgstr "O nome do 'cluster' contém um carácter inválido "
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
 msgstr "O nome do GFS contém um carácter inválido "
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
 msgstr "Falta o Nome do 'Cluster'"
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
 msgstr "Falta o Nome do GFS"
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2 (local)"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (em 'cluster')"
 
@@ -1758,6 +1726,45 @@ msgstr "Só migrar as extensões que pertencem ao VL"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Usar o senso comum"
+
+#~ msgid ""
+#~ "LVM locks are disabled!!! \n"
+#~ "Massive data corruption may occur.\n"
+#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "Os bloqueios do LVM estão desactivados!!!\n"
+#~ "Poderá ocorrer uma danificação massiva dos dados.\n"
+#~ "Activar o bloqueio (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
+#~ "not running. Start daemon with command:\n"
+#~ "service clvmd start \n"
+#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', "
+#~ "mas o servidor 'clvmd' não está a correr. Inicie o servidor com o "
+#~ "comando:\n"
+#~ "service clvmd start \n"
+#~ "ou desligue o bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
+#~ "quorate.\n"
+#~ "Either wait until cluster is quorate or turn off cluster locking "
+#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "O LVM está configurado para usar o mecanismo de Bloqueio em 'Clusters', "
+#~ "mas o 'cluster' não tem membros suficientes.\n"
+#~ "Tanto poderá esperar até o 'cluster' tem nós suficientes ou desligue o "
+#~ "bloqueio no 'cluster' (locking_type=1 no /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
+#~ "etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "O %s só suporta o bloqueio baseado em ficheiros e no "
+#~ "'cluster' (locking_type=1 ou 2 no /etc/lvm/lvm.conf)."
 
 #~ msgid "Name for Volume Group: "
 #~ msgstr "Nome do Grupo de Volumes: "

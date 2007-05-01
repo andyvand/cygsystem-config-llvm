@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: zh_CN\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2006-08-19 20:52+1000\n"
 "Last-Translator: x <x@gmail.com>\n"
 "Language-Team:  <zh@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -351,13 +351,15 @@ msgstr ""
 "个逻辑分区%s？"
 
 #: src/InputController.py:306
+#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
 "为了使卷标组可在集合环境中安全使用，需安装lvm2-cluster，并运行clvmd服务"
 
-#: src/InputController.py:364
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -367,7 +369,7 @@ msgstr ""
 "物理分区%s包含属于逻辑分区%s镜像登录的扩展区。镜像逻辑分区还无法迁移，因此不"
 "能除去%s。"
 
-#: src/InputController.py:367
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -377,7 +379,7 @@ msgstr ""
 "物理卷 %s 含有属于逻辑卷 %s 镜像的扩展区。逻辑卷的镜像目前还无法迁移，因此不"
 "能移除 %s。"
 
-#: src/InputController.py:370
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -386,7 +388,7 @@ msgstr ""
 "物理分区%s包含属于%s的扩展区，一个%s的瞬态图。瞬态图还无法迁移，因此不能除去%"
 "s。"
 
-#: src/InputController.py:375
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -395,7 +397,7 @@ msgstr ""
 "物理卷 %s 包含属于 %s 的扩展区，%s 的原始快照。原始快照还无法迁移，因此不能除"
 "去 %s。"
 
-#: src/InputController.py:377
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -404,27 +406,27 @@ msgstr ""
 "物理卷 %s 包含属于 %s 的扩展区，%s 的原始快照。原始快照还无法迁移，因此不能除"
 "去 %s。"
 
-#: src/InputController.py:564
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr "逻辑卷 \"%s\" 有没有被选择删除的快照。这些快照也将被删除。"
 
-#: src/InputController.py:579
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\"（\"%s\" 的一个原始快照）已从删除列表中被删除。"
 
-#: src/InputController.py:610
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
 msgstr "物理卷 \"%s\" 包含属于镜像的扩展区。镜像还无法迁移，因此不能删除 %s。"
 
-#: src/InputController.py:613
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -433,70 +435,70 @@ msgstr ""
 "物理分区 \"%s\"包含属于一个快照或快照来源的扩展区。快照还无法迁移，因此不能除"
 "去 %s。"
 
-#: src/InputController.py:678
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "您所指定的路径不存在。"
 
-#: src/InputController.py:685
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "您所指定的路径不是成组设备。"
 
-#: src/InputController.py:756
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "初始化%s失败"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "请先选择扩展分区"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr "没用足够的扩展空间来进行需要的迁移。添加更多的物理卷可以解决这个问题。"
 
-#: src/InputController.py:1192
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "迁移扩展分区"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "选项"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "生成%s的瞬态图"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "创建新的逻辑卷"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "编辑%s，%s的瞬态图"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "编辑逻辑卷"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "所依赖的逻辑卷管理不支持镜像"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "条带化的逻辑卷无法生成镜像。"
 
-#: src/InputController.py:1529
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "有快照的逻辑卷还无法生成镜像。"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1536
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -504,86 +506,86 @@ msgstr ""
 "生成镜像的主要目的是保护数据，以防硬盘损坏造成数据丢失。您希望在不同硬盘上设"
 "置镜像吗？"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "有空余空间的可用硬盘不足3个，禁止生成镜像。"
 
-#: src/InputController.py:1550
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr "必须有至少3个物理卷上有空余空间才可以启动生成镜像。"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr "已经将逻辑卷容量调整到了可生成镜像的最大容量。"
 
-#: src/InputController.py:1563
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr "没有足够的空闲空间添加镜像。将逻辑卷容量减小到 %s，或者添加物理卷。"
 
-#: src/InputController.py:1927
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr "以\"snapshot\" 或者 \"pvmove\"开头的名字作为保留的关键词。"
 
-#: src/InputController.py:1929
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "含有\"_mlog\" 或 \"_mimage\"的名字是专用关键字。"
 
-#: src/InputController.py:1931
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "以\"-\"开头的名字是无效的"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "名称不可以是\".\"，也不可以是\"..\""
 
-#: src/InputController.py:1939
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "逻辑卷标名不允许有空白"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "逻辑卷标名中\"%s\"是无效字符"
 
-#: src/InputController.py:1962
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "请指定安装点"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr "您希望将ext2升级到ext3，以便将数据储存在逻辑卷上吗？"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr "改变文件系统将销毁逻辑卷上的所有数据！您确定要改变吗？"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2163
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "未生成镜像。完成剩余的任务。"
 
 #. create mirror
-#: src/InputController.py:2166
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr "底层LVM不支持已有逻辑卷标的额外镜像。正在完成剩余的任务。"
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "为了添加镜像，一些扩展分区需要被迁移。"
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "您想迁移特定的扩展分区吗？"
 
@@ -623,27 +625,27 @@ msgstr "删除卷组"
 msgid "Removing Physical Volume"
 msgstr "删除物理卷"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "移除逻辑卷"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "重新命名逻辑卷"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "从卷组中移除物理卷"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "迁移扩展区"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "扩展区迁移完毕"
 
-#: src/CommandHandler.py:378
+#: src/CommandHandler.py:383
 msgid "Rereading partition table"
 msgstr "正在重新读取扩展分区"
 
@@ -808,58 +810,67 @@ msgstr "外部启动分区"
 msgid "Autopartition failure"
 msgstr "自动分区失败"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "手工分区"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "多通道设备"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "备注：   "
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "手动初始化"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "集合："
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743
 msgid "True"
 msgstr "正确"
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "错误"
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "镜像映像数量: "
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "快照:  "
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "快照来源:"
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "快照用法:  "
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   Root 文件系统"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "无"
+
+#: src/lvm_model.py:964
+msgid "SCSI Address:  "
+msgstr ""
+
+#: src/lvm_model.py:966
+#, fuzzy
+msgid "SCSI ID:  "
+msgstr "系统 ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1035,11 +1046,11 @@ msgstr "没有选择卷"
 msgid "Multiple selection"
 msgstr "多项选择"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "逻辑视图"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "物理视图"
 
@@ -1107,61 +1118,23 @@ msgstr "快照"
 msgid "extent view"
 msgstr "扩展视图"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "卷组"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "未分配的卷"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
 msgstr "未初始化的实例"
 
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr ""
-"LVM锁失效！！！\n"
-"可能会发生大量数据损坏。\n"
-"正启动锁住功能（锁住_类型＝1或2，路径/etc/lvm/lvm.conf）"
-
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"LVM配置成采用簇锁定机制，但clvmd deamon未运行。用命令行启动deamon:\n"
-"启动clvmd服务\n"
-"或者关闭簇所（锁定_类型＝1,路径/etc/lvm/lvm.conf）。"
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"采用簇锁定机制配置LVM，但簇数目不足。\n"
-"要么等待有足够的簇，要么关闭簇锁（锁定_类型＝1,路径/etc/lvm/lvm.conf）。"
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr "%s只支持文件及簇基础锁定（锁定_类型＝1或2,路径/etc/lvm/lvm.conf）。"
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
 msgstr "成簇的VG"
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
 msgstr "%s同步镜像"
@@ -1223,35 +1196,35 @@ msgstr "升级文件系统失败。命令尝试: \"%s\" - 系统错误信息: %s
 msgid "Unknown filesystem"
 msgstr "未知的文件系统"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS(本地)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS(集合)"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
 msgstr "簇名称含非法字符"
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
 msgstr "GFS名称含非法字符"
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
 msgstr "缺少簇名称"
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
 msgstr "缺少GFS名称"
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2（本地）"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2（集合）"
 
@@ -1675,6 +1648,39 @@ msgstr "只迁移属于 LV 的扩展区"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "使用常识"
+
+#~ msgid ""
+#~ "LVM locks are disabled!!! \n"
+#~ "Massive data corruption may occur.\n"
+#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "LVM锁失效！！！\n"
+#~ "可能会发生大量数据损坏。\n"
+#~ "正启动锁住功能（锁住_类型＝1或2，路径/etc/lvm/lvm.conf）"
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
+#~ "not running. Start daemon with command:\n"
+#~ "service clvmd start \n"
+#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "LVM配置成采用簇锁定机制，但clvmd deamon未运行。用命令行启动deamon:\n"
+#~ "启动clvmd服务\n"
+#~ "或者关闭簇所（锁定_类型＝1,路径/etc/lvm/lvm.conf）。"
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
+#~ "quorate.\n"
+#~ "Either wait until cluster is quorate or turn off cluster locking "
+#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "采用簇锁定机制配置LVM，但簇数目不足。\n"
+#~ "要么等待有足够的簇，要么关闭簇锁（锁定_类型＝1,路径/etc/lvm/lvm.conf）。"
+
+#~ msgid ""
+#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
+#~ "etc/lvm/lvm.conf)."
+#~ msgstr "%s只支持文件及簇基础锁定（锁定_类型＝1或2,路径/etc/lvm/lvm.conf）。"
 
 #~ msgid "Name for Volume Group: "
 #~ msgstr "卷组的名称:  "

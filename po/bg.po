@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2007-03-29 22:54+0300\n"
 "Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
 "Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -94,7 +94,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgid ""
+"A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Група томове с име %s вече съществува. Моля изберете уникално име."
 
 #: src/InputController.py:98
@@ -107,8 +108,10 @@ msgstr "Необходимо е име за новата група томове
 
 #: src/InputController.py:102
 #, python-format
-msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr "Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
+msgid ""
+"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr ""
+"Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
 
 #: src/InputController.py:104
 #, python-format
@@ -137,8 +140,8 @@ msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
 msgstr ""
-"Максимум %s Физически Тома могат да бъдат добавени към Групата Томове "
-"преди достигане на лимита."
+"Максимум %s Физически Тома могат да бъдат добавени към Групата Томове преди "
+"достигане на лимита."
 
 #: src/InputController.py:114
 #, python-format
@@ -148,8 +151,7 @@ msgid ""
 "Volume Group."
 msgstr ""
 "Група томове %s няма достатъчно свободно място нови логически томове. "
-"Възможно решение е добавянето на допълнителни физически томове към "
-"групата."
+"Възможно решение е добавянето на допълнителни физически томове към групата."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
@@ -178,10 +180,11 @@ msgstr ""
 "премахнете моментното състояние първо."
 
 #: src/InputController.py:122
-msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgid ""
+"Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
-"Недефинирано конвертиране на тип в създаването на модели. Невъзможно "
-"е завършването на задачата."
+"Недефинирано конвертиране на тип в създаването на модели. Невъзможно е "
+"завършването на задачата."
 
 #: src/InputController.py:124
 #, python-format
@@ -200,8 +203,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
-"Логическия том %s в момента е монтиран на %s. Трябва да се демонтира "
-"за да бъде завършена заявката. Сигурни ли сте че го искате демонтиран?"
+"Логическия том %s в момента е монтиран на %s. Трябва да се демонтира за да "
+"бъде завършена заявката. Сигурни ли сте че го искате демонтиран?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -264,16 +267,16 @@ msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
-"Полето максимален брой физически томове следва да съдържа само "
-"цели числа в интервала от 1 до 256"
+"Полето максимален брой физически томове следва да съдържа само цели числа в "
+"интервала от 1 до 256"
 
 #: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
-"Полето максимален брой логически томове следва да съдържа само цели числа "
-"в интервала от 1 до 256"
+"Полето максимален брой логически томове следва да съдържа само цели числа в "
+"интервала от 1 до 256"
 
 #: src/InputController.py:150
 #, python-format
@@ -295,15 +298,16 @@ msgid ""
 "Physical Volume."
 msgstr ""
 "Физическия том с име %s, който искате да премахнете, съдържа данни от "
-"активни логически дялове разположени върху неговите разширения. Понеже "
-"той е единствения физически дял в групата томове, няма къде да бъдат "
-"преместени данните. Препоръчва се или да добавите нов физически том "
-"преди премахването на този, или да премахнете логическите томове "
-"асоциирани с този физически том."
+"активни логически дялове разположени върху неговите разширения. Понеже той е "
+"единствения физически дял в групата томове, няма къде да бъдат преместени "
+"данните. Препоръчва се или да добавите нов физически том преди премахването "
+"на този, или да премахнете логическите томове асоциирани с този физически "
+"том."
 
 #: src/InputController.py:153
 #, python-format
-msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid ""
+"Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Напълно сигурен ли сте, че искате да махнете %s от група томове %s?"
 
 #: src/InputController.py:154
@@ -343,9 +347,9 @@ msgid ""
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
-"Модула dm-snapshot или не е зареден в ядрото, или ядро Ви не поддържа "
-"dm-snapshot. Ако се поддържа, опитайте се да изпълните \"modprobe "
-"dm-snapshot\". В противен случай не може да се създават моментни систояния."
+"Модула dm-snapshot или не е зареден в ядрото, или ядро Ви не поддържа dm-"
+"snapshot. Ако се поддържа, опитайте се да изпълните \"modprobe dm-snapshot"
+"\". В противен случай не може да се създават моментни систояния."
 
 #: src/InputController.py:159
 #, python-format
@@ -367,84 +371,90 @@ msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
 msgstr ""
-"Логическия том %s съдържа данни от директория %s. Всички данни в нея ще бъдат "
-"загубени! Съвсем сигурни ли сте, че искате да премахнете логическия том %s?"
+"Логическия том %s съдържа данни от директория %s. Всички данни в нея ще "
+"бъдат загубени! Съвсем сигурни ли сте, че искате да премахнете логическия "
+"том %s?"
 
 #: src/InputController.py:306
+#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
-"За да може да се ползва групата томове безопасно в клъстер, трябва "
-"да се инсталира rpm пакета lvm2-cluster и услугата clvmd да работи"
+"За да може да се ползва групата томове безопасно в клъстер, трябва да се "
+"инсталира rpm пакета lvm2-cluster и услугата clvmd да работи"
 
-#: src/InputController.py:364
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
-"Физическия том %s съдържа разширения принадлежащи на журнал на огледало "
-"на логически том %s. Логическите томове с огледала все още не могат да се "
+"Физическия том %s съдържа разширения принадлежащи на журнал на огледало на "
+"логически том %s. Логическите томове с огледала все още не могат да се "
 "мигрират, което прави %s не-премахваем."
 
-#: src/InputController.py:367
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
 msgstr ""
-"Физическия том %s съдържа разширения принадлежащи на огледален образ "
-"на логически том %s. Логическите томове с огледала все още не могат да се "
+"Физическия том %s съдържа разширения принадлежащи на огледален образ на "
+"логически том %s. Логическите томове с огледала все още не могат да се "
 "мигрират, което прави %s не-премахваем."
 
-#: src/InputController.py:370
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
-"Физическия том %s съдържа разширения принадлежащи на %s, моментно "
-"състояние на %s. Моментните състояния все още не могат да се мигрират, "
-"което прави %s не-премахваем."
+"Физическия том %s съдържа разширения принадлежащи на %s, моментно състояние "
+"на %s. Моментните състояния все още не могат да се мигрират, което прави %s "
+"не-премахваем."
 
-#: src/InputController.py:375
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
 "Физическия том %s съдържа разширения принадлежащи на %s, източника "
-"моментното състояние %s. Източниците на моментни състояния все още не "
-"могат да се мигрират, което прави %s не-премахваем."
+"моментното състояние %s. Източниците на моментни състояния все още не могат "
+"да се мигрират, което прави %s не-премахваем."
 
-#: src/InputController.py:377
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
 "Физическия том %s съдържа разширения принадлежащи на %s, източника "
-"моментните състояния %s. Източниците на моментни състояния все още не "
-"могат да се мигрират, което прави %s не-премахваем."
+"моментните състояния %s. Източниците на моментни състояния все още не могат "
+"да се мигрират, което прави %s не-премахваем."
 
-#: src/InputController.py:564
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
-"Логическия том \"%s\" има моментни състояния, които не са избрани за премахване. "
-"Трябва и те да бъдат премахнати."
+"Логическия том \"%s\" има моментни състояния, които не са избрани за "
+"премахване. Трябва и те да бъдат премахнати."
 
-#: src/InputController.py:579
+#: src/InputController.py:580
 #, python-format
-msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr "\"%s\", източника на моментно състояние \"%s\" бе изваден от списъка за премахване."
+msgid ""
+"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr ""
+"\"%s\", източника на моментно състояние \"%s\" бе изваден от списъка за "
+"премахване."
 
-#: src/InputController.py:610
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -453,34 +463,34 @@ msgstr ""
 "Физическия том \"%s\" съдържа разширения принадлежащи на огледало. "
 "Огледалата не могат да се мигрират, което прави %s не-премахваем."
 
-#: src/InputController.py:613
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
 msgstr ""
-"Физическия том \"%s\" съдържа разширения принадлежащи на моментно "
-"състояние или източник на такъв. Моментните състояния не могат да се "
-"мигрират, което прави %s не-премахваем."
+"Физическия том \"%s\" съдържа разширения принадлежащи на моментно състояние "
+"или източник на такъв. Моментните състояния не могат да се мигрират, което "
+"прави %s не-премахваем."
 
-#: src/InputController.py:678
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "Указания път не съществува."
 
-#: src/InputController.py:685
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "Указания път не е блоково устройство."
 
-#: src/InputController.py:756
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "Инициализацията на %s не успя"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "Първо трябва да се изберат разширения"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -488,118 +498,126 @@ msgstr ""
 "Няма достатъчно свободни разширения за изпълнение на миграцията. Добавянето "
 "на още физически томове би решило проблема."
 
-#: src/InputController.py:1192
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "Мигриране на разширения"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "Опции"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Създаване моментно състояние на %s"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "Създаване на нов логически том"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Редакция на %s, моментно състояние на %s"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "Редакция на логически том"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Стоящото отдолу управление на логически томове не поддържа огледала"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Изстисканите логически томове не могат да имат огледала."
 
-#: src/InputController.py:1529
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr "Логически томове с асоциирани моментни състояния не могат да имат огледала все още."
+msgstr ""
+"Логически томове с асоциирани моментни състояния не могат да имат огледала "
+"все още."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1536
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Главното приложение на огледалата е, да защитят данните в случай на "
-"отказ на твърд диск. Да бъдат ли разположени огледалните образи на "
-"различни твърди дискове?"
+"Главното приложение на огледалата е, да защитят данните в случай на отказ на "
+"твърд диск. Да бъдат ли разположени огледалните образи на различни твърди "
+"дискове?"
 
-#: src/InputController.py:1545
-msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr "Налични са по-малко от 3 твърди диска със свободно място. Изключване на огледалата."
+#: src/InputController.py:1546
+msgid ""
+"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgstr ""
+"Налични са по-малко от 3 твърди диска със свободно място. Изключване на "
+"огледалата."
 
-#: src/InputController.py:1550
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Трябва да има свободно място на поне три физически тома за включване "
-"на огледалата"
+"Трябва да има свободно място на поне три физически тома за включване на "
+"огледалата"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
-"Размера на логическия том бе настроен до максимално достъпния за "
-"огледала размер."
+"Размера на логическия том бе настроен до максимално достъпния за огледала "
+"размер."
 
-#: src/InputController.py:1563
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
-"Няма достатъчно място за добавяне на огледало. Размера на логическия том трябва "
-"да бъде намален до максимум %s или бъдат добавени физическите томове."
+"Няма достатъчно място за добавяне на огледало. Размера на логическия том "
+"трябва да бъде намален до максимум %s или бъдат добавени физическите томове."
 
-#: src/InputController.py:1927
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "Имената, започващи с \"snapshot\" or \"pvmove\", са запазени ключови думи."
+msgstr ""
+"Имената, започващи с \"snapshot\" or \"pvmove\", са запазени ключови думи."
 
-#: src/InputController.py:1929
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Имената, съдържащи \"_mlog\" или \"_mimage\", са запазени ключови думи."
+msgstr ""
+"Имената, съдържащи \"_mlog\" или \"_mimage\", са запазени ключови думи."
 
-#: src/InputController.py:1931
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Имената, започващи с \"-\", са невалидни"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Името не може да бъде нито \".\", нито \"..\""
 
-#: src/InputController.py:1939
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Не са позволени празни пространства в името на логически том"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Невалиден знак \"%s\" в името на логическия том"
 
-#: src/InputController.py:1962
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "Моля укажете точка на монтиране"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr "Да се обнови ли ext2 до ext3 запазвайки всички данни на логическия том?"
+msgstr ""
+"Да се обнови ли ext2 до ext3 запазвайки всички данни на логическия том?"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -608,25 +626,24 @@ msgstr ""
 "Сигурни ли сте, че искате да продължите?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2163
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Огледалото не бе създадено. Приключване на останалите задачи."
 
 #. create mirror
-#: src/InputController.py:2166
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
-"Лежащото отдолу управление на логически томове не поддържа "
-"добавяне на огледала към съществуващи логически томове. "
-"Приключване на оставащите задачи."
+"Лежащото отдолу управление на логически томове не поддържа добавяне на "
+"огледала към съществуващи логически томове. Приключване на оставащите задачи."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "Някои разширения трябва да се мигрират за да се добави огледало."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "Да бъдат ли мигрирани указаните разширения?"
 
@@ -666,27 +683,27 @@ msgstr "Премахване на група томове"
 msgid "Removing Physical Volume"
 msgstr "Премахване на физически том"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "Премахване на логически том"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "Преименуване на логически том"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "Премахване на физически том от група томове"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "Мигриране на разширения"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "Приключване мигрирането на разширения"
 
-#: src/CommandHandler.py:378
+#: src/CommandHandler.py:383
 msgid "Rereading partition table"
 msgstr "Преаранжиране таблицата на дяловете"
 
@@ -851,58 +868,67 @@ msgstr "Чужд дял за начално зареждане"
 msgid "Autopartition failure"
 msgstr "Провал на автоматичното разделяне на дялове"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "Ръчно разделяне на дялове"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "Устройство с няколко достъпа (multipath)"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "Забележка:"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "Ръчна инициализация"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "В клъстер:   "
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743
 msgid "True"
 msgstr "Истина"
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "Лъжа"
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "Брой огледални образи:"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "Моментни състояния:"
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "Източник на състоянието:"
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "Използване на състоянието:"
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   Главна файлова система"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "Няма"
+
+#: src/lvm_model.py:964
+msgid "SCSI Address:  "
+msgstr ""
+
+#: src/lvm_model.py:966
+#, fuzzy
+msgid "SCSI ID:  "
+msgstr "Системно ID:   "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -911,8 +937,8 @@ msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
 msgstr ""
-"Всички данни на дисковия елемент %s ще бъдат загубени! Сигурни ли сте, "
-"че искате да го инициализирате?"
+"Всички данни на дисковия елемент %s ще бъдат загубени! Сигурни ли сте, че "
+"искате да го инициализирате?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -920,9 +946,8 @@ msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
 msgstr ""
-"Дисковия елемент %s съдържа файлова система %s. Всички данни в нея "
-"ще бъдат изгубени! Сигурни ли сте, че искате да инициализирате "
-"дисковия елемент %s?"
+"Дисковия елемент %s съдържа файлова система %s. Всички данни в нея ще бъдат "
+"изгубени! Сигурни ли сте, че искате да инициализирате дисковия елемент %s?"
 
 #: src/lvmui_constants.py:53
 #, python-format
@@ -930,14 +955,17 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
-"Дисковия елемент %s съдържа данни от директория %s. Всички данни, от "
-"нея, ще бъдат загубени! Сигурни ли сте, че искате да инициализирате "
-"дисковия елемент %s?"
+"Дисковия елемент %s съдържа данни от директория %s. Всички данни, от нея, ще "
+"бъдат загубени! Сигурни ли сте, че искате да инициализирате дисковия елемент "
+"%s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr "Съвсем сигурен ли сте, че искате да инициализирате %s свободно масто на диск %s?"
+msgid ""
+"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr ""
+"Съвсем сигурен ли сте, че искате да инициализирате %s свободно масто на диск "
+"%s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1085,11 +1113,11 @@ msgstr "Не е избран том"
 msgid "Multiple selection"
 msgstr "Няколко избора"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "Логически изглед"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "Физически изглед"
 
@@ -1129,9 +1157,9 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
-"Разширенията, които се опитвате да изберете, принадлежат на %s, "
-"моментно състояние на %s. Моментните състояния все още не могат "
-"да бъдат мигрирани, което прави разширенията неизбираеми."
+"Разширенията, които се опитвате да изберете, принадлежат на %s, моментно "
+"състояние на %s. Моментните състояния все още не могат да бъдат мигрирани, "
+"което прави разширенията неизбираеми."
 
 #: src/renderer.py:201
 #, python-format
@@ -1140,9 +1168,9 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
-"Разширенията, които се опитвате да изберете, принадлежат на източник "
-"%s на моментно състояние. Моментните състояния все още не могат "
-"да бъдат мигрирани, което прави разширенията неизбираеми."
+"Разширенията, които се опитвате да изберете, принадлежат на източник %s на "
+"моментно състояние. Моментните състояния все още не могат да бъдат "
+"мигрирани, което прави разширенията неизбираеми."
 
 #: src/renderer.py:388
 #, python-format
@@ -1161,67 +1189,23 @@ msgstr "Моментно състояние"
 msgid "extent view"
 msgstr "преглед на разширенията"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "Групи томове"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "Свободни томове"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
 msgstr "Неинициализирани елементи"
 
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr ""
-"Блокировките за управлението на логически томове са изключени!!! \n"
-"Може да възникнат масивни повреди на данните.\n"
-"Включете блокировките (locking_type=1 или 2 в /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"Управлението на логически томове е настроено да ползва механизъм за "
-"блокировка от клъстер, но демона clvmd не работи. Трябва да се стартира "
-"демона с:\n"
-"service clvmd start \n"
-"или изключи блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"Управлението на логически томове е настроено да ползва механизъм за "
-"блокировка от клъстер, клъстера не е в състояние на кворум:\n"
-"Трябва да се изчака клъстера да постигне кворум или да се изключи "
-"блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr ""
-"%s поддържа само базирано на файлове и клъстер заключване (locking_type=1 или 2 в /etc/"
-"lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
 msgstr "ГТ в клъстер"
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
 msgstr "Синхронизация на %s огледало"
@@ -1257,8 +1241,8 @@ msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Създаване на файловата система не успя. Команда: \"%s\" - системно "
-"съобщение за грешка: %s"
+"Създаване на файловата система не успя. Команда: \"%s\" - системно съобщение "
+"за грешка: %s"
 
 #: src/Filesystem.py:25
 #, python-format
@@ -1291,35 +1275,35 @@ msgstr ""
 msgid "Unknown filesystem"
 msgstr "Непозната файлова система"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS (локално)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS (в клъстер)"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
 msgstr "Името на клъстер съдържа невалиден знак "
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
 msgstr "GFS името съдържа невалиден знак "
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
 msgstr "Липсва име на клъстер"
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
 msgstr "Липсва GFS име"
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2 (локално)"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (клъстер)"
 
@@ -1744,3 +1728,41 @@ msgstr "Мигриране само разширенията на ЛТ"
 msgid "Use common sense"
 msgstr "Ползване на здрав разум"
 
+#~ msgid ""
+#~ "LVM locks are disabled!!! \n"
+#~ "Massive data corruption may occur.\n"
+#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "Блокировките за управлението на логически томове са изключени!!! \n"
+#~ "Може да възникнат масивни повреди на данните.\n"
+#~ "Включете блокировките (locking_type=1 или 2 в /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
+#~ "not running. Start daemon with command:\n"
+#~ "service clvmd start \n"
+#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "Управлението на логически томове е настроено да ползва механизъм за "
+#~ "блокировка от клъстер, но демона clvmd не работи. Трябва да се стартира "
+#~ "демона с:\n"
+#~ "service clvmd start \n"
+#~ "или изключи блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
+#~ "quorate.\n"
+#~ "Either wait until cluster is quorate or turn off cluster locking "
+#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "Управлението на логически томове е настроено да ползва механизъм за "
+#~ "блокировка от клъстер, клъстера не е в състояние на кворум:\n"
+#~ "Трябва да се изчака клъстера да постигне кворум или да се изключи "
+#~ "блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
+#~ "etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "%s поддържа само базирано на файлове и клъстер заключване (locking_type=1 "
+#~ "или 2 в /etc/lvm/lvm.conf)."

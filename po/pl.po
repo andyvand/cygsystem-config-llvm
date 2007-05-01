@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2007-03-17 17:33+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -281,9 +281,7 @@ msgstr ""
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
-"Czy na pewno chcesz usunąć %s z Zarządzania woluminami logicznymi "
-"LVM?"
+msgstr "Czy na pewno chcesz usunąć %s z Zarządzania woluminami logicznymi LVM?"
 
 #: src/InputController.py:152
 #, python-format
@@ -374,15 +372,17 @@ msgstr ""
 "utracone! Czy na pewno chcesz usunąć wolumin logiczny %s?"
 
 #: src/InputController.py:306
+#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
 "Aby grupa woluminów mogła być bezpiecznie używana w środowiskach "
 "klastrowych, RPM lvm2-cluster musi być zainstalowany, a usługa clvmd musi "
 "być uruchomiona"
 
-#: src/InputController.py:364
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -393,7 +393,7 @@ msgstr ""
 "woluminu logicznego %s. Lustrzane woluminy logiczne nie mogą być jeszcze "
 "migrowane, więc %s nie może być usuwany."
 
-#: src/InputController.py:367
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -404,7 +404,7 @@ msgstr ""
 "logicznego %s. Lustrzane woluminy logiczne nie mogą być jeszcze migrowane, "
 "więc %s nie może być usuwany."
 
-#: src/InputController.py:370
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -413,7 +413,7 @@ msgstr ""
 "Wolumin fizyczny %s zawiera obszary należące do %s, migawki %s. Migawki nie "
 "mogą być jeszcze migrowane, więc %s nie może być usuwany."
 
-#: src/InputController.py:375
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -423,7 +423,7 @@ msgstr ""
 "Oryginały migawek nie mogą być jeszcze migrowane, więc %s nie może być "
 "usuwany."
 
-#: src/InputController.py:377
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -433,7 +433,7 @@ msgstr ""
 "Oryginały migawek nie mogą być jeszcze migrowane, więc %s nie może być "
 "usuwany."
 
-#: src/InputController.py:564
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -442,13 +442,13 @@ msgstr ""
 "Wolumin logiczny \"%s\" posiada migawki, które nie zostały wybrane do "
 "usunięcia. One również muszą zostać usunięte."
 
-#: src/InputController.py:579
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", oryginał migawki \"%s\", został usunięty z listy do usunięcia."
 
-#: src/InputController.py:610
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -457,7 +457,7 @@ msgstr ""
 "Wolumin fizyczny \"%s\" zawiera obszary należące do lustra. Lustra nie mogą "
 "być jeszcze migrowane, więc %s nie może być usuwany."
 
-#: src/InputController.py:613
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -467,24 +467,24 @@ msgstr ""
 "migawki. Migawki nie mogą być jeszcze migrowane, więc %s nie może być "
 "usuwany."
 
-#: src/InputController.py:678
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "Określona ścieżka nie istnieje."
 
-#: src/InputController.py:685
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "Określona ścieżka nie jest urządzeniem blokowym."
 
-#: src/InputController.py:756
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "Inicjowanie %s nie powiodło się"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "Najpierw wybierz jakieś obszary"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -492,46 +492,48 @@ msgstr ""
 "Brak wystarczającej liczby wolnych obszarów, aby przeprowadzić niezbędną "
 "migrację. Dodanie więcej woluminów fizycznych może rozwiązać problem."
 
-#: src/InputController.py:1192
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "Migruj obszary"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "Opcje"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Utwórz migawkę %s"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "Utwórz nowy wolumin logiczny"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Edytuj %s, migawkę %s"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "Edytuj wolumin logiczny"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Podstawowe zarządzanie woluminami logicznymi nie obsługuje luster"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Paskowany wolumin logiczny nie może być lustrem."
 
-#: src/InputController.py:1529
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "Woluminy logiczne z dołączonymi migawkami jeszcze nie mogą być lustrami."
 
-#: src/InputController.py:1536
+#. mirror images placement: diff HDs or anywhere
+#. prompt
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -539,13 +541,13 @@ msgstr ""
 "Głównym celem używania luster jest ochrona danych w przypadku błędu dysku "
 "twardego. Czy chcesz umieścić obrazy luster na różnych dyskach twardych?"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Mniej niż 3 dyski twarde mają dostępne wolne miejsce. Wyłączanie luster."
 
-#: src/InputController.py:1550
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -553,7 +555,7 @@ msgstr ""
 "Wolne miejsce musi być na co najmniej trzech woluminach fizycznych, aby "
 "włączyć lustra"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -561,7 +563,7 @@ msgstr ""
 "Rozmiar woluminu logicznego został dopasowany do maksymalnego dostępnego "
 "rozmiaru luster."
 
-#: src/InputController.py:1563
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -570,46 +572,46 @@ msgstr ""
 "Nie ma wystarczającej ilości wolnego miejsca, aby dodać lustra. Zmiejsz "
 "rozmiar woluminu logicznego do co najwyżej %s lub dodaj woluminy fizyczne."
 
-#: src/InputController.py:1927
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Nazwy zaczynające się od \"snapshot\" lub \"pvmove\" są zarezerwowanymi "
 "słowami kluczowymi."
 
-#: src/InputController.py:1929
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr ""
 "Nazwy zawierające \"_mlog\" lub \"_mimage\" są zarezerwowanymi słowami "
 "kluczowymi."
 
-#: src/InputController.py:1931
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Nazwy zaczynające się od \"-\" są nieprawidłowe"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Nazwa nie może zawierać ani \".\", ani \"..\""
 
-#: src/InputController.py:1939
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Białe znaki nie są dozwolone w nazwach woluminów logicznych"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Nieprawidłowy znak \"%s\" w nazwie woluminu logicznego"
 
-#: src/InputController.py:1962
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "Określ punkt montowania"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "Czy chcesz zaktualizować system plików ext2 do ext3, zachowując dane na "
 "woluminie logicznym?"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -617,11 +619,13 @@ msgstr ""
 "Zmiana systemu plików usunie wszystkie dane na woluminie logicznym! Czy na "
 "pewno chcesz kontynuować?"
 
-#: src/InputController.py:2163
+#. migration not performed, continue process with no mirroring
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Lustro nie zostało utworzone. Zakończenie pozostałych zadań."
 
-#: src/InputController.py:2166
+#. create mirror
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
@@ -629,11 +633,11 @@ msgstr ""
 "Podwarstwowy LVM nie obsługuje dodawania luster do istniejących woluminów "
 "logicznych. Zakończenie pozostałych zadań."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "Aby dodać lustra, niektóre obszary muszę zostać zmigrowane."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "Czy chcesz zmigrować określone obszary?"
 
@@ -673,27 +677,27 @@ msgstr "Usuwanie grupy woluminów"
 msgid "Removing Physical Volume"
 msgstr "Usuwanie woluminu fizycznego"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "Usuwanie woluminu logicznego"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "Zmienianie nazwy woluminu logicznego"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "Usuwanie woluminu fizycznego z grupy woluminów"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "Migrowanie obszarów"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "Zakończenie migrowania obszarów"
 
-#: src/CommandHandler.py:378
+#: src/CommandHandler.py:383
 msgid "Rereading partition table"
 msgstr "Ponowne odczytywanie tablicy partycjy"
 
@@ -858,59 +862,69 @@ msgstr "Obca partycja startowa"
 msgid "Autopartition failure"
 msgstr "Automatyczne partycjonowanie nie powiodło się"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "Partycjonuj ręcznie"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "Urządzenie wielościeżkowe"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "Uwaga:"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "Zainicjuj ręcznie"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "Klastrowy:   "
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743
 msgid "True"
 msgstr "Prawda"
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "Fałsz"
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "Liczba obrazów luster:"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "Migawki:"
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "Oryginał migawki:"
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "Użycie migawki:"
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   Główny system plików"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "Brak"
 
+#: src/lvm_model.py:964
+msgid "SCSI Address:  "
+msgstr ""
+
+#: src/lvm_model.py:966
+#, fuzzy
+msgid "SCSI ID:  "
+msgstr "ID systemu:   "
+
+#. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
 #, python-format
 msgid ""
@@ -1063,6 +1077,7 @@ msgstr "Właściwości dla"
 msgid "Physical Volume"
 msgstr "Wolumin fizyczny"
 
+#. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
 msgstr "Wolumin logiczny"
@@ -1080,6 +1095,7 @@ msgstr "Dysk"
 msgid "Volume Group"
 msgstr "Grupa woluminów"
 
+#. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
 msgstr "Nie wybrano żadnego woluminu."
@@ -1088,11 +1104,11 @@ msgstr "Nie wybrano żadnego woluminu."
 msgid "Multiple selection"
 msgstr "Wybór wielokrotny"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "Widok logiczny"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "Widok fizyczny"
 
@@ -1163,70 +1179,28 @@ msgstr "Migawka"
 msgid "extent view"
 msgstr "wodok obszarów"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "Grupy woluminów"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "Niezaalokowane woluminy"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
 msgstr "Niezainicjowane jednostki"
 
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr ""
-"Blokowanie LVM jest wyłączone!!! \n"
-"Może wystąpić masowe uszkodzenie danych.\n"
-"Włącz blokowanie (locking_type=1 lub 2 w /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"LVM jest skonfigurowane do używania mechanizmu Blokowania klastra, ale demon "
-"clvmd nie jest uruchomiony. Uruchom go za pomocą polecenia:\n"
-"service clvmd start \n"
-"lub wyłącz blokowanie klastra (locking_type=1 w /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"LVM jest skonfigurowane do używania mechanizmu Blokowania klastra, ale "
-"klaster nie posiada wstarczającej liczby elementów.\n"
-"Albo poczekaj, aż klaster będzie posiadał wystarczającą liczbę elementów lub "
-"wyłącz blokowanie klastra (locking_type=1 in /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr ""
-"%s obsługuje tylko blokowanie oparte na pliku lub klastrze (locking_type=1 "
-"lub 2 w /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
 msgstr "Klastrowa grupa woluminów"
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
 msgstr "synchronizacja lustra %s"
 
+#. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
 msgstr "Proszę czekać, trwa tworzenie partycji"
@@ -1291,35 +1265,35 @@ msgstr ""
 msgid "Unknown filesystem"
 msgstr "Nieznany system plików"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS (lokalny)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS (klastrowy)"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
 msgstr "Nazwa klastra zawiera niedozwolony znak "
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
 msgstr "Nazwa GFS zawiera niedozwolony znak "
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
 msgstr "Brakuje nazwy klastra"
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
 msgstr "Brakuje nazwy GFS"
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2 (lokalny)"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (klastrowy)"
 
@@ -1743,3 +1717,41 @@ msgstr "Migruj tylko obszary należące do woluminu logicznego"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Użyj we wspólnym znaczeniu"
+
+#~ msgid ""
+#~ "LVM locks are disabled!!! \n"
+#~ "Massive data corruption may occur.\n"
+#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "Blokowanie LVM jest wyłączone!!! \n"
+#~ "Może wystąpić masowe uszkodzenie danych.\n"
+#~ "Włącz blokowanie (locking_type=1 lub 2 w /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
+#~ "not running. Start daemon with command:\n"
+#~ "service clvmd start \n"
+#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "LVM jest skonfigurowane do używania mechanizmu Blokowania klastra, ale "
+#~ "demon clvmd nie jest uruchomiony. Uruchom go za pomocą polecenia:\n"
+#~ "service clvmd start \n"
+#~ "lub wyłącz blokowanie klastra (locking_type=1 w /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
+#~ "quorate.\n"
+#~ "Either wait until cluster is quorate or turn off cluster locking "
+#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "LVM jest skonfigurowane do używania mechanizmu Blokowania klastra, ale "
+#~ "klaster nie posiada wstarczającej liczby elementów.\n"
+#~ "Albo poczekaj, aż klaster będzie posiadał wystarczającą liczbę elementów "
+#~ "lub wyłącz blokowanie klastra (locking_type=1 in /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
+#~ "etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "%s obsługuje tylko blokowanie oparte na pliku lub klastrze "
+#~ "(locking_type=1 lub 2 w /etc/lvm/lvm.conf)."

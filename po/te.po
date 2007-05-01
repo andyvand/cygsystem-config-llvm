@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2006-12-15 18:58+0530\n"
 "Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -357,14 +357,16 @@ msgstr ""
 "తార్కికవిలువను తొలగించాలనుకుంటున్నారా?"
 
 #: src/InputController.py:306
+#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
 "క్లస్టర్ వాతావరణంలో వాల్యూం సమూహం సరిగా వినియోగించబడింది, lvm2-క్లస్టర్ rpm సంస్థాపించాలి, మరియూ "
 "clvmd సేవలు నడుస్తూ ఉండాలి"
 
-#: src/InputController.py:364
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -374,7 +376,7 @@ msgstr ""
 "%s భౌతిక విలువ %s తార్కిక విలువ యొక్క మిర్రర్ లాగ్ విస్థరణలను కలిగి ఉంది. మిర్రోర్డు తార్కిక వాల్యూంలు "
 "ఇంకా వలసని పొందలేదు, కాబట్టి %s తొలగించటం కుదరదు."
 
-#: src/InputController.py:367
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -384,7 +386,7 @@ msgstr ""
 "%s భౌతిక విలువ %s తార్కిక విలువ యొక్క మిర్రోర్ చిత్రాల విస్తృతులను కలిగి ఉంది. Mirrored తార్కిక "
 "విలువలు వలస పంపదగ్గవి కావు, కావునా %s తొలగించటానికి కుదరదు."
 
-#: src/InputController.py:370
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -393,7 +395,7 @@ msgstr ""
 "%s భౌతిక వాల్యూం %sకి చెందిన విస్తృతులను కలిగి ఉంది, %s యొక్క స్నాప్ షాట్. స్నాప్ షాట్లు వలస "
 "పంపదగ్గవికాదు, కాబట్టి %s తొలగించదగ్గదికాదు."
 
-#: src/InputController.py:375
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -402,7 +404,7 @@ msgstr ""
 "%s భౌతిక విలువ %sకి చెందున విస్తృతులను కలిగి ఉంది, %s స్నాప్ షాట్ యొక్క మూలం. స్నాప్ షాట్ మూలాలు "
 "వలస పంపదగ్గవికావు, కావునా %s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:377
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -411,7 +413,7 @@ msgstr ""
 "%s భౌతిక వాల్యూం %sకి చెందిన విస్తృతులను కలిగి ఉంది, స్నాప్ షాట్సు యొక్క మూలం %s. స్నాప్ షాట్ మూలాలు "
 "వలస పంపదగ్గవికావు, కావునా %s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:564
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -419,13 +421,13 @@ msgid ""
 msgstr ""
 "\"%s\" తార్కిక విలువ తొలగించటానికి ఎన్నుకోబడని స్నాప్ షాటులను కలిగిఉంది. అవి తప్పక .తొలగించదగ్గవి."
 
-#: src/InputController.py:579
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", \"%s\" స్నాప్ షాట్ యొక్క మూలం, తొలగింపు జాబితాలోనుంచీ తొలగించదగ్గది."
 
-#: src/InputController.py:610
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -434,7 +436,7 @@ msgstr ""
 "\"%s\" భౌతిక విలువ మిర్రరుకు చెందిన విస్తృతులను కలిగి ఉంది. మిర్రోర్లు వలస పంపదగ్గవికావు, కావునా %"
 "s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:613
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -443,24 +445,24 @@ msgstr ""
 "\"%s\" భౌతిక విలువ స్నాప్ షాట్ లేదా స్నాప్ షాట్ యొక్క మూలం విస్తృతులను కలిగి ఉంది. స్నాప్ షాట్సు వలస "
 "పంపదగ్గవి, కావునా %s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:678
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "మీరు తెలిపిన మార్గం లేదు."
 
-#: src/InputController.py:685
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "మీరు తెలిపిన మార్గం బ్లాక్ సాధనం కాదు."
 
-#: src/InputController.py:756
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "%s సంస్థాపన విఫలమైంది"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "దయచేసి కొంత విస్తృతులను మొదట ఎన్నుకోండి"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -468,47 +470,47 @@ msgstr ""
 "అవసరమైన వలసలను చేయటానికి చాలినంత ఉచిత విస్తృతులు లేవు. ఈ సమస్యను పరిక్షరించటానికి ఎక్కువ భౌతిక "
 "వాల్యూంలను కలుపుతోంది."
 
-#: src/InputController.py:1192
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "వలసవచ్చిన విస్తృతులు"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "ఐచ్ఛికాలు"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "%s స్నాప్ షాటును సృష్టించు"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "కొత్త తార్కిక విలువను సృష్టించు"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "%sని కూర్చు, %s యొక్క స్నాప్ షాట్"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "తార్కిక విలువను కూర్చు"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "కింద పేర్కొనబడిన తార్కిక విలువల నిర్వహణ mirroringకి మద్దతివ్వటంలేదు"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "ఖాళీగా ఉన్న వాల్యూంలు మిర్రర్డు చేయటానికి కుదరదు."
 
-#: src/InputController.py:1529
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "స్నాప్ షాటులతో కూడి ఉన్న తార్కిక వాల్యూంలు ఇంకా మిర్రర్డు చేయటానికి కుదరదు."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1536
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -516,24 +518,24 @@ msgstr ""
 "మిర్రరింగ్ ప్రధాన లక్ష్యం హార్డువేరు విఫలమైనప్పుడు సమాచారాన్ని రక్షించటం. మీరు విభిన్న హార్డు డ్రైవులలో "
 "మిర్రర్ చిత్రాలను ఉంచాలనుకుంటున్నారా?"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "ఖాళీతో 3 హార్డు డ్రైవుల కంటే తక్కువైనవి అందుబాటులో ఉన్నాయి. mirroring కుదరదు."
 
-#: src/InputController.py:1550
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr "mirroring సాధ్యంచేయటానికి తప్పక కనీసం 3 భౌతిక విలువలలో ఖాళీ ఉండాలి"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr "తార్కిక వాల్యూం పరిమాణం అందుబాటులో ఉన్న మిర్రర్ల గరిష్ఠ పరిమాణానికి సరిచేయబడతాయి."
 
-#: src/InputController.py:1563
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -542,40 +544,40 @@ msgstr ""
 "మిర్రరింగును కలపటానికి తగిన ఖాళీ లేదు. తార్కిక వాల్యూం పరిమాణాన్ని %sకి తగ్గించు, లేదా భౌతిక వాల్యూంలను "
 "కలుపు."
 
-#: src/InputController.py:1927
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr "\"snapshot\" లేదా \"pvmove\"లతో ప్రారంభమయ్యే పేర్లు కేటాయించిన కీపదాలు."
 
-#: src/InputController.py:1929
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "\"_mlog\" లేదా \"_mimage\" లతో కలిగి ఉన్న పేర్లు కేటాయించిన కీపదాలు. (_m)"
 
-#: src/InputController.py:1931
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "\"-\"తో ప్రారంభమయ్యే పేర్లు విలువైనవి కావు"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "పేర్లు \".\" కానీ \"..\" కానీ కావాలి"
 
-#: src/InputController.py:1939
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "తార్కిక వాల్యూం పేర్లలో ఖాళీ అనుమతించబడదు"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "తార్కిక వాల్యూం పేరులో \"%s\" సరికాని అక్షరం"
 
-#: src/InputController.py:1962
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "దయచేసి మౌంటు పాయింటును తెలపండి"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr "మీరు సమాచారాన్ని తార్కిక వాల్యూంలో భద్రపరచటానికి ext2 ని ext3కి నవీకరించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -584,22 +586,22 @@ msgstr ""
 "కొనసాగాలనుకుంటున్నారా?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2163
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "మిర్రర్ సృష్టించబడింది. దోషాలను కనుగొనే పని పూర్తయ్యింది."
 
 #. create mirror
-#: src/InputController.py:2166
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr "అండర్ లేయింగ్ LVM తార్కిక వాల్యూంలను ఉంచటానికి మద్దతివ్వదు. మిగిలిన పనిని పూర్తిచేస్తోంది."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "మిర్రరింగుని కలపటానికి, కొన్ని విస్తృతులను వలస పంపవలసి ఉంది."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "తెలిపిన విస్తృతులకు మీరు వెళ్లాలనుకుంటున్నారా?"
 
@@ -639,27 +641,27 @@ msgstr "వాల్యూం సమూహాన్ని తొలగిస్�
 msgid "Removing Physical Volume"
 msgstr "భౌతిక వాల్యూంను తొలగిస్తోంది"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "తార్కిక వాల్యూంను తొలగిస్తోంది"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "తార్కిక వాల్యూంకి తిరిగి పేరుపెడుతోంది"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "వాల్యూం సమూహం నుండీ భౌతిక వాల్యూంను తొలగిస్తోంది"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "వలస విస్తృతి"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "వలస విస్తృతి పూర్తిచేస్తోంది"
 
-#: src/CommandHandler.py:378
+#: src/CommandHandler.py:383
 msgid "Rereading partition table"
 msgstr "విభజన పట్టికను తిరిగి చదువుతోంది"
 
@@ -824,58 +826,67 @@ msgstr "ఫారిన్ బూట్ విభజన"
 msgid "Autopartition failure"
 msgstr "స్వయంచాలక విభజన విఫలమైంది"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "మానవీయ విభజన"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "బహుళమార్గ సాధనం"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "సూచన:"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "మానవీయంగా ప్రారంభించు"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "క్లస్టర్డు:   "
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743
 msgid "True"
 msgstr "నిజం"
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "తప్పు"
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "మిర్రర్ చిత్రాల సంఖ్య:"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "స్నాప్ షాట్లు:"
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "స్నాప్ షాట్ మూలం:"
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "స్నాప్ షాట్ వాడుక:"
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   రూటు ఫైళ్లవిధానం"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "ఏదీకాదు"
+
+#: src/lvm_model.py:964
+msgid "SCSI Address:  "
+msgstr ""
+
+#: src/lvm_model.py:966
+#, fuzzy
+msgid "SCSI ID:  "
+msgstr "కంప్యూటరు ఐడి:   "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1052,11 +1063,11 @@ msgstr "ఏ వాల్యూం ఎన్నిక కాబడలేదు"
 msgid "Multiple selection"
 msgstr "బహుళ ఎన్నిక"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "తార్కిక దృశ్యం"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "భౌతిక దృశ్యం"
 
@@ -1124,65 +1135,23 @@ msgstr "స్నాప్ షాట్"
 msgid "extent view"
 msgstr "ఇశ్యాన్ని విస్తృతం చేయి"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "వాల్యూం సమూహాలు"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "కేటాయించబడని వాల్యూంలు"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
 msgstr "ప్రారంభించబడని ప్రవేశాలు"
 
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr ""
-"LVM లాక్సు అసాధమైనవి!!! \n"
-"Massive సమాచారం చెడిపోవటం సంభవించవచ్చు.\n"
-"లాకింగుని సాధ్యం చేస్తోంది (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"LVM క్లస్టరు లాకింగు విధానాన్ని ఎన్నుకోవటానికి ఆకృతీకరించబడింది, కానీ clvmd డెమోన్ ఉపయోగించబడటం లేదు. "
-"డెమోన్ను ఆదేశంతో ప్రారంభించండి:\n"
-"సర్వీసు clvmd ప్రారంభం \n"
-"లేదా, క్లస్టరు లాకింగుని టర్నాఫు చేయి (locking_type=1 in /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"LVM క్లస్టర్ లాకింగ్ విధానానికి ఆకృతీకరించబడింది, కానీ క్లస్ట్రర్ quorate చేయబడలేదు.\n"
-"క్లస్టరు quorate చేయబడేదాకా వేచిఉండండి లేదా క్లస్టరు లాకింగుని టర్నాఫ్ చేయండి (locking_type=1 in /"
-"etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr ""
-"%s మాత్రమే మద్దతిచ్చే ఫైలు మరియూ క్లస్టరు ఆధారిత లాకింగ్ (locking_type=1 or 2 in /etc/lvm/"
-"lvm.conf)."
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
 msgstr "క్లస్టర్డ్ విజి"
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
 msgstr "%s మిర్రర్ సమకాలీకరణ"
@@ -1247,35 +1216,35 @@ msgstr ""
 msgid "Unknown filesystem"
 msgstr "తెలియని ఫైలు విధానం"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS (స్థానికం)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS (clustered)"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
 msgstr "క్లస్టరు పేరు చెల్లని అక్షరాలను కలిగి ఉంది "
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
 msgstr "GFS పేరు చెల్లని అక్షరాలను కలిగిఉంది "
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
 msgstr "క్లస్టరు పేరు తప్పిపోయింది"
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
 msgstr "GFS పేరు తప్పిపోయింది"
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2 (స్థానికం)"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (క్లస్టర్డు)"
 
@@ -1699,3 +1668,40 @@ msgstr "కేవలం వలస విస్తృతులు మాత్ర
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "ఆదేశ సెన్సును వాడు"
+
+#~ msgid ""
+#~ "LVM locks are disabled!!! \n"
+#~ "Massive data corruption may occur.\n"
+#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "LVM లాక్సు అసాధమైనవి!!! \n"
+#~ "Massive సమాచారం చెడిపోవటం సంభవించవచ్చు.\n"
+#~ "లాకింగుని సాధ్యం చేస్తోంది (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
+#~ "not running. Start daemon with command:\n"
+#~ "service clvmd start \n"
+#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "LVM క్లస్టరు లాకింగు విధానాన్ని ఎన్నుకోవటానికి ఆకృతీకరించబడింది, కానీ clvmd డెమోన్ ఉపయోగించబడటం "
+#~ "లేదు. డెమోన్ను ఆదేశంతో ప్రారంభించండి:\n"
+#~ "సర్వీసు clvmd ప్రారంభం \n"
+#~ "లేదా, క్లస్టరు లాకింగుని టర్నాఫు చేయి (locking_type=1 in /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
+#~ "quorate.\n"
+#~ "Either wait until cluster is quorate or turn off cluster locking "
+#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "LVM క్లస్టర్ లాకింగ్ విధానానికి ఆకృతీకరించబడింది, కానీ క్లస్ట్రర్ quorate చేయబడలేదు.\n"
+#~ "క్లస్టరు quorate చేయబడేదాకా వేచిఉండండి లేదా క్లస్టరు లాకింగుని టర్నాఫ్ చేయండి (locking_type=1 "
+#~ "in /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
+#~ "etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "%s మాత్రమే మద్దతిచ్చే ఫైలు మరియూ క్లస్టరు ఆధారిత లాకింగ్ (locking_type=1 or 2 in /etc/lvm/"
+#~ "lvm.conf)."

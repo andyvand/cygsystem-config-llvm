@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2006-09-04 08:47+0100\n"
 "Last-Translator: Mike Karas <zoliqe@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@linux.sk>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-Country: SLOVAKIA\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -377,14 +377,16 @@ msgstr ""
 "stratené! Ste si istí, že chcete odstrániť logický zväzok %s?"
 
 #: src/InputController.py:306
+#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
 "Pre zaistenie bezpečného použitia skupiny zväzkov v klástrovom prostredí, "
 "bol nainštalovaný rpm balík lvm2-cluster a spustená služba clvmd"
 
-#: src/InputController.py:364
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -395,7 +397,7 @@ msgstr ""
 "zväzku %s. Zrkadlené logické zväzky nie sú migrovateľné, takže %s nie je "
 "odstrániteľný."
 
-#: src/InputController.py:367
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -406,7 +408,7 @@ msgstr ""
 "zväzku %s. Zrkadlené logické zväzky nie sú migrovateľné, takže %s nie je "
 "odstrániteľný."
 
-#: src/InputController.py:370
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -415,7 +417,7 @@ msgstr ""
 "Fyzický zväzok %s obsahuje oddiely patriace %s, snímku %s. Snímky nie sú "
 "migrovateľné, takže %s nie je odstrániteľný."
 
-#: src/InputController.py:375
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -424,7 +426,7 @@ msgstr ""
 "Fyzický zväzok %s obsahuje oddiely patriace %s, zdroj snímku %s. Zdroje "
 "snímkov nie sú migrovateľné, takže %s nie je odstrániteľný."
 
-#: src/InputController.py:377
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -433,7 +435,7 @@ msgstr ""
 "Fyzický zväzok %s obsahuje oddiely patriace %s, zdroj snímkov %s. Zdroje "
 "snímkov nie sú migrovateľné, takže %s nie je odstrániteľný."
 
-#: src/InputController.py:564
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -442,13 +444,13 @@ msgstr ""
 "Logický zväzok \"%s\" má snímky, ktoré neboli označené pre odstránenie. Tie "
 "musia byť taktiež odstránené."
 
-#: src/InputController.py:579
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", pôvod snímku \"%s\", bol zmazaný zo zoznamu pre odstránenie."
 
-#: src/InputController.py:610
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -457,7 +459,7 @@ msgstr ""
 "Fyzický zväzok \"%s\" obsahuje oddiely patriace zrkadlu. Zrkadlá nie sú "
 "migrovateľné, takže %s nie je odstrániteľný."
 
-#: src/InputController.py:613
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -466,24 +468,24 @@ msgstr ""
 "Fyzický zväzok \"%s\" obsahuje oddiely patriace snímku alebo zdroju snímku. "
 "Snímky nie sú migrovateľné, takže %s nie je odstrániteľný."
 
-#: src/InputController.py:678
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "Cesta, ktorú ste zadali neexistuje."
 
-#: src/InputController.py:685
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "Cesta, ktorú ste zadali nie je blokovým zariadením."
 
-#: src/InputController.py:756
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "Inicializácia %s zlyhala"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "Prosím najskôr zvoľte nejaké oddiely"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -491,47 +493,47 @@ msgstr ""
 "Nie je dostatok voľných oddielov na vykonanie potrebnej migrácie. Problém "
 "môžete vyriešiť pridaním ďaľších fyzických zväzkov."
 
-#: src/InputController.py:1192
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "Migrovať oddiely"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "Voľby"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Vytvoriť snímok z %s"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "Vytvoriť nový logický zväzok"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Upraviť %s, snímok z %s"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "Upraviť logický zväzok"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Správa logických zväzkov v zásade nepodporuje zrkadlenie"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Stripované logické zväzky nemôžu byť zrkadlené."
 
-#: src/InputController.py:1529
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "Logický zväzok s priradenými snímkami nemôže byť zrkadlený."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1536
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -539,14 +541,14 @@ msgstr ""
 "Hlavnou podstatou zrkadlenia je ochrana dát v prípade poškodenia pevného "
 "disku. Chcete umiestniť obrazy zrkadiel na rôzne pevné disky?"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "K dispozícií sú menej ako 3 pevné disky s voľným miestom. Zrkadlenie "
 "zakázané."
 
-#: src/InputController.py:1550
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -554,7 +556,7 @@ msgstr ""
 "Pre povolenie zrkadlenia musí byť voľné miesto najmenej na troch fyzických "
 "zväzkoch"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -562,7 +564,7 @@ msgstr ""
 "Veľkosť logického zväzku bola upravená na maximálnu možnú veľkosť pre "
 "zrkadlá."
 
-#: src/InputController.py:1563
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -571,41 +573,41 @@ msgstr ""
 "Nedostatok voľného miesta na pridanie zrkadlenia. Znížte veľkosť logického "
 "zväzku na najviac %s, alebo pridajte daľší fyzický zväzok."
 
-#: src/InputController.py:1927
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Názvy začínajúce na \"snapshot\" alebo \"pvmove\" sú rezervovanými slovami."
 
-#: src/InputController.py:1929
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "Názvy obsahujúce \"_mlog\" alebo \"_mimage\" sú rezervovanými slovami."
 
-#: src/InputController.py:1931
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Názvy začínajúce na \"-\" sú nesprávne"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Názvom nemôže byť \".\" ani \"..\""
 
-#: src/InputController.py:1939
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "V názvoch logických zväzkov nie sú povolené medzery"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Neplatný znak \"%s\" v názve logického zväzku"
 
-#: src/InputController.py:1962
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "Prosím zadajte bod pripojenia"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr "Chcete aktualizovať ext2 na ext3 so zachovaním dát na logickom zväzku?"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -614,12 +616,12 @@ msgstr ""
 "Naozaj to chcete urobiť?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2163
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Zrkadlo nebolo vytvorené. Dokončujem zvyšné úlohy."
 
 #. create mirror
-#: src/InputController.py:2166
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
@@ -627,11 +629,11 @@ msgstr ""
 "Použitá SLZ nepodporuje pridávanie zrkadiel do existujúcich logických "
 "zväzkov. Dokončujú sa zvyšné úlohy."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "Pred pridaním zrkadlenia musia byť niektoré oddiely migrované."
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "Chcete migrovať zvolené oddiely?"
 
@@ -671,27 +673,27 @@ msgstr "Odstraňovanie skupiny zväzkov"
 msgid "Removing Physical Volume"
 msgstr "Odstraňovanie fyzického zväzku"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "Odstraňovanie logického zväzku"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "Premenovanie logického zväzku"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "Odstraňovanie fyzického zväzku zo skupiny zväzkov"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "Migrácia oddielov"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "Dokončenie migrácie oddielu"
 
-#: src/CommandHandler.py:378
+#: src/CommandHandler.py:383
 msgid "Rereading partition table"
 msgstr "Načítava sa pôvodná tabuľka partícii"
 
@@ -856,58 +858,67 @@ msgstr "Cudzia štartovacia partícia"
 msgid "Autopartition failure"
 msgstr "Zlyhanie automatického prerozdelenia"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "Rozdelenie ručne"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "Viac-cestné zariadenie"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "Poznámka:"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "Inicializovať ručne"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "Klástrované: "
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743
 msgid "True"
 msgstr "Áno"
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "Nie"
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "Počet obrazov zrkadiel:"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "Snímky:"
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "Pôvod snímku:"
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "Využitie snímku:"
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   Koreňový súborový systém"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "Žiaden"
+
+#: src/lvm_model.py:964
+msgid "SCSI Address:  "
+msgstr ""
+
+#: src/lvm_model.py:966
+#, fuzzy
+msgid "SCSI ID:  "
+msgstr "ID systému:   "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1087,11 +1098,11 @@ msgstr "Nebol zvolený zväzok"
 msgid "Multiple selection"
 msgstr "Viacnásobný výber"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "Logické zobrazenie"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "Fyzické zobrazenie"
 
@@ -1161,66 +1172,23 @@ msgstr "Snímok"
 msgid "extent view"
 msgstr "pohľad oddielov"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "Skupiny zväzkov"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "Nepridelené zväzky"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
 msgstr "Neinicializované jednotky"
 
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr ""
-"Zámky SLZ sú zakázané!!! \n"
-"Môže nastať masívne poškodenie dát.\n"
-"Povoľte zámky (locking_type=1 alebo 2 v /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"SLZ je nastavená na použitie mechanizmu klástrových zámkov, ale démon clvmd "
-"nie je spustený. Spustite démona príkazom:\n"
-"service clvmd start \n"
-"alebo, vypnite klástrové zámky (locking_type=1 v /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-"SLZ je nastavená pre použitie mechanizmu klástrových zámkov, ale kláster  "
-"nie je na to pripravený.\n"
-"Počkajte pokiaľ kláster bude pripravený alebo vypnite klástrové zámky "
-"(locking_type=1 v /etc/lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr ""
-"%s podporuje iba súborové a klástrové zámky (locking_type=1 alebo 2 v /etc/"
-"lvm/lvm.conf)."
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
 msgstr "Klástrovaná SZ"
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
 msgstr "synchronizácia zrkadiel %s"
@@ -1290,35 +1258,35 @@ msgstr ""
 msgid "Unknown filesystem"
 msgstr "Neznámy súborový systém"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS (lokálny)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS (klástrovaný)"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
 msgstr "Názov klástra obsahuje nepovolené znaky "
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
 msgstr "Názov GFS obsahuje nepovolené znaky "
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
 msgstr "Chýba názov klástra"
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
 msgstr "Chýba názov GFS"
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2 (lokálny)"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (klástrovaný)"
 
@@ -1742,3 +1710,41 @@ msgstr "Migrovať iba oddiely patriace do LZ"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Použiť bežný postup"
+
+#~ msgid ""
+#~ "LVM locks are disabled!!! \n"
+#~ "Massive data corruption may occur.\n"
+#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "Zámky SLZ sú zakázané!!! \n"
+#~ "Môže nastať masívne poškodenie dát.\n"
+#~ "Povoľte zámky (locking_type=1 alebo 2 v /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
+#~ "not running. Start daemon with command:\n"
+#~ "service clvmd start \n"
+#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "SLZ je nastavená na použitie mechanizmu klástrových zámkov, ale démon "
+#~ "clvmd nie je spustený. Spustite démona príkazom:\n"
+#~ "service clvmd start \n"
+#~ "alebo, vypnite klástrové zámky (locking_type=1 v /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
+#~ "quorate.\n"
+#~ "Either wait until cluster is quorate or turn off cluster locking "
+#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "SLZ je nastavená pre použitie mechanizmu klástrových zámkov, ale kláster  "
+#~ "nie je na to pripravený.\n"
+#~ "Počkajte pokiaľ kláster bude pripravený alebo vypnite klástrové zámky "
+#~ "(locking_type=1 v /etc/lvm/lvm.conf)."
+
+#~ msgid ""
+#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
+#~ "etc/lvm/lvm.conf)."
+#~ msgstr ""
+#~ "%s podporuje iba súborové a klástrové zámky (locking_type=1 alebo 2 v /"
+#~ "etc/lvm/lvm.conf)."

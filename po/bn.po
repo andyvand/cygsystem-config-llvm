@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2006-01-20 13:49+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bangla <redhat-translation@bengalinux.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -381,10 +381,11 @@ msgstr ""
 #: src/InputController.py:306
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
 
-#: src/InputController.py:364
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -395,7 +396,7 @@ msgstr ""
 "রয়েছে। মিরর করা লজিকাল ভলিউম মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে "
 "না।"
 
-#: src/InputController.py:367
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -406,7 +407,7 @@ msgstr ""
 "রয়েছে। মিরর করা লজিকাল ভলিউম মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে "
 "না।"
 
-#: src/InputController.py:370
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -415,7 +416,7 @@ msgstr ""
 "%s প্রকৃত ভলিউমের মধ্যে %s অর্থাত্‍‌ %s'র স্ন্যাপশটের মালিকানাধীন এক্সটেন্ট উপস্থিত "
 "রয়েছে। স্ন্যাপশট মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
-#: src/InputController.py:375
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -425,7 +426,7 @@ msgstr ""
 "উপস্থিত রয়েছে। স্ন্যাপশটের মূল বস্তু মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা "
 "যাবে না।"
 
-#: src/InputController.py:377
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -434,7 +435,7 @@ msgstr ""
 "%s প্রকৃত ভলিউমের মধ্যে %s অর্থাত্‍‌ %s স্ন্যাপশটের মূল বস্তুর মালিকানাধীন extent উপস্থিত "
 "রয়েছে। স্ন্যাপশটের মূল বস্তু মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
-#: src/InputController.py:564
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -443,7 +444,7 @@ msgstr ""
 "\"%s\" নামক লজিকাল ভলিউমের মধ্যে স্ন্যাপশট উপস্থিত রয়েছে যা অপসারণের জন্য চিহ্নিত "
 "হয়নি। এইগুলি সরানো আবশ্যক।"
 
-#: src/InputController.py:579
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
@@ -451,7 +452,7 @@ msgstr ""
 "\"%s\", অর্থাত্‍‌ \"%s\" স্ন্যাপশটের মূল বস্তুটি, অপসারণের জন্য চিহ্নিত বস্তুর তালিকা "
 "থেকে মুছে ফেলা হয়েছে।"
 
-#: src/InputController.py:610
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -460,7 +461,7 @@ msgstr ""
 "\"%s\" নমাক প্রকৃত ভলিউমের মধ্যে কোনো মিররের মালিকানাধীন এক্সটেন্ট উপস্থিত রয়েছে। "
 "মিরর মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
-#: src/InputController.py:613
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -470,24 +471,24 @@ msgstr ""
 "মালিকানাধীন এক্সটেন্ট উপস্থিত রয়েছে। স্ন্যাপশট মাইগ্রেট করা সম্ভব নয় যার ফলে %s মুছে "
 "ফেলা যাবে না।"
 
-#: src/InputController.py:678
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "আপনার চিহ্নিত পাথ উপস্থিত নেই।"
 
-#: src/InputController.py:685
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "চিহ্নিত পাথ ব্লক ডিভাইস নয়।"
 
-#: src/InputController.py:756
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "%s আরম্ভ করতে ব্যর্থ"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "অনুগ্রহ করে প্রথমে কয়েকটি এক্সটেন্ট নির্বাচন করুন"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -495,47 +496,47 @@ msgstr ""
 "প্রয়োজনীয় মাইগ্রেশনের জন্য পর্যাপ্ত মূক্ত এক্সটেন্ট উপস্থিত নেই। অতিরিক্ত প্রকৃত ভলিউম "
 "যোগ  করে এই সমস্যার সমাধান করা সম্ভব।"
 
-#: src/InputController.py:1192
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "এক্সটেন্ট মাইগ্রেট করুন"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "বিকল্প"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "%s'র একটি স্ন্যাপশট নির্মাণ করুন"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "নতুন লজিকাল ভলিউম নির্মাণ"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "%s সম্পাদনা, %s'র স্ন্যাপশট"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "লজিকাল ভলিউম সম্পাদনা"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "অন্তর্নিহিত লজিকাল ভলিউম ব্যবস্থাপনার দ্বারা মিররিং কর্ম সমর্থিত নয়"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "স্ট্রাইপ করা লজিকাল ভলিউম মিরর করা হবে না।"
 
-#: src/InputController.py:1529
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "সংযুক্ত স্ন্যাপশটসমেত লজিকাল ভলিউমের জন্য মিরর করা সম্ভব নয়।"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1536
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -543,25 +544,25 @@ msgstr ""
 "হার্ড-ড্রাইভ বিপর্যয়ের ক্ষেত্রে ডাটা'র ক্ষয়ক্ষতি রোধ করাই মিররিং ব্যবস্থার প্রধান "
 "উদ্দেশ্য। আপনি কি বিভিন্ন হার্ড-ড্রাইভের মধ্যে মিরর ইমেজ স্থাপন করতে ইচ্ছুক?"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "শূণ্যস্থান সমেত উপলব্ধ হার্ড-ড্রাইভের সংখ্যা ৩'র কম। মিররিং নিষ্ক্রিয় করা হচ্ছে।"
 
-#: src/InputController.py:1550
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr "মিররিং'র জন্য অন্তত তিনটি প্রকৃত ভলিউমের মধ্যে শূণ্যস্থান উপলব্ধ থাকা আবশ্যক"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
 "মিররগুলির জন্য লজিকাল ভলিউমের মাপ সর্বাধিক উপলব্ধ মাপ হিসাবে পরিবর্তন করা আবশ্যক।"
 
-#: src/InputController.py:1563
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -570,43 +571,43 @@ msgstr ""
 "মিররিং'র জন্য পর্যাপ্ত শূণ্যস্থান উপলব্ধ নেই। লজিকাল ভলিউমের সর্বাধিক %s হিসাবে "
 "স্থাপন করুন অথবা অতিরিক্ত প্রকৃত ভলিউম যোগ করুন।"
 
-#: src/InputController.py:1927
+#: src/InputController.py:1928
 #, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr "প্রারম্ভে \"snapshot\" ও \"pvmove\" সহ নামগুলি সংরক্ষিত অভিব্যক্তি।"
 
-#: src/InputController.py:1929
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "প্রারম্ভে \"_mlog\" ও \"_mimage\" সহ নামগুলি সংরক্ষিত অভিব্যক্তি।"
 
-#: src/InputController.py:1931
+#: src/InputController.py:1932
 #, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "প্রারম্ভে \"-\" সমেত নামগুলি বৈধ নয়"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "নাম \".\" অথবা \"..\" হওয়া সম্ভব নয়"
 
-#: src/InputController.py:1939
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "লজিকাল ভলিউমের নামের মধ্যে শূণ্যস্থান লেখা সম্ভব নয়"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "লজিকাল ভলিউমের নামের মধ্যে অবৈধ অক্ষর \"%s\""
 
-#: src/InputController.py:1962
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "অনুগ্রহ করে মাউন্ট-পয়েন্ট নির্ধারণ করুন"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "লজিকাল ভলিউমের তথ্য অক্ষত রেখে আপনি কি ext2 থেকে ext3-তে আপগ্রেড করতে ইচ্ছুক?"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -615,22 +616,22 @@ msgstr ""
 "হবে! অপনি কি নিশ্চিতরূপে অগ্রসর হতে ইচ্ছুক?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2163
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "মিরর নির্মাণ করা হয়নি। অবশিষ্ট কর্ম সমাপ্ত করা হচ্ছে।"
 
 #. create mirror
-#: src/InputController.py:2166
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "মিরর যোগ করার জন্য কয়েকটি এক্সটেন্ট মাইগ্রেট করা আবশ্যক।"
 
-#: src/InputController.py:2215
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "আপনি কি সুনির্দিষ্ট এক্সটেন্ট মাইগ্রেট করতে ইচ্ছুক?"
 
@@ -670,27 +671,27 @@ msgstr "ভলিউম গ্রুপ অপসারণের প্রণা
 msgid "Removing Physical Volume"
 msgstr "প্রকৃত ভলিউম অপসারণের প্রণালী"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "লজিকাল ভলিউম অপসারণের প্রণালী"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "লজিকাল ভলিউমের নাম পরিবর্তনের প্রণালী"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "ভলিউম গ্রুপ থেকে প্রকৃত ভলিউম অপসারণের প্রণালী"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "এক্সটেন্ট মাইগ্রেট প্রণালী"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "এক্সটেন্ট মাইগ্রেট কর্ম সম্পন্ন করা হচ্ছে"
 
-#: src/CommandHandler.py:378
+#: src/CommandHandler.py:383
 #, fuzzy
 msgid "Rereading partition table"
 msgstr "এক্সটেন্ডেড পার্টিশান"
@@ -857,63 +858,72 @@ msgstr "ফরেন বুট পার্টিশান"
 msgid "Autopartition failure"
 msgstr "স্বয়ংক্রিয় পার্টিশান কর্ম ব্যর্থ"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "ব্যবহারকারীর দ্বারা পার্টিশান"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "মাল্টিপাথ ডিভাইস"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 #, fuzzy
 msgid "Note:"
 msgstr "উল্লেখ্য:   "
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "ব্যবহারকারীর দ্বারা আরম্ভ"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr ""
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743
 msgid "True"
 msgstr ""
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
 msgstr ""
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 #, fuzzy
 msgid "Number of mirror images:"
 msgstr "মিরর ইমেজের সংখ্যা:   "
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 #, fuzzy
 msgid "Snapshots:"
 msgstr "স্ন্যাপশট:  "
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 #, fuzzy
 msgid "Snapshot origin:"
 msgstr "স্ন্যাপশটের মূল উত্‍‌স:  "
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 #, fuzzy
 msgid "Snapshot usage:"
 msgstr "স্ন্যাপশটের ব্যবহার:  "
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   Root ফাইল-সিস্টেম"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "শূণ্য"
+
+#: src/lvm_model.py:964
+msgid "SCSI Address:  "
+msgstr ""
+
+#: src/lvm_model.py:966
+#, fuzzy
+msgid "SCSI ID:  "
+msgstr "সিস্টেমের ID:   "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1096,11 +1106,11 @@ msgstr "কোনো ভলিউম নির্বাচন করা হয়�
 msgid "Multiple selection"
 msgstr "একাধিক নির্বাচন"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "লজিকাল ভিউ"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "প্রকৃত ভিউ"
 
@@ -1172,53 +1182,23 @@ msgstr "স্ন্যাপশট"
 msgid "extent view"
 msgstr "extent অনুযায়ী প্রদর্শন"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "ভলিউম গ্রুপ"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "আরক্ষণবিহীন ভলিউম"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
 msgstr "নিষ্ক্রিয় সত্ত্বা"
 
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-msgstr ""
-
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr ""
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
 msgstr ""
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, fuzzy, python-format
 msgid "%s mirror synchronisation"
 msgstr "%s মিরর সামঞ্জস্যকরণ"
@@ -1288,35 +1268,35 @@ msgstr ""
 msgid "Unknown filesystem"
 msgstr "অজ্ঞাত ফাইল-সিস্টেম"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS (স্থানীয়)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS (ক্লাস্টারসমেত)"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
 msgstr ""
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
 msgstr ""
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
 msgstr ""
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
 msgstr ""
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2 (স্থানীয়)"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (ক্লাস্টারসমেত)"
 
