@@ -8,13 +8,14 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-12-14 13:56-0500\n"
-"Last-Translator: Igor Miletic <grejigl-gnomeprevod@yahoo.ca>\n"
-"Language-Team: Serbian (sr) <fedora@prevod.org>\n"
+"PO-Revision-Date: 2007-05-01 23:24-0000\n"
+"Last-Translator: Miloš Komarčević <kmilos@gmail.com>\n"
+"Language-Team: Serbian (sr) <fedora-trans-sr@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 0.10.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
@@ -169,8 +170,8 @@ msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr ""
-"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo "
-"uklonite snimak."
+"Logički disk %s ima snimak %s trenutno pridružen sa njim. Molim prvo uklonite "
+"snimak."
 
 #: src/InputController.py:120
 #, python-format
@@ -194,9 +195,9 @@ msgid ""
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
 msgstr ""
-"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je "
-"montirana na %s. Da li ste potpuno sigurni da želite odbaciti podatke na "
-"ovom montiranom sistemu datoteka?"
+"VELIKO UPOZORENJE: Grupa %s sadrži %s sistem datoteka i trenutno je montirana "
+"na %s. Da li ste potpuno sigurni da želite odbaciti podatke na ovom "
+"montiranom sistemu datoteka?"
 
 #: src/InputController.py:126
 #, python-format
@@ -302,8 +303,7 @@ msgstr ""
 "logičkog(ih) diska(ova) mapirane na svoj opseg. Zato što je to jedini "
 "fizički disk u grupi diskova, ne postoji mesto na koje bi se podaci "
 "premestili. Preporučena akcija je ili dodavanje novog fizičkog diska pre "
-"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom "
-"disku."
+"uklanjanja ovog, ili uklanjanje logičkih diskova pridruženih ovom fizičkom disku."
 
 #: src/InputController.py:153
 #, python-format
@@ -327,8 +327,8 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %"
-"s. Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
+"Grupa diskova %s nema dovoljno prostora da premesti podatke postavljene na %s. "
+"Moguće rešenje je da se doda dodatni fizički disk u grupu diskova."
 
 #: src/InputController.py:156
 msgid ""
@@ -376,14 +376,14 @@ msgstr ""
 "biti izgubljeni! Da li ste sasvim sigurni da želite ukloniti logički disk %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Da bi se grupa diskova mogla bezbedno koristiti u učvorenom okruženju, lvm2-"
-"cluster paket mora biti instaliran, i clvmd servis mora da je pokrenut"
+"cluster paket mora biti instaliran, mora se izvršiti „lvmconf --enable-"
+"cluster“ i clvmd servis mora biti pokrenut"
 
 #: src/InputController.py:365
 #, python-format
@@ -404,8 +404,7 @@ msgid ""
 "removable."
 msgstr ""
 "Fizički disk %s sadrži opsege koji pripadaju odrazu logičkog diska %s. "
-"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može "
-"uklanjati."
+"Odrazi logičkog diska još uvek nisu preseljivi, stoga se %s ne može uklanjati."
 
 #: src/InputController.py:371
 #, python-format
@@ -489,8 +488,8 @@ msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
-"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. "
-"Problem bi se rešio dodavanjem još fizičkih diskova."
+"Nema dovoljno slobodnih opsega da bi se neophodno preseljenje izvelo. Problem "
+"bi se rešio dodavanjem još fizičkih diskova."
 
 #: src/InputController.py:1193
 msgid "Migrate extents"
@@ -539,9 +538,8 @@ msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
-"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju "
-"otkazivanja čvrstog diska. Da li želite postaviti odraze na različite čvrste "
-"diskove?"
+"Osnovna svrha pravljenja odraza je da se zaštite podaci u slučaju otkazivanja "
+"čvrstog diska. Da li želite postaviti odraze na različite čvrste diskove?"
 
 #: src/InputController.py:1546
 msgid ""
@@ -555,8 +553,8 @@ msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se "
-"uključilo pravljenje odraza"
+"Najmanje tri fizička diska moraju imati slobodnog prostora da bi se uključilo "
+"pravljenje odraza"
 
 #: src/InputController.py:1559
 msgid ""
@@ -581,8 +579,7 @@ msgstr ""
 
 #: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
+msgstr "Imena koja počinju sa „_mlog“ ili „_mimage“ su rezervisane ključne reči."
 
 #: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
@@ -615,8 +612,8 @@ msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da "
-"li ste sigurni da želite nastaviti?"
+"Menjanjem sistema datoteka će se uništiti svi podaci na logičkom disku! Da li "
+"ste sigurni da želite nastaviti?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2164
@@ -916,12 +913,11 @@ msgstr "Ništa"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI adresa:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ID sistema:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -982,8 +978,8 @@ msgid ""
 "computer now."
 msgstr ""
 "Promene će preći u dejstvo posle ponovnog pokretanja. Ako je uređaj %s u "
-"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo "
-"je da se računar ponovo pokrene sada."
+"upotrebi, pre ponovnog pokretanja, podaci ĆE BITI iskvareni. Preporučljivo je "
+"da se računar ponovo pokrene sada."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
@@ -1715,54 +1711,3 @@ msgstr "Samo preseli opsege koji pripadaju LD-u"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Koristi razum"
-
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Zaključavanje LVM-a je neomogućeno!!! \n"
-#~ "Masovna korupcija podataka se može dogoditi.\n"
-#~ "Omogući zaključavanje (locking_type=1 ili 2 u /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM je podešen da koristi Zaključavanje čvorova mehanizam, ali clvdm "
-#~ "demon nije pokrenut. Pokrenite demon sa komandom:\n"
-#~ "service clvmd start \n"
-#~ "ili, ugasite zaključavanje čvora (locking_type=1 u /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM je podešen da koristi Zaključavanje čvora mehanizam, ali čvor nijeu "
-#~ "kvorumu.\n"
-#~ "Ili sačekajte da čvor uđe u kvorum ili isključite zaključavanje čvora "
-#~ "(locking_type=1 u /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s podržava samo zaključavanje zasnovano na datotekama i čvorovima "
-#~ "(locking_type=1 ili 2 u /etc/lvm/lvm.conf)."
-
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Ime za grupu diskova: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Novi obrazac za grupu diskova"
-
-#~ msgid ""
-#~ "* In this release, mirroring support is \n"
-#~ "available as a Technology Preview"
-#~ msgstr ""
-#~ "* U ovom izdanju, podrška za preslikavanje \n"
-#~ "je dostupna kao pregled buduće tehnologije"
