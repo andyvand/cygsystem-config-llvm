@@ -1,21 +1,18 @@
-# translation of hu.po to hu
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-#
-# Arpad Biro <biro_arpad@yahoo.com>, 2005.
+# Arpad Biro <biro_arpad@yahoo.com>, 2005, 2007.
 # Szentiványi Gábor <szentivanyi.gabor@ulx.hu>, 2006.
 # Gábor Szentiványi <szenti@ulx.hu>, 2006.
 msgid ""
 msgstr ""
-"Project-Id-Version: hu\n"
+"Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-09-01 15:22+0200\n"
-"Last-Translator: Gábor Szentiványi <szenti@ulx.hu>\n"
-"Language-Team: hu <en@li.org>\n"
+"PO-Revision-Date: 2007-05-02 23:51+0200\n"
+"Last-Translator: Arpad Biro <biro_arpad@yahoo.com>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
@@ -41,8 +38,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
-"Jelölje ki, melyik kötetcsoportba kívánja felvenni a(z) %s fizikai kötetet:"
+msgstr "Jelölje ki, melyik kötetcsoportba kívánja felvenni a(z) %s fizikai kötetet:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -97,8 +93,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Már létezik %s nevű kötetcsoport. Válasszon egyedi nevet."
 
 #: src/InputController.py:98
@@ -111,8 +106,7 @@ msgstr "Meg kell adni egy nevet az új kötetcsoport számára"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "A megadott csatolási pont (%s) nem létezik. Szeretné létrehozni?"
 
 #: src/InputController.py:104
@@ -128,15 +122,13 @@ msgstr "Ez a képesség még nincs megvalósítva ebben a verzióban"
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"A kötetcsoportban a logikai kötetek száma elérte a lehetséges maximumot."
+msgstr "A kötetcsoportban a logikai kötetek száma elérte a lehetséges maximumot."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
-"A kötetcsoportban a fizikai kötetek száma elérte a lehetséges maximumot."
+msgstr "A kötetcsoportban a fizikai kötetek száma elérte a lehetséges maximumot."
 
 #: src/InputController.py:112
 #, python-format
@@ -185,8 +177,7 @@ msgstr ""
 "távolítsa el a pillanatfelvételeket először."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Típuskonverziós hiba a modellkészítőben. A művelet végrehajtása nem "
 "lehetséges."
@@ -312,8 +303,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 "Biztos benne, hogy el kívánja távolítani a(z) \"%s\" kötetet a(z) \"%s\" "
 "kötetcsoportból?"
@@ -391,15 +381,15 @@ msgstr ""
 "a(z) %s logikai kötetet?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Ahhoz, hogy egy kötetcsoportot biztonságosan lehessen használni fürtözött "
-"környezetben, az lvm2-cluster rpm-et kell telepíteni és a clvmd "
-"szolgáltatásnak futnia kell"
+"környezetben, telepíteni kell az \"lvm2-cluster\" RPM-csomagot, majd ki kell "
+"adni egy \"lvmconf --enable-cluster\" parancsot, továbbá el kell indítani "
+"a \"clvmd\" szolgáltatást."
 
 #: src/InputController.py:365
 #, python-format
@@ -464,8 +454,7 @@ msgstr ""
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", a(z) \"%s\" pillanatfelvétel eredete törölve lett az eltávolítandók "
 "listájáról."
@@ -505,19 +494,19 @@ msgstr "A(z) %s inicializálása nem sikerült."
 
 #: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
-msgstr "Válasszon extenteket először."
+msgstr "Először válasszon kiterjedéseket"
 
 #: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
-"Nincs elég szabad extent a migráció végrehajtásához. Megoldás lehet néhány "
+"Nincs elég szabad kiterjedés a migráció végrehajtásához. Megoldás lehet néhány "
 "további fizikai kötet hozzáadása."
 
 #: src/InputController.py:1193
 msgid "Migrate extents"
-msgstr "Extentek migrációja"
+msgstr "Kiterjedések migrációja"
 
 #: src/InputController.py:1321
 msgid "Options"
@@ -551,8 +540,7 @@ msgstr "A sávos (striped) logikai kötetek nem tükrözhetők."
 
 #: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
-"A pillanatfelvételekhez kötődő logikai kötetek jelenleg nem tükrözhetők."
+msgstr "A pillanatfelvételekhez kötődő logikai kötetek jelenleg nem tükrözhetők."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -565,8 +553,7 @@ msgstr ""
 "esetén. Külön merevlemezre kívánja tenni a tükrözött képmásokat?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Kevesebb mint 3 merevlemez érhető el megfelelő szabad területtel. A tükrözés "
 "le lesz tiltva."
@@ -576,7 +563,7 @@ msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
-"Leaglább három fizikai köteten elegendő szabad helynek kell lennie a "
+"Legalább három fizikai köteten elegendő szabad helynek kell lennie a "
 "tükrözés engedélyezéséhez"
 
 #: src/InputController.py:1559
@@ -593,18 +580,16 @@ msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
-"Nincs elegendő hely a tüközés beállításához. Csökkentse a logikai kötet "
+"Nincs elegendő hely a tükrözés beállításához. Csökkentse a logikai kötet "
 "méretét legalább %s értékre vagy adjon hozzá további fizikai köteteket."
 
 #: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"A \"snapshot\"-tal vagy \"pvmove\"-val kezdődő nevek foglalt kulcsszavak."
+msgstr "A \"snapshot\"-tal vagy \"pvmove\"-val kezdődő nevek foglalt kulcsszavak."
 
 #: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Az \"_mlog\"-ot vagy \"_mimage\"-t tartalmazó szavak foglalt kulcsszavak."
+msgstr "Az \"_mlog\"-ot vagy \"_mimage\"-t tartalmazó szavak foglalt kulcsszavak."
 
 #: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
@@ -616,8 +601,7 @@ msgstr "A név nem lehet \".\" vagy \"..\""
 
 #: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
-"Semmilyen típusú szóköz (whitespace) nem lehet a logaikai kötet nevében"
+msgstr "Semmilyen típusú szóköz (whitespace) nem lehet a logikai kötet nevében"
 
 #: src/InputController.py:1943
 #, python-format
@@ -645,8 +629,7 @@ msgstr ""
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
-"A tükör nem lett elkészítve. A további feladatok elvégzése folytatódik."
+msgstr "A tükör nem lett elkészítve. A további feladatok elvégzése folytatódik."
 
 #. create mirror
 #: src/InputController.py:2167
@@ -654,16 +637,16 @@ msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
-"A telepített LVM redszer jelenleg nem támogatja a tükrözések hozzáadását "
+"A telepített LVM rendszer jelenleg nem támogatja a tükrözések hozzáadását "
 "meglévő logikai kötetekhez (LV). Folytatom a következő feladattal."
 
 #: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr "A tükrözés hozzáadásához néhány extentet migrálni kell."
+msgstr "A tükrözés hozzáadásához néhány kiterjedést migrálni kell."
 
 #: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
-msgstr "Akar megadott extenteket migrálni?"
+msgstr "Szeretné migrálni a megadott kiterjedéseket?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
@@ -715,11 +698,11 @@ msgstr "Fizikai kötet eltávolítása a kötetcsoportból"
 
 #: src/CommandHandler.py:320
 msgid "Migrating Extents"
-msgstr "Extentek migrálása"
+msgstr "Kiterjedések migrálása"
 
 #: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
-msgstr "Extent migráció befejezése"
+msgstr "Kiterjedés-migráció befejezése"
 
 #: src/CommandHandler.py:383
 msgid "Rereading partition table"
@@ -791,7 +774,7 @@ msgstr "Logikai kötetek száma:   "
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
-msgstr "A KCs UUID-je:   "
+msgstr "A kötetcsoport UUID-je:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
@@ -941,12 +924,11 @@ msgstr "nincs"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI-cím:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "Rendszerazonosító:   "
+msgstr "SCSI-azonosító:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -973,14 +955,13 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
-"A(z) %s lemezpéldány a(z) %skönyvtárban adatokat tartalmaz. A könyvtárban "
+"A(z) %s lemezpéldány a(z) %s könyvtárban adatokat tartalmaz. A könyvtárban "
 "minden adat meg fog semmisülni! Biztos benne, hogy inicializálni akarja a(z) "
 "%s lemezpéldányt?"
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Biztos benne, hogy szeretne inicializálni %s-nyi szabad területet a(z) %s "
 "lemezen?"
@@ -1022,8 +1003,7 @@ msgstr "Nem lehet a kérést feldolgozni"
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"A(z) %s parancs sikertelen. A teljes parancs: \"%s\" - A rendszerhiba: %s"
+msgstr "A(z) %s parancs sikertelen. A teljes parancs: \"%s\" - A rendszerhiba: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -1081,7 +1061,7 @@ msgstr "MSDOS"
 
 #: src/lvmui_constants.py:102
 msgid "Reiserfs"
-msgstr "Reiserfs"
+msgstr "ReiserFS"
 
 #: src/lvmui_constants.py:103
 msgid "VFAT"
@@ -1153,9 +1133,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
-"Az extentek, amiket ki szeretne választani a(z) %s logiaki kötet tükrözési "
+"A kiterjedések, amelyeket ki szeretne választani, a(z) %s logikai kötet tükrözési "
 "naplójához tartoznak. A tükrözött logikai kötetek jelenleg nem migrálhatók, "
-"ezért az extenteket nem lehet kiválasztani."
+"ezért a kiterjedéseket nem lehet kiválasztani."
 
 #: src/renderer.py:197
 #, python-format
@@ -1164,9 +1144,9 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
-"Az extentek, amiket ki szeretne választani a(z) %s logikai kötet tükrözött "
+"A kiterjedések, amelyeket ki szeretne választani, a(z) %s logikai kötet tükrözött "
 "képmásához tartoznak. A tükrözött logikai kötetek jelenleg nem migrálhatók, "
-"ezért az extenteket nem lehet kiválasztani."
+"ezért a kiterjedéseket nem lehet kiválasztani."
 
 #: src/renderer.py:199
 #, python-format
@@ -1174,9 +1154,9 @@ msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
-"Az extentek, amiket ki szeretne választani a(z) %s kötethez tartoznak, ami a"
-"(z) %s pillanatfelvétele. A pillanatfelvételek jelenleg nem migrálhatók, "
-"ezért az extenteket nem lehet kiválasztani."
+"A kiterjedések, amelyeket ki szeretne választani, a(z) %s kötethez tartoznak, "
+"amely a(z) %s pillanatfelvétele. A pillanatfelvételek jelenleg nem migrálhatók, "
+"ezért a kiterjedéseket nem lehet kiválasztani."
 
 #: src/renderer.py:201
 #, python-format
@@ -1185,9 +1165,9 @@ msgid ""
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
-"Az extentek, amiket ki szeretne választani a(z) %s pillanatfelvétel "
-"eredetéhez tartoznak. A pillanatfelvételek eredetei elenleg nem migrálhatók, "
-"ezért az extenteket nem lehet kiválasztani."
+"A kiterjedések, amelyeket ki szeretne választani, a(z) %s "
+"pillanatfelvétel-eredethez tartoznak. A pillanatfelvételek eredetei "
+"jelenleg nem migrálhatók, ezért a kiterjedéseket nem lehet kiválasztani."
 
 #: src/renderer.py:388
 #, python-format
@@ -1207,7 +1187,7 @@ msgstr "Pillanatfelvétel"
 # line1 = str(twenty_pixel) + " " + EXTENTS_STR
 #: src/renderer.py:540
 msgid "extent view"
-msgstr "extent nézet"
+msgstr "kiterjedés-nézet"
 
 #: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
@@ -1228,7 +1208,7 @@ msgstr "Fürtözött kötetcsoport"
 #: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr "%s tükör szinkronizáció"
+msgstr "%s tükörszinkronizáció"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
@@ -1390,7 +1370,7 @@ msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr "Fizikai kötet felvétele KCs-ba"
+msgstr "Fizikai kötet felvétele kötetcsoportba"
 
 #: src/lvui.glade.h:13
 msgid ""
@@ -1570,7 +1550,7 @@ msgstr "_Eszközök"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
-msgstr "vg üzenet kiterjesztése:"
+msgstr "kötetcsoport-kiterjesztési üzenet:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1626,7 +1606,7 @@ msgstr "Maradó szabad hely címke"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
-msgstr "Kilobájt granularitás"
+msgstr "\"Kilobájt\" pontosság"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
@@ -1666,11 +1646,11 @@ msgstr "Csatolás újraindítás után"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr "Méret beg"
+msgstr "Méret, kezdet"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr "Méret vége"
+msgstr "Méret, vég"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
@@ -1678,7 +1658,7 @@ msgstr "Sávozott"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr "Használja a maradék "
+msgstr "Használja a maradékot"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
@@ -1713,9 +1693,9 @@ msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
-"A fizikai kötet eltávolításához a használatban lévő extenteket migrálni "
+"A fizikai kötet eltávolításához a használatban lévő kiterjedéseket migrálni "
 "kell.\n"
-"Válassza ki az extentek célját és a migrációs előírást."
+"Válassza ki a kiterjedések célját és a migrációs előírást."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
@@ -1730,7 +1710,7 @@ msgstr "Előírás öröklése a kötetcsoportból"
 # line1 = str(twenty_pixel) + " " + EXTENTS_STR
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
-msgstr "Extentek migrálása"
+msgstr "Kiterjedések migrálása"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
@@ -1738,7 +1718,7 @@ msgstr "Migráljon bárhová, még ha az csökkenti is a teljesítményt"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
-msgstr "Az új extentek szomszédosak a meglévőkkel"
+msgstr "Az új kiterjedések szomszédosak a meglévőkkel"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
@@ -1746,49 +1726,9 @@ msgstr "Normális"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
-msgstr "Csak a logikai kötethez (LV) tartozó extentek migrálása"
+msgstr "Csak a logikai kötethez (LV) tartozó kiterjedések migrálása"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Józan logika használata"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Az LVM zárolók (lock) le vannak tiltva! \n"
-#~ "Ez súlyos adatvasztéshez vezethet.\n"
-#~ "Engedélyezze a zárolást (locking_type=1 vagy 2 az /etc/lvm/lvm.conf "
-#~ "fájlban)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Az LVM úgy van beállítva, hogy fürtzárolási (cluster locking) "
-#~ "mechanizmust használjon, de a clvmd démon jelenleg nem fut. Indítsa el a "
-#~ "démont az alábbi paranccsal:\n"
-#~ "service clvmd start \n"
-#~ "vagy kapcsolja ki a fürtzárolást (locking_type=1 a /etc/lvm/lvm.conf "
-#~ "fájlban)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Az LVM úgy van beállítva, hogy fürtzárolási (cluster locking) "
-#~ "mechanizmust használjon, de a fürt jelenleg nem szavazóképes.\n"
-#~ "Várjon, amíg a fürt szavazóképes lesz, vagy kapcsolja ki a a fürtzárolást "
-#~ "(locking_type=1 a /etc/lvm/lvm.conf fájlban)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "A(z) %s csak fájl és fürt alapú zárolást támogat (locking_type=1 vagy 2 "
-#~ "az /etc/ lvm/lvm.conf fájlban)."
