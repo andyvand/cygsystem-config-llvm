@@ -1,16 +1,17 @@
-# translation of system-config-lvm.pot to Bulgarian
+# translation of system-config-lvm.po to Bulgarian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Doncho N. Gunchev <gunchev@gmail.com>, 2004, 2005, 2007.
+# Miroslav Ivanov <kiro.kopeleto@gmail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-03-29 22:54+0300\n"
-"Last-Translator: Doncho N. Gunchev <gunchev@gmail.com>\n"
-"Language-Team: Bulgarian <Bulgarian Translators' Team <dict@fsa-bg.org>>\n"
+"PO-Revision-Date: 2007-05-02 12:11+0300\n"
+"Last-Translator: Miroslav Ivanov <kiro.kopeleto@gmail.com>\n"
+"Language-Team: Bulgarian <bg@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -94,8 +95,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Група томове с име %s вече съществува. Моля изберете уникално име."
 
 #: src/InputController.py:98
@@ -108,10 +108,8 @@ msgstr "Необходимо е име за новата група томове
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "Указаната точка на монтиране, %s, не съществува. Искате ли да я създадете?"
 
 #: src/InputController.py:104
 #, python-format
@@ -180,8 +178,7 @@ msgstr ""
 "премахнете моментното състояние първо."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Недефинирано конвертиране на тип в създаването на модели. Невъзможно е "
 "завършването на задачата."
@@ -306,8 +303,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Напълно сигурен ли сте, че искате да махнете %s от група томове %s?"
 
 #: src/InputController.py:154
@@ -376,14 +372,14 @@ msgstr ""
 "том %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "За да може да се ползва групата томове безопасно в клъстер, трябва да се "
-"инсталира rpm пакета lvm2-cluster и услугата clvmd да работи"
+"инсталира rpm пакета lvm2-cluster, командата`lvmconf --enable-cluster` да се "
+"изпълни и услугата clvmd да работи"
 
 #: src/InputController.py:365
 #, python-format
@@ -448,8 +444,7 @@ msgstr ""
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", източника на моментно състояние \"%s\" бе изваден от списъка за "
 "премахване."
@@ -550,8 +545,7 @@ msgstr ""
 "дискове?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Налични са по-малко от 3 твърди диска със свободно място. Изключване на "
 "огледалата."
@@ -583,13 +577,11 @@ msgstr ""
 
 #: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"Имената, започващи с \"snapshot\" or \"pvmove\", са запазени ключови думи."
+msgstr "Имената, започващи с \"snapshot\" or \"pvmove\", са запазени ключови думи."
 
 #: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Имената, съдържащи \"_mlog\" или \"_mimage\", са запазени ключови думи."
+msgstr "Имената, съдържащи \"_mlog\" или \"_mimage\", са запазени ключови думи."
 
 #: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
@@ -614,8 +606,7 @@ msgstr "Моля укажете точка на монтиране"
 
 #: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"Да се обнови ли ext2 до ext3 запазвайки всички данни на логическия том?"
+msgstr "Да се обнови ли ext2 до ext3 запазвайки всички данни на логическия том?"
 
 #: src/InputController.py:2063
 msgid ""
@@ -923,12 +914,11 @@ msgstr "Няма"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI Адрес:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "Системно ID:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -961,8 +951,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Съвсем сигурен ли сте, че искате да инициализирате %s свободно масто на диск "
 "%s?"
@@ -1728,41 +1717,3 @@ msgstr "Мигриране само разширенията на ЛТ"
 msgid "Use common sense"
 msgstr "Ползване на здрав разум"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Блокировките за управлението на логически томове са изключени!!! \n"
-#~ "Може да възникнат масивни повреди на данните.\n"
-#~ "Включете блокировките (locking_type=1 или 2 в /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Управлението на логически томове е настроено да ползва механизъм за "
-#~ "блокировка от клъстер, но демона clvmd не работи. Трябва да се стартира "
-#~ "демона с:\n"
-#~ "service clvmd start \n"
-#~ "или изключи блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Управлението на логически томове е настроено да ползва механизъм за "
-#~ "блокировка от клъстер, клъстера не е в състояние на кворум:\n"
-#~ "Трябва да се изчака клъстера да постигне кворум или да се изключи "
-#~ "блокировка от клъстера (locking_type=1 в /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s поддържа само базирано на файлове и клъстер заключване (locking_type=1 "
-#~ "или 2 в /etc/lvm/lvm.conf)."
