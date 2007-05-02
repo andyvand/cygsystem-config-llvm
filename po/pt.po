@@ -20,7 +20,7 @@ msgstr ""
 "X-POFile-SpellExtra: MSDOS VFAT VL Ext vgcreate LVM modprobe dmsetup UUID\n"
 "X-POFile-SpellExtra: Cramfs lvrename GFS umount ext snapshot lvresize Kilo\n"
 "X-POFile-SpellExtra: ões inicializá GB service start lockingtype clvmd\n"
-"X-POFile-SpellExtra: conf lvm Clusters Cluster\n"
+"X-POFile-SpellExtra: conf lvm Clusters Cluster enable lvmconf\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
