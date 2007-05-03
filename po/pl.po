@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-03-17 17:33+0200\n"
+"PO-Revision-Date: 2007-05-03 19:04+0200\n"
 "Last-Translator: Piotr Drąg <raven@pmail.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -34,21 +34,11 @@ msgstr ""
 "                                                                                \n"
 "  Przechwycony wyjątek: %s\n"
 
-#. ##TRANSLATOR: The string below is seen when adding a new Physical
-#. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr "Wybierz grupę woluminów, do której dodać %s:"
 
-#. ##TRANSLATOR: The two strings below refer to the name and type of
-#. ##available disk entities on the system. There are two types --
-#. ##The first is an 'unallocated physical volume' which is a disk or
-#. ##partition that has been initialized for use with LVM, by writing
-#. ##a special label onto the first block of the partition. The other type
-#. ##is an 'uninitialized entity', which is an available disk or partition
-#. ##that is NOT yet initialized to be used with LVM. Hope this helps give
-#. ##some context.
 #: src/InputController.py:84
 msgid "Name"
 msgstr "Nazwa"
@@ -204,8 +194,6 @@ msgstr ""
 "Wolumin logiczny %s jest już zamontowany na %s. Aby zakończyć żądanie, musi "
 "zostać odmontowany. Czy na pewno chcesz to zrobić?"
 
-#. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
-#. ##of an extent is user-definable.
 #: src/InputController.py:132
 #, python-format
 msgid "Unused space on %s"
@@ -372,15 +360,14 @@ msgstr ""
 "utracone! Czy na pewno chcesz usunąć wolumin logiczny %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Aby grupa woluminów mogła być bezpiecznie używana w środowiskach "
-"klastrowych, RPM lvm2-cluster musi być zainstalowany, a usługa clvmd musi "
-"być uruchomiona"
+"klastrowych, RPM lvm2-cluster musi być zainstalowany, \"lvmconf "
+"--enable-cluster\", musi zostać wykonane, a usługa clvmd musi być uruchomiona"
 
 #: src/InputController.py:365
 #, python-format
@@ -531,8 +518,6 @@ msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "Woluminy logiczne z dołączonymi migawkami jeszcze nie mogą być lustrami."
 
-#. mirror images placement: diff HDs or anywhere
-#. prompt
 #: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
@@ -619,12 +604,10 @@ msgstr ""
 "Zmiana systemu plików usunie wszystkie dane na woluminie logicznym! Czy na "
 "pewno chcesz kontynuować?"
 
-#. migration not performed, continue process with no mirroring
 #: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Lustro nie zostało utworzone. Zakończenie pozostałych zadań."
 
-#. create mirror
 #: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
@@ -849,7 +832,6 @@ msgstr "Nieinicjowalne:"
 msgid "Extended partition"
 msgstr "Partycja rozszerzona"
 
-#. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
 msgstr "Aktualnie używana partycja wymiany"
@@ -917,14 +899,12 @@ msgstr "Brak"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "Adres SCSI:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ID systemu:   "
+msgstr "ID SCSI:  "
 
-#. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
 #, python-format
 msgid ""
@@ -1032,7 +1012,6 @@ msgstr "KB"
 msgid "Bytes"
 msgstr "Bajty"
 
-#. File System Types
 #: src/lvmui_constants.py:97
 msgid "No Filesystem"
 msgstr "Brak systemu plików"
@@ -1077,7 +1056,6 @@ msgstr "Właściwości dla"
 msgid "Physical Volume"
 msgstr "Wolumin fizyczny"
 
-#. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
 msgstr "Wolumin logiczny"
@@ -1095,7 +1073,6 @@ msgstr "Dysk"
 msgid "Volume Group"
 msgstr "Grupa woluminów"
 
-#. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
 msgstr "Nie wybrano żadnego woluminu."
@@ -1200,7 +1177,6 @@ msgstr "Klastrowa grupa woluminów"
 msgid "%s mirror synchronisation"
 msgstr "synchronizacja lustra %s"
 
-#. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
 msgstr "Proszę czekać, trwa tworzenie partycji"
@@ -1717,41 +1693,3 @@ msgstr "Migruj tylko obszary należące do woluminu logicznego"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Użyj we wspólnym znaczeniu"
-
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Blokowanie LVM jest wyłączone!!! \n"
-#~ "Może wystąpić masowe uszkodzenie danych.\n"
-#~ "Włącz blokowanie (locking_type=1 lub 2 w /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM jest skonfigurowane do używania mechanizmu Blokowania klastra, ale "
-#~ "demon clvmd nie jest uruchomiony. Uruchom go za pomocą polecenia:\n"
-#~ "service clvmd start \n"
-#~ "lub wyłącz blokowanie klastra (locking_type=1 w /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM jest skonfigurowane do używania mechanizmu Blokowania klastra, ale "
-#~ "klaster nie posiada wstarczającej liczby elementów.\n"
-#~ "Albo poczekaj, aż klaster będzie posiadał wystarczającą liczbę elementów "
-#~ "lub wyłącz blokowanie klastra (locking_type=1 in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s obsługuje tylko blokowanie oparte na pliku lub klastrze "
-#~ "(locking_type=1 lub 2 w /etc/lvm/lvm.conf)."
