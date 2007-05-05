@@ -6,14 +6,14 @@
 # extents	= områden (enligt Tomas G.:s förslag)
 # stripe 	= strimla (enligt Tomas G. och Göran U.)
 # Christian Rose <menthos@menthos.com>, 2006.
-# 
+# Magnus Larsson <fedoratrans@gmail.com>, 2007.
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-08-22 13:15-0400\n"
+"PO-Revision-Date: 2007-05-04 22:19-0400\n"
 "Last-Translator: Magnus Larsson <fedoratrans@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -382,14 +382,14 @@ msgstr ""
 "volymen %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
-"För att volymgruppen ska kunna användas säkert i en klustrad miljö, lvm2-"
-"cluster rpm måste vara installerad och clvmd tjänsten vara startad"
+"För att Volymgruppen ska kunna användas säkert i en klustrad miljö, lvm2-"
+"cluster rpm måste vara installerad, \"lvmconf --enable-cluster\" måste köras "
+"och clvmd tjänsten måste köra"
 
 #: src/InputController.py:365
 #, python-format
@@ -927,12 +927,11 @@ msgstr "Ingen"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI-adress:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "System-id:   "
+msgstr "SCSI-ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
