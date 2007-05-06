@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-01-28 10:42+0100\n"
+"PO-Revision-Date: 2007-05-06 16:11+0100\n"
 "Last-Translator: Milan Kerslager <kerslage@linux.cz>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -367,14 +367,14 @@ msgstr ""
 "ztracena! Jste si skutečně jisti, že chcete odstranit logický svazek (LV) %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Aby skupina svazků (VG) mohla být bezpečně používána v prostředí clusteru, "
-"musí být nainstalován balíček lvm2 a musí běžet služba clvmd"
+"musí být nainstalován balíček lvm2, musí být spuštěn příkaz "
+"`lvmconf --enable-cluster` a musí běžet služba clvmd."
 
 #: src/InputController.py:365
 #, python-format
@@ -905,12 +905,11 @@ msgstr "Nic"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI adresa:   "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ID systému:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
