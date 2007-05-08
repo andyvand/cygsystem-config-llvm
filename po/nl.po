@@ -1,14 +1,15 @@
-# translation of system-config-lvm to Dutch
+# Translation of system-config-lvm to Dutch
 # This file is distributed under the same license as the system-config-lvm package.
 # Copyright (C) 2005, 2006, 2007 Free Software Foundation, Inc.
 #
 # Peter van Egdom <p.van.egdom@gmail.com>, 2005, 2006, 2007.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-03-03 09:22+0100\n"
+"PO-Revision-Date: 2007-05-08 23:26+0200\n"
 "Last-Translator: Peter van Egdom <p.van.egdom@gmail.com>\n"
 "Language-Team: Dutch <vertaling@nl.linux.org>\n"
 "MIME-Version: 1.0\n"
@@ -680,7 +681,7 @@ msgstr "Volume Group naam:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr "Systeem ID:   "
+msgstr "Systeem-ID:   "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
@@ -728,7 +729,7 @@ msgstr "Aantal Logical Volumes:   "
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
-msgstr "VG UUID:   "
+msgstr "VG-UUID:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
@@ -752,7 +753,7 @@ msgstr "Stripe grootte:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr "LV UUID:   "
+msgstr "LV-UUID:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
@@ -800,7 +801,7 @@ msgstr "Toegewezen Physical Extents:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr "PV UUID:   "
+msgstr "PV-UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
@@ -878,12 +879,11 @@ msgstr "Geen"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI-adres:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "Systeem ID:   "
+msgstr "SCSI-ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1539,11 +1539,11 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr "LV naam:"
+msgstr "LV-naam:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr "LV grootte"
+msgstr "LV-grootte"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
