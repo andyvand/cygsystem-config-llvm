@@ -5,14 +5,14 @@
 # This file is distributed under the same license as the system-config-lvm package.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004.
 # Keld Simonsen <keld@dkuug.dk>, 2005.
-# Keld Simonsen <keld@rap.dk>, 2005, 2006.
+# Keld Simonsen <keld@rap.dk>, 2005, 2006, 2007.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: da1\n"
+"Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-10-05 21:41+0200\n"
+"PO-Revision-Date: 2007-05-10 15:52+0200\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
 "Language-Team:  <da@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -98,10 +98,8 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
-"Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -113,8 +111,7 @@ msgstr "Et navn skal angives for den nye delarkivgruppe"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Det angivne monteringspunkt %s, findes ikke. Vil du oprette det?"
 
 #: src/InputController.py:104
@@ -189,10 +186,8 @@ msgstr ""
 "Fjern øjebliksbillederne først."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
-"Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgstr "Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
 
 #: src/InputController.py:124
 #, python-format
@@ -316,8 +311,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Er du helt sikker på at du vil fjerne %s fra delarkivgruppen %s?"
 
 #: src/InputController.py:154
@@ -388,14 +382,14 @@ msgstr ""
 "gå tabt! Er du helt sikker på at du vil fjerne den logiske volymen %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "For at volymgruppen skal kunne bruges sikkert i et klyngemiljø, skal lvm2-"
-"cluster rpm være installeret og clvmd-tjenesten være startet"
+"cluster rpm være installeret og clvmd-tjenesten være startet, `lvmconf --enable-cluster` være udført"
+"executed og clvmd-tjenesten være kørende"
 
 #: src/InputController.py:365
 #, python-format
@@ -460,8 +454,7 @@ msgstr ""
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\", en oprindelse for øjebliksbilledet \"%s\", er fjernet fra "
 "slettelisten."
@@ -546,8 +539,7 @@ msgstr "Strimlede logiske volymer kan ikke spejles."
 
 #: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
-"Logiske volymer med associerede øjebliksbilleder kan ikke spejles endnu."
+msgstr "Logiske volymer med associerede øjebliksbilleder kan ikke spejles endnu."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -560,10 +552,8 @@ msgstr ""
 "stykker. Vil du placere spejlafbildningerne på forskellige diske?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
-"Mindre end 3 diske med fri plads er tilgængelige. Deaktiverer spejling."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgstr "Mindre end 3 diske med fri plads er tilgængelige. Deaktiverer spejling."
 
 #: src/InputController.py:1551
 msgid ""
@@ -592,13 +582,11 @@ msgstr ""
 
 #: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"Navne som begynder med \"snapshot\" eller \"pvmove\" er reserverede nøgleord."
+msgstr "Navne som begynder med \"snapshot\" eller \"pvmove\" er reserverede nøgleord."
 
 #: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
-"Navne som indeholder \"_mlog\" eller \"_mimage\" er reserverede nøgleord."
+msgstr "Navne som indeholder \"_mlog\" eller \"_mimage\" er reserverede nøgleord."
 
 #: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
@@ -932,12 +920,11 @@ msgstr "Intet"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI-adresse:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "System-id:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -969,10 +956,8 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
-"Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "Er du sikker på at du vil initialisere %s af den frie plads på disk %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1755,40 +1740,3 @@ msgstr "Migrér kun områder der tilhører LV"
 msgid "Use common sense"
 msgstr "Brug sund fornuft"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM-låse er deaktiverede!!! \n"
-#~ "Massiv datakorruption kan ske.\n"
-#~ "Aktivér låsning (locking_type=1 eller 2 i /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM er konfigureret til at bruge Cluster Locking mekanismen, men clvmd-"
-#~ "dæmonen kører ikke. Start dæmonen med kommandoen:\n"
-#~ "service clvmd start \n"
-#~ "eller luk klyngelåsning ned (locking_type=1 i /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM er konfigureret til at bruge Cluster Locking mekanismen, men klyngen "
-#~ "er ikke quorate.\n"
-#~ "Enten vent til klyngen er quorate eller luk klyngelåsning ned "
-#~ "(locking_type=1 i /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s understøtter kun fil- og klyngebaseret låsning (locking_type=1 eller 2 "
-#~ "i /etc/lvm/lvm.conf)."
