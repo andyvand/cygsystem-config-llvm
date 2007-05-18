@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-05-13 00:23+0800\n"
+"PO-Revision-Date: 2007-05-19 00:19+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -1039,9 +1039,9 @@ msgid "Checking %s filesystem"
 msgstr "Periksa sistem fail root\n"
 
 #: src/Filesystem.py:23
-#, fuzzy, python-format
+#, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr "Pilih satu jenis sistem _fail untuk dicipta:"
+msgstr "Menaiktaraf sistemfail %s ke %s"
 
 #: src/Filesystem.py:24
 #, python-format
@@ -1064,14 +1064,12 @@ msgid "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error Me
 msgstr ""
 
 #: src/Filesystem.py:143
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "Tiada sistemfail"
+msgstr "Sistemfail tidak diketahui"
 
 #: src/Filesystem.py:387
-#, fuzzy
 msgid "GFS (local)"
-msgstr "CDROM lokal"
+msgstr "GFS (tempatan)"
 
 #: src/Filesystem.py:485
 msgid "GFS (clustered)"
