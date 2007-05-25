@@ -1,25 +1,23 @@
-# translation of de.po to 
-# translation of de.po to de
-# translation of system-config-lvm.po to de
+# translation of de.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
+#
 # Eduard Pech <kongretkrassescheissendreck@simstim.net>, 2004.
 # Marcus Glöckner <mgloeckner@gmail.com>, 2005.
 # Thomas Duske <thodu-rh@vlugnet.org>, 2006.
-# PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>, 2006.
-#
+# PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>, 2006, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-08-04 14:21+1000\n"
+"PO-Revision-Date: 2007-05-25 14:18+1000\n"
 "Last-Translator: PGP-KeyID: 0x037FD3CF <ttrinks@redhat.com>\n"
-"Language-Team:  <en@li.org>\n"
+"Language-Team:  <de@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
@@ -105,8 +103,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "Eine Datenträgergruppe namens %s existiert bereits. Bitte wählen Sie einen "
 "eindeutigen Namen."
@@ -121,10 +118,8 @@ msgstr "Die neue Datenträgergruppe muss benannt werden"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
-"Der angegebene Einhängepunkt %s existiert nicht. Möchten Sie ihn erzeugen?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "Der angegebene Einhängepunkt %s existiert nicht. Möchten Sie ihn erzeugen?"
 
 #: src/InputController.py:104
 #, python-format
@@ -201,8 +196,7 @@ msgstr ""
 "entfernen sie zuerst die Schnappschüsse."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Fehler - Umwandlung eines undefinierten Typs in Model-Factory. Die Anwendung "
 "konnte nicht beendet werden."
@@ -296,8 +290,7 @@ msgstr ""
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
-"Für Maximum logischer Datenträger sind nur ganze Zahlen von 1 bis 256 erlaubt"
+msgstr "Für Maximum logischer Datenträger sind nur ganze Zahlen von 1 bis 256 erlaubt"
 
 #: src/InputController.py:150
 #, python-format
@@ -327,8 +320,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr ""
 "Sind Sie ganz sicher, dass Sie %s aus der Datenträgergruppe %s entfernen "
 "möchten?"
@@ -407,14 +399,13 @@ msgstr ""
 "logischen Datenträger %s entfernen möchten?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Damit die Datenträgergruppe sicher in einer Cluster-Umgebung genutzt werden "
-"kann, muß das lvm2-cluster-RPM installiert werden und der clvmd-Dienst laufen"
+"kann, muss das lvm2-cluster-RPM installiert werden, `lvmconf --enable-cluster` ausgeführt werden und der clvmd-Dienst laufen"
 
 #: src/InputController.py:365
 #, python-format
@@ -482,8 +473,7 @@ msgstr ""
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "%s, ein Orgiginal von Schnappschuss %s, wurde aus der Liste der zu "
 "entfernenden Elemente gelöscht"
@@ -563,8 +553,7 @@ msgstr "logischen Datenträger"
 
 #: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
-"Grundlegende logische Datenträgerverwaltung unterstützt keine Spiegelung"
+msgstr "Grundlegende logische Datenträgerverwaltung unterstützt keine Spiegelung"
 
 #: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
@@ -588,8 +577,7 @@ msgstr ""
 "verschiedene Festplatten platzieren?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Weniger als 3 Festplatten mit freiem Speicherplatz sind verfügbar. "
 "Deaktiviere Spiegelung."
@@ -686,8 +674,7 @@ msgstr ""
 
 #: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
-"Um Spiegelung hinzuzufügen müssen einige Speichereinheiten migriert werden"
+msgstr "Um Spiegelung hinzuzufügen müssen einige Speichereinheiten migriert werden"
 
 #: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
@@ -969,12 +956,11 @@ msgstr "Keines"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI-Adresse:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "System-ID:   "
+msgstr "SCSI-ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1008,8 +994,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
 "Sind Sie sicher, dass Sie %s freien Speicher auf Festplatte %s "
 "initialisieren möchten?"
@@ -1787,43 +1772,3 @@ msgstr "Migriere nur Speicherbereiche die zu dem LV gehören"
 msgid "Use common sense"
 msgstr "Benutze allgemeine Bedeutung"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM Lockings sind deaktiviert!!!\n"
-#~ "Erhebliche Datenverfälschung kann auftreten.\n"
-#~ "Bitte aktivieren Sie Locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM ist so konfiguriert, dass es den Cluster-Locking-Mechanismus nutzt, "
-#~ "aber der clvmd-Daemon läuft nicht. Starten Sie den Daemon mit dem "
-#~ "Befehl:\n"
-#~ "service clvmd start \n"
-#~ "oder schalten Sie Cluster Locking aus (locking_type=1 in /etc/lvm/lvm."
-#~ "conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM ist so konfiguriert, dass es den Cluster-Locking-Mechanismus nutzt, "
-#~ "aber das Cluster ist nicht handlungsfähig.\n"
-#~ "Bitte warten Sie entweder, bis das Cluster handlungsfähig ist oder "
-#~ "schalten Sie das Cluster Locking aus (locking_type=1 in /etc/lvm/lvm."
-#~ "conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s unterstützt lediglich datei- und clusterbasiertes Locking "
-#~ "(locking_type=1 oder 2 in /etc/lvm/lvm.conf)."
