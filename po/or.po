@@ -3,19 +3,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Subhransu Behera <sbehera@redhat.com>, 2006.
+# Subhransu Behera <arya_subhransu@yahoo.co.in>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-10-13 16:44+0530\n"
-"Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
+"PO-Revision-Date: 2007-05-30 17:21+0530\n"
+"Last-Translator: Subhransu Behera <arya_subhransu@yahoo.co.in>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
 "\n"
 "\n"
 "\n"
@@ -102,8 +103,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s ନାମରେ ନାମିତ ଗୋଟିଏ ଘନଫଳ ସମୂହ ପୂର୍ବରୁ ରହିଛି। ଗୋଟିଏ ଅନନ୍ଯ ନାମ ଚୟନ କରନ୍ତୁ।"
 
 #: src/InputController.py:98
@@ -116,8 +116,7 @@ msgstr "ନୂତନ ଘନଫଳ ସମୂହ ପାଇଁ ଗୋଟିଏ ନ�
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "ଉଲ୍ଲେଖିତ ଆରୋହଣ ବିନ୍ଦୁ, %s, ଅବସ୍ଥିତ ନାହିଁ। ଆପଣ ଏହାକୁ ସୃଷ୍ଟି କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
 #: src/InputController.py:104
@@ -185,8 +184,7 @@ msgstr ""
 "ଆଲୋକଚିତ୍ର ମାନଙ୍କୁ ଅପସାରଣ କରନ୍ତୁ।"
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "ନମୁନା କାରଖାନାରେ ଅପରିଭାଷିତ ପ୍ରକାର ରୂପାନ୍ତରଣ ତୃଟି। କାର୍ଯ୍ଯ ସମ୍ପନ୍ନ କରିବାରେ ଅସମର୍ଥ।"
 
 #: src/InputController.py:124
@@ -306,8 +304,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "ଆପଣ ପୂରାପୂରି ନିଶ୍ତିତ କି ଆପଣ %s ଘନଫଳ ସମୂହରୁ %s କୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:154
@@ -375,14 +372,14 @@ msgstr ""
 "ଆପଣ ପୂରାପୂରି ନିଶ୍ଚିତ କି ଆପଣ %s ତାର୍କିକ ଘନଫଳକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
-"ଏକତ୍ରିତ ପରିବେଶରେ ସୁରକ୍ଷିତ ଭାବରେ ତାର୍କିକ ଘନଫଳର ବ୍ଯବହାର ପାଇଁ, lvm2-cluster rpm ସ୍ଥାପିତ "
-"ହୋଇଥିବା ଆବଶ୍ଯକ, ଏବଂ clvmd ସେବା ଚାଲୁଥିବା ଆବଶ୍ଯକ"
+"ଏକତ୍ରିତ ପରିବେଶରେ ସୁରକ୍ଷିତ ଭାବରେ ତାର୍କିକ ଘନଫଳର ବ୍ଯବହାର ପାଇଁ, lvm2-"
+"cluster rpm ସ୍ଥାପିତ ହୋଇଥିବା, `lvmconf --enable-cluster` କୁ ନିଷ୍ପାଦନ "
+"କରାଯାଇଥିବା ଏବଂ clvmd ସେବା ଚାଲୁଥିବା ଆବଶ୍ଯକ"
 
 #: src/InputController.py:365
 #, python-format
@@ -442,8 +439,7 @@ msgstr ""
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", \"%s\" ଆଲୋକଚିତ୍ରର ଉତ୍ସ, କୁ ଅପସାରଣ ତାଲିକାରୁ କାଢି ଦିଆଯାଇଛି।"
 
 #: src/InputController.py:611
@@ -538,23 +534,20 @@ msgstr ""
 "ଡ୍ରାଇଭରେ ପ୍ରତିଫଳକ ପ୍ରତିଛବି ମାନଙ୍କୁ ରଖିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "ଖାଲିସ୍ଥାନ ବିଶିଷ୍ଟ ୩ ରୁ କମ ହାର୍ଡ ଡ୍ରାଇଭ ଉପଲବ୍ଧ। ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ନିଷ୍କ୍ରିୟ କରୁଅଛି।"
 
 #: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
-"ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ସକ୍ରିୟ କରିବା ପାଇଁ ସେଠାରେ ଅତିକମରେ ଖାଲିସ୍ଥାନ ବିଶିଷ୍ଟ ତିନିଟି ଭୌତିକ ଘନଫଳ ଥିବା ଉଚିତ"
+msgstr "ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ସକ୍ରିୟ କରିବା ପାଇଁ ସେଠାରେ ଅତିକମରେ ଖାଲିସ୍ଥାନ ବିଶିଷ୍ଟ ତିନିଟି ଭୌତିକ ଘନଫଳ ଥିବା ଉଚିତ"
 
 #: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
-"ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟା ପାଇଁ ତାର୍କିକ ଘନଫଳର ଆକାରକୁ ସର୍ବାଧିକ ଉପଲବ୍ଧ ଆକାର ସହିତ ଯଥାପୁଯକ୍ତ କରନ୍ତୁ।"
+msgstr "ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟା ପାଇଁ ତାର୍କିକ ଘନଫଳର ଆକାରକୁ ସର୍ବାଧିକ ଉପଲବ୍ଧ ଆକାର ସହିତ ଯଥାପୁଯକ୍ତ କରନ୍ତୁ।"
 
 #: src/InputController.py:1564
 #, python-format
@@ -567,8 +560,7 @@ msgstr ""
 
 #: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"\"snapshot\" କିମ୍ବା \"pvmove\" ଦ୍ବାରା ପ୍ରାରମ୍ଭିତ ନାମ ଗୁଡିକ ସଂରକ୍ଷିତ ସୂଚକ ଶବ୍ଦ ଅଟନ୍ତି।"
+msgstr "\"snapshot\" କିମ୍ବା \"pvmove\" ଦ୍ବାରା ପ୍ରାରମ୍ଭିତ ନାମ ଗୁଡିକ ସଂରକ୍ଷିତ ସୂଚକ ଶବ୍ଦ ଅଟନ୍ତି।"
 
 #: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
@@ -597,8 +589,7 @@ msgstr "ଦୟାକରି ସ୍ଥାପନ ବିନ୍ଦୁକୁ ଉଲ୍
 
 #: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"ଆପଣ ତାର୍କିକ ଘନଫଳରେ ତଥ୍ଯ ସଂରକ୍ଷଣ କରିବା ପାଇଁ ext2 କୁ ext3 ରେ ଉନ୍ନୟନ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
+msgstr "ଆପଣ ତାର୍କିକ ଘନଫଳରେ ତଥ୍ଯ ସଂରକ୍ଷଣ କରିବା ପାଇଁ ext2 କୁ ext3 ରେ ଉନ୍ନୟନ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
 #: src/InputController.py:2063
 msgid ""
@@ -906,12 +897,11 @@ msgstr "କିଛି ନୁହେଁ"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI ଠିକଣା:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ତନ୍ତ୍ର ର ପରିଚୟ:   "
+msgstr "SCSI ପରିଚୟ:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -919,8 +909,7 @@ msgstr "ତନ୍ତ୍ର ର ପରିଚୟ:   "
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
-"%s ଡିସ୍କ ବସ୍ତୁର ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ ହୋଇଯିବ! ଆପଣ ନିଶ୍ଚିତ କି ଆପଣ ଏହାକୁ ପ୍ରାରମ୍ଭିକୃତ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
+msgstr "%s ଡିସ୍କ ବସ୍ତୁର ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ ହୋଇଯିବ! ଆପଣ ନିଶ୍ଚିତ କି ଆପଣ ଏହାକୁ ପ୍ରାରମ୍ଭିକୃତ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -942,8 +931,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "%s ଖାଲି ସ୍ଥାନକୁ %s ଡିସ୍କରେ ଆପଣ ପ୍ରାରମ୍ଭିକରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
 #: src/lvmui_constants.py:55
@@ -1213,8 +1201,7 @@ msgstr "%s ଫାଇଲ ତନ୍ତ୍ର କୁ %s ରେ ଉନ୍ନୟନ �
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"ଫାଇଲତନ୍ତ୍ରର ସୃଷ୍ଟି ବିଫଳ। ପ୍ରଚେଷ୍ଟା କରାଯାଇଥିବା ନିର୍ଦ୍ଦେଶ: \"%s\" - ତନ୍ତ୍ର ତୃଟି ସନ୍ଦେଶ: %s"
+msgstr "ଫାଇଲତନ୍ତ୍ରର ସୃଷ୍ଟି ବିଫଳ। ପ୍ରଚେଷ୍ଟା କରାଯାଇଥିବା ନିର୍ଦ୍ଦେଶ: \"%s\" - ତନ୍ତ୍ର ତୃଟି ସନ୍ଦେଶ: %s"
 
 #: src/Filesystem.py:25
 #, python-format
@@ -1230,16 +1217,14 @@ msgstr ""
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"ଫାଇଲତନ୍ତ୍ରର ପରୀକ୍ଷଣ ବିଫଳ। ପ୍ରଚେଷ୍ଟା କରାଯାଇଥିବା ନିର୍ଦ୍ଦେଶ: \"%s\" - ତନ୍ତ୍ର ତୃଟି ସନ୍ଦେଶ: %s"
+msgstr "ଫାଇଲତନ୍ତ୍ରର ପରୀକ୍ଷଣ ବିଫଳ। ପ୍ରଚେଷ୍ଟା କରାଯାଇଥିବା ନିର୍ଦ୍ଦେଶ: \"%s\" - ତନ୍ତ୍ର ତୃଟି ସନ୍ଦେଶ: %s"
 
 #: src/Filesystem.py:27
 #, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"ଫାଇଲତନ୍ତ୍ରର ଉନ୍ନୟନ ବିଫଳ। ପ୍ରଚେଷ୍ଟା କରାଯାଇଥିବା ନିର୍ଦ୍ଦେଶ: \"%s\" - ତନ୍ତ୍ର ତୃଟି ସନ୍ଦେଶ: %s"
+msgstr "ଫାଇଲତନ୍ତ୍ରର ଉନ୍ନୟନ ବିଫଳ। ପ୍ରଚେଷ୍ଟା କରାଯାଇଥିବା ନିର୍ଦ୍ଦେଶ: \"%s\" - ତନ୍ତ୍ର ତୃଟି ସନ୍ଦେଶ: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
@@ -1698,40 +1683,3 @@ msgstr "କେବଳ LV ଅଂଶଭୂକ୍ତ ପରିସରକୁ ଉତ୍
 msgid "Use common sense"
 msgstr "ସାଧାରଣ ଜ୍ଞାନ ବ୍ଯବହାର କରନ୍ତୁ"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM ତାଳକ ମାନଙ୍କୁ ନିଷ୍କ୍ରିୟ କରାଯାଇଛି!!! \n"
-#~ "ଅପେକ୍ଷାକୃତ ଅଧିକ ତଥ୍ଯ ବିନାଶ ଘଟିପାରେ।\n"
-#~ "ତାଳକନ ପ୍ରକ୍ରିୟା (/etc/lvm/lvm.conf ରେ locking_type=1 କିମ୍ବା 2) କୁ ସକ୍ରିୟ କରନ୍ତୁ।"
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "କ୍ଲଷ୍ଟର ତାଳକନ କୌଶଳ ବ୍ଯବହାର କରିବା ପାଇଁ LVM କୁ ବିନ୍ଯାସ କରାଯାଇଛି, କିନ୍ତୁ clvmd ଡେମନଟି "
-#~ "ଚାଲୁନାହିଁ। ନିମ୍ନଲିଖିତ ନିର୍ଦ୍ଦେଶ ଦ୍ବାରା ଡେମନକୁ ପ୍ରାରମ୍ଭ କରନ୍ତୁ:\n"
-#~ "service clvmd start \n"
-#~ "କିମ୍ବା, କ୍ଲଷ୍ଟର ତାଳକନ ପ୍ରକ୍ରିୟା (/etc/lvm/lvm.conf ରେ locking_type=1) କୁ ବନ୍ଦ କରନ୍ତୁ।"
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "କ୍ଲଷ୍ଟର ତାଳକନ କୌଶଳ ବ୍ଯବହାର କରିବା ପାଇଁ LVM କୁ ବିନ୍ଯାସ କରାଯାଇଛି, କିନ୍ତୁ କ୍ଲଷ୍ଟରଟି quorate "
-#~ "ନୁହେଁ।\n"
-#~ "କ୍ଲଷ୍ଟରଟି quorate ହେବା ପର୍ଯ୍ଯନ୍ତ ଅପେକ୍ଷା କରନ୍ତୁ କିମ୍ବା କ୍ଲଷ୍ଟର ତାଳକନ ପ୍ରକ୍ରିୟା (/etc/lvm/"
-#~ "lvm.conf ରେ locking_type=1) କୁ ବନ୍ଦ କରନ୍ତୁ।"
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s କେବଳ ଫାଇଲ ଏବଂ କ୍ଲଷ୍ଟର ଆଧାରିତ ତାଳକକୁ ସହାୟତା ପ୍ରଦାନ କରିଥାଏ (/etc/lvm/lvm.conf "
-#~ "ରେ locking_type=1 କିମ୍ବା 2)।"
