@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ml\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-05-28 15:25+0530\n"
+"PO-Revision-Date: 2007-06-05 17:45+0530\n"
 "Last-Translator: Ani Peter <apeter@redhat.com>\n"
 "Language-Team: Malayalam <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -368,7 +368,6 @@ msgstr ""
 "നിങ്ങള്‍ക്ക് നഷ്ടമാകും! %s എന്ന ലോജിക്കല്‍ വോള്യം നീക്കം ചെയ്യണമെന്ന് നിങ്ങള്‍ക്ക് ഇപ്പോഴും ഉറപ്പാണോ?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
@@ -376,7 +375,7 @@ msgid ""
 msgstr ""
 "വോള്യം ഗ്രൂപ്പ് സുരക്ഷിതമായി ക്ളസ്റ്റേര്‍ഡ് എന്‍വിറോണ്‍മെന്‍റില്‍ ഉപയോഗിക്കുന്നതിന് lvm2- "
 "cluster എന്ന rpm ഇന്‍സ്റ്റോള്‍ ചെയ്യേണ്ടതാണ്. കൂടാതെ, `lvmconf --enable-cluster` "
-"പ്റവറ്‍ത്തിപ്പിക്കുകയും മാത്രമല്ല, clvmd സര്‍വീസ് പ്രവര്‍ത്തിക്കേണ്ടതുമാണ്."
+"നടപ്പിലാക്കുകയും മാത്രമല്ല, clvmd സര്‍വീസ് പ്രവര്‍ത്തിക്കേണ്ടതുമാണ്"
 
 #: src/InputController.py:365
 #, python-format
