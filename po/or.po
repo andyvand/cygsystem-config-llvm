@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-05-30 17:21+0530\n"
+"PO-Revision-Date: 2007-06-11 12:52+0530\n"
 "Last-Translator: Subhransu Behera <arya_subhransu@yahoo.co.in>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
 "\n"
 "\n"
 "\n"
@@ -39,7 +40,7 @@ msgid ""
 msgstr ""
 "\n"
 "  ଆଲେଖୀକ ପରିବେଶକୁ ପ୍ରାରମ୍ଭିକରଣ କରିବାରେ ଅସମର୍ଥ। ସମ୍ଭବତଃ ବିଫଳତାର କାରଣ\n"
-"  ଏହାହୋଇପାରେ ଯେ ଉପକରଣଟି ଗୋଟିଏ ଆଲେଖୀକ ପରିବେଶରେ ଚାଲୁନାହିଁ। ଦୟାକରି \n"
+"  ଏହା ହୋଇପାରେ ଯେ ଉପକରଣଟି ଗୋଟିଏ ଆଲେଖୀକ ପରିବେଶରେ ଚାଲୁନାହିଁ। ଦୟାକରି \n"
 "  ଆପଣଙ୍କ ଆଲେଖୀକ ଚାଳକ ଅନ୍ତରାପୃଷ୍ଠକୁ ପ୍ରାରମ୍ଭ କରନ୍ତୁ କିମ୍ବା ଆପଣଙ୍କ ପ୍ରଦର୍ଶନ ଚଳକୁ ବିନ୍ଯାସ "
 "କରନ୍ତୁ।                                                                                \n"
 "  ବ୍ଯତିକ୍ରମ ମିଳିଲା: %s\n"
@@ -49,7 +50,7 @@ msgstr ""
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr "%s କୁ ଏଠାରେ ଯୋଗ କରିବା ପାଇଁ ଗୋଟିଏ ଘନଫଳ ସମୂହ ର ଚୟନ କରନ୍ତୁ"
+msgstr "%s କୁ ଏଠାରେ ଯୋଗକରିବା ପାଇଁ ଗୋଟିଏ ଘନଫଳ ସମୂହ ଚୟନ କରନ୍ତୁ:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -69,11 +70,11 @@ msgstr "ଆକାର"
 
 #: src/InputController.py:86
 msgid "Entity Type"
-msgstr "ବସ୍ତୁ ର ପ୍ରକାର"
+msgstr "ବସ୍ତୁର ପ୍ରକାର"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr "ବଣ୍ଟାଯାଇ ନ ଥିବା ଭୌତିକ ଘନଫଳ ବଣ୍ଟାଯାଇ ନାହିଁ"
+msgstr "ବଣ୍ଟାଯାଇ ନ ଥିବା ଭୌତିକ ଘନଫଳ"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
@@ -82,7 +83,7 @@ msgstr "ପ୍ରାରମ୍ଭିକରଣ କରାଯାଇ ନ ଥିବା
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "%s ଘନଫଳ ସମୂହରେ ଯୋଗ କରିବା ପାଇଁ ଡିସ୍କ ବସ୍ତୁ ମାନଙ୍କୁ ଚୟନ କରନ୍ତୁ"
+msgstr "%s ଘନଫଳ ସମୂହରେ ଯୋଗ କରିବା ପାଇଁ ଡିସ୍କ ବସ୍ତୁ ମାନଙ୍କୁ ଚୟନ କରନ୍ତୁ:"
 
 #: src/InputController.py:92
 msgid ""
@@ -1285,59 +1286,59 @@ msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr "୧୦୨୪"
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr "୧୨୮"
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr "୧୬"
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr "୨"
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr "୨୫୬"
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr "୩୨"
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr "୪"
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr "୫୧୨"
+msgstr "512"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr "୬୪"
+msgstr "64"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr "୮"
+msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr "ଭି.ଜି. ରେ ଭୌତିକ ଘନଫଳ କୁ ଯୋଗ କରନ୍ତୁ"
+msgstr "ଭି.ଜି. ରେ ଭୌତିକ ଘନଫଳ ଯୋଗକରନ୍ତୁ"
 
 #: src/lvui.glade.h:13
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
-"ଅବସ୍ଥିତ ଘନଫଳ ସମୂହ ରେ \n"
+"ଅବସ୍ଥିତ ଘନଫଳ ସମୂହରେ \n"
 "ଯୋଗ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
-msgstr "ଏକତ୍ରିତ କରାଗଲା"
+msgstr "ଏକତ୍ରିତ କରାଯାଇଛି"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1349,19 +1350,19 @@ msgstr ""
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr "ଆଶୁଚିତ୍ର କୁ ସୃଷ୍ଟି କରନ୍ତୁ"
+msgstr "ଆଶୁଚିତ୍ର ସୃଷ୍ଟି କରନ୍ତୁ"
 
 #: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
-"ନୂତନ ଘନଫଳ କୁ \n"
+"ନୂତନ ଘନଫଳ \n"
 "ସୃଷ୍ଟି କରନ୍ତୁ"
 
 #: src/lvui.glade.h:21
 msgid "Edit Properties"
-msgstr "ଗୁଣଧର୍ମ ର ସମ୍ପାଦନ କରନ୍ତୁ"
+msgstr "ଗୁଣଧର୍ମ ସମ୍ପାଦନ କରନ୍ତୁ"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
@@ -1665,7 +1666,7 @@ msgstr "ପରିସର ମାନଙ୍କୁ ଉତ୍ପ୍ରବାସିତ 
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr "ଯେ କୌଣସି ସ୍ଥାନକୁ ଉତ୍ପ୍ରବାସିତ କରନ୍ତୁ ଯଦିଚ ଏହା ପ୍ରଦର୍ଶନ ହ୍ରାସ କରିବ"
+msgstr "ଯେ କୌଣସି ସ୍ଥାନକୁ ଉତ୍ପ୍ରବାସିତ କରନ୍ତୁ ଯଦିଚ ତାହା ପ୍ରଦର୍ଶନ ହ୍ରାସ କରିଥାଏ"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
