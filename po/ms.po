@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-07-15 15:57+0800\n"
+"PO-Revision-Date: 2007-07-29 14:01+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -987,14 +987,12 @@ msgid "Origin"
 msgstr ""
 
 #: src/renderer.py:496
-#, fuzzy
 msgid "Snapshot"
-msgstr "Cipta Petikan %s"
+msgstr "Petikan"
 
 #: src/renderer.py:540
-#, fuzzy
 msgid "extent view"
-msgstr "Paparan _Pepohon"
+msgstr "paparan eksten"
 
 #: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
@@ -1009,9 +1007,8 @@ msgid "Uninitialized Entities"
 msgstr "Entiti Tidak Dimulakan"
 
 #: src/Volume_Tab_View.py:233
-#, fuzzy
 msgid "Clustered VG"
-msgstr "VG UUID:   "
+msgstr "VG bergugusan"
 
 #: src/Volume_Tab_View.py:619
 #, python-format
