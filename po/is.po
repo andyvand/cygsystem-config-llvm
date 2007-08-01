@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: Richard Allen <ra@ra.is>\n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
 "PO-Revision-Date: 2006-12-08 16:54+0000\n"
 "Last-Translator: Richard Allen <ra@ra.is>\n"
@@ -366,14 +366,14 @@ msgstr ""
 "viss um að þú viljir fjarlægja sýndardiskinn %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Til að hægt sé að nota diskhópinn í klösuðu umhverfi á öruggan máta þarf "
-"lvm2-cluster pakkinn að vera inni og clvmd þjónustan virk."
+"lvm2-cluster pakkinn að vera inni, síðan þarf að keyra `lvmconf "
+"--enable-cluster` og clvmd þjónustan þarf að vera virk."
 
 #: src/InputController.py:365
 #, python-format
@@ -901,12 +901,11 @@ msgstr "Ekkert"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI vistfang:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "Kerfisnúmer:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1696,40 +1695,3 @@ msgstr "Færa einungis diskbúta sem tilheyra SD"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Nota almenna skynsemi"
-
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM lásar eru ekki virkir!!! \n"
-#~ "Þú gætir lent í meiriháttar gagnatapi.\n"
-#~ "Þú ættir að virkja lása (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM er stilltur til að nota klasalæsingar en clvmd þjónustan er ekki í "
-#~ "gangi. Þú getur ræst hana með:\n"
-#~ "service clvmd start \n"
-#~ "eða slökkva á klasalæsingum (locking_type=1 in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM er stilltur til að nota klasalæsingar en klasinn er ekki í lagi.\n"
-#~ "Annað hvort þarftu að bíða þangað til klasinn er kominn í lag eða slökkva "
-#~ "á klasalæsingum (locking_type=1 in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s styður einungis skráa og klasalæsingar (locking_type=1 eða 2 í /etc/"
-#~ "lvm/lvm.conf)."
