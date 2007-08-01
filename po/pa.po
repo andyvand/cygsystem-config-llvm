@@ -7,13 +7,14 @@
 # harmeet <harmeetphulewala@yahoo.com>, 2005.
 # Jaswinder Singh Phulewala <jaswinderphulewala@yahoo.com>, 2006.
 # A S Alam <apbrar@gmail.com>, 2006.
+# Jaswinder Singh <jsingh@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: pa\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-12-15 07:22+0530\n"
-"Last-Translator: A S Alam <apbrar@gmail.com>\n"
+"PO-Revision-Date: 2007-08-01 10:54+0530\n"
+"Last-Translator: Jaswinder Singh <jsingh@redhat.com>\n"
 "Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -99,8 +100,7 @@ msgstr ""
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s ਨਾਂ ਨਾਲ ਇੱਕ ਵਾਲੀਅਮ ਸਮੂਹ ਮੌਜੂਦ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਵੱਖਰਾ ਨਾਂ ਚੁਣੋ।"
 
 #: src/InputController.py:98
@@ -113,8 +113,7 @@ msgstr "ਇੱਕ ਨਵੇਂ ਵਾਲੀਅਮ ਸਮੂਹ ਲਈ ਇੱਕ 
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "ਨਿਰਧਾਰਿਤ ਮਾਊਂਟ ਸਥਿਤੀ, %s, ਮੌਜੂਦ ਨਹੀਂ ਹੈ। ਕੀ ਤੁਸੀਂ ਬਣਾਓਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/InputController.py:104
@@ -184,8 +183,7 @@ msgstr ""
 "ਤਸਵੀਰ ਹਟਾਓ।"
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "ਮਾਡਲ ਫੈਕਟਰੀ ਵਿੱਚ ਅਣਜਾਣੀ ਕਿਸਮ ਅਨੁਵਾਦ ਗਲਤੀ ਆਈ ਹੈ। ਕੰਮ ਮੁਕੰਮਲ ਕਰਨ ਵਿੱਚ ਅਸਫਲ ਹੈ।"
 
 #: src/InputController.py:124
@@ -299,8 +297,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "ਕੀ ਤੁਸੀਂ %s ਨੂੰ %s ਵਾਲੀਅਮ ਸਮੂਹ ਤੋਂ ਹਟਾਉਣ ਲਈ ਸਹਿਮਤ ਹੋ?"
 
 #: src/InputController.py:154
@@ -367,14 +364,13 @@ msgstr ""
 "ਕੀ ਤੁਸੀਂ ਯਕੀਨਨ ਪੂਰਨ ਤੌਰ ਤੇ ਲਾਜ਼ੀਕਲ ਵਾਲੀਅਮ %s ਨੂੰ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
-"ਕਲੱਸਟਰ ਵਾਤਾਵਰਨ 'ਚ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਵਰਤਣ ਲਈ ਵਾਲੀਅਮ ਗਰੁੱਪ ਨੂੰ, lvm2-cluster rpm ਇੰਸਟਾਲ "
-"ਹੋਣ ਚਾਹੀਦਾ ਏ ਅਤੇ clvmd ਸੇਵਾ ਚੱਲਦੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ"
+"ਵਾਲੀਅਮ ਗਰੁੱਪ ਨੂੰ ਕਲੱਸਟਰ ਵਾਤਾਵਰਨ 'ਚ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਵਰਤਣ ਲਈ, lvm2-cluster rpm ਇੰਸਟਾਲ "
+"ਹੋਣ ਚਾਹੀਦਾ ਹੈ, `lvmconf --enable-cluster`ਚੱਲਦਾ ਹੋਵੇ ਅਤੇ clvmd ਸੇਵਾ ਚੱਲਦੀ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ"
 
 #: src/InputController.py:365
 #, python-format
@@ -436,8 +432,7 @@ msgstr ""
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", ਪਰਦਾ ਤਸਵੀਰ \"%s\" ਦਾ ਮੂਲ, ਹਟਾਉਣ ਵਾਲੀ ਸੂਚੀ ਤੋਂ ਹਟਾਇਆ।"
 
 #: src/InputController.py:611
@@ -532,8 +527,7 @@ msgstr ""
 "ਤੁਸੀਂ ਪ੍ਰਤਿਬਿੰਬ ਚਿੱਤਰ ਨੂੰ ਵੱਖਰੀ ਹਾਰਡ ਡਿਸਕ ਡਰਾਈਵ ਉੱਪਰ ਰੱਖਣਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "3 ਨਾਲੋਂ ਘੱਟ ਹਾਰਡ ਡਰਾਈਵਾਂ ਖਾਲੀ ਥਾਂ ਨਾਲ ਉਪਲੱਬਧ ਹਨ। ਪ੍ਰਤਿਬਿੰਬ ਆਯੋਗ ਹੋ ਰਿਹਾ ਹੈ।"
 
 #: src/InputController.py:1551
@@ -546,8 +540,7 @@ msgstr "ਉੱਥੇ ਪ੍ਰਤਿਬਿੰਬ ਯੋਗ ਕਰਨ ਲਈ ਇ�
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
-"ਲਾਜੀਕਲ ਵਾਲੀਅਮ ਦੇ ਆਕਾਰ ਨੂੰ ਪ੍ਰਤਿਬਿੰਬਾਂ ਲਈ ਵੱਧ ਤੋਂ ਵੱਧ ਉਪਲੱਬਧ ਆਕਾਰ ਵਿੱਚ ਵਿਵਸਥਿਤ ਕੀਤਾ।"
+msgstr "ਲਾਜੀਕਲ ਵਾਲੀਅਮ ਦੇ ਆਕਾਰ ਨੂੰ ਪ੍ਰਤਿਬਿੰਬਾਂ ਲਈ ਵੱਧ ਤੋਂ ਵੱਧ ਉਪਲੱਬਧ ਆਕਾਰ ਵਿੱਚ ਵਿਵਸਥਿਤ ਕੀਤਾ।"
 
 #: src/InputController.py:1564
 #, python-format
@@ -589,8 +582,7 @@ msgstr "ਕਿਰਪਾ ਕਰਕੇ ਮਾਉਂਟ ਸਥਿਤੀ ਜਾਂ�
 
 #: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr ""
-"ਕੀ ਤੁਸੀਂ ਲਾਜੀਕਲ ਵਾਲੀਅਮ ਤੇ ਡਾਟਾ ਰੱਖਣ ਲਈ ext2 ਤੋਂ ext3 ਦਾ ਨਵੀਨੀਕਰਨ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+msgstr "ਕੀ ਤੁਸੀਂ ਲਾਜੀਕਲ ਵਾਲੀਅਮ ਤੇ ਡਾਟਾ ਰੱਖਣ ਲਈ ext2 ਤੋਂ ext3 ਦਾ ਨਵੀਨੀਕਰਨ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/InputController.py:2063
 msgid ""
@@ -898,12 +890,11 @@ msgstr "ਕੋਈ ਨਹੀਂ"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI ਸਿਰਨਾਵਾਂ:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ਸਿਸਟਮ ID:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -911,8 +902,7 @@ msgstr "ਸਿਸਟਮ ID:   "
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr ""
-"ਡਿਸਕ ਇੰਦਰਾਜ %s ਸਾਰਾ ਡਾਟਾ ਨਸ਼ਟ ਹੋ ਜਾਵੇਗਾ! ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ ਤੇ ਇਸ ਨੂੰ ਸ਼ੁਰੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
+msgstr "ਡਿਸਕ ਇੰਦਰਾਜ %s ਸਾਰਾ ਡਾਟਾ ਨਸ਼ਟ ਹੋ ਜਾਵੇਗਾ! ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ ਤੇ ਇਸ ਨੂੰ ਸ਼ੁਰੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/lvmui_constants.py:52
 #, python-format
@@ -934,8 +924,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ ਤੇ ਡਿਸਕ %s ਉੱਪਰ %s ਦੀ ਖਾਲੀ ਥਾਂ ਨੂੰ ਸ਼ੁਰੂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ?"
 
 #: src/lvmui_constants.py:55
@@ -1221,8 +1210,7 @@ msgstr ""
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"ਫਾਇਲ ਸਿਸਟਮ ਦੀ ਜਾਂਚ ਅਸਫਲ ਹੋਈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
+msgstr "ਫਾਇਲ ਸਿਸਟਮ ਦੀ ਜਾਂਚ ਅਸਫਲ ਹੋਈ। ਕਮਾਂਡ ਨੇ ਕੋਸ਼ਿਸ ਕੀਤੀ: \"%s\" - ਸਿਸਟਮ ਗਲਤੀ ਸੁਨੇਹਾ: %s"
 
 #: src/Filesystem.py:27
 #, python-format
@@ -1690,39 +1678,3 @@ msgstr "ਸਿਰਫ LV ਨਾਲ ਸੰਬੰਧਿਤ ਸੀਮਾ ਬਦਲ�
 msgid "Use common sense"
 msgstr "ਸਧਾਰਨ ਜਾਣਕਾਰੀ ਵਰਤੋ"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM ਤਾਲਾ ਖੁੱਲ੍ਹਾ ਹੈ!!!\n"
-#~ "ਵੱਡੀ ਪੱਧਰ ਤੇ ਡਾਟਾ ਨਿਕਾਰਾ ਹੋ ਸਕਦਾ ਹੈ।\n"
-#~ "ਤਾਲਾ ਯੋਗ ਕਰੋ (/etc/lvm/lvm.conf 'ਚ locking_type=1 ਜਾਂ 2)"
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM ਕਲੱਸਟਰ ਤਾਲਾ ਢੰਗ ਦੀ ਸੰਰਚਨਾ ਲਈ ਵਰਤੀ ਜਾਂਦੀ ਹੈ, ਪਰ clvmd ਡੈਮੇਨ ਚੱਲਦੀ ਨੀਂ ਹੈ, ਕਮਾਂਡ "
-#~ "ਨਾਲ ਚਲਾਓ:\n"
-#~ "ਸੇਵਾ clvmd ਸ਼ੁਰੂ\n"
-#~ "ਜਾਂ ਕਲੱਸਟਰ ਤਾਲਾ ਬੰਦ ਕਰੋ (locking_type=1 in /etc/lvm/lvm.conf)"
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM ਕਲੱਸਟਰ ਤਾਲਾ ਢੰਗ ਦੀ ਸੰਰਚਨਾ ਲਈ ਵਰਤੀ ਜਾਂਦੀ ਹੈ, ਪਰ ਕਲੱਸਟਰ ਚੱਲਦਾ ਨੀਂ:\n"
-#~ "ਜਾਂ ਤਾਂ ਕਲੱਸਟਰ ਕਿਉਰੇਟ ਦੀ ਉਡੀਕ ਕਰੋ ਜਾਂ ਕਲੱਸਟਰ ਤਾਲਾ ਬੰਦ ਕਰੋ (locking_type=1 in /etc/"
-#~ "lvm/lvm.conf)"
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s ਸਿਰਫ਼ ਫਾਇਲ ਅਤੇ ਕਲੱਸਟਰ ਅਧਾਰਿਤ ਤਾਲਿਆਂ ਨੂੰ ਸਹਿਯੋਗ ਦਿੰਦਾ ਹੈ (locking_type=1 or 2 "
-#~ "in /etc/lvm/lvm.conf)."
