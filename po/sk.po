@@ -10,15 +10,13 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-09-04 08:47+0100\n"
+"PO-Revision-Date: 2007-08-04 09:49+0200\n"
 "Last-Translator: Mike Karas <zoliqe@gmail.com>\n"
 "Language-Team: Slovak <sk-i18n@linux.sk>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Poedit-Language: Slovak\n"
-"X-Poedit-Country: SLOVAKIA\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
@@ -377,14 +375,13 @@ msgstr ""
 "stratené! Ste si istí, že chcete odstrániť logický zväzok %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
-"Pre zaistenie bezpečného použitia skupiny zväzkov v klástrovom prostredí, "
-"bol nainštalovaný rpm balík lvm2-cluster a spustená služba clvmd"
+"Pre zaistenie bezpečného použitia skupiny zväzkov v klastrovom prostredí, "
+"musí byť nainštalovaný rpm balík lvm2-cluster, spustený príkaz `lvmconf --enable-cluster` a spustená služba clvmd"
 
 #: src/InputController.py:365
 #, python-format
@@ -913,12 +910,11 @@ msgstr "Žiaden"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "Adresa SCSI:"
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "ID systému:   "
+msgstr "SCSI ID:"
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
