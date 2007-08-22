@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-04-03 00:07+0300\n"
+"PO-Revision-Date: 2007-08-20 00:07+0300\n"
 "Last-Translator: Maxim V. Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -225,7 +225,7 @@ msgstr "%s гігабайт"
 #: src/InputController.py:136
 #, python-format
 msgid "%s extents"
-msgstr "%s екстентов"
+msgstr "%s екстентів"
 
 #: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
@@ -365,14 +365,13 @@ msgstr ""
 "впевнені, що хочете видалити логічний том %s?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 "Щоб Група томів була безпечно задіяна у кластерному оточенні необхідно "
-"встановити rpm пакет lvm2-cluster та запустити службу clvmd"
+"встановити rpm пакет lvm2-cluster. Також треба виконати \"lvmconf --enable-cluster\" та запустити службу clvmd"
 
 #: src/InputController.py:365
 #, python-format
@@ -462,7 +461,7 @@ msgstr ""
 
 #: src/InputController.py:679
 msgid "The path you specified does not exist."
-msgstr "Вказаний шліх не існує."
+msgstr "Вказаний шлях не існує."
 
 #: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
@@ -517,7 +516,7 @@ msgstr "Базове керування логічними томами не п�
 
 #: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr "Розшарований логічний том не можна дзеркалювати."
+msgstr "Логічний том \"з чергуванням\" не може бути у дзеркалі."
 
 #: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
@@ -711,7 +710,7 @@ msgstr "Назва групи томів:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr "System ID:   "
+msgstr "ID системи:   "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
@@ -827,7 +826,7 @@ msgstr "Фізичні екстенти (загалом):   "
 
 #: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
-msgstr "Розподілени фізичні екстенти:   "
+msgstr "Розподілені фізичні екстенти:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
@@ -876,11 +875,11 @@ msgstr "У кластері:   "
 
 #: src/lvm_model.py:743
 msgid "True"
-msgstr "Вірно"
+msgstr "Правильно"
 
 #: src/lvm_model.py:745
 msgid "False"
-msgstr "Не вірно"
+msgstr "Неправильно"
 
 #: src/lvm_model.py:803
 msgid "Number of mirror images:"
@@ -909,12 +908,11 @@ msgstr "Немає"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "Адреса SCSI:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "System ID:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1129,7 +1127,7 @@ msgid ""
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
-"Екстенти, які ви намагаєтесь вибрати належать образу дзеркалалогічного тому %"
+"Екстенти, які ви намагаєтесь вибрати належать образу дзеркала логічного тому %"
 "s. Недоступно виконання переміщення дзеркальних логічних томів, внаслідок "
 "чого, неможливо виконати вибір екстентів."
 
@@ -1680,11 +1678,11 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr "Наслідувати"
+msgstr "Успадковування"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
-msgstr "Наслідувати політику з групи томів"
+msgstr "Успадковувати політику з групи томів"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
@@ -1710,46 +1708,4 @@ msgstr "Переміщувати лише екстенти, що належат�
 msgid "Use common sense"
 msgstr "На основі здорового глузду"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "Блокування LVM вимкнено!!! \n"
-#~ "Можливо істотне пошкодження даних.\n"
-#~ "Увімкніть блокування (locking_type=1 або 2 у /etc/lvm/lvm.conf)."
 
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM налаштовано на використання механізму Блокування кластера, але демон "
-#~ "clvmd не запущено. Запустіть демон командою:\n"
-#~ "service clvmd start \n"
-#~ "або вимкніть блокування кластера (locking_type=1 у /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM налаштовано на використання механізму Блокування Кластера, але "
-#~ "кластер не знаходиться у стані кворуму.\n"
-#~ "Дочекайтесь доки буде зібрано кворум кластера або вимкніть блокування "
-#~ "кластера (locking_type=1 у /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s підтримує лише блокування на основі файлів чи кластера (locking_type=1 "
-#~ "або 2 у /etc/lvm/lvm.conf)."
-
-#~ msgid "Name for Volume Group: "
-#~ msgstr "Назва групи томів: "
-
-#~ msgid "New Volume Group Form"
-#~ msgstr "Нова група томів"
