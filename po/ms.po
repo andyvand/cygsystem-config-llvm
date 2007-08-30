@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-08-14 00:12+0800\n"
+"PO-Revision-Date: 2007-08-30 12:38+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <translation-team-ms@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
@@ -897,21 +897,18 @@ msgstr "Perincian bagi '%s'"
 
 #: src/Properties_Renderer.py:43
 #: src/renderer.py:37
-#, fuzzy
 msgid "Physical Volume"
-msgstr "Volum Fizikal LVM"
+msgstr "Volum Fizikal"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44
 #: src/renderer.py:36
-#, fuzzy
 msgid "Logical Volume"
-msgstr "volum logikal"
+msgstr "Volum Logikal"
 
 #: src/Properties_Renderer.py:45
-#, fuzzy
 msgid "Unallocated Volume"
-msgstr "Volum Fizikal Tidak Dibahagikan"
+msgstr "Volum Tidak Diumpukkan"
 
 #: src/Properties_Renderer.py:46
 #: src/renderer.py:43
