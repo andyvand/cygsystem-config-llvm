@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-05-09 15:38+0530\n"
+"PO-Revision-Date: 2007-09-16 23:48+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,7 @@ msgstr ""
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
 #, python-format
+#, fuzzy
 msgid ""
 "\n"
 "  Unable to initialize graphical environment. Most likely cause of failure\n"
@@ -28,6 +29,12 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  ಚಿತ್ರಾತ್ಮಕ ವಾತಾವರಣವನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. ಉಪಕರಣವನ್ನು ಒಂದು ಚಿತ್ರಾತ್ಮಕ ವಾತಾವರಣವನ್ನು\n"
+"  ಬಳಸಿಕೊಂಡು ಚಲಾಯಿಸದೆ ಇದ್ದುದ್ದು ಬಹುಷಃ ವಿಫಲತೆಗೆ ಕಾರಣವಾಗಿರಬಹುದು. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಚಿತ್ರಾತ್ಮಕ\n"
+"  ಬಳಕೆದಾರ ಅಂತರ್ಮುಖಿಯನ್ನು ಆರಂಭಿಸಿ ಇಲ್ಲವೆ ನಿಮ್ಮ DISPLAY ಚರಮೌಲ್ಯವನ್ನು ಸಂಯೋಜಿಸಿ\n"
+"                                                                                \n"
+"  Caught exception: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
@@ -58,7 +65,7 @@ msgstr ""
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "ನಿಯೋಜಿತವಾಗದ ಭೌತಿಕ ಪರಿಮಾಣ"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
@@ -77,10 +84,13 @@ msgstr ""
 
 #: src/InputController.py:94
 #, python-format
+#, fuzzy
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
+"%s ಹೆಸರಿನ ಒಂದು ಲಾಜಿಕಲ್ ಪರಿಮಾಣವು  ಈ ಪರಿಮಾಣ ಸಮೂಹದಲ್ಲಿ ಈಗಾಗಲೆ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ."
+"ದಯವಿಟ್ಟು  "
 
 #: src/InputController.py:96
 #, python-format
@@ -89,11 +99,11 @@ msgstr ""
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "ಹೊಸ ಲಾಜಿಕಲ್ ಪರಿಮಾಣಕ್ಕೆ ಒಂದು ಹೆಸರನ್ನು ಒದಗಿಸಬೇಕು"
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "ಹೊಸ ಪರಿಮಾಣ ಸಮೂಹಕ್ಕೆ ಒಂದು ಹೆಸರನ್ನು ಒದಗಿಸಬೇಕು"
 
 #: src/InputController.py:102
 #, python-format
