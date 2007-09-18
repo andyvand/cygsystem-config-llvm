@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-09-16 23:48+0530\n"
+"PO-Revision-Date: 2007-09-18 00:56+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,6 @@ msgstr ""
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
 #, python-format
-#, fuzzy
 msgid ""
 "\n"
 "  Unable to initialize graphical environment. Most likely cause of failure\n"
@@ -32,16 +31,16 @@ msgstr ""
 "\n"
 "  ಚಿತ್ರಾತ್ಮಕ ವಾತಾವರಣವನ್ನು ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗಿಲ್ಲ. ಉಪಕರಣವನ್ನು ಒಂದು ಚಿತ್ರಾತ್ಮಕ ವಾತಾವರಣವನ್ನು\n"
 "  ಬಳಸಿಕೊಂಡು ಚಲಾಯಿಸದೆ ಇದ್ದುದ್ದು ಬಹುಷಃ ವಿಫಲತೆಗೆ ಕಾರಣವಾಗಿರಬಹುದು. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಚಿತ್ರಾತ್ಮಕ\n"
-"  ಬಳಕೆದಾರ ಅಂತರ್ಮುಖಿಯನ್ನು ಆರಂಭಿಸಿ ಇಲ್ಲವೆ ನಿಮ್ಮ DISPLAY ಚರಮೌಲ್ಯವನ್ನು ಸಂಯೋಜಿಸಿ\n"
+"  ಬಳಕೆದಾರ ಅಂತರ್ಮುಖಿಯನ್ನು ಆರಂಭಿಸಿ ಇಲ್ಲವೆ ನಿಮ್ಮ DISPLAY ಚರಮೌಲ್ಯವನ್ನು ಸಂಯೋಜಿಸಿ.\n"
 "                                                                                \n"
-"  Caught exception: %s\n"
+"  ಆಕ್ಷೇಪಣೆ ಎದುರಾಗಿದೆ: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
+msgstr "%s ಅನ್ನು ಸೇರಿಸಲು ಒಂದು ಪರಿಮಾಣ ಸಮೂಹವನ್ನು(Volume Group) ಆರಿಸಿ:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -65,7 +64,7 @@ msgstr ""
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr "ನಿಯೋಜಿತವಾಗದ ಭೌತಿಕ ಪರಿಮಾಣ"
+msgstr "ನಿಯೋಜಿತವಾಗದ ಭೌತಿಕ ಪರಿಮಾಣ (Physical Volume)"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
@@ -80,22 +79,21 @@ msgstr ""
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "ಒಂದು ಪರಿಮಾಣ ಸಮೂಹದಿಂದ ಭಾಗಗಳನ್ನು ತೆಗೆಯಲು (striping) ಅದು ಎರಡು ಅಥವ ಎರಡಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ಭೌತಿಕ ಪರಿಮಾಣಗಳಿಂದ ಆಗಿರಬೇಕು. ಈ ಪರಿಮಾಣ ಸಮೂಹವು ಆ ಅಗತ್ಯವನ್ನು ಪೂರೈಸುತ್ತಿಲ್ಲ."
 
 #: src/InputController.py:94
 #, python-format
-#, fuzzy
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
 msgstr ""
 "%s ಹೆಸರಿನ ಒಂದು ಲಾಜಿಕಲ್ ಪರಿಮಾಣವು  ಈ ಪರಿಮಾಣ ಸಮೂಹದಲ್ಲಿ ಈಗಾಗಲೆ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ."
-"ದಯವಿಟ್ಟು  "
+"ದಯವಿಟ್ಟು."
 
 #: src/InputController.py:96
 #, python-format
 msgid "A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgstr "%s ಹೆಸರಿನ ಒಂದು ಪರಿಮಾನ ಸಮೂಹವು ಈಗಾಗಲೆ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ. ದಯವಿಟ್ಟು ಒಂದು ವಿಶಿಷ್ಟವಾದ ಹೆಸರನ್ನು ಆರಿಸಿ."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
@@ -108,35 +106,35 @@ msgstr "ಹೊಸ ಪರಿಮಾಣ ಸಮೂಹಕ್ಕೆ ಒಂದು ಹ�
 #: src/InputController.py:102
 #, python-format
 msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgstr "ಸೂಚಿತ ಆರೋಹಣ ತಾಣ, %s ಅಸ್ತಿತ್ವದಲ್ಲಿಲ್ಲ. ನೀವದನ್ನು ಸೃಜಿಸಲು ಬಯಸುತ್ತೀರೆ?"
 
 #: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "ಆರೋಹಣಾ ತಾಣ %s ವನ್ನು ಸೃಜಿಸುವಾಗ ಅನಿರೀಕ್ಷಿತ ವಿಫಲತೆ ಎದುರಾಗಿದೆ."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "ಈ ಸೌಲಭ್ಯವು ಈ ಆವೃತ್ತಿಯಲ್ಲಿ ಇನ್ನೂ ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ"
 
 #: src/InputController.py:108
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "ಈ ಪರಿಮಾಣ ಸಮೂಹದಲ್ಲಿನ ಲಾಜಿಕಲ್ ಪರಿಮಾಣಗಳ ಸಂಖ್ಯೆಯು ಅದರ ಗರಿಷ್ಟ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "ಈ ಪರಿಮಾಣ ಸಮೂಹದಲ್ಲಿನ ಭೌತಿಕ ಪರಿಮಾಣಗಳ ಸಂಖ್ಯೆಯು ಅದರ ಗರಿಷ್ಟ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ."
 
 #: src/InputController.py:112
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr ""
+msgstr "ಈ ಪರಿಮಾಣ ಸಮೂಹದ ಗರಿಷ್ಟ ಮಿತಿಯನ್ನು ತಲುಪುವ ಮೊದಲು ಹೆಚ್ಚೆಂದರೆ %s ಭೌತಿಕ ಪರಿಮಾಣಗಳನ್ನು ಅದಕ್ಕೆ ಸೇರಿಸಬಹುದಾಗಿದೆ."
 
 #: src/InputController.py:114
 #, python-format
@@ -144,29 +142,29 @@ msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
+msgstr "ಹೊಸ ಲಾಜಿಕಲ್ ಪರಿಮಾಣಕ್ಕಾಗಿ ಪರಿಮಾಣ ಸಮೂಹ %s ದಲ್ಲಿ ಸಾಕಷ್ಟು ಸ್ಥಳವಿಲ್ಲ. ಇದಕ್ಕಿರುವ ಒಂದು ಪರಿಹಾರವೆಂದರೆ, ಪರಿಮಾಣ ಸಮೂಹಕ್ಕೆ ಇನ್ನೊಂದು ಹೆಚ್ಚುವರಿ ಭೌತಿಕ ಪರಿಮಾಣವನ್ನು ಸೇರಿಸುವುದು."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "ಒಂದು ಭಾವಚಿತ್ರದ(snapshot) ಭಾವಚಿತ್ರ ತೆಗೆಯುವುದು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
 
 #: src/InputController.py:117
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr ""
+msgstr "ಪ್ರತಿರೂಪಗೊಂಡ(mirrored) ಲಾಜಿಕಲ್ ಪರಿಮಾಣ ಸಮೂಹದ ಒಂದು ಭಾವಚಿತ್ರವನ್ನು ತೆಗೆಯುವುದು ಬೆಂಬಲಿತವಾಗಿಲ್ಲ."
 
 #: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
+msgstr "ಪ್ರಸಕ್ತ ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ದೊಂದಿಗೆ ಭಾವಚಿತ್ರ %s ವು ಇದೆ. ದಯವಿಟ್ಟು ಮೊದಲು ಅದನ್ನು ತೆಗೆಯಿರಿ."
 
 #: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
+msgstr "ಪ್ರಸಕ್ತ ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ದೊಂದಿಗೆ ಭಾವಚಿತ್ರ: %s ಗಳು ಇವೆ. ದಯವಿಟ್ಟು ಮೊದಲು ಅವುಗಳನ್ನು ತೆಗೆಯಿರಿ."
 
 #: src/InputController.py:122
 msgid "Undefined type conversion error in model factory. Unable to complete task."
@@ -178,7 +176,7 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr ""
+msgstr "ಭಾರಿ ಎಚ್ಚರಿಕೆ: ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ದಲ್ಲಿ ಒಂದು %s ಕಡತ ವ್ಯವಸ್ಥೆಯನ್ನು ಹೊಂದಿದೆ ಹಾಗು ಅದು ಪ್ರಸಕ್ತ %s ನಲ್ಲಿ ಆರೋಹಿತಗೊಂಡಿದೆ. ಆರೋಹಿತಗೊಂಡ ಈ ಕಡತ ವ್ಯವಸ್ಥೆಯಲ್ಲಿನ ದತ್ತಾಂಶಗಳನ್ನು ತ್ಯಜಿಸಲು ನೀವು ಖಡಾಖಂಡಿತವಾಗಿಯೂ ಖಚಿತವಾಗಿ ನಿರ್ಧರಿಸಿದ್ದೀರ?"
 
 #: src/InputController.py:126
 #, python-format
@@ -186,6 +184,8 @@ msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
 msgstr ""
+"ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ವು %s ನಲ್ಲಿ ಆರೋಹಿತಗೊಂಡಿದೆ. ಮನವಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಲು, "
+"ಅದು ಅವರೋಹಿತಗೊಳ್ಳಬೇಕು. ನೀವು ಖಚಿತವಾಗಿಯೂ ಅದನ್ನು ಅವರೋಹಿಸಲು ಬಯಸುತ್ತೀರ?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
@@ -216,11 +216,11 @@ msgstr ""
 
 #: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
+msgstr "ಪರಿಮಾಣ ಸಮೂಹದಲ್ಲಿ ಮಿಕ್ಕಿರುವ ಮುಕ್ತ ಸ್ಥಳ:\n"
 
 #: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "ಈ ಪರಿಮಾಣಕ್ಕೆ ಉಳಿದಿರುವ ಜಾಗ:\n"
 
 #: src/InputController.py:141
 msgid "Extents"
@@ -241,29 +241,34 @@ msgstr "ಕಿಲೋ ಬೈಟುಗಳು"
 #: src/InputController.py:146
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s ವು ಕೇವಲ ಸಂಖ್ಯಾ ಮೌಲ್ಯಗಳನ್ನು ಮಾತ್ರ ಹೊಂದಿರಬೇಕು"
 
 #: src/InputController.py:147
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
+"ಗರಿಷ್ಟ ಭೌತಿಕ ಪರಿಮಾಣ ಕ್ಷೇತ್ರವು ಕೇವಲ ೧ ಹಾಗು ೨೫೬ ರ ನಡುವಿನ ಪೂರ್ಣಸಂಖ್ಯಾ ಮೌಲ್ಯಗಳನ್ನು ಮಾತ್ರ "
+"ಹೊಂದಿರಬೇಕು"
 
 #: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
+"ಗರಿಷ್ಟ ಲಾಜಿಕಲ್ ಪರಿಮಾಣ ಕ್ಷೇತ್ರವು ಕೇವಲ ೧ ಹಾಗು ೨೫೬ ರ ನಡುವಿನ ಪೂರ್ಣಸಂಖ್ಯಾ ಮೌಲ್ಯಗಳನ್ನು ಮಾತ್ರ "
+"ಹೊಂದಿರಬೇಕು"
 
 #: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
+msgstr "%s ಅನ್ನು ಲಾಜಿಕಲ್ ಪರಿಮಾಣ ನಿರ್ವಹಣೆಯಿಂದ ತೆಗೆಯಬೇಕು ಎಂದು ನೀವು ಖಚಿತವೆ?"
 
 #: src/InputController.py:152
 #, python-format
+#, fuzzy
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
 "Logical Volume(s) mapped to its extents. Because it is the only Physical "
@@ -272,18 +277,21 @@ msgid ""
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
 msgstr ""
+"ನೀವು ತೆಗೆಯಲು ಬಯಸಿರುವು %s ಎಂಬ ಹೆಸರಿನ ಭೌತಿಕ ಪರಿಮಾಣವು ಸಕ್ರಿಯ ಲಾಜಿಕಲ್ ಪರಿಮಾಣದಿಂದ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ, that you wish to remove, has data from active "
+"Logical Volume(s) mapped to its extents. ಏಕೆಂದರೆ ಇದು ಪರಿಮಾಣ ಸಮೂಹದಲ್ಲಿರುವ ಏಕೈಕ ಭೌತಿಕ ಪರಿಮಾಣವಾಗಿದೆ ಹಾಗು ದತ್ತಾಂಶವನ್ನು ಸ್ಥಳಾಂತರಿಸಲು ಬೇರೆ ಜಾಗವಿಲ್ಲ. "
+"ಇದನ್ನು ತೆಗೆಯುವ ಮೊದಲು ಒಂದು ಹೊಸ ಭೌತಿಕ ಪರಿಮಾಣವನ್ನು ಸೇರಿಸಿ ಅಥವ ಈ ಭೌತಿಕ ಪರಿಮಾಣದೊಂದಿಗೆ ಸಹವರ್ತಿಯಾಗಿರುವ ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು ತೆಗೆಯಿರಿ ಎಂದು ಸಲಹೆ ಮಾಡಲಾಗುತ್ತದೆ."
 
 #: src/InputController.py:153
 #, python-format
 msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgstr "%s ಅನ್ನು %s ಪರಿಮಾಣ ಸಮೂಹದಿಂದ ತೆಗೆಯಲು ನೀವು ಬಹಳಷ್ಟು ಖಚಿತವೆ?"
 
 #: src/InputController.py:154
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "ಭೌತಿಕ ಪರಿಮಾಣ %s ವನ್ನು ಪರಿಮಾಣ ಸಮೂಹ %s ದಿಂದ ತೆಗೆಯುವುದರಿಂದ ಪರಿಮಾಣ ಸಮೂಹವು ಖಾಲಿ ಉಳಿಯುತ್ತದೆ, ಹಾಗು ಅದೂ ಸಹ ತೆಗೆಯಲ್ಪಡುತ್ತದೆ. ನೀವು ಮುಂದುವರೆಯಲು ಇಚ್ಚಿಸುತ್ತೀರ?"
 
 #: src/InputController.py:155
 #, python-format
@@ -291,41 +299,42 @@ msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
+msgstr "ಪರಿಮಾಣ ಸಮೂಹ %s ದಲ್ಲಿ, %s ನಲ್ಲಿ ಶೇಖರಿಸಲಾದ ದತ್ತಾಂಶವನ್ನು ಸ್ಥಳಾಂತರಿಸಲು ಸಾಕಷ್ಟು ಸ್ಥಳಾವಕಾಶವಿಲ್ಲ. ಪರಿಮಾಣ ಸಮೂಹಕ್ಕೆ ಒಂದು ಹೆಚ್ಚುವರಿ ಭೌತಿಕ ಪರಿಮಾಣವನ್ನು ಸೇರಿಸುವುದು ಇದಕ್ಕಿರುವ ಒಂದು ಪರಿಹಾರ."
 
 #: src/InputController.py:156
+#, fuzzy
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
-msgstr ""
+msgstr "ಇಲ್ಲವೆ dm-ಪ್ರತಿರೂಪ ಘಟಕವು ನಿಮ್ಮ ಕರ್ನಲಿನಲ್ಲಿ ಲೋಡ್ ಆಗಿಲ್ಲ, ಅಥವ ನಿಮ್ಮ ಕರ್ನಲ್ dm-ಪ್ರತಿರೂಪ ಟಾರ್ಗೆಟನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಅದು ಬೆಂಬಲಿತವಾಗಿದ್ದರೆ, \"modprobe dm-mirror\" ಅನ್ನು ಚಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಿ. ಇಲ್ಲದೆ ಹೋದರೆ, ದತ್ತಾಂಶವನ್ನು ಭೌತಿಕ Extent ಗಳಲ್ಲಿ."
 
 #: src/InputController.py:157
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
-msgstr ""
+msgstr "ಇಲ್ಲವೆ dm-ಭಾವಚಿತ್ರ ಘಟಕವು ನಿಮ್ಮ ಕರ್ನಲಿನಲ್ಲಿ ಲೋಡ್ ಆಗಿಲ್ಲ, ಅಥವ ನಿಮ್ಮ ಕರ್ನಲ್ dm-ಭಾವಚಿತ್ರ ಟಾರ್ಗೆಟನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಅದು ಬೆಂಬಲಿತವಾಗಿದ್ದರೆ, \"modprobe dm-snapshot\" ಅನ್ನು ಚಲಾಯಿಸಲು ಪ್ರಯತ್ನಿಸಿ. ಇಲ್ಲದೆ ಹೋದರೆ, ಭಾವಚಿತ್ರಗಳನ್ನು ಸೃಜಿಸುವುದು ಲಭ್ಯವಿರುವುದಿಲ್ಲ."
 
 #: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ವನ್ನು ತೆಗೆಯಲು ನೀವು ಬಹಳಷ್ಟು ಖಚಿತವೆ?"
 
 #: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ವು %s ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು ಹೊಂದಿದೆ. ಅದರಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶವು ನಾಶಗೊಳ್ಳುತ್ತವೆ! ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ವನ್ನು ನೀವು ಖಚಿತವಾಗಿ ತೆಗೆಯಲು ಇಚ್ಛಿಸುತ್ತೀರ?"
 
 #: src/InputController.py:161
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ವು %s ಕಡತ ಕೋಶದಿಂದ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ. ಅದರಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶವು ನಾಶಗೊಳ್ಳುತ್ತವೆ! ಲಾಜಿಕಲ್ ಪರಿಮಾಣ %s ವನ್ನು ತೆಗೆಯುವ ನಿಮ್ಮ ಇಚ್ಛೆ ಬಹಳಷ್ಟು ಖಚಿತವೆ?"
 
 #: src/InputController.py:306
 msgid ""
@@ -377,11 +386,13 @@ msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr ""
+"ಲಾಜಿಕಲ್ ಪರಿಮಾಣ \"%s\" ವು ತೆಗೆದು ಹಾಕಲು ಆಯ್ಕೆ ಮಾಡದೆ ಇರದಂತಹ ಭಾವಚಿತ್ರಗಳನ್ನು ಹೊಂದಿದೆ. "
+"ಅವೂ ಸಹ ತೆಗೆಯಲ್ಪಡಬೇಕು."
 
 #: src/InputController.py:580
 #, python-format
 msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgstr "\"%s\", ಭಾವಚಿತ್ರ \"%s\" ದ ಒಂದು ಮೂಲ, ಅದು ತೆಗೆದು ಹಾಕಲ್ಪಡಬೇಕಾದ ಪಟ್ಟಿಯಿಂದ ಅಳಿಸಲ್ಪಟ್ಟಿದೆ."
 
 #: src/InputController.py:611
 #, python-format
@@ -431,28 +442,28 @@ msgstr "ಆಯ್ಕೆಗಳು"
 #: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s ನ ಒಂದು ಭಾವಚಿತ್ರವನ್ನು ಸೃಜಿಸಿ"
 
 #: src/InputController.py:1357
 msgid "Create New Logical Volume"
-msgstr ""
+msgstr "ಹೊಸ ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು ಸೃಜಿಸಿ"
 
 #: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr ""
+msgstr "%s ಅನ್ನು ಸಂಪಾದಿಸು, %s ನ ಒಂದು ಭಾವಚಿತ್ರ"
 
 #: src/InputController.py:1363
 msgid "Edit Logical Volume"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು ಸಂಪಾದಿಸು"
 
 #: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "ಕೆಳಗಿರುವ ಲಾಜಿಕಲ್ ಪರಿಮಾಣ ನಿರ್ವಹಣೆಯು ಪ್ರತಿರೂಪಿಸುವುದನ್ನು(mirroring) ಬೆಂಬಲಿಸುವುದಿಲ್ಲ"
 
 #: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "ಕಳಚಲಾದ ಲಾಜಿಕಲ್ ಪರಿಮಾಣಗಳನ್ನು ಪ್ರತಿರೂಪಿಸಲಾಗುವುದಿಲ್ಲ."
 
 #: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
@@ -464,17 +475,17 @@ msgstr ""
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
-msgstr ""
+msgstr "ಹಾರ್ಡ್ ಡ್ರೈವ್ ವಿಫಲಗೊಂಡಲ್ಲಿ ದತ್ತಾಂಶವನ್ನು ಸಂರಕ್ಷಿಸುವುದು ಪ್ರತಿರೂಪಿಸುವ ಪ್ರಾಥಮಿಕ ಉದ್ದೇಶವಾಗಿರುತ್ತದೆ. ನೀವು ಪ್ರತಿರೂಪ ಚಿತ್ರಗಳನ್ನು ಬೇರೊಂದು ಹಾರ್ಡ್ ಡ್ರೈವಿನಲ್ಲಿ ಇರಿಸಲು ಬಯಸುತ್ತೀರ?"
 
 #: src/InputController.py:1546
 msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgstr "೩ ಕ್ಕಿಂತ ಕಡಿಮೆ ಹಾರ್ಡ್ ಡ್ರೈವುಗಳು ಮುಕ್ತ ಸ್ಥಳದೊಂದಿಗೆ ಲಭ್ಯವಿವೆ. ಪ್ರತಿರೂಪಿಸುವುದನ್ನು ಅಶಕ್ತಗೊಳಿಸಲಾಗುತ್ತಿದೆ."
 
 #: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
+msgstr "ಪ್ರತಿರೂಪಿಸುವುದನ್ನು ಶಕ್ತಗೊಳಿಸಲು ಕನಿಷ್ಟ ಮೂರು ಭೌತಿಕ ಪರಿಮಾಣದಲ್ಲಿ ಮುಕ್ತ ಸ್ಥಳವಿರಬೇಕು"
 
 #: src/InputController.py:1559
 msgid ""
@@ -512,7 +523,7 @@ msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣಗಳಲ್ಲಿ ಖಾಲಿ 
 #: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣದ ಹೆಸರಿನಲ್ಲಿ ಅಮಾನ್ಯ ಅಕ್ಷರ \"%s\" ಇದೆ"
 
 #: src/InputController.py:1963
 msgid "Please specify mount point"
@@ -526,19 +537,19 @@ msgstr ""
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
-msgstr ""
+msgstr "ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು ಬದಲಾಯಿಸುದರಿಂದ ಲಾಜಿಕಲ್ ಪರಿಮಾಣದಲ್ಲಿನ ಎಲ್ಲಾ ದತ್ತಾಂಶವು ನಾಶಗೊಳ್ಳುತ್ತದೆ! ನೀವು ಖಚಿತವಾಗಿಯೂ ಮುಂದುವರೆಯ ಬೇಕೆ?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
-msgstr "ಬಿಂಬವು ರಚಿತವಾಗಿಲ್ಲ. ಮಿಕ್ಕುಳಿದ ಕಾರ್ಯಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲಾಗುತ್ತಿದೆ."
+msgstr "ಪ್ರತಿರೂಪವು ರಚಿತವಾಗಿಲ್ಲ. ಮಿಕ್ಕುಳಿದ ಕಾರ್ಯಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲಾಗುತ್ತಿದೆ."
 
 #. create mirror
 #: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
-msgstr ""
+msgstr "ಪ್ರಸ್ತುತ ಇರುವ ಲಾಜಿಕಲ್ ಪರಿಮಾಣಗಳಿಗೆ ಪ್ರತಿರೂಪಗಳನ್ನು ಸೇರಿಸುವುದನ್ನು ಕೆಳಗಿರುವ LVM ಗಳು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ. ಮಿಕ್ಕುಳಿದ ಕಾರ್ಯಗಳನ್ನು ಪೂರ್ಣಗೊಳಿಸಲಾಗುವುದು."
 
 #: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
@@ -558,11 +569,11 @@ msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು ಪುನರ್ 
 
 #: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣಕ್ಕೆ ಪ್ರತಿರೂಪವನ್ನು ಸೇರಿಸಲಾಗುತ್ತಿದೆ"
 
 #: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣದಿಂದ ಪ್ರತಿರೂಪವನ್ನು ತೆಗೆಯಲಾಗುತ್ತಿದೆ"
 
 #: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
@@ -586,15 +597,15 @@ msgstr "ಭೌತಿಕ ಪರಿಮಾಣವನ್ನು ತೆಗೆದುಹ�
 
 #: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
-msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು ತೆಗೆದುಹಾಕುತ್ತಿರುವುದು"
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು ತೆಗೆಯುತ್ತಿರುವುದು"
 
 #: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು ಪುನರ್ ಹೆಸರಿಸಲಾಗುತ್ತಿದೆ"
 
 #: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
+msgstr "ಪರಿಮಾಣ ಸಮೂಹದಿಂದ ಭೌತಿಕ ಪರಿಮಾಣವನ್ನು ತೆಗೆಯಲಾಗುತ್ತಿದೆ"
 
 #: src/CommandHandler.py:320
 msgid "Migrating Extents"
@@ -606,7 +617,7 @@ msgstr ""
 
 #: src/CommandHandler.py:383
 msgid "Rereading partition table"
-msgstr ""
+msgstr "ವಿಭಜನಾ ಟೇಬಲ್ಲನ್ನು ಪುನರ್ ಓದಲಾಗುತ್ತಿದೆ"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -622,7 +633,7 @@ msgstr "ಆರೋಹಿತವಾಗದ"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "ಪರಿಮಾಣ ಸಮೂಹದ ಹೆಸರು:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
@@ -634,7 +645,7 @@ msgstr "ವಿನ್ಯಾಸ:   "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
-msgstr ""
+msgstr "ವೈಶಿಷ್ಟ್ಯಗಳು:   "
 
 #: src/lvm_model.py:62
 msgid "Volume Group Size:   "
@@ -658,15 +669,15 @@ msgstr ""
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "ಅನುಮತಿ ಇರುವ ಗರಿಷ್ಟ ಭೌತಿಕ ಪರಿಮಾಣಗಳು:   "
 
 #: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
-msgstr "ಭೌತಿಕ ಸಮೂಹಗಳ ಸಂಖ್ಯೆ:   "
+msgstr "ಭೌತಿಕ ಪರಿಮಾಣಗಳ ಸಂಖ್ಯೆ:   "
 
 #: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "ಅನುಮತಿ ಇರುವ ಗರಿಷ್ಟ ಲಾಜಿಕಲ್ ಪರಿಮಾಣಗಳು:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
@@ -678,23 +689,23 @@ msgstr "VG UUID:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣದ ಹೆಸರು:   "
 
 #: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣದ ಗಾತ್ರ:   "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "ಖಂಡಗಳ ಸಂಖ್ಯೆ:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "ಪಟ್ಟಿಗಳ(Stripes) ಸಂಖ್ಯೆ:   "
 
 #: src/lvm_model.py:77
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "ಪಟ್ಟಿಯ ಗಾತ್ರ:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
@@ -714,7 +725,7 @@ msgstr "ಆರೋಹಣ ತಾಣ:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
-msgstr ""
+msgstr "ಪುನರ್ ಬೂಟಿಸಿದಾಗಿನ ಆರೋಹಣ ತಾಣ:   "
 
 #: src/lvm_model.py:85
 msgid "File System:   "
@@ -750,7 +761,7 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
-msgstr ""
+msgstr "ಆರಂಭಿಸಲು ಸಾಧ್ಯವಾಗದೆ ಇರುವಂತಹ:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
@@ -767,15 +778,15 @@ msgstr ""
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "ಸ್ವಯಂವಿಭಜನೆಯ ವಿಫಲತೆ"
 
 #: src/lvm_model.py:259
 msgid "Partition manually"
-msgstr ""
+msgstr "ಸ್ವಹಸ್ತದಿಂದ ವಿಭಜನೆ ಮಾಡು"
 
 #: src/lvm_model.py:295
 msgid "Multipath device"
-msgstr ""
+msgstr "ಬಹುಪಥ ಸಾಧನ"
 
 #: src/lvm_model.py:298
 msgid "Note:"
@@ -783,48 +794,48 @@ msgstr "ಟಿಪ್ಪಣಿ:"
 
 #: src/lvm_model.py:298
 msgid "Initialize manually"
-msgstr ""
+msgstr "ಸ್ವಹಸ್ತದಿಂದ ಆರಂಭಿಸು"
 
 #: src/lvm_model.py:741
 msgid "Clustered:   "
-msgstr ""
+msgstr "ಕ್ಲಸ್ಟರ್ ಆದಂತಹ:   "
 
 #: src/lvm_model.py:743
 msgid "True"
-msgstr ""
+msgstr "ನಿಜ"
 
 #: src/lvm_model.py:745
 msgid "False"
-msgstr ""
+msgstr "ನಿಜವಲ್ಲ"
 
 #: src/lvm_model.py:803
 msgid "Number of mirror images:"
-msgstr ""
+msgstr "ಪ್ರತಿರೂಪ ಚಿತ್ರಗಳ ಸಂಖ್ಯೆ:"
 
 #: src/lvm_model.py:806
 msgid "Snapshots:"
-msgstr ""
+msgstr "ಭಾವಚಿತ್ರಗಳು:"
 
 #: src/lvm_model.py:812
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "ಭಾವಚಿತ್ರ ಮೂಲ:"
 
 #: src/lvm_model.py:819
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "ಭಾವಚಿತ್ರ ಬಳಕೆ:"
 
 #: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
 #: src/lvm_model.py:907
 msgid "/   Root Filesystem"
-msgstr ""
+msgstr "/   ಮೂಲ ಕಡತವ್ಯವಸ್ಥೆ"
 
 #: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
-msgstr ""
+msgstr "ಯಾವುದೂ ಇಲ್ಲ"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI ವಿಳಾಸ:  "
 
 #: src/lvm_model.py:966
 msgid "SCSI ID:  "
@@ -867,7 +878,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVM ಅನ್ನು ಓದಲಾಗುತ್ತಿದೆ. ದಯವಿಟ್ಟು ಕಾಯಿರಿ."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -888,7 +899,7 @@ msgstr "ಮನವಿಯನ್ನು ಪರಿಷ್ಕರಿಸಲಾಗಲಿ�
 #: src/lvmui_constants.py:65
 #, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
+msgstr "%s ಆಜ್ಞೆಯು ವಿಫಲಗೊಂಡಿದೆ. ಪ್ರಯತ್ನಿಸಲಾದ ಆಜ್ಞೆ: \"%s\" - ಗಣಕದ ದೋಷ ಸಂದೇಶ: %s"
 
 #: src/lvmui_constants.py:84
 msgid "Free"
@@ -900,12 +911,12 @@ msgstr "ಮುಕ್ತ ಜಾಗ"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "ವಿಭಜನೆಗೊಳ್ಳದ ಸ್ಥಳ"
 
 #: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
-msgstr ""
+msgstr "%s ನಲ್ಲಿನ ವಿಭಜನೆಗೊಳ್ಳದ ಸ್ಥಳ"
 
 #: src/lvmui_constants.py:90
 msgid "GB"
@@ -926,7 +937,7 @@ msgstr "ಬೈಟುಗಳು"
 #. File System Types
 #: src/lvmui_constants.py:97
 msgid "No Filesystem"
-msgstr ""
+msgstr "ಕಡತ ವ್ಯವಸ್ಥೆ ಇಲ್ಲ"
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
@@ -962,20 +973,20 @@ msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "ಇವುಗಳ ಗುಣಲಕ್ಷಣಗಳು"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr ""
+msgstr "ಭೌತಿಕ ಪರಿಮಾಣ"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣ"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "ನಿಯೋಜಿತಗೊಳ್ಳದಾ ಪರಿಮಾಣ"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
@@ -984,32 +995,32 @@ msgstr ""
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr ""
+msgstr "ಪರಿಮಾಣ ಸಮೂಹ"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
-msgstr ""
+msgstr "ಯಾವುದೆ ಪರಿಮಾಣವು ಆರಿಸಲ್ಪಟ್ಟಿಲ್ಲ"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "ಅನೇಕ ಆಯ್ಕೆ"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ನೋಟ"
 
 #: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
-msgstr ""
+msgstr "ಭೌತಿಕ ನೋಟ"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr ""
+msgstr "ನಿಯೋಜಿತಗೊಳ್ಳದ"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "ಆರಂಭಿಸಲಾಗಿಲ್ಲದ"
 
 #: src/renderer.py:195
 #, python-format
@@ -1045,15 +1056,15 @@ msgstr ""
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "%s ನ ಭಾವಚಿತ್ರ"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "ಮೂಲ"
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "ಭಾವಚಿತ್ರ"
 
 #: src/renderer.py:540
 msgid "extent view"
@@ -1061,11 +1072,11 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
-msgstr ""
+msgstr "ಪರಿಮಾಣ ಸಮೂಹಗಳು"
 
 #: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "ನಿಯೋಜಿತಗೊಳ್ಳದ ಪರಿಮಾಣಗಳು"
 
 #: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
@@ -1083,27 +1094,27 @@ msgstr ""
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "ವಿಭಜನೆಯು ರಚಿತಗೊಳ್ಳುವವರೆಗೂ ಕಾಯಿರಿ"
 
 #: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s ಕಡತ ವ್ಯವಸ್ಥೆಯನ್ನು ರಚಿಸಲಾಗುತ್ತಿದೆ"
 
 #: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು ಪುನರ್ ಗಾತ್ರಿಸು"
 
 #: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು ಪರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ"
 
 #: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು %s ಗೆ ಅಪ್ಗ್ರೇಡ್ ಮಾಡಲಾಗುತ್ತದೆ"
 
 #: src/Filesystem.py:24
 #, python-format
@@ -1111,6 +1122,8 @@ msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"ಕಡತ ವ್ಯವಸ್ಥೆಯನ್ನು ರಚಿಸುವಲ್ಲಿ ವಿಫಲತೆ. ಪ್ರಯತ್ನಿಸಲಾದ ಆಜ್ಞೆ: \"%s\" - ಗಣಕದ ದೋಷ"
+"ಸಂದೇಶ: %s"
 
 #: src/Filesystem.py:25
 #, python-format
@@ -1118,6 +1131,8 @@ msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"ಕಡತ ವ್ಯವಸ್ಥೆಯನ್ನು ಪುನರ್ ಗಾತ್ರಿಸುವಲ್ಲ್ಲಿ ವಿಫಲತೆ. ಪ್ರಯತ್ನಿಸಲಾದ ಆಜ್ಞೆ: \"%s\" - ಗಣಕದ ದೋಷ"
+"ಸಂದೇಶ: %s"
 
 #: src/Filesystem.py:26
 #, python-format
@@ -1125,6 +1140,8 @@ msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"ಕಡತ ವ್ಯವಸ್ಥೆಯನ್ನು ಪರೀಕ್ಷಿಸುವಲ್ಲಿ ವಿಫಲತೆ. ಪ್ರಯತ್ನಿಸಲಾದ ಆಜ್ಞೆ: \"%s\" - ಗಣಕದ ದೋಷ"
+"ಸಂದೇಶ: %s"
 
 #: src/Filesystem.py:27
 #, python-format
@@ -1132,10 +1149,12 @@ msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
+"ಕಡತ ವ್ಯವಸ್ಥೆಯನ್ನು ಅಪ್ಗ್ರೇಡ್ ಮಾಡುವಲ್ಲಿ ವಿಫಲತೆ. ಪ್ರಯತ್ನಿಸಲಾದ ಆಜ್ಞೆ: \"%s\" - ಗಣಕದ ದೋಷ"
+"ಸಂದೇಶ: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
-msgstr ""
+msgstr "ಅಜ್ಞಾತ ಕಡತ ವ್ಯವಸ್ಥೆ"
 
 #: src/Filesystem.py:387
 msgid "GFS (local)"
@@ -1151,7 +1170,7 @@ msgstr ""
 
 #: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS ಹೆಸರು ಅನಧೀಕೃತ ಅಕ್ಷರಗಳನ್ನು ಹೊಂದಿದೆ "
 
 #: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
@@ -1159,11 +1178,11 @@ msgstr ""
 
 #: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "ಕಾಣೆಯಾದ GFS ಹೆಸರು"
 
 #: src/Filesystem.py:631
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (ಸ್ಥಳೀಯ)"
 
 #: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
@@ -1179,12 +1198,12 @@ msgstr ""
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "ಪ್ರತಿರೂಪ"
 
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition %s"
-msgstr ""
+msgstr "ವಿಭಜನೆ %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1192,53 +1211,55 @@ msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr "1024"
+msgstr "೧೦೨೪"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr "128"
+msgstr "೧೨೮"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr "16"
+msgstr "೧೬"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr "2"
+msgstr "೨"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr "256"
+msgstr "೨೫೬"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr "32"
+msgstr "೩೨"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr "4"
+msgstr "೪"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr "512"
+msgstr "೫೧೨"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr "64"
+msgstr "೬೪"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr "8"
+msgstr "೮"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "VG ಗೆ ಭೌತಿಕ ಪರಿಮಾಣವನ್ನು ಸೇರಿಸು"
 
 #: src/lvui.glade.h:13
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಪರಿಮಾಣ \n"
+"ಸಮೂಹಕ್ಕೆ ಸೇರಿಸು"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
@@ -1249,20 +1270,24 @@ msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
+"ಹೊಸ ಲಾಜಿಕಲ್\n"
+"ಪರಿಮಾಣವನ್ನು ಸೃಜಿಸು"
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr ""
+msgstr "ಭಾವಚಿತ್ರವನ್ನು ಸೃಜಿಸು"
 
 #: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"ಹೊಸ ಪರಿಮಾಣ\n"
+"ಸಮೂಹವನ್ನು ಸೃಜಿಸು"
 
 #: src/lvui.glade.h:21
 msgid "Edit Properties"
-msgstr ""
+msgstr "ಗುಣಲಕ್ಷಣಗಳನ್ನು ಸಂಪಾದಿಸು"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
@@ -1284,7 +1309,7 @@ msgstr ""
 
 #: src/lvui.glade.h:27
 msgid "Initialize"
-msgstr ""
+msgstr "ಆರಂಭಿಸು"
 
 #: src/lvui.glade.h:28
 msgid "Initialize Block Device"
@@ -1300,15 +1325,15 @@ msgstr ""
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
-msgstr ""
+msgstr "ಕಿಲೊ"
 
 #: src/lvui.glade.h:32
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "ಲಾಜಿಕಲ್ ಪರಿಮಾಣ ನಿರ್ವಹಣೆ"
 
 #: src/lvui.glade.h:33
 msgid "Manage Volumes"
-msgstr ""
+msgstr "ಪರಿಮಾಣಗಳನ್ನು ನಿರ್ವಹಿಸು"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
@@ -1316,15 +1341,15 @@ msgstr ""
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
-msgstr ""
+msgstr "ಗರಿಷ್ಟ ಲಾಜಿಕಲ್ ಪರಿಮಾಣ"
 
 #: src/lvui.glade.h:36
 msgid "Maximum Physical Volumes"
-msgstr ""
+msgstr "ಗರಿಷ್ಟ ಭೌತಿಕ ಪರಿಮಾಣ"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
-msgstr ""
+msgstr "Meg"
 
 #: src/lvui.glade.h:38
 msgid ""
@@ -1334,7 +1359,7 @@ msgstr ""
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
-msgstr ""
+msgstr "ಹೊಸ ಪರಿಮಾಣ ಸಮೂಹ"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size"
@@ -1345,30 +1370,40 @@ msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"ಲಾಜಿಕಲ್ \n"
+"ಪರಿಮಾಣವನ್ನು ತೆಗೆ"
 
 #: src/lvui.glade.h:44
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"ಆಯ್ಕೆ ಮಾಡಲಾದ ಲಾಜಿಕಲ್ \n"
+"ಪರಿಮಾಣ(ಗಳ)ವನ್ನು ತೆಗೆ"
 
 #: src/lvui.glade.h:46
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"ಆಯ್ಕೆ ಮಾಡಲಾದ ಭೌತಿಕ \n"
+"ಪರಿಮಾಣ(ಗಳ)ವನ್ನು ತೆಗೆ"
 
 #: src/lvui.glade.h:48
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"ಪರಿಮಾಣ ಸಮೂಹದಿಂದ \n"
+"ಪರಿಮಾಣವನ್ನು ತೆಗೆ"
 
 #: src/lvui.glade.h:50
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"LVM ನಿಂದ \n"
+"ಪರಿಮಾಣವನ್ನು ತೆಗೆ"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
@@ -1376,19 +1411,19 @@ msgstr ""
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "ಒಂದಿಷ್ಟು ಪಠ್ಯ"
 
 #: src/lvui.glade.h:54
 msgid "Volume Group Name"
-msgstr ""
+msgstr "ಪರಿಮಾಣ ಸಮೂಹದ ಹೆಸರು"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
-msgstr ""
+msgstr "ಪುನಃ ಲೋಡ್ ಮಾಡು(_R)"
 
 #: src/lvui.glade.h:56
 msgid "_Tools"
-msgstr ""
+msgstr "ಉಪಕರಣಗಳು(_T)"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
@@ -1405,38 +1440,39 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
-"4\n"
-"8\n"
-"16\n"
-"32\n"
-"64\n"
-"128\n"
-"256\n"
-"512"
+"೪\n"
+"೮\n"
+"೧೬\n"
+"೩೨\n"
+"೬೪\n"
+"೧೨೮\n"
+"೨೫೬\n"
+"೫೧೨"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
-msgstr ""
+msgstr "<b>ಕಡತ ವ್ಯವಸ್ಥೆ</b>"
 
 #: src/lv_edit_props.glade.h:11
+#, fuzzy
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV ಗುಣಲಕ್ಷಣ</b>"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
-msgstr ""
+msgstr "<b>ಗಾತ್ರ</b>"
 
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
-msgstr ""
+msgstr "/etc/fstab ಗೆ ನಮೂದನ್ನು ಸೇರಿಸಿ"
 
 #: src/lv_edit_props.glade.h:14
 msgid "Create New Logical Volume (LV)"
-msgstr ""
+msgstr "ಹೊಸ ಲಾಜಿಕಲ್ ಪರಿಮಾಣವನ್ನು (LV) ಸೃಜಿಸಲು"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು ಪುನರ್ ಗಾತ್ರಿಸಲಾಗುವುದಿಲ್ಲ"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
@@ -1452,11 +1488,11 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "LV ಹೆಸರು:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV ಗಾತ್ರ"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
@@ -1468,31 +1504,31 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "ಪ್ರತಿರೂಪಗೊಂಡ"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "ಪ್ರತಿರೂಪಗೊಂಡ LVಗಳನ್ನು ಪುನರ್ ಗಾತ್ರಿಸಲಾಗುವುದಿಲ್ಲ"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "ಆರೋಹಿಸು"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
-msgstr ""
+msgstr "ಆರೋಹಣಾ ತಾಣ:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "ರೀಬೂಟ್ ಆದಾಗ ಆರೋಹಿಸು"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
-msgstr ""
+msgstr "ಗಾತ್ರದ ಆರಂಭ"
 
 #: src/lv_edit_props.glade.h:29
 msgid "Size end"
-msgstr ""
+msgstr "ಗಾತ್ರದ ಕೊನೆ"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
@@ -1500,7 +1536,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr ""
+msgstr "ಮಿಕ್ಕುಳಿದಿದ್ದನ್ನು ಬಳಸು"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
@@ -1558,7 +1594,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "ಸಾಮಾನ್ಯ"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
