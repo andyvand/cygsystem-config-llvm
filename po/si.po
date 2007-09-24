@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: si\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-09-21 10:59+0530\n"
+"PO-Revision-Date: 2007-09-24 15:24+0530\n"
 "Last-Translator: Danishka Navin <snavin@redhat.com>\n"
 "Language-Team: Sinhala <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -54,15 +54,15 @@ msgstr "ප්‍රමාණය"
 
 #: src/InputController.py:86
 msgid "Entity Type"
-msgstr ""
+msgstr "වස්තු වර්‍ගය"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "නොයෙදවු භෞතික පරිමාව"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "මුල නොපිරු තැටි වස්තු"
 
 #: src/InputController.py:90
 #, python-format
@@ -206,11 +206,11 @@ msgstr "එක්ස් ටෙන්ට් %s ක්"
 
 #: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
+msgstr "පරිමා සමූහ තුළ ඉතිරිව ඇත නිදහස් ඉඩ:\n"
 
 #: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "මෙම පරිමා සමූහය තුළ ඉතිරිව ඇත නිදහස් ඉඩ:\n"
 
 #: src/InputController.py:141
 msgid "Extents"
@@ -506,7 +506,7 @@ msgstr ""
 
 #: src/InputController.py:1963
 msgid "Please specify mount point"
-msgstr ""
+msgstr "කරුණාකර ස්ථාපන ස්ථාන දක්වන්න"
 
 #: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
@@ -600,39 +600,39 @@ msgstr ""
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
-msgstr ""
+msgstr "භාවිතා නොකළ"
 
 #: src/lvm_model.py:46
 msgid "Unused Space"
-msgstr ""
+msgstr "භාවිතා නොකළ ඉඩිත"
 
 #: src/lvm_model.py:48
 msgid "Unmounted"
-msgstr ""
+msgstr "අස්ථාපිත"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "පරිමා සමූහයේ නම:   "
 
 #: src/lvm_model.py:59
 msgid "System ID:   "
-msgstr ""
+msgstr "පද්ධති අංකය:   "
 
 #: src/lvm_model.py:60
 msgid "Format:   "
-msgstr ""
+msgstr "සංයුතිය:   "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
-msgstr ""
+msgstr "උපලක්‍ෂණ:   "
 
 #: src/lvm_model.py:62
 msgid "Volume Group Size:   "
-msgstr ""
+msgstr "පරිමා සමූහයේ ප්‍රමාණය:   "
 
 #: src/lvm_model.py:63
 msgid "Available Space:   "
-msgstr ""
+msgstr "භාවිතයට ඇති ඉඩ:   "
 
 #: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
@@ -648,11 +648,11 @@ msgstr ""
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "අනුමත උපරිම භෞතික පරිමා:   "
 
 #: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "භෞතික පරිමා ගණන:   "
 
 #: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
@@ -688,43 +688,43 @@ msgstr ""
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:81
 msgid "Partition Type:   "
-msgstr ""
+msgstr "කොටස් වර්‍ගය:   "
 
 #: src/lvm_model.py:82
 msgid "Size:   "
-msgstr ""
+msgstr "ප්‍රමාණය:   "
 
 #: src/lvm_model.py:83
 msgid "Mount Point:   "
-msgstr ""
+msgstr "ස්ථාපන ස්ථානය:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
-msgstr ""
+msgstr "නැවත ආරම්ඹ වන විට ස්ථාපන ස්ථානය:   "
 
 #: src/lvm_model.py:85
 msgid "File System:   "
-msgstr ""
+msgstr "ගොනු පද්ධතිය:   "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "භෞතික පරිමා නම:   "
 
 #: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
-msgstr ""
+msgstr "භෞතික පරිමා ප්‍රමාණය:   "
 
 #: src/lvm_model.py:89
 msgid "Space Used:   "
-msgstr ""
+msgstr "භාවිතා කළ ඉඩ:   "
 
 #: src/lvm_model.py:90
 msgid "Space Free:   "
-msgstr ""
+msgstr "නිදහස් ඉඩ:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
@@ -736,7 +736,7 @@ msgstr ""
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
@@ -753,11 +753,11 @@ msgstr ""
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
-msgstr ""
+msgstr "ආගන්තුක ආරම්ඹක කොටස්"
 
 #: src/lvm_model.py:101
 msgid "Autopartition failure"
-msgstr ""
+msgstr "ස්වයංක්‍රීය කොටස් කිරීම අසමත් විය"
 
 #: src/lvm_model.py:259
 msgid "Partition manually"
@@ -765,7 +765,7 @@ msgstr ""
 
 #: src/lvm_model.py:295
 msgid "Multipath device"
-msgstr ""
+msgstr "බහු මාර්‍ග ආම්පන්න"
 
 #: src/lvm_model.py:298
 msgid "Note:"
@@ -952,11 +952,11 @@ msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "වත්කම්"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr ""
+msgstr "භෞතික පරිමාව"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
@@ -965,7 +965,7 @@ msgstr "තාර්කික පරිමාව"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "නොයෙදවූ පරිමාව"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
@@ -974,32 +974,32 @@ msgstr ""
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr ""
+msgstr "පරිමා සමූහය"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
 msgid "No Volume Selected"
-msgstr ""
+msgstr "කිසිදු පරිමාවක් තෝරාගෙන නැත"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "බහු තේරිම්"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
-msgstr ""
+msgstr "තාර්කික දසුන"
 
 #: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
-msgstr ""
+msgstr "භෞතික දසුන"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr ""
+msgstr "නොයෙදු"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "මුල නොපිරු"
 
 #: src/renderer.py:195
 #, python-format
@@ -1035,7 +1035,7 @@ msgstr ""
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "%s හි සැණරුව"
 
 #: src/renderer.py:490
 msgid "Origin"
@@ -1043,7 +1043,7 @@ msgstr ""
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "සැණරුව"
 
 #: src/renderer.py:540
 msgid "extent view"
@@ -1051,11 +1051,11 @@ msgstr ""
 
 #: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
-msgstr ""
+msgstr "පරිමා සමූහ"
 
 #: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "නොයෙදු පරිමා"
 
 #: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
@@ -1125,11 +1125,11 @@ msgstr ""
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
-msgstr ""
+msgstr "නොදන්නා ගොනු පද්ධතිය"
 
 #: src/Filesystem.py:387
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (ප්‍රදේශීය)"
 
 #: src/Filesystem.py:485
 msgid "GFS (clustered)"
@@ -1428,11 +1428,11 @@ msgstr "නව තාර්කික පරිමා (LV) නිර්මාණ�
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "පද්ධතිය යළිසැකසිය නොහැක"
 
 #: src/lv_edit_props.glade.h:16
 msgid "Free space in Volume Group label"
-msgstr ""
+msgstr "තාර්කික සමූහ ලේබල තුළ නිදහස් ඉඩ"
 
 #: src/lv_edit_props.glade.h:17
 msgid "Free space remaining label"
@@ -1460,7 +1460,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "කැඩපත් ලෙසට පත් කළ"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
@@ -1472,11 +1472,11 @@ msgstr "ස්ථාපනය"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
-msgstr ""
+msgstr "ස්ථාපන ස්ථානය:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "නැවත ආරම්ඹ කිරීමෙදි ස්ථාපනය"
 
 #: src/lv_edit_props.glade.h:28
 msgid "Size beg"
