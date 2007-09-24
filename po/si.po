@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: si\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-09-24 17:19+0530\n"
+"PO-Revision-Date: 2007-09-24 17:33+0530\n"
 "Last-Translator: Danishka Navin <snavin@redhat.com>\n"
 "Language-Team: Sinhala <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -202,7 +202,7 @@ msgstr "ගිගා බයිට් %s ක්"
 #: src/InputController.py:136
 #, python-format
 msgid "%s extents"
-msgstr "එක්ස් ටෙන්ට් %s ක්"
+msgstr "වපරිස %s ක්"
 
 #: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
@@ -398,7 +398,7 @@ msgstr ""
 #: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s හි මුලපිරීම අසමත් විය"
 
 #: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
@@ -556,23 +556,23 @@ msgstr "තාර්කික පරිමාවෙන් කැටපත ඉව
 
 #: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
-msgstr ""
+msgstr "භෞතික පරිමාව මුලපුරමින්"
 
 #: src/CommandHandler.py:171
 msgid "Adding Physical Volume to Volume Group"
-msgstr ""
+msgstr "පරිමා සමූහය වෙතට භෞතික පරිමාව එක් කරමින්"
 
 #: src/CommandHandler.py:203
 msgid "Creating Volume Group"
-msgstr ""
+msgstr "පරිමා සමූහය නිර්මාණය කරමින්"
 
 #: src/CommandHandler.py:225
 msgid "Removing Volume Group"
-msgstr ""
+msgstr "පරිමා සමූහය ඉවත් කරමින්"
 
 #: src/CommandHandler.py:235
 msgid "Removing Physical Volume"
-msgstr ""
+msgstr "භෞතික පරිමාව ඉවත් කරමින්"
 
 #: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
@@ -584,7 +584,7 @@ msgstr "තාර්කික පරිමාවේ නම වෙනස් ක�
 
 #: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
+msgstr "පරිමා සමූහය වෙතින් භෞතික පරිමාව ඉවත් කරමින්"
 
 #: src/CommandHandler.py:320
 msgid "Migrating Extents"
@@ -596,7 +596,7 @@ msgstr ""
 
 #: src/CommandHandler.py:383
 msgid "Rereading partition table"
-msgstr ""
+msgstr "කොටස් වගුව යළි කියවමින්"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -636,15 +636,15 @@ msgstr "භාවිතයට ඇති ඉඩ:   "
 
 #: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "මුළු වපරිස ගණන:   "
 
 #: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
-msgstr ""
+msgstr "නිදහස් වපරිස ගණන:   "
 
 #: src/lvm_model.py:66
 msgid "Extent Size:   "
-msgstr ""
+msgstr "වපරිස ප්‍රමාණය:   "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
@@ -676,7 +676,7 @@ msgstr "තාර්කික පරිමාවේ නම:   "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "ඛණ්ඩ ගණන:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
@@ -732,9 +732,8 @@ msgid "Total Physical Extents:   "
 msgstr "මුළු භෞතික වපරිස:   "
 
 #: src/lvm_model.py:92
-#, fuzzy
 msgid "Allocated Physical Extents:   "
-msgstr "යෙදවූ භෞතික වපරිස:"
+msgstr "යෙදවූ භෞතික වපරිස:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
