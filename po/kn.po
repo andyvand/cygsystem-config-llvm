@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kn\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-09-18 19:00+0530\n"
+"PO-Revision-Date: 2007-09-24 17:06+0530\n"
 "Last-Translator: Shankar Prasad <svenkate@redhat.com>\n"
 "Language-Team: Kannada <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,15 +67,13 @@ msgid "Unallocated Physical Volume"
 msgstr "ನಿಯೋಜಿತವಾಗದ ಭೌತಿಕ ಪರಿಮಾಣ (Physical Volume)"
 
 #: src/InputController.py:89
-#, fuzzy
 msgid "Uninitialized Disk Entity"
-msgstr "ಆರಂಭಿತವಾಗದೆ ಇರುವ ಡಿಸ್ಕ್ Entity"
+msgstr "ಆರಂಭಿತವಾಗದೆ ಇರುವ ಡಿಸ್ಕ್ ಎಂಟಿಟಿ"
 
 #: src/InputController.py:90
 #, python-format
-#, fuzzy
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr "%s ಪರಿಮಾಣ ಸಮೂಹಕ್ಕೆ ಸೇರಿಸಲು ಡಿಸ್ಕ್ Entities ಅನ್ನು ಆರಿಸಿ:"
+msgstr "%s ಪರಿಮಾಣ ಸಮೂಹಕ್ಕೆ ಸೇರಿಸಲು ಡಿಸ್ಕ್ ಎಂಟಿಟಿಗಳನ್ನು ಆರಿಸಿ:"
 
 #: src/InputController.py:92
 msgid ""
@@ -853,27 +851,24 @@ msgstr "SCSI ID:  "
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
 #, python-format
-#, fuzzy
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr "ಡಿಸ್ಕ್ entity %s ಯಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶವು ನಾಶವಾಗುತ್ತದೆ! ಅದನ್ನು ಆರಂಭಿಸಲು ಬಯಸುತ್ತೀರೆಂದು ನೀವು ಖಾತ್ರಿಯೆ?"
+msgstr "ಡಿಸ್ಕ್ ಎಂಟಿಟಿ %s ಯಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶವು ನಾಶವಾಗುತ್ತದೆ! ಅದನ್ನು ಆರಂಭಿಸಲು ಬಯಸುತ್ತೀರೆಂದು ನೀವು ಖಾತ್ರಿಯೆ?"
 
 #: src/lvmui_constants.py:52
 #, python-format
-#, fuzzy
 msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
-msgstr "ಡಿಸ್ಕ್ entity %s ಯು %s ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು ಹೊಂದಿದೆ. ಇದರಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶ ನಾಶವಾಗುತ್ತವೆ! ಡಿಸ್ಕ್ entity %s ಅನ್ನು ಆರಂಭಿಸಲು ಬಯಸುತ್ತೀರೆಂದು ನೀವು ಖಾತ್ರಿಯೆ?"
+msgstr "ಡಿಸ್ಕ್ ಎಂಟಿಟಿ %s ಯು %s ಕಡತವ್ಯವಸ್ಥೆಯನ್ನು ಹೊಂದಿದೆ. ಇದರಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶ ನಾಶವಾಗುತ್ತವೆ! ಡಿಸ್ಕ್ ಎಂಟಿಟಿ %s ಅನ್ನು ಆರಂಭಿಸಲು ಬಯಸುತ್ತೀರೆಂದು ನೀವು ಖಾತ್ರಿಯೆ?"
 
 #: src/lvmui_constants.py:53
 #, python-format
-#, fuzzy
 msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
-msgstr "ಡಿಸ್ಕ್ entity %s ಯು ಕಡತ ಕೋಶ %s ದಿಂದ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ. ಇದರಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶ ನಾಶವಾಗುತ್ತವೆ! ಡಿಸ್ಕ್ entity %s ಅನ್ನು ಆರಂಭಿಸಲು ಬಯಸುತ್ತೀರೆಂದು ನೀವು ಖಾತ್ರಿಯೆ?"
+msgstr "ಡಿಸ್ಕ್ ಎಂಟಿಟಿ %s ಯು ಕಡತ ಕೋಶ %s ದಿಂದ ದತ್ತಾಂಶವನ್ನು ಹೊಂದಿದೆ. ಇದರಲ್ಲಿರುವ ಎಲ್ಲಾ ದತ್ತಾಂಶ ನಾಶವಾಗುತ್ತವೆ! ಡಿಸ್ಕ್ ಎಂಟಿಟಿ %s ಅನ್ನು ಆರಂಭಿಸಲು ಬಯಸುತ್ತೀರೆಂದು ನೀವು ಖಾತ್ರಿಯೆ?"
 
 #: src/lvmui_constants.py:54
 #, python-format
@@ -1336,9 +1331,8 @@ msgid "Initialize Block Device"
 msgstr "ಖಂಡ(Block) ಸಾಧನವನ್ನು ಆರಂಭಿಸು"
 
 #: src/lvui.glade.h:29
-#, fuzzy
 msgid "Initialize Entity"
-msgstr "Entity ಅನ್ನು ಆರಂಭಿಸು"
+msgstr "ಎಂಟಿಟಿಯನ್ನು ಆರಂಭಿಸು"
 
 #: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
