@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: si\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-09-24 15:24+0530\n"
+"PO-Revision-Date: 2007-09-24 17:19+0530\n"
 "Last-Translator: Danishka Navin <snavin@redhat.com>\n"
 "Language-Team: Sinhala <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -727,12 +727,14 @@ msgid "Space Free:   "
 msgstr "නිදහස් ඉඩ:   "
 
 #: src/lvm_model.py:91
+#, fuzzy
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "මුළු භෞතික වපරිස:   "
 
 #: src/lvm_model.py:92
+#, fuzzy
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "යෙදවූ භෞතික වපරිස:"
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
@@ -740,16 +742,16 @@ msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
-msgstr ""
+msgstr "මුලපිරිය නොහැකි:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
-msgstr ""
+msgstr "විහිද වූ කොටස්"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
 msgid "Swap partition currently in use"
-msgstr ""
+msgstr "ස්වැප් කොටස් දැනට භාවිතයේ ඇත"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -761,7 +763,7 @@ msgstr "ස්වයංක්‍රීය කොටස් කිරීම අස
 
 #: src/lvm_model.py:259
 msgid "Partition manually"
-msgstr ""
+msgstr "ශ්‍රමිකව කොටස් කරන්න"
 
 #: src/lvm_model.py:295
 msgid "Multipath device"
@@ -777,7 +779,7 @@ msgstr ""
 
 #: src/lvm_model.py:741
 msgid "Clustered:   "
-msgstr ""
+msgstr "සමූහගත:   "
 
 #: src/lvm_model.py:743
 msgid "True"
@@ -789,11 +791,11 @@ msgstr "අසත්‍ය"
 
 #: src/lvm_model.py:803
 msgid "Number of mirror images:"
-msgstr ""
+msgstr "කැටපත් පිළිඹිබු ගණන:"
 
 #: src/lvm_model.py:806
 msgid "Snapshots:"
-msgstr ""
+msgstr "සැණරුවන්:"
 
 #: src/lvm_model.py:812
 msgid "Snapshot origin:"
@@ -801,12 +803,12 @@ msgstr ""
 
 #: src/lvm_model.py:819
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "සැණරුව භාවිතය:"
 
 #: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
 #: src/lvm_model.py:907
 msgid "/   Root Filesystem"
-msgstr ""
+msgstr "/   Root ගොනුපද්ධතිය"
 
 #: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
@@ -814,11 +816,11 @@ msgstr "කිසිවක් නැත"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI ලිපිනය:  "
 
 #: src/lvm_model.py:966
 msgid "SCSI ID:  "
-msgstr ""
+msgstr "SCSI අංකය:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -873,7 +875,7 @@ msgstr "කැටපත් සටහන්"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "ඉල්ලීම සැකසිය නොහැක"
 
 #: src/lvmui_constants.py:65
 #, python-format
@@ -890,12 +892,12 @@ msgstr "නිදහස් ඉඩ"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "කොටස් නොකළ ඉඩ"
 
 #: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
-msgstr ""
+msgstr "%s මත කොටස් නොකළ ඉඩ"
 
 #: src/lvmui_constants.py:90
 msgid "GB"
@@ -1047,7 +1049,7 @@ msgstr "සැණරුව"
 
 #: src/renderer.py:540
 msgid "extent view"
-msgstr ""
+msgstr "වපරිස දසුන"
 
 #: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
@@ -1059,69 +1061,69 @@ msgstr "නොයෙදු පරිමා"
 
 #: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "මුල නොපිරු තැටි වස්තු"
 
 #: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
-msgstr ""
+msgstr "සමූහගත VG"
 
 #: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s කැටපත් සමකාලීක කිරීම"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
-msgstr ""
+msgstr "කොටස නිර්මාණය වන තුරු කරුණාකර රැදී සිටින්න"
 
 #: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s ගොනු පද්ධතිය නිර්මාණය වෙමින්"
 
 #: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s ගොනු පද්ධතිය යළි ප්‍රමාණය සකසමින්"
 
 #: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s ගොනු පද්ධතිය පරීක්‍ෂා කරමින්"
 
 #: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s ගොනු පද්ධතිය %s වෙතට යාවත්කාලීන කරමින්"
 
 #: src/Filesystem.py:24
 #, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ගොනු පද්ධතිය නිර්මාණය අසමත් විය. උත්සාහ කළ විධානය: \"%s\" - පද්ධති දෝෂ පණිවිඩය: %s"
 
 #: src/Filesystem.py:25
 #, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ගොනු පද්ධතිය යළි ප්‍රමාණය සැකසීම අසමත් විය. උත්සාහ කළ විධානය: \"%s\" - පද්ධති දෝෂ පණිවිඩය: %s"
 
 #: src/Filesystem.py:26
 #, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ගොනු පද්ධතිය පරීක්‍ෂා කරමින්. උත්සාහ කළ විධානය: \"%s\" - පද්ධති දෝෂ පණිවිඩය: %s"
 
 #: src/Filesystem.py:27
 #, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
+msgstr "ගොනු පද්ධතිය යාවත් කාලීන කිරීම අසමත් විය. උත්සාහ කළ විධානය: \"%s\" - පද්ධති දෝෂ පණිවිඩය: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
@@ -1133,7 +1135,7 @@ msgstr "GFS (ප්‍රදේශීය)"
 
 #: src/Filesystem.py:485
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (සමූහගත)"
 
 #: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
@@ -1145,19 +1147,19 @@ msgstr ""
 
 #: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "සමූහයේ නම නොමැත"
 
 #: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "GFS නම නොමැත"
 
 #: src/Filesystem.py:631
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (ප්‍රාදේශිය)"
 
 #: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (සමූහගත)"
 
 #: src/Segment.py:44
 msgid "Stripe"
@@ -1174,7 +1176,7 @@ msgstr "කැටපත"
 #: src/PhysicalVolume.py:142
 #, python-format
 msgid "Partition %s"
-msgstr ""
+msgstr "%s කොටස"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1222,13 +1224,15 @@ msgstr "8"
 
 #: src/lvui.glade.h:12
 msgid "Add Physical Volume to VG"
-msgstr ""
+msgstr "VG වෙතට භෞතික පරිමාව එක් කරමින්"
 
 #: src/lvui.glade.h:13
 msgid ""
 "Add to existing \n"
 "Volume Group"
 msgstr ""
+"දැනට භාවිතා වන පරිමා සමූහයට \n"
+"එක් කරන්න"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
@@ -1239,22 +1243,24 @@ msgid ""
 "Create New\n"
 "Logical Volume"
 msgstr ""
-"නව නිර්මාණය\n"
-"තාර්කික පරිමාව"
+"නව තාර්කික පරිමාව\n"
+"නිර්මාණය කරන්න"
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr ""
+msgstr "සැණරුව නිර්මාණය කරන්න"
 
 #: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"නව පරිමා සමූහය\n"
+"නිර්මාණය කරන්න"
 
 #: src/lvui.glade.h:21
 msgid "Edit Properties"
-msgstr ""
+msgstr "වත්කම් සකසන්න"
 
 #: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
@@ -1265,10 +1271,12 @@ msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"විහිදු\n"
+"පරිමා සමූහ"
 
 #: src/lvui.glade.h:25
 msgid "Extend Volume Group"
-msgstr ""
+msgstr "විහිදු පරිමා සමූහ"
 
 #: src/lvui.glade.h:26
 msgid "Format"
@@ -1326,41 +1334,51 @@ msgstr ""
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
-msgstr ""
+msgstr "නව පරිමා සමූහ"
 
 #: src/lvui.glade.h:41
 msgid "Physical Extent Size"
-msgstr ""
+msgstr "භෞතික වපරිස ප්‍රමාණ"
 
 #: src/lvui.glade.h:42
 msgid ""
 "Remove \n"
 "Logical Volume"
 msgstr ""
+"තාර්කික පරිමාව\n"
+"ඉවත් කරන්න"
 
 #: src/lvui.glade.h:44
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
 msgstr ""
+"තෝරාගත් තාර්කික\n"
+"පරිමා(ව) ඉවත් කරන්න"
 
 #: src/lvui.glade.h:46
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
 msgstr ""
+"තෝරාගත් භෞතික\n"
+"පරිමා(ව) ඉවත් කරන්න"
 
 #: src/lvui.glade.h:48
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
 msgstr ""
+"පරිමා සමූහයෙන්\n"
+"පරිමාව ඉවත් කරන්න"
 
 #: src/lvui.glade.h:50
 msgid ""
 "Remove volume \n"
 "from LVM"
 msgstr ""
+"LVM වෙතින් පරිමාව\n"
+"ඉවත් කරන්න"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
@@ -1368,11 +1386,11 @@ msgstr ""
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "යම් පෙළක්"
 
 #: src/lvui.glade.h:54
 msgid "Volume Group Name"
-msgstr ""
+msgstr "පරිමා සමූහ නම"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1500,7 +1518,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>ඉලක්කය</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
@@ -1520,7 +1538,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr "ගමනාන්තය:"
+msgstr "ඉලක්කය:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
