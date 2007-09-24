@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: si\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2007-09-24 17:36+0530\n"
+"PO-Revision-Date: 2007-09-24 17:54+0530\n"
 "Last-Translator: Danishka Navin <snavin@redhat.com>\n"
 "Language-Team: Sinhala <en@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -680,11 +680,11 @@ msgstr "ඛණ්ඩ ගණන:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "ස්ට්‍රිප් ගණන:   "
 
 #: src/lvm_model.py:77
 msgid "Stripe Size:   "
-msgstr ""
+msgstr "ස්ට්‍රිප් ප්‍රමාණය:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
@@ -797,7 +797,7 @@ msgstr "සැණරුවන්:"
 
 #: src/lvm_model.py:812
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "සැණරු මූලය:"
 
 #: src/lvm_model.py:819
 msgid "Snapshot usage:"
@@ -969,7 +969,7 @@ msgstr "නොයෙදවූ පරිමාව"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
-msgstr ""
+msgstr "තැටි වස්තු"
 
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
@@ -1039,7 +1039,7 @@ msgstr "%s හි සැණරුව"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "මූලය"
 
 #: src/renderer.py:496
 msgid "Snapshot"
@@ -1137,11 +1137,11 @@ msgstr "GFS (සමූහගත)"
 
 #: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "සමූහගත නමෙ හි සාවද්‍ය අකුරු ඇත "
 
 #: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS නමෙ හි සාවද්‍ය අකුරු ඇත "
 
 #: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
@@ -1161,11 +1161,11 @@ msgstr "GFS2 (සමූහගත)"
 
 #: src/Segment.py:44
 msgid "Stripe"
-msgstr ""
+msgstr "ස්ට්‍රිප්"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
-msgstr ""
+msgstr "රේඛිය අනුරූපණය"
 
 #: src/Segment.py:109
 msgid "Mirror"
@@ -1310,15 +1310,15 @@ msgstr "පරිමා කළමනාකරණය කරන්න"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "පරිමා සමූහ 'සමූහගත' ලෙස සළකුණු කරන්න"
 
 #: src/lvui.glade.h:35
 msgid "Maximum Logical Volumes"
-msgstr ""
+msgstr "උපරිම තාර්කික පරිමා"
 
 #: src/lvui.glade.h:36
 msgid "Maximum Physical Volumes"
-msgstr ""
+msgstr "උපරිම භෞතික පරිමා"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1329,6 +1329,8 @@ msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"පරිමාවෙන් තෝරාගත් වපරිස \n"
+"සංක්‍රමණය කරවන්න"
 
 #: src/lvui.glade.h:40
 msgid "New Volume Group"
@@ -1380,7 +1382,7 @@ msgstr ""
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "මෙම PV එක් කිරීම සඳහා පරිමා සමුහයක් තෝරන්න:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
@@ -1400,7 +1402,7 @@ msgstr "මෙවලම් (_T)"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
-msgstr ""
+msgstr "විහිදු vg පණිවිඩ:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1472,7 +1474,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
-msgstr ""
+msgstr "රේඛීය"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
@@ -1508,7 +1510,7 @@ msgstr ""
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr ""
+msgstr "ඉතිරිය භාවිතා කරන්න"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
@@ -1520,7 +1522,7 @@ msgstr "<b>ඉලක්කය</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>සංක්‍රමණ ප්‍රතිපත්තිය</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -1532,7 +1534,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "සන්තතික"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
@@ -1554,7 +1556,7 @@ msgstr ""
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
-msgstr ""
+msgstr "වපරිස සංක්‍රමණය කරන්න"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
