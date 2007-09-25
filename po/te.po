@@ -1,21 +1,21 @@
-# translation of te1.po to Telugu
 # translation of te.po to Telugu
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Sree Ganesh <sthottem@redhat.com>, 2006.
 #
+# Sree Ganesh <sthottem@redhat.com>, 2006.
+# Krishna Babu K <kkrothap@redhat.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-12-15 18:58+0530\n"
-"Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
-"Language-Team: Telugu <en@li.org>\n"
+"PO-Revision-Date: 2007-09-26 00:18+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
@@ -88,13 +88,11 @@ msgstr ""
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr ""
-"ఈ %s పేరుతో ఒక తార్కిక వాల్యూం ఇప్పటికే వాల్యూం సమూహంలో ఉంది. దయచేసి ఒక సమిష్టి పేరును ఎన్నుకోండి."
+msgstr "ఈ %s పేరుతో ఒక తార్కిక వాల్యూం ఇప్పటికే వాల్యూం సమూహంలో ఉంది. దయచేసి ఒక సమిష్టి పేరును ఎన్నుకోండి."
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s పేరుతో వాల్యూం సమూహం ఇప్పటికే ఉంది. దయచేసి ఒక పేరును ఎన్నుకోండి."
 
 #: src/InputController.py:98
@@ -107,8 +105,7 @@ msgstr "కొత్త తార్కిక వాల్యూంకి ఒక
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "ఈ తెల్పబడిన మౌటు పాయింటు, %s, లేదు. మీరు దాన్ని సృష్టించాలనుకుంటున్నారా?"
 
 #: src/InputController.py:104
@@ -162,20 +159,17 @@ msgstr "mirrored తార్కిక వాల్యూం స్నాప్ 
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
-"తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
+msgstr "తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
 
 #: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
-"తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
+msgstr "తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
+msgid "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "మోడల్ ఫ్యాక్టరులో నిర్వచించబడని మార్పు దోషం. పనిని పూర్తి చేయటం కుదరదు."
 
 #: src/InputController.py:124
@@ -289,8 +283,7 @@ msgstr ""
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "మీరు నిజంగా %sని %s వాల్యూం సమూహంనుండీ తొలగించాలనుకుంటున్నారా?"
 
 #: src/InputController.py:154
@@ -357,14 +350,13 @@ msgstr ""
 "తార్కికవిలువను తొలగించాలనుకుంటున్నారా?"
 
 #: src/InputController.py:306
-#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
-"క్లస్టర్ వాతావరణంలో వాల్యూం సమూహం సరిగా వినియోగించబడింది, lvm2-క్లస్టర్ rpm సంస్థాపించాలి, మరియూ "
-"clvmd సేవలు నడుస్తూ ఉండాలి"
+"క్లస్టర్ వాతావరణంలో వాల్యూం సమూహం సరిగా వినియోగించబడింది, lvm2-క్లస్టర్ rpm సంస్థాపించాలి, "
+"`lvmconf --enable-cluster` నిష్పాదనం జరగాలి మరియూ clvmd సేవలు నడుస్తూ ఉండాలి"
 
 #: src/InputController.py:365
 #, python-format
@@ -418,13 +410,11 @@ msgstr ""
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
-msgstr ""
-"\"%s\" తార్కిక విలువ తొలగించటానికి ఎన్నుకోబడని స్నాప్ షాటులను కలిగిఉంది. అవి తప్పక .తొలగించదగ్గవి."
+msgstr "\"%s\" తార్కిక విలువ తొలగించటానికి ఎన్నుకోబడని స్నాప్ షాటులను కలిగిఉంది. అవి తప్పక .తొలగించదగ్గవి."
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", \"%s\" స్నాప్ షాట్ యొక్క మూలం, తొలగింపు జాబితాలోనుంచీ తొలగించదగ్గది."
 
 #: src/InputController.py:611
@@ -519,8 +509,7 @@ msgstr ""
 "మిర్రర్ చిత్రాలను ఉంచాలనుకుంటున్నారా?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "ఖాళీతో 3 హార్డు డ్రైవుల కంటే తక్కువైనవి అందుబాటులో ఉన్నాయి. mirroring కుదరదు."
 
 #: src/InputController.py:1551
@@ -881,12 +870,11 @@ msgstr "ఏదీకాదు"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI చిరునామా:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "కంప్యూటరు ఐడి:   "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -916,8 +904,7 @@ msgstr ""
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr "మీరు నిజంగా %s ఖాళీని %s డిస్కులో సంస్థాపించాలనుకుంటున్నారా?"
 
 #: src/lvmui_constants.py:55
@@ -1186,16 +1173,14 @@ msgstr "%s ఫైలు విధానాన్ని %s ఎగుమతిచ�
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"ఫైలువిధానం సృష్టించటం విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
+msgstr "ఫైలువిధానం సృష్టించటం విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
 
 #: src/Filesystem.py:25
 #, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"ఫైలువిధాన పునఃపరిమాణీకరణ విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
+msgstr "ఫైలువిధాన పునఃపరిమాణీకరణ విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
 
 #: src/Filesystem.py:26
 #, python-format
@@ -1209,8 +1194,7 @@ msgstr "ఫైలు విధాన పరిశిలన విఫలమైం
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr ""
-"ఫైలు విధానాన్ని నవీకరించటం విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
+msgstr "ఫైలు విధానాన్ని నవీకరించటం విఫలమైంది. ఆదేశం ప్రయత్నించబడింది: \"%s\" - కంప్యూటరు దోష సమాచారం: %s"
 
 #: src/Filesystem.py:143
 msgid "Unknown filesystem"
@@ -1669,39 +1653,3 @@ msgstr "కేవలం వలస విస్తృతులు మాత్ర
 msgid "Use common sense"
 msgstr "ఆదేశ సెన్సును వాడు"
 
-#~ msgid ""
-#~ "LVM locks are disabled!!! \n"
-#~ "Massive data corruption may occur.\n"
-#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM లాక్సు అసాధమైనవి!!! \n"
-#~ "Massive సమాచారం చెడిపోవటం సంభవించవచ్చు.\n"
-#~ "లాకింగుని సాధ్యం చేస్తోంది (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
-#~ "not running. Start daemon with command:\n"
-#~ "service clvmd start \n"
-#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM క్లస్టరు లాకింగు విధానాన్ని ఎన్నుకోవటానికి ఆకృతీకరించబడింది, కానీ clvmd డెమోన్ ఉపయోగించబడటం "
-#~ "లేదు. డెమోన్ను ఆదేశంతో ప్రారంభించండి:\n"
-#~ "సర్వీసు clvmd ప్రారంభం \n"
-#~ "లేదా, క్లస్టరు లాకింగుని టర్నాఫు చేయి (locking_type=1 in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
-#~ "quorate.\n"
-#~ "Either wait until cluster is quorate or turn off cluster locking "
-#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "LVM క్లస్టర్ లాకింగ్ విధానానికి ఆకృతీకరించబడింది, కానీ క్లస్ట్రర్ quorate చేయబడలేదు.\n"
-#~ "క్లస్టరు quorate చేయబడేదాకా వేచిఉండండి లేదా క్లస్టరు లాకింగుని టర్నాఫ్ చేయండి (locking_type=1 "
-#~ "in /etc/lvm/lvm.conf)."
-
-#~ msgid ""
-#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
-#~ "etc/lvm/lvm.conf)."
-#~ msgstr ""
-#~ "%s మాత్రమే మద్దతిచ్చే ఫైలు మరియూ క్లస్టరు ఆధారిత లాకింగ్ (locking_type=1 or 2 in /etc/lvm/"
-#~ "lvm.conf)."
