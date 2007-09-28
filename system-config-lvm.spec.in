@@ -15,7 +15,7 @@ Requires: urw-fonts
 Requires: lvm2 >= 2.00.20
 Requires: rhpl >= 0.148.2
 Requires: python >= 2.3
-BuildRequires: perl(XML::Parser) gettext
+BuildRequires: perl(XML::Parser) gettext intltool
 
 %description
 system-config-lvm is a utility for graphically configuring Logical Volumes
