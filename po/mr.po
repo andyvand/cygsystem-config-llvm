@@ -1,21 +1,24 @@
-# translation of mr.po to Marathi
+# translation of mr.po to marathi
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Rahul Bhalerao <rbhalera@redhat.com>, 2006.
 #
+# Rahul Bhalerao <rbhalera@redhat.com>, 2006.
+# sandeep shedmake <sandeep.shedmake@gmail.com>, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2007-05-01 11:52-0400\n"
-"PO-Revision-Date: 2006-06-13 15:27+0530\n"
-"Last-Translator: Rahul Bhalerao <rbhalera@redhat.com>\n"
-"Language-Team: Marathi\n"
+"PO-Revision-Date: 2007-12-09 13:52+0530\n"
+"Last-Translator: sandeep shedmake <sandeep.shedmake@gmail.com>\n"
+"Language-Team: marathi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n\n"
+"\n"
+"\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
@@ -28,13 +31,19 @@ msgid ""
 "                                                                                \n"
 "  Caught exception: %s\n"
 msgstr ""
+"\n"
+"  चित्रलेख वातावरण प्रारंभीत करू शकले नाही. अपयशाचे कारण असे की चित्रलेख वातावरणाचा वापर करून साधन चालविले गेले नाही\n"
+"  . कृपया एकतर\n"
+"  चित्रलेख वापरकर्ता संवाद सुरू करा किंवा तुमचे DISPLAY गुणांक निश्चित करा.\n"
+"                                                                                \n"
+"  अडचण पकडले: %s\n"
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
 #: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
-msgstr ""
+msgstr "%s ला जोडण्याकरीता खंड गट निवडा:"
 
 #. ##TRANSLATOR: The two strings below refer to the name and type of
 #. ##available disk entities on the system. There are two types --
@@ -46,91 +55,87 @@ msgstr ""
 #. ##some context.
 #: src/InputController.py:84
 msgid "Name"
-msgstr ""
+msgstr "नाव"
 
 #: src/InputController.py:85
-#, fuzzy
 msgid "Size"
 msgstr "आकार"
 
 #: src/InputController.py:86
-#, fuzzy
 msgid "Entity Type"
-msgstr "प्रकार"
+msgstr "वस्तू प्रकार"
 
 #: src/InputController.py:88
 msgid "Unallocated Physical Volume"
-msgstr ""
+msgstr "अनिश्चित वास्तवीक खंड"
 
 #: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
-msgstr ""
+msgstr "विनाप्रारंभीक डीस्क वस्तु"
 
 #: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
-msgstr ""
+msgstr "%s खंड गटाला जोडण्याकरीता डीस्क वस्तू निवडा"
 
 #: src/InputController.py:92
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
-msgstr ""
+msgstr "स्ट्रीपींग समर्थन करण्याकरीता खंड गटात दोन किंवा जास्त वास्तवीक खंड असायला हवे. हे खंड गट आवश्यक गरजानुरूप नाही."
 
 #: src/InputController.py:94
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
 "Please choose a unique name."
-msgstr ""
+msgstr "%s नाव असलेले तर्कदृष्ट्या खंड आधिपासूनच या खंड गटामध्ये समाविष्टीत आहे. कृपया ऐकमेव नाव निवडा."
 
 #: src/InputController.py:96
 #, python-format
-msgid ""
-"A Volume Group with the name %s already exists. Please choose a unique name."
-msgstr ""
+msgid "A Volume Group with the name %s already exists. Please choose a unique name."
+msgstr "%s नाव असलेले खंड गट आधिपासूनच अस्तित्वात आहे. कृपया ऐकमेव नाव निवडा."
 
 #: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
-msgstr ""
+msgstr "नविन तर्कदृष्ट्या खंडकरीता नाव पूरविले पाहिजे"
 
 #: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
-msgstr ""
+msgstr "नविन तर्कदृष्ट्या खंडकरीता नाव पूरविले पाहिजे"
 
 #: src/InputController.py:102
 #, python-format
-msgid ""
-"The specified mount point, %s, does not exist. Do you wish to create it?"
-msgstr ""
+msgid "The specified mount point, %s, does not exist. Do you wish to create it?"
+msgstr "निश्चित आरोहन बिंदू, %s, अस्तित्वात नाही. तुम्हाला ते बनवायचे?"
 
 #: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
-msgstr ""
+msgstr "आरोहन बिंदू %s अनिश्चितरूपी अपयशी झाले."
 
 #: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
-msgstr ""
+msgstr "या आवृत्तीमध्ये ही कार्यक्षमता कार्यरत केले गेली नाही"
 
 #: src/InputController.py:108
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "या खंड गटातील तर्कदृष्ट्या खंडाची संख्या कमाल सीमेपर्यंत पोहचली आहे."
 
 #: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
-msgstr ""
+msgstr "या खंड गटातील खंडाची संख्या कमाल सीमेपर्यंत पोहचली आहे."
 
 #: src/InputController.py:112
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
-msgstr ""
+msgstr "सीमेपलीकडे जाण्याच्या पहिले जास्तीत जास्त %s वास्तवीक खंड या खंड गटाकरीता जोडले जाऊ शकते."
 
 #: src/InputController.py:114
 #, python-format
@@ -138,34 +143,33 @@ msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
+msgstr "खंड गट %s कडे नविन तर्कदृष्ट्या खंडाकरीता अतिरीक्त जागा नाही. यावर उपय असे आहे की आणखी एक वास्तविक खंड खंड गटला जोडा."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
-msgstr ""
+msgstr "छायाचित्रप्रताचे छायाचित्रप्रत समर्थित नाही."
 
 #: src/InputController.py:117
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr ""
+msgstr "प्रतिकृत वास्तविक खंडाचे छायाचित्रप्रत समर्थित नाही."
 
 #: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
-msgstr ""
+msgstr "वास्तविक खंड %s शी छायाचित्रप्रत %s जुळलेले आहे. कृपया पहिले छायाचित्रप्रत काढून टाका."
 
 #: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
-msgstr ""
+msgstr "वास्तविक खंड %s शी छायाचित्रप्रत: %s जुळलेले आहे. कृपया पहिले छायाचित्रप्रत काढून टाका."
 
 #: src/InputController.py:122
-msgid ""
-"Undefined type conversion error in model factory. Unable to complete task."
-msgstr ""
+msgid "Undefined type conversion error in model factory. Unable to complete task."
+msgstr "फॅक्टरी विभागात अव्याख्यीत रूपांतर त्रूटी प्रकार आढळले. कार्य पूर्ण करू शकले नाही."
 
 #: src/InputController.py:124
 #, python-format
@@ -173,89 +177,89 @@ msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
 "mounted on %s. Are you absolutely certain that you wish to discard the data "
 "on this mounted filesystem?"
-msgstr ""
+msgstr "मोठी ताकीद: तर्कदृष्ट्या खंड %s वर %s फाइल प्रणाली स्थापीत आहे व सद्या %s वर आरोहीत आहे. तुम्हाला नक्की आरोहीत फाइल प्रणालीवरची माहिती काढून टाकयची?"
 
 #: src/InputController.py:126
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
 "it has to be unmounted. Are you sure you want it unmounted?"
-msgstr ""
+msgstr "तर्कदृष्ट्या खंड %s सद्या %s वर आरोहीत आहे. विनंती पूर्ण करण्याकरीता, त्यास अनारोहीत केले पाहिजे. तुम्हाला नक्की अनारोहीत करायचे?"
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
 #: src/InputController.py:132
 #, python-format
 msgid "Unused space on %s"
-msgstr ""
+msgstr "%s वरील बिनवापरलेली जागा"
 
 #: src/InputController.py:133
 #, python-format
 msgid "%s megabytes"
-msgstr ""
+msgstr "%s मेगाबाईट"
 
 #: src/InputController.py:134
 #, python-format
 msgid "%s kilobytes"
-msgstr ""
+msgstr "%s कीलोबाईट"
 
 #: src/InputController.py:135
 #, python-format
 msgid "%s gigabytes"
-msgstr ""
+msgstr "%s गीगाबाईट"
 
 #: src/InputController.py:136
 #, python-format
 msgid "%s extents"
-msgstr ""
+msgstr "%s विस्तार"
 
 #: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
-msgstr ""
+msgstr "खंड गटामधिल उर्वरीत रिकामी जागा:\n"
 
 #: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
-msgstr ""
+msgstr "या खंडकरीता उर्वरीत रिकामी जागा:\n"
 
 #: src/InputController.py:141
 msgid "Extents"
-msgstr ""
+msgstr "विस्तार"
 
 #: src/InputController.py:142
 msgid "Gigabytes"
-msgstr ""
+msgstr "गीगाबाईट"
 
 #: src/InputController.py:143
 msgid "Megabytes"
-msgstr ""
+msgstr "मेगाबाईट"
 
 #: src/InputController.py:144
 msgid "Kilobytes"
-msgstr ""
+msgstr "किलोबाईट"
 
 #: src/InputController.py:146
 #, python-format
 msgid "The %s should only contain number values"
-msgstr ""
+msgstr "%s मध्ये फक्त संख्यात्मक मुल्ये असायला हवी"
 
 #: src/InputController.py:147
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
-msgstr ""
+msgstr "कमाल वास्तविक खंड नोंदणीत फक्त संख्यात्मक मुल्ये 1 व 256 च्या अंतर्गत असायला हवी"
 
 #: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
-msgstr ""
+msgstr "कमाल तर्कदृष्ट्या खंड नोंदणीत फक्त संख्यात्मक मुल्ये 1 व 256 च्या अंतर्गत असायला हवी"
 
 #: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
-msgstr ""
+msgstr "तुम्हाला %s तर्कदृष्ट्या खंड व्यवस्थापन नक्की काढून टाकायचे?"
 
 #: src/InputController.py:152
 #, python-format
@@ -266,20 +270,19 @@ msgid ""
 "Recommended action is either to add a new Physical Volume before removing "
 "this one, or else remove the Logical Volumes that are associated with this "
 "Physical Volume."
-msgstr ""
+msgstr "तुम्हाला %s नामांकीत वास्तवीक खंड काढायचे, त्यात सक्रीय तर्कदृष्ट्या खंडापासून विस्तार करीता जुळलेली माहिती समाविष्ट आहे. खंड गट फक्त वास्तवीक खंड असल्यामुळे, माहिती कुठेही हलवायला जागा नाही. सुचविलेली कृती असे आहे की सद्याचे खंड काढुन टाकण्यापूर्वी नविन वास्तवीक खंड जोडा, किंवा वास्तवीक खंड काढुन टाका जे वास्तवीक खंडाशी जुळलेली आहे."
 
 #: src/InputController.py:153
 #, python-format
-msgid ""
-"Are you quite certain that you wish to remove %s from the %s Volume Group?"
-msgstr ""
+msgid "Are you quite certain that you wish to remove %s from the %s Volume Group?"
+msgstr "तुम्हाला %s तर्कदृष्ट्या खंड गटामधून %s नक्की काढून टाकायचे?"
 
 #: src/InputController.py:154
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
 "group empty, and it will be removed as well. Do you wish to proceed?"
-msgstr ""
+msgstr "खंड गट %s मधून वास्तविक खंड %s काढून टाकल्यास खंड गट रिकामी होईल,व तेही काढून टाकल्या जाईल. तुम्हाला नक्की पुढे जायचे?"
 
 #: src/InputController.py:155
 #, python-format
@@ -287,7 +290,7 @@ msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
-msgstr ""
+msgstr "%s वरील संचयीत माहिती हलविण्याकरीता खंड गट %s वर अतिरीक्त जागा नाही. यावर उपाय असा की वाढीव वास्तवीक खंड खंड गटशी जोडा."
 
 #: src/InputController.py:156
 msgid ""
@@ -296,39 +299,41 @@ msgid ""
 "\"modprobe dm-mirror\". Otherwise, operations that require moving data on "
 "Physical Extents are unavailable."
 msgstr ""
+"dm-mirror विभाग एकतर कर्नलमध्ये दाखल केले नसावे, किंवा कर्नल dm-mirror लक्ष्य समर्थित नसावे. समर्थित असल्यास, "
+"\"modprobe dm-mirror\" चालविणे प्रयत्न करा. नाहीतर, वास्तवीक विस्तारावर माहिती हलविणे अनुपलब्ध असतात."
 
 #: src/InputController.py:157
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
-msgstr ""
+msgstr "एकतर dm-snapshot विभाग कर्नलमध्ये दाखल केले नसावे, किंवा तुमचे कर्नल dm-snapshot लक्ष्य समर्थित करीत नाही. समर्थित असल्यास, \"modprobe dm-snapshot\" चालविण्याचा प्रयत्न करा. किंवा, छायाचित्रप्रतचे निर्माण अनुपलब्ध असावे."
 
 #: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
-msgstr ""
+msgstr "तुम्हाला नक्की तर्कदृष्ट्या खंड %s काढून टाकायचे?"
 
 #: src/InputController.py:160
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
 "you quite certain that you wish to remove logical volume %s?"
-msgstr "सर्व?"
+msgstr "तर्कदृष्ट्या खंड %s मध्ये %s फाइलप्रणाली आहे. त्यावरची सर्वी माहिती नाहीसे होईल! तुम्हाला नक्की तर्कदृष्ट्या खंड %s काढायचे?"
 
 #: src/InputController.py:161
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
 "lost! Are you quite certain that you wish to remove logical volume %s?"
-msgstr "सर्व?"
+msgstr "तर्कदृष्ट्या खंड %s मध्ये %s संचयीकेमधिल माहिती अंतर्भूत आहे. त्यावरची सर्वी माहिती नाहीसे होईल! तुम्हाला नक्की तर्कदृष्ट्या खंड %s काढायचे?"
 
 #: src/InputController.py:306
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
-msgstr ""
+msgstr "संग्रह वातावरणात खंड गट सुरक्षीतरित्या वापरण्याकरीता, lvm2-cluster rpm प्रतिष्ठापीत करायला हवे, `lvmconf --enable-cluster` कार्यान्वीत करायला हवे व clvmd सेवा कार्यरत राहयला हवी"
 
 #: src/InputController.py:365
 #, python-format
@@ -336,7 +341,7 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "वास्तवीक खंड %s मध्ये वास्तवीक खंड %s मधिल प्रतिकृत लॉगच्या मालकीचे विस्तार समाविष्टीत आहे. प्रतिकृत तर्कदृष्ट्या खंड स्थानांतरीत करतायेण्याजोगी नाही, त्यामुळे %s ला काढू शकत नाही."
 
 #: src/InputController.py:368
 #, python-format
@@ -344,119 +349,115 @@ msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
 "Volume %s. Mirrored Logical Volumes are not yet migratable, so %s is not "
 "removable."
-msgstr ""
+msgstr "वास्तवीक खंड %s मध्ये वास्तवीक खंड %s मधिल प्रतिकृत प्रतिमेच्या मालकीचे विस्तार समाविष्टीत आहे. प्रतिकृत तर्कदृष्ट्या खंड स्थानांतरीत करतायेण्याजोगी नाही, त्यामुळे %s ला काढू शकत नाही."
 
 #: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "वास्तवीक खंड %s मध्ये %s च्या मालकीचे विस्तार समाविष्टीत आहे, %s चे छायाचित्रप्रत. छायाचित्रप्रत स्थानांतरीत करतायेण्याजोगी नाही, त्यामुळे %s ला काढू शकत नाही."
 
 #: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "वास्तवीक खंड %s मध्ये %s च्या मालकीचे विस्तार समाविष्टीत आहे, %s छायाचित्रप्रताचे उगमस्थान. छायाचित्रप्रत स्थानांतरीत करतायेण्याजोगी नाही, त्यामुळे %s ला काढू शकत नाही."
 
 #: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
-msgstr ""
+msgstr "वास्तवीक खंड %s मध्ये %s च्या मालकीचे विस्तार समाविष्टीत आहे, %s छायाचित्रप्रतांचे उगमस्थान. छायाचित्रप्रत स्थानांतरीत करतायेण्याजोगी नाही, त्यामुळे %s ला काढू शकत नाही."
 
 #: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
-msgstr ""
+msgstr "तर्कदृष्ट्या खंड \"%s\" कडे छायाचित्रप्रत आई जे काढून टाकण्याकरीता निवडले गेले नाही. त्यांना देखिल काढून टाकायला पाहिजे."
 
 #: src/InputController.py:580
 #, python-format
-msgid ""
-"\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
+msgid "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
+msgstr "छायाचित्रप्रत \"%s\" चे प्रारंभ, \"%s\" यादीमधून काढून टाकण्यात आले."
 
 #: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
-msgstr ""
+msgstr "वास्तवीक खंडात \"%s\" प्रतिकृत संबंधी विस्तारीत माहिती समाविष्टीत आहे. प्रतिकृत स्थानांतरीत केल्या जाऊ शकत नाही, त्यामुळे %s काढून टाकतायेण्याजोगी नाही."
 
 #: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
 "snapshot's origin. Snapshots are not migratable, so %s is not removable."
-msgstr ""
+msgstr "वास्तवीक खंड \"%s\" मध्ये छायाचित्रप्रत मालकी किंवा छायाचित्रप्रत प्रारंभ मालकी विस्तार समाविष्टीत आहे. छायाचित्रप्रत स्थानांतरीत करतायेण्याजोगी नाही, त्यामुळे %s ला काढू शकत नाही."
 
 #: src/InputController.py:679
 msgid "The path you specified does not exist."
-msgstr ""
+msgstr "तुम्ही निश्चित केलेला मार्ग अस्तित्वात नाही."
 
 #: src/InputController.py:686
-#, fuzzy
 msgid "The path you specified is not a Block Device."
-msgstr "यंत्र."
+msgstr "तुम्ही निश्चित केलेला मार्ग बलॉक साधन नाही."
 
 #: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
-msgstr ""
+msgstr "%s करीता प्रारंभीकरण अपयशी"
 
 #: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
-msgstr ""
+msgstr "कृपया काहीक विस्तार पहिले निवडा"
 
 #: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
-msgstr ""
+msgstr "आवश्यक स्थानंतरनकरीता अतिरीक्त अगाऊ विस्तार नाही. आणखी विस्तारीत खंड जोडल्यास अडचन सूटेल."
 
 #: src/InputController.py:1193
 msgid "Migrate extents"
-msgstr ""
+msgstr "विस्तार स्थानांतरीत करा"
 
 #: src/InputController.py:1321
 msgid "Options"
-msgstr ""
+msgstr "पर्याय"
 
 #: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
-msgstr ""
+msgstr "%s चे छायाचित्रप्रत निर्माण करा"
 
 #: src/InputController.py:1357
-#, fuzzy
 msgid "Create New Logical Volume"
-msgstr "नविन"
+msgstr "नविन तर्कदृश्ट्या खंड निर्माण करा"
 
 #: src/InputController.py:1360
-#, fuzzy, python-format
+#, python-format
 msgid "Edit %s, a Snapshot of %s"
-msgstr "संपादन करा"
+msgstr "%s संपादीत करा, %s चे छायाचित्रप्रत"
 
 #: src/InputController.py:1363
-#, fuzzy
 msgid "Edit Logical Volume"
-msgstr "तार्किक खंड संपादा"
+msgstr "तर्कदृष्ट्या खंड संपादीत करा"
 
 #: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
-msgstr ""
+msgstr "उपलब्ध वास्तवीक खंड व्यवस्थापन प्रतिकृत समर्थन करीत नाही"
 
 #: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
-msgstr ""
+msgstr "स्ट्रीप्ड तर्कदृश्ट्या खंड प्रतिकृत केले जाऊ शकत नाही."
 
 #: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
-msgstr ""
+msgstr "तर्कदृश्ट्या खंड छायाचित्रप्रत संबंधी अजूनही प्रतिकृत केले गेले नाही."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
@@ -464,435 +465,410 @@ msgstr ""
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
-msgstr ""
+msgstr "प्रतिकृत करण्याचे प्राथमिक कारण हार्ड ड्राइव्ह खराब झाल्यास त्यावरील माहिती सुरक्षीत ठेवणे आहे. तुम्हाला प्रतिकृत प्रतिमा इतर हार्ड ड्राइव्हवर ठेवायची?"
 
 #: src/InputController.py:1546
-msgid ""
-"Less than 3 hard drives are available with free space. Disabling mirroring."
-msgstr ""
+msgid "Less than 3 hard drives are available with free space. Disabling mirroring."
+msgstr "अतिरीक्त जागा अंतर्गत 3 पेक्षा कमी हार्ड ड्राइव्ह उपलब्ध आहे. प्रतिकृत अकार्यान्वीत करा."
 
 #: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
-msgstr ""
+msgstr "प्रतिकृत करण्याकरीता कमीन तीन वास्तवीक खंडावर अतिरीक्त मुक्त जागा असायला हवी"
 
 #: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
-msgstr ""
+msgstr "तर्कदृश्ट्या खंडाचे आकार उपलब्ध प्रतिकृतच्या कमाल आकाराशी जुळल्या गेले आहे."
 
 #: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
-msgstr ""
+msgstr "प्रतिकृत जोडण्याकरीता अतिरीक्त मुक्त जागा नाही. तर्कदृश्ट्या खंडाचे जास्तित जास्त %s पर्यंत आकार कमी करा, किंवा वास्तवीक खंड जोडा."
 
 #: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
+msgstr "\"छायाचित्रप्रत\" किंवा \"pvmove\" पासून सुरू होणारी नाव आरक्षीत मुख्यशब्द आहेत."
 
 #: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr ""
+msgstr "\"_mlog\" किंवा \"_mimage\" समाविष्टीत नाव आरक्षीत मुख्यशब्द आहेत."
 
 #: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
-msgstr ""
+msgstr "\"-\" पासून सुरू होणारी नाव अवैध आहेत"
 
 #: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
-msgstr ""
+msgstr "नाव \".\" किंवा \"..\" असू शकत नाही"
 
 #: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
-msgstr ""
+msgstr "तर्कदृश्ट्या खंड नावामध्ये रिक्त जागेस परवानगी नाही"
 
 #: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr ""
+msgstr "तर्कदृश्ट्या खंड नावात अवैध अक्षर \"%s\""
 
 #: src/InputController.py:1963
 msgid "Please specify mount point"
-msgstr ""
+msgstr "कृपया आरोहन बिंदू निश्चित करा"
 
 #: src/InputController.py:2029
-#, fuzzy
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr "ext2 ext3?"
+msgstr "तर्कदृष्ट्या खंडवरील माहिती ext2 पासून ext3 पर्यंत अद्ययावत करायची?"
 
 #: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
-msgstr ""
+msgstr "फाइलप्रणाली नष्ट केल्यास तर्कदृष्ट्या खंडावरील सर्व माहिती नष्ट होईल! तुम्हाला नक्की पुढे जायचे?"
 
 #. migration not performed, continue process with no mirroring
 #: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
-msgstr ""
+msgstr "प्रतिकृत बनविले नाही. उर्वरीत कार्य पूर्ण करीत आहे."
 
 #. create mirror
 #: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
-msgstr ""
+msgstr "उपलब्ध LVM उपलब्ध तर्कदृष्ट्या खंडाकरीता अगाऊ प्रतिकृत जोडण्यास समर्थन देत नाही. उर्वरीत कार्य पूर्ण करीत आहे."
 
 #: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
-msgstr ""
+msgstr "प्रतिकृत जोडण्याकरीत, काहीक विस्तार स्थानांतरीत केले पाहिजे."
 
 #: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
-msgstr ""
+msgstr "तुम्हाला ठाराविक विस्तार स्थानांतरीत करायचे?"
 
 #: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
-msgstr ""
+msgstr "तर्कदृष्ट्या खंड बनवित आहे"
 
 #: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
-msgstr ""
+msgstr "तर्कदृष्ट्या खंडाचे पुनः आकार निश्चित करीत आहे"
 
 #: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
-msgstr ""
+msgstr "वास्तवीक खंडामध्ये प्रतिकृत जोडत आहे"
 
 #: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
-msgstr ""
+msgstr "वास्तवीक खंडापासून प्रतिकृत काढून टाकत आहे"
 
 #: src/CommandHandler.py:160
-#, fuzzy
 msgid "Initializing Physical Volume"
-msgstr "आरंभित आहे"
+msgstr "वास्तवीक खंड आरंभीत करीत आहे"
 
 #: src/CommandHandler.py:171
 msgid "Adding Physical Volume to Volume Group"
-msgstr ""
+msgstr "खंड गटामध्ये वास्तवीक खंड जोडत आहे"
 
 #: src/CommandHandler.py:203
 msgid "Creating Volume Group"
-msgstr ""
+msgstr "खंड गट निर्माण करत आहे"
 
 #: src/CommandHandler.py:225
 msgid "Removing Volume Group"
-msgstr ""
+msgstr "खंड गट काढून टाकत आहे"
 
 #: src/CommandHandler.py:235
 msgid "Removing Physical Volume"
-msgstr ""
+msgstr "विस्तारीत खंड काढून टाकत आहे"
 
 #: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
-msgstr ""
+msgstr "विस्तारीत खंड काढून टाकत आहे"
 
 #: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
-msgstr ""
+msgstr "विस्तारीत खंड पुनःनामांकीत करीत आहे"
 
 #: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
-msgstr ""
+msgstr "खंड गटापासून विस्तारीत खंड काढून टाकत आहे"
 
 #: src/CommandHandler.py:320
 msgid "Migrating Extents"
-msgstr ""
+msgstr "स्थानांतरन विस्तार"
 
 #: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
-msgstr ""
+msgstr "विस्तार स्थानांतरन पूर्ण करीत आहे"
 
 #: src/CommandHandler.py:383
-#, fuzzy
 msgid "Rereading partition table"
-msgstr "विस्तारित विभाजन"
+msgstr "विभाजन कोष्टक पुनःवाचत आहे"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
-msgstr ""
+msgstr "बिनवापरलेले"
 
 #: src/lvm_model.py:46
 msgid "Unused Space"
-msgstr ""
+msgstr "बिनवापरलेली जागा"
 
 #: src/lvm_model.py:48
 msgid "Unmounted"
-msgstr ""
+msgstr "अनारोहण"
 
 #: src/lvm_model.py:58
 msgid "Volume Group Name:   "
-msgstr ""
+msgstr "खंड गटाचे नाव:   "
 
 #: src/lvm_model.py:59
-#, fuzzy
 msgid "System ID:   "
-msgstr "प्रणाली "
+msgstr "प्रणाली ID:   "
 
 #: src/lvm_model.py:60
-#, fuzzy
 msgid "Format:   "
-msgstr "स्वरुप(फॉरमॅट) "
+msgstr "स्वरुपन:   "
 
 #: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
-msgstr ""
+msgstr "गुणधर्म:   "
 
 #: src/lvm_model.py:62
-#, fuzzy
 msgid "Volume Group Size:   "
-msgstr "आकार "
+msgstr "खंड गट आकार:   "
 
 #: src/lvm_model.py:63
 msgid "Available Space:   "
-msgstr ""
+msgstr "उपलब्ध जागा:   "
 
 #: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
-msgstr ""
+msgstr "एकूण विस्तारांची संख्या:   "
 
 #: src/lvm_model.py:65
-#, fuzzy
 msgid "Number of Free Extents:   "
-msgstr "मुक्त "
+msgstr "मुक्त विस्तारांची संख्या:   "
 
 #: src/lvm_model.py:66
-#, fuzzy
 msgid "Extent Size:   "
-msgstr "आकार "
+msgstr "विस्तारीत आकार:   "
 
 #: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
-msgstr ""
+msgstr "वापरताजोजी कमाल वास्तवीक खंड:   "
 
 #: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
-msgstr ""
+msgstr "वास्तवीक खंडाची संख्या:   "
 
 #: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
-msgstr ""
+msgstr "वापरताजोजी कमाल तर्कदृष्ट्या खंड:   "
 
 #: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
-msgstr ""
+msgstr "तर्कदृष्ट्या खंडाची संख्या:   "
 
 #: src/lvm_model.py:71
 msgid "VG UUID:   "
-msgstr ""
+msgstr "VG UUID:   "
 
 #: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
-msgstr ""
+msgstr "वास्तवीक खंड नाव:   "
 
 #: src/lvm_model.py:74
-#, fuzzy
 msgid "Logical Volume Size:   "
-msgstr "आकार "
+msgstr "तर्कदृष्ट्या खंड आकार:   "
 
 #: src/lvm_model.py:75
 msgid "Number of Segments:   "
-msgstr ""
+msgstr "तुकड्यांची संख्या:   "
 
 #: src/lvm_model.py:76
 msgid "Number of Stripes:   "
-msgstr ""
+msgstr "स्ट्रीपची संख्या:   "
 
 #: src/lvm_model.py:77
-#, fuzzy
 msgid "Stripe Size:   "
-msgstr "आकार "
+msgstr "स्ट्रीप आकार:   "
 
 #: src/lvm_model.py:79
 msgid "LV UUID:   "
-msgstr ""
+msgstr "LV UUID:   "
 
 #: src/lvm_model.py:81
-#, fuzzy
 msgid "Partition Type:   "
-msgstr "विभाजन प्रकार "
+msgstr "विभाजन प्रकार:   "
 
 #: src/lvm_model.py:82
-#, fuzzy
 msgid "Size:   "
-msgstr "आकार "
+msgstr "आकार:   "
 
 #: src/lvm_model.py:83
 msgid "Mount Point:   "
-msgstr ""
+msgstr "आरोहण बींदू:   "
 
 #: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
-msgstr ""
+msgstr "पुनःसुरू केल्यास आरोहण बींदू निश्चित करा:   "
 
 #: src/lvm_model.py:85
-#, fuzzy
 msgid "File System:   "
-msgstr "प्रणाली "
+msgstr "फाइल प्रणाली:   "
 
 #: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
-msgstr ""
+msgstr "वास्तवीक खंड नाव:   "
 
 #: src/lvm_model.py:88
-#, fuzzy
 msgid "Physical Volume Size:   "
-msgstr "आकार "
+msgstr "वास्तवीक खंड आकार:   "
 
 #: src/lvm_model.py:89
 msgid "Space Used:   "
-msgstr ""
+msgstr "जागा वापरा:   "
 
 #: src/lvm_model.py:90
-#, fuzzy
 msgid "Space Free:   "
-msgstr "मुक्त "
+msgstr "रिकामी जागा:   "
 
 #: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
-msgstr ""
+msgstr "एकूण वास्तीक विस्तार:   "
 
 #: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
-msgstr ""
+msgstr "विभाजीत वास्तवीक विस्तार:   "
 
 #: src/lvm_model.py:94
 msgid "PV UUID:   "
-msgstr ""
+msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
 msgid "Not initializable:"
-msgstr ""
+msgstr "प्रारंभ करताजोगी नाही:"
 
 #: src/lvm_model.py:97
-#, fuzzy
 msgid "Extended partition"
 msgstr "विस्तारित विभाजन"
 
 #. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
-#, fuzzy
 msgid "Swap partition currently in use"
-msgstr "विभाजन"
+msgstr "स्वॅप विभाजन सद्या वापरणीत आहे"
 
 #: src/lvm_model.py:100
-#, fuzzy
 msgid "Foreign boot partition"
-msgstr "विदेश विभाजन"
+msgstr "बाहेरील बूट विभाजन"
 
 #: src/lvm_model.py:101
-#, fuzzy
 msgid "Autopartition failure"
-msgstr "स्वयंविभाजन"
+msgstr "स्वयंविभाजन अपयशी"
 
 #: src/lvm_model.py:259
-#, fuzzy
 msgid "Partition manually"
-msgstr "विभाजन स्वहस्ते"
+msgstr "विभाजन स्वतः करा"
 
 #: src/lvm_model.py:295
 msgid "Multipath device"
-msgstr ""
+msgstr "बहुमार्गीय साधन"
 
 #: src/lvm_model.py:298
 msgid "Note:"
-msgstr ""
+msgstr "टिप:"
 
 #: src/lvm_model.py:298
-#, fuzzy
 msgid "Initialize manually"
-msgstr "स्वहस्ते"
+msgstr "प्रारंभ स्वतः करा"
 
 #: src/lvm_model.py:741
 msgid "Clustered:   "
-msgstr ""
+msgstr "संग्रहीत:   "
 
 #: src/lvm_model.py:743
 msgid "True"
-msgstr ""
+msgstr "खरे"
 
 #: src/lvm_model.py:745
 msgid "False"
-msgstr ""
+msgstr "खोटे"
 
 #: src/lvm_model.py:803
 msgid "Number of mirror images:"
-msgstr ""
+msgstr "प्रतिकृत प्रतिमांची संख्या:"
 
 #: src/lvm_model.py:806
 msgid "Snapshots:"
-msgstr ""
+msgstr "छायाचित्रप्रत:"
 
 #: src/lvm_model.py:812
 msgid "Snapshot origin:"
-msgstr ""
+msgstr "छायाचित्रप्रत"
 
 #: src/lvm_model.py:819
 msgid "Snapshot usage:"
-msgstr ""
+msgstr "छायाचित्रप्रत वापर:"
 
 #: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
 #: src/lvm_model.py:907
 msgid "/   Root Filesystem"
-msgstr ""
+msgstr "/   रूट फाइलप्रणाली"
 
 #: src/lvm_model.py:910 src/Filesystem.py:137
-#, fuzzy
 msgid "None"
-msgstr "काही नाही"
+msgstr "काहीच नाही"
 
 #: src/lvm_model.py:964
 msgid "SCSI Address:  "
-msgstr ""
+msgstr "SCSI पत्ता:  "
 
 #: src/lvm_model.py:966
-#, fuzzy
 msgid "SCSI ID:  "
-msgstr "प्रणाली "
+msgstr "SCSI ID:  "
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "All data on disk entity %s will be lost! Are you certain that you wish to "
 "initialize it?"
-msgstr "सर्व?"
+msgstr "डीस्क वस्तु %s वरील सर्व माहिती नाहीसे होईल!तुम्हाला नक्की प्रारंभ करायचे?"
 
 #: src/lvmui_constants.py:52
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Disk entity %s contains %s filesystem. All data on it will be lost! Are you "
 "certain that you wish to initialize disk entity %s?"
-msgstr "सर्व?"
+msgstr "डीस्क वस्तु %s मध्ये %s फाइलप्रणाली समाविष्ट आहे. त्यावरील सर्व माहिती नाहीसे होईल! तुम्हाला नक्की डीस्क वस्तु %s प्रारंभ करायचे?"
 
 #: src/lvmui_constants.py:53
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
-msgstr "सर्व?"
+msgstr "डीस्क वस्तु %s मध्ये %s संचयीकेमधिल माहिती अंतर्भूत आहे. . त्यावरील सर्व माहिती नाहीसे होईल! तुम्हाला नक्की डीस्क वस्तु %s प्रारंभ करायचे?"
 
 #: src/lvmui_constants.py:54
 #, python-format
-msgid ""
-"Are you certain that you wish to initialize %s of free space on disk %s?"
-msgstr ""
+msgid "Are you certain that you wish to initialize %s of free space on disk %s?"
+msgstr "तुम्हाला डीस्क %s वरील %s रिक्त जागा नक्की प्रारंभ करायचे?"
 
 #: src/lvmui_constants.py:55
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "You are about to initialize unpartitioned disk %s. It is advisable, although "
 "not required, to create a partition on it. Do you want to create a single "
 "partition encompassing the whole drive?"
-msgstr "विभाजन विभाजन?"
+msgstr "तुम्ही अविभाजीत डीस्क %s प्रारंभीत करणार आहात. असे सुचविले जाते, जरी आवश्यक नाही, तरी त्यावर विभाजन निर्माण करा. तुम्हाला संपूर्ण ड्राइव्ह वरील फक्त एकच विभाजन बनवायचे?"
 
 #: src/lvmui_constants.py:57
 msgid "Reloading LVM. Please wait."
-msgstr ""
+msgstr "LVM पुनः दाखल करत आहे. कृपया थांबा."
 
 #: src/lvmui_constants.py:59
 #, python-format
@@ -900,146 +876,141 @@ msgid ""
 "Changes will take effect after computer is restarted. If device %s is used, "
 "before restart, data corruption WILL occur. It is advisable to restart your "
 "computer now."
-msgstr ""
+msgstr "संगणक पुन्हा सुरू केल्यावरच बदलावांचा प्रभाव दिसून पडेल. पुन्हा सुरू केल्यावर, जर %s वापरले जात असेल, तर माहिती अनीतिभ्रष्ट होईल. असे सुचविले जाते की तुम्ही संगणक पुन्हा सुरू करा."
 
 #: src/lvmui_constants.py:61
 msgid "Mirror Log"
-msgstr ""
+msgstr "प्रतिकृत लॉग"
 
 #: src/lvmui_constants.py:63
 msgid "Unable to process request"
-msgstr ""
+msgstr "विनंती विश्लेषीत केले जाऊ शकत नाही"
 
 #: src/lvmui_constants.py:65
-#, fuzzy, python-format
+#, python-format
 msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "प्रणाली चूक"
+msgstr "%s आदेश अपयशी. आदेश वापरण्याचा प्रयत्न: \"%s\" - प्रणाली त्रूटी संदेश: %s"
 
 #: src/lvmui_constants.py:84
-#, fuzzy
 msgid "Free"
 msgstr "मुक्त"
 
 #: src/lvmui_constants.py:85
-#, fuzzy
 msgid "Free space"
 msgstr "मुक्त जागा"
 
 #: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
-msgstr ""
+msgstr "अविभाजीत जागा"
 
 #: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
-msgstr ""
+msgstr "%s वरील अविभाजीत जागा"
 
 #: src/lvmui_constants.py:90
-#, fuzzy
 msgid "GB"
 msgstr "GB"
 
 #: src/lvmui_constants.py:91
 msgid "MB"
-msgstr ""
+msgstr "MB"
 
 #: src/lvmui_constants.py:92
 msgid "KB"
-msgstr ""
+msgstr "KB"
 
 #: src/lvmui_constants.py:93
 msgid "Bytes"
-msgstr ""
+msgstr "बाईट"
 
 #. File System Types
 #: src/lvmui_constants.py:97
-#, fuzzy
 msgid "No Filesystem"
-msgstr "नाही"
+msgstr "फाइलप्रणाली नाही"
 
 #: src/lvmui_constants.py:98
 msgid "Ext2"
-msgstr ""
+msgstr "Ext2"
 
 #: src/lvmui_constants.py:99
 msgid "Ext3"
-msgstr ""
+msgstr "Ext3"
 
 #: src/lvmui_constants.py:100
 msgid "JFS"
-msgstr ""
+msgstr "JFS"
 
 #: src/lvmui_constants.py:101
 msgid "MSDOS"
-msgstr ""
+msgstr "MSDOS"
 
 #: src/lvmui_constants.py:102
 msgid "Reiserfs"
-msgstr ""
+msgstr "Reiserfs"
 
 #: src/lvmui_constants.py:103
 msgid "VFAT"
-msgstr ""
+msgstr "VFAT"
 
 #: src/lvmui_constants.py:104
 msgid "XFS"
-msgstr ""
+msgstr "XFS"
 
 #: src/lvmui_constants.py:105
 msgid "Cramfs"
-msgstr ""
+msgstr "Cramfs"
 
 #: src/Properties_Renderer.py:42
 msgid "Properties for"
-msgstr ""
+msgstr "करीता गुणधर्म"
 
 #: src/Properties_Renderer.py:43 src/renderer.py:37
 msgid "Physical Volume"
-msgstr ""
+msgstr "वास्तवीक खंड"
 
 #. UNALLOCATED_MESSAGE=_("This Volume has not been allocated \n to a Volume Group yet.")
 #: src/Properties_Renderer.py:44 src/renderer.py:36
 msgid "Logical Volume"
-msgstr ""
+msgstr "तर्कदृष्ट्या खंड"
 
 #: src/Properties_Renderer.py:45
 msgid "Unallocated Volume"
-msgstr ""
+msgstr "अविभाजीत खंड"
 
 #: src/Properties_Renderer.py:46 src/renderer.py:43
 msgid "Disk Entity"
-msgstr ""
+msgstr "डीस्क वस्तु"
 
 #: src/Properties_Renderer.py:47 src/Properties_Renderer.py:48
 #: src/Properties_Renderer.py:49 src/renderer.py:38
 msgid "Volume Group"
-msgstr ""
+msgstr "खंड गट"
 
 #. UNINITIALIZED_MESSAGE=_("This extent has not yet been \n initialized for use with LVM.")
 #: src/renderer.py:33
-#, fuzzy
 msgid "No Volume Selected"
-msgstr "नाही"
+msgstr "खंड निवडले गेले नाही"
 
 #: src/renderer.py:34
 msgid "Multiple selection"
-msgstr ""
+msgstr "बहु निवड"
 
 #: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
-msgstr ""
+msgstr "तर्कदृष्ट्या दृश्य"
 
 #: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
-msgstr ""
+msgstr "वास्तवीक दृश्य"
 
 #: src/renderer.py:41
 msgid "Unallocated"
-msgstr ""
+msgstr "अविभागीत"
 
 #: src/renderer.py:42
 msgid "Uninitialized"
-msgstr ""
+msgstr "अप्रारंभीक"
 
 #: src/renderer.py:195
 #, python-format
@@ -1047,7 +1018,7 @@ msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
-msgstr ""
+msgstr "तुम्हाला निवडायचे असलेले विस्तार तर्कदृष्ट्या खंड %s मधील प्रतिकृत लॉगच्या मालकीचे आहे. प्रतिकृत वास्तवीक खंड अजूनही स्थानांतरजोगी नाही, त्यामुळे विस्तार निवडताजोगी नाही."
 
 #: src/renderer.py:197
 #, python-format
@@ -1055,14 +1026,14 @@ msgid ""
 "The extents that you are attempting to select belong to mirror image of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
-msgstr ""
+msgstr "तुम्हाला निवडायचे असलेले विस्तार तर्कदृष्ट्या खंड %s मधील प्रतिकृत प्रतिमेच्या मालकीचे आहे. प्रतिकृत वास्तवीक खंड अजूनही स्थानांतरजोगी नाही, त्यामुळे विस्तार निवडताजोगी नाही."
 
 #: src/renderer.py:199
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
-msgstr ""
+msgstr "तुम्हाला निवडायचे असलेले विस्तार %s च्या मालकीचे आहे, जे %s चे छायाचित्रप्रत आहे. छायाचित्रप्रत स्थानांतरजोगी नाही, त्यामुळे विस्तार निवडताजोगी नाही."
 
 #: src/renderer.py:201
 #, python-format
@@ -1070,379 +1041,379 @@ msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
-msgstr ""
+msgstr "तुम्हाला निवडायचे असलेले विस्तार %s छायाचित्रप्रतच्या मालकीचे आहे. छायाचित्रप्रत स्थानांतरजोगी नाही, त्यामुळे विस्तार निवडताजोगी नाही."
 
 #: src/renderer.py:388
 #, python-format
 msgid "Snapshot of %s"
-msgstr ""
+msgstr "%s चे छायाचित्रप्रत"
 
 #: src/renderer.py:490
 msgid "Origin"
-msgstr ""
+msgstr "उगम"
 
 #: src/renderer.py:496
 msgid "Snapshot"
-msgstr ""
+msgstr "छायाचित्रप्रत"
 
 #: src/renderer.py:540
 msgid "extent view"
-msgstr ""
+msgstr "विस्तार दृश्य"
 
 #: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
-msgstr ""
+msgstr "खंड गट"
 
 #: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
-msgstr ""
+msgstr "अविस्तारीत खंड"
 
 #: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
-msgstr ""
+msgstr "अप्रारंभीक वस्तु"
 
 #: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
-msgstr ""
+msgstr "संग्रहीत VG"
 
 #: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
-msgstr ""
+msgstr "%s प्रतिकृत सुसंगतता"
 
 #. no existing partitions, write
 #: src/fdisk_wrapper.py:192
-#, fuzzy
 msgid "Please wait while partition is being created"
-msgstr "विभाजन"
+msgstr "विभाजन निर्माण होतेवेळी कृपया थांबा"
 
 #: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
-msgstr ""
+msgstr "%s फाइलप्रणाली निर्माण करत आहे"
 
 #: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
-msgstr ""
+msgstr "%s फाइलप्रणालीस पुनःआकार देत आहे"
 
 #: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
-msgstr ""
+msgstr "%s फाइलप्रणाली तपासत आहे"
 
 #: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
-msgstr ""
+msgstr "%s करीता %s फाइलप्रणाली अद्ययावत केले"
 
 #: src/Filesystem.py:24
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "प्रणाली चूक"
+msgstr "फाइलप्रणाली निर्माण होण्यास अपयशी. आदेश वापरण्याचा प्रयत्न: \"%s\" - प्रणाली त्रूटी संदेश: %s"
 
 #: src/Filesystem.py:25
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "प्रणाली चूक"
+msgstr "फाइलप्रणालीचे पुनःआकार अपयशी . आदेश वापरण्याचा प्रयत्न: \"%s\" - प्रणाली त्रूटी संदेश: %s"
 
 #: src/Filesystem.py:26
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "प्रणाली चूक"
+msgstr "फाइलप्रणाली तपास अपयशी . आदेश वापरण्याचा प्रयत्न: \"%s\" - प्रणाली त्रूटी संदेश: %s"
 
 #: src/Filesystem.py:27
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
-msgstr "सुधारणा करा प्रणाली चूक"
+msgstr "फाइलप्रणाली अद्ययावत केले. आदेश वापरण्याचा प्रयत्न: \"%s\" - प्रणाली त्रूटी संदेश: %s"
 
 #: src/Filesystem.py:143
-#, fuzzy
 msgid "Unknown filesystem"
-msgstr "अपरिचित"
+msgstr "अपरिचित फाइलप्रणाली"
 
 #: src/Filesystem.py:387
 msgid "GFS (local)"
-msgstr ""
+msgstr "GFS (स्थानीक)"
 
 #: src/Filesystem.py:485
 msgid "GFS (clustered)"
-msgstr ""
+msgstr "GFS (संग्रहीत)"
 
 #: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "संग्रह नावात अवैध अक्षर समाविष्टीत आहे "
 
 #: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS नावात अवैध अक्षर समाविष्टीत आहे "
 
 #: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "संग्रह नाव आढळले नाही"
 
 #: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "GFS नाव आढळले नाही"
 
 #: src/Filesystem.py:631
 msgid "GFS2 (local)"
-msgstr ""
+msgstr "GFS2 (स्थानीक)"
 
 #: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
-msgstr ""
+msgstr "GFS2 (संग्रहीत)"
 
 #: src/Segment.py:44
 msgid "Stripe"
-msgstr ""
+msgstr "रेष"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
-msgstr ""
+msgstr "सतत जुळवणी"
 
 #: src/Segment.py:109
 msgid "Mirror"
-msgstr ""
+msgstr "प्रतिकृत"
 
 #: src/PhysicalVolume.py:142
-#, fuzzy, python-format
+#, python-format
 msgid "Partition %s"
-msgstr "विभाजन"
+msgstr "विभाजन %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #: src/lvui.glade.h:2
 msgid "1024"
-msgstr ""
+msgstr "1024"
 
 #: src/lvui.glade.h:3
 msgid "128"
-msgstr ""
+msgstr "128"
 
 #: src/lvui.glade.h:4
 msgid "16"
-msgstr ""
+msgstr "16"
 
 #: src/lvui.glade.h:5
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/lvui.glade.h:6
 msgid "256"
-msgstr ""
+msgstr "256"
 
 #: src/lvui.glade.h:7
 msgid "32"
-msgstr ""
+msgstr "32"
 
 #: src/lvui.glade.h:8
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/lvui.glade.h:9
 msgid "512"
-msgstr ""
+msgstr "512"
 
 #: src/lvui.glade.h:10
 msgid "64"
-msgstr ""
+msgstr "64"
 
 #: src/lvui.glade.h:11
 msgid "8"
-msgstr ""
+msgstr "8"
 
 #: src/lvui.glade.h:12
-#, fuzzy
 msgid "Add Physical Volume to VG"
-msgstr "जोडा"
+msgstr "VG करीता वास्तवीक खंड जोडा"
 
 #: src/lvui.glade.h:13
-#, fuzzy
 msgid ""
 "Add to existing \n"
 "Volume Group"
-msgstr "जोडा"
+msgstr ""
+"उपलब्ध खंड गटात \n"
+"समाविष्ट करा"
 
 #: src/lvui.glade.h:15
 msgid "Clustered"
-msgstr ""
+msgstr "संग्रहीत"
 
 #: src/lvui.glade.h:16
-#, fuzzy
 msgid ""
 "Create New\n"
 "Logical Volume"
-msgstr "नविन"
+msgstr ""
+"नविन तर्कदृष्ट्या\n"
+"खंड बनवा"
 
 #: src/lvui.glade.h:18
 msgid "Create Snapshot"
-msgstr ""
+msgstr "छायाचित्रप्रत निर्माण करा"
 
 #: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
 msgstr ""
+"नविन खंड \n"
+"गट निर्माण करा"
 
 #: src/lvui.glade.h:21
-#, fuzzy
 msgid "Edit Properties"
-msgstr "संपादन करा"
+msgstr "गुणधर्म संपादीत करा"
 
 #: src/lvui.glade.h:22
-#, fuzzy
 msgid "Enter path of Block Device to initialize"
-msgstr "यंत्र"
+msgstr "प्रारंभीत करण्याकरीता ब्लॉक साधनचे मार्ग प्रविष्ट करा"
 
 #: src/lvui.glade.h:23
 msgid ""
 "Extend\n"
 "Volume Group"
 msgstr ""
+"खंड गट\n"
+"विस्तारीत करा"
 
 #: src/lvui.glade.h:25
 msgid "Extend Volume Group"
-msgstr ""
+msgstr "खंड गट विस्तारीत करा"
 
 #: src/lvui.glade.h:26
-#, fuzzy
 msgid "Format"
-msgstr "स्वरुप(फॉरमॅट)"
+msgstr "स्वरुप"
 
 #: src/lvui.glade.h:27
 msgid "Initialize"
-msgstr ""
+msgstr "प्रारंभ"
 
 #: src/lvui.glade.h:28
-#, fuzzy
 msgid "Initialize Block Device"
-msgstr "यंत्र"
+msgstr "ब्लॉक साधन प्रारंभ करा"
 
 #: src/lvui.glade.h:29
 msgid "Initialize Entity"
-msgstr ""
+msgstr "वस्तु प्रारंभ"
 
 #: src/lvui.glade.h:30
-#, fuzzy
 msgid "Initialize _Block Device"
-msgstr "यंत्र"
+msgstr "ब्लॉक साधन प्रारंभ करा (_B)"
 
 #: src/lvui.glade.h:31
 msgid "Kilo"
-msgstr ""
+msgstr "किलो"
 
 #: src/lvui.glade.h:32
 msgid "Logical Volume Management"
-msgstr ""
+msgstr "तर्कदृष्ट्या खंड व्यवस्थापन"
 
 #: src/lvui.glade.h:33
 msgid "Manage Volumes"
-msgstr ""
+msgstr "खंड नियंत्रीत करा"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "खंड गटाला 'संग्रह' म्हणून चिन्ह लावा"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "तार्किक खंड संपादा"
+msgstr "कमाल तर्कदृष्ट्या खंड"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "आरंभित आहे"
+msgstr "कमाल वास्तवीक खंड"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
-msgstr ""
+msgstr "Meg"
 
 #: src/lvui.glade.h:38
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
 msgstr ""
+"खंडापासून निवडलेले\n"
+"विस्तार स्थानांतरीत करा"
 
 #: src/lvui.glade.h:40
-#, fuzzy
 msgid "New Volume Group"
-msgstr "नविन"
+msgstr "नविन खंड गट"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "आकार "
+msgstr "वास्तवीक विस्तार आकार"
 
 #: src/lvui.glade.h:42
-#, fuzzy
 msgid ""
 "Remove \n"
 "Logical Volume"
-msgstr "काढून टाका"
+msgstr ""
+"वास्तवीक खंड \n"
+"काढून टाका"
 
 #: src/lvui.glade.h:44
-#, fuzzy
 msgid ""
 "Remove Selected\n"
 "Logical Volume(s)"
-msgstr "काढून टाका"
+msgstr ""
+"निवडलेले तर्कदृष्ट्या खंड\n"
+"काढून टाका"
 
 #: src/lvui.glade.h:46
-#, fuzzy
 msgid ""
 "Remove Selected\n"
 "Physical Volume(s)"
-msgstr "काढून टाका"
+msgstr ""
+"निवडलेले वासत्वीक खंड\n"
+"काढून टाका"
 
 #: src/lvui.glade.h:48
-#, fuzzy
 msgid ""
 "Remove Volume from\n"
 "Volume Group"
-msgstr "काढून टाका"
+msgstr ""
+"खंड गट पासून\n"
+"खंड काढून टाका"
 
 #: src/lvui.glade.h:50
-#, fuzzy
 msgid ""
 "Remove volume \n"
 "from LVM"
-msgstr "काढून टाका"
+msgstr ""
+"LVM पासून\n"
+"काढून टाका"
 
 #: src/lvui.glade.h:52
 msgid "Select a Volume Group to add this PV to:"
-msgstr ""
+msgstr "हा PV येथे जोडण्याकरीता खंड गट निवडा:"
 
 #: src/lvui.glade.h:53
 msgid "Some text"
-msgstr ""
+msgstr "काहीक पाठ्य"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "नविन"
+msgstr "खंड गट नाव"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
-msgstr ""
+msgstr "पुनःदाखल करा (_R)"
 
 #: src/lvui.glade.h:56
 msgid "_Tools"
-msgstr ""
+msgstr "साधन (_T)"
 
 #: src/lvui.glade.h:57
 msgid "extend vg message:"
-msgstr ""
+msgstr "vg संदेश विस्तारीत करा:"
 
 #: src/lv_edit_props.glade.h:2
 msgid ""
@@ -1455,165 +1426,168 @@ msgid ""
 "256\n"
 "512"
 msgstr ""
+"4\n"
+"8\n"
+"16\n"
+"32\n"
+"64\n"
+"128\n"
+"256\n"
+"512"
 
 #: src/lv_edit_props.glade.h:10
 msgid "<b>Filesystem</b>"
-msgstr ""
+msgstr "<b>फाइल प्रणाली</b>"
 
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
-msgstr ""
+msgstr "<b>LV गुणधर्म</b>"
 
 #: src/lv_edit_props.glade.h:12
-#, fuzzy
 msgid "<b>Size</b>"
 msgstr "<b> आकार</b>"
 
 #: src/lv_edit_props.glade.h:13
-#, fuzzy
 msgid "Add entry to /etc/fstab"
-msgstr "जोडा"
+msgstr "/etc/fstab ला नोंदणी जोडा"
 
 #: src/lv_edit_props.glade.h:14
-#, fuzzy
 msgid "Create New Logical Volume (LV)"
-msgstr "नविन"
+msgstr "नविन तर्कदृष्ट्या खंड (LV) बनवा"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
-msgstr ""
+msgstr "फाइलप्रणाली पुनःआकारजोगी नाही"
 
 #: src/lv_edit_props.glade.h:16
-#, fuzzy
 msgid "Free space in Volume Group label"
-msgstr "मुक्त"
+msgstr "खंड गटातील मुक्त जागा लेबेल"
 
 #: src/lv_edit_props.glade.h:17
-#, fuzzy
 msgid "Free space remaining label"
-msgstr "मुक्त"
+msgstr "उर्वरीत मुक्त जागा लेबेल"
 
 #: src/lv_edit_props.glade.h:18
 msgid "Kilobytes granularity"
-msgstr ""
+msgstr "किलोबाईट सुक्षमता"
 
 #: src/lv_edit_props.glade.h:19
 msgid "LV name:"
-msgstr ""
+msgstr "LV नाव:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
-msgstr ""
+msgstr "LV आकार"
 
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
-msgstr ""
+msgstr "छायाचित्रप्रत अंतर्गत LVs पुनःआकारजोगी नाही"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
-msgstr ""
+msgstr "एका"
 
 #: src/lv_edit_props.glade.h:23
 msgid "Mirrored"
-msgstr ""
+msgstr "प्रतिकृत"
 
 #: src/lv_edit_props.glade.h:24
 msgid "Mirrored LVs are not resizable"
-msgstr ""
+msgstr "प्रतिकृत LV पुनःआकारजोगी नाही"
 
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
-msgstr ""
+msgstr "आरोहण"
 
 #: src/lv_edit_props.glade.h:26
 msgid "Mount point:"
-msgstr ""
+msgstr "आरोहण बींदू:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
-msgstr ""
+msgstr "रूबट केल्यावर आरोहीत करा"
 
 #: src/lv_edit_props.glade.h:28
-#, fuzzy
 msgid "Size beg"
-msgstr "आकार"
+msgstr "आकार विनंती"
 
 #: src/lv_edit_props.glade.h:29
-#, fuzzy
 msgid "Size end"
-msgstr "आकार"
+msgstr "आकार समाप्त"
 
 #: src/lv_edit_props.glade.h:30
 msgid "Striped"
-msgstr ""
+msgstr "पट्टी रेखांकीत"
 
 #: src/lv_edit_props.glade.h:31
 msgid "Use remaining"
-msgstr ""
+msgstr "उर्वरीत वापरा"
 
 #: src/lv_edit_props.glade.h:32
 msgid "stripes"
-msgstr ""
+msgstr "पट्ट्या"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
-msgstr ""
+msgstr "<b>लक्ष्य</b>"
 
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
-msgstr ""
+msgstr "<b>स्थानांतरन करार</b>"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
-msgstr ""
+msgstr "कुठेही - कार्यरत नाही"
 
 #: src/migrate_extents.glade.h:4
 msgid "Automatically choose PVs to migrate to"
-msgstr ""
+msgstr "स्थानांतर करण्याकरीता आपोआप PVs निवडा"
 
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
-msgstr ""
+msgstr "सतत"
 
 #: src/migrate_extents.glade.h:6
 msgid "Destination:"
-msgstr ""
+msgstr "लक्ष्य:"
 
 #: src/migrate_extents.glade.h:7
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
+"PV काढून टाकण्याकरीता, वापरणीतले विस्तार स्थानांतरीत करावे लागेल.\n"
+"विस्तारचे लक्ष्य व स्थानांतर करार निवडा."
 
 #: src/migrate_extents.glade.h:9
 msgid "Inherit"
-msgstr ""
+msgstr "आत्मसात"
 
 #: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
-msgstr ""
+msgstr "खंड गट पासून करार आत्मसात करा"
 
 #: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
-msgstr ""
+msgstr "विस्तार स्थानांतरीत करा"
 
 #: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
-msgstr ""
+msgstr "क्षमता कमी करत असले तरी कुठेही स्थानांतरीत करा"
 
 #: src/migrate_extents.glade.h:13
-#, fuzzy
 msgid "New extents are adjacent to existing ones"
-msgstr "नविन"
+msgstr "नविन विस्तार अस्तीत्वात असलेल्याच्या बाजूस आहे"
 
 #: src/migrate_extents.glade.h:14
 msgid "Normal"
-msgstr ""
+msgstr "सर्वसाधारण"
 
 #: src/migrate_extents.glade.h:15
 msgid "Only migrate extents belonging to LV"
-msgstr ""
+msgstr "फक्त LV च्या मालकीचे विस्तार स्थानांतरीत करा"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
-msgstr ""
+msgstr "डोकं वापरा"
+
