@@ -46,8 +46,8 @@ def get_fs(path):
         return Unknown('xfs')
     elif re.search('jfs', result, re.I):
         return Unknown('jfs')
-    elif re.search('raiserfs', result, re.I):
-        return Unknown('raiserfs')
+    elif re.search('reiserfs', result, re.I):
+        return Unknown('reiserfs')
     elif re.search('swap', result, re.I):
         return Unknown('swap')
     else:
