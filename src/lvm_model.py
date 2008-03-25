@@ -496,7 +496,7 @@ class lvm_model:
       
       segment = None
       devs = devices.split(',')
-      if attrs[0] == 'm':
+      if attrs[0] == 'm' or attrs[0] == 'M':
         # mirrored LV
         lv.set_mirror_log(mirror_log) # tmp, will get replaced with real one at __link_mirrors()
         segment = MirroredSegment(seg_start, seg_size)
