@@ -2,7 +2,7 @@
 Summary: A utility for graphically configuring Logical Volumes
 Name: @PACKAGE@
 Version: @VERSION@
-Release: 1.0%{?dist}
+Release: 2.0%{?dist}
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
 License: GPLv2
