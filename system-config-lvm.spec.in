@@ -2,7 +2,7 @@
 Summary: A utility for graphically configuring Logical Volumes.
 Name: @PACKAGE@
 Version: @VERSION@
-Release: 1.0%{?dist}
+Release: 2.0%{?dist}
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
 License: GPL
@@ -54,6 +54,10 @@ rm -rf %{buildroot}
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Wed Mar 26 2008 Ryan McCabe <rmccabe@redhat.com> 1.0.23-2.0
+  - Fix 439064: system-config-lvm will not load if there are mirrored
+    logical volumes created with --nosync.
+
 * Wed Jan 31 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.0.23-1.0
   - Fixed 185099 (Add configuration of iSCSI LUNs)
   - Resolves: bz185099
