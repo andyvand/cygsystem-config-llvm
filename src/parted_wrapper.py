@@ -119,7 +119,7 @@ class Parted:
         # avoid losing precision due to floating point multiplication
         # if parted returned the units in bytes (and our multiplier is 1)
         if multiplier == 1:
-            return t
+            return long(t)
         return int(float(t) * multiplier)
 
 
