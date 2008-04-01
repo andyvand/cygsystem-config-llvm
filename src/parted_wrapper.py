@@ -116,8 +116,12 @@ class Parted:
                 t = t.rstrip('t')
                 multiplier = 1024 * 1024 * 1024 * 1024
 
-        # avoid losing precision due to floating point multiplication
-        # if parted returned the units in bytes (and our multiplier is 1)
+        # avoid potentially losing precision due to floating
+        # point multiplication if parted returned the units in
+        # bytes (and, as a result, our multiplier is 1).
+        # Note: this is not actually a problem in practice today. You'd
+        # need an absolutely massive partition (about 89 petabyte) for any
+        # loss of precision to occur.
         if multiplier == 1:
             return long(t)
         return int(float(t) * multiplier)
