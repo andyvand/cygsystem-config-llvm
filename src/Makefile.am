@@ -1,41 +1,42 @@
-PYTHON_FILES = InputController.py \
-CommandHandler.py  \
-CommandError.py  \
-lvm_model.py \
-lvmui_constants.py \
-Properties_Renderer.py \
-renderer.py \
-Volume_Tab_View.py \
-fdisk_wrapper.py \
-parted_wrapper.py \
-Partition.py	\
-BlockDevice.py	\
-BlockDeviceModel.py	\
-Filesystem.py	\
-Fstab.py	\
-execute.py	\
-migrate_extents.glade	\
-lv_edit_props.glade	\
-cylinder_items.py	\
-PhysicalVolume.py	\
-LogicalVolume.py	\
-VolumeGroup.py	\
-Volume.py	\
-Segment.py		\
-ExtentBlock.py	\
-WaitMsg.py	\
-Multipath.py	\
-utilities.py	\
-Cluster.py      \
-iscsi.py	\
-iscsi.glade	\
-pixmaps/UV.xpm	\
-pixmaps/VG.xpm	\
-pixmaps/LV.xpm	\
-pixmaps/PV.xpm	\
-pixmaps/grad3.xpm	\
-pixmaps/lv_icon.png	\
-system-config-lvm.py
+PYTHON_FILES = \
+	InputController.py \
+	CommandHandler.py  \
+	CommandError.py  \
+	lvm_model.py \
+	lvmui_constants.py \
+	Properties_Renderer.py \
+	renderer.py \
+	Volume_Tab_View.py \
+	fdisk_wrapper.py \
+	parted_wrapper.py \
+	Partition.py	\
+	BlockDevice.py	\
+	BlockDeviceModel.py	\
+	Filesystem.py	\
+	Fstab.py	\
+	execute.py	\
+	migrate_extents.glade	\
+	lv_edit_props.glade	\
+	cylinder_items.py	\
+	PhysicalVolume.py	\
+	LogicalVolume.py	\
+	VolumeGroup.py	\
+	Volume.py	\
+	Segment.py		\
+	ExtentBlock.py	\
+	WaitMsg.py	\
+	Multipath.py	\
+	utilities.py	\
+	Cluster.py      \
+	iscsi.py        \
+	iscsi.glade     \
+	pixmaps/UV.xpm	\
+	pixmaps/VG.xpm	\
+	pixmaps/LV.xpm	\
+	pixmaps/PV.xpm	\
+	pixmaps/grad3.xpm	\
+	pixmaps/lv_icon.png	\
+	system-config-lvm.py
 
 GLADE_FILES = lvui.glade migrate_extents.glade lv_edit_props.glade Filesystem.glade iscsi.glade
 
@@ -91,7 +92,7 @@ install-exec-local:
 	install -m 0640 $(srcdir)/pixmaps/UV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/VG.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/grad3.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
-	install -m 0644 $(srcdir)/pixmaps/lv_icon.png  $(DESTDIR)$(pkgdatadir)/pixmaps/
+	install -m 0640 $(srcdir)/pixmaps/lv_icon.png  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	softdir=$(pkgdatadir); \
 	p=$(DESTDIR) ; \
 	softdir=$${softdir/#$$p} ; \

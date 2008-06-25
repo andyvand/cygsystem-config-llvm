@@ -24,9 +24,7 @@ import PhysicalVolume
 from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus
 from utilities import follow_links_to_target
 
-
 from iscsi import ISCSI_INITIATOR, iscsi_installed, INITIATOR_RPM_NAME
-
 
 import gettext
 _ = gettext.gettext
@@ -1085,16 +1083,16 @@ class InputController:
       apply(self.reset_tree_model, [vg.get_name()])
       
 
-
   def on_iscsi_configuration(self, obj, dlg=None):
       if not iscsi_installed():
           self.errorMessage(_("iSCSI Initiator rpm is not installed. \nInstall %s rpm, and try again.") % INITIATOR_RPM_NAME)
           return
-      
+
       conf = ISCSI_INITIATOR()
       if conf.run():
           apply(self.reset_tree_model, [])
           pass
+
       
       
   #######################################################

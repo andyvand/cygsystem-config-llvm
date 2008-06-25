@@ -77,31 +77,31 @@
 		    </widget>
 		  </child>
 
-		  <child>
-		    <widget class="GtkSeparatorMenuItem" id="separator1">
-		      <property name="visible">True</property>
-		    </widget>
-		  </child>
+                  <child>
+                    <widget class="GtkSeparatorMenuItem" id="separator1">
+                      <property name="visible">True</property>
+                    </widget>
+                  </child>
 
-		  <child>
-		    <widget class="GtkImageMenuItem" id="iscsi_configuration1">
-		      <property name="visible">True</property>
-		      <property name="label" translatable="yes">_iSCSI Configuration</property>
-		      <property name="use_underline">True</property>
+                  <child>
+                    <widget class="GtkImageMenuItem" id="iscsi_configuration1">
+                      <property name="visible">True</property>
+                      <property name="label" translatable="yes">_iSCSI Configuration</property>
+                      <property name="use_underline">True</property>
 
-		      <child internal-child="image">
-			<widget class="GtkImage" id="image80">
-			  <property name="visible">True</property>
-			  <property name="stock">gtk-network</property>
-			  <property name="icon_size">1</property>
-			  <property name="xalign">0.5</property>
-			  <property name="yalign">0.5</property>
-			  <property name="xpad">0</property>
-			  <property name="ypad">0</property>
-			</widget>
-		      </child>
-		    </widget>
-		  </child>
+                      <child internal-child="image">
+                        <widget class="GtkImage" id="image80">
+                          <property name="visible">True</property>
+                          <property name="stock">gtk-network</property>
+                          <property name="icon_size">1</property>
+                          <property name="xalign">0.5</property>
+                          <property name="yalign">0.5</property>
+                          <property name="xpad">0</property>
+                          <property name="ypad">0</property>
+                        </widget>
+                      </child>
+                    </widget>
+                  </child>
 		</widget>
 	      </child>
 	    </widget>

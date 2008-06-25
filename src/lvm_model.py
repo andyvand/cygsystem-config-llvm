@@ -9,6 +9,21 @@ from execute import execWithCapture, execWithCaptureErrorStatus, execWithCapture
 import gettext
 _ = gettext.gettext
 
+try:
+    import gtk
+    import gtk.glade
+except RuntimeError, e:
+    print _("""
+  Unable to initialize graphical environment. Most likely cause of failure
+  is that the tool was not run using a graphical environment. Please either
+  start your graphical user interface or set your DISPLAY variable.
+
+  Caught exception: %s
+""") % e
+    sys.exit(-1)
+
+import gnome
+import gnome.ui
 from PhysicalVolume import *
 from LogicalVolume import *
 from VolumeGroup import *
@@ -516,6 +531,9 @@ class lvm_model:
           if pv_t.get_path() == pvpath:
             pv = pv_t
             break
+        if pv == None:
+          retval = self.infoMessage("Path to logical volume %s cannot be confirmed. Could this LV have multiple paths?" %  lvname)
+          continue
         extent_block = ExtentBlock(pv, lv, ph_ext_beg, seg_size)
         segment.set_extent_block(extent_block)
       else:
@@ -533,6 +551,9 @@ class lvm_model:
             if pv_t.get_path() == pvpath:
               pv = pv_t
               break
+          if pv == None:
+            retval = self.infoMessage("Path to logical volume %s cannot be confirmed. Could this LV have multiple paths?" %  lvname)
+            continue
           extent_block = ExtentBlock(pv, lv, ph_ext_beg, seg_size/len(devs))
           segment.add_stripe(stripe_id, extent_block)
           stripe_id = stripe_id + 1
@@ -952,30 +973,36 @@ class lvm_model:
       text_list.append(prop)
     
     try:
-      # add scsi dev info
+      # add scsi_id and iscsi properties
       device = pv.getDevnames()[0]
       devname = pv.extract_name(device)
       SCSI_ID_BIN = '/sbin/scsi_id'
-      args = [SCSI_ID_BIN, '-g', '-i', '-u', '-s', '/block/' + devname]
+      args = [SCSI_ID_BIN, '-g', '-u', '-s', '/block/' + devname]
       o, e, s = execWithCaptureErrorStatus(SCSI_ID_BIN, args)
+      text_list.append(_("SCSI ID:   "))
       if s == 0:
-        scsi_addr, scsi_id = o.strip().split()
-        scsi_addr = scsi_addr.strip(':')
-        text_list.append(_("SCSI Address:  "))
-        text_list.append(scsi_addr)
-        text_list.append(_("SCSI ID:  "))
-        text_list.append(scsi_id)
-      # iSCSI
+        text_list.append(o.strip())
+      else:
+        text_list.append(_("NONE"))
       ISCSI_BIN = '/sbin/iscsi-device'
       if os.access(ISCSI_BIN, os.X_OK):
         o, e, s = execWithCaptureErrorStatus(ISCSI_BIN, [ISCSI_BIN, device])
         if s == 0:
-          text_list.append(_("iSCSI Device:  "))
+          text_list.append(_("iSCSI Device:   "))
           text_list.append(_("True"))
     except:
       pass
     
     return text_list
+
+  def infoMessage(self, message):
+      dlg = gtk.MessageDialog(None, 0,
+                              gtk.MESSAGE_INFO, gtk.BUTTONS_OK,
+                              message)
+      dlg.show_all()
+      rc = dlg.run()
+      dlg.destroy()
+      return rc
   
   def __getFS(self, path):
     path_list = list()

@@ -1,7 +1,7 @@
 
-import os, sys
+import sys
 import re
-from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, execWithCaptureProgress, execWithCaptureErrorStatusProgress, execWithCaptureStatusProgress
+from execute import execWithCapture, execWithCaptureStatus
 
 from Partition import *
 from fdisk_wrapper import FDisk
@@ -90,7 +90,7 @@ class Parted:
 
     def __to_bytes(self, word):
         # parted versioned 1.6.23 and above has command "unit",
-        # 1.6.22 and bellow displays in MBs
+        # 1.6.22 and below displays in MBs
         # this function handles both
         
         t = word.strip().lower()
@@ -115,6 +115,15 @@ class Parted:
                 t = t.rstrip('T')
                 t = t.rstrip('t')
                 multiplier = 1024 * 1024 * 1024 * 1024
+
+        # avoid potentially losing precision due to floating
+        # point multiplication if parted returned the units in
+        # bytes (and, as a result, our multiplier is 1).
+        # Note: this is not actually a problem in practice today. You'd
+        # need an absolutely massive partition (about 89 petabyte) for any
+        # loss of precision to occur.
+        if multiplier == 1:
+            return long(t)
         return int(float(t) * multiplier)
 
 
@@ -123,5 +132,5 @@ class Parted:
         res = res.strip()
         words = res.split()
         if len(words) != 3:
-            raise "unable to get parted version"
+            raise Exception, "unable to get parted version"
         return words[2]

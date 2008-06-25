@@ -1,36 +1,35 @@
 # -*- RPM-SPEC -*-
-Summary: A utility for graphically configuring Logical Volumes.
+Summary: A utility for graphically configuring Logical Volumes
 Name: @PACKAGE@
 Version: @VERSION@
-Release: 2.0%{?dist}
+Release: 1.2%{?dist}
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
-License: GPL
+License: GPLv2
 Group: Applications/System
 BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
-Requires: /sbin/chkconfig
+BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
+Requires: usermode, /sbin/chkconfig
 Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas 
 Requires: urw-fonts
-Requires: nc
 Requires: lvm2 >= 2.00.20
 Requires: rhpl >= 0.148.2
 Requires: python >= 2.3
-BuildRequires: perl(XML::Parser) gettext
+BuildRequires: perl(XML::Parser) gettext intltool
 
 %description
-system-config-lvm is a utility for graphically configuring Logical Volumes.
+system-config-lvm is a utility for graphically configuring Logical Volumes
 
 %prep
 %setup -q
 
 %build
 %configure
-make
+make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
-%makeinstall
+make DESTDIR=%{buildroot} install
 
 #Uncomment this when translations are done
 %find_lang %name
@@ -50,204 +49,221 @@ rm -rf %{buildroot}
 %{_bindir}/*
 %{_datadir}/applications/system-config-lvm.desktop
 %{_datadir}/system-config-lvm
-%config %{_sysconfdir}/pam.d/system-config-lvm
-%config %{_sysconfdir}/security/console.apps/system-config-lvm
+%config(noreplace) %{_sysconfdir}/pam.d/system-config-lvm
+%config(noreplace) %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
-* Wed Mar 26 2008 Ryan McCabe <rmccabe@redhat.com> 1.0.23-2.0
-  - Fix 439064: system-config-lvm will not load if there are mirrored
-    logical volumes created with --nosync.
+* Wed Jun 11 2008 Jim Parsons <jparsons@redhat.com> 1.1.4-1.2
+- Build for rpmdiff repairs and bz437209
 
-* Wed Jan 31 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.0.23-1.0
-  - Fixed 185099 (Add configuration of iSCSI LUNs)
-  - Resolves: bz185099
+* Tue Apr 15 2008 Jim Parsons <jparsons@redhat.com> 1.1.4-1.1
+- Build for RHEL4
+
+* Tue Apr 8 2008 Jim Parsons <jparsons@redhat.com> 1.1.4-1.0
+- Build for fedora
+
+* Tue Mar 25 2008 Ryan McCabe <rmccabe@redhat.com> 1.1.3-2.0
+- Fix for bz247325
+- Restore missing translations.
+
+* Wed Feb 06 2008 Ryan McCabe <rmccabe@redhat.com> 1.1.3-1.0
+- Fix for bz332651
+
+* Fri Sep 28 2007 Ryan McCabe <rmccabe@redhat.com> 1.1.2-1.0
+- Update the spec, configure.in, and Makefile.am files
+- Some other minor build tweaks
+- Bump the version number
+
+* Tue May 01 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.1.1-1.0
+- Update pam file
+- Update translation files
 
 * Mon Jan 22 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.0.22-1.0
-  - Fixed 223518 (s-c-lvm fails to probe CS5 properly)
-  - Resolves: bz223518
+- Fixed 223518 (s-c-lvm fails to probe CS5 properly)
+- fixes bz223518
 
 * Mon Dec 18 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.21-1.0
-  - Fixed 216569 (some messages not localized)
-  - Fixed 218126 (Can't resize ext3 fs online)
-  - Resolves: bz216569, bz218126
+- Fixed 216569 (some messages not localized)
+- Fixed 218126 (Can't resize ext3 fs online)
+- fixes bz216569, bz218126
 
 * Mon Oct 16 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.20-1.0
-  - Updated translation files
+- Updated translation files
 
 * Mon Jul 10 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.19-1.0
-  - Version bump
+- Version bump
 
 * Thu Jun 01 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.18-1.0
-  - Version bump
+- Version bump
 
 * Fri May 12 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.17-1.0
-  - Fixes for 175077, 171117, 175131, 176967, enable mirroring, 159455, 159456
+- Fixes for 175077, 171117, 175131, 176967, enable mirroring, 159455, 159456
 
 * Thu Feb 16 2006 Jim Parsons <jparsons@redhat.com> 1.0.16-1.0
-  - Disabled mirroring support in UI.
+- Disabled mirroring support in UI.
 
 * Mon Feb 14 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.14-1.0
-  - Fixes for bz180281, 159457, 180269. Mirroring support available with constants
-    in lvmui_constants file by setting MIRRORING_UI_SUPPORT to True
+- Fixes for bz180281, 159457, 180269. Mirroring support available with
+  constants in lvmui_constants file by setting MIRRORING_UI_SUPPORT to True
 
 * Fri Feb 10 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.13-1.0
-  - Fix failure to display all unused space
+- Fix failure to display all unused space
 
 * Mon Feb 06 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.12-1.0
-  - Under certain conditions, labels might show partially
+- Under certain conditions, labels might show partially
 
 * Fri Feb 03 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.11-1.0
-  - Fixes for bz175077,169860,178128,161917,171117,175131,178195 
+- Fixes for bz175077,169860,178128,161917,171117,175131,178195 
 
 * Thu Jan 05 2006 Stanko Kupcevic <kupcevic@redhat.com> 1.0.10-1.0
-  - Fix for bz176967
+- Fix for bz176967
 
 * Fri Dec 2 2005 Jim Parsons <jparsons@redhat.com> 1.0.9-1.0
-  - Removed cLVM test. 
+- Removed cLVM test. 
 
 * Mon Nov 14 2005 Jim Parsons <jparsons@redhat.com> 1.0.8-1.0
-  - Fixes for bz171744,171746,171747,171751,171753,171754,171755,171758,159457
+- Fixes for bz171744,171746,171747,171751,171753,171754,171755,171758,159457
 
 * Mon Sep 26 2005 Jim Parsons <jparsons@redhat.com> 1.0.7-1.0
-  - Version bump.
+- Version bump.
 
 * Mon Sep 26 2005 Jim Parsons <jparsons@redhat.com> 1.0.6-1.0
-  - Version bump for FC.
+- Version bump for FC.
 
 * Wed Sep 13 2005 Stanko Kupcevic <kupcevic@redhat.com> 1.0.5-1.0
-  - Fix for bz167671.
+- Fix for bz167671.
 
 * Wed Sep 08 2005 Stanko Kupcevic <kupcevic@redhat.com> 1.0.4-1.0
-  - Fix for bz167662, 167643.
+- Fix for bz167662, 167643.
 
 * Mon Aug 15 2005 Stanko Kupcevic <kupcevic@redhat.com> 1.0.3-1.0
-  - Fix for bz159457: Temporary removal of mirroring support.
+- Fix for bz159457: Temporary removal of mirroring support.
 
 * Tue Aug 02 2005 Jim Parsons <jparsons@redhat.com> 1.0.2-1.0
-  - Major new release that supports snapshotting, mirroring, and resizing.
+- Major new release that supports snapshotting, mirroring, and resizing.
 
 * Mon Jul 26 2005 Stanko Kupcevic <kupcevic@redhat.com> 0.9.52-1.0
-  - Alpha release: Strings, minor bugs, GFS, GFS2, mirrors on diff HDs
+- Alpha release: Strings, minor bugs, GFS, GFS2, mirrors on diff HDs
 
 * Fri Jul 15 2005 Stanko Kupcevic <kupcevic@redhat.com> 0.9.51-1.0
-  - Alpha release: mirroring, multipath, GPT, zoom, ...
+- Alpha release: mirroring, multipath, GPT, zoom, ...
 
 * Tue Jun 21 2005 Stanko Kupcevic <kupcevic@redhat.com> 0.9.50-1.0
-  - Alpha release: snapshotting, resizing, lv properties
+- Alpha release: snapshotting, resizing, lv properties
 
 * Thu May 26 2005 Jim Parsons <jparsons@redhat.com> 0.9.33-1.0
-  - Version bump for rhel
+- Version bump for rhel
 
 * Thu May 26 2005 Jim Parsons <jparsons@redhat.com> 0.9.32-1.0
-  - Fix for 158872; x86_64 pam file path
+- Fix for 158872; x86_64 pam file path
 
 * Mon May 23 2005 Jim Parsons <jparsons@redhat.com> 0.9.31-1.0
-  - Version bump for RHEL4
+- Version bump for RHEL4
 
 * Mon May 23 2005 Jim Parsons <jparsons@redhat.com> 0.9.30-1.0
-  - Fixed bz157744
+- Fixed bz157744
 
 * Tue May 17 2005 Jim Parsons <jparsons@redhat.com> 0.9.29-1.0
-  - Version Bump
+- Version Bump
 
 * Tue May 17 2005 Jim Parsons <jparsons@redhat.com> 0.9.28-1.0
-  - Version Bump
+- Version Bump
 
 * Tue May 17 2005 Jim Parsons <jparsons@redhat.com> 0.9.27-1.0
-  - Fix for bz154458,153042,155438,157743
+- Fix for bz154458,153042,155438,157743
 
 * Thu May 05 2005 Jim Parsons <jparsons@redhat.com> 0.9.26-1.0
-  - Fix for bz156957
+- Fix for bz156957
 
 * Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.25-1.0
-  - Version bump.
+- Version bump.
 
 * Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.24-1.0
-  - Changed permissions on Icon file.
+- Changed permissions on Icon file.
 
 * Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.23-1.0
-  - Subtle change to .desktop file moves app launcher to system settings
+- Subtle change to .desktop file moves app launcher to system settings
 
 * Wed Apr 06 2005 Jim Parsons <jparsons@redhat.com> 0.9.22-1.0
-  - Version Bump.
+- Version Bump.
 
 * Wed Apr 06 2005 Jim Parsons <jparsons@redhat.com> 0.9.21-1.0
-  - Changed path to lvm command for Fedora.
+- Changed path to lvm command for Fedora.
 
 * Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.20-1.0
-  - Added desktop icon file.
+- Added desktop icon file.
 
 * Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.19-1.0
-  - Added desktop file.
+- Added desktop file.
 
 * Wed Nov 24 2004 Jim Parsons <jparsons@redhat.com> 0.9.18-1.0
-  - Adjustments to configure.in so this builds in fedora as well as RHEL.
+- Adjustments to configure.in so this builds in fedora as well as RHEL.
 
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.17-1.0
-  - Fixes for bz140413 and bz 140562
+- Fixes for bz140413 and bz 140562
 
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.16-1.0
-  - Strips whitespace off of all incoming command handler args.
+- Strips whitespace off of all incoming command handler args.
 
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.15-1.0
-  - Fixes for two small nits.
+- Fixes for two small nits.
 
 * Mon Nov 22 2004 Jim Parsons <jparsons@redhat.com> 0.9.14-1.0
-  - Fixes for bz140413, 140386, 140355, 140359, 140419, 138103, 140529.
+- Fixes for bz140413, 140386, 140355, 140359, 140419, 138103, 140529.
 
 * Thu Nov 18 2004 Jim Parsons <jparsons@redhat.com> 0.9.12-1.0
-  - Fix for bz137041, 139711 plus require for new RHPL pkg.
+- Fix for bz137041, 139711 plus require for new RHPL pkg.
 
 * Tue Nov 16 2004 Jim Parsons <jparsons@redhat.com> 0.9.11-1.0
-  - Fix for bz138019 -- extent segs correct for stripe corner case
+- Fix for bz138019 -- extent segs correct for stripe corner case
 
 * Mon Nov 15 2004 Jim Parsons <jparsons@redhat.com> 0.9.10-1.0
-  - Fixes for bz137291, 138008, and 137122
+- Fixes for bz137291, 138008, and 137122
 
 * Thu Nov 11 2004 Jim Parsons <jparsons@redhat.com> 0.9.9-1.0
-  - Fixes for bz137111, 138887, 138006,138097. Also removed fstab checkbox
-    and added it as a feature at 138831 for next release.
+- Fixes for bz137111, 138887, 138006,138097. Also removed fstab checkbox
+  and added it as a feature at 138831 for next release.
 
 * Wed Nov 10 2004 Jim Parsons <jparsons@redhat.com> 0.9.8-1.0
-  - Fixes for bz137930, 137872, 137292, 137052, 137054
+- Fixes for bz137930, 137872, 137292, 137052, 137054
 
 * Tue Nov 9 2004 Jim Parsons <jparsons@redhat.com> 0.9.7-1.0
-  - Improved handling of garbage in the size string -- try catch in place
-    now that traps for ValueError 
-  - Improved handling of sizes/units for new LV creation
-  - Now 'Unused' sections in Logical View of VGs, are unselectable. Also,
-    if there are no LVs associated with a VG, the Logical view buttonpanel 
-    button for "Remove selected extents"  is set to not be sensitive, as 
-    there is nothing to remove from this case.
-  - Revamped PV removal code, so that proper checking is done before moving
-    extents.
-  - Added new method that checks if dm-mirror mod is loaded in kernel. If not,
-    an appropriate error message is generated.
-  - Fixed tree selection mechanism by preventing multiple VG selection.
-  - Handle delete-event on VG creation dialog, so it is hidden.
-  - Fixed bz137099, 137071, 137869, 137434, 138085
+- Improved handling of garbage in the size string -- try catch in place
+  now that traps for ValueError 
+- Improved handling of sizes/units for new LV creation
+- Now 'Unused' sections in Logical View of VGs, are unselectable. Also,
+  if there are no LVs associated with a VG, the Logical view buttonpanel 
+  button for "Remove selected extents" is set to not be sensitive, as 
+  there is nothing to remove from this case.
+- Revamped PV removal code, so that proper checking is done before moving
+  extents.
+- Added new method that checks if dm-mirror mod is loaded in kernel. If not,
+  an appropriate error message is generated.
+- Fixed tree selection mechanism by preventing multiple VG selection.
+- Handle delete-event on VG creation dialog, so it is hidden.
+- Fixed bz137099, 137071, 137869, 137434, 138085
 
 * Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.6-1.0
-  - Changed gtk.mainloop to gtk.main to address bz137288. 
+- Changed gtk.mainloop to gtk.main to address bz137288. 
 
 * Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.5-1.0
-  - Added Menubar to address bz137293. 
+- Added Menubar to address bz137293. 
 
 * Fri Oct 29 2004 Jim Parsons <jparsons@redhat.com> 0.9.4-1.0
-  - Fixes for bz137190 empty vg name field validation, 
-  - bz137048 removes resizable checkbox for vgcreate, 
-  - bz137208 unique vg name checking fixed, 
-  - bz137107 remove autobackup checkbox, 
-  - bz137231 warn on extend vg when init'ing a new entity. 
+- Fixes for bz137190 empty vg name field validation, 
+- bz137048 removes resizable checkbox for vgcreate, 
+- bz137208 unique vg name checking fixed, 
+- bz137107 remove autobackup checkbox, 
+- bz137231 warn on extend vg when init'ing a new entity. 
 
 * Tue Oct 26 2004 Jim Parsons <jparsons@redhat.com> 0.9.3-1.0
-  - Version bump. 
+- Version bump. 
 
 * Tue Oct 26 2004 Jim Parsons <jparsons@redhat.com> 0.9.2-1.0
-  - Fixed bz137118 warningMessage error. This is a critical mustfix. 
+- Fixed bz137118 warningMessage error. This is a critical mustfix. 
 
 * Wed Oct 20 2004 Jim Parsons <jparsons@redhat.com> 0.9.1-2.5
-  - Fixed size selection issue, bz136217. 
+- Fixed size selection issue, bz136217. 
 
 * Wed Sep 01 2004 Jim Parsons <jparsons@redhat.com> 0.9.1-1
-  - Initial copy
+- Initial copy

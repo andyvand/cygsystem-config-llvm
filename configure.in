@@ -1,9 +1,8 @@
 AC_INIT(system-config-lvm.spec.in)
-AM_INIT_AUTOMAKE(system-config-lvm, 1.0.23)
+AM_INIT_AUTOMAKE(system-config-lvm, 1.1.4)
 AM_PATH_PYTHON(2.3)
 
-dnl ALL_LINGUAS=""
-ALL_LINGUAS=`ls po/ | grep \\.po\$ | sed s/\\.po//`
+ALL_LINGUAS=`ls po/ | grep \\.po\$ | sed s/\\.po// | xargs`
 
 dnl prevent to copy po/Makefile.in.in
 GETTEXT_PACKAGE=system-config-lvm
@@ -13,8 +12,8 @@ AC_PROG_INTLTOOL
 AC_PROG_LN_S
 
 AC_OUTPUT([
-Makefile
-src/Makefile
-po/Makefile.in
-system-config-lvm.spec
+	Makefile
+	src/Makefile
+	po/Makefile.in
+	system-config-lvm.spec
 ])
