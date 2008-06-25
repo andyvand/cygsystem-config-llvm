@@ -2,14 +2,14 @@
 Summary: A utility for graphically configuring Logical Volumes
 Name: @PACKAGE@
 Version: @VERSION@
-Release: 1.2%{?dist}
+Release: 1.3%{?dist}
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
 License: GPLv2
 Group: Applications/System
 BuildArch: noarch
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires: usermode, /sbin/chkconfig
+Requires: usermode, nc, /sbin/chkconfig
 Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas 
 Requires: urw-fonts
 Requires: lvm2 >= 2.00.20
@@ -53,6 +53,9 @@ rm -rf %{buildroot}
 %config(noreplace) %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
+* Wed Jun 11 2008 Jim Parsons <jparsons@redhat.com> 1.1.4-1.3
+ - Fix for bz248164
+
 * Wed Jun 11 2008 Jim Parsons <jparsons@redhat.com> 1.1.4-1.2
 - Build for rpmdiff repairs and bz437209
 
@@ -75,8 +78,11 @@ rm -rf %{buildroot}
 - Bump the version number
 
 * Tue May 01 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.1.1-1.0
-- Update pam file
-- Update translation files
+ - Update pam file
+ - Update translation files
+
+* Wed Jan 31 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.0.23-1.0
+ - Fixed 185099 (Add configuration of iSCSI LUNs)
 
 * Mon Jan 22 2007 Stanko Kupcevic <kupcevic@redhat.com> 1.0.22-1.0
 - Fixed 223518 (s-c-lvm fails to probe CS5 properly)

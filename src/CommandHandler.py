@@ -237,7 +237,11 @@ class CommandHandler:
       raise CommandError('FATAL', COMMAND_FAILURE % ("pvremove",cmdstr,err))
 
   def remove_lv(self, lvpath):
-    self.deactivate_lv(lvpath)
+    try:
+      self.deactivate_lv(lvpath)
+    except CommandError, e:
+      pass #If LV is a snapshot...just remove it.
+
     try:
       args = list()
       args.append(LVREMOVE_BIN_PATH)
