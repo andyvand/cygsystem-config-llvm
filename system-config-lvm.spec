@@ -1,0 +1,119 @@
+# -*- RPM-SPEC -*-
+Summary: A utility for graphically configuring Logical Volumes.
+Name: system-config-lvm
+Version: 0.9.24
+Release: 1.0
+URL: http://www.redhat.com/ 
+Source0: %{name}-%{version}.tar.gz
+License: GPL
+Group: Applications/System
+BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-root
+Requires: /sbin/chkconfig
+Requires: gnome-python2, pygtk2, pygtk2-libglade, gnome-python2-canvas 
+Requires: lvm2 >= 2.00.20
+Requires: rhpl >= 0.148.2
+Requires: python >= 2.3
+
+%description
+system-config-lvm is a utility for graphically configuring Logical Volumes.
+
+%prep
+%setup -q
+
+%build
+%configure
+make
+
+%install
+rm -rf %{buildroot}
+%makeinstall
+
+#Uncomment this when translations are done
+#%find_lang %name
+
+%clean
+rm -rf %{buildroot}
+
+#Replace the files line with the one commented out when translations are done
+#%files -f %{name}.lang
+%files
+
+%defattr(-,root,root)
+%doc COPYING
+#%doc docs/ReleaseNotes
+#%doc docs/html/*
+%{_sbindir}/*
+%{_bindir}/*
+%{_datadir}/applications/system-config-lvm.desktop
+%{_datadir}/system-config-lvm
+%config %{_sysconfdir}/pam.d/system-config-lvm
+%config %{_sysconfdir}/security/console.apps/system-config-lvm
+
+%changelog
+* Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.24-1.0
+  - Changed permissions on Icon file.
+* Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.23-1.0
+  - Subtle change to .desktop file moves app launcher to system settings
+* Wed Apr 06 2005 Jim Parsons <jparsons@redhat.com> 0.9.22-1.0
+  - Version Bump.
+* Wed Apr 06 2005 Jim Parsons <jparsons@redhat.com> 0.9.21-1.0
+  - Changed path to lvm command for Fedora.
+* Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.20-1.0
+  - Added desktop icon file.
+* Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.19-1.0
+  - Added desktop file.
+* Wed Nov 24 2004 Jim Parsons <jparsons@redhat.com> 0.9.18-1.0
+  - Adjustments to configure.in so this builds in fedora as well as RHEL.
+* Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.17-1.0
+  - Fixes for bz140413 and bz 140562
+* Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.16-1.0
+  - Strips whitespace off of all incoming command handler args.
+* Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.15-1.0
+  - Fixes for two small nits.
+* Mon Nov 22 2004 Jim Parsons <jparsons@redhat.com> 0.9.14-1.0
+  - Fixes for bz140413, 140386, 140355, 140359, 140419, 138103, 140529.
+* Thu Nov 18 2004 Jim Parsons <jparsons@redhat.com> 0.9.12-1.0
+  - Fix for bz137041, 139711 plus require for new RHPL pkg.
+* Tue Nov 16 2004 Jim Parsons <jparsons@redhat.com> 0.9.11-1.0
+  - Fix for bz138019 -- extent segs correct for stripe corner case
+* Mon Nov 15 2004 Jim Parsons <jparsons@redhat.com> 0.9.10-1.0
+  - Fixes for bz137291, 138008, and 137122
+* Thu Nov 11 2004 Jim Parsons <jparsons@redhat.com> 0.9.9-1.0
+  - Fixes for bz137111, 138887, 138006,138097. Also removed fstab checkbox
+    and added it as a feature at 138831 for next release.
+* Wed Nov 10 2004 Jim Parsons <jparsons@redhat.com> 0.9.8-1.0
+  - Fixes for bz137930, 137872, 137292, 137052, 137054
+* Tue Nov 9 2004 Jim Parsons <jparsons@redhat.com> 0.9.7-1.0
+  - Improved handling of garbage in the size string -- try catch in place
+    now that traps for ValueError 
+  - Improved handling of sizes/units for new LV creation
+  - Now 'Unused' sections in Logical View of VGs, are unselectable. Also,
+    if there are no LVs associated with a VG, the Logical view buttonpanel 
+    button for "Remove selected extents"  is set to not be sensitive, as 
+    there is nothing to remove from this case.
+  - Revamped PV removal code, so that proper checking is done before moving
+    extents.
+  - Added new method that checks if dm-mirror mod is loaded in kernel. If not,
+    an appropriate error message is generated.
+  - Fixed tree selection mechanism by preventing multiple VG selection.
+  - Handle delete-event on VG creation dialog, so it is hidden.
+  - Fixed bz137099, 137071, 137869, 137434, 138085
+* Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.6-1.0
+  - Changed gtk.mainloop to gtk.main to address bz137288. 
+* Mon Nov 1 2004 Jim Parsons <jparsons@redhat.com> 0.9.5-1.0
+  - Added Menubar to address bz137293. 
+* Fri Oct 29 2004 Jim Parsons <jparsons@redhat.com> 0.9.4-1.0
+  - Fixes for bz137190 empty vg name field validation, 
+  - bz137048 removes resizable checkbox for vgcreate, 
+  - bz137208 unique vg name checking fixed, 
+  - bz137107 remove autobackup checkbox, 
+  - bz137231 warn on extend vg when init'ing a new entity. 
+* Tue Oct 26 2004 Jim Parsons <jparsons@redhat.com> 0.9.3-1.0
+  - Version bump. 
+* Tue Oct 26 2004 Jim Parsons <jparsons@redhat.com> 0.9.2-1.0
+  - Fixed bz137118 warningMessage error. This is a critical mustfix. 
+* Wed Oct 20 2004 Jim Parsons <jparsons@redhat.com> 0.9.1-2.5
+  - Fixed size selection issue, bz136217. 
+* Wed Sep 01 2004 Jim Parsons <jparsons@redhat.com> 0.9.1-1
+  - Initial copy
