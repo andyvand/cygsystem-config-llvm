@@ -5,21 +5,20 @@ SUBDIRS = src po
 
 EXTRA_DIST = \
 	system-config-lvm.spec			\
-	system-config-lvm.desktop		\
+        system-config-lvm.desktop.in		\
+        system-config-lvm.desktop		\
 	system-config-lvm.console		\
-	system-config-lvm.spec.in		\
-	system-config-lvm.desktop.in	\
 	system-config-lvm.pam			\
 	src/pixmaps/grad3.xpm			\
-	src/pixmaps/UV.xpm				\
-	src/pixmaps/LV.xpm				\
-	src/pixmaps/PV.xpm				\
-	src/pixmaps/VG.xpm				\
+	src/pixmaps/UV.xpm			\
+	src/pixmaps/LV.xpm			\
+	src/pixmaps/PV.xpm			\
+	src/pixmaps/VG.xpm			\
 	src/pixmaps/lv_icon.png			\
-	intltool-extract.in				\
-	intltool-merge.in				\
-	intltool-update.in				\
-	README							\
+	intltool-extract.in			\
+	intltool-merge.in			\
+	intltool-update.in			\
+	README					\
 	ChangeLog
 
 CLEANFILES=$(applications_DATA)
@@ -58,7 +57,7 @@ uninstall-local:
 
 changelog:
 	rcs2log | sed -e 's|/usr/local/CVS/redhat-config-network/||g' \
-		-e 's|@.*\.redhat\.com|@redhat.com|g' > ChangeLog ; chmod 644 ChangeLog
+		-e 's|@.*\.redhat\.com|@redhat.com|g' > ChangeLog
 
 clean:
 	rm -f system-config-lvm.desktop
@@ -84,8 +83,9 @@ was-srpm: archive
 	rpmbuild --define "_sourcedir `pwd`" --define "_srcrpmdir `pwd`" --define "_specdir `pwd`" -ts @PACKAGE@-@VERSION@.tar.gz
 
 srpm: dist
-	umask 0022
 	rpmbuild --define "_sourcedir `pwd`" --define "_srcrpmdir `pwd`" --define "_specdir `pwd`" -ts @PACKAGE@-@VERSION@.tar.gz
 
 srpm-test:
 	rpmbuild --define "_sourcedir `pwd`" --define "_srcrpmdir `pwd`" --define "_specdir `pwd`" -ts @PACKAGE@-@VERSION@.tar.gz
+
+

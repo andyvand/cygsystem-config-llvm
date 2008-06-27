@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: or\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-31 09:04-0500\n"
+"POT-Creation-Date: 2007-01-22 11:52-0500\n"
 "PO-Revision-Date: 2006-10-13 16:44+0530\n"
 "Last-Translator: Subhransu Behera <sbehera@redhat.com>\n"
 "Language-Team: Oriya <oriya-group@lists.sarovar.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 "\n"
 "\n"
 
-#: src/InputController.py:39 src/Properties_Renderer.py:24
+#: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
@@ -45,7 +45,7 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#: src/InputController.py:59
+#: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr "%s କୁ ଏଠାରେ ଯୋଗ କରିବା ପାଇଁ ଗୋଟିଏ ଘନଫଳ ସମୂହ ର ଚୟନ କରନ୍ତୁ"
@@ -58,32 +58,32 @@ msgstr "%s କୁ ଏଠାରେ ଯୋଗ କରିବା ପାଇଁ ଗୋ�
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:87
+#: src/InputController.py:84
 msgid "Name"
 msgstr "ନାମ"
 
-#: src/InputController.py:88
+#: src/InputController.py:85
 msgid "Size"
 msgstr "ଆକାର"
 
-#: src/InputController.py:89
+#: src/InputController.py:86
 msgid "Entity Type"
 msgstr "ବସ୍ତୁ ର ପ୍ରକାର"
 
-#: src/InputController.py:91
+#: src/InputController.py:88
 msgid "Unallocated Physical Volume"
 msgstr "ବଣ୍ଟାଯାଇ ନ ଥିବା ଭୌତିକ ଘନଫଳ ବଣ୍ଟାଯାଇ ନାହିଁ"
 
-#: src/InputController.py:92
+#: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
 msgstr "ପ୍ରାରମ୍ଭିକରଣ କରାଯାଇ ନ ଥିବା ଡିସ୍କ ବସ୍ତୁ"
 
-#: src/InputController.py:93
+#: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "%s ଘନଫଳ ସମୂହରେ ଯୋଗ କରିବା ପାଇଁ ଡିସ୍କ ବସ୍ତୁ ମାନଙ୍କୁ ଚୟନ କରନ୍ତୁ"
 
-#: src/InputController.py:95
+#: src/InputController.py:92
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -91,7 +91,7 @@ msgstr ""
 "ଷ୍ଟ୍ରାଇପିଙ୍ଗ ସହାୟତା ପାଇଁ ଗୋଟିଏ ଘନଫଳ ସମୂହକୁ ଦୁଇ କିମ୍ବା ଅଧିକ ଭୌତିକ ଘନଫଳରେ ପ୍ରସ୍ତୁତ କରାଯିବା ଉଚିତ। "
 "ଏହି ଘନଫଳ ସମୂହ ଆବଶ୍ଯକତାକୁ ପୂରା କରୁନାହିଁ।"
 
-#: src/InputController.py:97
+#: src/InputController.py:94
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
@@ -100,55 +100,55 @@ msgstr ""
 "%s ନାମରେ ନାମିତ ଗୋଟିଏ ତାର୍କିକ ଘନଫଳ ପୂର୍ବରୁ ଘନଫଳ ସମୂହରେ ରହିଛି। ଦୟାକରି ଗୋଟିଏ ଅନନ୍ଯ ନାମ ଚୟନ "
 "କରନ୍ତୁ।"
 
-#: src/InputController.py:99
+#: src/InputController.py:96
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s ନାମରେ ନାମିତ ଗୋଟିଏ ଘନଫଳ ସମୂହ ପୂର୍ବରୁ ରହିଛି। ଗୋଟିଏ ଅନନ୍ଯ ନାମ ଚୟନ କରନ୍ତୁ।"
 
-#: src/InputController.py:101
+#: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "ନୂତନ ତାର୍କିକ ଘନଫଳ ପାଇଁ ଗୋଟିଏ ନାମ ଦିଆଯିବା ଉଚିତ"
 
-#: src/InputController.py:103
+#: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
 msgstr "ନୂତନ ଘନଫଳ ସମୂହ ପାଇଁ ଗୋଟିଏ ନାମ ଦିଆଯିବା ଉଚିତ"
 
-#: src/InputController.py:105
+#: src/InputController.py:102
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "ଉଲ୍ଲେଖିତ ଆରୋହଣ ବିନ୍ଦୁ, %s, ଅବସ୍ଥିତ ନାହିଁ। ଆପଣ ଏହାକୁ ସୃଷ୍ଟି କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
-#: src/InputController.py:107
+#: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "%s ଆରୋହଣ ବିନ୍ଦୁର ସୃଷ୍ଟି ଅପ୍ରତ୍ଯାଶିତ ଭାବରେ ବିଫଳ ହୋଇଗଲା।"
 
-#: src/InputController.py:109
+#: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
 msgstr "ଏହି ସଂସ୍କରଣରେ ଏହି ସାମର୍ଥ୍ଯକୁ ଏପର୍ଯ୍ଯନ୍ତ ନିଷ୍ପାଦନ କରାଯାଇ ନାହିଁ"
 
-#: src/InputController.py:111
+#: src/InputController.py:108
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "ଏହି ଘନଫଳ ସମୂହରେ ତାର୍କିକ ଘନଫଳର ସଂଖ୍ଯା ଏହାର ସର୍ବାଧିକ ପରିସୀମାରେ ପହଞ୍ଚି ସାରିଛି।"
 
-#: src/InputController.py:113
+#: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "ଏହି ଘନଫଳ ସମୂହରେ ଭୌତିକ ଘନଫଳର ସଂଖ୍ଯା ଏହାର ସର୍ବାଧିକ ପରିସୀମାରେ ପହଞ୍ଚି ସାରିଛି।"
 
-#: src/InputController.py:115
+#: src/InputController.py:112
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
 msgstr "ପରିସୀମା ପହଞ୍ଚିବା ପୂର୍ବରୁ ଅତିବେଶୀରେ %s ଭୌତିକ ଘନଫଳକୁ ଘନଫଳ ସମୂହରେ ଯୋଗ କରାଯାଇ ପାରିବ।"
 
-#: src/InputController.py:117
+#: src/InputController.py:114
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
@@ -158,15 +158,15 @@ msgstr ""
 "ନୂତନ ଘନଫଳ ସମୂହ ପାଇଁ ଘନଫଳ ସମୂହ %s ନିକଟରେ ଯଥେଷ୍ଟ ଖାଲିସ୍ଥାନ ନାହିଁ। ଘନଫଳ ସମୂହ ସହିତ ଗୋଟିଏ "
 "ଅତିରିକ୍ତ ଭୌତିକ ଘନଫଳ ଯୋଗ କରିବା ଗୋଟିଏ ସମ୍ଭାବ୍ଯ ସମାଧାନ ହୋଇପାରେ।"
 
-#: src/InputController.py:119
+#: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
 msgstr "ଗୋଟିଏ ଆଲୋକଚିତ୍ରର ଆଲୋକଚିତ୍ର ଉଠାଇବା ସମର୍ଥିତ ନୁହେଁ।"
 
-#: src/InputController.py:120
+#: src/InputController.py:117
 msgid "A snapshot of a mirrored Logical Volume is not supported."
 msgstr "ଗୋଟିଏ ପ୍ରତିଫଳିତ ତାର୍କିକ ଘନଫଳର ଆଲୋକଚିତ୍ର ଉଠାଇବା ସମର୍ଥିତ ନୁହେଁ।"
 
-#: src/InputController.py:122
+#: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -175,7 +175,7 @@ msgstr ""
 "ବର୍ତ୍ତମାନ %s ତାର୍କିକ ଘଲଫଳରେ ତାହା ସହିତ ସମ୍ପୃକ୍ତ %s ଆଲୋକଚିତ୍ର ଅଛି। ଦୟାକରି ପ୍ରଥମେ ଆଲୋକଚିତ୍ରକୁ "
 "ଅପସାରଣ କରନ୍ତୁ।"
 
-#: src/InputController.py:123
+#: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -184,12 +184,12 @@ msgstr ""
 "ବର୍ତ୍ତମାନ %s ତାର୍କିକ ଘଲଫଳରେ ତାହା ସହିତ ସମ୍ପୃକ୍ତ ଆଲୋକଚିତ୍ର ଗୁଡିକ ଅଛି: %s। ଦୟାକରି ପ୍ରଥମେ "
 "ଆଲୋକଚିତ୍ର ମାନଙ୍କୁ ଅପସାରଣ କରନ୍ତୁ।"
 
-#: src/InputController.py:125
+#: src/InputController.py:122
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "ନମୁନା କାରଖାନାରେ ଅପରିଭାଷିତ ପ୍ରକାର ରୂପାନ୍ତରଣ ତୃଟି। କାର୍ଯ୍ଯ ସମ୍ପନ୍ନ କରିବାରେ ଅସମର୍ଥ।"
 
-#: src/InputController.py:127
+#: src/InputController.py:124
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -200,7 +200,7 @@ msgstr ""
 "କରାଯାଇଛି। ଆପଣ ସମ୍ପୂର୍ଣ୍ଣ ଭାବରେ ନିଶ୍ଚିତ କି ଆପଣ ଏହି ଆରୋହିତ ଫାଇଲତନ୍ତ୍ରରେ ତଥ୍ଯ ପ୍ରତ୍ଯାଖ୍ଯାନ କରିବା "
 "ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
-#: src/InputController.py:129
+#: src/InputController.py:126
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -211,61 +211,61 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:135
+#: src/InputController.py:132
 #, python-format
 msgid "Unused space on %s"
 msgstr "%s ରେ ଅବ୍ଯବହ୍ରୁତ ଖାଲି ସ୍ଥାନ"
 
-#: src/InputController.py:136
+#: src/InputController.py:133
 #, python-format
 msgid "%s megabytes"
 msgstr "%s ମେଗା-ବାଇଟ୍ସ"
 
-#: src/InputController.py:137
+#: src/InputController.py:134
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s କିଲୋ-ବାଇଟ୍ସ"
 
-#: src/InputController.py:138
+#: src/InputController.py:135
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s ଗିଗା-ବାଇଟ୍ସ"
 
-#: src/InputController.py:139
+#: src/InputController.py:136
 #, python-format
 msgid "%s extents"
 msgstr "%s ସୀମା"
 
-#: src/InputController.py:141
+#: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
 msgstr "ଘନଫଳ ସମୂହ ରେ ବଳକା ଖାଲି ସ୍ଥାନ:\n"
 
-#: src/InputController.py:142
+#: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
 msgstr "ଏହି ଘନଫଳ ପାଇଁ ବଳକା ସ୍ଥାନ:\n"
 
-#: src/InputController.py:144
+#: src/InputController.py:141
 msgid "Extents"
 msgstr "ସୀମା"
 
-#: src/InputController.py:145
+#: src/InputController.py:142
 msgid "Gigabytes"
 msgstr "ଗିଗା-ବାଇଟ୍ସ"
 
-#: src/InputController.py:146
+#: src/InputController.py:143
 msgid "Megabytes"
 msgstr "ମେଗା-ବାଇଟ୍ସ"
 
-#: src/InputController.py:147
+#: src/InputController.py:144
 msgid "Kilobytes"
 msgstr "କିଲୋ-ବାଇଟ୍ସ"
 
-#: src/InputController.py:149
+#: src/InputController.py:146
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s କେବଳ ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ କରିବା ଉଚିତ"
 
-#: src/InputController.py:150
+#: src/InputController.py:147
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -273,7 +273,7 @@ msgstr ""
 "ସର୍ବାଧିକ ଭୌତିକ ଘନଫଳ କ୍ଷେତ୍ର ଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ "
 "କରିବା ଉଚିତ"
 
-#: src/InputController.py:151
+#: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -281,14 +281,14 @@ msgstr ""
 "ସର୍ବାଧିକ ତାର୍କିକ ଘନଫଳ କ୍ଷେତ୍ରଟି କେବଳ ୧ ରୁ ୨୫୬ ମଦ୍ଧ୍ଯ ରେ ଥିବା ସଂଖ୍ଯାତ୍ମକ ମୂଲ୍ଯ ମାନଙ୍କୁ ଧାରଣ "
 "କରିବା ଉଚିତ"
 
-#: src/InputController.py:153
+#: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr "ଆପଣ ପୂରାପୂରି ନିଶ୍ତିତ କି ଆପଣ ତାର୍କିକ ଘନଫଳ ପରିଚାଳନାରୁ %s କୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
-#: src/InputController.py:155
+#: src/InputController.py:152
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -304,13 +304,13 @@ msgstr ""
 "ପୂର୍ବରୁ ଗୋଟିଏ ନୂତନ ଭୌତିକ ଘନଫଳ ଯୋଗ କରନ୍ତୁ, କିମ୍ବା ଏହି ଭୌତିକ ଘନଫଳ ସହିତ ସଂପୃକ୍ତ ଥିବା ତାର୍କିକ ଘନଫଳ "
 "ମାନଙ୍କୁ ଅପସାରଣ କରନ୍ତୁ।"
 
-#: src/InputController.py:156
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "ଆପଣ ପୂରାପୂରି ନିଶ୍ତିତ କି ଆପଣ %s ଘନଫଳ ସମୂହରୁ %s କୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
-#: src/InputController.py:157
+#: src/InputController.py:154
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -319,7 +319,7 @@ msgstr ""
 "%s ଭୌତିକ ଘନଫଳକୁ %s ଘନଫଳ ସମୂହରୁ ଅପସାରଣ କଲେ, ଘନଫଳ ସମୂହଟି ଖାଲି ହୋଇଯିବ, ଏବଂ ଆହୁରି ମଧ୍ଯ ଏହା "
 "ଅପସାରିତ ହୋଇଯିବ। ଆପଣ ଜାରି ରଖିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
-#: src/InputController.py:158
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -329,7 +329,7 @@ msgstr ""
 "%s ଘନଫଳ ସମୂହରେ ସଂରକ୍ଷିତ ତଥ୍ଯ %s କୁ ଘୁଞ୍ଚାଇବା ପାଇଁ ଯଥେଷ୍ଟ ସ୍ଥାନ ନାହିଁ। ଘନଫଳ ସମୂହରେ ଗୋଟିଏ "
 "ଅତିରିକ୍ତ ଭୌତିକ ଘନଫଳ ସମୂହ ଯୋଗ କରିବା ଗୋଟିଏ ସମ୍ଭାବ୍ଯ ସମାଧାନ ହୋଇପାରେ।"
 
-#: src/InputController.py:159
+#: src/InputController.py:156
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -341,7 +341,7 @@ msgstr ""
 "ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରନ୍ତୁ। ନଚେତ, ଭୌତିକ ପରିସରରେ ତଥ୍ଯ ଘୁଞ୍ଚାଇବା ପାଇଁ ଆବଶ୍ଯକ ପ୍ରକ୍ରିୟା ଗୁଡିକ "
 "ଅନୁପଲବ୍ଧ।"
 
-#: src/InputController.py:160
+#: src/InputController.py:157
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -351,12 +351,12 @@ msgstr ""
 "ଲକ୍ଷ୍ଯକୁ ସହାୟତା ପ୍ରଦାନ କରେନାହିଁ। ଯଦି ଏହା ସମର୍ଥିତ, ତାହାହେଲେ \"modprobe dm-snapshot\" କୁ "
 "ଚଳାଇବା ପାଇଁ ପ୍ରଚେଷ୍ଟା କରନ୍ତୁ। ନଚେତ, snapshot ର ପ୍ରସ୍ତୁତି ପ୍ରକ୍ରିୟା ଅନୁପଲବ୍ଧ।"
 
-#: src/InputController.py:162
+#: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "ଆପଣ ପୂରାପୂରି ନିଶ୍ଚିତ କି ଆପଣ %s ତାର୍କିକ ଘନଫଳକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
-#: src/InputController.py:163
+#: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -365,7 +365,7 @@ msgstr ""
 "%s ତାର୍କିକ ଘନଫଳ %s ଫାଇଲତନ୍ତ୍ର ଧାରଣ କରିଅଛି। ଏଥିରେ ଥିବା ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ ହୋଇଯିବ! ଆପଣ ପୂରାପୂରି "
 "ନିଶ୍ଚିତ କି ଆପଣ %s ତାର୍କିକ ଘନଫଳକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
-#: src/InputController.py:164
+#: src/InputController.py:161
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -374,7 +374,7 @@ msgstr ""
 "%s ତାର୍କିକ ଘନଫଳ %s ଡିରେକ୍ଟୋରିରେ ଥିବା ତଥ୍ଯ ଧାରଣ କରିଅଛି। ଏଥିରେ ଥିବା ସମସ୍ତ ତଥ୍ଯ ନଷ୍ଟ ହୋଇଯିବ! "
 "ଆପଣ ପୂରାପୂରି ନିଶ୍ଚିତ କି ଆପଣ %s ତାର୍କିକ ଘନଫଳକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
-#: src/InputController.py:309
+#: src/InputController.py:306
 #, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
@@ -384,7 +384,7 @@ msgstr ""
 "ଏକତ୍ରିତ ପରିବେଶରେ ସୁରକ୍ଷିତ ଭାବରେ ତାର୍କିକ ଘନଫଳର ବ୍ଯବହାର ପାଇଁ, lvm2-cluster rpm ସ୍ଥାପିତ "
 "ହୋଇଥିବା ଆବଶ୍ଯକ, ଏବଂ clvmd ସେବା ଚାଲୁଥିବା ଆବଶ୍ଯକ"
 
-#: src/InputController.py:368
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -394,7 +394,7 @@ msgstr ""
 "%s ଭୌତିକ ଘନଫଳ %s ତାର୍କିକ ଘନଫଳର ଗୋଟିଏ ପ୍ରତଫଳିତ ଲଗ ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ ଧାରଣ "
 "କରିଅଛି। ପ୍ରତିଫଳିତ ତାର୍କିକ ଘନଫଳ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
-#: src/InputController.py:371
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -404,7 +404,7 @@ msgstr ""
 "%s ଭୌତିକ ଘନଫଳ %s ତାର୍କିକ ଘନଫଳର ଗୋଟିଏ ପ୍ରତଫଳିତ ପ୍ରତିଛବି ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ ଧାରଣ "
 "କରିଅଛି। ପ୍ରତିଫଳିତ ତାର୍କିକ ଘନଫଳ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
-#: src/InputController.py:374
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -413,7 +413,7 @@ msgstr ""
 "%s ଭୌତିକ ଘନଫଳ %s (%s ର ଗୋଟିଏ ଆଲୋକଚିତ୍ର) ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। "
 "ଆଲୋକଚିତ୍ର ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
-#: src/InputController.py:379
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -422,7 +422,7 @@ msgstr ""
 "%s ଭୌତିକ ଘନଫଳ %s (%s ଆଲୋକଚିତ୍ର ମାନଙ୍କର ଉତ୍ସ) ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। "
 "ଆଲୋକଚିତ୍ର ଉତ୍ସ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
-#: src/InputController.py:381
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -431,7 +431,7 @@ msgstr ""
 "%s ଭୌତିକ ଘନଫଳ %s (%s ଆଲୋକଚିତ୍ର ମାନଙ୍କର ଉତ୍ସ) ସହିତ ସମ୍ପୃକ୍ତ ଥିବା ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। "
 "ଆଲୋକଚିତ୍ର ଉତ୍ସ ଗୁଡିକ ଏ ପର୍ଯ୍ଯନ୍ତ ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
-#: src/InputController.py:568
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -440,13 +440,13 @@ msgstr ""
 "\"%s\" ତାର୍କିକ ଘନଫଳ ନିକଟରେ ଆଲୋକଚିତ୍ର ମାନ ଅଛି ଯାହାକୁ ଅପସାରଣ କରିବା ପାଇଁ ଚୟନ କରାଯାଇ ନାହିଁ। "
 "ଆହୁରି ମଧ୍ଯ ସେମାନଙ୍କୁ ଅପସାରଣ କରାଯିବା ଉଚିତ।"
 
-#: src/InputController.py:583
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", \"%s\" ଆଲୋକଚିତ୍ରର ଉତ୍ସ, କୁ ଅପସାରଣ ତାଲିକାରୁ କାଢି ଦିଆଯାଇଛି।"
 
-#: src/InputController.py:614
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -455,7 +455,7 @@ msgstr ""
 "\"%s\" ଭୌତିକ ଘନଫଳ ଗୋଟିଏ ପ୍ରତିଫଳନ ସହିତ ସମ୍ପୃକ୍ତ ପରିସର ମାନଙ୍କୁ ଧାରଣ କରିଅଛି। ପ୍ରତିଫଳନ ଗୁଡିକ "
 "ଉତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
-#: src/InputController.py:617
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -464,24 +464,24 @@ msgstr ""
 "\"%s\" ଭୌତିକ ଘନଫଳ ଗୋଟିଏ ଆଲୋକଚିତ୍ର କିମ୍ବା ଗୋଟିଏ ଆଲୋକଚିତ୍ରର ଉତ୍ସ ସହିତ ସମ୍ପୃକ୍ତ ପରିସର ମାନଙ୍କୁ "
 "ଧାରଣ କରିଅଛି। ଆଲୋକଚିତ୍ର ଗୁଡକ ଅତ୍ପ୍ରବାସିତ ନୁହଁନ୍ତି, ତେଣୁ %s ଅପସାରଣ ଯୋଗ୍ଯ ନୁହେଁ।"
 
-#: src/InputController.py:682
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଅବସ୍ଥିତ ନାହିଁ।"
 
-#: src/InputController.py:689
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "ଆପଣ ଉଲ୍ଳଖିତ କରିଥିବା ପଥ ଗୋଟିଏ ଅବରୋଧୀ ଉପକରଣ ନୁହେଁ।"
 
-#: src/InputController.py:760
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "%s ର ବୈଧିକରଣ ବିଫଳ"
 
-#: src/InputController.py:998 src/InputController.py:1001
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "ଦୟାକରି କିଛି ପରିମାଣ କୁ ପ୍ରଥମେ ଚୟନ କରନ୍ତୁ"
 
-#: src/InputController.py:1035
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -489,54 +489,47 @@ msgstr ""
 "ଦରକାରୀ ଉତ୍ପ୍ରବାସନକୁ ପ୍ରଦର୍ଶନ କରିବା ପାଇଁ ଯଥେଷ୍ଟ ଖାଲି ପରିସର ନାହିଁ। ଅଧିକ ଭୌତିକ ଘନଫଳର ସଂଯୋଗ ଏହି "
 "ସମସ୍ଯାକୁ ସମାଧାନ କରିଦେବ।"
 
-#: src/InputController.py:1091
-#, python-format
-msgid ""
-"iSCSI Initiator rpm is not installed. \n"
-"Install %s rpm, and try again."
-msgstr ""
-
-#: src/InputController.py:1208
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "ଏହି ପରିସୀମା କୁ ଛାଡି ଦିଅ"
 
-#: src/InputController.py:1336
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "ପସନ୍ଦ ମାନ"
 
-#: src/InputController.py:1370
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "%s ପାଇଁ ଗୋଟିଏ ଆଶୁଚିତ୍ର ସୃଷ୍ଟି କରନ୍ତୁ"
 
-#: src/InputController.py:1372
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "ନୂତନ ତାର୍କିକ ଘନଫଳ ସୃଷ୍ଟି କରନ୍ତୁ"
 
-#: src/InputController.py:1375
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "%s କୁ ସମ୍ପାଦନ କରନ୍ତୁ, %s ର ଗୋଟିଏ ଆଶୁଚିତ୍ର"
 
-#: src/InputController.py:1378
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "ତାର୍କିକ ଘନଫଳକୁ ସମ୍ପାଦନ କରନ୍ତୁ"
 
-#: src/InputController.py:1531
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "ନିମ୍ନରେ ଥିବା ତାର୍କିକ ଘନଫଳ ପରିଚାଳନା ପ୍ରତିଫଳନକୁ ସମର୍ଥ କରେ ନାହିଁ"
 
-#: src/InputController.py:1538
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "ଗାରଗାରିଆ ତାର୍କିକ ଘନଫଳକୁ ପ୍ରତିଫଳିତ କରିହେବ ନାହିଁ।"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "ସମ୍ମିଳିତ ଆଲୋକଚିତ୍ର ମାନଙ୍କ ସହିତ ତାର୍କିକ ଘନଫଳକୁ ଏ ପର୍ଯ୍ଯନ୍ତ ପ୍ରତିଫଳିତ କରାଯାଇ ନାହିଁ।"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1552
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -544,26 +537,26 @@ msgstr ""
 "ହାର୍ଡ ଡ୍ରାଇଭ ବିଫଳ ସମୟରେ ପ୍ରତିଫଳନର ମୌଳିକ କାର୍ଯ୍ଯ ହେଉଛି ତଥ୍ଯ ସୁରକ୍ଷିତ କରିବ। ଆପଣ ବିଭିନ୍ନ ହାର୍ଡ "
 "ଡ୍ରାଇଭରେ ପ୍ରତିଫଳକ ପ୍ରତିଛବି ମାନଙ୍କୁ ରଖିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
-#: src/InputController.py:1561
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "ଖାଲିସ୍ଥାନ ବିଶିଷ୍ଟ ୩ ରୁ କମ ହାର୍ଡ ଡ୍ରାଇଭ ଉପଲବ୍ଧ। ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ନିଷ୍କ୍ରିୟ କରୁଅଛି।"
 
-#: src/InputController.py:1566
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr ""
 "ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ସକ୍ରିୟ କରିବା ପାଇଁ ସେଠାରେ ଅତିକମରେ ଖାଲିସ୍ଥାନ ବିଶିଷ୍ଟ ତିନିଟି ଭୌତିକ ଘନଫଳ ଥିବା ଉଚିତ"
 
-#: src/InputController.py:1574
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
 "ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟା ପାଇଁ ତାର୍କିକ ଘନଫଳର ଆକାରକୁ ସର୍ବାଧିକ ଉପଲବ୍ଧ ଆକାର ସହିତ ଯଥାପୁଯକ୍ତ କରନ୍ତୁ।"
 
-#: src/InputController.py:1579
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -572,42 +565,42 @@ msgstr ""
 "ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାକୁ ଯୋଗ କରିବା ପାଇଁ ସେଠାରେ ଯଥେଷ୍ଟ ସ୍ଥାନ ନାହିଁ। ତାର୍କିକକୁ ଘନଫଳର ଆକାରକୁ ସର୍ବାଧିକ "
 "%s ପର୍ଯ୍ଯନ୍ତ ହ୍ରାସ କରନ୍ତୁ, କିମ୍ବା ଭୌତିକ ଘନଫଳ ଗୁଡିକୁ ଯୋଗ କରନ୍ତୁ।"
 
-#: src/InputController.py:1943
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "\"snapshot\" କିମ୍ବା \"pvmove\" ଦ୍ବାରା ପ୍ରାରମ୍ଭିତ ନାମ ଗୁଡିକ ସଂରକ୍ଷିତ ସୂଚକ ଶବ୍ଦ ଅଟନ୍ତି।"
 
-#: src/InputController.py:1945
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "\"_mlog\" କିମ୍ବା \"_mimage\" ଧାରଣ କରିଥିବା ନାମ ଗୁଡିକ ସଂରକ୍ଷିତ ସୂଚକ ଶବ୍ଦ ଅଟନ୍ତି।"
 
-#: src/InputController.py:1947
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "ଗୋଟିଏ \"-\" ସହିତ ପ୍ରାରମ୍ଭିତ ନାମ ଗୁଡିକ ଅବୌଧ ଅଟନ୍ତି"
 
-#: src/InputController.py:1949
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "ନାମଟି କେବେହେଲେ \".\" କିମ୍ବା \"..\" ହୋଇପାରିବ ନାହିଁ"
 
-#: src/InputController.py:1955
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "ତାର୍କିକ ଘନଫଳ ନାମରେ ଖାଲିସ୍ଥାନ ଗୃହୀତ ନୁହେଁ"
 
-#: src/InputController.py:1958
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "ତାର୍କିକ ଘନଫଳ ନାମରେ ଅବୈଧ ଅକ୍ଷର \"%s\""
 
-#: src/InputController.py:1978
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "ଦୟାକରି ସ୍ଥାପନ ବିନ୍ଦୁକୁ ଉଲ୍ଲଖିତ କରନ୍ତୁ"
 
-#: src/InputController.py:2044
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "ଆପଣ ତାର୍କିକ ଘନଫଳରେ ତଥ୍ଯ ସଂରକ୍ଷଣ କରିବା ପାଇଁ ext2 କୁ ext3 ରେ ଉନ୍ନୟନ କରିବା ପାଇଁ ଚାହୁଁଛନ୍ତି କି?"
 
-#: src/InputController.py:2078
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -616,12 +609,12 @@ msgstr ""
 "ରଖିବା ପାଇଁ ଚାହୁଁଛନ୍ତି?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2179
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "ପ୍ରତିଫଳନ ସୃଷ୍ଟା କରାଯାଇ ନାହିଁ। ବଳକା କାର୍ଯ୍ଯ ମାନଙ୍କୁ ସମ୍ପନ୍ନ କରୁଅଛି।"
 
 #. create mirror
-#: src/InputController.py:2182
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
@@ -629,11 +622,11 @@ msgstr ""
 "ନିମ୍ନରେ ଥିବା LVM ଅବସ୍ଥିତ ଭୌତିକ ଘନଫଳରେ ପ୍ରତିଫଳନ ପ୍ରକ୍ରିୟାର ସଂଯୋଗକୁ ସମର୍ଥ କରେନାହିଁ। ବଳକା "
 "କାର୍ଯ୍ଯ ମାନଙ୍କୁ ସମ୍ପୂର୍ଣ୍ଣ କରୁଅଛି।"
 
-#: src/InputController.py:2231
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "ପ୍ରତିଫଳନକୁ ଯୋଗ କରିବା ପାଇଁ, କିଛି ପରିସର ମାନଙ୍କୁ ଉତ୍ପ୍ରବାସିତ କରାଯିବା ଉଚିତ।"
 
-#: src/InputController.py:2231
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "ନିର୍ଦ୍ଦିଷ୍ଟ ପରିସର ମାନଙ୍କୁ ଯିବା ପାଇଁ ଆପଣ ଚାହୁଁଛନ୍ତି କି?"
 
@@ -858,71 +851,58 @@ msgstr "ବୈଦେଶିକ ବୁଟ ବିଭାଜନ"
 msgid "Autopartition failure"
 msgstr "ସ୍ବତଃ ବିଭାଜନ ବିଫଳ"
 
-#: src/lvm_model.py:259
+#: src/lvm_model.py:254
 msgid "Partition manually"
 msgstr "ହସ୍ତକୃତ ଭାବରେ ବିଭାଜନ କରନ୍ତୁ"
 
-#: src/lvm_model.py:295
+#: src/lvm_model.py:290
 msgid "Multipath device"
 msgstr "ବହୁପଥିକ ଉପକରଣ"
 
-#: src/lvm_model.py:298
+#: src/lvm_model.py:293
 msgid "Note:"
 msgstr "ଦ୍ରଷ୍ଟବ୍ଯ:"
 
-#: src/lvm_model.py:298
+#: src/lvm_model.py:293
 msgid "Initialize manually"
 msgstr "ହସ୍ତକୃତ ଭାବରେ ପ୍ରାରମ୍ଭିକରଣ କରନ୍ତୁ"
 
-#: src/lvm_model.py:741
+#: src/lvm_model.py:736
 msgid "Clustered:   "
 msgstr "ଏକତ୍ରିତ:   "
 
-#: src/lvm_model.py:743 src/lvm_model.py:971
+#: src/lvm_model.py:738
 msgid "True"
 msgstr "ସତ"
 
-#: src/lvm_model.py:745
+#: src/lvm_model.py:740
 msgid "False"
 msgstr "ମିଛ"
 
-#: src/lvm_model.py:803
+#: src/lvm_model.py:798
 msgid "Number of mirror images:"
 msgstr "ପ୍ରତିଫଳିତ ପ୍ରତିଛବି ସଂଖ୍ଯା:"
 
-#: src/lvm_model.py:806
+#: src/lvm_model.py:801
 msgid "Snapshots:"
 msgstr "ଆଶୁଚିତ୍ର:"
 
-#: src/lvm_model.py:812
+#: src/lvm_model.py:807
 msgid "Snapshot origin:"
 msgstr "ଆଶୁଚିତ୍ରର ଉତ୍ପତ୍ତି:"
 
-#: src/lvm_model.py:819
+#: src/lvm_model.py:814
 msgid "Snapshot usage:"
 msgstr "ଆଶୁଚିତ୍ର ର ବ୍ଯବହାର ବିଧି:"
 
-#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
-#: src/lvm_model.py:907
+#: src/lvm_model.py:837 src/lvm_model.py:843 src/lvm_model.py:886
+#: src/lvm_model.py:902
 msgid "/   Root Filesystem"
 msgstr "/   ପ୍ରମୂଖ ଚାଳକ ର ଫାଇଲ ତନ୍ତ୍ର"
 
-#: src/lvm_model.py:910 src/Filesystem.py:137
+#: src/lvm_model.py:905 src/Filesystem.py:137
 msgid "None"
 msgstr "କିଛି ନୁହେଁ"
-
-#: src/lvm_model.py:961
-#, fuzzy
-msgid "SCSI ID:   "
-msgstr "ତନ୍ତ୍ର ର ପରିଚୟ:   "
-
-#: src/lvm_model.py:965
-msgid "NONE"
-msgstr ""
-
-#: src/lvm_model.py:970
-msgid "iSCSI Device:   "
-msgstr ""
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1305,7 +1285,7 @@ msgstr "ଦର୍ପଣ"
 msgid "Partition %s"
 msgstr "%s ବିଭାଜନ"
 
-#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1 src/iscsi.glade.h:1
+#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
 msgstr "*"
 
@@ -1530,10 +1510,6 @@ msgid "_Tools"
 msgstr "ଉପକରଣ ମାନ (_T)"
 
 #: src/lvui.glade.h:57
-msgid "_iSCSI Configuration"
-msgstr ""
-
-#: src/lvui.glade.h:58
 msgid "extend vg message:"
 msgstr "ବିସ୍ରୁତ ଭି.ଜି. ସନ୍ଦେଶ:"
 
@@ -1712,50 +1688,6 @@ msgstr "କେବଳ LV ଅଂଶଭୂକ୍ତ ପରିସରକୁ ଉତ୍
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "ସାଧାରଣ ଜ୍ଞାନ ବ୍ଯବହାର କରନ୍ତୁ"
-
-#: src/iscsi.glade.h:2
-#, fuzzy
-msgid "3260"
-msgstr "୩୨"
-
-#: src/iscsi.glade.h:3
-msgid "Active iSCSI targets are selected "
-msgstr ""
-
-#: src/iscsi.glade.h:4
-msgid "Add New Target"
-msgstr ""
-
-#: src/iscsi.glade.h:5
-msgid "Default port is 3260"
-msgstr ""
-
-#: src/iscsi.glade.h:6
-msgid "Enter a hostname (or an IP address) of new target to add"
-msgstr ""
-
-#: src/iscsi.glade.h:7
-msgid "Hostname"
-msgstr ""
-
-#: src/iscsi.glade.h:8
-msgid "New iSCSI Target"
-msgstr ""
-
-#: src/iscsi.glade.h:9
-#, fuzzy
-msgid "Port"
-msgstr "ସଜ୍ଜିକରଣ ଶୈଳୀ"
-
-#: src/iscsi.glade.h:10
-msgid ""
-"Specify a hostname of new target \n"
-"to add, and click \"OK\". "
-msgstr ""
-
-#: src/iscsi.glade.h:12
-msgid "iSCSI Initiator"
-msgstr ""
 
 #~ msgid ""
 #~ "LVM locks are disabled!!! \n"

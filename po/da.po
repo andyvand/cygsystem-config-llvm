@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-31 09:04-0500\n"
+"POT-Creation-Date: 2007-01-22 11:52-0500\n"
 "PO-Revision-Date: 2006-10-05 21:41+0200\n"
 "Last-Translator: Keld Simonsen <keld@rap.dk>\n"
 "Language-Team:  <da@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.10.2\n"
 
-#: src/InputController.py:39 src/Properties_Renderer.py:24
+#: src/InputController.py:36 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
@@ -41,7 +41,7 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#: src/InputController.py:59
+#: src/InputController.py:56
 #, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr "Vælg en delarkivgruppe at tilføje %s til:"
@@ -54,32 +54,32 @@ msgstr "Vælg en delarkivgruppe at tilføje %s til:"
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:87
+#: src/InputController.py:84
 msgid "Name"
 msgstr "Navn"
 
-#: src/InputController.py:88
+#: src/InputController.py:85
 msgid "Size"
 msgstr "Størrelse"
 
-#: src/InputController.py:89
+#: src/InputController.py:86
 msgid "Entity Type"
 msgstr "Entitetstype"
 
-#: src/InputController.py:91
+#: src/InputController.py:88
 msgid "Unallocated Physical Volume"
 msgstr "Ikke tildelt fysisk delarkiv"
 
-#: src/InputController.py:92
+#: src/InputController.py:89
 msgid "Uninitialized Disk Entity"
 msgstr "Ikke klargjort diskentitet"
 
-#: src/InputController.py:93
+#: src/InputController.py:90
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Vælg diskentiteter at tilføje i delarkivgruppen %s:"
 
-#: src/InputController.py:95
+#: src/InputController.py:92
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -87,7 +87,7 @@ msgstr ""
 "En delarkivgruppe skal bestå af to eller flere fysiske delarkiver for at "
 "understøtte strimling (striping). Denne delarkivgruppe opfylder ikke kravet."
 
-#: src/InputController.py:97
+#: src/InputController.py:94
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
@@ -96,37 +96,37 @@ msgstr ""
 "Der findes allerede et logisk delarkiv som hedder %s i denne delarkivgruppe. "
 "Vælg et unikt navn."
 
-#: src/InputController.py:99
+#: src/InputController.py:96
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr ""
 "Der findes allerede en delarkivgruppe som hedder %s. Vælg et unikt navn."
 
-#: src/InputController.py:101
+#: src/InputController.py:98
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "Et navn skal angives for det nye logiske delarkiv"
 
-#: src/InputController.py:103
+#: src/InputController.py:100
 msgid "A Name must be provided for the new Volume Group"
 msgstr "Et navn skal angives for den nye delarkivgruppe"
 
-#: src/InputController.py:105
+#: src/InputController.py:102
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Det angivne monteringspunkt %s, findes ikke. Vil du oprette det?"
 
-#: src/InputController.py:107
+#: src/InputController.py:104
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "Oprettelsen af monteringspunktet %s mislykkedes uventet."
 
-#: src/InputController.py:109
+#: src/InputController.py:106
 msgid "This capability is not yet implemented in this version"
 msgstr "Denne facilitet er endnu ikke implementeret i denne version"
 
-#: src/InputController.py:111
+#: src/InputController.py:108
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
@@ -134,7 +134,7 @@ msgstr ""
 "Antallet af fysiske delafsnit i denne delafsnitsgruppe har nået sin "
 "minimumsgrænse."
 
-#: src/InputController.py:113
+#: src/InputController.py:110
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
@@ -142,7 +142,7 @@ msgstr ""
 "Antallet af fysiske delafsnit i denne delafsnitsgruppe har nået sin "
 "maksimumsgrænse."
 
-#: src/InputController.py:115
+#: src/InputController.py:112
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
@@ -151,7 +151,7 @@ msgstr ""
 "Højst %s fysiske delafsnit kan tilføjes i denne delafsnitsgruppe før "
 "maksimumsgrænsen er nået."
 
-#: src/InputController.py:117
+#: src/InputController.py:114
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
@@ -162,15 +162,15 @@ msgstr ""
 "mulig løsning kunne være at tilføje endnu et fysisk delarkiv til delarkiv-"
 "gruppen."
 
-#: src/InputController.py:119
+#: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
 msgstr "Et øjebliksbillede af et øjebliksbillede understøttes ikke."
 
-#: src/InputController.py:120
+#: src/InputController.py:117
 msgid "A snapshot of a mirrored Logical Volume is not supported."
 msgstr "Et øjebliksbillede af en spejlet, logisk volym understøttes ikke."
 
-#: src/InputController.py:122
+#: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -179,7 +179,7 @@ msgstr ""
 "Logiske volymen %s har i øjeblikket øjebliksbilledet %s tilknyttet den. "
 "Fjern øjebliksbilledet først."
 
-#: src/InputController.py:123
+#: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -188,13 +188,13 @@ msgstr ""
 "Logiske volymen %s har i øjeblikket øjebliksbillederne: %s tilknyttet den. "
 "Fjern øjebliksbillederne først."
 
-#: src/InputController.py:125
+#: src/InputController.py:122
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Udefineret typekonverteringsfejl i modelfabrik. Kan ikke fuldføre opgave."
 
-#: src/InputController.py:127
+#: src/InputController.py:124
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -205,7 +205,7 @@ msgstr ""
 "øjeblikket monteret på %s. Er du absolut sikker på at du ønsker at smide "
 "dataene på dette monterede filsystem væk?"
 
-#: src/InputController.py:129
+#: src/InputController.py:126
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -217,62 +217,62 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:135
+#: src/InputController.py:132
 #, python-format
 msgid "Unused space on %s"
 msgstr "Ledig plads på %s"
 
-#: src/InputController.py:136
+#: src/InputController.py:133
 #, python-format
 msgid "%s megabytes"
 msgstr "%s megabyte"
 
-#: src/InputController.py:137
+#: src/InputController.py:134
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s kilobyte"
 
-#: src/InputController.py:138
+#: src/InputController.py:135
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s gigabyte"
 
-#: src/InputController.py:139
+#: src/InputController.py:136
 #, python-format
 msgid "%s extents"
 msgstr "%s områder"
 
-#: src/InputController.py:141
+#: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
 msgstr "Resterende ledig plads i volymgruppen:\n"
 
-#: src/InputController.py:142
+#: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
 msgstr "Resterende plads for denne volym:\n"
 
-#: src/InputController.py:144
+#: src/InputController.py:141
 msgid "Extents"
 msgstr "Områder"
 
-#: src/InputController.py:145
+#: src/InputController.py:142
 msgid "Gigabytes"
 msgstr "Gigabyte"
 
-#: src/InputController.py:146
+#: src/InputController.py:143
 msgid "Megabytes"
 msgstr "Megabyte"
 
-#: src/InputController.py:147
+#: src/InputController.py:144
 msgid "Kilobytes"
 msgstr "Kilobyte"
 
 # Ser meget trasigt ud... borde buggrapporteres!
-#: src/InputController.py:149
+#: src/InputController.py:146
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s bør kun indholde talværdier"
 
-#: src/InputController.py:150
+#: src/InputController.py:147
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -280,7 +280,7 @@ msgstr ""
 "Feltet maksimum antal fysiske delarkiver bør kun indholde heltalsværdier "
 "mellem 1 og 256"
 
-#: src/InputController.py:151
+#: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -288,7 +288,7 @@ msgstr ""
 "Feltet maksimum antal logiske delarkiver bør kun indholde heltalsværdier "
 "mellem 1 og 256"
 
-#: src/InputController.py:153
+#: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
@@ -297,7 +297,7 @@ msgstr ""
 "Er du helt sikker på at du vil fjerne %s fra håndteringen af logiske "
 "delarkiver?"
 
-#: src/InputController.py:155
+#: src/InputController.py:152
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -314,13 +314,13 @@ msgstr ""
 "fysisk delafsnit før fjernelse af det nuværende, eller ellers fjerne de "
 "logiske delafsnit som er tilknyttet dette fysiske delafsnit."
 
-#: src/InputController.py:156
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Er du helt sikker på at du vil fjerne %s fra delarkivgruppen %s?"
 
-#: src/InputController.py:157
+#: src/InputController.py:154
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -330,7 +330,7 @@ msgstr ""
 "delafsnitsgruppen tom, og den vi så også blive fjernet. Ønsker du at "
 "fortsætte?"
 
-#: src/InputController.py:158
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -341,7 +341,7 @@ msgstr ""
 "som er lagrede på %s. En mulig løsning kunne være at tilføje endnu et fysisk "
 "delarkiv til delarkiv-gruppen."
 
-#: src/InputController.py:159
+#: src/InputController.py:156
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -353,7 +353,7 @@ msgstr ""
 "\"modprobe dm-mirror\". Ellers vil handlinger, der kræver flytning af data "
 "på fysiske udvidelser, være utilgængelige."
 
-#: src/InputController.py:160
+#: src/InputController.py:157
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -364,12 +364,12 @@ msgstr ""
 "køre \"modprobe dm-snapshot\". Ellers vil producering af snapshot være "
 "utilgængelige."
 
-#: src/InputController.py:162
+#: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Er du helt sikker på at du vil fjerne logisk delarkiv %s?"
 
-#: src/InputController.py:163
+#: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -378,7 +378,7 @@ msgstr ""
 "Delafsnitsgruppe %s har et %s-filsystem. Alle data på den vil gå tabt! Er du "
 "helt sikker på at du ønsker at fjerne delafsnit %s?"
 
-#: src/InputController.py:164
+#: src/InputController.py:161
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -387,7 +387,7 @@ msgstr ""
 "Den logiske volymen %s indeholder data fra kataloget %s. Alle data i den vil "
 "gå tabt! Er du helt sikker på at du vil fjerne den logiske volymen %s?"
 
-#: src/InputController.py:309
+#: src/InputController.py:306
 #, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
@@ -397,7 +397,7 @@ msgstr ""
 "For at volymgruppen skal kunne bruges sikkert i et klyngemiljø, skal lvm2-"
 "cluster rpm være installeret og clvmd-tjenesten være startet"
 
-#: src/InputController.py:368
+#: src/InputController.py:365
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -408,7 +408,7 @@ msgstr ""
 "logiske volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så %s "
 "kan ikke fjernes."
 
-#: src/InputController.py:371
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -419,7 +419,7 @@ msgstr ""
 "den logiske volymen %s. Spejlede logiske volymer kan endnu ikke migreres, så "
 "%s kan ikke fjernes."
 
-#: src/InputController.py:374
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -429,7 +429,7 @@ msgstr ""
 "øjebliksbillede af %s. Øjebliksbilleder kan endnu ikke migreres, så %s kan "
 "ikke fjernes."
 
-#: src/InputController.py:379
+#: src/InputController.py:376
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -439,7 +439,7 @@ msgstr ""
 "øjebliksbilledet %s. Oprindelser for øjebliksbilleder kan endnu ikke "
 "migreres, så %s kan ikke fjernes."
 
-#: src/InputController.py:381
+#: src/InputController.py:378
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -449,7 +449,7 @@ msgstr ""
 "øjebliksbillederne %s. Oprindelser for øjebliksbilleder kan endnu ikke "
 "migreres, så %s kan ikke fjernes."
 
-#: src/InputController.py:568
+#: src/InputController.py:565
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -458,7 +458,7 @@ msgstr ""
 "Den logiske volymen \"%s\" har øjebliksbilleder som ikke er markeret til "
 "fjernelse. De skal også fjernes."
 
-#: src/InputController.py:583
+#: src/InputController.py:580
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
@@ -466,7 +466,7 @@ msgstr ""
 "\"%s\", en oprindelse for øjebliksbilledet \"%s\", er fjernet fra "
 "slettelisten."
 
-#: src/InputController.py:614
+#: src/InputController.py:611
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -475,7 +475,7 @@ msgstr ""
 "Den fysiske volymen \"%s\" indeholder områder som tilhører et spejl. Spejl "
 "kan endnu ikke migreres, så %s kan ikke fjernes."
 
-#: src/InputController.py:617
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -485,24 +485,24 @@ msgstr ""
 "øjebliksbillede eller oprindelsen for et øjebliksbillede. Øjebliksbilleder "
 "kan endnu ikke migreres, så %s kan ikke fjernes."
 
-#: src/InputController.py:682
+#: src/InputController.py:679
 msgid "The path you specified does not exist."
 msgstr "Søgestien du angav findes ikke."
 
-#: src/InputController.py:689
+#: src/InputController.py:686
 msgid "The path you specified is not a Block Device."
 msgstr "Søgestien du angav er ingen blokenhed."
 
-#: src/InputController.py:760
+#: src/InputController.py:757
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "Initiering af %s mislykkedes"
 
-#: src/InputController.py:998 src/InputController.py:1001
+#: src/InputController.py:994 src/InputController.py:997
 msgid "Please select some extents first"
 msgstr "Vælg nogen områder først"
 
-#: src/InputController.py:1035
+#: src/InputController.py:1031
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -510,55 +510,48 @@ msgstr ""
 "Der findes ikke tilstrækkeligt med ledige områder for at udføre den "
 "nødvendige migrering. At tilføje flere fysiske volymer skulle løse problemet."
 
-#: src/InputController.py:1091
-#, python-format
-msgid ""
-"iSCSI Initiator rpm is not installed. \n"
-"Install %s rpm, and try again."
-msgstr ""
-
-#: src/InputController.py:1208
+#: src/InputController.py:1193
 msgid "Migrate extents"
 msgstr "Migrér områder"
 
-#: src/InputController.py:1336
+#: src/InputController.py:1321
 msgid "Options"
 msgstr "Alternativer"
 
-#: src/InputController.py:1370
+#: src/InputController.py:1355
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Opret et øjebliksbillede af %s"
 
-#: src/InputController.py:1372
+#: src/InputController.py:1357
 msgid "Create New Logical Volume"
 msgstr "Opret et nyt logisk delarkiv"
 
-#: src/InputController.py:1375
+#: src/InputController.py:1360
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Redigér %s, et øjebliksbillede af %s"
 
-#: src/InputController.py:1378
+#: src/InputController.py:1363
 msgid "Edit Logical Volume"
 msgstr "Redigér logisk delarkiv"
 
-#: src/InputController.py:1531
+#: src/InputController.py:1516
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Underliggende håndtering af logiske volymer understøtter ikke spejling"
 
-#: src/InputController.py:1538
+#: src/InputController.py:1523
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Strimlede logiske volymer kan ikke spejles."
 
-#: src/InputController.py:1545
+#: src/InputController.py:1530
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "Logiske volymer med associerede øjebliksbilleder kan ikke spejles endnu."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1552
+#: src/InputController.py:1537
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -566,13 +559,13 @@ msgstr ""
 "Det væsentligste formål med spejling er at beskytte data hvis en disk går i "
 "stykker. Vil du placere spejlafbildningerne på forskellige diske?"
 
-#: src/InputController.py:1561
+#: src/InputController.py:1546
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Mindre end 3 diske med fri plads er tilgængelige. Deaktiverer spejling."
 
-#: src/InputController.py:1566
+#: src/InputController.py:1551
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -580,7 +573,7 @@ msgstr ""
 "Det skal være fri plads på mindst tre fysiske volymer for at aktivere "
 "spejling."
 
-#: src/InputController.py:1574
+#: src/InputController.py:1559
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -588,7 +581,7 @@ msgstr ""
 "Størrelsen på den logiske volymen er ændret til den største tilgængelige "
 "størrelse for spejle."
 
-#: src/InputController.py:1579
+#: src/InputController.py:1564
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -597,42 +590,42 @@ msgstr ""
 "Der er ikke nok fri plads til at tilføje spejling. Formindsk størrelsen på "
 "den logiske volymen til højst %s, eller tilføj fysiske volymer."
 
-#: src/InputController.py:1943
+#: src/InputController.py:1928
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Navne som begynder med \"snapshot\" eller \"pvmove\" er reserverede nøgleord."
 
-#: src/InputController.py:1945
+#: src/InputController.py:1930
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr ""
 "Navne som indeholder \"_mlog\" eller \"_mimage\" er reserverede nøgleord."
 
-#: src/InputController.py:1947
+#: src/InputController.py:1932
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Navne som begynder med et \"-\" er ugyldige"
 
-#: src/InputController.py:1949
+#: src/InputController.py:1934
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Navnet kan hverken være \".\" eller \"..\""
 
-#: src/InputController.py:1955
+#: src/InputController.py:1940
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Mellemrum tillades ikke i navne på logiske volymer"
 
-#: src/InputController.py:1958
+#: src/InputController.py:1943
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Ugyldigt tegn \"%s\" i navn på logisk volym"
 
-#: src/InputController.py:1978
+#: src/InputController.py:1963
 msgid "Please specify mount point"
 msgstr "Angiv monteringspunkt"
 
-#: src/InputController.py:2044
+#: src/InputController.py:2029
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr "Vil du opgradere ext2 til ext3 og bevare data på den logiske volymen?"
 
-#: src/InputController.py:2078
+#: src/InputController.py:2063
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -641,12 +634,12 @@ msgstr ""
 "sikker at du vil fortsætte?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2179
+#: src/InputController.py:2164
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Spejlet oprettedes ikke. Færdiggører resterende opgaver."
 
 #. create mirror
-#: src/InputController.py:2182
+#: src/InputController.py:2167
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
@@ -654,11 +647,11 @@ msgstr ""
 "Underliggende LVM understøtter ikke at spejl af eksisterende logiske volymer "
 "tilføjes. Færdiggører resterende opgaver."
 
-#: src/InputController.py:2231
+#: src/InputController.py:2216
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "For at kunne tilføje spejling skal en del områder migreres."
 
-#: src/InputController.py:2231
+#: src/InputController.py:2216
 msgid "Do you want to migrate specified extents?"
 msgstr "Vil du migrere de angivne områder?"
 
@@ -884,71 +877,58 @@ msgstr "Fremmet startpartition"
 msgid "Autopartition failure"
 msgstr "Autopartitioneringsfejl"
 
-#: src/lvm_model.py:259
+#: src/lvm_model.py:254
 msgid "Partition manually"
 msgstr "Lav partitionering manuelt"
 
-#: src/lvm_model.py:295
+#: src/lvm_model.py:290
 msgid "Multipath device"
 msgstr "Multisøgestisenhed"
 
-#: src/lvm_model.py:298
+#: src/lvm_model.py:293
 msgid "Note:"
 msgstr "Bemærk:"
 
-#: src/lvm_model.py:298
+#: src/lvm_model.py:293
 msgid "Initialize manually"
 msgstr "Klargør manuelt"
 
-#: src/lvm_model.py:741
+#: src/lvm_model.py:736
 msgid "Clustered:   "
 msgstr "Klynget:     "
 
-#: src/lvm_model.py:743 src/lvm_model.py:971
+#: src/lvm_model.py:738
 msgid "True"
 msgstr "Sand"
 
-#: src/lvm_model.py:745
+#: src/lvm_model.py:740
 msgid "False"
 msgstr "Falsk"
 
-#: src/lvm_model.py:803
+#: src/lvm_model.py:798
 msgid "Number of mirror images:"
 msgstr "Antal spejl-billeder:"
 
-#: src/lvm_model.py:806
+#: src/lvm_model.py:801
 msgid "Snapshots:"
 msgstr "Øjebliksbilleder:"
 
-#: src/lvm_model.py:812
+#: src/lvm_model.py:807
 msgid "Snapshot origin:"
 msgstr "Oprindelse for øjebliksbillede:"
 
-#: src/lvm_model.py:819
+#: src/lvm_model.py:814
 msgid "Snapshot usage:"
 msgstr "Brug af øjebliksbillede:"
 
-#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
-#: src/lvm_model.py:907
+#: src/lvm_model.py:837 src/lvm_model.py:843 src/lvm_model.py:886
+#: src/lvm_model.py:902
 msgid "/   Root Filesystem"
 msgstr "/   Rod-filsystem"
 
-#: src/lvm_model.py:910 src/Filesystem.py:137
+#: src/lvm_model.py:905 src/Filesystem.py:137
 msgid "None"
 msgstr "Intet"
-
-#: src/lvm_model.py:961
-#, fuzzy
-msgid "SCSI ID:   "
-msgstr "System-id:   "
-
-#: src/lvm_model.py:965
-msgid "NONE"
-msgstr ""
-
-#: src/lvm_model.py:970
-msgid "iSCSI Device:   "
-msgstr ""
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1341,7 +1321,7 @@ msgstr "Spejl"
 msgid "Partition %s"
 msgstr "Partition %s"
 
-#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1 src/iscsi.glade.h:1
+#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
 msgstr "*"
 
@@ -1565,14 +1545,10 @@ msgstr "_Genindlæs"
 msgid "_Tools"
 msgstr "_Værktøjer"
 
-#: src/lvui.glade.h:57
-msgid "_iSCSI Configuration"
-msgstr ""
-
 # FIXME: Borde buggrapporteres.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
-#: src/lvui.glade.h:58
+#: src/lvui.glade.h:57
 msgid "extend vg message:"
 msgstr "udvid vg-meddelelse:"
 
@@ -1769,50 +1745,6 @@ msgstr "Migrér kun områder der tilhører LV"
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Brug sund fornuft"
-
-#: src/iscsi.glade.h:2
-#, fuzzy
-msgid "3260"
-msgstr "32"
-
-#: src/iscsi.glade.h:3
-msgid "Active iSCSI targets are selected "
-msgstr ""
-
-#: src/iscsi.glade.h:4
-msgid "Add New Target"
-msgstr ""
-
-#: src/iscsi.glade.h:5
-msgid "Default port is 3260"
-msgstr ""
-
-#: src/iscsi.glade.h:6
-msgid "Enter a hostname (or an IP address) of new target to add"
-msgstr ""
-
-#: src/iscsi.glade.h:7
-msgid "Hostname"
-msgstr ""
-
-#: src/iscsi.glade.h:8
-msgid "New iSCSI Target"
-msgstr ""
-
-#: src/iscsi.glade.h:9
-#, fuzzy
-msgid "Port"
-msgstr "Format"
-
-#: src/iscsi.glade.h:10
-msgid ""
-"Specify a hostname of new target \n"
-"to add, and click \"OK\". "
-msgstr ""
-
-#: src/iscsi.glade.h:12
-msgid "iSCSI Initiator"
-msgstr ""
 
 #~ msgid ""
 #~ "LVM locks are disabled!!! \n"

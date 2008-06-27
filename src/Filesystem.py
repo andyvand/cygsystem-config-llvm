@@ -25,7 +25,7 @@ FSCREATE_FAILURE=_("Creation of filesystem failed. Command attempted: \"%s\" - S
 FSRESIZE_FAILURE=_("Resize of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 FSCHECK_FAILURE=_("Check of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
 FSUPGRADE_FAILURE=_("Upgrade of filesystem failed. Command attempted: \"%s\" - System Error Message: %s")
-gfs_types = {"1309":"gfs","1801":"gfs2"}
+
 
 
 def get_fs(path):
@@ -46,8 +46,8 @@ def get_fs(path):
         return Unknown('xfs')
     elif re.search('jfs', result, re.I):
         return Unknown('jfs')
-    elif re.search('reiserfs', result, re.I):
-        return Unknown('reiserfs')
+    elif re.search('raiserfs', result, re.I):
+        return Unknown('raiserfs')
     elif re.search('swap', result, re.I):
         return Unknown('swap')
     else:
@@ -392,11 +392,8 @@ class gfs(Filesystem):
     def probe(self, path):
         l_type = self.__get_gfs_lock_type(path)
         if l_type == 'nolock':
-            gfs_type = self.__get_gfs_fstype(path)
-            if gfs_type == 'gfs':
-                return True
+            return True
         return False
-
     
     def create(self, path):
         MKFS_GFS_BIN='/sbin/gfs_mkfs'
@@ -439,22 +436,8 @@ class gfs(Filesystem):
                     return 'dlm'
                 elif 'lock_gulm' in o:
                     return 'gulm'
-                elif 'nolock' in o:
+                elif 'lock_nolock' in o:
                     return 'nolock'
-        return None
-
-    def __get_gfs_fstype(self, path):
-        if self.check_path('/sbin/gfs_tool'):
-            args = ['/sbin/gfs_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('ondisk')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
-            if r == 0:
-                for k,v in gfs_types.iteritems():
-                    if k in o: 
-                        return v
         return None
     
 
@@ -512,11 +495,9 @@ class gfs_clustered(Filesystem):
                 c_running = self.__is_cluster_running(c_name)
                 gfs_clustername = self.__get_gfs_table_name(path)[0]
                 self.mountable = (gfs_clustername == c_name) and c_running and (gfs_lock == c_lock)
-            gfs_type = self.__get_gfs_fstype(path)
-            if gfs_type == "gfs":
-                return True
+            return True
         return False
- 
+    
     def create(self, path):
         if not self.creatable:
             raise "not creatable"
@@ -601,7 +582,7 @@ class gfs_clustered(Filesystem):
                     return 'dlm'
                 elif 'lock_gulm' in o:
                     return 'gulm'
-                elif 'nolock' in o:
+                elif 'lock_nolock' in o:
                     return 'nolock'
         return None
     def __get_gfs_table_name(self, path):
@@ -638,20 +619,6 @@ class gfs_clustered(Filesystem):
         dlg.destroy()
         return rc
 
-    def __get_gfs_fstype(self, path):
-        if self.check_path('/sbin/gfs_tool'):
-            args = ['/sbin/gfs_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('ondisk')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
-            if r == 0:
-                for k,v in gfs_types.iteritems():
-                    if k in o:
-                        return v
-        return None
-
     
 
 
@@ -669,9 +636,7 @@ class gfs2(Filesystem):
     def probe(self, path):
         l_type = self.__get_gfs_lock_type(path)
         if l_type == 'nolock':
-            gfs_type = self.__get_gfs_fstype(path)
-            if gfs_type == "gfs2":
-                return True
+            return True
         return False
     
     def create(self, path):
@@ -715,24 +680,10 @@ class gfs2(Filesystem):
                     return 'dlm'
                 elif 'lock_gulm' in o:
                     return 'gulm'
-                elif 'nolock' in o:
+                elif 'lock_nolock' in o:
                     return 'nolock'
         return None
     
-    def __get_gfs_fstype(self, path):
-        if self.check_path('/sbin/gfs_tool'):
-            args = ['/sbin/gfs_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('ondisk')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
-            if r == 0:
-                for k,v in gfs_types.iteritems():
-                    if k in o: 
-                        return v
-        return None
-
 
 
 class gfs2_clustered(Filesystem):
@@ -788,9 +739,7 @@ class gfs2_clustered(Filesystem):
                 c_running = self.__is_cluster_running(c_name)
                 gfs_clustername = self.__get_gfs_table_name(path)[0]
                 self.mountable = (gfs_clustername == c_name) and c_running and (gfs_lock == c_lock)
-            gfs_type = self.__get_gfs_fstype(path)
-            if gfs_type == "gfs2":
-                return True
+            return True
         return False
     
     def create(self, path):
@@ -877,7 +826,7 @@ class gfs2_clustered(Filesystem):
                     return 'dlm'
                 elif 'lock_gulm' in o:
                     return 'gulm'
-                elif 'nolock' in o:
+                elif 'lock_nolock' in o:
                     return 'nolock'
         return None
     def __get_gfs_table_name(self, path):
@@ -914,17 +863,4 @@ class gfs2_clustered(Filesystem):
         dlg.destroy()
         return rc
 
-    def __get_gfs_fstype(self, path):
-        if self.check_path('/sbin/gfs_tool'):
-            args = ['/sbin/gfs_tool']
-            args.append('sb')
-            args.append(path)
-            args.append('ondisk')
-            cmdstr = ' '.join(args)
-            o,e,r = execWithCaptureErrorStatus('/sbin/gfs_tool', args)
-            if r == 0:
-                for k,v in gfs_types.iteritems():
-                    if k in o:
-                        return v
-        return None
-
+    
