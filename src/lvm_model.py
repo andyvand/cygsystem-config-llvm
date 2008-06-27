@@ -1,26 +1,16 @@
-
 import os
 import sys
 import string
-import re
+from gtk import TRUE, FALSE
 from lvmui_constants import *
-from BlockDeviceModel import *
-from execute import execWithCapture, execWithCaptureErrorStatus, execWithCaptureStatus, ProgressPopup
+from Volume import Volume
+from PhysicalVolume import PhysicalVolume
+from LogicalVolume import LogicalVolume
+from VolumeGroup import VolumeGroup
+from ExtentSegment import ExtentSegment
+import rhpl.executil
 import gettext
 _ = gettext.gettext
-
-from PhysicalVolume import *
-from LogicalVolume import *
-from VolumeGroup import *
-from Segment import *
-from ExtentBlock import *
-from Multipath import Multipath
-
-import Filesystem
-import Fstab
-
-from utilities import follow_links_to_target
-
 
 #Column names for PVS calls
 P_NAME_COL=0
@@ -45,12 +35,16 @@ LV_VGNAME_COL=1
 UNUSED=_("Unused") 
 UNUSED_SPACE=_("Unused Space")
 
+#Translator - Linear mapping is another way of saying 'Not Striped' :-)
+LINEAR_MAPPING=_("Linear Mapping")
 UNMOUNTED=_("Unmounted")
+NO_FILESYSTEM=_("No File System")
 SEG_START_COL = 2
 SEG_END_COL = 4
 GIG=1000000000.00
 VGS_OPTION_STRING="vg_name,vg_sysid,vg_fmt,vg_attr,vg_size,vg_free,vg_extent_count,vg_free_count,vg_extent_size,max_pv,pv_count,max_lv,lv_count,vg_uuid"
 
+LVS_OPTION_STRING="lv_name,vg_name,lv_size,seg_count,stripes,stripesize,lv_attr,lv_uuid"
 
 PVS_OPTION_STRING="pv_name,vg_name,pv_size,pv_used,pv_free,pv_pe_count,pv_pe_alloc_count,pv_attr,pv_uuid"
 
@@ -81,7 +75,6 @@ LV_UUID=_("LV UUID:   ")
 UV_PARTITION_TYPE=_("Partition Type:   ")
 UV_SIZE=_("Size:   ")
 UV_MOUNT_POINT=_("Mount Point:   ")
-UV_MOUNTPOINT_AT_REBOOT=_("Mount Point when Rebooted:   ")
 UV_FILESYSTEM=_("File System:   ")
 
 PV_NAME=_("Physical Volume Name:   ")
@@ -92,12 +85,6 @@ PV_PE_COUNT=_("Total Physical Extents:   ")
 PV_PE_ALLOC_COUNT=_("Allocated Physical Extents:   ")
 PV_ATTR=_("Attributes:   ")
 PV_UUID=_("PV UUID:   ")
-
-NOT_INITIALIZABLE=_("Not initializable:   ")
-EXTENDED_PARTITION=_("Extended partition")
-SWAP_IN_USE=_("Swap in use")
-FOREIGN_BOOT_PARTITION=_("Foreign boot partition")
-AUTOPARTITION_FAILURE=_("Autopartition failure")
 
 VG_NAME_IDX = 0
 VG_SYSID_IDX = 1
@@ -114,6 +101,15 @@ MAX_LV_IDX = 11
 LV_COUNT_IDX = 12
 VG_UUID_IDX = 13
 
+LV_NAME_IDX = 0
+LV_VG_NAME_IDX = 1
+LV_SIZE_IDX = 2
+LV_SEG_COUNT_IDX = 3
+LV_STRIPE_COUNT_IDX = 4
+LV_STRIPE_SIZE_IDX = 5
+LV_ATTR_IDX = 6
+LV_UUID_IDX = 7
+
 PV_NAME_IDX = 0
 PV_VG_NAME_IDX = 1
 PV_SIZE_IDX = 2
@@ -125,189 +121,108 @@ PV_ATTR_IDX = 7
 PV_UUID_IDX = 8
 
 
-
-LVS_HAS_ALL_OPTION = False
-out, status = execWithCaptureStatus(LVM_BIN_PATH, [LVM_BIN_PATH, 'lvs', '--all'])
-if status == 0:
-  LVS_HAS_ALL_OPTION = True
-
-LVS_HAS_MIRROR_OPTIONS = False
-LVS_HAS_MIRROR_OPTIONS = LVS_HAS_ALL_OPTION
-
-
 class lvm_model:
-  
   def __init__(self):
-    self.__block_device_model = BlockDeviceModel()
-    self.__VGs = {}
-    self.__PVs = []
-  
-  def reload(self):
-    progress = ProgressPopup(RELOAD_LVM_MESSAGE)
-    progress.start()
-    
-    # first query VolumeGroups
-    self.__VGs = {}
-    for vg in self.__query_VGs():
-      self.__VGs[vg.get_name()] = vg
-    
-    # then query PVs
-    self.__PVs = self.__query_partitions()
-    
-    # then query LVs
-    self.__query_LVs()
-    
-    # then link all together
-    self.__link_snapshots()
-    self.__link_mirrors()
-    
-    # setup properties
-    self.__set_VGs_props()
-    self.__set_LVs_props() # has to come after link_mirrors
-    self.__set_PVs_props()
-    
-    self.__add_unused_space()
-    
-    # debugging
-    #for vg in self.__VGs.values():
-    #  vg.print_out()
-    #print '\n\nAll PVs'
-    #for pv in self.__PVs:
-    #  pv.print_out('')
-    #sys.exit(0)
-    
-    progress.stop()
-  
-  def __query_partitions(self):
-    parts = {} # PVs on a partition
-    segs = []  # PVs on free space
-    # get partitions from hard drives
-    self.__block_device_model.reload()
-    devs = self.__block_device_model.getDevices()
-    # multipathing
-    multipath_obj = Multipath()
-    multipath_data = multipath_obj.get_multipath_data()
-    for multipath in multipath_data:
-      segments = []
-      for path in multipath_data[multipath]:
-        if path in devs:
-          segments = devs[path]
-          devs.pop(path)
-      devs[multipath] = segments
-    for devname in devs:
-      self.__query_partitions2(devname, devs[devname], parts, segs)
-    for pv in parts.values()[:]:
-      devname = pv.getPartition()[0]
-      if devname in multipath_data:
-        parts.pop(pv.get_path())
-        pv.removeDevname(devname)
-        pv.setMultipath(devname)
-        for path in multipath_data[devname]:
-          pv.addDevname(path)
-      for path in pv.get_paths():
-        parts[path] = pv
-    for pv in segs:
-      devname = pv.getPartition()[0]
-      if devname in multipath_data:
-        pv.removeDevname(devname)
-        pv.setMultipath(devname)
-        for path in multipath_data[devname]:
-          pv.addDevname(path)
-    # disable swap partitions if in use
-    result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/swaps'])
-    lines = result.splitlines()
-    for line in lines:
-      swap = line.split()[0]
-      for multipath in multipath_data:
-        if swap in multipath_data[multipath]:
-          swap = multipath
-      if swap in parts:
-        parts[swap].initializable = False
-        parts[swap].add_property(NOT_INITIALIZABLE, SWAP_IN_USE)
-      for seg in segs:
-        # swap could be a whole drive
-        if swap == seg.get_path():
-          seg.name = seg.extract_name(seg.get_path())
-          seg.initializable = False
-          seg.add_property(NOT_INITIALIZABLE, SWAP_IN_USE)
-    # disable bootable partitions only if EXTended FS NOT on it (bootable flag is used by windows only)
-    for path in parts:
-      partition = parts[path].getPartition()[1]
-      if partition.bootable:
-        fs = self.__getFS(path)
-        if re.match('.*ext[23].*', fs, re.I):
-          # EXTended FS on it
-          pass
-        else:
-          # some other filesystem on it
-          parts[path].initializable = False
-          parts[path].add_property(NOT_INITIALIZABLE, FOREIGN_BOOT_PARTITION)
-    # disable unformated space, unless whole drive
-    for seg in segs:
-      if not seg.wholeDevice():
-        # fdisk_wrapper not tested enough, so use it only on unpartitioned drives
-        seg.initializable = False
-        seg.add_property(NOT_INITIALIZABLE, _("Partition manually"))
-    # merge parts with PVs
-    for pv in self.__query_PVs():
-      # assign unpartitioned drives, to PVs, if already used by LVM
-      for seg in segs[:]:
-        if pv.get_path() in seg.get_paths() or pv.get_path() == seg.getMultipath():
-          pv.setPartition(seg.getPartition())
-          pv.setMultipath(seg.getMultipath())
-          for devname in seg.getDevnames():
-            pv.addDevname(devname)
-          pv.set_name(pv.extract_name(pv.get_path())) # overwrite Free Space label
-          segs.remove(seg)
-      # merge
-      path = pv.get_path()
-      if path in parts:
-        old_pv = parts[path]
-        pv.setPartition(old_pv.getPartition())
-        pv.setMultipath(old_pv.getMultipath())
-        for devname in old_pv.getDevnames():
-          pv.addDevname(devname)
-      else:
-        # pv is not a partition, eg. loop device, or LV
-        pass
-      for path in pv.get_paths():
-        parts[path] = pv
-    # create return list
-    pvs_list = list()
-    for part in parts.values():
-      if part not in pvs_list:
-        pvs_list.append(part)
-    for seg in segs:
-      pvs_list.append(seg)
-    # disable initialization of multipathed devices (for now)
-    for pv in pvs_list:
-      if len(pv.get_paths()) > 1:
-        if pv.get_type() == UNINITIALIZED_TYPE:
-          pv.add_property(NOT_INITIALIZABLE, _("Multipath device"))
-          if pv.initializable:
-            pv.initializable = False
-            pv.add_property(_("Note:   "), _("Initialize manually"))
-    # all done
-    return pvs_list
-  def __query_partitions2(self, devname, segs, part_dictionary, seg_list):
-    for seg in segs:
-      if seg.id in ID_EXTENDS:
-        self.__query_partitions2(devname, seg.children, part_dictionary, seg_list)
-      # create pv
-      pv = PhysicalVolume('/nothing', '', '', 0, 0, False, 0, 0)
-      pv.setPartition((devname, seg))
-      if seg.id == ID_EMPTY:
-        seg_list.append(pv)
-      else:
-        if seg.id in ID_EXTENDS:
-          # initialization of extended partition wipes all logical partitions !!!
-          pv.initializable = False
-          pv.add_property(NOT_INITIALIZABLE, EXTENDED_PARTITION)
-        part_dictionary[pv.get_path()] = pv
-  def __query_PVs(self):
-    pvlist = list()
+    pass
+
+  def query_PEs(self):
+    pelist = list()
+    uncertainlist = list()
     arglist = list()
-    arglist.append(LVM_BIN_PATH)
+    arglist.append("/usr/sbin/lvm")
+    arglist.append("pvs")
+    arglist.append("-a")
+    arglist.append("--nosuffix")
+    arglist.append("--noheadings")
+    arglist.append("--units")
+    arglist.append("g")
+    arglist.append("--separator")
+    arglist.append(",")
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    lines = result_string.splitlines()
+    for line in lines:
+      words = line.split(",")
+      if words[2] == "":  #No entry in column 3 means not initialized
+        initialized = FALSE
+      else:
+        initialized = TRUE
+      pv = PhysicalVolume(words[0],words[1], words[2], words[3], words[4], words[5],initialized,0,0)
+      if initialized:
+        pelist.append(pv)
+      else:
+        uncertainlist.append(pv)
+      #try and determine sizes and if vol is swap or extended
+
+    arg_list = list()
+    arg_list.append("/sbin/fdisk")
+    arg_list.append("-l")
+    result  = rhpl.executil.execWithCapture("/sbin/fdisk", arg_list)
+    textlines = result.splitlines()
+
+    #At this point, all of the visible partitions initialized for LVM usage
+    #are listed in pelist. There are, however, usually other
+    #partitions that are either uninitialized or not to be included in a list
+    #that allows initialization for lvm, such as swap partitions.
+    #this code examines the uncertain list and moves appropriate
+    #physical extents to the pelist.
+
+    for item in uncertainlist:
+      p = item.get_path()
+      path = p.strip()
+      for textline in textlines:
+        if textline == "":
+          continue
+        text_words = textline.split()
+        simple_text = text_words[0].strip()
+        if simple_text == path:
+          #fdisk 2.12 with the -l switch produces 7 columns
+          #column 2 is Boot, and signifies a boot partition if there
+          #is an asterisk in this column. If there is not, this column
+          #holds white space, hence the length of non-boot partitions
+          #will always be 6, and boot partitions will be 7
+          cols = len(text_words)
+          if cols == 7:  #A boot partition or swap partition
+            break;
+          if text_words[cols - 2] == "83":
+            sz_str = text_words[cols - 3]
+            val = sz_str.find("+")
+            if val >= 0:  #There is a '+' at end of string...
+              adj_sz_str = sz_str[:val]  #strip plus sign
+            else:
+              adj_sz_str = sz_str
+            #item.set_volume_size(float(adj_sz_str) / GIG)
+            ###FIX need to be smarter about size conversions here
+            ###FIX use lvmdiskscan here
+            item.set_volume_size(float(adj_sz_str) / 1000000.0) 
+            pelist.append(item)
+            break
+
+    ##There needs to be one last check made on those PEs which have 
+    ##passed the test so far. It is possible that a partition set up
+    ##for swap may not have the partition ID for swap. The definitive
+    ##source for swap partitions is /proc/swaps, so we will cat this
+    ##file and remove any devices from pelist that are entered in 
+    ##that file
+    swaparg_list = list()
+    swaparg_list.append("/bin/cat")
+    swaparg_list.append("/proc/swaps")
+    result  = rhpl.executil.execWithCapture("/bin/cat", swaparg_list)
+    textlines = result.splitlines()
+    for pe in pelist:
+      path = pe.get_path().strip()
+      for textline in textlines:
+        swap_words = textline.split()
+        swap_path = swap_words[0].strip()
+        if swap_path == path:
+          pelist.remove(pe) #Found it in the swap list
+
+
+    return pelist
+
+  def get_PV(self,pathname):
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
     arglist.append("pvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -317,396 +232,296 @@ class lvm_model:
     arglist.append(",")
     arglist.append("-o")
     arglist.append("+pv_pe_count,pv_pe_alloc_count")
-    result_string = execWithCapture(LVM_BIN_PATH, arglist)
+    arglist.append(pathname)
+                                                                                
+    line = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    if (line == None) or (len(line) < 1):
+      ###FIXME - Throw exception here, if no result is returned
+      return None
+    words = line.split(",")
+    pv = PhysicalVolume(words[P_NAME_COL],
+                        words[P_VG_NAME_COL],
+                        words[P_FMT_COL],
+                        words[P_ATTR_COL],
+                        words[P_SIZE_COL],
+                        words[P_FREE_COL],
+                        TRUE,
+                        words[P_PE_COUNT_COL],
+                        words[P_PE_ALLOC_COL])
+
+    if pv.get_type() == PHYS_TYPE:
+      #Add extent segments
+      self.get_extents_for_PV(pv)
+    return pv
+
+  def query_PVs(self):
+    pvlist = list()
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
+    arglist.append("pvs")
+    arglist.append("--nosuffix")
+    arglist.append("--noheadings")
+    arglist.append("--units")
+    arglist.append("g")
+    arglist.append("--separator")
+    arglist.append(",")
+    arglist.append("-o")
+    arglist.append("+pv_pe_count,pv_pe_alloc_count")
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
-      line = line.strip()
       words = line.split(",")
-      path = words[P_NAME_COL]
-      pv = PhysicalVolume(path, 
+      pv = PhysicalVolume(words[P_NAME_COL],
+                          words[P_VG_NAME_COL],
                           words[P_FMT_COL], 
                           words[P_ATTR_COL], 
                           words[P_SIZE_COL], 
                           words[P_FREE_COL],
-                          True,
+                          TRUE, 
                           words[P_PE_COUNT_COL], 
                           words[P_PE_ALLOC_COL])
-      pv.set_path(path)
-      vgname = words[P_VG_NAME_COL]
-      if vgname == '':
-        pv.set_vg(None)
-      else:
-        self.__VGs[vgname].add_pv(pv)
+
+      if pv.get_type() == PHYS_TYPE:
+        #Add extent segments
+        self.get_extents_for_PV(pv)
+
       pvlist.append(pv)
     return pvlist
-  
-  def query_uninitialized(self):
-    uninit_list = list()
-    for part in self.__PVs:
-      if part.get_type() == UNINITIALIZED_TYPE:
-        uninit_list.append(part)
-    return uninit_list
-  
-  def query_unallocated(self):
-    unalloc_list = list()
-    for pv in self.__PVs:
-      if pv.get_type() == UNALLOCATED_TYPE:
-        unalloc_list.append(pv)
-    return unalloc_list
-  
-  def query_PVs(self):
-    pv_list = list()
-    for pv in self.__PVs:
-      if pv.get_type() == PHYS_TYPE:
-        pv_list.append(pv)
-    return pv_list
-  
-  
-  def query_PVs_for_VG(self, vgname):
-    vg = self.__VGs[vgname]
-    return vg.get_pvs().values()
-  
+
+  def query_PVs_for_VG(self, vg_name):
+    name = vg_name.strip()
     hotlist = list()
     pv_s = self.query_PVs()
     for pv in pv_s:
-      if pv.get_vg() == vg:
+      if pv.get_vg_name() == name:
         hotlist.append(pv)
+
     return hotlist
-  
-  def __query_VGs(self):
+
+  def query_VGs(self):
     vglist = list()
     arglist = list()
-    arglist.append(LVM_BIN_PATH)
+    arglist.append("/usr/sbin/lvm")
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
     arglist.append("--units")
-    arglist.append("b")
+    arglist.append("g")
     arglist.append("--separator")
     arglist.append(",")
-    arglist.append("-o")
-    arglist.append("vg_name,vg_attr,vg_size,vg_extent_size,vg_free_count,max_lv,max_pv")
-    
-    result_string = execWithCapture(LVM_BIN_PATH,arglist)
+                                                                                
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
-      line = line.strip()
+      line.strip()
       words = line.split(",")
-      
-      extent_size = int(words[3])
-      extents_total = int(words[2]) / extent_size
-      extents_free = int(words[4])
-      
-      vgname = words[0].strip()
-      
-      max_lvs, max_pvs = int(words[5]), int(words[6])
-      if max_lvs == 0:
-        max_lvs = 256
-      if max_pvs == 0:
-        max_pvs = 256
-      
-      vg = VolumeGroup(vgname, words[1], extent_size, extents_total, extents_free, max_pvs, max_lvs)
+      vg = VolumeGroup(words[0], words[4], words[5])
       vglist.append(vg)
     return vglist
-  
-  
-  def get_VGs(self):
-    return self.__VGs.values()
-  
+
   def get_VG(self, vgname):
-    return self.__VGs[vgname]
-  
-  
+    vg_name = vgname.strip()
+    vglist = self.query_VGs()
+    for vg in vglist:
+      if vg.get_name().strip() == vg_name:
+        return vg
+
+    return None
+                                                                                
   def get_VG_for_PV(self, pv):
-    return pv.get_vg()
-  
-  def __query_LVs(self):
-    if LVS_HAS_MIRROR_OPTIONS:
-      LVS_OPTION_STRING="lv_name,vg_name,stripes,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size,mirror_log"
-    else:
-      LVS_OPTION_STRING="lv_name,vg_name,stripes,stripesize,lv_attr,lv_uuid,devices,origin,snap_percent,seg_start,seg_size,vg_extent_size,lv_size"
-    LV_NAME_IDX         = 0
-    LV_VG_NAME_IDX      = 1
-    LV_STRIPES_NUM_IDX  = 2
-    LV_STRIPE_SIZE_IDX  = 3
-    LV_ATTR_IDX         = 4
-    LV_UUID_IDX         = 5
-    LV_DEVICES_IDX      = 6
-    LV_SNAP_ORIGIN_IDX  = 7
-    LV_SNAP_PERCENT_IDX = 8
-    LV_SEG_START_IDX    = 9
-    LV_SEG_SIZE_IDX     = 10
-    LV_EXTENT_SIZE_IDX  = 11
-    LV_SIZE_IDX         = 12
-    LV_MIRROR_LOG_IDX   = 13
-    
-    self.__reload_logical_volumes_paths()
-    
+    pass
+
+  def get_LV(self,pathname):
     arglist = list()
-    arglist.append(LVM_BIN_PATH)
+    arglist.append("/usr/sbin/lvm")
     arglist.append("lvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
     arglist.append("--units")
-    arglist.append("b")
+    arglist.append("g")
     arglist.append("--separator")
-    arglist.append("\";\"")
-    arglist.append("-o")
-    arglist.append(LVS_OPTION_STRING)
-    if LVS_HAS_ALL_OPTION:
-      arglist.append("--all")
-    result_string = execWithCapture(LVM_BIN_PATH, arglist)
-    lines = result_string.splitlines()
-    for line in lines:
-      line = line.strip()
-      words = line.split(';')
-      vgname = words[LV_VG_NAME_IDX].strip()
-      attrs = words[LV_ATTR_IDX].strip()
-      uuid = words[LV_UUID_IDX].strip()
-      extent_size = int(words[LV_EXTENT_SIZE_IDX])
-      seg_start = int(words[LV_SEG_START_IDX]) / extent_size
-      lv_size = int(words[LV_SIZE_IDX]) / extent_size
-      seg_size = int(words[LV_SEG_SIZE_IDX]) / extent_size
-      devices = words[LV_DEVICES_IDX]
-      if LVS_HAS_MIRROR_OPTIONS:
-        mirror_log = words[LV_MIRROR_LOG_IDX].strip()
-      
-      lvname = words[LV_NAME_IDX].strip()
-      # remove [] if there (used to mark hidden lvs)
-      lvname = lvname.lstrip('[')
-      lvname = lvname.rstrip(']')
-      
-      vg = self.__VGs[vgname]
-      vg_lvs = vg.get_lvs()
-      lv = None
-      if lvname not in vg_lvs:
-        lv = LogicalVolume(lvname, self.__get_logical_volume_path(lvname, vg.get_name()), True, attrs, uuid)
-        lv.set_extent_count(lv_size, lv_size)
-        vg.add_lv(lv)
-      lv = vg_lvs[lvname]
-      
-      segment = None
-      devs = devices.split(',')
-      if attrs[0] == 'm':
-        # mirrored LV
-        lv.set_mirror_log(mirror_log) # tmp, will get replaced with real one at __link_mirrors()
-        segment = MirroredSegment(seg_start, seg_size)
-        images = devs
-        for image_name in images:
-          idx = image_name.find('(')
-          image_lv = LogicalVolume(image_name[:idx], None, True, None, None) # tmp, will get replaced with real one at __link_mirrors()
-          segment.add_image(image_lv)
-      elif len(devs) == 1:
-        # linear segment
-        segment = LinearSegment(seg_start, seg_size)
-        idx = devs[0].find('(')
-        pvpath = devs[0][:idx]
-        ph_ext_beg = int(devs[0][idx+1:len(devs[0])-1])
-        pv = None
-        for pv_t in self.__PVs:
-          if pv_t.get_path() == pvpath:
-            pv = pv_t
-            break
-        extent_block = ExtentBlock(pv, lv, ph_ext_beg, seg_size)
-        segment.set_extent_block(extent_block)
-      else:
-        # striped segment
-        lv.set_stripes_num(int(words[LV_STRIPES_NUM_IDX]))
-        stripe_size = int(words[LV_STRIPE_SIZE_IDX])
-        segment = StripedSegment(stripe_size, seg_start, seg_size)
-        stripe_id = 0
-        for stripe in devs:
-          idx = stripe.find('(')
-          pvpath = stripe[:idx]
-          ph_ext_beg = int(stripe[idx+1:len(stripe)-1])
-          pv = None
-          for pv_t in self.__PVs:
-            if pv_t.get_path() == pvpath:
-              pv = pv_t
-              break
-          extent_block = ExtentBlock(pv, lv, ph_ext_beg, seg_size/len(devs))
-          segment.add_stripe(stripe_id, extent_block)
-          stripe_id = stripe_id + 1
-      
-      lv.add_segment(segment)
-      
-      origin = words[LV_SNAP_ORIGIN_IDX].strip()
-      if origin != '':
-        # snapshot
-        usage = float(words[LV_SNAP_PERCENT_IDX].strip())
-        lv.set_snapshot_info(origin, usage) # set name for now, real LV will get set at __link_snapshots()
-      
-    # all LVs created  
-  
-  def __link_snapshots(self):
-    for vgname in self.__VGs:
-      vg = self.__VGs[vgname]
-      snapshots = []
-      lv_dict = vg.get_lvs()
-      for lv in lv_dict.values():
-        if lv.is_snapshot():
-          snapshots.append(lv)
-      for snap in snapshots:
-        # find origin
-        origin_name = snap.get_snapshot_info()[0]
-        origin = lv_dict[origin_name]
-        snap.set_snapshot_info(origin, snap.get_snapshot_info()[1]) # real object as origin
-        origin.add_snapshot(snap)
-    
-  def __link_mirrors(self):
-    for vgname in self.__VGs:
-      vg = self.__VGs[vgname]
-      lv_names = vg.get_lvs().keys()[:]
-      for lvname in lv_names:
-        if vg.get_lvs().has_key(lvname):
-          lv = vg.get_lvs()[lvname]
-          if lv.is_mirrored():
-            # replace tmp lvs with real one
-            # log
-            log_lv = vg.get_lvs()[lv.get_mirror_log()]
-            vg.get_lvs().pop(log_lv.get_name()) # remove log_lv from vg
-            lv.set_mirror_log(log_lv)
-            # images
-            segment = lv.get_segments()[0]
-            images_tmp = segment.get_images()[:] # copy
-            segment.clear_images()
-            for image_lv_tmp in images_tmp:
-              # get real LV
-              image_lv_real = vg.get_lvs()[image_lv_tmp.get_name()]
-              # remove image_lv_real from vg
-              vg.get_lvs().pop(image_lv_real.get_name())
-              # rename it to mirror_name
-              image_lv_real.set_name(lvname)
-              # add it to the segment
-              segment.add_image(image_lv_real)
-    
-  
-  def __add_unused_space(self):
-    #Now check if there is free space in Volume Groups
-    #If there is free space, add an LV marked as 'unused' for that available space
-    for vg in self.__VGs.values():
-      if vg.get_extent_total_used_free()[2] == 0:
-        continue
-      lv_unused = LogicalVolume(UNUSED_SPACE, None, False, None, None)
-      lv_unused.set_extent_count(vg.get_extent_total_used_free()[2], vg.get_extent_total_used_free()[2])
-      vg.add_lv(lv_unused)
-      segment_offset = 0
-      # map unused extents on PVs to lv_unused
-      for pv in vg.get_pvs().values():
-        ext_total, ext_used, ext_free = pv.get_extent_total_used_free()
-        if ext_free == 0:
-          continue
-        if len(pv.get_extent_blocks()) == 0:
-          # nothing on PV
-          segment = UnusedSegment(segment_offset, ext_free)
-          segment_offset = segment_offset + ext_free
-          extent = ExtentBlock(pv, lv_unused, 0, ext_free)
-          segment.set_extent_block(extent)
-          lv_unused.add_segment(segment)
-          continue
-        # fill in gaps
-        ext_list = pv.get_extent_blocks()
-        start1, size1 = 0, 0
-        i = 0
-        while i != (len(ext_list) - 1):
-          start2, size2 = ext_list[i].get_start_size()
-          if (start1 + size1) == start2:
-            start1, size1 = start2, size2
-          else:
-            # add extent block
-            start_new = start1 + size1
-            size_new = start2 - start_new
-            segment = UnusedSegment(segment_offset, size_new)
-            segment_offset = segment_offset + size_new
-            extent = ExtentBlock(pv, lv_unused, start_new, size_new)
-            segment.set_extent_block(extent)
-            lv_unused.add_segment(segment)
-            start1, size1 = ext_list[i].get_start_size()
-          i = i + 1
-        # add last one
-        ext_list = pv.get_extent_blocks()
-        last_ext = ext_list[len(ext_list) - 1]
-        start_new = last_ext.get_start_size()[0] + last_ext.get_start_size()[1]
-        size_new = ext_total - start_new
-        if size_new != 0:
-          segment = UnusedSegment(segment_offset, size_new)
-          segment_offset = segment_offset + size_new
-          extent = ExtentBlock(pv, lv_unused, start_new, size_new)
-          segment.set_extent_block(extent)
-          lv_unused.add_segment(segment)
-    
-  
-  def pvmove_in_progress(self):
-    LVS_OPTION_STRING="move_pv"
+    arglist.append(",")
+    arglist.append(pathname)
+ 
+    line = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    if (line == None) or (len(line) < 1):
+      ###FIXME - Throw exception here, if no result is returned
+      return None
+    words = line.split(",")
+    lv = LogicalVolume(words[L_NAME_COL],
+                        pathname,
+                        words[L_VG_NAME_COL],
+                        words[L_ATTR_COL],
+                        words[L_SIZE_COL],
+                        TRUE)
+
+    return lv
+
+  def query_LVs_for_VG(self, vg_name):
+    lvlist = list()
     arglist = list()
-    arglist.append(LVM_BIN_PATH)
+    vgname = vg_name.strip()
+    arglist.append("/usr/sbin/lvm")
     arglist.append("lvs")
+    arglist.append("--nosuffix")
     arglist.append("--noheadings")
+    arglist.append("--units")
+    arglist.append("g")
+    arglist.append("--separator")
+    arglist.append(",")
+    arglist.append(vgname)
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    lines = result_string.splitlines()
+    for line in lines:
+      words = line.split(",")
+      name = words[0].strip()
+      path = self.get_logical_volume_path(name, vgname)
+      lv = LogicalVolume(name, path, words[1],words[2], words[3])
+      lvlist.append(lv)
+
+    #Now check if there is free space in Volume Group with name vg_name.
+    #If there is free space, add an LV marked as 'unused' for that available
+    # space, so that it can be rendered properly
+    vg_arglist = list()
+    vg_arglist.append("/usr/sbin/lvm")
+    vg_arglist.append("vgs")
+    vg_arglist.append("--nosuffix")
+    vg_arglist.append("--noheadings")
+    vg_arglist.append("--units")
+    vg_arglist.append("g")
+    vg_arglist.append("--separator")
+    vg_arglist.append(",")
+    vg_arglist.append("-o")
+    vg_arglist.append("+vg_free_count")
+    vg_arglist.append(vg_name)
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",vg_arglist)
+    lines = result_string.splitlines()
+    for line in lines:
+      words = line.split(",")
+      if int(words[7].strip()) > 0: #Checks for free extents
+       lv = LogicalVolume(UNUSED, None, vg_name,None, words[6], FALSE)
+       lvlist.append(lv)
+
+    return lvlist
+
+  def get_logical_volume_path(self, lname, vgname):
+    lvlist = list()
+    arglist = list()
+    lv_name = lname.strip()
+    vg_name = vgname.strip()
+    arglist.append("/usr/sbin/lvdisplay") #lvs does not give path info
+    arglist.append("-c")
+                                                                                
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvdisplay",arglist)
+    lines = result_string.splitlines()
+    #The procedure below does the following:
+    #The output of the command is examined line by line for a volume 
+    #group name match in the second column.
+    #If the volume group name matches, check if the LV name can be found 
+    #within the first column string. If so, the column[0] string is the path.
+    for line in lines:
+      words = line.split(":")
+      vgnm = words[LV_VGNAME_COL].strip()
+      if vgnm == vg_name:
+        candidate_path = words[LV_PATH_COL].strip()
+        last_slash_index = candidate_path.rfind("/")
+        if last_slash_index >= 0:
+          last_slash_index = last_slash_index + 1
+          c_path = candidate_path[last_slash_index:]
+          if c_path == lv_name:
+            return candidate_path
+
+    ###FIXME Raise exception here because true path is not being returned,
+    ###But rather the lname arg is being returned.
+    return lv_name
+
+  def query_uninitialized(self):
+    pe_list = self.query_PEs()
+    uninit_list = list()
+    for pe in pe_list:
+      if pe.get_type() == UNINITIALIZED_TYPE:
+        uninit_list.append(pe)
+
+    return uninit_list
+
+  def get_UV(self, pathname):
+    uv_list = self.query_uninitialized()
+    for uv in uv_list:
+      uvpath = uv.get_path().strip()
+      if uvpath == pathname:
+        return(uv) 
+
+  def query_unallocated(self):
+    pv_list = self.query_PVs()
+    unalloc_list = list()
+    for pv in pv_list:
+      if pv.get_type() == UNALLOCATED_TYPE:
+        unalloc_list.append(pv)
+
+    return unalloc_list
+
+  def get_free_space_on_VG(self, vgname, unit):
+    vg_name = vgname.strip()
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
+    arglist.append("vgs")
+    arglist.append("--nosuffix")
+    arglist.append("--noheadings")
+    arglist.append("--units")
+    arglist.append(unit)
+    arglist.append("--separator")
+    arglist.append(",")
     arglist.append("-o")
-    arglist.append('move_pv')
-    if LVS_HAS_ALL_OPTION:
-      arglist.append("--all")
+    arglist.append("vg_free,vg_free_count")
+    arglist.append(vg_name)
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    lines = result_string.splitlines()
+
+    if (lines[0].find("not found")) >= 0:
+      return None,None
+
+    words = lines[0].split(",")
+
+    return words[0],words[1]
+
+  def get_max_LVs_PVs_on_VG(self, vgname):
+    vg_name = vgname.strip()
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
+    arglist.append("vgs")
+    arglist.append("--nosuffix")
+    arglist.append("--noheadings")
+    arglist.append("--separator")
+    arglist.append(",")
+    arglist.append("-o")
+    arglist.append("max_lv,lv_count,max_pv,pv_count")
+    arglist.append(vg_name)
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+
+    words = result_string.split(",")
+
+    #max LVs, number of LVs, max PVs, number of PVs
+    if words[0] == "0":
+      words[0] = "256"
+    if words[2] == "0":
+      words[2] = "256"
     
-    result_string = execWithCapture(LVM_BIN_PATH, arglist)
-    lines = result_string.splitlines()
-    for line in lines:
-      if line.strip() != '':
-        return True
-    return False
-  
-  def get_logical_volume_path(self, lvname, vgname):
-    self.__reload_logical_volumes_paths()
-    return self.__get_logical_volume_path(lvname, vgname)
-  def __get_logical_volume_path(self, lvname, vgname):
-    vgname = vgname.strip()
-    lvname = lvname.strip()
-    return self.__lvs_paths[vgname + '`' + lvname]
-  def __reload_logical_volumes_paths(self):
-    self.__lvs_paths = {}
-    arglist = [LVDISPLAY_BIN_PATH] #lvs does not give path info
-    arglist.append('-c')
-    if LVS_HAS_ALL_OPTION:
-      arglist.append('-a')
-    result_string = execWithCapture(LVDISPLAY_BIN_PATH,arglist)
-    lines = result_string.splitlines()
-    for line in lines:
-      words = line.strip().split(":")
-      vgname = words[LV_VGNAME_COL].strip()
-      lvpath = words[LV_PATH_COL].strip()
-      last_slash_index = lvpath.rfind("/") + 1
-      lvname = lvpath[last_slash_index:]
-      self.__lvs_paths[vgname + '`' + lvname] = lvpath
-  
-  def partition_UV(self, pv):
-    if pv.needsFormat():
-      try:
-        (devname, seg) = pv.getPartition()
-        fdisk_devname = None
-        fdisk_devnames = self.__block_device_model.getDevices().keys()
-        if devname in fdisk_devnames:
-          fdisk_devname = devname
-        else:
-          # if pv has multipath info, devname doesn't have to be known to BlockDeviceModel
-          # so find device it does :)
-          multipath_object = Multipath()
-          multipath_data = Multipath.get_multipath_data()
-          # devname should be a multipath access point
-          for path in multipath_data[devname]:
-            if path in fdisk_devnames:
-              fdisk_devname = path
-        part = Partition(seg.beg, seg.end, ID_LINUX_LVM, None, False, seg.sectorSize)
-        part_num = self.__block_device_model.add(fdisk_devname, part)
-        print part_num
-        self.__block_device_model.saveTable(fdisk_devname)
-        new_part = self.__block_device_model.getPartition(fdisk_devname, part_num)
-        pv.setPartition((devname, new_part))
-      except BlockDeviceErr:
-        self.__block_device_model.reload()
-        raise CommandError('FATAL', AUTOPARTITION_FAILURE % devname)
-    return pv.get_path()
-  
-  def __set_VGs_props(self):
-    arglist = [LVM_BIN_PATH]
+    max_lvs = int(words[0])
+    lvs = int(words[1])
+    max_pvs = int(words[2])
+    pvs = int(words[3])
+    return max_lvs,lvs,max_pvs,pvs
+
+  def get_data_for_VG(self, vgname):
+    name = vgname.strip()
+    text_list = list()
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -716,17 +531,11 @@ class lvm_model:
     arglist.append(",")
     arglist.append("-o")
     arglist.append(VGS_OPTION_STRING)
-    vgs_output = execWithCapture(LVM_BIN_PATH,arglist)
-    for vg in self.__VGs.values():
-      vg.set_properties(self.__get_data_for_VG(vg, vgs_output))
-  def __get_data_for_VG(self, vg, vgs_output):
-    lines = vgs_output.splitlines()
-    for line in lines:
-      words = line.strip().split(",")
-      if words[VG_NAME_IDX] == vg.get_name():
-        break
-    
-    text_list = list()
+    arglist.append(name)
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    lines = result_string.splitlines()
+    words = lines[0].split(",")
     text_list.append(VG_NAME)
     text_list.append(words[VG_NAME_IDX])
     text_list.append(VG_SYSID)
@@ -737,266 +546,432 @@ class lvm_model:
     text_list.append(words[VG_ATTR_IDX])
     text_list.append(VG_SIZE)
     text_list.append(words[VG_SIZE_IDX])
-    
+      
     text_list.append(VG_FREE)
     text_list.append(words[VG_FREE_IDX])
-    
+      
     text_list.append(VG_EXTENT_COUNT)
     text_list.append(words[VG_EXTENT_COUNT_IDX])
-    
+      
     text_list.append(VG_FREE_COUNT)
     text_list.append(words[VG_FREE_COUNT_IDX])
-    
+      
     text_list.append(VG_EXTENT_SIZE)
     text_list.append(words[VG_EXTENT_SIZE_IDX])
-    
+      
     text_list.append(MAX_PV)
     #lvs reports 0 for sys max
     if words[MAX_PV_IDX] == "0":
       text_list.append("256")
     else:
       text_list.append(words[MAX_PV_IDX])
-    
+      
     text_list.append(PV_COUNT)
     text_list.append(words[PV_COUNT_IDX])
-    
+      
     text_list.append(MAX_LV)
     if words[MAX_LV_IDX] == "0":
       text_list.append("256")
     else:
       text_list.append(words[MAX_LV_IDX])
-    
+      
     text_list.append(LV_COUNT)
     text_list.append(words[LV_COUNT_IDX])
-    
+      
     text_list.append(VG_UUID)
     text_list.append(words[VG_UUID_IDX])
-    
+      
     return text_list
-  
-  def __set_LVs_props(self):
-    for vg in self.__VGs.values():
-      for lv in vg.get_lvs().values():
-        if lv.is_used():
-          lv.set_properties(self.__get_data_for_LV(lv))
-  def __get_data_for_LV(self, lv):
-    text_list = list()
-    
-    text_list.append(LV_NAME)
-    text_list.append(lv.get_name())
-    if lv.is_mirrored():
-      text_list.append(_("Number of mirror images:  "))
-      text_list.append(str(len(lv.get_segments()[0].get_images())-1))
-    if lv.has_snapshots():
-      text_list.append(_("Snapshots:  "))
-      string = lv.get_snapshots()[0].get_name()
-      for snap in lv.get_snapshots()[1:]:
-        string = string + ', ' + snap.get_name()
-      text_list.append(string)
-    if lv.is_snapshot():
-      text_list.append(_("Snapshot origin:  "))
-      text_list.append(lv.get_snapshot_info()[0].get_name())
-    text_list.append(VG_NAME)
-    text_list.append(lv.get_vg().get_name())
-    text_list.append(LV_SIZE)
-    text_list.append(lv.get_size_total_string())
-    if lv.is_snapshot():
-      text_list.append(_("Snapshot usage:  "))
-      text_list.append(str(lv.get_snapshot_info()[1]) + '%')
-    text_list.append(LV_SEG_COUNT)
-    text_list.append(str(len(lv.get_segments())))
-    
-    segment0 = lv.get_segments()[0]
-    if segment0.get_type() == STRIPED_SEGMENT_ID:
-      # striped
-      text_list.append(LV_STRIPE_COUNT)
-      text_list.append(str(len(segment0.get_stripes().values())))
-      text_list.append(LV_STRIPE_SIZE)
-      text_list.append(str(segment0.get_stripe_size()/1024) + KILO_SUFFIX)
-    
-    text_list.append(LV_ATTR)
-    text_list.append(lv.get_attr())
-    text_list.append(LV_UUID)
-    text_list.append(lv.get_uuid())
-    
-    mount_point = self.getMountPoint(lv.get_path())
-    if mount_point == None:
-      mount_point = UNMOUNTED
-    else:
-      if mount_point == '/':
-        mount_point = _("/   Root Filesystem")
-    text_list.append(UV_MOUNT_POINT)
-    text_list.append(mount_point)
-    
-    mountpoint_at_reboot = Fstab.get_mountpoint(lv.get_path())
-    if mountpoint_at_reboot == '/':
-      mountpoint_at_reboot = _("/   Root Filesystem")
-    text_list.append(UV_MOUNTPOINT_AT_REBOOT)
-    text_list.append(str(mountpoint_at_reboot))
-    text_list.append(UV_FILESYSTEM)
-    text_list.append(self.__getFS(lv.get_path()))
-    
-    return text_list
-  
-  def __set_PVs_props(self):
+
+  def get_data_for_UV(self, p):
+    partition_type = ""
+    is_mounted = ""
+    filesys_type = ""
+    size_string = ""
+    path = p.strip()
     arglist = list()
-    arglist.append(LVM_BIN_PATH)
+    arglist.append("/sbin/fdisk")
+    arglist.append("-l")
+    result  = rhpl.executil.execWithCapture("/sbin/fdisk", arglist)
+    textlines = result.splitlines()
+    #First determine partition type
+    for textline in textlines:
+      if textline == "":
+        continue
+      text_words = textline.split()
+      possible_path = text_words[0].strip()
+      if possible_path == path:
+        cols = len(text_words)
+        if text_words[cols - 2] == "83":
+          partition_type = "Linux Partition"
+        else:
+          partition_type = text_words[cols - 2]
+        break
+
+    #Now determine size
+    arglist = list()
+    arglist.append("/usr/sbin/lvmdiskscan")
+    result  = rhpl.executil.execWithCapture("/usr/sbin/lvmdiskscan", arglist)
+    textlines = result.splitlines()
+    for textline in textlines:
+      text_words = textline.split()
+      possible_path = text_words[0].strip()
+      #If we find our path, we need to extract the size info from line
+      #Size info resides between two square brackets
+      #Here is a typical output line from lvmdiskscan:
+      #  /dev/sda10 [      784.39 MB] LVM physical volume
+      if possible_path == path:
+        start_idx = textline.find("[")
+        start_idx = start_idx + 1   #loose '['
+        first_part = textline[start_idx:]
+        end_idx = first_part.find("]")
+        final_part = first_part[:end_idx]
+        size_string = final_part.strip()
+        break
+
+    #Next, check if partition is mounted
+    arglist = list()
+    arglist.append("/bin/cat")
+    arglist.append("/proc/mounts")
+    result  = rhpl.executil.execWithCapture("/bin/cat", arglist)
+    textlines = result.splitlines()
+    for textline in textlines:
+      text_words = textline.split()
+      possible_path = text_words[0].strip()
+      if possible_path == path:
+        is_mounted = text_words[1]
+        break
+
+    #It is still possible for a partition to be mounted without being in
+    #/proc/mounts...this is often true of the root partition
+    arglist = list()
+    arglist.append("/bin/cat")
+    arglist.append("/etc/mtab")
+    result,err,code  = rhpl.executil.execWithCaptureErrorStatus("/bin/cat", arglist)
+    if code == 0:
+      textlines = result.splitlines()
+      for textline in textlines:
+        text_words = textline.split()
+        possible_path = text_words[0].strip()
+        if possible_path == path:
+          if text_words[1].strip() == "/":
+            mntpnt = "/   (Root Partition)"
+          else:
+            mntpnt = text_words[1]
+          is_mounted = mntpnt
+          break
+
+    if is_mounted == "":
+      is_mounted = UNMOUNTED
+
+
+    #Finally, check for file system
+    arglist = list()
+    arglist.append("/usr/bin/file")
+    arglist.append("-s")
+    arglist.append(path)
+    result = rhpl.executil.execWithCapture("/usr/bin/file", arglist)
+    words = result.split()
+    if len(words) < 3:  #No file system
+      filesys_type = NO_FILESYSTEM
+    elif words[2].strip() == "rev":
+      filesys_type = words[4]
+    else:
+      filesys_type = words[2]
+
+    #Finish up by returning data
+    textlist = list()
+    textlist.append(UV_SIZE)
+    textlist.append(size_string)
+    textlist.append(UV_PARTITION_TYPE)
+    textlist.append(partition_type)
+    textlist.append(UV_FILESYSTEM)
+    textlist.append(filesys_type)
+    textlist.append(UV_MOUNT_POINT)
+    textlist.append(is_mounted)
+
+    return textlist
+   
+  def get_data_for_LV(self, p):
+    path = p.strip()
+    text_list = list()
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
+    arglist.append("lvs")
+    arglist.append("--noheadings")
+    arglist.append("--separator")
+    arglist.append(",")
+    arglist.append("-o")
+    arglist.append(LVS_OPTION_STRING)
+    arglist.append(path)
+
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    lines = result_string.splitlines()
+    words = lines[0].split(",")
+    text_list.append(LV_NAME)
+    text_list.append(words[LV_NAME_IDX])
+    text_list.append(VG_NAME)
+    text_list.append(words[LV_VG_NAME_IDX])
+    text_list.append(LV_SIZE)
+    text_list.append(words[LV_SIZE_IDX])
+    text_list.append(LV_SEG_COUNT)
+    text_list.append(words[LV_SEG_COUNT_IDX])
+
+    if int(words[LV_STRIPE_COUNT_IDX]) > 1:
+      text_list.append(LV_STRIPE_COUNT)
+      text_list.append(words[LV_STRIPE_COUNT_IDX])
+      text_list.append(LV_STRIPE_SIZE)
+      text_list.append(words[LV_STRIPE_SIZE_IDX])
+    text_list.append(LV_ATTR)
+    text_list.append(words[LV_ATTR_IDX])
+    text_list.append(LV_UUID)
+    text_list.append(words[LV_UUID_IDX])
+
+    return text_list
+                                                                                
+
+  def get_data_for_PV(self, p):
+    path = p.strip()
+    text_list = list()
+    arglist = list()
+    arglist.append("/usr/sbin/lvm")
     arglist.append("pvs")
     arglist.append("--noheadings")
     arglist.append("--separator")
     arglist.append(",")
     arglist.append("-o")
     arglist.append(PVS_OPTION_STRING)
-    pvs_output = execWithCapture(LVM_BIN_PATH,arglist)
-    for pv in self.__PVs:
-      pv.set_properties(self.__get_data_for_PV(pv, pvs_output))
-  def __get_data_for_PV(self, pv, pvs_output):
-    # anything that is in, place to the end
-    end = pv.get_properties()
-    text_list = list()
+    arglist.append(path)
     
-    if pv.get_type() == UNINITIALIZED_TYPE:
-      # size
-      size_string = pv.get_size_total_string()
-      text_list.append(UV_SIZE)
-      text_list.append(size_string)
-      # partition type
-      part = pv.getPartition()[1]
-      partition_type = PARTITION_IDs[part.id]
-      if part.id != ID_EMPTY and part.id != ID_UNKNOWN:
-        partition_type = partition_type + ' (' + str(hex(part.id)) + ')'
-      text_list.append(UV_PARTITION_TYPE)
-      text_list.append(partition_type)
-      # mount point
-      mountPoints = []
-      for path in pv.get_paths():
-        mountPoint = self.getMountPoint(path)
-        if mountPoint != None:
-          if mountPoint == '/':
-            mountPoint = _("/   Root Filesystem")
-          mountPoints.append(mountPoint)
-      if len(mountPoints) == 0:
-        mountPoints = UNMOUNTED
-      else:
-        mount_list = mountPoints
-        mountPoints = mount_list[0]
-        for mountPoint in mount_list[1:]:
-          mountPoints = mountPoints + ', ' + mountPoint
-      text_list.append(UV_MOUNT_POINT)
-      text_list.append(mountPoints)
-      fstabMountPoints = []
-      for path in pv.get_paths():
-        mountPoint = Fstab.get_mountpoint(path)
-        if mountPoint != None:
-          if mountPoint == '/':
-            mountPoint = _("/   Root Filesystem")
-          fstabMountPoints.append(mountPoint)
-      if len(fstabMountPoints) == 0:
-        fstabMountPoints = _("None")
-      else:
-        mount_list = fstabMountPoints
-        fstabMountPoints = mount_list[0]
-        for mountPoint in mount_list[1:]:
-          fstabMountPoints = fstabMountPoints + ', ' + mountPoint
-      text_list.append(UV_MOUNTPOINT_AT_REBOOT)
-      text_list.append(fstabMountPoints)
-      # filesystem
-      text_list.append(UV_FILESYSTEM)
-      text_list.append(self.__getFS(path))
-    else: # UNALLOCATED_TYPE || PHYS_TYPE
-      lines = pvs_output.splitlines()
-      for line in lines:
-        words = line.strip().split(',')
-        if words[PV_NAME_IDX] in pv.get_paths():
-          break
-      text_list.append(PV_NAME)
-      text_list.append(words[PV_NAME_IDX])
-      if words[PV_VG_NAME_IDX] == "":
-        text_list.append(VG_NAME)
-        text_list.append("---")
-      else:
-        text_list.append(VG_NAME)
-        text_list.append(words[PV_VG_NAME_IDX])
-      text_list.append(PV_SIZE)
-      text_list.append(words[PV_SIZE_IDX])
-      text_list.append(PV_USED)
-      text_list.append(words[PV_USED_IDX])
-      text_list.append(PV_FREE)
-      text_list.append(words[PV_FREE_IDX])
-      text_list.append(PV_PE_COUNT)
-      text_list.append(words[PV_PE_COUNT_IDX])
-      text_list.append(PV_PE_ALLOC_COUNT)
-      text_list.append(words[PV_PE_ALLOC_COUNT_IDX])
-      text_list.append(PV_ATTR)
-      text_list.append(words[PV_ATTR_IDX])
-      text_list.append(PV_UUID)
-      text_list.append(words[PV_UUID_IDX])
-      
-    # append old props
-    for prop in end:
-      text_list.append(prop)
-    
+    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    lines = result_string.splitlines()
+    words = lines[0].split(",")
+    text_list.append(PV_NAME)
+    text_list.append(words[PV_NAME_IDX])
+
+    if words[PV_VG_NAME_IDX] == "":
+      text_list.append(VG_NAME)
+      text_list.append("---")
+    else:
+      text_list.append(VG_NAME)
+      text_list.append(words[PV_VG_NAME_IDX])
+
+    text_list.append(PV_SIZE)
+    text_list.append(words[PV_SIZE_IDX])
+    text_list.append(PV_USED)
+    text_list.append(words[PV_USED_IDX])
+    text_list.append(PV_FREE)
+    text_list.append(words[PV_FREE_IDX])
+    text_list.append(PV_PE_COUNT)
+    text_list.append(words[PV_PE_COUNT_IDX])
+    text_list.append(PV_PE_ALLOC_COUNT)
+    text_list.append(words[PV_PE_ALLOC_COUNT_IDX])
+    text_list.append(PV_ATTR)
+    text_list.append(words[PV_ATTR_IDX])
+    text_list.append(PV_UUID)
+    text_list.append(words[PV_UUID_IDX])
+                                                                                
     return text_list
-  
-  def __getFS(self, path):
-    path_list = list()
-    for pv in self.__PVs:
-      if pv.get_path() == path:
-        path_list.append(pv)
-    if len(path_list) == 0:
-      # nothing on a drive, maybe a LV, or a loopback device
-      pass
-    elif len(path_list) == 1:
-      if path_list[0].getPartition() == None:
-        # nothing on a drive, maybe a LV, or a loopback device
-        pass
-      # either a partition, a drive or free space
-      if path_list[0].getPartition()[1].id == ID_EMPTY:
-        # drive or free space
-        # fixme - drive could have a filesystem on it
-        return NO_FILESYSTEM
-      else: 
-        # partition
-        pass
-    else:
-      # free space
-      return NO_FILESYSTEM
-    
-    
-    filesys = Filesystem.get_fs(path)
-    if filesys.name == Filesystem.get_filesystems()[0].name:
-      return NO_FILESYSTEM
-    else:
-      return filesys.name
-  
-  def getMountPoint(self, path):
-    # follow links
-    paths = [path]
-    if follow_links_to_target(path, paths) == None:
-      return None
-    
-    result = execWithCapture('/bin/cat', ['/bin/cat', '/proc/mounts', '/etc/mtab'])
-    lines = result.splitlines()
-    for line in lines:
-      words = line.split()
-      possible_path = words[0]
-      if possible_path in paths:
-        return words[1]
-    return None
-  
-  def is_mirroring_supported(self):
-    return LVS_HAS_MIRROR_OPTIONS
-  
-  def get_locking_type(self):
-    conf = open('/etc/lvm/lvm.conf')
-    
-    lines = conf.readlines()
-    for line in lines:
-      words = line.split()
-      if len(words) < 3:
+ 
+
+  ###This method adds complete/contiguous extent lists to PVs -- no holes
+  def get_extents_for_PV(self, pv ):
+    extentlist = list()
+    pathname = pv.get_path().strip()
+    #Cases:
+    ##1) vgname == "", add one extent 'free' using all extents
+    ##2) query_LVs_for_VG returns empty list, same as 1
+    ##3) extents are used, build list and fill in free holes 
+
+    #1
+    vgname = pv.get_vg_name().strip()
+    if vgname == "":
+      total,free,alloc = pv.get_extent_values()
+      es = ExtentSegment(FREE,0,total,FALSE)
+      es.set_annotation(UNUSED_SPACE)
+      pv.add_extent_segment(es)
+      return 
+
+    if vgname == None:
+      total,free,alloc = pv.get_extent_values()
+      es = ExtentSegment(FREE,0,total,FALSE)
+      es.set_annotation(UNUSED_SPACE)
+      pv.add_extent_segment(es)
+      return 
+
+    #2
+    lvlist = self.query_LVs_for_VG(vgname)
+    #if lvlist is empty, add one extent_segment for the empty space, then return
+    if len(lvlist) == 1:  #Could be an 'unused' section or fully used section
+      if lvlist[0].is_vol_utilized == FALSE: 
+        total,free,alloc = pv.get_extent_values()
+        es = ExtentSegment(FREE,0,total,FALSE)
+        es.set_annotation(UNUSED_SPACE)
+        pv.add_extent_segment(es)
+        return 
+      else:
+        total,free,alloc = pv.get_extent_values()
+        es = ExtentSegment(lvlist[0].get_name(),0,total,TRUE)
+        pv.add_extent_segment(es)
+        return 
+        
+    #The cases above all result in one extent segment per PV.
+    #When a PV has multiple extent segments, we must build a list
+    #of them, sort them, and make sure it is contiguous
+
+    for lv in lvlist:
+      if lv.is_vol_utilized() == FALSE:
         continue
-      if words[0] == 'locking_type':
-        if words[1] == '=':
-          locking_type = int(words[2])
-          return locking_type
-    return None
+      path = lv.get_path()
+      arglist = list()
+      arglist.append("/usr/sbin/lvdisplay")
+      arglist.append("-m")
+      arglist.append(path)
+      result_string = rhpl.executil.execWithCapture("/usr/sbin/lvdisplay",arglist)
+      ##For ease of maintenance, here is an explanation of what is
+      ##going on here...the lvmdisplay command is run above for
+      ##each Logical Volume in the pv's volumegroup. The command
+      ##is run with the '-m' switch which supplies mapping info
+      ##between the LV and its PVs.
+      ##The first chunk of data that is returned from this command is
+      ##general info about the LV -- there is no chance that the 
+      ##PV's path (such as /dev/sda7) will be in the first big 
+      ##chunk. The second chunk is the mapping info, which is appended
+      ##onto the first chunk. It looks like this if linear:
+      ##
+      ##  --- Segments ---
+      ##  Logical extent 0 to 249:
+      ##    Type                linear
+      ##    Physical volume     /dev/sda7
+      ##    Physical extents    0 to 249
+      ##
+      ## And looks like this if striped:
+      ##
+      ##  --- Segments ---
+      ##  Logical extent 0 to 25:
+      ##    Type                striped
+      ##    Stripes             2
+      ##    Stripe size         64 KB
+      ##    Stripe 0:
+      ##      Physical volume   /dev/sda7
+      ##      Physical extents  250 to 262
+      ##    Stripe 1:
+      ##      Physical volume   /dev/sda11
+      ##      Physical extents  0 to 12
+      ## So the code below searches for the full PV path
+      ## on each line, and when it finds it, it
+      ## splits the following line (i + 1) into substrings
+      ## using whitespace is the sep char, and then looks
+      ## for the values for words[3] and words[5] to get the
+      ## start and ending extents. Hopefully, this map info
+      ## will be included in lvs soon, so this dangerous
+      ## parsing code can be removed.
+      ########
+
+      lines = result_string.splitlines()
+      #search for pathname in each string with while loop
+      for i in range(0, len(lines)):
+        if lines[i].find(pathname) != (-1):  #we found our PV in mapping table
+          ### FIXME Wrap this in an exception handler in case format is wrong
+          words = lines[i+1].split()
+          start = int(words[SEG_START_COL])
+          end = int(words[SEG_END_COL])
+          span = end - start + 1
+          extent = ExtentSegment(lv.get_name(), start, span, TRUE)
+          #Now let's determine if this segment is striped or linear,
+          #and note this in the new extent...
+          typestring = lines[i - 1]
+          if typestring.find("linear") != (-1):
+            extent.set_annotation(LINEAR_MAPPING)
+          elif typestring.find("Stripe") != (-1):
+            typestr = typestring.strip()
+            idx = typestr.find(":")
+            extent.set_annotation(typestr[:idx])
+          extentlist.append(extent)
+         # break
+
+    ##Now, sort 
+    extentlist.sort(self.sortMe) 
+    for e in extentlist:
+      s,z = e.get_start_size()
+
+    ##Due to the nature of the way lvdisplay presents mapping
+    ##info, it is possible that an extent segment for a stripe
+    ##may be broken into two adjacent pieces. It makes visual 
+    ##sense to merge these segments. 
+
+    list_length = len(extentlist) - 2
+    for k in range(0, list_length):
+      current = extentlist[k]
+      next = extentlist[k+1]
+      st,sz = current.get_start_size()
+      st_next,sz_next = next.get_start_size()
+      if (st + sz) == st_next:
+        name = current.get_name()
+        name_next = next.get_name()
+        if name == name_next:
+          if current.get_annotation() == next.get_annotation():
+            extent = ExtentSegment(name_next,st,(sz + sz_next),TRUE)
+            extent.set_annotation(current.get_annotation())
+            extentlist.insert(k,extent)
+            extentlist.remove(current)
+            extentlist.remove(next)
+            k = 0
+            list_length = len(extentlist) - 2
+            extentlist.sort(self.sortMe)
+            continue
+
+    ##For good measure...
+    extentlist.sort(self.sortMe)
+
+    ##Now fill in holes -- for each gap, create a 'free' seg block
+    ##This is set up as a double loop because inserting a new val
+    ##in a list probably hoses the loop iterator, so to be safe,
+    ##the for loop iterator is recreated after each list insertion
+    need_to_continue = TRUE
+    while need_to_continue == TRUE:
+      need_to_continue = FALSE
+      for j in range(0, len(extentlist) - 1):
+        st,sz = extentlist[j].get_start_size()
+        st_next,sz_next = extentlist[j + 1].get_start_size()
+        if (st + sz) == st_next:
+          continue
+        else:
+          new_st = st + sz
+          new_sz = st_next - new_st
+          ex = ExtentSegment(FREE, new_st, new_sz, FALSE)
+          ex.set_annotation(UNUSED_SPACE)
+          extentlist.insert(0, ex)
+          extentlist.sort(self.sortMe)
+          need_to_continue = TRUE
+          break
+
+    #Add final free segment if necessary
+    total,free,alloc = pv.get_extent_values()
+    if total == free:  #Nothing in this PV is used...
+      ex = ExtentSegment(FREE, 0, free, FALSE)
+      ex.set_annotation(UNUSED_SPACE)
+      extentlist.append(ex)
+    else:
+      st,sz = extentlist[len(extentlist) - 1].get_start_size()
+      if (st + sz) != total:
+        new_start = st + sz
+        new_size = total - new_start
+        ex = ExtentSegment(FREE, new_start, new_size, FALSE)
+        ex.set_annotation(UNUSED_SPACE)
+        extentlist.append(ex)
+    
+    for es in extentlist:
+      pv.add_extent_segment(es)
+
+  def sortMe(self, es1, es2):
+    start1,size1 = es1.get_start_size()
+    start2,size2 = es2.get_start_size()
+    if start1 > start2:
+      return 1
+    elif start1 == start2:
+      return 0
+    else:
+      return (-1)
+
+

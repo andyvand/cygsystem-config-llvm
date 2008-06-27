@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+                                                                                
 import sys
 import types
 import select
@@ -8,22 +8,20 @@ import operator
 import signal
 import gobject
 import string
+import rhpl.executil
 import os
-from renderer import DisplayView
+from gtk import TRUE, FALSE
+from renderer import volume_renderer
 from Properties_Renderer import Properties_Renderer
 from lvm_model import lvm_model
 from InputController import InputController
 from lvmui_constants import *
-from WaitMsg import WaitMsg
-from execute import ForkedCommand
-
 import stat
 import gettext
 _ = gettext.gettext
 
 ### gettext first, then import gtk (exception prints gettext "_") ###
 try:
-    import gobject
     import gtk
     import gtk.glade
 except RuntimeError, e:
@@ -51,28 +49,12 @@ class Volume_Tab_View:
   def __init__(self, glade_xml, model_factory, app):
                                                                                 
     self.model_factory = model_factory
-    
-    locking_type = self.model_factory.get_locking_type()
-    if locking_type != 1:
-        if locking_type == 0:
-            msg = _("LVM locking is disabled!!! Massive data corruption may occur. Enable locking in \n/etc/lvm/lvm.conf and try again. Exiting...")
-        elif locking_type == 2:
-            msg = _("Clustered LVM (cLVM) is not yet supported by %s. Exiting...")
-            msg = msg % PROGNAME
-        else:
-            msg = _("%s only supports file-based locking (locking_type=1 in /etc/lvm/lvm.conf). Exiting...")
-            msg = msg % PROGNAME
-        dlg = gtk.MessageDialog(None, 0,
-                                gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
-                                msg)
-        dlg.run()
-        sys.exit(10)
-    
-    
+                                                                                
     self.main_win = app
     self.width = 0
     self.height = 0
     self.glade_xml = glade_xml
+    self.found_selection = FALSE  #sentinel for foreach loop
 
     ##Set up list structure
     self.treeview = self.glade_xml.get_widget('treeview1')
@@ -80,56 +62,50 @@ class Volume_Tab_View:
     self.treemodel = gtk.TreeStore (gobject.TYPE_STRING,
                                     gobject.TYPE_INT,
                                     gobject.TYPE_STRING,
-                                    gobject.TYPE_STRING,
-                                    gobject.TYPE_PYOBJECT)
+                                    gobject.TYPE_STRING)
     self.treeview.set_model(self.treemodel)
-    self.treeview.set_headers_visible(False)
-    
+    self.treeview.set_headers_visible(FALSE)
+
     self.input_controller = InputController(self.reset_tree_model,
                                             self.treeview, 
                                             self.model_factory, 
                                             self.glade_xml)
-    
+                                                                                 
     #Change Listener
     selection = self.treeview.get_selection()
     selection.connect('changed', self.on_tree_selection_changed)
-    
+
     #self.treeview.connect('expand-collapse-cursor-row',self.on_row_expand_collapse)
     #self.treeview.connect('row-collapsed',self.on_row_expand_collapse)
-    
+                                                                                
     self.icon_ellipse_hashtable = {}
-    
+                                                                                
     renderer1 = gtk.CellRendererText()
     column1 = gtk.TreeViewColumn("Volumes",renderer1,markup=0)
     self.treeview.append_column(column1)
-    
-    
+                                                                                
     #Time to set up draw area
-    window1 = self.glade_xml.get_widget("drawingarea1")
-    window1.set_size_request(700, 500)
-    window2 = self.glade_xml.get_widget("drawingarea2")
-    window2.set_size_request(700, 500)
-    window3 = self.glade_xml.get_widget("drawingarea3")
-    window3.set_size_request(700, 500)
-    window4 = self.glade_xml.get_widget("drawingarea4")
-    window4.set_size_request(700, 500)
-    
-    pr_upper = Properties_Renderer(window3, window3.window)
-    #pr_lower = Properties_Renderer(window4, window4.window)
-    self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, None, None)
-    #self.display_view = DisplayView(self.input_controller.register_highlighted_sections, window1, pr_upper, window2, pr_lower)
-    
-    self.glade_xml.get_widget('best_fit_button').connect('clicked', self.on_best_fit)
-    self.glade_xml.get_widget('zoom_in_button').connect('clicked', self.on_zoom_in)
-    self.glade_xml.get_widget('zoom_out_button').connect('clicked', self.on_zoom_out)
-    self.glade_xml.get_widget('viewport1').connect('size-allocate', self.on_resize_drawing_area)
-    self.on_best_fit(None)
-    self.glade_xml.get_widget('zoom_box').set_sensitive(False)
-    
-    # set up mirror copy progress
-    self.mirror_sync_progress = MirrorSyncProgress(self.glade_xml.get_widget('messages_vbox'))
-    
-    
+    self.pixmap = self.glade_xml.get_widget('drawingarea1')
+    self.props_layout_area = self.glade_xml.get_widget('drawingarea3')
+    self.scroller = self.glade_xml.get_widget('scrolledwindow4')
+    self.scroller.connect('scroll-event', self.on_scroll_event)
+    self.layout_pixmap = self.glade_xml.get_widget('drawingarea3')
+    color = gtk.gdk.colormap_get_system().alloc_color("white", 1,1)
+    self.layout_pixmap.modify_bg(gtk.STATE_NORMAL, color) 
+    self.pixmap.modify_bg(gtk.STATE_NORMAL, color) 
+    self.vr = volume_renderer(self.pixmap, self.pixmap.window)
+    self.lr = Properties_Renderer(self.layout_pixmap, self.layout_pixmap.window)
+
+    self.pixmap.connect('expose-event', self.on_expose_event)
+    self.pixmap.connect('scroll-event', self.on_scroll_event)
+    self.pixmap.connect('size-allocate', self.on_size_allocate)
+    self.pixmap.add_events(gtk.gdk.POINTER_MOTION_MASK)
+    self.pixmap.add_events(gtk.gdk.BUTTON_PRESS_MASK)
+    self.pixmap.connect("motion_notify_event",self.on_motion_event)
+    #self.pixmap.connect("button_press_event",self.vr.highlight_section_persist)
+    self.pixmap.connect("button_press_event",self.on_mouse_button_press)
+    self.props_layout_area.connect('expose-event', self.on_props_expose_event)
+
     #############################
     ##Highly experimental
     self.box = self.glade_xml.get_widget('vbox12')
@@ -146,508 +122,322 @@ class Volume_Tab_View:
     self.phys_panel.hide()
     self.log_panel = self.glade_xml.get_widget('log_panel')
     self.log_panel.hide()
+
     
+
+
+                                                                                
+    self.gc = self.pixmap.window.new_gc()
     self.prepare_tree()
-    model = self.treeview.get_model()
-    vgs = self.model_factory.get_VGs()
-    if len(vgs) > 0:
-        model.foreach(self.check_tree_items, [vgs[0].get_name()])
-    else:
-        unallocs = self.model_factory.query_unallocated()
-        if len(unallocs) > 0:
-            model.foreach(self.check_tree_items, ['', '', unallocs[0].get_path()])
-        else:
-            uninits = self.model_factory.query_uninitialized()
-            if len(uninits) > 0:
-                model.foreach(self.check_tree_items, ['', '', uninits[0].get_path()])
-  
-  # format is [vgname, lvpath, pvpath] - put '' if none
+                                                                                
   def reset_tree_model(self, *in_args):
-      self.prepare_tree()
-      
-      args = []
-      for arg in in_args:
-          args.append(arg)
-      model = self.treeview.get_model()
-      model.foreach(self.check_tree_items, args)
+    args = list()
+    for a in in_args:
+      args.append(a)
   
+    self.prepare_tree()
+    if len(args) != 0:
+      model = self.treeview.get_model()
+      self.found_selection = FALSE
+      model.foreach(self.check_tree_items, args)
+      
+
   def check_tree_items(self, model, path, iter, *args):
-    # return True to stop foreach, False to continue
-    
-    if len(args) == 0:
-        return True # don't go any further
-    args_internal = []
-    for arg in args[0]:
-        args_internal.append(arg)
-    while len(args_internal) < 3:
-        args_internal.append('')
-    vgname = args_internal[0]
-    lvpath = args_internal[1]
-    pvpath = args_internal[2]
-    
+    name_selection_argss = list()
+    for a in args:
+      name_selection_argss.append(a)
+    if self.found_selection == TRUE:
+      return
+
+    name_selection_args = name_selection_argss[0]
+    name_selection = name_selection_args[0]
+    vgname = None
+    if len(name_selection_args) > 1:
+      vgname = name_selection_args[1]
+
     selection = self.treeview.get_selection()
-    type = model.get_value(iter, TYPE_COL)
-    if type == VG_PHYS_TYPE:
-        if vgname != '' and lvpath == '' and pvpath != '':
-            vg = model.get_value(iter, OBJ_COL)
-            if vgname == vg.get_name():
-                self.treeview.expand_to_path(path)
-                selection.select_path(path)
-                return True
-    elif type == VG_LOG_TYPE:
-        if vgname != '' and lvpath != '' and pvpath == '':
-            vg = model.get_value(iter, OBJ_COL)
-            if vgname == vg.get_name():
-                self.treeview.expand_to_path(path)
-                selection.select_path(path)
-                return True
-    elif type == VG_TYPE:
-        if vgname != '' and lvpath == '' and pvpath == '':
-            vg = model.get_value(iter, OBJ_COL)
-            if vgname == vg.get_name():
-                self.treeview.expand_to_path(path)
-                selection.select_path(path)
-                return True
-    elif type == LOG_TYPE:
-        if vgname == '' and lvpath != '' and pvpath == '':
-            lv = model.get_value(iter, OBJ_COL)
-            if lvpath == lv.get_path():
-                self.treeview.expand_to_path(path)
-                selection.select_path(path)
-                return True
-    elif type == PHYS_TYPE or type == UNALLOCATED_TYPE or type == UNINITIALIZED_TYPE:
-        if vgname == '' and lvpath == '' and pvpath != '':
-            pv = model.get_value(iter, OBJ_COL)
-            if pvpath in pv.get_paths():
-                self.treeview.expand_to_path(path)
-                selection.select_path(path)
-                return True
-    return False
+
+    #Here we need to check PVs and LVs differently.
+    #LVs have a special model column.
+    nv = model.get_value(iter, PATH_COL)
+    lvn = model.get_value(iter, SIMPLE_LV_NAME_COL)
+
+    if nv != None:
+      pvname_val = nv.strip()
+    else:
+      pvname_val = nv
+
+    if lvn != None:
+      lvname_val = lvn.strip()
+    else:
+      lvname_val = lvn
+
+    if pvname_val == name_selection:
+      self.treeview.expand_to_path(path)
+      selection.select_range(path, path)
+      self.found_selection = TRUE #prevents vgname selection in multiple places
+
+    if lvname_val == name_selection:
+      if vgname == None:
+        self.treeview.expand_to_path(path)
+        selection.select_range(path, path)
+        self.found_selection = TRUE #prevents LVs with same name in diff VGs 
+                                    #from both being selected 
+      else:
+        #get parent path in model
+        parent_iter = model.iter_parent(iter)
+        name_string = model.get_value(parent_iter, NAME_COL)
+        result = name_string.find(vgname)
+        if result != (-1):
+          self.treeview.expand_to_path(path)
+          selection.select_range(path, path)
+          self.found_selection = TRUE  
+        else:
+          return
+      
 
   def prepare_tree(self):
     treemodel = self.treeview.get_model()
     treemodel.clear()
-    
-    self.model_factory.reload()
-    self.mirror_sync_progress.initiate()
-    
-    vg_list = self.model_factory.get_VGs()
+
+    vg_list = self.model_factory.query_VGs()
     if len(vg_list) > 0:
-        vg_iter = treemodel.append(None)
-        vg_string = "<span size=\"11000\"><b>" + VOLUME_GROUPS + "</b></span>"
-        treemodel.set(vg_iter,
-                      NAME_COL, vg_string, 
-                      TYPE_COL,
-                      UNSELECTABLE_TYPE)
-        self.__sort_list_by_get_name_fcn(vg_list)
-        for vg in vg_list:
-            vg_child_iter = treemodel.append(vg_iter)
-            vg_name = vg.get_name()
-            treemodel.set(vg_child_iter,
-                          NAME_COL, vg_name, 
-                          TYPE_COL, VG_TYPE, 
-                          OBJ_COL, vg)
-            phys_iter = treemodel.append(vg_child_iter)
-            log_iter = treemodel.append(vg_child_iter)
-            pview_string = vg_name + "<span foreground=\"#ED1C2A\"><i>  " + PHYSICAL_VIEW + "</i></span>"
-            treemodel.set(phys_iter,
-                          NAME_COL, pview_string,
-                          TYPE_COL, VG_PHYS_TYPE,
-                          PATH_COL, vg_name, 
-                          OBJ_COL, vg)
-            lview_string = vg_name + "<span foreground=\"#43ACF6\"><i>  " + LOGICAL_VIEW + "</i></span>"
-            treemodel.set(log_iter,
-                          NAME_COL, lview_string,
-                          TYPE_COL, VG_LOG_TYPE,
-                          PATH_COL, vg_name, 
-                          OBJ_COL, vg)
-            
-            pv_list = vg.get_pvs().values()
-            grouped_dir, ungrouped_list = self.__group_by_device(pv_list)
-            grouped_dir_sorted = grouped_dir.keys()
-            grouped_dir_sorted.sort()
-            for main_dev in grouped_dir_sorted:
-                dev_iter = treemodel.append(phys_iter)
-                pvs = grouped_dir[main_dev]
-                devnames = pvs[0].getDevnames()
-                devnames_str = devnames[0]
-                for devname in devnames[1:]:
-                    devnames_str = devnames_str + ', ' + devname
-                if len(devnames) > 1:
-                    devnames_str = str(pvs[0].getMultipath()) + ' [' + devnames_str + ']'
-                treemodel.set(dev_iter, 
-                              NAME_COL, devnames_str, 
-                              TYPE_COL, UNSELECTABLE_TYPE)
-                for pv in pvs:
-                    iter = treemodel.append(dev_iter)
-                    phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_name() + "</span>"
-                    treemodel.set(iter, 
-                                  NAME_COL, phys_string, 
-                                  TYPE_COL, PHYS_TYPE, 
-                                  PATH_COL, pv.get_path(), 
-                                  OBJ_COL, pv)
-            for pv in ungrouped_list:
-                iter = treemodel.append(phys_iter)
-                phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_name() + "</span>"
-                treemodel.set(iter, 
-                              NAME_COL, phys_string, 
-                              TYPE_COL, PHYS_TYPE, 
-                              PATH_COL, pv.get_path(), 
-                              OBJ_COL, pv)
-            
-            lv_list = vg.get_lvs().values()
-            self.__sort_list_by_get_name_fcn(lv_list)
-            for lv in lv_list:
-                if lv.is_used():
-                    iter = treemodel.append(log_iter)
-                    log_string = "<span foreground=\"#43ACF6\">" + lv.get_name() + "</span>"
-                    treemodel.set(iter, 
-                                  NAME_COL, log_string, 
-                                  TYPE_COL, LOG_TYPE,
-                                  PATH_COL, lv.get_path(),
-                                  SIMPLE_LV_NAME_COL, lv.get_name(),
-                                  OBJ_COL, lv)
-            
-            #Expand if there are entries 
-            self.treeview.expand_row(treemodel.get_path(vg_iter),False)
-            
+      vg_iter = treemodel.append(None)
+      vg_string = "<span size=\"11000\"><b>" + VOLUME_GROUPS + "</b></span>"
+      treemodel.set(vg_iter, NAME_COL, vg_string, 
+                             TYPE_COL, UNSELECTABLE_TYPE)
+      for vg in vg_list:
+        vg_child_iter = treemodel.append(vg_iter)
+        vg_name = vg.get_name().strip()
+        treemodel.set(vg_child_iter, NAME_COL, vg_name, 
+                                     TYPE_COL, VG_TYPE,
+                                     PATH_COL, vg_name)
+
+        phys_iter = treemodel.append(vg_child_iter)
+        log_iter = treemodel.append(vg_child_iter)
+        pview_string = vg_name + "<span foreground=\"#ED1C2A\"><i>  " + PHYSICAL_VIEW + "</i></span>"
+        treemodel.set(phys_iter, NAME_COL, pview_string,
+                                 TYPE_COL, VG_PHYS_TYPE,
+                                 PATH_COL, vg_name)
+        lview_string = vg_name + "<span foreground=\"#43ACF6\"><i>  " + LOGICAL_VIEW + "</i></span>"
+        treemodel.set(log_iter, NAME_COL, lview_string,
+                                TYPE_COL, VG_LOG_TYPE,
+                                PATH_COL, vg_name)
+        pv_list = self.model_factory.query_PVs_for_VG(vg_name)
+        for pv in pv_list:
+          iter = treemodel.append(phys_iter)
+          phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_name() + "</span>"
+          treemodel.set(iter, 
+                        NAME_COL, phys_string, 
+                        TYPE_COL, PHYS_TYPE,
+                        PATH_COL, pv.get_path())
+
+        lv_list = self.model_factory.query_LVs_for_VG(vg_name)
+        for lv in lv_list:
+          if lv.is_vol_utilized():
+            iter = treemodel.append(log_iter)
+            log_string = "<span foreground=\"#43ACF6\">" + lv.get_name() + "</span>"
+            treemodel.set(iter, 
+                          NAME_COL, log_string, 
+                          TYPE_COL, LOG_TYPE,
+                          PATH_COL, lv.get_path(),
+                          SIMPLE_LV_NAME_COL, lv.get_name())
+      #Expand if there are entries 
+      self.treeview.expand_row(treemodel.get_path(vg_iter),FALSE)
+
     unalloc_list = self.model_factory.query_unallocated()
     if len(unalloc_list) > 0:
-        unallocated_iter = treemodel.append(None)
-        unalloc_string = "<span size=\"11000\"><b>" + UNALLOCATED_VOLUMES + "</b></span>"
-        treemodel.set(unallocated_iter,
-                      NAME_COL, unalloc_string, 
-                      TYPE_COL, UNSELECTABLE_TYPE)
-        grouped_dir, ungrouped_list = self.__group_by_device(unalloc_list)
-        grouped_dir_sorted = grouped_dir.keys()
-        grouped_dir_sorted.sort()
-        for main_dev in grouped_dir_sorted:
-            dev_iter = treemodel.append(unallocated_iter)
-            pvs = grouped_dir[main_dev]
-            devnames = pvs[0].getDevnames()
-            devnames_str = devnames[0]
-            for devname in devnames[1:]:
-                devnames_str = devnames_str + ', ' + devname
-            if len(devnames) > 1:
-                devnames_str = str(pvs[0].getMultipath()) + ' [' + devnames_str + ']'
-            treemodel.set(dev_iter, 
-                          NAME_COL, devnames_str, 
-                          TYPE_COL, UNSELECTABLE_TYPE)
-            for pv in pvs:
-                iter = treemodel.append(dev_iter)
-                phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_name() + "</span>"
-                treemodel.set(iter, 
-                              NAME_COL, phys_string, 
-                              TYPE_COL, UNALLOCATED_TYPE, 
-                              PATH_COL, pv.get_path(), 
-                              OBJ_COL, pv)
-        for pv in ungrouped_list:
-            iter = treemodel.append(unallocated_iter)
-            phys_string = "<span foreground=\"#ED1C2A\">" + pv.get_path() + "</span>"
-            treemodel.set(iter, 
-                          NAME_COL, phys_string, 
-                          TYPE_COL, UNALLOCATED_TYPE, 
-                          PATH_COL, pv.get_path(), 
-                          OBJ_COL, pv)
-    
+      unallocated_iter = treemodel.append(None)
+      unalloc_string = "<span size=\"11000\"><b>" + UNALLOCATED_VOLUMES + "</b></span>"
+      treemodel.set(unallocated_iter, NAME_COL, unalloc_string, 
+                                      TYPE_COL, UNSELECTABLE_TYPE)
+      for item in unalloc_list:
+        iter = treemodel.append(unallocated_iter)
+        p_string = "<span foreground=\"#ED1C2A\">" + item.get_name() + "</span>"
+        treemodel.set(iter, NAME_COL, p_string, 
+                            TYPE_COL, UNALLOCATED_TYPE,
+                            PATH_COL, item.get_path())
+
     uninit_list = self.model_factory.query_uninitialized()
     if len(uninit_list) > 0:
-        uninitialized_iter = treemodel.append(None)
-        uninit_string = "<span size=\"11000\"><b>" + UNINITIALIZED_ENTITIES + "</b></span>"
-        treemodel.set(uninitialized_iter, 
-                      NAME_COL, uninit_string, 
-                      TYPE_COL, UNSELECTABLE_TYPE)
-        grouped_dir, ungrouped_list = self.__group_by_device(uninit_list)
-        grouped_dir_sorted = grouped_dir.keys()
-        grouped_dir_sorted.sort()
-        for main_dev in grouped_dir_sorted:
-            dev_iter = treemodel.append(uninitialized_iter)
-            pvs = grouped_dir[main_dev]
-            devnames = pvs[0].getDevnames()
-            devnames_str = devnames[0]
-            for devname in devnames[1:]:
-                devnames_str = devnames_str + ', ' + devname
-            if len(devnames) > 1:
-                devnames_str = str(pvs[0].getMultipath()) + ' [' + devnames_str + ']'
-            treemodel.set(dev_iter,
-                          NAME_COL, devnames_str, 
-                          TYPE_COL, UNSELECTABLE_TYPE)
-            for pv in grouped_dir[main_dev]:
-                iter = treemodel.append(dev_iter)
-                treemodel.set(iter, 
-                              NAME_COL, pv.get_name(), 
-                              TYPE_COL, UNINITIALIZED_TYPE, 
-                              PATH_COL, pv.get_path(), 
-                              OBJ_COL, pv)
-        for pv in ungrouped_list:
-            iter = treemodel.append(uninitialized_iter)
-            treemodel.set(iter, 
-                          NAME_COL, pv.get_path(), 
-                          TYPE_COL, UNINITIALIZED_TYPE, 
-                          PATH_COL, pv.get_path(), 
-                          OBJ_COL, pv)
-    
+      uninitialized_iter = treemodel.append(None)
+      uninit_string = "<span size=\"11000\"><b>" + UNINITIALIZED_ENTITIES + "</b></span>"
+      treemodel.set(uninitialized_iter, NAME_COL, uninit_string, 
+                                        TYPE_COL, UNSELECTABLE_TYPE)
+      for item in uninit_list:
+        iter = treemodel.append(uninitialized_iter)
+        treemodel.set(iter, NAME_COL, item.get_name(), 
+                            TYPE_COL, UNINITIALIZED_TYPE,
+                            PATH_COL, item.get_path())
+
     #self.treeview.expand_all()
     self.clear_all_buttonpanels()
-  
-  # returns {main_dev : [pv1, pv2, ...], ...}
-  def __group_by_device(self, pvlist):
-      grouped = {}
-      ungrouped = []
-      for pv in pvlist:
-          if len(pv.getDevnames()) == 0 or pv.wholeDevice():
-              ungrouped.append(pv)
-              continue
-          if pv.getDevnames()[0] in grouped.keys():
-              grouped[pv.getDevnames()[0]].append(pv)
-          else:
-              grouped[pv.getDevnames()[0]] = [pv]
 
-      # sort lists
-      for main_dev in grouped:
-          self.__sort_list_by_get_name_fcn(grouped[main_dev])
-      self.__sort_list_by_get_name_fcn(ungrouped)
-      return grouped, ungrouped
-  
-  def __sort_list_by_get_name_fcn(self, some_list):
-      d = {}
-      l = []
-      while len(some_list) != 0:
-          o = some_list.pop()
-          name = o.get_name()
-          if name in d:
-              d[name].append(o)
-          else:
-              d[name] = [o]
-              l.append(name)
-      l.sort()
-      for name in l:
-          for o in d[name]:
-              some_list.append(o)
-      return some_list
-  
+  def on_expose_event(self,widget,event):
+    self.on_tree_selection_changed(None)
+
+  def on_props_expose_event(self, widget, event):
+    self.lr.do_render()
+
+  def on_size_allocate(self, widget, allocation):
+    #self.width = allocation.width
+    #self.height = allocation.height
+    pass
+
+
   def on_tree_selection_changed(self, *args):
     selection = self.treeview.get_selection()
     model,iter = selection.get_selected()
     if iter == None:
-        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
-        self.display_view.render_no_selection()
-        self.display_view.draw()
-        return
-    
+      self.vr.render_noselection()
+      return
+
     treepath = model.get_path(iter)
-    self.treeview.expand_row(treepath, False)
     
     type = model.get_value(iter, TYPE_COL)
     if type == VG_PHYS_TYPE:
-        self.input_controller.clear_highlighted_sections()
-        self.clear_all_buttonpanels()
-        self.phys_vol_view_panel.show()
-        
-        vg = model.get_value(iter, OBJ_COL)
-        pv_list = vg.get_pvs().values()
-        self.display_view.render_pvs(pv_list)
-        self.on_best_fit(None)
-        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
+      parent_iter = model.iter_parent(iter)
+      nme = model.get_value(parent_iter, NAME_COL)
+      vg_name = nme.strip()
+      pv_list = self.model_factory.query_PVs_for_VG(vg_name)
+      self.vr.render(pv_list, 0)
+      vg_data = self.model_factory.get_data_for_VG(vg_name)
+      self.lr.render_to_layout_area(vg_data, vg_name, type)
+      self.treeview.expand_row(treepath, FALSE)
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.phys_vol_view_panel.show()
     elif type == VG_LOG_TYPE:
-        self.input_controller.clear_highlighted_sections()
-        self.clear_all_buttonpanels()
-        
-        vg = model.get_value(iter, OBJ_COL)
-        lv_list = vg.get_lvs().values()
-        self.show_log_vol_view_panel(lv_list)
-        self.display_view.render_lvs(lv_list)
-        self.on_best_fit(None)
-        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
+      parent_iter = model.iter_parent(iter)
+      nme = model.get_value(parent_iter, NAME_COL)
+      vg_name = nme.strip()
+      lv_list = self.model_factory.query_LVs_for_VG(vg_name)
+      self.vr.render(lv_list, 2)
+      vg_data = self.model_factory.get_data_for_VG(vg_name)
+      self.lr.render_to_layout_area(vg_data, vg_name, type)
+      self.treeview.expand_row(treepath, FALSE)
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.show_log_vol_view_panel(lv_list)
     elif type == VG_TYPE:
-        self.clear_all_buttonpanels()
-        self.input_controller.clear_highlighted_sections()
-        
-        vg = model.get_value(iter, OBJ_COL)
-        self.display_view.render_vg(vg)
-        self.on_best_fit(None)
-        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
-    elif type == LOG_TYPE:
-        self.input_controller.clear_highlighted_sections()
-        self.clear_all_buttonpanels()
-        self.log_panel.show()
-        
-        lv = model.get_value(iter, OBJ_COL)
-        self.display_view.render_lv(lv)
-        self.on_best_fit(None)
-        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
+      nme = model.get_value(iter, NAME_COL)
+      vg_name = nme.strip()
+      lv_list = self.model_factory.query_LVs_for_VG(vg_name)
+      pv_list = self.model_factory.query_PVs_for_VG(vg_name)
+      vg_data = self.model_factory.get_data_for_VG(vg_name)
+      self.lr.render_to_layout_area(vg_data, vg_name, type)
+      self.clear_all_buttonpanels()
+      self.treeview.expand_row(treepath, FALSE)
+      self.input_controller.clear_highlighted_sections()
+      self.vr.render_dual(pv_list, lv_list)
     elif type == PHYS_TYPE:
-        self.input_controller.clear_highlighted_sections()
-        self.clear_all_buttonpanels()
-        self.phys_panel.show()
-        
-        pv = model.get_value(iter, OBJ_COL)
-        self.display_view.render_pv(pv)
-        self.on_best_fit(None)
-        self.glade_xml.get_widget('zoom_box').set_sensitive(True)
+      pathname = model.get_value(iter, PATH_COL)
+      pv_name = pathname.strip()
+      pv = self.model_factory.get_PV(pv_name)
+      pv_data = self.model_factory.get_data_for_PV(pv_name)
+      self.lr.render_to_layout_area(pv_data, pv_name, type)
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.phys_panel.show()
+      self.vr.render_single_volume(pv, type) 
+    elif type == LOG_TYPE:
+      pathname = model.get_value(iter, PATH_COL)
+      lv_name = pathname.strip()
+      lv = self.model_factory.get_LV(lv_name)
+      lv_data = self.model_factory.get_data_for_LV(lv_name)
+      self.lr.render_to_layout_area(lv_data, lv_name, type)
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.log_panel.show()
+      self.vr.render_single_volume(lv, type) 
     elif type == UNALLOCATED_TYPE:
-        self.input_controller.clear_highlighted_sections()
-        self.clear_all_buttonpanels()
-        self.unalloc_panel.show()
-        
-        pv = model.get_value(iter, OBJ_COL)
-        self.display_view.render_unalloc_pv(pv)
-        self.on_best_fit(None)
-        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
+      pathname = model.get_value(iter, PATH_COL)
+      pv_name = pathname.strip()
+      pv = self.model_factory.get_PV(pv_name)
+      self.vr.render_single_volume(pv, type) 
+      pv_data = self.model_factory.get_data_for_PV(pv_name)
+      self.lr.render_to_layout_area(pv_data, pv_name, type)
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.unalloc_panel.show()
     elif type == UNINITIALIZED_TYPE:
-        self.input_controller.clear_highlighted_sections()
-        self.clear_all_buttonpanels()
-        button = self.input_controller.init_entity_button
-        
-        uv = model.get_value(iter, OBJ_COL)
-        if uv.initializable:
-            button.set_sensitive(True)
-        else:
-            button.set_sensitive(False)
-        self.uninit_panel.show()
-        self.display_view.render_uninit_pv(uv)
-        self.on_best_fit(None)
-        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
+      pathname = model.get_value(iter, PATH_COL)
+      uv_name = pathname.strip()
+      uv = self.model_factory.get_UV(uv_name)
+      uv_data = self.model_factory.get_data_for_UV(uv_name)
+      self.lr.render_to_layout_area(uv_data, uv_name, type)
+      self.vr.render_single_volume(uv, type) 
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.uninit_panel.show()
     else:
-        self.input_controller.clear_highlighted_sections()
-        self.clear_all_buttonpanels()
-        self.display_view.render_no_selection()
-        self.display_view.draw()
-        self.glade_xml.get_widget('zoom_box').set_sensitive(False)
-  
+      self.input_controller.clear_highlighted_sections()
+      self.clear_all_buttonpanels()
+      self.vr.render_noselection()
+      self.lr.clear_layout_area()
+      
+
+  def on_scroll_event(self, *args):
+    self.on_tree_selection_changed(None)
+    return TRUE  
+
+  def on_mouse_button_press(self, widget, event, *args):
+    selection = self.treeview.get_selection()
+    model,iter = selection.get_selected()
+    if iter == None:
+      return
+
+    type = model.get_value(iter, TYPE_COL)
+    if type == VG_TYPE:
+      self.vr.dual_highlight_section_persist(event)
+    elif type == VG_PHYS_TYPE:
+      result = self.vr.highlight_section_persist(event)
+      self.input_controller.register_highlighted_sections(VG_PHYS_TYPE, result)
+    elif type == VG_LOG_TYPE:
+      result = self.vr.highlight_section_persist(event)
+      self.input_controller.register_highlighted_sections(VG_LOG_TYPE, result)
+    elif type == PHYS_TYPE:
+      self.vr.single_highlight_extent_persist(event)
+      #return
+    elif type == LOG_TYPE:
+      return
+    elif type == UNALLOCATED_TYPE:
+      return
+    elif type == UNINITIALIZED_TYPE:
+      return
+
+  def on_motion_event(self, widget, event, *args):
+    return
+    layout = self.vr.highlight_section(widget, event, *args)
+    self.lr.render_selection(layout)
+
   def on_row_expand_collapse(self, treeview, logical,expand, openall, *params):
     treeview.get_model()
     selection = treeview.get_selection()
     model, iter = selection.get_selected()
 #    if model.iter_parent(iter) == None:  #Top level
-    return True
+    return TRUE
 #    else:
-#    return False
+#    return FALSE
 
   def show_log_vol_view_panel(self,lv_list):
     #This is a wrapper for self.log_vol_view_panel.show()
     #If the VG has no LVs, then a proxy LV is returned as an 'Unused' LV.
     #We do not want to allow the deletion of this unused LV.
     #So we'll gray out the button.
-    self.on_rm_select_lvs_button.set_sensitive(True)
-    if len(lv_list) == 1:
-        if lv_list[0].is_used() == False:
-            self.on_rm_select_lvs_button.set_sensitive(False)
-    self.log_vol_view_panel.show()
-  
-  def clear_all_buttonpanels(self):
-      self.unalloc_panel.hide()
-      self.uninit_panel.hide()
-      self.log_vol_view_panel.hide()
-      self.phys_vol_view_panel.hide()
-      self.log_panel.hide()
-      self.phys_panel.hide()
-      
-  
-  def on_best_fit(self, obj):
-      self.on_resize_drawing_area(None, None)
-      self.__set_zoom_buttons(self.display_view.set_best_fit())
-      self.display_view.draw()
-  
-  def on_zoom_in(self, obj):
-      self.__set_zoom_buttons(self.display_view.zoom_in())
-      self.display_view.draw()
-  
-  def on_zoom_out(self, obj):
-      self.__set_zoom_buttons(self.display_view.zoom_out())
-      self.display_view.draw()
-  
-  def __set_zoom_buttons(self, (z_in, z_out)):
-      if z_in:
-          self.glade_xml.get_widget('zoom_in_button').set_sensitive(True)
-      else:
-          self.glade_xml.get_widget('zoom_in_button').set_sensitive(False)
-      if z_out:
-          self.glade_xml.get_widget('zoom_out_button').set_sensitive(True)
-      else:
-          self.glade_xml.get_widget('zoom_out_button').set_sensitive(False)
-  
-  def on_resize_drawing_area(self, obj1, obj2):
-      self.display_view.set_visible_size(self.glade_xml.get_widget('viewport1').window.get_size())
-  
+    self.on_rm_select_lvs_button.set_sensitive(TRUE)
+    x = len(lv_list)
+    if x == 1:
+      if lv_list[0].is_vol_utilized() == FALSE:
+        self.on_rm_select_lvs_button.set_sensitive(FALSE)
 
-class MirrorSyncProgress:
-    def __init__(self, vbox):
-        self.vbox = vbox
-        
-        # {name : [hbox, progressbar], ...}
-        self.progress_bars = {}
-        
-        self.timer = 0
-        
-        self.forked_command = None
-        
-    
-    def initiate(self):
-        # mirroring support disabled for now :(
-        return
-    
-        # return if timer is already ticking
-        if self.timer != 0:
-            return
-        if self.crank():
-            # set up timer to call crank
-            self.timer = gobject.timeout_add(1000, self.crank)
-    
-    def crank(self):
-        # initiate lvprobe if not initiated
-        if self.forked_command == None:
-            args = [LVM_BIN_PATH, 'lvs', '--noheadings', '--separator', '\";\"', '-o', 'lv_name,vg_name,lv_attr,copy_percent,move_pv']
-            self.forked_command = ForkedCommand(LVM_BIN_PATH, args)
-            self.forked_command.fork()
-        
-        # get lv data if completed
-        out, err, status = self.forked_command.get_stdout_stderr_status()
-        if out == None:
-            # not done yet
-            return True
-        else:
-            # command completed
-            self.forked_command = None
-            
-            # find mirrors and copy percent
-            mirrors = {}
-            lines = out.splitlines()
-            for line in lines:
-                words = line.strip().split(';')
-                lvname = words[0]
-                vgname = words[1]
-                lvattrs = words[2]
-                copy_percent = words[3]
-                if lvattrs[0] == 'm':
-                    percent = float(copy_percent)
-                    if percent != float('100.00'):
-                        mirrors[vgname + '/' + lvname] = percent
-            
-            # add new lvs
-            for name in mirrors:
-                if name not in self.progress_bars:
-                    progress = gtk.ProgressBar()
-                    progress.set_text(_("%s mirror synchronisation ") % name)
-                    progress.set_fraction(mirrors[name]/100.0)
-                    hbox = gtk.HBox()
-                    hbox.pack_end(progress)
-                    self.vbox.pack_start(hbox)
-                    self.progress_bars[name] = [hbox, progress]
-            # remove completed or renamed lvs
-            for name in self.progress_bars.keys()[:]:
-                if name not in mirrors:
-                    self.vbox.remove(self.progress_bars[name][0])
-                    self.progress_bars.pop(name)
-            
-            self.vbox.show_all()
-            # update progress bars
-            for name in self.progress_bars:
-                self.progress_bars[name][1].set_fraction(mirrors[name]/100.0)
-                
-            # stop timer if all done
-            if len(self.progress_bars.keys()) == 0:
-                self.timer = 0
-                return False
-            else:
-                return True
+    self.log_vol_view_panel.show()
+
+  def clear_all_buttonpanels(self):
+    self.unalloc_panel.hide()
+    self.uninit_panel.hide()
+    self.log_vol_view_panel.hide()
+    self.phys_vol_view_panel.hide()
+    self.log_panel.hide()
+    self.phys_panel.hide()
+

@@ -6,6 +6,7 @@
    interface in a graphical user interface.
 
 """
+__author__ = 'Jim Parsons (jparsons@redhat.com)'
  
 import sys
 import types
@@ -13,13 +14,11 @@ import select
 import signal
 import string
 import os
+from gtk import TRUE, FALSE
 
-from lvmui_constants import PROGNAME, INSTALLDIR
-
-#PROGNAME = "system-config-lvm"
-#INSTALLDIR="/usr/share/system-config-lvm"
+PROGNAME = "system-config-lvm"
 VERSION = "@VERSION@"
-
+INSTALLDIR="/usr/share/system-config-lvm"
 
 ### gettext ("_") must come before import gtk ###
 import gettext
@@ -46,6 +45,7 @@ except RuntimeError, e:
 """) % e
     sys.exit(-1)
                                                                                 
+from renderer import volume_renderer
 from lvm_model import lvm_model
 from Volume_Tab_View import Volume_Tab_View
 from lvmui_constants import *
@@ -61,9 +61,6 @@ ABOUT_VERSION=_("%s %s") % ('system-config-lvm',VERSION)
 ###############################################
 class baselvm:
   def __init__(self, glade_xml, app):
-
-    #Need to suppress the spewing of file descriptor errors to terminal
-    os.environ["LVM_SUPPRESS_FD_WARNINGS"] = "1"
  
     self.lvmm = lvm_model()
                                                                                 
@@ -75,8 +72,7 @@ class baselvm:
     self.glade_xml.signal_autoconnect(
       {
         "on_quit1_activate" : self.quit,
-        "on_about1_activate" : self.on_about,
-        "on_reload_lvm_activate" : self.on_reload
+        "on_about1_activate" : self.on_about
       }
     )
                                                                                 
@@ -86,8 +82,7 @@ class baselvm:
             '', ### Don't specify version - already in ABOUT_VERSION
             _("Copyright (c) 2004 Red Hat, Inc. All rights reserved."),
             _("This software is licensed under the terms of the GPL."),
-            [ 'Stanko Kupcevic (system-config-lvm) <kupcevic at redhat.com>',
-              'Jim Parsons (system-config-lvm) <jparsons at redhat.com>',
+            [ 'Jim Parsons (system-config-lvm) <jparsons at redhat.com>',
               'Alasdair Kergon (LVM2 Maintainer) <agk at redhat.com>',
               'Heinz Mauelshagen (LVM Maintainer) <mauelshagen at redhat.com>',
               '',
@@ -97,13 +92,11 @@ class baselvm:
         ) ### end dialog
         dialog.set_title (FORMALNAME)
         dialog.show()
-        
-  
-  def on_reload(self, *args):
-      self.volume_tab_view.reset_tree_model()
-  
+                                                                                
+                                                                                
+                                                                                
   def quit(self, *args):
-      gtk.main_quit()
+    gtk.main_quit()
 
 
 

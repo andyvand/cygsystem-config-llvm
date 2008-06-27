@@ -11,7 +11,9 @@ import signal
 import gobject
 import pango
 import string
+import rhpl.executil
 import os
+from gtk import TRUE, FALSE
 from lvmui_constants import *
 import stat
 import gettext
@@ -54,24 +56,20 @@ class Properties_Renderer:
   def __init__(self, area, widget):
     self.main_window = widget
     self.area = area  #actual widget, used for getting style, hence bgcolor
-    
+
     self.area.set_size_request(700, 500)
-    
+
     self.current_selection_layout = None
-    
+
     self.layout_list = list()
-    
+
     self.layout_pixmap = gtk.gdk.Pixmap(self.main_window, LABEL_X, LABEL_Y)
-    
+
     self.gc = self.main_window.new_gc()
     self.pango_context = self.area.get_pango_context()
-    
-    color = gtk.gdk.colormap_get_system().alloc_color("white", 1,1)
-    self.area.modify_bg(gtk.STATE_NORMAL, color) 
-    self.area.connect('expose-event', self.on_expose_event)
-    
+
     self.clear_layout_pixmap()
-  
+    
   def render_to_layout_area(self, prop_list, name, type):
     self.clear_layout_pixmap()
     self.layout_list = list()
@@ -79,15 +77,17 @@ class Properties_Renderer:
     self.prepare_prop_layout(prop_list, type)
     self.prepare_selection_props()
     self.do_render()
-    
-  
+
+
   def prepare_header_layout(self, name, type):
     pc = self.pango_context
     desc = pc.get_font_description()
     desc.set_size(BIG_HEADER_SIZE)
     pc.set_font_description(desc)
-    
+    header_layout = pango.Layout(pc)
+
     layout_string1 = "<span size=\"12000\">" +PROPERTIES_STR + "</span>\n"
+
     if type == PHYS_TYPE:
       layout_string2 = "<span size=\"12000\">" + PHYSICAL_VOLUME_STR + "</span>\n"
       layout_string3 = "<span foreground=\"#ED1C2A\" size=\"12000\"><b>" + name + "</b></span>"
@@ -111,38 +111,45 @@ class Properties_Renderer:
       layout_string2 = "<span size=\"12000\">" + VOLUMEGROUP_STR + "</span>\n"
       layout_string3 = "<span foreground=\"#43A2FF\" size=\"12000\"><b>" + name + "</b></span>"
     layout_string = layout_string1 + layout_string2 + layout_string3
-    
-    header_layout = self.area.create_pango_layout('')
-    header_layout.set_markup(layout_string)
+    attr,text,a = pango.parse_markup(layout_string, u'_')
+    header_layout.set_attributes(attr)
+    header_layout.set_text(text)
     self.layout_list.append(header_layout)
-  
+    
+    
+
   def prepare_prop_layout(self, prop_list,type):
     pc = self.pango_context
     desc = pc.get_font_description()
     desc.set_size(PROPERTY_SIZE)
     pc.set_font_description(desc)
-    
+
+    prop_layout = pango.Layout(pc)
+
     text_str = self.prepare_props_list(prop_list, type)
-    props_layout = self.area.create_pango_layout('')
-    props_layout.set_markup(text_str)
+    props_layout = pango.Layout(self.pango_context)
+    attr,text,a = pango.parse_markup(text_str, u'_')
+    props_layout.set_attributes(attr)
+    props_layout.set_text(text)
     self.layout_list.append(props_layout)
-  
+
+
   def clear_layout_pixmap(self):
     self.set_color("white")
-    self.layout_pixmap.draw_rectangle(self.gc, True, 0, 0, -1, -1)
-  
+    self.layout_pixmap.draw_rectangle(self.gc, 1, 0, 0, -1, -1)
+
   def clear_layout_area(self):
-      self.clear_layout_pixmap()
-      self.layout_list = list()
-      self.main_window.draw_drawable(self.gc, self.layout_pixmap, 0, 0, X_OFF, Y_OFF, -1, -1)
+    self.clear_layout_pixmap()
+    self.layout_list = list()
+    self.main_window.draw_drawable(self.gc, self.layout_pixmap, 0, 0, X_OFF, Y_OFF, -1, -1)
     
-  
+
   def set_color(self, color):
-      self.gc.set_foreground(gtk.gdk.colormap_get_system().alloc_color(color, 1,1))
-  
+    self.gc.set_foreground(gtk.gdk.colormap_get_system().alloc_color(color, 1,1))
+
   def prepare_selection_props(self):
-      pass
-  
+    pass
+
   def prepare_props_list(self, props_list, type):
     stringbuf = list()
     for i in range(0, len(props_list), 2):
@@ -176,9 +183,8 @@ class Properties_Renderer:
 
     text_str = "".join(stringbuf)
     return text_str
-  
+
   def do_render(self):
-    self.clear_layout_pixmap()
     self.set_color("black")
     y_offset = 0
     for layout in self.layout_list:
@@ -189,22 +195,20 @@ class Properties_Renderer:
       else:
         self.layout_pixmap.draw_layout(self.gc, 0, y_offset + 5, layout)
         y_offset = y_offset + y
-        
+
       if self.current_selection_layout != None:
         self.layout_pixmap.draw_layout(self.gc, 0, y_offset + 5, self.current_selection_layout)
-    
+        
+
     self.main_window.draw_drawable(self.gc, self.layout_pixmap, 0, 0, X_OFF, Y_OFF, -1, -1)
-  
+
   def render_selection(self, layout):
-      ###FIXME - This has the potential of eliminating all entries on the list.
-      if layout == None:
-          self.current_selection_layout = None
-          self.do_render()
-      elif layout is self.current_selection_layout:
-          return
-      else:
-          self.current_selection_layout = layout
-          self.do_render() 
-  
-  def on_expose_event(self, widget, event):
+    ###FIXME - This has the potential of eliminating all entries on the list.
+    if layout == None:
+      self.current_selection_layout = None
       self.do_render()
+    elif layout is self.current_selection_layout:
+      return
+    else:
+      self.current_selection_layout = layout
+      self.do_render() 
