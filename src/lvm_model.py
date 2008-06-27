@@ -128,17 +128,20 @@ PV_UUID_IDX = 8
 
 
 LVS_HAS_ALL_OPTION = False
-out, status = execWithCaptureStatus(LVM_BIN_PATH, [LVM_BIN_PATH, 'lvs', '--all'])
-if status == 0:
-  LVS_HAS_ALL_OPTION = True
-
 LVS_HAS_MIRROR_OPTIONS = False
-LVS_HAS_MIRROR_OPTIONS = LVS_HAS_ALL_OPTION
 
 
 class lvm_model:
   
   def __init__(self):
+    global LVS_HAS_ALL_OPTION
+    global LVS_HAS_MIRROR_OPTIONS
+    
+    out, status = execWithCaptureStatus(LVM_BIN_PATH, [LVM_BIN_PATH, 'lvs', '--all'])
+    if status == 0:
+      LVS_HAS_ALL_OPTION = True
+    LVS_HAS_MIRROR_OPTIONS = LVS_HAS_ALL_OPTION
+    
     self.__block_device_model = BlockDeviceModel()
     self.__VGs = {}
     self.__PVs = []
@@ -146,6 +149,11 @@ class lvm_model:
   def reload(self):
     progress = ProgressPopup(RELOAD_LVM_MESSAGE)
     progress.start()
+    
+    # clean-up everything
+    self.__block_device_model = BlockDeviceModel()
+    self.__VGs = {}
+    self.__PVs = []
     
     # first query VolumeGroups
     self.__VGs = {}
@@ -943,6 +951,27 @@ class lvm_model:
     for prop in end:
       text_list.append(prop)
     
+    try:
+      # add scsi_id and iscsi properties
+      device = pv.getDevnames()[0]
+      devname = pv.extract_name(device)
+      SCSI_ID_BIN = '/sbin/scsi_id'
+      args = [SCSI_ID_BIN, '-g', '-u', '-s', '/block/' + devname]
+      o, e, s = execWithCaptureErrorStatus(SCSI_ID_BIN, args)
+      text_list.append(_("SCSI ID:   "))
+      if s == 0:
+        text_list.append(o.strip())
+      else:
+        text_list.append(_("NONE"))
+      ISCSI_BIN = '/sbin/iscsi-device'
+      if os.access(ISCSI_BIN, os.X_OK):
+        o, e, s = execWithCaptureErrorStatus(ISCSI_BIN, [ISCSI_BIN, device])
+        if s == 0:
+          text_list.append(_("iSCSI Device:   "))
+          text_list.append(_("True"))
+    except:
+      pass
+    
     return text_list
   
   def __getFS(self, path):
@@ -993,17 +1022,19 @@ class lvm_model:
   
   def is_mirroring_supported(self):
     return LVS_HAS_MIRROR_OPTIONS
+
+
   
-  def get_locking_type(self):
-    conf = open('/etc/lvm/lvm.conf')
-    
-    lines = conf.readlines()
-    for line in lines:
-      words = line.split()
-      if len(words) < 3:
-        continue
-      if words[0] == 'locking_type':
-        if words[1] == '=':
-          locking_type = int(words[2])
-          return locking_type
-    return None
+def lvm_conf_get_locking_type():
+  conf = open('/etc/lvm/lvm.conf')
+  
+  lines = conf.readlines()
+  for line in lines:
+    words = line.split()
+    if len(words) < 3:
+      continue
+    if words[0] == 'locking_type':
+      if words[1] == '=':
+        locking_type = int(words[2])
+        return locking_type
+  return None

@@ -1,22 +1,27 @@
+# translation of ja.po to
 # translation of ja.po to Japanese
 # system-config-lvm ja.po Japanese translation.
 # Copyright (C) Red Hat Inc.2004
 # Hirofumi Saito <hi_saito@yk.rim.or.jp>, 2004, 2005, 2006.
+# kiyoto james hashida <khashida@brisbane.redhat.com>, 2006.
+# Kiyoto James Hashida <khashida@redhat.com>, 2006.
+# Noriko Mizumoto <noriko@redhat.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ja\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-07-10 13:46-0400\n"
-"PO-Revision-Date: 2006-03-05 21:54+0900\n"
-"Last-Translator: Hirofumi Saito <hi_saito@yk.rim.or.jp>\n"
-"Language-Team: Japanese <fedora-trans-ja@redhat.com>\n"
+"POT-Creation-Date: 2007-01-31 09:04-0500\n"
+"PO-Revision-Date: 2006-09-29 11:58+1000\n"
+"Last-Translator: Noriko Mizumoto <noriko@redhat.com>\n"
+"Language-Team: Japanese <doc-i18n-list@redhat.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
 
-#: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:33
+#: src/InputController.py:39 src/Properties_Renderer.py:24
+#: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
 "\n"
@@ -37,7 +42,7 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#: src/InputController.py:56
+#: src/InputController.py:59
 #, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr "この %s を加えるボリュームグループを選択してください: "
@@ -50,33 +55,35 @@ msgstr "この %s を加えるボリュームグループを選択してくだ�
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:84
+#: src/InputController.py:87
 msgid "Name"
 msgstr "名前"
 
-#: src/InputController.py:85
+#: src/InputController.py:88
 msgid "Size"
 msgstr "サイズ"
 
-#: src/InputController.py:86
+#: src/InputController.py:89
 msgid "Entity Type"
 msgstr "エンティティータイプ"
 
-#: src/InputController.py:88
+#: src/InputController.py:91
 msgid "Unallocated Physical Volume"
 msgstr "割り当てられない物理ボリューム"
 
-#: src/InputController.py:89
+#: src/InputController.py:92
 msgid "Uninitialized Disk Entity"
-msgstr "初期化不能なディスクエンティティー"
+msgstr ""
+"初期化不能なディスク\n"
+"エンティティー"
 
-#: src/InputController.py:90
+#: src/InputController.py:93
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr ""
 "%s ボリュームグループに加えるためにディスクのエンティティーを選んでください:"
 
-#: src/InputController.py:92
+#: src/InputController.py:95
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -84,7 +91,7 @@ msgstr ""
 "ストライプをサポートするにはボリュームグループはふたつ以上の物理ボリュームで"
 "構成されなければいけません。このボリュームグループは要求に合っていません。"
 
-#: src/InputController.py:94
+#: src/InputController.py:97
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
@@ -93,7 +100,7 @@ msgstr ""
 "%s という名前の論理ボリュームは既にボリュームグループに存在しています。一意的"
 "な名前を選んでください。"
 
-#: src/InputController.py:96
+#: src/InputController.py:99
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
@@ -101,42 +108,42 @@ msgstr ""
 "%s という名前のボリュームグループは既に存在しています。一意的な名前を選んでく"
 "ださい。"
 
-#: src/InputController.py:98
+#: src/InputController.py:101
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "名前は新しい論理ボリュームに対して与えられなければいけません"
 
-#: src/InputController.py:100
+#: src/InputController.py:103
 msgid "A Name must be provided for the new Volume Group"
 msgstr "名前は新しいボリュームグループに対して与えられなければいけません"
 
-#: src/InputController.py:102
+#: src/InputController.py:105
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "特定されたマウントポイント、%s が存在しません。作成しますか?"
 
-#: src/InputController.py:104
+#: src/InputController.py:107
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "マウントポイント %s の作成は予期しない失敗になりました。"
 
-#: src/InputController.py:106
+#: src/InputController.py:109
 msgid "This capability is not yet implemented in this version"
 msgstr "この機能は現在のバージョンでは導入されていません"
 
-#: src/InputController.py:108
+#: src/InputController.py:111
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "このボリュームグループの論理ボリューム数は最大に達しました。"
 
-#: src/InputController.py:110
+#: src/InputController.py:113
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "このボリュームグループの中の物理ボリューム数は最大に達しました。"
 
-#: src/InputController.py:112
+#: src/InputController.py:115
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
@@ -145,7 +152,7 @@ msgstr ""
 "ほとんどの %s 物理ボリュームは限界に達する前にこのボリュームグループに加えら"
 "れました。"
 
-#: src/InputController.py:114
+#: src/InputController.py:117
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
@@ -155,16 +162,15 @@ msgstr ""
 "ボリュームグループ %s には新しい論理ボリューム用に十分なスペースがありませ"
 "ん。解決策としてボリュームグループに追加の物理ボリュームを加えます。"
 
-#: src/InputController.py:116
+#: src/InputController.py:119
 msgid "A snapshot of a snapshot is not supported."
 msgstr "スナップショットのスナップショットはサポートされていません。"
 
-#: src/InputController.py:117
-#, fuzzy
+#: src/InputController.py:120
 msgid "A snapshot of a mirrored Logical Volume is not supported."
-msgstr "スナップショットのスナップショットはサポートされていません。"
+msgstr "ミラー化した論理ボリュームのスナップショットはサポートされていません。"
 
-#: src/InputController.py:119
+#: src/InputController.py:122
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -173,7 +179,7 @@ msgstr ""
 "論理ボリューム %s には現在 %s を関連付けられているスナップショットがありま"
 "す。スナップショットを最初に削除しています。"
 
-#: src/InputController.py:120
+#: src/InputController.py:123
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -182,14 +188,14 @@ msgstr ""
 "論理ボリューム %s にはスナップショットがあります: %s は現在関連付けられていま"
 "す。最初にスナップショットを削除してください。"
 
-#: src/InputController.py:122
+#: src/InputController.py:125
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "モデルファクトリーで定義されていない変換エラー。タスクを完了することができま"
 "せん。"
 
-#: src/InputController.py:124
+#: src/InputController.py:127
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -200,7 +206,7 @@ msgstr ""
 "現在 %s にマウントされています。マウントされたファイルシステムのデータを完全"
 "に無視しても構いませんか?"
 
-#: src/InputController.py:126
+#: src/InputController.py:129
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -211,80 +217,80 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:132
+#: src/InputController.py:135
 #, python-format
 msgid "Unused space on %s"
 msgstr "%s の未使用スペース"
 
-#: src/InputController.py:133
+#: src/InputController.py:136
 #, python-format
 msgid "%s megabytes"
 msgstr "%s メガバイト"
 
-#: src/InputController.py:134
+#: src/InputController.py:137
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s キロバイト"
 
-#: src/InputController.py:135
+#: src/InputController.py:138
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s ギガバイト"
 
-#: src/InputController.py:136
+#: src/InputController.py:139
 #, python-format
 msgid "%s extents"
 msgstr "%s エクステント"
 
-#: src/InputController.py:138
+#: src/InputController.py:141
 msgid "Remaining free space in Volume Group:\n"
 msgstr "ボリュームグループの空き領域のリネーム:\n"
 
-#: src/InputController.py:139
+#: src/InputController.py:142
 msgid "Remaining space for this Volume:\n"
 msgstr "このボリュームの残りスペース:\n"
 
-#: src/InputController.py:141
+#: src/InputController.py:144
 msgid "Extents"
 msgstr "エクステント"
 
-#: src/InputController.py:142
+#: src/InputController.py:145
 msgid "Gigabytes"
 msgstr "ギガバイト"
 
-#: src/InputController.py:143
+#: src/InputController.py:146
 msgid "Megabytes"
 msgstr "メガバイト"
 
-#: src/InputController.py:144
+#: src/InputController.py:147
 msgid "Kilobytes"
 msgstr "キロバイト"
 
-#: src/InputController.py:146
+#: src/InputController.py:149
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s は数値のみ使用可能です"
 
-#: src/InputController.py:147
+#: src/InputController.py:150
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr "最大物理ボリュームフィールドは 1 から 256 までの整数のみ使用可能です"
 
-#: src/InputController.py:148
+#: src/InputController.py:151
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr "最大論理ボリュームフィールドは 1 から 256 までの整数のみ使用可能です"
 
-#: src/InputController.py:150
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr "本当に論理ボリューム管理から %s を外してもよろしいですか?"
 
-#: src/InputController.py:152
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -300,13 +306,13 @@ msgstr ""
 "しては、これを削除する前に新しい物理ボリュームを加えるか、この物理ボリューム"
 "に割り当てられている論理ボリュームを削除することがあります。"
 
-#: src/InputController.py:153
+#: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "本当に %s をボリュームグループ %s から外してもよろしいですか?"
 
-#: src/InputController.py:154
+#: src/InputController.py:157
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -315,7 +321,7 @@ msgstr ""
 "ボリュームグループ %s から論理ボリューム %s を削除するとボリュームグループが"
 "空になるだけでなく、それが空になります。続けますか?"
 
-#: src/InputController.py:155
+#: src/InputController.py:158
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -325,7 +331,7 @@ msgstr ""
 "ボリュームグループ %s には %s にあるデータを移動させる十分なスペースがありま"
 "せん。解決策としてボリュームグループに追加の物理ボリュームを加えます。"
 
-#: src/InputController.py:156
+#: src/InputController.py:159
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -337,7 +343,7 @@ msgstr ""
 "\" を実行してみてください。そうしないと、物理エクステントにあるデータの移動の"
 "要求は利用できません。"
 
-#: src/InputController.py:157
+#: src/InputController.py:160
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -348,12 +354,12 @@ msgstr ""
 "snapshot\" を実行してみてください。そうしないと、物理エクステントにあるデータ"
 "の移動の要求は利用できません。"
 
-#: src/InputController.py:159
+#: src/InputController.py:162
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "本当に論理ボリューム %s を削除してもかまいませんか?"
 
-#: src/InputController.py:160
+#: src/InputController.py:163
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -362,7 +368,7 @@ msgstr ""
 "論理ボリューム %s はシステムで %s ファイルシステムを含んでいます。全てのデー"
 "タが失われます! 論理ボリューム %s を削除してもかまいませんか?"
 
-#: src/InputController.py:161
+#: src/InputController.py:164
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -372,13 +378,18 @@ msgstr ""
 "のデータは失われてしまいます! 本当に論理ボリューム %s を削除してもかまいませ"
 "んか?"
 
-#: src/InputController.py:306
+#: src/InputController.py:309
+#, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
-"cluster rpm has to be installed, and clvmd service has to be running"
+"cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
+"executed and clvmd service has to be running"
 msgstr ""
+"ボリュームグループをクラスタ環境で安全に使用できるようにする為には、lvm2-"
+"cluster rpm がインストールしてあり、clvmd サービスが稼働中でなければなりませ"
+"ん"
 
-#: src/InputController.py:364
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -389,7 +400,7 @@ msgstr ""
 "んでいます。ミラーされた論理ボリュームはまだ移動されていません。したがって %"
 "s は削除できません。"
 
-#: src/InputController.py:367
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -400,7 +411,7 @@ msgstr ""
 "含んでいます。ミラーされた論理ボリュームはまだ移動されていません。したがって "
 "%s は削除されません。"
 
-#: src/InputController.py:370
+#: src/InputController.py:374
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -410,7 +421,7 @@ msgstr ""
 "含んでいます。スナップショットはまだ移動されていませんので、%s は削除されませ"
 "ん。"
 
-#: src/InputController.py:375
+#: src/InputController.py:379
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -420,7 +431,7 @@ msgstr ""
 "s を含んでいます。スナップショットの基点はまだ移動されていませんので、%s は削"
 "除されません。"
 
-#: src/InputController.py:377
+#: src/InputController.py:381
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -430,7 +441,7 @@ msgstr ""
 "点を含んでいます。スナップショットの基点はまだ移動されていませんので、%s は削"
 "除されません。"
 
-#: src/InputController.py:564
+#: src/InputController.py:568
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -439,14 +450,14 @@ msgstr ""
 "論理ボリューム\"%s\" は削除のために選択されていないスナップショットが含まれて"
 "います。同様に削除されなければいけません。"
 
-#: src/InputController.py:579
+#: src/InputController.py:583
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
 "\"%s\" は、スナップショット \"%s\" の基点であり、削除リストから削除されます。"
 
-#: src/InputController.py:610
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -455,7 +466,7 @@ msgstr ""
 "物理ボリューム \"%s\" はミラーに属するエクステントを含んでいます。ミラーは移"
 "動されていませんので、%s は削除できません。"
 
-#: src/InputController.py:613
+#: src/InputController.py:617
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -465,24 +476,24 @@ msgstr ""
 "ショットの基点を含んでいます。スナップショットは移動されていませんので、%s は"
 "削除できません。"
 
-#: src/InputController.py:678
+#: src/InputController.py:682
 msgid "The path you specified does not exist."
 msgstr "指定されたパスは存在しません。"
 
-#: src/InputController.py:685
+#: src/InputController.py:689
 msgid "The path you specified is not a Block Device."
 msgstr "指定されたパスはブロックデバイスです。"
 
-#: src/InputController.py:756
+#: src/InputController.py:760
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "%s の初期化に失敗"
 
-#: src/InputController.py:993 src/InputController.py:996
+#: src/InputController.py:998 src/InputController.py:1001
 msgid "Please select some extents first"
 msgstr "いくつかのエクステントを最初に選択してください"
 
-#: src/InputController.py:1030
+#: src/InputController.py:1035
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -490,41 +501,48 @@ msgstr ""
 "必要な移動を行うための十分な空きエクステントがありません。もっと物理ボリュー"
 "ムを増やして問題を解決してください。"
 
-#: src/InputController.py:1192
+#: src/InputController.py:1091
+#, python-format
+msgid ""
+"iSCSI Initiator rpm is not installed. \n"
+"Install %s rpm, and try again."
+msgstr ""
+
+#: src/InputController.py:1208
 msgid "Migrate extents"
 msgstr "エクステントの移動"
 
-#: src/InputController.py:1320
+#: src/InputController.py:1336
 msgid "Options"
 msgstr "オプション"
 
-#: src/InputController.py:1354
+#: src/InputController.py:1370
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "%s のスナップショットを作成"
 
-#: src/InputController.py:1356
+#: src/InputController.py:1372
 msgid "Create New Logical Volume"
 msgstr "新しい論理ボリュームの作成"
 
-#: src/InputController.py:1359
+#: src/InputController.py:1375
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "%s、 %s のスナップショットの編集"
 
-#: src/InputController.py:1362
+#: src/InputController.py:1378
 msgid "Edit Logical Volume"
 msgstr "論理ボリュームの編集"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1531
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "基本となる論理ボリューム管理がミラーリングをサポートしていません"
 
-#: src/InputController.py:1522
+#: src/InputController.py:1538
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "ストリップされた論理ボリュームが移動できません。"
 
-#: src/InputController.py:1529
+#: src/InputController.py:1545
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "関連付けされたスナップショットを含んだ論理ボリュームがまだミラーできていませ"
@@ -532,7 +550,7 @@ msgstr ""
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1536
+#: src/InputController.py:1552
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -540,14 +558,14 @@ msgstr ""
 "ミラーリングの第一の目的はハードドライブの失敗によるデータを保護することで"
 "す。異なったハードドライブ上にミラーイメージを置きますか?"
 
-#: src/InputController.py:1545
+#: src/InputController.py:1561
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "3 つ以下のハードドライブが空きスペースとして利用できます。ミラーリングを不可"
 "にします。"
 
-#: src/InputController.py:1550
+#: src/InputController.py:1566
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -555,14 +573,14 @@ msgstr ""
 "ミラーリングを可能にする最低 3 つの物理ボリューム上に空きスペースがなければい"
 "けません。"
 
-#: src/InputController.py:1558
+#: src/InputController.py:1574
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
 "論理ボリュームの大きさがミラーとして利用できる最大サイズに調整されます。"
 
-#: src/InputController.py:1563
+#: src/InputController.py:1579
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -571,41 +589,41 @@ msgstr ""
 "ミラーを追加する十分な空きスペースがありません。論理ボリュームの大きさを %s "
 "にするか、物理ボリュームを追加してください。"
 
-#: src/InputController.py:1927
+#: src/InputController.py:1943
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr "\"snapshot\" または \"pvmove\" で始まる名前は予約キーワードです。"
 
-#: src/InputController.py:1929
+#: src/InputController.py:1945
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "\"_mlog\" または \"_mimage\" を含む名前は予約語です。"
 
-#: src/InputController.py:1931
+#: src/InputController.py:1947
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "\"-\" で始まる名前は無効です"
 
-#: src/InputController.py:1933
+#: src/InputController.py:1949
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "\".\" または \"..\" を含む名前は使えません。"
 
-#: src/InputController.py:1939
+#: src/InputController.py:1955
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "ホワイトスペースは論理ボリュームの名前として許可されていません"
 
-#: src/InputController.py:1942
+#: src/InputController.py:1958
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "論理ボリューム名の \"%s\" は無効な文字です"
 
-#: src/InputController.py:1962
+#: src/InputController.py:1978
 msgid "Please specify mount point"
 msgstr "マウントポイントを指定してください"
 
-#: src/InputController.py:2028
+#: src/InputController.py:2044
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "論理ボリュームのデータを保持したまま ext2 を ext3 にアップグレードしますか?"
 
-#: src/InputController.py:2062
+#: src/InputController.py:2078
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -614,12 +632,12 @@ msgstr ""
 "続けますか?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2163
+#: src/InputController.py:2179
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "ミラーは作成されません。残りのタスクが完了しました。"
 
 #. create mirror
-#: src/InputController.py:2166
+#: src/InputController.py:2182
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
@@ -627,12 +645,12 @@ msgstr ""
 "LVM では既に存在する論理ボリュームにミラーの追加をすることはサポートされてい"
 "ません。残りのタスクを終了します。"
 
-#: src/InputController.py:2215
+#: src/InputController.py:2231
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr ""
 "ミラーを追加するには、いくつかのエクステントを移動させる必要があります。"
 
-#: src/InputController.py:2215
+#: src/InputController.py:2231
 msgid "Do you want to migrate specified extents?"
 msgstr "指定されたエクステントを移動しますか?"
 
@@ -672,30 +690,29 @@ msgstr "ボリュームグループの削除"
 msgid "Removing Physical Volume"
 msgstr "物理ボリュームの削除"
 
-#: src/CommandHandler.py:246
+#: src/CommandHandler.py:248
 msgid "Removing Logical Volume"
 msgstr "論理ボリュームの削除"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:263
 msgid "Renaming Logical Volume"
 msgstr "論理ボリュームのリネーム"
 
-#: src/CommandHandler.py:280
+#: src/CommandHandler.py:285
 msgid "Removing Physical Volume from Volume Group"
 msgstr "ボリュームグループから物理ボリュームの削除"
 
-#: src/CommandHandler.py:315
+#: src/CommandHandler.py:320
 msgid "Migrating Extents"
 msgstr "エクステントの移動"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:332
 msgid "Completing Extent Migration"
 msgstr "エクステントの移動の完了"
 
-#: src/CommandHandler.py:378
-#, fuzzy
+#: src/CommandHandler.py:383
 msgid "Rereading partition table"
-msgstr "拡張パーティション"
+msgstr "パーティションテーブルの再読込"
 
 #: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
@@ -858,58 +875,71 @@ msgstr "他のブートパーティション"
 msgid "Autopartition failure"
 msgstr "自動パーティションの失敗"
 
-#: src/lvm_model.py:251
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "手動パーティション"
 
-#: src/lvm_model.py:287
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "マルチパスデバイス"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "注意:"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "手動で初期化"
 
-#: src/lvm_model.py:733
+#: src/lvm_model.py:741
 msgid "Clustered:   "
-msgstr ""
+msgstr "クラスター化:..."
 
-#: src/lvm_model.py:735
+#: src/lvm_model.py:743 src/lvm_model.py:971
 msgid "True"
-msgstr ""
+msgstr "True"
 
-#: src/lvm_model.py:737
+#: src/lvm_model.py:745
 msgid "False"
-msgstr ""
+msgstr "False"
 
-#: src/lvm_model.py:795
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "ミラーイメージの数:"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "スナップショット:"
 
-#: src/lvm_model.py:804
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "スナップショットの基点:"
 
-#: src/lvm_model.py:811
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "スナップショットの使用方法:"
 
-#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
-#: src/lvm_model.py:899
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   ルートファイルシステム"
 
-#: src/lvm_model.py:902 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "注意"
+
+#: src/lvm_model.py:961
+#, fuzzy
+msgid "SCSI ID:   "
+msgstr "システム ID:  "
+
+#: src/lvm_model.py:965
+msgid "NONE"
+msgstr ""
+
+#: src/lvm_model.py:970
+msgid "iSCSI Device:   "
+msgstr ""
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1089,11 +1119,11 @@ msgstr "ボリュームが選択されていません"
 msgid "Multiple selection"
 msgstr "複数の選択"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:49
+#: src/renderer.py:39 src/Volume_Tab_View.py:48
 msgid "Logical View"
 msgstr "論理ビュー"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:48
+#: src/renderer.py:40 src/Volume_Tab_View.py:47
 msgid "Physical View"
 msgstr "物理ビュー"
 
@@ -1165,53 +1195,25 @@ msgstr "スナップショット"
 msgid "extent view"
 msgstr "エクステントの閲覧"
 
-#: src/Volume_Tab_View.py:45
+#: src/Volume_Tab_View.py:44
 msgid "Volume Groups"
 msgstr "ボリュームグループ"
 
-#: src/Volume_Tab_View.py:46
+#: src/Volume_Tab_View.py:45
 msgid "Unallocated Volumes"
 msgstr "割り当てられていないボリューム"
 
-#: src/Volume_Tab_View.py:47
+#: src/Volume_Tab_View.py:46
 msgid "Uninitialized Entities"
-msgstr "初期化されていないエンティティー"
-
-#: src/Volume_Tab_View.py:63
-msgid ""
-"LVM locks are disabled!!! \n"
-"Massive data corruption may occur.\n"
-"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 msgstr ""
+"初期化されていない\n"
+"エンティティー"
 
-#: src/Volume_Tab_View.py:68
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
-"running. Start daemon with command:\n"
-"service clvmd start \n"
-"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-
-#: src/Volume_Tab_View.py:72
-msgid ""
-"LVM is configured to use Cluster Locking mechanism, but cluster is not "
-"quorate.\n"
-"Either wait until cluster is quorate or turn off cluster locking "
-"(locking_type=1 in /etc/lvm/lvm.conf)."
-msgstr ""
-
-#: src/Volume_Tab_View.py:75
-#, python-format
-msgid ""
-"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
-"lvm/lvm.conf)."
-msgstr ""
-
-#: src/Volume_Tab_View.py:262
+#: src/Volume_Tab_View.py:233
 msgid "Clustered VG"
-msgstr ""
+msgstr "クラスタ化した VG"
 
-#: src/Volume_Tab_View.py:648
+#: src/Volume_Tab_View.py:619
 #, python-format
 msgid "%s mirror synchronisation"
 msgstr "%s ミラー同期"
@@ -1281,35 +1283,35 @@ msgstr ""
 msgid "Unknown filesystem"
 msgstr "未知のファイルシステム"
 
-#: src/Filesystem.py:374
+#: src/Filesystem.py:387
 msgid "GFS (local)"
 msgstr "GFS (ローカル)"
 
-#: src/Filesystem.py:472
+#: src/Filesystem.py:485
 msgid "GFS (clustered)"
 msgstr "GFS (クラスター)"
 
-#: src/Filesystem.py:504 src/Filesystem.py:748
+#: src/Filesystem.py:517 src/Filesystem.py:761
 msgid "Cluster name contains illegal character "
-msgstr ""
+msgstr "クラスタ名に無効な文字が含まれています"
 
-#: src/Filesystem.py:507 src/Filesystem.py:751
+#: src/Filesystem.py:520 src/Filesystem.py:764
 msgid "GFS name contains illegal character "
-msgstr ""
+msgstr "GFS 名に無効な文字が含まれています"
 
-#: src/Filesystem.py:510 src/Filesystem.py:754
+#: src/Filesystem.py:523 src/Filesystem.py:767
 msgid "Missing Cluster Name"
-msgstr ""
+msgstr "クラスタ名がありません"
 
-#: src/Filesystem.py:513 src/Filesystem.py:757
+#: src/Filesystem.py:526 src/Filesystem.py:770
 msgid "Missing GFS Name"
-msgstr ""
+msgstr "GFS 名がありません"
 
-#: src/Filesystem.py:618
+#: src/Filesystem.py:631
 msgid "GFS2 (local)"
 msgstr "GFS2 (ローカル)"
 
-#: src/Filesystem.py:716
+#: src/Filesystem.py:729
 msgid "GFS2 (clustered)"
 msgstr "GFS2 (クラスター)"
 
@@ -1330,7 +1332,7 @@ msgstr "ミラー"
 msgid "Partition %s"
 msgstr "パーティション %s"
 
-#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
+#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1 src/iscsi.glade.h:1
 msgid "*"
 msgstr "*"
 
@@ -1387,9 +1389,8 @@ msgstr ""
 "グループに追加"
 
 #: src/lvui.glade.h:15
-#, fuzzy
 msgid "Clustered"
-msgstr "GFS (クラスター)"
+msgstr "クラスター化済み"
 
 #: src/lvui.glade.h:16
 msgid ""
@@ -1465,17 +1466,15 @@ msgstr "ボリュームの管理"
 
 #: src/lvui.glade.h:34
 msgid "Mark Volume Group as 'clustered'"
-msgstr ""
+msgstr "ボリュームグループを「クラスタ化済み」とマークします"
 
 #: src/lvui.glade.h:35
-#, fuzzy
 msgid "Maximum Logical Volumes"
-msgstr "最大論理ボリューム: "
+msgstr "最大論理ボリューム"
 
 #: src/lvui.glade.h:36
-#, fuzzy
 msgid "Maximum Physical Volumes"
-msgstr "最大物理ボリューム: "
+msgstr "最大物理ボリューム"
 
 #: src/lvui.glade.h:37
 msgid "Meg"
@@ -1494,9 +1493,8 @@ msgid "New Volume Group"
 msgstr "新しいボリュームグループ"
 
 #: src/lvui.glade.h:41
-#, fuzzy
 msgid "Physical Extent Size"
-msgstr "物理エクステントサイズ: "
+msgstr "物理エクステントサイズ"
 
 #: src/lvui.glade.h:42
 msgid ""
@@ -1547,9 +1545,8 @@ msgid "Some text"
 msgstr "テキスト"
 
 #: src/lvui.glade.h:54
-#, fuzzy
 msgid "Volume Group Name"
-msgstr "ボリュームグループ名:   "
+msgstr "ボリュームグループ名"
 
 #: src/lvui.glade.h:55
 msgid "_Reload"
@@ -1560,6 +1557,10 @@ msgid "_Tools"
 msgstr "ツール(_T)"
 
 #: src/lvui.glade.h:57
+msgid "_iSCSI Configuration"
+msgstr ""
+
+#: src/lvui.glade.h:58
 msgid "extend vg message:"
 msgstr "拡張 vg メッセージ:"
 
@@ -1739,249 +1740,87 @@ msgstr "LV に属するエクステントの移動のみ"
 msgid "Use common sense"
 msgstr "常識の使用"
 
-#~ msgid "Name for Volume Group: "
-#~ msgstr "ボリュームグループ名"
+#: src/iscsi.glade.h:2
+#, fuzzy
+msgid "3260"
+msgstr "32"
 
-#~ msgid "New Volume Group Form"
-#~ msgstr "新しいボリュームグループフォーム"
+#: src/iscsi.glade.h:3
+msgid "Active iSCSI targets are selected "
+msgstr ""
 
-#~ msgid ""
-#~ "* In this release, mirroring support is \n"
-#~ "available as a Technology Preview"
-#~ msgstr ""
-#~ "* このリリースでは、ミラーリングサポート\n"
-#~ "はテクノロジープレビューとして使用可能です"
+#: src/iscsi.glade.h:4
+msgid "Add New Target"
+msgstr ""
 
-#~ msgid ""
-#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vgextend コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#: src/iscsi.glade.h:5
+msgid "Default port is 3260"
+msgstr ""
 
-#~ msgid ""
-#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "pvcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#: src/iscsi.glade.h:6
+msgid "Enter a hostname (or an IP address) of new target to add"
+msgstr ""
 
-#~ msgid ""
-#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#: src/iscsi.glade.h:7
+msgid "Hostname"
+msgstr ""
 
-#~ msgid ""
-#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "pvremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#: src/iscsi.glade.h:8
+msgid "New iSCSI Target"
+msgstr ""
 
-#~ msgid ""
-#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#: src/iscsi.glade.h:9
+#, fuzzy
+msgid "Port"
+msgstr "フォーマット:"
+
+#: src/iscsi.glade.h:10
+msgid ""
+"Specify a hostname of new target \n"
+"to add, and click \"OK\". "
+msgstr ""
+
+#: src/iscsi.glade.h:12
+msgid "iSCSI Initiator"
+msgstr ""
 
 #~ msgid ""
-#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
+#~ "LVM locks are disabled!!! \n"
+#~ "Massive data corruption may occur.\n"
+#~ "Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
 #~ msgstr ""
-#~ "vgremove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#~ "LVM locks が無効になっています!!! \n"
+#~ "大量のデータ破損が発生する可能性があります。\n"
+#~ "ロッキングを有効にしてください(/etc/lvm/lvm.conf の中で locking_type=1 又"
+#~ "は 2)。"
 
 #~ msgid ""
-#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
+#~ "LVM is configured to use Cluster Locking mechanism, but clvmd daemon is "
+#~ "not running. Start daemon with command:\n"
+#~ "service clvmd start \n"
+#~ "or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
 #~ msgstr ""
-#~ "vgcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#~ "LVM はクラスタロッキングメカニズムを使用するように構成されていますが、"
+#~ "clvmd デーモンは 作動していません。次のコマンドでデーモンをスタートして下"
+#~ "さい：\n"
+#~ "service clvmd start \n"
+#~ "あるいは、クラスタロッキングを停止してください(/etc/lvm/lvm.conf の中で "
+#~ "locking_type=1)。"
 
 #~ msgid ""
-#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
-#~ "%s"
+#~ "LVM is configured to use Cluster Locking mechanism, but cluster is not "
+#~ "quorate.\n"
+#~ "Either wait until cluster is quorate or turn off cluster locking "
+#~ "(locking_type=1 in /etc/lvm/lvm.conf)."
 #~ msgstr ""
-#~ "vgcreate コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
+#~ "LVM はクラスタロッキングメカニズムを使用するように構成されていますが、クラ"
+#~ "スタは 定員数が足りません。\n"
+#~ "クラスタが定員数に到達するまで待つか、あるいはクラスタロッキングを停止して"
+#~ "下さい (/etc/lvm/lvm.conf の中で locking_type=1)。"
 
 #~ msgid ""
-#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
+#~ "%s only supports file and cluster based locking (locking_type=1 or 2 in /"
+#~ "etc/lvm/lvm.conf)."
 #~ msgstr ""
-#~ "vgreduce コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
-
-#~ msgid ""
-#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "pvmove コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
-
-#~ msgid ""
-#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
-#~ "s"
-#~ msgstr ""
-#~ "umount  コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
-
-#~ msgid ""
-#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
-#~ "\""
-#~ msgstr ""
-#~ "umount  コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
-
-#~ msgid ""
-#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvresize コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
-
-#~ msgid ""
-#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvcrename コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッ"
-#~ "セージ: %s"
-
-#~ msgid ""
-#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "vvchange コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
-
-#~ msgid ""
-#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
-#~ "Message: %s"
-#~ msgstr ""
-#~ "lvconvert コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッ"
-#~ "セージ: %s"
-
-#~ msgid "Swap in use"
-#~ msgstr "使用中のスワップ"
-
-#~ msgid "Quering Volume Groups"
-#~ msgstr "ボリュームグループのクエリー"
-
-#~ msgid "Quering Logical Volumes"
-#~ msgstr "論理ボリュームのクエリー"
-
-#~ msgid "Quering Physical Volumes"
-#~ msgstr "物理ボリュームのクエリー"
-
-#~ msgid "G"
-#~ msgstr "G"
-
-#~ msgid "M"
-#~ msgstr "M"
-
-#~ msgid "K"
-#~ msgstr "K"
-
-#~ msgid ""
-#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
-#~ "%s"
-#~ msgstr ""
-#~ "dmsetup コマンドの失敗。以下を試みました: \"%s\" - システムエラーメッセー"
-#~ "ジ: %s"
-
-#~ msgid "Migrate extents to "
-#~ msgstr "エクステントの移動 "
-
-#~ msgid ""
-#~ "There is a problem with the value entered in the Size field. The value "
-#~ "should be a numeric value with no alphabetical characters or symbols of "
-#~ "any other kind."
-#~ msgstr ""
-#~ "サイズフィールドに入力された値に問題があります。値はアルファベットや他の記"
-#~ "号の含まれない数値でなければいけません。"
-
-#~ msgid ""
-#~ "The size requested for the new Logical Volume exceeds the available free "
-#~ "space on Volume Group %s. The available space is: "
-#~ msgstr ""
-#~ "新しい論理ボリュームの要求サイズはボリュームグループ %s の空き容量を使い果"
-#~ "たしました。使用可能なスペースは: "
-
-#~ msgid "Stripe Size field"
-#~ msgstr "ストライプサイズ"
-
-#~ msgid "Number of Stripes field"
-#~ msgstr "ストライプの数"
-
-#~ msgid "40 megabytes"
-#~ msgstr "40 メガバイト"
-
-#~ msgid "Create New LV"
-#~ msgstr "新しい LV の作成"
-
-#~ msgid ""
-#~ "Extend \n"
-#~ "Logical Volume"
-#~ msgstr ""
-#~ "論理ボリューム\n"
-#~ "の拡張"
-
-#~ msgid "Mount point (If blank, LV will not be mounted):"
-#~ msgstr "マウントポイント (もし指定がなければ、LV をマウントしないなら): "
-
-#~ msgid "Name for new LV:"
-#~ msgstr "新しい LV 名"
-
-#~ msgid "Number of Stripes: "
-#~ msgstr "ストライプ数: "
-
-#~ msgid "Select a disk entity to add to Volume Group:"
-#~ msgstr ""
-#~ "ボリュームグループに加えるディスクエンティティーを選択してください: "
-
-#~ msgid "Size:"
-#~ msgstr "サイズ:"
-
-#~ msgid "Stripe Size:"
-#~ msgstr "ストライプサイズ:"
-
-#~ msgid "Unused space on VG1:"
-#~ msgstr "VG1 上の未使用スペース:"
-
-#~ msgid "ext2"
-#~ msgstr "ext2"
-
-#~ msgid "ext3"
-#~ msgstr "ext3"
-
-#~ msgid "No File System"
-#~ msgstr "ファイルシステムなし"
-
-#~ msgid ""
-#~ "This extent has not yet been \n"
-#~ " initialized for use with LVM."
-#~ msgstr ""
-#~ "このエクステントはまだ LVM 使用\n"
-#~ "のために初期化されていません。"
-
-#~ msgid ""
-#~ "This Volume has not been allocated \n"
-#~ " to a Volume Group yet."
-#~ msgstr ""
-#~ "このボリュームはボリュームグループにまだ\n"
-#~ "割り当てられていません。"
-
-#~ msgid "Autobackup?"
-#~ msgstr "自動バックアップしますか?"
-
-#~ msgid "Check here if you would like an entry to be made in /etc/fstab"
-#~ msgstr "/etc/fstab に作成したエントリーをここでチェックします"
-
-#~ msgid "Resizable?"
-#~ msgstr "リサイズ可能?"
-
-#~ msgid "dialog1"
-#~ msgstr "dialog1"
+#~ "%s はファイルとクラスタベースのロッキングのみをサポートします(/etc/lvm/"
+#~ "lvm.conf の中で locking_type=1 又は 2)。"

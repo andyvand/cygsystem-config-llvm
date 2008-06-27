@@ -25,6 +25,9 @@ from execute import execWithCapture, execWithCaptureErrorStatus, execWithCapture
 from utilities import follow_links_to_target
 
 
+from iscsi import ISCSI_INITIATOR, iscsi_installed, INITIATOR_RPM_NAME
+
+
 import gettext
 _ = gettext.gettext
 
@@ -303,7 +306,7 @@ class InputController:
     
     clustered = self.new_vg_clustered.get_active()
     if clustered:
-        msg = _("In order for Volume Group to be safely used in clustered environment, lvm2-cluster rpm has to be installed, and clvmd service has to be running")
+        msg = _("In order for Volume Group to be safely used in clustered environment, lvm2-cluster rpm has to be installed, `lvmconf --enable-cluster` has to be executed and clvmd service has to be running")
         self.infoMessage(msg)
     
     try:
@@ -327,6 +330,7 @@ class InputController:
       self.new_vg_max_lvs.set_text(str(MAX_LOGICAL_VOLS))
       self.new_vg_radio_meg.set_active(True)
       self.new_vg_extent_size.set_history(DEFAULT_EXTENT_SIZE_MEG_IDX)
+      self.new_vg_clustered.set_active(False)
 
   def change_new_vg_radio(self, button):
       menu = self.new_vg_extent_size.get_menu()
@@ -966,6 +970,7 @@ class InputController:
       
       # misc events
       self.glade_xml.get_widget("initialize_block_device1").connect('activate', self.on_init_entity_from_menu)
+      self.glade_xml.get_widget("iscsi_configuration1").connect('activate', self.on_iscsi_configuration)
       
   
   def on_remove_unalloc_pv(self, button):
@@ -1079,6 +1084,17 @@ class InputController:
       
       apply(self.reset_tree_model, [vg.get_name()])
       
+
+
+  def on_iscsi_configuration(self, obj, dlg=None):
+      if not iscsi_installed():
+          self.errorMessage(_("iSCSI Initiator rpm is not installed. \nInstall %s rpm, and try again.") % INITIATOR_RPM_NAME)
+          return
+      
+      conf = ISCSI_INITIATOR()
+      if conf.run():
+          apply(self.reset_tree_model, [])
+          pass
       
       
   #######################################################

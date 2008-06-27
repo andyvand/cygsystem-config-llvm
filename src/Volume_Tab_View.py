@@ -17,7 +17,6 @@ from lvmui_constants import *
 from WaitMsg import WaitMsg
 from execute import ForkedCommand, execWithCapture
 
-from Cluster import Cluster
 
 
 import stat
@@ -54,34 +53,6 @@ class Volume_Tab_View:
   def __init__(self, glade_xml, model_factory, app):
                                                                                 
     self.model_factory = model_factory
-    
-    # check locking type
-    locking_type = self.model_factory.get_locking_type()
-    if locking_type != 1:
-        should_exit = False
-        if locking_type == 0:
-            msg = _("LVM locks are disabled!!! \nMassive data corruption may occur.\nEnable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf).")
-            should_exit = True
-        elif locking_type == 2:
-            ps_out = execWithCapture('/bin/ps', ['/bin/ps', '-A'])
-            if ps_out.find('clvmd') == -1:
-                msg = _("LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not running. Start daemon with command:\nservice clvmd start \nor, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
-                should_exit = True
-            else:
-                if not Cluster().running():
-                    msg = _("LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\nEither wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
-                    should_exit = True
-        else:
-            msg = _("%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/lvm/lvm.conf).")
-            msg = msg % PROGNAME
-            should_exit = True
-        if should_exit:
-            dlg = gtk.MessageDialog(None, 0,
-                                    gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
-                                    msg)
-            dlg.run()
-            sys.exit(10)
-    
     
     self.main_win = app
     self.width = 0

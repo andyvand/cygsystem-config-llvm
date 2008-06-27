@@ -15,3 +15,5 @@ src/Volume.py
 src/lvui.glade
 src/lv_edit_props.glade
 src/migrate_extents.glade
+src/iscsi.py
+src/iscsi.glade

@@ -236,16 +236,21 @@ class CommandHandler:
     if res != 0:
       raise CommandError('FATAL', COMMAND_FAILURE % ("pvremove",cmdstr,err))
 
-  def remove_lv(self, lvname):
-    args = list()
-    args.append(LVREMOVE_BIN_PATH)
-    args.append("--force")
-    args.append(lvname.strip())
-    cmdstr = ' '.join(args)
-    out,err,res = execWithCaptureErrorStatusProgress(LVREMOVE_BIN_PATH,args,
-                                                     _("Removing Logical Volume"))
-    if res != 0:
-      raise CommandError('FATAL', COMMAND_FAILURE % ("lvremove",cmdstr,err))
+  def remove_lv(self, lvpath):
+    self.deactivate_lv(lvpath)
+    try:
+      args = list()
+      args.append(LVREMOVE_BIN_PATH)
+      args.append("--force")
+      args.append(lvpath.strip())
+      cmdstr = ' '.join(args)
+      out,err,res = execWithCaptureErrorStatusProgress(LVREMOVE_BIN_PATH,args,
+                                                       _("Removing Logical Volume"))
+      if res != 0:
+        raise CommandError('FATAL', COMMAND_FAILURE % ("lvremove",cmdstr,err))
+    except CommandError, e:
+      self.activate_lv(lvpath)
+      raise e
   
   def rename_lv(self, vgname, lvname_old, lvname_new):
     args = list()
