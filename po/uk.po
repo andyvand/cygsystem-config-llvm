@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-22 11:52-0500\n"
+"POT-Creation-Date: 2007-01-31 09:04-0500\n"
 "PO-Revision-Date: 2006-04-03 00:07+0300\n"
 "Last-Translator: Maxim V. Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/InputController.py:36 src/Properties_Renderer.py:24
+#: src/InputController.py:39 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
@@ -36,7 +36,7 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#: src/InputController.py:56
+#: src/InputController.py:59
 #, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr "Вкажіть у яку групу томів додати %s:"
@@ -49,32 +49,32 @@ msgstr "Вкажіть у яку групу томів додати %s:"
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:84
+#: src/InputController.py:87
 msgid "Name"
 msgstr "Назва"
 
-#: src/InputController.py:85
+#: src/InputController.py:88
 msgid "Size"
 msgstr "Розмір"
 
-#: src/InputController.py:86
+#: src/InputController.py:89
 msgid "Entity Type"
 msgstr "Тип пристрою"
 
-#: src/InputController.py:88
+#: src/InputController.py:91
 msgid "Unallocated Physical Volume"
 msgstr "Нерозподілений фізичний том"
 
-#: src/InputController.py:89
+#: src/InputController.py:92
 msgid "Uninitialized Disk Entity"
 msgstr "Неініціалізований пристрій зберігання"
 
-#: src/InputController.py:90
+#: src/InputController.py:93
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "Вкажіть пристрій для включення у групу томів %s:"
 
-#: src/InputController.py:92
+#: src/InputController.py:95
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -82,7 +82,7 @@ msgstr ""
 "Для підтримки чергування група томів повинна складатись з двох або більше "
 "фізичних томів. Ця група томів не задовольняє цю вимогу."
 
-#: src/InputController.py:94
+#: src/InputController.py:97
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
@@ -91,55 +91,55 @@ msgstr ""
 "Логічний том з назвою %s вже існує у цій групі томів. Виберіть унікальну "
 "назву."
 
-#: src/InputController.py:96
+#: src/InputController.py:99
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "Група томів з назвою %s вже існує. Виберіть іншу унікальну назву."
 
-#: src/InputController.py:98
+#: src/InputController.py:101
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "Необхідно вказати назву нового логічного тому"
 
-#: src/InputController.py:100
+#: src/InputController.py:103
 msgid "A Name must be provided for the new Volume Group"
 msgstr "Необхідно вказати назву нової групи томів"
 
-#: src/InputController.py:102
+#: src/InputController.py:105
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "Вказана точка монтування, %s не існує. Створити її?"
 
-#: src/InputController.py:104
+#: src/InputController.py:107
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "Не вдається створити точку монтування %s."
 
-#: src/InputController.py:106
+#: src/InputController.py:109
 msgid "This capability is not yet implemented in this version"
 msgstr "Ця можливість ще не реалізована у цій версії"
 
-#: src/InputController.py:108
+#: src/InputController.py:111
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "Кількість логічних томів у цій групі досягло максимального значення."
 
-#: src/InputController.py:110
+#: src/InputController.py:113
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "Кількість фізичних томів у цій групі досягло максимального значення."
 
-#: src/InputController.py:112
+#: src/InputController.py:115
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
 msgstr "Кількість фізичних томів у цій групі може досягати %s."
 
-#: src/InputController.py:114
+#: src/InputController.py:117
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
@@ -149,15 +149,15 @@ msgstr ""
 "Група томів %s не має достатньо місця для нових логічних томів. Можливим "
 "рішенням є додавання додаткового фізичного тому у групу томів."
 
-#: src/InputController.py:116
+#: src/InputController.py:119
 msgid "A snapshot of a snapshot is not supported."
 msgstr "Не підтримується створення знімку вже існуючого знімку."
 
-#: src/InputController.py:117
+#: src/InputController.py:120
 msgid "A snapshot of a mirrored Logical Volume is not supported."
 msgstr "Не підтримується створення знімку дзеркального логічного тому."
 
-#: src/InputController.py:119
+#: src/InputController.py:122
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -165,7 +165,7 @@ msgid ""
 msgstr ""
 "З логічним томом %s, вже пов'язаний знімок %s. Спочатку видаліть цей знімок."
 
-#: src/InputController.py:120
+#: src/InputController.py:123
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -173,14 +173,14 @@ msgid ""
 msgstr ""
 "З логічним томом %s, вже пов'язані знімки %s. Спочатку видаліть цей знімок."
 
-#: src/InputController.py:122
+#: src/InputController.py:125
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Невизначена помилка перетворення у model factory. Не вдається завершити "
 "завдання."
 
-#: src/InputController.py:124
+#: src/InputController.py:127
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -191,7 +191,7 @@ msgstr ""
 "підключена у %s. Ви дійсно впевнені, що бажаєте втратити дані на цій "
 "підключені файловій системі?"
 
-#: src/InputController.py:126
+#: src/InputController.py:129
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -202,82 +202,82 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:132
+#: src/InputController.py:135
 #, python-format
 msgid "Unused space on %s"
 msgstr "Невикористаний простір на %s"
 
-#: src/InputController.py:133
+#: src/InputController.py:136
 #, python-format
 msgid "%s megabytes"
 msgstr "%s мегабайт"
 
-#: src/InputController.py:134
+#: src/InputController.py:137
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s кілобайт"
 
-#: src/InputController.py:135
+#: src/InputController.py:138
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s гігабайт"
 
-#: src/InputController.py:136
+#: src/InputController.py:139
 #, python-format
 msgid "%s extents"
 msgstr "%s екстентов"
 
-#: src/InputController.py:138
+#: src/InputController.py:141
 msgid "Remaining free space in Volume Group:\n"
 msgstr "У групі томів доступно місця:\n"
 
-#: src/InputController.py:139
+#: src/InputController.py:142
 msgid "Remaining space for this Volume:\n"
 msgstr "Залишилось місця для цього тому:\n"
 
-#: src/InputController.py:141
+#: src/InputController.py:144
 msgid "Extents"
 msgstr "Екстенти"
 
-#: src/InputController.py:142
+#: src/InputController.py:145
 msgid "Gigabytes"
 msgstr "Гігабайт"
 
-#: src/InputController.py:143
+#: src/InputController.py:146
 msgid "Megabytes"
 msgstr "Мегабайт"
 
-#: src/InputController.py:144
+#: src/InputController.py:147
 msgid "Kilobytes"
 msgstr "Кілобайт"
 
-#: src/InputController.py:146
+#: src/InputController.py:149
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s має містити лише числові значення"
 
-#: src/InputController.py:147
+#: src/InputController.py:150
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
 "Поле \"Максимум фізичних томів\" може містити лише цілі числа від 1 до 256"
 
-#: src/InputController.py:148
+#: src/InputController.py:151
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr ""
 "Поле \"Максимум логічних томів\" може містити лише цілі числа від 1 до 256"
 
-#: src/InputController.py:150
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr "Ви дійсно бажаєте видалити %s з керування логічними томами?"
 
-#: src/InputController.py:152
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -293,13 +293,13 @@ msgstr ""
 "фізичний том перед видаленням цього тому, або видалити логічні томи які "
 "відображаються на цей фізичний том."
 
-#: src/InputController.py:153
+#: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Ви дійсно бажаєте видалити %s з групи томів %s?"
 
-#: src/InputController.py:154
+#: src/InputController.py:157
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -308,7 +308,7 @@ msgstr ""
 "Після видалення фізичного тому %s з групи томів %s дана група опиниться "
 "порожньою, та також буде видалена. Продовжити?"
 
-#: src/InputController.py:155
+#: src/InputController.py:158
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -318,7 +318,7 @@ msgstr ""
 "Група томів %s не має достатньо місця для переміщення даних, що зберігаються "
 "у %s. Можливим рішенням є додавання додаткового фізичного тому у групу томів."
 
-#: src/InputController.py:156
+#: src/InputController.py:159
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -330,7 +330,7 @@ msgstr ""
 "У іншому випадку операції, що вимагають переносу даних у фізичних томах не "
 "будуть доступні."
 
-#: src/InputController.py:157
+#: src/InputController.py:160
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -341,12 +341,12 @@ msgstr ""
 "\". У іншому випадку операції, що вимагають переносу даних у фізичних томах "
 "не будуть доступні."
 
-#: src/InputController.py:159
+#: src/InputController.py:162
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Ви дійсно бажаєте видалити логічний том %s?"
 
-#: src/InputController.py:160
+#: src/InputController.py:163
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -355,7 +355,7 @@ msgstr ""
 "Логічний том %s містить файлову систему %s. Всі дані будуть втрачені. Ви "
 "дійсно впевнені, що хочете видалити логічний том %s?"
 
-#: src/InputController.py:161
+#: src/InputController.py:164
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -364,7 +364,7 @@ msgstr ""
 "Логічний том %s містить дані теки %s. Всі дані будуть втрачені! Ви дійсно "
 "впевнені, що хочете видалити логічний том %s?"
 
-#: src/InputController.py:306
+#: src/InputController.py:309
 #, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
@@ -374,7 +374,7 @@ msgstr ""
 "Щоб Група томів була безпечно задіяна у кластерному оточенні необхідно "
 "встановити rpm пакет lvm2-cluster та запустити службу clvmd"
 
-#: src/InputController.py:365
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -385,7 +385,7 @@ msgstr ""
 "тому %s. Виконання переносу дзеркальних логічних томів недоступно, внаслідок "
 "цього, видалити неможливо %s."
 
-#: src/InputController.py:368
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -396,7 +396,7 @@ msgstr ""
 "%s. Виконання переносу дзеркальних логічних томів недоступно, внаслідок "
 "цього, видалити неможливо %s."
 
-#: src/InputController.py:371
+#: src/InputController.py:374
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -406,7 +406,7 @@ msgstr ""
 "переносу дзеркальних логічних томів недоступно, внаслідок цього, видалити "
 "неможливо %s."
 
-#: src/InputController.py:376
+#: src/InputController.py:379
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -416,7 +416,7 @@ msgstr ""
 "Виконання переносу дзеркальних логічних томів недоступно, внаслідок цього, "
 "видалити неможливо %s."
 
-#: src/InputController.py:378
+#: src/InputController.py:381
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -426,7 +426,7 @@ msgstr ""
 "Виконання переносу дзеркальних логічних томів недоступно, внаслідок цього, "
 "видалити неможливо %s."
 
-#: src/InputController.py:565
+#: src/InputController.py:568
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -435,13 +435,13 @@ msgstr ""
 "Логічний том \"%s\" містить знімки, які не були вибрані для видалення. Їх "
 "треба видалити."
 
-#: src/InputController.py:580
+#: src/InputController.py:583
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", оригінал знімку \"%s\", був видалений зі списку видалення."
 
-#: src/InputController.py:611
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -450,7 +450,7 @@ msgstr ""
 "Фізичний том \"%s\" містить екстенти, що належать дзеркалу. Недоступно "
 "виконання переносу дзеркала, внаслідок чого, неможливо видалити %s."
 
-#: src/InputController.py:614
+#: src/InputController.py:617
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -460,24 +460,24 @@ msgstr ""
 "Недоступно виконання переносу дзеркала, внаслідок чого, неможливо видалити %"
 "s."
 
-#: src/InputController.py:679
+#: src/InputController.py:682
 msgid "The path you specified does not exist."
 msgstr "Вказаний шліх не існує."
 
-#: src/InputController.py:686
+#: src/InputController.py:689
 msgid "The path you specified is not a Block Device."
 msgstr "Вказаний вами шлях не є шляхом блочного пристрою."
 
-#: src/InputController.py:757
+#: src/InputController.py:760
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "Помилка ініціалізації %s"
 
-#: src/InputController.py:994 src/InputController.py:997
+#: src/InputController.py:998 src/InputController.py:1001
 msgid "Please select some extents first"
 msgstr "Спочатку виберіть вибір екстентів"
 
-#: src/InputController.py:1031
+#: src/InputController.py:1035
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -485,48 +485,55 @@ msgstr ""
 "Недостатньо вільних екстентів для виконання необхідної міграції. Додавання "
 "додаткових Фізичних томів допоможе вирішити цю проблему."
 
-#: src/InputController.py:1193
+#: src/InputController.py:1091
+#, python-format
+msgid ""
+"iSCSI Initiator rpm is not installed. \n"
+"Install %s rpm, and try again."
+msgstr ""
+
+#: src/InputController.py:1208
 msgid "Migrate extents"
 msgstr "Перенос екстентів"
 
-#: src/InputController.py:1321
+#: src/InputController.py:1336
 msgid "Options"
 msgstr "Параметри"
 
-#: src/InputController.py:1355
+#: src/InputController.py:1370
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Створити знімок %s"
 
-#: src/InputController.py:1357
+#: src/InputController.py:1372
 msgid "Create New Logical Volume"
 msgstr "Створити логічний том"
 
-#: src/InputController.py:1360
+#: src/InputController.py:1375
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Редагувати %s (знімок %s)"
 
-#: src/InputController.py:1363
+#: src/InputController.py:1378
 msgid "Edit Logical Volume"
 msgstr "Правка логічного тому"
 
-#: src/InputController.py:1516
+#: src/InputController.py:1531
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Базове керування логічними томами не підтримує роботу з дзеркалами"
 
-#: src/InputController.py:1523
+#: src/InputController.py:1538
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Розшарований логічний том не можна дзеркалювати."
 
-#: src/InputController.py:1530
+#: src/InputController.py:1545
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr ""
 "Наразі неможливо створення дзеркала логічних томів з відповідними знімками."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1537
+#: src/InputController.py:1552
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -535,14 +542,14 @@ msgstr ""
 "відмови жорсткого диску. Бажаєте розташувати образи дзеркала на різних "
 "жорстких дисках?"
 
-#: src/InputController.py:1546
+#: src/InputController.py:1561
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Доступно менше 3х дисків з вільним простором. Вимикання режиму створення "
 "дзеркала."
 
-#: src/InputController.py:1551
+#: src/InputController.py:1566
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -550,7 +557,7 @@ msgstr ""
 "Для активації підтримки дзеркал має бути вільне місце не менш ніж на трьох "
 "фізичних томах."
 
-#: src/InputController.py:1559
+#: src/InputController.py:1574
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -558,7 +565,7 @@ msgstr ""
 "Розмір логічного тому був встановлений відповідно до максимального "
 "доступного розміру дзеркала."
 
-#: src/InputController.py:1564
+#: src/InputController.py:1579
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -567,43 +574,43 @@ msgstr ""
 "Недостатньо місця для забезпечення дублювання. Зменшіть розмір логічного "
 "тому до %s (як максимум) або додайте фізичні томи."
 
-#: src/InputController.py:1928
+#: src/InputController.py:1943
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Назви, що починаються з \"snapshot\" чи \"pvmove\", є зарезервованими "
 "словами."
 
-#: src/InputController.py:1930
+#: src/InputController.py:1945
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr ""
 "Назви, що починаються з \"_mlog\" чи \"_mimage\", є зарезервованими словами."
 
-#: src/InputController.py:1932
+#: src/InputController.py:1947
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Назви, що починаються з \"-\" є некоректними"
 
-#: src/InputController.py:1934
+#: src/InputController.py:1949
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Назва не може бути \".\" або \"..\""
 
-#: src/InputController.py:1940
+#: src/InputController.py:1955
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Назва логічного тому не може містити пробіли"
 
-#: src/InputController.py:1943
+#: src/InputController.py:1958
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Назва логічного тому містить неправильний символ \"%s\""
 
-#: src/InputController.py:1963
+#: src/InputController.py:1978
 msgid "Please specify mount point"
 msgstr "Вкажіть точку підключення"
 
-#: src/InputController.py:2029
+#: src/InputController.py:2044
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr "Оновити з ext2 на ext3 із зберіганням існуючих даних логічного тому?"
 
-#: src/InputController.py:2063
+#: src/InputController.py:2078
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -612,12 +619,12 @@ msgstr ""
 "дійсно цього бажаєте?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2164
+#: src/InputController.py:2179
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Дзеркало не створено. Відбувається завершення решти завдань."
 
 #. create mirror
-#: src/InputController.py:2167
+#: src/InputController.py:2182
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
@@ -625,11 +632,11 @@ msgstr ""
 "LVM не підтримує додавання дзеркал до існуючих логічних томів. Відбувається "
 "завершення решти завдань."
 
-#: src/InputController.py:2216
+#: src/InputController.py:2231
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "Для створення дзеркала треба перемістити деякі екстенти."
 
-#: src/InputController.py:2216
+#: src/InputController.py:2231
 msgid "Do you want to migrate specified extents?"
 msgstr "Бажаєте перемістити вказані екстенти?"
 
@@ -854,58 +861,71 @@ msgstr "Чужий завантажувальний розділ"
 msgid "Autopartition failure"
 msgstr "Помилка автоматичної розмітки"
 
-#: src/lvm_model.py:254
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "Виконати розмітку вручну"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "Пристрій з кількома шляхами (multipath)"
 
-#: src/lvm_model.py:293
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "Примітка:"
 
-#: src/lvm_model.py:293
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "Ініціалізувати вручну"
 
-#: src/lvm_model.py:736
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "У кластері:   "
 
-#: src/lvm_model.py:738
+#: src/lvm_model.py:743 src/lvm_model.py:971
 msgid "True"
 msgstr "Вірно"
 
-#: src/lvm_model.py:740
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "Не вірно"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "Кількість образів дзеркал:"
 
-#: src/lvm_model.py:801
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "Знімки:"
 
-#: src/lvm_model.py:807
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "Оригінал знімка:"
 
-#: src/lvm_model.py:814
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "Використання знімку:"
 
-#: src/lvm_model.py:837 src/lvm_model.py:843 src/lvm_model.py:886
-#: src/lvm_model.py:902
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   Коренева файлова система"
 
-#: src/lvm_model.py:905 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "Немає"
+
+#: src/lvm_model.py:961
+#, fuzzy
+msgid "SCSI ID:   "
+msgstr "System ID:   "
+
+#: src/lvm_model.py:965
+msgid "NONE"
+msgstr ""
+
+#: src/lvm_model.py:970
+msgid "iSCSI Device:   "
+msgstr ""
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1297,7 +1317,7 @@ msgstr "Дзеркало"
 msgid "Partition %s"
 msgstr "Розділ %s"
 
-#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
+#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1 src/iscsi.glade.h:1
 msgid "*"
 msgstr "*"
 
@@ -1522,6 +1542,10 @@ msgid "_Tools"
 msgstr "С_ервіс"
 
 #: src/lvui.glade.h:57
+msgid "_iSCSI Configuration"
+msgstr ""
+
+#: src/lvui.glade.h:58
 msgid "extend vg message:"
 msgstr "розширене повідомлення від vg:"
 
@@ -1700,6 +1724,50 @@ msgstr "Переміщувати лише екстенти, що належат�
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "На основі здорового глузду"
+
+#: src/iscsi.glade.h:2
+#, fuzzy
+msgid "3260"
+msgstr "32"
+
+#: src/iscsi.glade.h:3
+msgid "Active iSCSI targets are selected "
+msgstr ""
+
+#: src/iscsi.glade.h:4
+msgid "Add New Target"
+msgstr ""
+
+#: src/iscsi.glade.h:5
+msgid "Default port is 3260"
+msgstr ""
+
+#: src/iscsi.glade.h:6
+msgid "Enter a hostname (or an IP address) of new target to add"
+msgstr ""
+
+#: src/iscsi.glade.h:7
+msgid "Hostname"
+msgstr ""
+
+#: src/iscsi.glade.h:8
+msgid "New iSCSI Target"
+msgstr ""
+
+#: src/iscsi.glade.h:9
+#, fuzzy
+msgid "Port"
+msgstr "Формат"
+
+#: src/iscsi.glade.h:10
+msgid ""
+"Specify a hostname of new target \n"
+"to add, and click \"OK\". "
+msgstr ""
+
+#: src/iscsi.glade.h:12
+msgid "iSCSI Initiator"
+msgstr ""
 
 #~ msgid ""
 #~ "LVM locks are disabled!!! \n"

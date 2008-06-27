@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-22 11:52-0500\n"
+"POT-Creation-Date: 2007-01-31 09:04-0500\n"
 "PO-Revision-Date: 2006-01-20 13:49+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bangla <redhat-translation@bengalinux.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "\n"
 
-#: src/InputController.py:36 src/Properties_Renderer.py:24
+#: src/InputController.py:39 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#: src/InputController.py:56
+#: src/InputController.py:59
 #, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr "%s-এ যোগ করার জন্য একটি ভলিউম গ্রুপ নির্বাচন করুন:"
@@ -52,32 +52,32 @@ msgstr "%s-এ যোগ করার জন্য একটি ভলিউম 
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:84
+#: src/InputController.py:87
 msgid "Name"
 msgstr "নাম"
 
-#: src/InputController.py:85
+#: src/InputController.py:88
 msgid "Size"
 msgstr "মাপ"
 
-#: src/InputController.py:86
+#: src/InputController.py:89
 msgid "Entity Type"
 msgstr "সত্ত্বার ধরন"
 
-#: src/InputController.py:88
+#: src/InputController.py:91
 msgid "Unallocated Physical Volume"
 msgstr "আরক্ষণ না করা প্রকৃত ভলিউম"
 
-#: src/InputController.py:89
+#: src/InputController.py:92
 msgid "Uninitialized Disk Entity"
 msgstr "নিষ্ক্রিয় ডিস্কের সত্ত্বা"
 
-#: src/InputController.py:90
+#: src/InputController.py:93
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "%s ভলিউম গ্রুপে যোগ করার জন্য ডিস্কের একটি সত্ত্বা নির্বাচন করুন:"
 
-#: src/InputController.py:92
+#: src/InputController.py:95
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -86,7 +86,7 @@ msgstr ""
 "ভলিউম ব্যবহার করে একটি ভলিউম গ্রুপ নির্মাণ করা আবশ্যক। এই ভলিউম গ্রুপের জন্য উল্লিখিত "
 "প্রয়োজনীয় শর্ত পূরণ করা হয়নি।"
 
-#: src/InputController.py:94
+#: src/InputController.py:97
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
@@ -95,7 +95,7 @@ msgstr ""
 "এই ভলিউম গ্রুপে %s নামক একটি লজিকাল ভলিউম বর্তমানে উপস্থিত রয়েছে। অনুগ্রহ করে একটি "
 "পৃথক নাম নির্বাচন করুন।"
 
-#: src/InputController.py:96
+#: src/InputController.py:99
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
@@ -103,43 +103,43 @@ msgstr ""
 "%s নামক একটি ভলিউম গ্রুপ বর্তমানে উপস্থিত রয়েছে। অনুগ্রহ করে একটি পৃথক নাম নির্বাচন "
 "করুন।"
 
-#: src/InputController.py:98
+#: src/InputController.py:101
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "নতুন লজিকাল ভলিউমের নাম নির্ধারণ করা আবশ্যক"
 
-#: src/InputController.py:100
+#: src/InputController.py:103
 msgid "A Name must be provided for the new Volume Group"
 msgstr "নতুন ভলিউম গ্রুপের নাম নির্ধারণ করা আবশ্যক"
 
-#: src/InputController.py:102
+#: src/InputController.py:105
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr ""
 "উল্লিখিত মাউন্ট-পয়েন্ট %s বর্তমানে উপস্থিত নেই। আপনি কি এটি নির্মাণ করতে ইচ্ছুক?"
 
-#: src/InputController.py:104
+#: src/InputController.py:107
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "মাউন্ট-পয়েন্ট %s-র নির্মাণ অপ্রত্যাশিতভাবে বিফল হয়েছে।"
 
-#: src/InputController.py:106
+#: src/InputController.py:109
 msgid "This capability is not yet implemented in this version"
 msgstr "বর্তমান সংস্করণে এই বৈশিষ্ট্য প্রয়োগ করা হয়নি"
 
-#: src/InputController.py:108
+#: src/InputController.py:111
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "এই ভলিউম গ্রুপের সর্বাধিক অনুমোদিত লজিকাল ভলিউমের সংখ্যা পূরণ হয়ে গেছে।"
 
-#: src/InputController.py:110
+#: src/InputController.py:113
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "এই ভলিউম গ্রুপের সর্বাধিক অনুমোদিত প্রকৃত ভলিউমের সংখ্যা পূরণ হয়ে গেছে।"
 
-#: src/InputController.py:112
+#: src/InputController.py:115
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
@@ -148,7 +148,7 @@ msgstr ""
 "এই ভলিউম গ্রুপের সর্বাধিক অনুমোদিত প্রকৃত ভলিউমের সংখ্যা পূরণ হওয়ার পূর্বে %s-টি প্রকৃত "
 "ভলিউম যোগ করা যাবে।"
 
-#: src/InputController.py:114
+#: src/InputController.py:117
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
@@ -158,16 +158,16 @@ msgstr ""
 "ভলিউম গ্রুপ %s-এ, নতুন লজিকাল ভলিউম স্থাপন করার জন্য পর্যাপ্ত শূণ্যস্থান উপস্থিত নেই। ঐ "
 "ভলিউম গ্রুপে একটি অতিরিক্ত প্রকৃত ভলিউম যোগ করে এই সমস্যার সমাধান করা সম্ভব।"
 
-#: src/InputController.py:116
+#: src/InputController.py:119
 msgid "A snapshot of a snapshot is not supported."
 msgstr "স্ন্যাপশটের স্ন্যাপশট সমর্থিত হয় না।"
 
-#: src/InputController.py:117
+#: src/InputController.py:120
 #, fuzzy
 msgid "A snapshot of a mirrored Logical Volume is not supported."
 msgstr "স্ন্যাপশটের স্ন্যাপশট সমর্থিত হয় না।"
 
-#: src/InputController.py:119
+#: src/InputController.py:122
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -176,7 +176,7 @@ msgstr ""
 "%s লজিকাল ভলিউমের সাথে বর্তমানে %s স্ন্যাপশট সংযুক্ত রয়েছে। অনুগ্রহ করে এই "
 "স্ন্যাপশটটি প্রথমে অপসারণ করুন।"
 
-#: src/InputController.py:120
+#: src/InputController.py:123
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -185,14 +185,14 @@ msgstr ""
 "%s লজিকাল ভলিউমের সাথে স্ন্যাপশট: %s বর্তমানে সংযুক্ত রয়েছে। অনুগ্রহ করে প্রথমে "
 "সেগুলি অপসারণ করুন।"
 
-#: src/InputController.py:122
+#: src/InputController.py:125
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "মডেল ফ্যাক্টরির মধ্যে অনির্ধারিত ধরন পরিবর্তন সংক্রান্ত সমস্যা হয়েছে। কর্ম সম্পন্ন করতে "
 "ব্যর্থ।"
 
-#: src/InputController.py:124
+#: src/InputController.py:127
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -203,7 +203,7 @@ msgstr ""
 "বর্তমানে %s-র উপরে মাউন্ট করা হয়েছে। আপনি কি নিশ্চিতরূপে মাউন্ট করা এই ফাইল-"
 "সিস্টেমে উপস্থিত সমস্ত ডাটা মুছে ফেলতে ইচ্ছুক?"
 
-#: src/InputController.py:126
+#: src/InputController.py:129
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -214,61 +214,61 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:132
+#: src/InputController.py:135
 #, python-format
 msgid "Unused space on %s"
 msgstr "%s-এ উপস্থিত অব্যবহৃত স্থান"
 
-#: src/InputController.py:133
+#: src/InputController.py:136
 #, python-format
 msgid "%s megabytes"
 msgstr "%s মেগাবাইট"
 
-#: src/InputController.py:134
+#: src/InputController.py:137
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s কিলোবাইট"
 
-#: src/InputController.py:135
+#: src/InputController.py:138
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s গিগাবাইট"
 
-#: src/InputController.py:136
+#: src/InputController.py:139
 #, python-format
 msgid "%s extents"
 msgstr "%s এক্সটেন্ট"
 
-#: src/InputController.py:138
+#: src/InputController.py:141
 msgid "Remaining free space in Volume Group:\n"
 msgstr "ভলিউম গ্রুপে অবশিষ্ট ফাঁকা স্থান:\n"
 
-#: src/InputController.py:139
+#: src/InputController.py:142
 msgid "Remaining space for this Volume:\n"
 msgstr "চিহ্নিত ভলিউমে অবশিষ্ট স্থান:\n"
 
-#: src/InputController.py:141
+#: src/InputController.py:144
 msgid "Extents"
 msgstr "এক্সটেন্ট"
 
-#: src/InputController.py:142
+#: src/InputController.py:145
 msgid "Gigabytes"
 msgstr "গিগাবাইট"
 
-#: src/InputController.py:143
+#: src/InputController.py:146
 msgid "Megabytes"
 msgstr "মেগাবাইট"
 
-#: src/InputController.py:144
+#: src/InputController.py:147
 msgid "Kilobytes"
 msgstr "কিলোবাইট"
 
-#: src/InputController.py:146
+#: src/InputController.py:149
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s-র মান শুধুমাত্র সংখ্যার দ্বারা নিদিষ্ট করা আবশ্যক"
 
-#: src/InputController.py:147
+#: src/InputController.py:150
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -276,7 +276,7 @@ msgstr ""
 "সর্বোচ্চ প্রকৃত ভলিউম নামক ক্ষেত্রতে শুধুমাত্র ১ থেকে ২৫৬-র মধ্যে কোনো পূর্ণসংখ্যা মান "
 "উল্লেখ করা যাবে"
 
-#: src/InputController.py:148
+#: src/InputController.py:151
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -284,7 +284,7 @@ msgstr ""
 "সর্বোচ্চ লজিকাল ভলিউম নামক ক্ষেত্রতে শুধুমাত্র ১ থেকে ২৫৬-র মধ্যে কোনো পূর্ণসংখ্যা মান "
 "উল্লেখ করা যাবে"
 
-#: src/InputController.py:150
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
@@ -292,7 +292,7 @@ msgid ""
 msgstr ""
 "আপনি কি নিশ্চিতরূপে %s-কে লজিকাল ভলিউম ব্যবস্থা (LVM) থেকে সরিয়ে ফেলতে ইচ্ছুক?"
 
-#: src/InputController.py:152
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -308,13 +308,13 @@ msgstr ""
 "মুছে ফেলার পূর্বে একটি নতুন প্রকৃত ভলিউম যোগ করুন অথবা এই প্রকৃত ভলিউমের সাথে যুক্ত "
 "লজিকাল ভলিউমগুলি সরিয়ে ফেলুন।"
 
-#: src/InputController.py:153
+#: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "আপনি কি নিশ্চিতরূপে %s-কে, %s ভলিউম গ্রুপ থেকে সরিয়ে ফেলতে ইচ্ছুক?"
 
-#: src/InputController.py:154
+#: src/InputController.py:157
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -323,7 +323,7 @@ msgstr ""
 "প্রকৃত ভলিউম %s-কে %s ভলিউম গ্রুপ থেকে সরিয়ে ফেলা হলে, ভলিউম গ্রুপটি ফাঁকা হয়ে যাবে "
 "এবং সেটিও মুছে ফেলা হবে। আপনি কি অগ্রসর হতে ইচ্ছুক?"
 
-#: src/InputController.py:155
+#: src/InputController.py:158
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -333,7 +333,7 @@ msgstr ""
 "ভলিউম গ্রুপ %s-এ, %s-তে সংরক্ষিত ডাটা স্থাপন করার জন্য পর্যাপ্ত শূণ্যস্থান উপস্থিত নেই। "
 "ঐ ভলিউম গ্রুপে একটি অতিরিক্ত প্রকৃত ভলিউম যোগ করে এই সমস্যার সমাধান করা সম্ভব।"
 
-#: src/InputController.py:156
+#: src/InputController.py:159
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -345,7 +345,7 @@ msgstr ""
 "প্রচেষ্টা করুন। অন্যথা, প্রকৃত এক্সটেন্টে (PE) ডাটা স্থানান্তরণের জন্য প্রয়োজনীয় কর্ম করা "
 "সম্ভব নয়।"
 
-#: src/InputController.py:157
+#: src/InputController.py:160
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -355,12 +355,12 @@ msgstr ""
 "দ্বারা dm-mirror টার্গেট সমর্থন করা হয় না। সমর্থিত হলে \"modprobe dm-mirror\" "
 "চালানোর প্রচেষ্টা করুন। অন্যথা, প্রকৃত এক্সটেন্ট (PE) ডাটা স্থানান্তর কর্ম করা সম্ভব নয়।"
 
-#: src/InputController.py:159
+#: src/InputController.py:162
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "আপনি কি নিশ্চিতরূপে লজিকাল ভলিউম %s মুছে ফেলতে ইচ্ছুক?"
 
-#: src/InputController.py:160
+#: src/InputController.py:163
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -369,7 +369,7 @@ msgstr ""
 "%s লজিকাল ভলিউমের উপর %s ফাইল-সিস্টেম স্থাপিত রয়েছে। এবং এটির মধ্যে তথ্য উপস্থিত "
 "রয়েছে। আপনি কি নিশ্চিতরূপে %s লজিকাল ভলিউমটি মুছে ফেলতে ইচ্ছুক?"
 
-#: src/InputController.py:161
+#: src/InputController.py:164
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -378,14 +378,14 @@ msgstr ""
 "%s লজিকাল ভলিউমের মধ্যে %s ডিরেক্টির তথ্য উপস্থিত রয়েছে। এই সমস্ত তথ্য মুছে ফেলা "
 "হবে! আপনি কি নিশ্চিতরূপে %s লজিকাল ভলিউমটি মুছে ফেলতে ইচ্ছুক?"
 
-#: src/InputController.py:306
+#: src/InputController.py:309
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
 "cluster rpm has to be installed, `lvmconf --enable-cluster` has to be "
 "executed and clvmd service has to be running"
 msgstr ""
 
-#: src/InputController.py:365
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -396,7 +396,7 @@ msgstr ""
 "রয়েছে। মিরর করা লজিকাল ভলিউম মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে "
 "না।"
 
-#: src/InputController.py:368
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -407,7 +407,7 @@ msgstr ""
 "রয়েছে। মিরর করা লজিকাল ভলিউম মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে "
 "না।"
 
-#: src/InputController.py:371
+#: src/InputController.py:374
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -416,7 +416,7 @@ msgstr ""
 "%s প্রকৃত ভলিউমের মধ্যে %s অর্থাত্‍‌ %s'র স্ন্যাপশটের মালিকানাধীন এক্সটেন্ট উপস্থিত "
 "রয়েছে। স্ন্যাপশট মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
-#: src/InputController.py:376
+#: src/InputController.py:379
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -426,7 +426,7 @@ msgstr ""
 "উপস্থিত রয়েছে। স্ন্যাপশটের মূল বস্তু মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা "
 "যাবে না।"
 
-#: src/InputController.py:378
+#: src/InputController.py:381
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -435,7 +435,7 @@ msgstr ""
 "%s প্রকৃত ভলিউমের মধ্যে %s অর্থাত্‍‌ %s স্ন্যাপশটের মূল বস্তুর মালিকানাধীন extent উপস্থিত "
 "রয়েছে। স্ন্যাপশটের মূল বস্তু মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
-#: src/InputController.py:565
+#: src/InputController.py:568
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -444,7 +444,7 @@ msgstr ""
 "\"%s\" নামক লজিকাল ভলিউমের মধ্যে স্ন্যাপশট উপস্থিত রয়েছে যা অপসারণের জন্য চিহ্নিত "
 "হয়নি। এইগুলি সরানো আবশ্যক।"
 
-#: src/InputController.py:580
+#: src/InputController.py:583
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
@@ -452,7 +452,7 @@ msgstr ""
 "\"%s\", অর্থাত্‍‌ \"%s\" স্ন্যাপশটের মূল বস্তুটি, অপসারণের জন্য চিহ্নিত বস্তুর তালিকা "
 "থেকে মুছে ফেলা হয়েছে।"
 
-#: src/InputController.py:611
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -461,7 +461,7 @@ msgstr ""
 "\"%s\" নমাক প্রকৃত ভলিউমের মধ্যে কোনো মিররের মালিকানাধীন এক্সটেন্ট উপস্থিত রয়েছে। "
 "মিরর মাইগ্রেট করা সম্ভব নয় যার ফলে %s অপসারণ করা যাবে না।"
 
-#: src/InputController.py:614
+#: src/InputController.py:617
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -471,24 +471,24 @@ msgstr ""
 "মালিকানাধীন এক্সটেন্ট উপস্থিত রয়েছে। স্ন্যাপশট মাইগ্রেট করা সম্ভব নয় যার ফলে %s মুছে "
 "ফেলা যাবে না।"
 
-#: src/InputController.py:679
+#: src/InputController.py:682
 msgid "The path you specified does not exist."
 msgstr "আপনার চিহ্নিত পাথ উপস্থিত নেই।"
 
-#: src/InputController.py:686
+#: src/InputController.py:689
 msgid "The path you specified is not a Block Device."
 msgstr "চিহ্নিত পাথ ব্লক ডিভাইস নয়।"
 
-#: src/InputController.py:757
+#: src/InputController.py:760
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "%s আরম্ভ করতে ব্যর্থ"
 
-#: src/InputController.py:994 src/InputController.py:997
+#: src/InputController.py:998 src/InputController.py:1001
 msgid "Please select some extents first"
 msgstr "অনুগ্রহ করে প্রথমে কয়েকটি এক্সটেন্ট নির্বাচন করুন"
 
-#: src/InputController.py:1031
+#: src/InputController.py:1035
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -496,47 +496,54 @@ msgstr ""
 "প্রয়োজনীয় মাইগ্রেশনের জন্য পর্যাপ্ত মূক্ত এক্সটেন্ট উপস্থিত নেই। অতিরিক্ত প্রকৃত ভলিউম "
 "যোগ  করে এই সমস্যার সমাধান করা সম্ভব।"
 
-#: src/InputController.py:1193
+#: src/InputController.py:1091
+#, python-format
+msgid ""
+"iSCSI Initiator rpm is not installed. \n"
+"Install %s rpm, and try again."
+msgstr ""
+
+#: src/InputController.py:1208
 msgid "Migrate extents"
 msgstr "এক্সটেন্ট মাইগ্রেট করুন"
 
-#: src/InputController.py:1321
+#: src/InputController.py:1336
 msgid "Options"
 msgstr "বিকল্প"
 
-#: src/InputController.py:1355
+#: src/InputController.py:1370
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "%s'র একটি স্ন্যাপশট নির্মাণ করুন"
 
-#: src/InputController.py:1357
+#: src/InputController.py:1372
 msgid "Create New Logical Volume"
 msgstr "নতুন লজিকাল ভলিউম নির্মাণ"
 
-#: src/InputController.py:1360
+#: src/InputController.py:1375
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "%s সম্পাদনা, %s'র স্ন্যাপশট"
 
-#: src/InputController.py:1363
+#: src/InputController.py:1378
 msgid "Edit Logical Volume"
 msgstr "লজিকাল ভলিউম সম্পাদনা"
 
-#: src/InputController.py:1516
+#: src/InputController.py:1531
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "অন্তর্নিহিত লজিকাল ভলিউম ব্যবস্থাপনার দ্বারা মিররিং কর্ম সমর্থিত নয়"
 
-#: src/InputController.py:1523
+#: src/InputController.py:1538
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "স্ট্রাইপ করা লজিকাল ভলিউম মিরর করা হবে না।"
 
-#: src/InputController.py:1530
+#: src/InputController.py:1545
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "সংযুক্ত স্ন্যাপশটসমেত লজিকাল ভলিউমের জন্য মিরর করা সম্ভব নয়।"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1537
+#: src/InputController.py:1552
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -544,25 +551,25 @@ msgstr ""
 "হার্ড-ড্রাইভ বিপর্যয়ের ক্ষেত্রে ডাটা'র ক্ষয়ক্ষতি রোধ করাই মিররিং ব্যবস্থার প্রধান "
 "উদ্দেশ্য। আপনি কি বিভিন্ন হার্ড-ড্রাইভের মধ্যে মিরর ইমেজ স্থাপন করতে ইচ্ছুক?"
 
-#: src/InputController.py:1546
+#: src/InputController.py:1561
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "শূণ্যস্থান সমেত উপলব্ধ হার্ড-ড্রাইভের সংখ্যা ৩'র কম। মিররিং নিষ্ক্রিয় করা হচ্ছে।"
 
-#: src/InputController.py:1551
+#: src/InputController.py:1566
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr "মিররিং'র জন্য অন্তত তিনটি প্রকৃত ভলিউমের মধ্যে শূণ্যস্থান উপলব্ধ থাকা আবশ্যক"
 
-#: src/InputController.py:1559
+#: src/InputController.py:1574
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr ""
 "মিররগুলির জন্য লজিকাল ভলিউমের মাপ সর্বাধিক উপলব্ধ মাপ হিসাবে পরিবর্তন করা আবশ্যক।"
 
-#: src/InputController.py:1564
+#: src/InputController.py:1579
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -571,43 +578,43 @@ msgstr ""
 "মিররিং'র জন্য পর্যাপ্ত শূণ্যস্থান উপলব্ধ নেই। লজিকাল ভলিউমের সর্বাধিক %s হিসাবে "
 "স্থাপন করুন অথবা অতিরিক্ত প্রকৃত ভলিউম যোগ করুন।"
 
-#: src/InputController.py:1928
+#: src/InputController.py:1943
 #, fuzzy
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr "প্রারম্ভে \"snapshot\" ও \"pvmove\" সহ নামগুলি সংরক্ষিত অভিব্যক্তি।"
 
-#: src/InputController.py:1930
+#: src/InputController.py:1945
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "প্রারম্ভে \"_mlog\" ও \"_mimage\" সহ নামগুলি সংরক্ষিত অভিব্যক্তি।"
 
-#: src/InputController.py:1932
+#: src/InputController.py:1947
 #, fuzzy
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "প্রারম্ভে \"-\" সমেত নামগুলি বৈধ নয়"
 
-#: src/InputController.py:1934
+#: src/InputController.py:1949
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "নাম \".\" অথবা \"..\" হওয়া সম্ভব নয়"
 
-#: src/InputController.py:1940
+#: src/InputController.py:1955
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "লজিকাল ভলিউমের নামের মধ্যে শূণ্যস্থান লেখা সম্ভব নয়"
 
-#: src/InputController.py:1943
+#: src/InputController.py:1958
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "লজিকাল ভলিউমের নামের মধ্যে অবৈধ অক্ষর \"%s\""
 
-#: src/InputController.py:1963
+#: src/InputController.py:1978
 msgid "Please specify mount point"
 msgstr "অনুগ্রহ করে মাউন্ট-পয়েন্ট নির্ধারণ করুন"
 
-#: src/InputController.py:2029
+#: src/InputController.py:2044
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "লজিকাল ভলিউমের তথ্য অক্ষত রেখে আপনি কি ext2 থেকে ext3-তে আপগ্রেড করতে ইচ্ছুক?"
 
-#: src/InputController.py:2063
+#: src/InputController.py:2078
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -616,22 +623,22 @@ msgstr ""
 "হবে! অপনি কি নিশ্চিতরূপে অগ্রসর হতে ইচ্ছুক?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2164
+#: src/InputController.py:2179
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "মিরর নির্মাণ করা হয়নি। অবশিষ্ট কর্ম সমাপ্ত করা হচ্ছে।"
 
 #. create mirror
-#: src/InputController.py:2167
+#: src/InputController.py:2182
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr ""
 
-#: src/InputController.py:2216
+#: src/InputController.py:2231
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "মিরর যোগ করার জন্য কয়েকটি এক্সটেন্ট মাইগ্রেট করা আবশ্যক।"
 
-#: src/InputController.py:2216
+#: src/InputController.py:2231
 msgid "Do you want to migrate specified extents?"
 msgstr "আপনি কি সুনির্দিষ্ট এক্সটেন্ট মাইগ্রেট করতে ইচ্ছুক?"
 
@@ -858,63 +865,76 @@ msgstr "ফরেন বুট পার্টিশান"
 msgid "Autopartition failure"
 msgstr "স্বয়ংক্রিয় পার্টিশান কর্ম ব্যর্থ"
 
-#: src/lvm_model.py:254
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "ব্যবহারকারীর দ্বারা পার্টিশান"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "মাল্টিপাথ ডিভাইস"
 
-#: src/lvm_model.py:293
+#: src/lvm_model.py:298
 #, fuzzy
 msgid "Note:"
 msgstr "উল্লেখ্য:   "
 
-#: src/lvm_model.py:293
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "ব্যবহারকারীর দ্বারা আরম্ভ"
 
-#: src/lvm_model.py:736
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr ""
 
-#: src/lvm_model.py:738
+#: src/lvm_model.py:743 src/lvm_model.py:971
 msgid "True"
 msgstr ""
 
-#: src/lvm_model.py:740
+#: src/lvm_model.py:745
 msgid "False"
 msgstr ""
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:803
 #, fuzzy
 msgid "Number of mirror images:"
 msgstr "মিরর ইমেজের সংখ্যা:   "
 
-#: src/lvm_model.py:801
+#: src/lvm_model.py:806
 #, fuzzy
 msgid "Snapshots:"
 msgstr "স্ন্যাপশট:  "
 
-#: src/lvm_model.py:807
+#: src/lvm_model.py:812
 #, fuzzy
 msgid "Snapshot origin:"
 msgstr "স্ন্যাপশটের মূল উত্‍‌স:  "
 
-#: src/lvm_model.py:814
+#: src/lvm_model.py:819
 #, fuzzy
 msgid "Snapshot usage:"
 msgstr "স্ন্যাপশটের ব্যবহার:  "
 
-#: src/lvm_model.py:837 src/lvm_model.py:843 src/lvm_model.py:886
-#: src/lvm_model.py:902
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   Root ফাইল-সিস্টেম"
 
-#: src/lvm_model.py:905 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "শূণ্য"
+
+#: src/lvm_model.py:961
+#, fuzzy
+msgid "SCSI ID:   "
+msgstr "সিস্টেমের ID:   "
+
+#: src/lvm_model.py:965
+msgid "NONE"
+msgstr ""
+
+#: src/lvm_model.py:970
+msgid "iSCSI Device:   "
+msgstr ""
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1310,7 +1330,7 @@ msgstr "মিরর "
 msgid "Partition %s"
 msgstr "পার্টিশান  %s"
 
-#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
+#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1 src/iscsi.glade.h:1
 msgid "*"
 msgstr "*"
 
@@ -1540,6 +1560,10 @@ msgid "_Tools"
 msgstr "সরঞ্জাম (_T)"
 
 #: src/lvui.glade.h:57
+msgid "_iSCSI Configuration"
+msgstr ""
+
+#: src/lvui.glade.h:58
 msgid "extend vg message:"
 msgstr "এক্সটেন্ড vg বার্তা:"
 
@@ -1726,6 +1750,50 @@ msgstr "শুধুমাত্র LV'র মালিকানাধীন এ
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "সাধারণ বিচার বিবেচনা প্রয়োগ করা হবে"
+
+#: src/iscsi.glade.h:2
+#, fuzzy
+msgid "3260"
+msgstr "৩২"
+
+#: src/iscsi.glade.h:3
+msgid "Active iSCSI targets are selected "
+msgstr ""
+
+#: src/iscsi.glade.h:4
+msgid "Add New Target"
+msgstr ""
+
+#: src/iscsi.glade.h:5
+msgid "Default port is 3260"
+msgstr ""
+
+#: src/iscsi.glade.h:6
+msgid "Enter a hostname (or an IP address) of new target to add"
+msgstr ""
+
+#: src/iscsi.glade.h:7
+msgid "Hostname"
+msgstr ""
+
+#: src/iscsi.glade.h:8
+msgid "New iSCSI Target"
+msgstr ""
+
+#: src/iscsi.glade.h:9
+#, fuzzy
+msgid "Port"
+msgstr "ফরম্যাট"
+
+#: src/iscsi.glade.h:10
+msgid ""
+"Specify a hostname of new target \n"
+"to add, and click \"OK\". "
+msgstr ""
+
+#: src/iscsi.glade.h:12
+msgid "iSCSI Initiator"
+msgstr ""
 
 #~ msgid "Name for Volume Group: "
 #~ msgstr "ভলিউম গ্রুপের নাম: "

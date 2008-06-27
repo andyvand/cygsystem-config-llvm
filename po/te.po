@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-01-22 11:52-0500\n"
+"POT-Creation-Date: 2007-01-31 09:04-0500\n"
 "PO-Revision-Date: 2006-12-15 18:58+0530\n"
 "Last-Translator: Sree Ganesh <sthottem@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 
-#: src/InputController.py:36 src/Properties_Renderer.py:24
+#: src/InputController.py:39 src/Properties_Renderer.py:24
 #: src/Volume_Tab_View.py:32
 #, python-format
 msgid ""
@@ -37,7 +37,7 @@ msgstr ""
 
 #. ##TRANSLATOR: The string below is seen when adding a new Physical
 #. ##Volume to an existing Volume Group.
-#: src/InputController.py:56
+#: src/InputController.py:59
 #, python-format
 msgid "Select a Volume Group to add %s to:"
 msgstr "%s కలపటానికి ఒక వాల్యూం సమూహాన్ని ఎన్నుకోండి:"
@@ -50,32 +50,32 @@ msgstr "%s కలపటానికి ఒక వాల్యూం సమూహ
 #. ##is an 'uninitialized entity', which is an available disk or partition
 #. ##that is NOT yet initialized to be used with LVM. Hope this helps give
 #. ##some context.
-#: src/InputController.py:84
+#: src/InputController.py:87
 msgid "Name"
 msgstr "పేరు"
 
-#: src/InputController.py:85
+#: src/InputController.py:88
 msgid "Size"
 msgstr "పరిమాణం"
 
-#: src/InputController.py:86
+#: src/InputController.py:89
 msgid "Entity Type"
 msgstr "అస్తిత్వ రకం"
 
-#: src/InputController.py:88
+#: src/InputController.py:91
 msgid "Unallocated Physical Volume"
 msgstr "కేటాయించని భౌతిక వాల్యూం"
 
-#: src/InputController.py:89
+#: src/InputController.py:92
 msgid "Uninitialized Disk Entity"
 msgstr "ప్రాధమికత లేని డిస్కు అస్తిత్వం"
 
-#: src/InputController.py:90
+#: src/InputController.py:93
 #, python-format
 msgid "Select disk entities to add to the %s Volume Group:"
 msgstr "%s వాల్యూం సమూహానికి కలపటానికి డిస్కు అస్తిత్వాలను ఎన్నుకోండి:"
 
-#: src/InputController.py:92
+#: src/InputController.py:95
 msgid ""
 "A Volume Group must be made up of two or more Physical Volumes to support "
 "striping. This Volume Group does not meet that requirement."
@@ -83,7 +83,7 @@ msgstr ""
 "ఈ వాల్యూం సమూహం తప్పక స్ట్రిప్పింగుకు మద్దతివ్వటానికి రెండు లేదా అంతకంటే ఎక్కువ భౌతిక విలువలతో "
 "చేయబడిందై ఉండాలి. ఈ వాల్యూం సమూహం కావలసినదాన్ని కలవలేదు."
 
-#: src/InputController.py:94
+#: src/InputController.py:97
 #, python-format
 msgid ""
 "A Logical Volume with the name %s already exists in this Volume Group. "
@@ -91,55 +91,55 @@ msgid ""
 msgstr ""
 "ఈ %s పేరుతో ఒక తార్కిక వాల్యూం ఇప్పటికే వాల్యూం సమూహంలో ఉంది. దయచేసి ఒక సమిష్టి పేరును ఎన్నుకోండి."
 
-#: src/InputController.py:96
+#: src/InputController.py:99
 #, python-format
 msgid ""
 "A Volume Group with the name %s already exists. Please choose a unique name."
 msgstr "%s పేరుతో వాల్యూం సమూహం ఇప్పటికే ఉంది. దయచేసి ఒక పేరును ఎన్నుకోండి."
 
-#: src/InputController.py:98
+#: src/InputController.py:101
 msgid "A Name must be provided for the new Logical Volume"
 msgstr "కొత్త తార్కిక వాల్యూంకి ఒక పేరును తప్పక సమకూర్చాలి"
 
-#: src/InputController.py:100
+#: src/InputController.py:103
 msgid "A Name must be provided for the new Volume Group"
 msgstr "కొత్త తార్కిక వాల్యూంకి ఒక పేరును తప్పక సమకూర్చాలి"
 
-#: src/InputController.py:102
+#: src/InputController.py:105
 #, python-format
 msgid ""
 "The specified mount point, %s, does not exist. Do you wish to create it?"
 msgstr "ఈ తెల్పబడిన మౌటు పాయింటు, %s, లేదు. మీరు దాన్ని సృష్టించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:104
+#: src/InputController.py:107
 #, python-format
 msgid "The creation of mount point %s unexpectedly failed."
 msgstr "%s మౌంటు పాయింటును సృష్టించటం అనుకోని విధంగా‌విఫలమైంది."
 
-#: src/InputController.py:106
+#: src/InputController.py:109
 msgid "This capability is not yet implemented in this version"
 msgstr "ఈ సామర్ధ్యం ఇంకా ఈ ప్రతిలో అనువర్తించబడలేదు"
 
-#: src/InputController.py:108
+#: src/InputController.py:111
 msgid ""
 "The number of Logical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "వాల్యూం సమూహంలో తార్కిక వాల్యూంల సంఖ్య దాని గరిష్ట పరిమితిని చేరుకుంది."
 
-#: src/InputController.py:110
+#: src/InputController.py:113
 msgid ""
 "The number of Physical Volumes in this Volume Group has reached its maximum "
 "limit."
 msgstr "వాల్యూం సమూహంలో భౌతిక వాల్యూంల సంఖ్య దాని గరిష్ట పరిమితిని చేరుకుంది."
 
-#: src/InputController.py:112
+#: src/InputController.py:115
 #, python-format
 msgid ""
 "At most %s Physical Volumes can be added to this Volume Group before the "
 "limit is reached."
 msgstr "పెద్ద %s భౌతిక వాల్యూంలు పరిమితిని చేరకముందే ఈ వాల్యూం సమూహానికి చేర్చాలి."
 
-#: src/InputController.py:114
+#: src/InputController.py:117
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space for new Logical Volumes. A "
@@ -149,15 +149,15 @@ msgstr ""
 "వాల్యూం సమూహం %s కొత్త తార్కిక వాల్యూంలకోసం తగిన ఖాళీని కలిగిలేవు. దీనికి వీలైన పరిష్కారం ఈ వాల్యూం "
 "సమూహానికి అదనపు భౌతిక వాల్యూంని కలపటం."
 
-#: src/InputController.py:116
+#: src/InputController.py:119
 msgid "A snapshot of a snapshot is not supported."
 msgstr "స్నాప్ షాట్ యొక్క స్నాప్ షాట్ మద్దతివ్వబడలేదు."
 
-#: src/InputController.py:117
+#: src/InputController.py:120
 msgid "A snapshot of a mirrored Logical Volume is not supported."
 msgstr "mirrored తార్కిక వాల్యూం స్నాప్ షాట్ మద్దతివ్వటం లేదు."
 
-#: src/InputController.py:119
+#: src/InputController.py:122
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -165,7 +165,7 @@ msgid ""
 msgstr ""
 "తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
 
-#: src/InputController.py:120
+#: src/InputController.py:123
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -173,12 +173,12 @@ msgid ""
 msgstr ""
 "తార్కిక విలువ %s ప్రస్తుతానికి %s స్నాప్ షాట్ ను దానితో కూడి ఉంది. దయచేసి ఆ స్నాప్ షాట్ ను మొదట తొలిగించండి."
 
-#: src/InputController.py:122
+#: src/InputController.py:125
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "మోడల్ ఫ్యాక్టరులో నిర్వచించబడని మార్పు దోషం. పనిని పూర్తి చేయటం కుదరదు."
 
-#: src/InputController.py:124
+#: src/InputController.py:127
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -188,7 +188,7 @@ msgstr ""
 "తీవ్ర హెచ్చరిక: %s తార్కిక విలువ దానిలోని ఒక %s ఫైలు విధానం మరియూ ప్రస్తుతం %sలో మరల్చబడింది. మీరు "
 "నిజంగా ఈ మౌంటు చేయబడిన ఫైళ్ల విధానాన్ని తీసివేయాలనుకుంటున్నారా?"
 
-#: src/InputController.py:126
+#: src/InputController.py:129
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -199,80 +199,80 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:132
+#: src/InputController.py:135
 #, python-format
 msgid "Unused space on %s"
 msgstr "%s యందు ఉపయోగించని ఖాళీ"
 
-#: src/InputController.py:133
+#: src/InputController.py:136
 #, python-format
 msgid "%s megabytes"
 msgstr "%s మెగా బైట్లు"
 
-#: src/InputController.py:134
+#: src/InputController.py:137
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s కిలోబైట్లు"
 
-#: src/InputController.py:135
+#: src/InputController.py:138
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s గిగాబైట్లు"
 
-#: src/InputController.py:136
+#: src/InputController.py:139
 #, python-format
 msgid "%s extents"
 msgstr "%s విస్తృతులు"
 
-#: src/InputController.py:138
+#: src/InputController.py:141
 msgid "Remaining free space in Volume Group:\n"
 msgstr "వాల్యూం సమూహంలో మిగిలిన ఖాళీ:\n"
 
-#: src/InputController.py:139
+#: src/InputController.py:142
 msgid "Remaining space for this Volume:\n"
 msgstr "ఈ వాల్యూం కోసం మిగిలిన ఖాళీ:\n"
 
-#: src/InputController.py:141
+#: src/InputController.py:144
 msgid "Extents"
 msgstr "విస్త్రృతులు"
 
-#: src/InputController.py:142
+#: src/InputController.py:145
 msgid "Gigabytes"
 msgstr "గిగాబైట్లు"
 
-#: src/InputController.py:143
+#: src/InputController.py:146
 msgid "Megabytes"
 msgstr "మెగాబైట్లు"
 
-#: src/InputController.py:144
+#: src/InputController.py:147
 msgid "Kilobytes"
 msgstr "కిలోబైట్లు"
 
-#: src/InputController.py:146
+#: src/InputController.py:149
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "ఈ %s మాత్రమే సంఖ్యాపర విలువలను కలిగిఉంది"
 
-#: src/InputController.py:147
+#: src/InputController.py:150
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr "ఫైలైన గరిష్ఠ భౌతిక విలువల సంఖ్య కేవలం 1 మరియూ 256ల మధ్య సంఖ్యలను కలిగి ఉండాలి"
 
-#: src/InputController.py:148
+#: src/InputController.py:151
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr "ఫైలైన గరిష్ఠ తార్కిక విలువల సంఖ్య కేవలం 1 మరియూ 256ల మధ్య సంఖ్యలను కలిగి ఉండాలి"
 
-#: src/InputController.py:150
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr "మీరు తార్కిక వాల్యూం నిర్వహణ %s నుండీ తొలగించదలచినవాటినుండీ బయటకు రావాలనుకుంటున్నారా?"
 
-#: src/InputController.py:152
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -287,13 +287,13 @@ msgstr ""
 "భౌతిక విలువను కలపటానికి కన్నా వేరే స్థలంలేదు, లేదా ఈ భౌతిక వాల్యూంతో కూడుకొన్న తార్కిక వాల్యూంను  "
 "తొలగించండి."
 
-#: src/InputController.py:153
+#: src/InputController.py:156
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "మీరు నిజంగా %sని %s వాల్యూం సమూహంనుండీ తొలగించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:154
+#: src/InputController.py:157
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -302,7 +302,7 @@ msgstr ""
 "భౌతిక విలువ %sను %s వాల్యూం సమూహం నుండీ తొలగించటం వాల్యూం సమూహాన్ని ఖాళీగా ఉంచుతుంది, మరియూ "
 "ఇంతకు ముందులాగానే‌తొలగిస్తుంది. మీరు కొనసాసాగించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:155
+#: src/InputController.py:158
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -312,7 +312,7 @@ msgstr ""
 "%s వాల్యూం సమూహం సమాచార స్టోరును %sకి పంపటానికి కావలసిన ఖాళీని కలిగిలేదు. సాధ్యమయ్యే విధానం ఏమిటంటే "
 "వాల్యూం సమూహానికి అదనపు భౌతిక వాల్యూంను కలపటం."
 
-#: src/InputController.py:156
+#: src/InputController.py:159
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -323,7 +323,7 @@ msgstr ""
 "ఉంటుంది. ఒకవేళ అదికనుక మద్దతిచ్చేదే ఐతే, \"modprobe dm-mirror\"ని ఉపయోగించటానికి ప్రయత్నించండి. "
 "లేకపోతే, సమాచారాన్ని భౌతిక విస్తరణలకు పంపటానికి కావలసినవి అందుబాటులో ఉండవు."
 
-#: src/InputController.py:157
+#: src/InputController.py:160
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -333,12 +333,12 @@ msgstr ""
 "మద్దతిచ్చేది అయ్యి ఉండదు. ఒక వేళ అదికనుక మద్దతిచ్చేదే ఐతే, \"modprobe dm-snapshot\"ని "
 "ఉపయోగించటానికి ప్రయత్నించండి. కానిపక్షంలో, స్నాప్ షాటును సృష్టించటం అసాధ్యం."
 
-#: src/InputController.py:159
+#: src/InputController.py:162
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "మీరు నిజంగా %s తార్కికవిలువను తొలగించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:160
+#: src/InputController.py:163
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -347,7 +347,7 @@ msgstr ""
 "%s తార్కిక వాల్యూం %sఫైలు విధానాన్ని కలిగి ఉంది. దీనిలోని సమాచారం అంతా పోతుంది! మీరు నిజంగా %s తార్కిక "
 "విలువను తొలగించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:161
+#: src/InputController.py:164
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -356,7 +356,7 @@ msgstr ""
 "%s తార్కిక విలువ %s డైరెక్టరీనుండీ సమాచారాన్ని కలిగి ఉంది. దీనిలోని సమాచారం అంతా పోతుంది! మీరు నిజంగా %s "
 "తార్కికవిలువను తొలగించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:306
+#: src/InputController.py:309
 #, fuzzy
 msgid ""
 "In order for Volume Group to be safely used in clustered environment, lvm2-"
@@ -366,7 +366,7 @@ msgstr ""
 "క్లస్టర్ వాతావరణంలో వాల్యూం సమూహం సరిగా వినియోగించబడింది, lvm2-క్లస్టర్ rpm సంస్థాపించాలి, మరియూ "
 "clvmd సేవలు నడుస్తూ ఉండాలి"
 
-#: src/InputController.py:365
+#: src/InputController.py:368
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -376,7 +376,7 @@ msgstr ""
 "%s భౌతిక విలువ %s తార్కిక విలువ యొక్క మిర్రర్ లాగ్ విస్థరణలను కలిగి ఉంది. మిర్రోర్డు తార్కిక వాల్యూంలు "
 "ఇంకా వలసని పొందలేదు, కాబట్టి %s తొలగించటం కుదరదు."
 
-#: src/InputController.py:368
+#: src/InputController.py:371
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -386,7 +386,7 @@ msgstr ""
 "%s భౌతిక విలువ %s తార్కిక విలువ యొక్క మిర్రోర్ చిత్రాల విస్తృతులను కలిగి ఉంది. Mirrored తార్కిక "
 "విలువలు వలస పంపదగ్గవి కావు, కావునా %s తొలగించటానికి కుదరదు."
 
-#: src/InputController.py:371
+#: src/InputController.py:374
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -395,7 +395,7 @@ msgstr ""
 "%s భౌతిక వాల్యూం %sకి చెందిన విస్తృతులను కలిగి ఉంది, %s యొక్క స్నాప్ షాట్. స్నాప్ షాట్లు వలస "
 "పంపదగ్గవికాదు, కాబట్టి %s తొలగించదగ్గదికాదు."
 
-#: src/InputController.py:376
+#: src/InputController.py:379
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -404,7 +404,7 @@ msgstr ""
 "%s భౌతిక విలువ %sకి చెందున విస్తృతులను కలిగి ఉంది, %s స్నాప్ షాట్ యొక్క మూలం. స్నాప్ షాట్ మూలాలు "
 "వలస పంపదగ్గవికావు, కావునా %s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:378
+#: src/InputController.py:381
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -413,7 +413,7 @@ msgstr ""
 "%s భౌతిక వాల్యూం %sకి చెందిన విస్తృతులను కలిగి ఉంది, స్నాప్ షాట్సు యొక్క మూలం %s. స్నాప్ షాట్ మూలాలు "
 "వలస పంపదగ్గవికావు, కావునా %s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:565
+#: src/InputController.py:568
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -421,13 +421,13 @@ msgid ""
 msgstr ""
 "\"%s\" తార్కిక విలువ తొలగించటానికి ఎన్నుకోబడని స్నాప్ షాటులను కలిగిఉంది. అవి తప్పక .తొలగించదగ్గవి."
 
-#: src/InputController.py:580
+#: src/InputController.py:583
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\", \"%s\" స్నాప్ షాట్ యొక్క మూలం, తొలగింపు జాబితాలోనుంచీ తొలగించదగ్గది."
 
-#: src/InputController.py:611
+#: src/InputController.py:614
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -436,7 +436,7 @@ msgstr ""
 "\"%s\" భౌతిక విలువ మిర్రరుకు చెందిన విస్తృతులను కలిగి ఉంది. మిర్రోర్లు వలస పంపదగ్గవికావు, కావునా %"
 "s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:614
+#: src/InputController.py:617
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -445,24 +445,24 @@ msgstr ""
 "\"%s\" భౌతిక విలువ స్నాప్ షాట్ లేదా స్నాప్ షాట్ యొక్క మూలం విస్తృతులను కలిగి ఉంది. స్నాప్ షాట్సు వలస "
 "పంపదగ్గవి, కావునా %s తొలగించదగ్గది కాదు."
 
-#: src/InputController.py:679
+#: src/InputController.py:682
 msgid "The path you specified does not exist."
 msgstr "మీరు తెలిపిన మార్గం లేదు."
 
-#: src/InputController.py:686
+#: src/InputController.py:689
 msgid "The path you specified is not a Block Device."
 msgstr "మీరు తెలిపిన మార్గం బ్లాక్ సాధనం కాదు."
 
-#: src/InputController.py:757
+#: src/InputController.py:760
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "%s సంస్థాపన విఫలమైంది"
 
-#: src/InputController.py:994 src/InputController.py:997
+#: src/InputController.py:998 src/InputController.py:1001
 msgid "Please select some extents first"
 msgstr "దయచేసి కొంత విస్తృతులను మొదట ఎన్నుకోండి"
 
-#: src/InputController.py:1031
+#: src/InputController.py:1035
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -470,47 +470,54 @@ msgstr ""
 "అవసరమైన వలసలను చేయటానికి చాలినంత ఉచిత విస్తృతులు లేవు. ఈ సమస్యను పరిక్షరించటానికి ఎక్కువ భౌతిక "
 "వాల్యూంలను కలుపుతోంది."
 
-#: src/InputController.py:1193
+#: src/InputController.py:1091
+#, python-format
+msgid ""
+"iSCSI Initiator rpm is not installed. \n"
+"Install %s rpm, and try again."
+msgstr ""
+
+#: src/InputController.py:1208
 msgid "Migrate extents"
 msgstr "వలసవచ్చిన విస్తృతులు"
 
-#: src/InputController.py:1321
+#: src/InputController.py:1336
 msgid "Options"
 msgstr "ఐచ్ఛికాలు"
 
-#: src/InputController.py:1355
+#: src/InputController.py:1370
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "%s స్నాప్ షాటును సృష్టించు"
 
-#: src/InputController.py:1357
+#: src/InputController.py:1372
 msgid "Create New Logical Volume"
 msgstr "కొత్త తార్కిక విలువను సృష్టించు"
 
-#: src/InputController.py:1360
+#: src/InputController.py:1375
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "%sని కూర్చు, %s యొక్క స్నాప్ షాట్"
 
-#: src/InputController.py:1363
+#: src/InputController.py:1378
 msgid "Edit Logical Volume"
 msgstr "తార్కిక విలువను కూర్చు"
 
-#: src/InputController.py:1516
+#: src/InputController.py:1531
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "కింద పేర్కొనబడిన తార్కిక విలువల నిర్వహణ mirroringకి మద్దతివ్వటంలేదు"
 
-#: src/InputController.py:1523
+#: src/InputController.py:1538
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "ఖాళీగా ఉన్న వాల్యూంలు మిర్రర్డు చేయటానికి కుదరదు."
 
-#: src/InputController.py:1530
+#: src/InputController.py:1545
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "స్నాప్ షాటులతో కూడి ఉన్న తార్కిక వాల్యూంలు ఇంకా మిర్రర్డు చేయటానికి కుదరదు."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1537
+#: src/InputController.py:1552
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -518,24 +525,24 @@ msgstr ""
 "మిర్రరింగ్ ప్రధాన లక్ష్యం హార్డువేరు విఫలమైనప్పుడు సమాచారాన్ని రక్షించటం. మీరు విభిన్న హార్డు డ్రైవులలో "
 "మిర్రర్ చిత్రాలను ఉంచాలనుకుంటున్నారా?"
 
-#: src/InputController.py:1546
+#: src/InputController.py:1561
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "ఖాళీతో 3 హార్డు డ్రైవుల కంటే తక్కువైనవి అందుబాటులో ఉన్నాయి. mirroring కుదరదు."
 
-#: src/InputController.py:1551
+#: src/InputController.py:1566
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr "mirroring సాధ్యంచేయటానికి తప్పక కనీసం 3 భౌతిక విలువలలో ఖాళీ ఉండాలి"
 
-#: src/InputController.py:1559
+#: src/InputController.py:1574
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr "తార్కిక వాల్యూం పరిమాణం అందుబాటులో ఉన్న మిర్రర్ల గరిష్ఠ పరిమాణానికి సరిచేయబడతాయి."
 
-#: src/InputController.py:1564
+#: src/InputController.py:1579
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -544,40 +551,40 @@ msgstr ""
 "మిర్రరింగును కలపటానికి తగిన ఖాళీ లేదు. తార్కిక వాల్యూం పరిమాణాన్ని %sకి తగ్గించు, లేదా భౌతిక వాల్యూంలను "
 "కలుపు."
 
-#: src/InputController.py:1928
+#: src/InputController.py:1943
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr "\"snapshot\" లేదా \"pvmove\"లతో ప్రారంభమయ్యే పేర్లు కేటాయించిన కీపదాలు."
 
-#: src/InputController.py:1930
+#: src/InputController.py:1945
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "\"_mlog\" లేదా \"_mimage\" లతో కలిగి ఉన్న పేర్లు కేటాయించిన కీపదాలు. (_m)"
 
-#: src/InputController.py:1932
+#: src/InputController.py:1947
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "\"-\"తో ప్రారంభమయ్యే పేర్లు విలువైనవి కావు"
 
-#: src/InputController.py:1934
+#: src/InputController.py:1949
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "పేర్లు \".\" కానీ \"..\" కానీ కావాలి"
 
-#: src/InputController.py:1940
+#: src/InputController.py:1955
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "తార్కిక వాల్యూం పేర్లలో ఖాళీ అనుమతించబడదు"
 
-#: src/InputController.py:1943
+#: src/InputController.py:1958
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "తార్కిక వాల్యూం పేరులో \"%s\" సరికాని అక్షరం"
 
-#: src/InputController.py:1963
+#: src/InputController.py:1978
 msgid "Please specify mount point"
 msgstr "దయచేసి మౌంటు పాయింటును తెలపండి"
 
-#: src/InputController.py:2029
+#: src/InputController.py:2044
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr "మీరు సమాచారాన్ని తార్కిక వాల్యూంలో భద్రపరచటానికి ext2 ని ext3కి నవీకరించాలనుకుంటున్నారా?"
 
-#: src/InputController.py:2063
+#: src/InputController.py:2078
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
@@ -586,22 +593,22 @@ msgstr ""
 "కొనసాగాలనుకుంటున్నారా?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2164
+#: src/InputController.py:2179
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "మిర్రర్ సృష్టించబడింది. దోషాలను కనుగొనే పని పూర్తయ్యింది."
 
 #. create mirror
-#: src/InputController.py:2167
+#: src/InputController.py:2182
 msgid ""
 "Underlaying LVM doesn't support addition of mirrors to existing Logical "
 "Volumes. Completing remaining tasks."
 msgstr "అండర్ లేయింగ్ LVM తార్కిక వాల్యూంలను ఉంచటానికి మద్దతివ్వదు. మిగిలిన పనిని పూర్తిచేస్తోంది."
 
-#: src/InputController.py:2216
+#: src/InputController.py:2231
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "మిర్రరింగుని కలపటానికి, కొన్ని విస్తృతులను వలస పంపవలసి ఉంది."
 
-#: src/InputController.py:2216
+#: src/InputController.py:2231
 msgid "Do you want to migrate specified extents?"
 msgstr "తెలిపిన విస్తృతులకు మీరు వెళ్లాలనుకుంటున్నారా?"
 
@@ -826,58 +833,71 @@ msgstr "ఫారిన్ బూట్ విభజన"
 msgid "Autopartition failure"
 msgstr "స్వయంచాలక విభజన విఫలమైంది"
 
-#: src/lvm_model.py:254
+#: src/lvm_model.py:259
 msgid "Partition manually"
 msgstr "మానవీయ విభజన"
 
-#: src/lvm_model.py:290
+#: src/lvm_model.py:295
 msgid "Multipath device"
 msgstr "బహుళమార్గ సాధనం"
 
-#: src/lvm_model.py:293
+#: src/lvm_model.py:298
 msgid "Note:"
 msgstr "సూచన:"
 
-#: src/lvm_model.py:293
+#: src/lvm_model.py:298
 msgid "Initialize manually"
 msgstr "మానవీయంగా ప్రారంభించు"
 
-#: src/lvm_model.py:736
+#: src/lvm_model.py:741
 msgid "Clustered:   "
 msgstr "క్లస్టర్డు:   "
 
-#: src/lvm_model.py:738
+#: src/lvm_model.py:743 src/lvm_model.py:971
 msgid "True"
 msgstr "నిజం"
 
-#: src/lvm_model.py:740
+#: src/lvm_model.py:745
 msgid "False"
 msgstr "తప్పు"
 
-#: src/lvm_model.py:798
+#: src/lvm_model.py:803
 msgid "Number of mirror images:"
 msgstr "మిర్రర్ చిత్రాల సంఖ్య:"
 
-#: src/lvm_model.py:801
+#: src/lvm_model.py:806
 msgid "Snapshots:"
 msgstr "స్నాప్ షాట్లు:"
 
-#: src/lvm_model.py:807
+#: src/lvm_model.py:812
 msgid "Snapshot origin:"
 msgstr "స్నాప్ షాట్ మూలం:"
 
-#: src/lvm_model.py:814
+#: src/lvm_model.py:819
 msgid "Snapshot usage:"
 msgstr "స్నాప్ షాట్ వాడుక:"
 
-#: src/lvm_model.py:837 src/lvm_model.py:843 src/lvm_model.py:886
-#: src/lvm_model.py:902
+#: src/lvm_model.py:842 src/lvm_model.py:848 src/lvm_model.py:891
+#: src/lvm_model.py:907
 msgid "/   Root Filesystem"
 msgstr "/   రూటు ఫైళ్లవిధానం"
 
-#: src/lvm_model.py:905 src/Filesystem.py:137
+#: src/lvm_model.py:910 src/Filesystem.py:137
 msgid "None"
 msgstr "ఏదీకాదు"
+
+#: src/lvm_model.py:961
+#, fuzzy
+msgid "SCSI ID:   "
+msgstr "కంప్యూటరు ఐడి:   "
+
+#: src/lvm_model.py:965
+msgid "NONE"
+msgstr ""
+
+#: src/lvm_model.py:970
+msgid "iSCSI Device:   "
+msgstr ""
 
 #. INIT_ENTITY=_("Are you certain that you wish to initialize disk entity %s? All data will be lost on this device/partition.")
 #: src/lvmui_constants.py:51
@@ -1256,7 +1276,7 @@ msgstr "మిర్రర్"
 msgid "Partition %s"
 msgstr "విభజన %s"
 
-#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
+#: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1 src/iscsi.glade.h:1
 msgid "*"
 msgstr "*"
 
@@ -1481,6 +1501,10 @@ msgid "_Tools"
 msgstr "సాధనాలు (_T)"
 
 #: src/lvui.glade.h:57
+msgid "_iSCSI Configuration"
+msgstr ""
+
+#: src/lvui.glade.h:58
 msgid "extend vg message:"
 msgstr "vg సమాచారాన్ని విసృతం చేయి:"
 
@@ -1659,6 +1683,50 @@ msgstr "కేవలం వలస విస్తృతులు మాత్ర
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "ఆదేశ సెన్సును వాడు"
+
+#: src/iscsi.glade.h:2
+#, fuzzy
+msgid "3260"
+msgstr "32"
+
+#: src/iscsi.glade.h:3
+msgid "Active iSCSI targets are selected "
+msgstr ""
+
+#: src/iscsi.glade.h:4
+msgid "Add New Target"
+msgstr ""
+
+#: src/iscsi.glade.h:5
+msgid "Default port is 3260"
+msgstr ""
+
+#: src/iscsi.glade.h:6
+msgid "Enter a hostname (or an IP address) of new target to add"
+msgstr ""
+
+#: src/iscsi.glade.h:7
+msgid "Hostname"
+msgstr ""
+
+#: src/iscsi.glade.h:8
+msgid "New iSCSI Target"
+msgstr ""
+
+#: src/iscsi.glade.h:9
+#, fuzzy
+msgid "Port"
+msgstr "ఆకృతి"
+
+#: src/iscsi.glade.h:10
+msgid ""
+"Specify a hostname of new target \n"
+"to add, and click \"OK\". "
+msgstr ""
+
+#: src/iscsi.glade.h:12
+msgid "iSCSI Initiator"
+msgstr ""
 
 #~ msgid ""
 #~ "LVM locks are disabled!!! \n"
