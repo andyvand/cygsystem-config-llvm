@@ -129,7 +129,7 @@ class lvm_model:
     pelist = list()
     uncertainlist = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("pvs")
     arglist.append("-a")
     arglist.append("--nosuffix")
@@ -139,7 +139,7 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -222,7 +222,7 @@ class lvm_model:
 
   def get_PV(self,pathname):
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("pvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -234,7 +234,7 @@ class lvm_model:
     arglist.append("+pv_pe_count,pv_pe_alloc_count")
     arglist.append(pathname)
                                                                                 
-    line = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    line = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     if (line == None) or (len(line) < 1):
       ###FIXME - Throw exception here, if no result is returned
       return None
@@ -257,7 +257,7 @@ class lvm_model:
   def query_PVs(self):
     pvlist = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("pvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -268,7 +268,7 @@ class lvm_model:
     arglist.append("-o")
     arglist.append("+pv_pe_count,pv_pe_alloc_count")
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -302,7 +302,7 @@ class lvm_model:
   def query_VGs(self):
     vglist = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -311,7 +311,7 @@ class lvm_model:
     arglist.append("--separator")
     arglist.append(",")
                                                                                 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       line.strip()
@@ -334,7 +334,7 @@ class lvm_model:
 
   def get_LV(self,pathname):
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("lvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -344,7 +344,7 @@ class lvm_model:
     arglist.append(",")
     arglist.append(pathname)
  
-    line = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    line = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     if (line == None) or (len(line) < 1):
       ###FIXME - Throw exception here, if no result is returned
       return None
@@ -362,7 +362,7 @@ class lvm_model:
     lvlist = list()
     arglist = list()
     vgname = vg_name.strip()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("lvs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -372,7 +372,7 @@ class lvm_model:
     arglist.append(",")
     arglist.append(vgname)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -385,7 +385,7 @@ class lvm_model:
     #If there is free space, add an LV marked as 'unused' for that available
     # space, so that it can be rendered properly
     vg_arglist = list()
-    vg_arglist.append("/usr/sbin/lvm")
+    vg_arglist.append("/sbin/lvm")
     vg_arglist.append("vgs")
     vg_arglist.append("--nosuffix")
     vg_arglist.append("--noheadings")
@@ -397,7 +397,7 @@ class lvm_model:
     vg_arglist.append("+vg_free_count")
     vg_arglist.append(vg_name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",vg_arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",vg_arglist)
     lines = result_string.splitlines()
     for line in lines:
       words = line.split(",")
@@ -466,7 +466,7 @@ class lvm_model:
   def get_free_space_on_VG(self, vgname, unit):
     vg_name = vgname.strip()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -478,7 +478,7 @@ class lvm_model:
     arglist.append("vg_free,vg_free_count")
     arglist.append(vg_name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
 
     if (lines[0].find("not found")) >= 0:
@@ -491,7 +491,7 @@ class lvm_model:
   def get_max_LVs_PVs_on_VG(self, vgname):
     vg_name = vgname.strip()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -501,7 +501,7 @@ class lvm_model:
     arglist.append("max_lv,lv_count,max_pv,pv_count")
     arglist.append(vg_name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
 
     words = result_string.split(",")
 
@@ -521,7 +521,7 @@ class lvm_model:
     name = vgname.strip()
     text_list = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("vgs")
     arglist.append("--nosuffix")
     arglist.append("--noheadings")
@@ -533,7 +533,7 @@ class lvm_model:
     arglist.append(VGS_OPTION_STRING)
     arglist.append(name)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(VG_NAME)
@@ -696,7 +696,7 @@ class lvm_model:
     path = p.strip()
     text_list = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("lvs")
     arglist.append("--noheadings")
     arglist.append("--separator")
@@ -705,7 +705,7 @@ class lvm_model:
     arglist.append(LVS_OPTION_STRING)
     arglist.append(path)
 
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(LV_NAME)
@@ -734,7 +734,7 @@ class lvm_model:
     path = p.strip()
     text_list = list()
     arglist = list()
-    arglist.append("/usr/sbin/lvm")
+    arglist.append("/sbin/lvm")
     arglist.append("pvs")
     arglist.append("--noheadings")
     arglist.append("--separator")
@@ -743,7 +743,7 @@ class lvm_model:
     arglist.append(PVS_OPTION_STRING)
     arglist.append(path)
     
-    result_string = rhpl.executil.execWithCapture("/usr/sbin/lvm",arglist)
+    result_string = rhpl.executil.execWithCapture("/sbin/lvm",arglist)
     lines = result_string.splitlines()
     words = lines[0].split(",")
     text_list.append(PV_NAME)

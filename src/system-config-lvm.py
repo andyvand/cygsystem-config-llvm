@@ -115,7 +115,7 @@ def runFullGUI():
     app = glade_xml.get_widget('window1')
     blvm = baselvm(glade_xml, app)
     app.show()
-    app.connect("destroy", lambda w: gtk.main_quit())
+    app.connect("destroy", lambda w: gtk.mainquit())
     gtk.main()
                                                                                 
                                                                                 

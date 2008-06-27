@@ -5,8 +5,6 @@ SUBDIRS = src po
 
 EXTRA_DIST = \
 	system-config-lvm.spec			\
-        system-config-lvm.desktop.in		\
-        system-config-lvm.desktop		\
 	system-config-lvm.console		\
 	system-config-lvm.pam			\
 	src/pixmaps/grad3.xpm			\
@@ -14,7 +12,6 @@ EXTRA_DIST = \
 	src/pixmaps/LV.xpm			\
 	src/pixmaps/PV.xpm			\
 	src/pixmaps/VG.xpm			\
-	src/pixmaps/lv_icon.png			\
 	intltool-extract.in			\
 	intltool-merge.in			\
 	intltool-update.in			\
@@ -28,10 +25,6 @@ MAINTAINERCLEANFILES=ChangeLog
 @INTLTOOL_DESKTOP_RULE@
 
 .PHONY: changelog srpm
-
-applicationsdir=$(datadir)/applications
-applications_DATA=system-config-lvm.desktop
-applications_in_files=$(applications_DATA:.desktop=.desktop.in)
 
 install-data-hook:
 	$(mkinstalldirs) $(DESTDIR)$(sysconfdir)/security/console.apps
@@ -60,7 +53,6 @@ changelog:
 		-e 's|@.*\.redhat\.com|@redhat.com|g' > ChangeLog
 
 clean:
-	rm -f system-config-lvm.desktop
 	rm -f *~
 
 PKGNAME=${PACKAGE}

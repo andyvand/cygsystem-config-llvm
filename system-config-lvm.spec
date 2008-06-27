@@ -1,7 +1,7 @@
 # -*- RPM-SPEC -*-
-Summary: A utility for graphically configuring Logical Volumes.
+Summary: system-config-lvm is a utility which allows you to configure Logical Volume Management in a graphical setting.
 Name: system-config-lvm
-Version: 0.9.24
+Version: 0.9.18
 Release: 1.0
 URL: http://www.redhat.com/ 
 Source0: %{name}-%{version}.tar.gz
@@ -16,7 +16,7 @@ Requires: rhpl >= 0.148.2
 Requires: python >= 2.3
 
 %description
-system-config-lvm is a utility for graphically configuring Logical Volumes.
+system-config-lvm is a utility which allows you to configure a Logical Volume Management in a graphical setting.
 
 %prep
 %setup -q
@@ -45,24 +45,11 @@ rm -rf %{buildroot}
 #%doc docs/html/*
 %{_sbindir}/*
 %{_bindir}/*
-%{_datadir}/applications/system-config-lvm.desktop
 %{_datadir}/system-config-lvm
 %config %{_sysconfdir}/pam.d/system-config-lvm
 %config %{_sysconfdir}/security/console.apps/system-config-lvm
 
 %changelog
-* Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.24-1.0
-  - Changed permissions on Icon file.
-* Thu Apr 14 2005 Jim Parsons <jparsons@redhat.com> 0.9.23-1.0
-  - Subtle change to .desktop file moves app launcher to system settings
-* Wed Apr 06 2005 Jim Parsons <jparsons@redhat.com> 0.9.22-1.0
-  - Version Bump.
-* Wed Apr 06 2005 Jim Parsons <jparsons@redhat.com> 0.9.21-1.0
-  - Changed path to lvm command for Fedora.
-* Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.20-1.0
-  - Added desktop icon file.
-* Mon Feb 21 2005 Jim Parsons <jparsons@redhat.com> 0.9.19-1.0
-  - Added desktop file.
 * Wed Nov 24 2004 Jim Parsons <jparsons@redhat.com> 0.9.18-1.0
   - Adjustments to configure.in so this builds in fedora as well as RHEL.
 * Tue Nov 23 2004 Jim Parsons <jparsons@redhat.com> 0.9.17-1.0
