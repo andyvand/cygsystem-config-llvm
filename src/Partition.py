@@ -2,7 +2,7 @@
 
 ID_UNKNOWN    = 10000 # hope nobody will use this one on real partition table 
 ID_EMPTY      = -1
-ID_EXTENDS    = [0x5, 0x85]
+ID_EXTENDS    = [0x5, 0xf, 0x85]
 ID_SWAPS      = [0x82]
 ID_LINUX_LVM  = 0x8e
 ID_GPT        = 238
@@ -103,9 +103,9 @@ PARTITION_IDs = { -1 : 'NONE',
                   ID_UNKNOWN : _("Unknown")}
 
 # fill out gaps in PARTITION_IDs
-#for i in range(256):
-#    if i not in PARTITION_IDs:
-#        PARTITION_IDs[i] = _("Unknown")
+for i in range(256):
+    if i not in PARTITION_IDs:
+        PARTITION_IDs[i] = _("Unknown")
 
 
 # all size values are in sectors

@@ -15,7 +15,10 @@ from lvm_model import lvm_model
 from InputController import InputController
 from lvmui_constants import *
 from WaitMsg import WaitMsg
-from execute import ForkedCommand
+from execute import ForkedCommand, execWithCapture
+
+from Cluster import Cluster
+
 
 import stat
 import gettext
@@ -53,21 +56,31 @@ class Volume_Tab_View:
     self.model_factory = model_factory
     
     # check locking type
-    #locking_type = self.model_factory.get_locking_type()
-    #if locking_type != 1:
-    #    if locking_type == 0:
-    #        msg = _("LVM locking is disabled!!! Massive data corruption may occur. Enable locking in \n/etc/lvm/lvm.conf and try again. Exiting...")
-    #    elif locking_type == 2:
-    #        msg = _("Clustered LVM (cLVM) is not yet supported by %s. Exiting...")
-    #        msg = msg % PROGNAME
-    #    else:
-    #        msg = _("%s only supports file-based locking (locking_type=1 in /etc/lvm/lvm.conf). Exiting...")
-    #        msg = msg % PROGNAME
-    #    dlg = gtk.MessageDialog(None, 0,
-    #                            gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
-    #                            msg)
-    #    dlg.run()
-    #    sys.exit(10)
+    locking_type = self.model_factory.get_locking_type()
+    if locking_type != 1:
+        should_exit = False
+        if locking_type == 0:
+            msg = _("LVM locks are disabled!!! \nMassive data corruption may occur.\nEnable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf).")
+            should_exit = True
+        elif locking_type == 2:
+            ps_out = execWithCapture('/bin/ps', ['/bin/ps', '-A'])
+            if ps_out.find('clvmd') == -1:
+                msg = _("LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not running. Start daemon with command:\nservice clvmd start \nor, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
+                should_exit = True
+            else:
+                if not Cluster().running():
+                    msg = _("LVM is configured to use Cluster Locking mechanism, but cluster is not quorate.\nEither wait until cluster is quorate or turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf).")
+                    should_exit = True
+        else:
+            msg = _("%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/lvm/lvm.conf).")
+            msg = msg % PROGNAME
+            should_exit = True
+        if should_exit:
+            dlg = gtk.MessageDialog(None, 0,
+                                    gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+                                    msg)
+            dlg.run()
+            sys.exit(10)
     
     
     self.main_win = app
@@ -244,8 +257,11 @@ class Volume_Tab_View:
         for vg in vg_list:
             vg_child_iter = treemodel.append(vg_iter)
             vg_name = vg.get_name()
+            vg_name_marked = vg_name
+            if vg.clustered():
+                vg_name_marked += '<span foreground="#FF00FF">   (' + _('Clustered VG') + ')</span>'
             treemodel.set(vg_child_iter,
-                          NAME_COL, vg_name, 
+                          NAME_COL, vg_name_marked, 
                           TYPE_COL, VG_TYPE, 
                           OBJ_COL, vg)
             phys_iter = treemodel.append(vg_child_iter)

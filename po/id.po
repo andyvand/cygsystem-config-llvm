@@ -1,14 +1,14 @@
 # system-config-lvm Bahasa Indonesia (id).
 # File ini didistribusikan di bawah lisensi yang sama dengan paket system-config-lvm.
-# Teguh DC <dheche@brawijaya.ac.id>, 2005.
+# Teguh DC <dheche@brawijaya.ac.id>, 2005-2006.
 #
-# $Id$
+# $Id: id.po,v 1.9 2006/07/10 18:03:54 kupcevic Exp $
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-10-29 04:50+0700\n"
+"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"PO-Revision-Date: 2006-03-11 00:24+0700\n"
 "Last-Translator: Teguh DC <dheche@brawijaya.ac.id>\n"
 "Language-Team: LDP Indonesia <http://linux.or.id>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:30
+#: src/Volume_Tab_View.py:33
 #, python-format
 msgid ""
 "\n"
@@ -154,15 +154,19 @@ msgid ""
 "possible solution would be to add an additional Physical Volume to the "
 "Volume Group."
 msgstr ""
-"Grup Volum %s tidak memiliki cukup ruang untuk Volum Logis yang baru. "
-"Salah satu solusinya adalah menambahkan Volum Fisik tambahan ke Grup "
-"Volum ini."
+"Grup Volum %s tidak memiliki cukup ruang untuk Volum Logis yang baru. Salah "
+"satu solusinya adalah menambahkan Volum Fisik tambahan ke Grup Volum ini."
 
 #: src/InputController.py:116
 msgid "A snapshot of a snapshot is not supported."
 msgstr "Snapshot dari snapshot tidak didukung."
 
-#: src/InputController.py:118
+#: src/InputController.py:117
+#, fuzzy
+msgid "A snapshot of a mirrored Logical Volume is not supported."
+msgstr "Snapshot dari snapshot tidak didukung."
+
+#: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -171,7 +175,7 @@ msgstr ""
 "Volume logikal %s memiliki snapshot %s yang saat ini dihubungkan dengannya. "
 "Silahkan hapus snapshotnya terlebih dahulu."
 
-#: src/InputController.py:119
+#: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -180,14 +184,14 @@ msgstr ""
 "Volume logikal %s memiliki snapshot: %s yang saat ini dihubungkan dengannya. "
 "Silahkan hapus terlebih dahulu snapshotnya."
 
-#: src/InputController.py:121
+#: src/InputController.py:122
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Kesalahan tipe konversi yang tidak terdefinisi pada model pabrik. Tidak "
 "dapat menyelesaikan tugas."
 
-#: src/InputController.py:123
+#: src/InputController.py:124
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -198,7 +202,7 @@ msgstr ""
 "termounting di %s. Apakah anda benar-benar yakin ingin mengabaikan data yang "
 "ada pada file system yang termounting ini?"
 
-#: src/InputController.py:125
+#: src/InputController.py:126
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -209,68 +213,68 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:131
+#: src/InputController.py:132
 #, python-format
 msgid "Unused space on %s"
 msgstr "Spasi yang tidak terpakai di %s"
 
-#: src/InputController.py:132
+#: src/InputController.py:133
 #, python-format
 msgid "%s megabytes"
 msgstr "%s megabyte"
 
-#: src/InputController.py:133
+#: src/InputController.py:134
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s kilobyte"
 
-#: src/InputController.py:134
+#: src/InputController.py:135
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s gigabyte"
 
-#: src/InputController.py:135
+#: src/InputController.py:136
 #, python-format
 msgid "%s extents"
 msgstr "%s extent"
 
-#: src/InputController.py:137
+#: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
 msgstr "Sisa ruang kosong di Grup Volum:\n"
 
-#: src/InputController.py:138
+#: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
 msgstr "Sisa ruang untuk Volum ini:\n"
 
-#: src/InputController.py:140
+#: src/InputController.py:141
 msgid "Extents"
 msgstr "Perluasan"
 
-#: src/InputController.py:141
+#: src/InputController.py:142
 msgid "Gigabytes"
 msgstr "Gigabyte"
 
-#: src/InputController.py:142
+#: src/InputController.py:143
 msgid "Megabytes"
 msgstr "Megabyte"
 
-#: src/InputController.py:143
+#: src/InputController.py:144
 msgid "Kilobytes"
 msgstr "Kilobyte"
 
-#: src/InputController.py:145
+#: src/InputController.py:146
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s hanya boleh bernilai angka"
 
-#: src/InputController.py:146
+#: src/InputController.py:147
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr ""
 "Kolom Volume Fisik Maksimum hanya boleh berisi nilai integer antara 1 dan 256"
 
-#: src/InputController.py:147
+#: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -278,14 +282,14 @@ msgstr ""
 "Kolom Volum Logikal Maksimum hanya boleh berisi nilai integer antara 1 dan "
 "256"
 
-#: src/InputController.py:149
+#: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr "Apakah anda yakin ingin menghapus %s dari Manajemen Volume Logkal?"
 
-#: src/InputController.py:151
+#: src/InputController.py:152
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -302,13 +306,13 @@ msgstr ""
 "baru sebelum menghapus yang satu ini, atau hapus Volume Logikal yang "
 "terhubung dengan Volume Fisikal ini."
 
-#: src/InputController.py:152
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Apakah anda yakin ingin menghapus %s dari Grup Volume %s?"
 
-#: src/InputController.py:153
+#: src/InputController.py:154
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -318,7 +322,7 @@ msgstr ""
 "kosong, sehingga grup volume ini akan dihapus juga. Apakah anda ingin "
 "melanjutkan?"
 
-#: src/InputController.py:154
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -329,7 +333,7 @@ msgstr ""
 "disimpannya pada %s. Salah satu solusi yang mungkin adalah dengan "
 "menambahkan Volume Fisik lagi di Grup Volume."
 
-#: src/InputController.py:155
+#: src/InputController.py:156
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -341,7 +345,7 @@ msgstr ""
 "jalankan \"modprobe dm-mirror\". Sebaliknya, operasi yang membutuhkan "
 "memindahkan data pada Perluasan Fisik tidak tersedia."
 
-#: src/InputController.py:156
+#: src/InputController.py:157
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -349,15 +353,15 @@ msgid ""
 msgstr ""
 "Module dm-snapshot tidak termuat di kernel anda, atau kernel anda tidak "
 "mendukung target dm-snapshot. Jika kernel anda telah mendukungnya, coba "
-"jalankan \"modprobe dm-snapshot\". Jika tidak, pembuatan snapshot "
-"tidak tersedia."
+"jalankan \"modprobe dm-snapshot\". Jika tidak, pembuatan snapshot tidak "
+"tersedia."
 
-#: src/InputController.py:158
+#: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Apakah anda yakin ingin menghapus Volume Logikal %s?"
 
-#: src/InputController.py:159
+#: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -366,7 +370,7 @@ msgstr ""
 "Volume Logikal %s berisi file system %s. Semua data yang ada di dalamnya "
 "akan hilang! Apakah anda yakin ingin menghapus volume logikal %s?"
 
-#: src/InputController.py:160
+#: src/InputController.py:161
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -375,7 +379,13 @@ msgstr ""
 "Volume logikal %s berisi data dari direktori %s. Semua data yang ada di "
 "dalamnya akan hilang! Apakah anda yakin ingin menghapus volume logikal %s?"
 
-#: src/InputController.py:356
+#: src/InputController.py:306
+msgid ""
+"In order for Volume Group to be safely used in clustered environment, lvm2-"
+"cluster rpm has to be installed, and clvmd service has to be running"
+msgstr ""
+
+#: src/InputController.py:364
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -386,7 +396,7 @@ msgstr ""
 "Volume Logikal Bayangan masih belum dapat dimigrasi, hingga %s tidak dapat "
 "dipindahkan."
 
-#: src/InputController.py:359
+#: src/InputController.py:367
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -397,36 +407,34 @@ msgstr ""
 "Volume Logikal Bayangan masih belum dapat dimigrasi, hingga %s tidak dapat "
 "dipindahkan."
 
-#: src/InputController.py:362
+#: src/InputController.py:370
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
 "Snapshots are not yet migratable, so %s is not removable."
 msgstr ""
-"Volume Fisik %s berisi perluasan milik %s, snapshot dari %s. Snapshot "
-"masih belum dapat dimigrasi, hingga %s tidak dapat dipindahkan."
+"Volume Fisik %s berisi perluasan milik %s, snapshot dari %s. Snapshot masih "
+"belum dapat dimigrasi, hingga %s tidak dapat dipindahkan."
 
-#: src/InputController.py:367
+#: src/InputController.py:375
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
 "s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
-"Volume Fisik %s berisi perluasan milik %s, sumber dari snapshot %s."
-"Sumber snapshot masih belum dapat dimigrasi, hingga %s tidak dapat "
-"dipindahkan."
+"Volume Fisik %s berisi perluasan milik %s, sumber dari snapshot %s.Sumber "
+"snapshot masih belum dapat dimigrasi, hingga %s tidak dapat dipindahkan."
 
-#: src/InputController.py:369
+#: src/InputController.py:377
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
 "%s. Snapshot origins are not yet migratable, so %s is not removable."
 msgstr ""
-"Volume Fisik %s berisi perluasan milik %s, sumber dari snapshot %s. "
-"Sumber snapshot masih belum dapat dimigrasi, hingga %s tidak dapat "
-"dipindahkan."
+"Volume Fisik %s berisi perluasan milik %s, sumber dari snapshot %s. Sumber "
+"snapshot masih belum dapat dimigrasi, hingga %s tidak dapat dipindahkan."
 
-#: src/InputController.py:556
+#: src/InputController.py:564
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -435,14 +443,15 @@ msgstr ""
 "Volume Logikal \"%s\" memiliki snapshot yang tidak dipilih untuk dihapus. "
 "Snapshot tersebut harus dihapus juga."
 
-#: src/InputController.py:571
+#: src/InputController.py:579
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr ""
-"\"%s\", sumber snapshot dari \"%s\", telah dihapus dari daftar yang akan dihapus."
+"\"%s\", sumber snapshot dari \"%s\", telah dihapus dari daftar yang akan "
+"dihapus."
 
-#: src/InputController.py:602
+#: src/InputController.py:610
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -451,7 +460,7 @@ msgstr ""
 "Volume Fisik \"%s\" berisi perluasan milik mirror. Mirror masih belum dapat "
 "dimigrasi, hingga %s tidak dapat dipindahkan."
 
-#: src/InputController.py:605
+#: src/InputController.py:613
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -460,24 +469,24 @@ msgstr ""
 "Volume Fisik \"%s\" berisi perluasan milik snapshot atau sumber snapshot. "
 "Snapshot masih belum dapat dimigrasi, hingga %s tidak dapat dipindahkan."
 
-#: src/InputController.py:670
+#: src/InputController.py:678
 msgid "The path you specified does not exist."
 msgstr "Path yang anda tentukan tidak ada."
 
-#: src/InputController.py:677
+#: src/InputController.py:685
 msgid "The path you specified is not a Block Device."
 msgstr "Path yang anda tentukan bukan merupakan Perangkat Blok."
 
-#: src/InputController.py:748
+#: src/InputController.py:756
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "Inisiasi %s gagal"
 
-#: src/InputController.py:985 src/InputController.py:988
+#: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
 msgstr "Pilih beberapa perluasan terlebih dahulu"
 
-#: src/InputController.py:1022
+#: src/InputController.py:1030
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -485,61 +494,62 @@ msgstr ""
 "Tidak tersedia cukup perluasan untuk menyelesaikan migrasi. Menambah volume "
 "fisik akan menyelesaikan masalah ini."
 
-#: src/InputController.py:1181
+#: src/InputController.py:1192
 msgid "Migrate extents"
 msgstr "Migrasikan perluasan"
 
-#: src/InputController.py:1307
+#: src/InputController.py:1320
 msgid "Options"
 msgstr "Pilihan"
 
-#: src/InputController.py:1341
+#: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Buat snapshot dari %s"
 
-#: src/InputController.py:1343 src/lv_edit_props.glade.h:14
+#: src/InputController.py:1356
 msgid "Create New Logical Volume"
 msgstr "Buat Volume Logikal Baru"
 
-#: src/InputController.py:1346
+#: src/InputController.py:1359
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Edit %s, yang merupakan snapshot dari %s"
 
-#: src/InputController.py:1349
+#: src/InputController.py:1362
 msgid "Edit Logical Volume"
 msgstr "Edit Volume Logikal"
 
-#: src/InputController.py:1501
+#: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Manajemen Volume Logikal berikut ini tidak mendukung mirroring"
 
-#: src/InputController.py:1508
+#: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Striped Volume Logikal tidak dapat dimirror."
 
-#: src/InputController.py:1515
+#: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "Volume Logikal dengan snapshot terkait belum dapat dimirror."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1522
+#: src/InputController.py:1536
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
 msgstr ""
 "Tujuan utama dari mirroring adalah untuk melindungi data dari kerusakan hard "
-"drive. Apakah anda ingin menempatkan image mirror ke dalam hard drive yang lain?"
+"drive. Apakah anda ingin menempatkan image mirror ke dalam hard drive yang "
+"lain?"
 
-#: src/InputController.py:1531
+#: src/InputController.py:1545
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Kurang dari 3 hard drive tersedia dengan ruang kosong. Menonaktifkan mirror."
 
-#: src/InputController.py:1536
+#: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -547,7 +557,7 @@ msgstr ""
 "Harus ada ruang kosong pada setidaknya tiga Volume Fisik untuk mengaktifkan "
 "mirror"
 
-#: src/InputController.py:1544
+#: src/InputController.py:1558
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -555,412 +565,298 @@ msgstr ""
 "Ukuran dari Volume Logikal telah disesuaikan sesuai ukuran maksimum yang "
 "tersedia untuk mirror."
 
-#: src/InputController.py:1549
+#: src/InputController.py:1563
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
 "Volume to at most %s, or add Physical Volumes."
 msgstr ""
-"Ruang kosong yang tersedia tidak mencukupi untuk menambahkan mirror. "
-"Kurangi ukuran dari Volume Logikal menjadi setidaknya %s, atau tambah "
-"Volume Fisik."
+"Ruang kosong yang tersedia tidak mencukupi untuk menambahkan mirror. Kurangi "
+"ukuran dari Volume Logikal menjadi setidaknya %s, atau tambah Volume Fisik."
 
-#: src/InputController.py:1913
-msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "Nama yang dimulai dengan \"snapshot\" atau \"pvmove\" merupakan "
-"kata kunci yang dicadangkan."
+#: src/InputController.py:1927
+msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
+msgstr ""
+"Nama yang dimulai dengan \"snapshot\" atau \"pvmove\" merupakan kata kunci "
+"yang dicadangkan."
 
-#: src/InputController.py:1915
+#: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
-msgstr "Nama yang mengandung \"_mlog\" atau \"_mimage\" merupakan kata "
-"kunci yang dicadangkan."
+msgstr ""
+"Nama yang mengandung \"_mlog\" atau \"_mimage\" merupakan kata kunci yang "
+"dicadangkan."
 
-#: src/InputController.py:1917
-msgid "Names begining with a \"-\" are invalid"
+#: src/InputController.py:1931
+msgid "Names beginning with a \"-\" are invalid"
 msgstr "Nama yang dimulai dengan \"-\" tidak valid"
 
-#: src/InputController.py:1919
+#: src/InputController.py:1933
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Nama tidak boleh \".\" atau pun \"..\""
 
-#: src/InputController.py:1925
+#: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Whitespace tidak diijinkan berada di nama Volume Logikal"
 
-#: src/InputController.py:1928
+#: src/InputController.py:1942
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "\"%s\" merupakan karakter yang tidak valid di nama Volume Logikal"
 
-#: src/InputController.py:1948
+#: src/InputController.py:1962
 msgid "Please specify mount point"
 msgstr "Silakan tentukan mount poin"
 
-#: src/InputController.py:2010
+#: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
-msgstr "Apakah anda ingin meng-upgrade ext2 menjadi ext3 dengan tetap menjaga "
-"data yang ada dalam Volume Logikal?"
+msgstr ""
+"Apakah anda ingin meng-upgrade ext2 menjadi ext3 dengan tetap menjaga data "
+"yang ada dalam Volume Logikal?"
 
-#: src/InputController.py:2044
+#: src/InputController.py:2062
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Mengubah filesystem akan menghancurkan semua data yang ada di Volume Logikal! "
-"Apakah anda yakin ingin memprosesnya?"
+"Mengubah filesystem akan menghancurkan semua data yang ada di Volume "
+"Logikal! Apakah anda yakin ingin memprosesnya?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2145
+#: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Tidak dapat membuat mirror. Menyelesaikan tugas yang tersisa."
 
-#: src/InputController.py:2194
-msgid "In order to add mirroring, some extents need to be migrated."
-msgstr "Sehubungan dengan penambahan mirroring, beberapa perluasan perlu "
-"dimigrasi."
+#. create mirror
+#: src/InputController.py:2166
+msgid ""
+"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+"Volumes. Completing remaining tasks."
+msgstr ""
+"Karena LVM tidak mendukung penambahan mirror ke Volume Logikal yang ada. "
+"Menyelesaikan tugas yang tersisa."
 
-#: src/InputController.py:2194
+#: src/InputController.py:2215
+msgid "In order to add mirroring, some extents need to be migrated."
+msgstr ""
+"Sehubungan dengan penambahan mirroring, beberapa perluasan perlu dimigrasi."
+
+#: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
 msgstr "Apakah anda ingin memigrasi perluasan yang telah ditentukan?"
 
-#. ##TRANSLATOR: The first word in each string below is
-#. ##an lvm command line command phrase.
-#: src/CommandHandler.py:14
-#, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah vgextend gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:15
-#, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah pvcreate gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:16
-#, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah lvcreate gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:17
-#, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah pvremove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:18
-#, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah lvremove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:19
-#, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah vgremove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:20
-#, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah vgcreate gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:21
-#, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
-"perintah vgchange gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:22
-#, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah vgreduce gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:23
-#, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah pvmove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:24
-#, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah umount gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:25
-#, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
-"perintah mount gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan Sistem: "
-"%s"
-
-#: src/CommandHandler.py:26
-#, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah lvresize gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:27
-#, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah lvrename gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:28
-#, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah lvchange gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:29
-#, python-format
-msgid ""
-"lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
-"s"
-msgstr ""
-"perintah lvconvert gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
-"Sistem: %s"
-
-#: src/CommandHandler.py:77
+#: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
 msgstr "Membuat Volume Logikal"
 
-#: src/CommandHandler.py:96 src/CommandHandler.py:113
+#: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
 msgstr "Mengubah ukuran Volume Logikal"
 
-#: src/CommandHandler.py:146
+#: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
 msgstr "Menambah Mirror ke Volume Logikal"
 
-#: src/CommandHandler.py:157
+#: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
 msgstr "Menghapus Mirror dari Volume Logikal"
 
-#: src/CommandHandler.py:180
+#: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
 msgstr "Meng-inisisasi Volume Fisik"
 
-#: src/CommandHandler.py:191
+#: src/CommandHandler.py:171
 msgid "Adding Physical Volume to Volume Group"
 msgstr "Tambah Volume Fisik ke Grup Volume"
 
-#: src/CommandHandler.py:218
+#: src/CommandHandler.py:203
 msgid "Creating Volume Group"
 msgstr "Membuat Grup Volume"
 
-#: src/CommandHandler.py:240
+#: src/CommandHandler.py:225
 msgid "Removing Volume Group"
 msgstr "Menghapus Grup Volume"
 
-#: src/CommandHandler.py:250
+#: src/CommandHandler.py:235
 msgid "Removing Physical Volume"
 msgstr "Menghapus Volume Fisik"
 
-#: src/CommandHandler.py:261
+#: src/CommandHandler.py:246
 msgid "Removing Logical Volume"
 msgstr "Menghapus Volume Logikal"
 
-#: src/CommandHandler.py:273
+#: src/CommandHandler.py:258
 msgid "Renaming Logical Volume"
 msgstr "Mengganti nama Volume Logikal"
 
-#: src/CommandHandler.py:295
+#: src/CommandHandler.py:280
 msgid "Removing Physical Volume from Volume Group"
 msgstr "Menghapus Volume Fisik dari Grup Volume"
 
-#: src/CommandHandler.py:330
+#: src/CommandHandler.py:315
 msgid "Migrating Extents"
 msgstr "Memigrasi Perluasan"
 
-#: src/CommandHandler.py:342
+#: src/CommandHandler.py:327
 msgid "Completing Extent Migration"
 msgstr "Menyelesaikan Migrasi Perluasan"
 
-#: src/lvm_model.py:46 src/lvmui_constants.py:81
+#: src/CommandHandler.py:378
+#, fuzzy
+msgid "Rereading partition table"
+msgstr "Partisi Perluasan"
+
+#: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
 msgstr "Tidak terpakai"
 
-#: src/lvm_model.py:47
+#: src/lvm_model.py:46
 msgid "Unused Space"
 msgstr "Spasi yang tidak terpakai"
 
-#: src/lvm_model.py:49
+#: src/lvm_model.py:48
 msgid "Unmounted"
 msgstr "Tidak dimount"
 
-#: src/lvm_model.py:59
+#: src/lvm_model.py:58
 msgid "Volume Group Name:   "
 msgstr "Nama Grup Volume:   "
 
-#: src/lvm_model.py:60
+#: src/lvm_model.py:59
 msgid "System ID:   "
 msgstr "ID Sistem:   "
 
-#: src/lvm_model.py:61
+#: src/lvm_model.py:60
 msgid "Format:   "
 msgstr "Format:   "
 
-#: src/lvm_model.py:62 src/lvm_model.py:79 src/lvm_model.py:94
+#: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
 msgstr "Atribut:    "
 
-#: src/lvm_model.py:63
+#: src/lvm_model.py:62
 msgid "Volume Group Size:   "
 msgstr "Ukuran Grup Volume:   "
 
-#: src/lvm_model.py:64
+#: src/lvm_model.py:63
 msgid "Available Space:   "
 msgstr "Ruang yang tersedia:   "
 
-#: src/lvm_model.py:65
+#: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
 msgstr "Jumlah total perluasan:   "
 
-#: src/lvm_model.py:66
+#: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
 msgstr "Jumlah Perluasan Bebas:  "
 
-#: src/lvm_model.py:67
+#: src/lvm_model.py:66
 msgid "Extent Size:   "
 msgstr "Ukuran Perluasan:   "
 
-#: src/lvm_model.py:68
+#: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
 msgstr "Volume Fisik Maksimum yang diijinkan:  "
 
-#: src/lvm_model.py:69
+#: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
 msgstr "Jumlah Volume Fisik:   "
 
-#: src/lvm_model.py:70
+#: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
 msgstr "Volume Logikal Maksimum yang diijinkan:  "
 
-#: src/lvm_model.py:71
+#: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
 msgstr "Jumlah Volume Logikal:   "
 
-#: src/lvm_model.py:72
+#: src/lvm_model.py:71
 msgid "VG UUID:   "
 msgstr "GV UUID:   "
 
-#: src/lvm_model.py:74
+#: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
 msgstr "Nama Volume Logikal:   "
 
-#: src/lvm_model.py:75
+#: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
 msgstr "Ukuran Volume Logikal:   "
 
-#: src/lvm_model.py:76
+#: src/lvm_model.py:75
 msgid "Number of Segments:   "
 msgstr "Jumlah Segmen:   "
 
-#: src/lvm_model.py:77
+#: src/lvm_model.py:76
 msgid "Number of Stripes:   "
 msgstr "Jumlah Stripe:   "
 
-#: src/lvm_model.py:78
+#: src/lvm_model.py:77
 msgid "Stripe Size:   "
 msgstr "Ukuran Stripe:   "
 
-#: src/lvm_model.py:80
+#: src/lvm_model.py:79
 msgid "LV UUID:   "
 msgstr "VL UUID:   "
 
-#: src/lvm_model.py:82
+#: src/lvm_model.py:81
 msgid "Partition Type:   "
 msgstr "Tipe Partisi:   "
 
-#: src/lvm_model.py:83
+#: src/lvm_model.py:82
 msgid "Size:   "
 msgstr "Ukuran:   "
 
-#: src/lvm_model.py:84
+#: src/lvm_model.py:83
 msgid "Mount Point:   "
 msgstr "Mount Point:   "
 
-#: src/lvm_model.py:85
+#: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
 msgstr "Mount Point ketika diboot ulang:   "
 
-#: src/lvm_model.py:86
+#: src/lvm_model.py:85
 msgid "File System:   "
 msgstr "File System:   "
 
-#: src/lvm_model.py:88
+#: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
 msgstr "Nama Volume Fisik:   "
 
-#: src/lvm_model.py:89
+#: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
 msgstr "Ukuran Volume Fisik:   "
 
-#: src/lvm_model.py:90
+#: src/lvm_model.py:89
 msgid "Space Used:   "
 msgstr "Ruang yang terpakai:   "
 
-#: src/lvm_model.py:91
+#: src/lvm_model.py:90
 msgid "Space Free:   "
 msgstr "Ruang Bebas:   "
 
-#: src/lvm_model.py:92
+#: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
 msgstr "Total Perluasan Fisik:   "
 
-#: src/lvm_model.py:93
+#: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
 msgstr "Perluasan Fisik yang dialokasikan:   "
 
-#: src/lvm_model.py:95
+#: src/lvm_model.py:94
 msgid "PV UUID:   "
 msgstr "VF UUID:   "
 
-#: src/lvm_model.py:97
-msgid "Not initializable:   "
+#: src/lvm_model.py:96
+msgid "Not initializable:"
 msgstr "Tidak dapat diinisiasi:  "
 
-#: src/lvm_model.py:98
+#: src/lvm_model.py:97
 msgid "Extended partition"
 msgstr "Partisi Perluasan"
 
+#. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
-msgid "Swap in use"
-msgstr "Swap yang sedang dipakai"
+msgid "Swap partition currently in use"
+msgstr "Partisi swap sedang dipakai"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -970,56 +866,56 @@ msgstr "Partisi boot asing"
 msgid "Autopartition failure"
 msgstr "Kesalahan partisi otomatis"
 
-#: src/lvm_model.py:128
-msgid "Quering Volume Groups"
-msgstr "Mencari Grup Volume"
-
-#: src/lvm_model.py:129
-msgid "Quering Logical Volumes"
-msgstr "Mencari Volume Logikal"
-
-#: src/lvm_model.py:130
-msgid "Quering Physical Volumes"
-msgstr "Mencari Volume Fisik"
-
-#: src/lvm_model.py:268
+#: src/lvm_model.py:251
 msgid "Partition manually"
 msgstr "Partisi secara manual"
 
-#: src/lvm_model.py:304
+#: src/lvm_model.py:287
 msgid "Multipath device"
 msgstr "Perangkat multipath"
 
-#: src/lvm_model.py:307
-msgid "Note:   "
-msgstr "Catatan:   "
+#: src/lvm_model.py:290
+msgid "Note:"
+msgstr "Catatan:"
 
-#: src/lvm_model.py:307
+#: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Inisiasi secara manual"
 
-#: src/lvm_model.py:810
-msgid "Number of mirror images:  "
+#: src/lvm_model.py:733
+msgid "Clustered:   "
+msgstr ""
+
+#: src/lvm_model.py:735
+msgid "True"
+msgstr ""
+
+#: src/lvm_model.py:737
+msgid "False"
+msgstr ""
+
+#: src/lvm_model.py:795
+msgid "Number of mirror images:"
 msgstr "Jumlah image mirror:   "
 
-#: src/lvm_model.py:813
-msgid "Snapshots:  "
-msgstr "Snapshot:  "
+#: src/lvm_model.py:798
+msgid "Snapshots:"
+msgstr "Snapshot:"
 
-#: src/lvm_model.py:819
-msgid "Snapshot origin:  "
-msgstr "Sumber snapshot:  "
+#: src/lvm_model.py:804
+msgid "Snapshot origin:"
+msgstr "Sumber snapshot:"
 
-#: src/lvm_model.py:826
-msgid "Snapshot usage:  "
-msgstr "Penggunaan snapshot:  "
+#: src/lvm_model.py:811
+msgid "Snapshot usage:"
+msgstr "Penggunaan snapshot:"
 
-#: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
-#: src/lvm_model.py:915
+#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
+#: src/lvm_model.py:899
 msgid "/   Root Filesystem"
 msgstr "/   Filesystem Root"
 
-#: src/lvm_model.py:918 src/Filesystem.py:120
+#: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
 msgstr "Tidak ada"
 
@@ -1048,16 +944,15 @@ msgid ""
 "Disk entity %s contains data from directory %s. All data in it will be lost! "
 "Are you certain that you wish to initialize disk entity %s?"
 msgstr ""
-"Entiti disk %s mengandung data dari direktori %s. Seluruh data yang ada padanya "
-"akan hilang! Apakah anda yakin ingin menginisiasi entiti disk %s?"
+"Entiti disk %s mengandung data dari direktori %s. Seluruh data yang ada "
+"padanya akan hilang! Apakah anda yakin ingin menginisiasi entiti disk %s?"
 
 #: src/lvmui_constants.py:54
 #, python-format
 msgid ""
 "Are you certain that you wish to initialize %s of free space on disk %s?"
 msgstr ""
-"Apakah anda yakin ingin menginisiasi entiti ruang kosong %s yang ada di "
-"%s?"
+"Apakah anda yakin ingin menginisiasi entiti ruang kosong %s yang ada di %s?"
 
 #: src/lvmui_constants.py:55
 #, python-format
@@ -1093,73 +988,79 @@ msgstr "Log Mirror"
 msgid "Unable to process request"
 msgstr "Tidak dapat memproses permintaan"
 
-#: src/lvmui_constants.py:82
+#: src/lvmui_constants.py:65
+#, python-format
+msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+"perintah %s gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan Sistem: %s"
+
+#: src/lvmui_constants.py:84
 msgid "Free"
 msgstr "Bebas"
 
-#: src/lvmui_constants.py:83
+#: src/lvmui_constants.py:85
 msgid "Free space"
 msgstr "Ruang kosong"
 
-#: src/lvmui_constants.py:85
+#: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
 msgstr "Ruang yang belum dipartisi"
 
-#: src/lvmui_constants.py:86
+#: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
 msgstr "Ruang yang belum dipartisi dalam %s"
 
-#: src/lvmui_constants.py:88
-msgid "G"
-msgstr "G"
-
-#: src/lvmui_constants.py:89
-msgid "M"
-msgstr "M"
-
 #: src/lvmui_constants.py:90
-msgid "K"
-msgstr "K"
+msgid "GB"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-msgid "B"
-msgstr "B"
+msgid "MB"
+msgstr "MB"
+
+#: src/lvmui_constants.py:92
+msgid "KB"
+msgstr "KB"
+
+#: src/lvmui_constants.py:93
+msgid "Bytes"
+msgstr "Byte"
 
 #. File System Types
-#: src/lvmui_constants.py:95
+#: src/lvmui_constants.py:97
 msgid "No Filesystem"
 msgstr "Tidak ada Filesystem"
 
-#: src/lvmui_constants.py:96
+#: src/lvmui_constants.py:98
 msgid "Ext2"
 msgstr "Ext2"
 
-#: src/lvmui_constants.py:97
+#: src/lvmui_constants.py:99
 msgid "Ext3"
 msgstr "Ext3"
 
-#: src/lvmui_constants.py:98
+#: src/lvmui_constants.py:100
 msgid "JFS"
 msgstr "JFS"
 
-#: src/lvmui_constants.py:99
+#: src/lvmui_constants.py:101
 msgid "MSDOS"
 msgstr "MSDOS"
 
-#: src/lvmui_constants.py:100
+#: src/lvmui_constants.py:102
 msgid "Reiserfs"
 msgstr "Reiserfs"
 
-#: src/lvmui_constants.py:101
+#: src/lvmui_constants.py:103
 msgid "VFAT"
 msgstr "VFAT"
 
-#: src/lvmui_constants.py:102
+#: src/lvmui_constants.py:104
 msgid "XFS"
 msgstr "XFS"
 
-#: src/lvmui_constants.py:103
+#: src/lvmui_constants.py:105
 msgid "Cramfs"
 msgstr "Cramfs"
 
@@ -1198,11 +1099,11 @@ msgstr "Tidak ada Volume yang dipilih"
 msgid "Multiple selection"
 msgstr "Multi pilihan"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:46
+#: src/renderer.py:39 src/Volume_Tab_View.py:49
 msgid "Logical View"
 msgstr "Lihat Logikal"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:45
+#: src/renderer.py:40 src/Volume_Tab_View.py:48
 msgid "Physical View"
 msgstr "Lihat Fisik"
 
@@ -1214,18 +1115,18 @@ msgstr "Belum Dialokasikan"
 msgid "Uninitialized"
 msgstr "Belum Diinisiasi"
 
-#: src/renderer.py:192
+#: src/renderer.py:195
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
 "Logical Volume %s. Mirrored Logical Volumes are not yet migratable, so the "
 "extents are not selectable."
 msgstr ""
-"Perluasan yang anda coba pilih adalah milik log mirror dari Volume Logikal "
-"%s. Mirror Volume Logikal tidak dapat dimigrasi, hingga perluasan tersebut "
+"Perluasan yang anda coba pilih adalah milik log mirror dari Volume Logikal %"
+"s. Mirror Volume Logikal tidak dapat dimigrasi, hingga perluasan tersebut "
 "tidak dapat dipilih."
 
-#: src/renderer.py:194
+#: src/renderer.py:197
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to mirror image of "
@@ -1236,84 +1137,121 @@ msgstr ""
 "%s. Mirror Volume Logikal tidak dapat dimigrasi, hingga perluasan tersebut "
 "tidak dapat dipilih."
 
-#: src/renderer.py:196
+#: src/renderer.py:199
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
 "s. Snapshots are not yet migratable, so the extents are not selectable."
 msgstr ""
 "Perluasan yang anda coba pilih adalah milik %s, merupakan snapshot dari %s. "
-"Snapshot tidak dapat dimigrasi, hingga perluasan tersebut tidak dapat dipilih."
+"Snapshot tidak dapat dimigrasi, hingga perluasan tersebut tidak dapat "
+"dipilih."
 
-#: src/renderer.py:198
+#: src/renderer.py:201
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
 "s. Snapshot origins are not yet migratable, so the extents are not "
 "selectable."
 msgstr ""
-"Perluasan yang anda coba pilih adalah milik sumber snapshot %s. Sumber snapshot "
-"tidak dapat dimigrasi, hingga perluasan tersebut tidak dapat dipilih."
+"Perluasan yang anda coba pilih adalah milik sumber snapshot %s. Sumber "
+"snapshot tidak dapat dimigrasi, hingga perluasan tersebut tidak dapat "
+"dipilih."
 
-#: src/renderer.py:385
-msgid "Snapshot of "
-msgstr "Snapshot dari"
+#: src/renderer.py:388
+#, python-format
+msgid "Snapshot of %s"
+msgstr "Snapshot dari %s"
 
-#: src/renderer.py:487
+#: src/renderer.py:490
 msgid "Origin"
 msgstr "Sumber"
 
-#: src/renderer.py:493
+#: src/renderer.py:496
 msgid "Snapshot"
 msgstr "Snapshot"
 
-#: src/renderer.py:537
+#: src/renderer.py:540
 msgid "extent view"
 msgstr "Lihat Perluasan"
 
-#: src/Volume_Tab_View.py:42
+#: src/Volume_Tab_View.py:45
 msgid "Volume Groups"
 msgstr "Grup Volume"
 
-#: src/Volume_Tab_View.py:43
+#: src/Volume_Tab_View.py:46
 msgid "Unallocated Volumes"
 msgstr "Volume yang belum dialokasikan"
 
-#: src/Volume_Tab_View.py:44
+#: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
 msgstr "Entiti yang belum diinisiasi"
 
-#: src/Volume_Tab_View.py:584
+#: src/Volume_Tab_View.py:63
+msgid ""
+"LVM locks are disabled!!! \n"
+"Massive data corruption may occur.\n"
+"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:68
+msgid ""
+"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
+"running. Start daemon with command:\n"
+"service clvmd start \n"
+"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:72
+msgid ""
+"LVM is configured to use Cluster Locking mechanism, but cluster is not "
+"quorate.\n"
+"Either wait until cluster is quorate or turn off cluster locking "
+"(locking_type=1 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:75
 #, python-format
-msgid "%s mirror synchronisation "
+msgid ""
+"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
+"lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:262
+msgid "Clustered VG"
+msgstr ""
+
+#: src/Volume_Tab_View.py:648
+#, python-format
+msgid "%s mirror synchronisation"
 msgstr "sinkronisasi mirror %s"
 
 #. no existing partitions, write
-#: src/fdisk_wrapper.py:197
+#: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
 msgstr "Harap tunggu ketika partisi sedang dibuat"
 
-#: src/Filesystem.py:9
+#: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
 msgstr "Membuat filesystem %s"
 
-#: src/Filesystem.py:10
+#: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
 msgstr "Mengubah ukuran filesystem %s"
 
-#: src/Filesystem.py:11
+#: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
 msgstr "Mengecek filesystem %s"
 
-#: src/Filesystem.py:12
+#: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
 msgstr "Mengupgrade filesystem %s ke %s"
 
-#: src/Filesystem.py:13
+#: src/Filesystem.py:24
 #, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
@@ -1322,7 +1260,7 @@ msgstr ""
 "Pembuatan filesystem gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
 "Sistem: %s"
 
-#: src/Filesystem.py:14
+#: src/Filesystem.py:25
 #, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
@@ -1331,16 +1269,16 @@ msgstr ""
 "Pengubahan ukuran filesystem gagal. Perintah yang dicoba: \"%s\" - Pesan "
 "Kesalahan Sistem: %s"
 
-#: src/Filesystem.py:15
+#: src/Filesystem.py:26
 #, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr ""
-"Pengecekan filesystem gagal. Perintah yang dicoba: \"%s\" - Pesan "
-"Kesalahan Sistem: %s"
+"Pengecekan filesystem gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+"Sistem: %s"
 
-#: src/Filesystem.py:16
+#: src/Filesystem.py:27
 #, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
@@ -1349,57 +1287,58 @@ msgstr ""
 "Upgrade filesystem gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
 "Sistem: %s"
 
-#: src/Filesystem.py:125
+#: src/Filesystem.py:143
 msgid "Unknown filesystem"
 msgstr "Filesystem tidak dikenal"
 
-#: src/Filesystem.py:352
-msgid "GFS2 (local)"
-msgstr "GFS2 (lokal)"
-
-#: src/Filesystem.py:399
-msgid "GFS2 (clustered)"
-msgstr "GFS2 (terkluster)"
-
-#: src/Filesystem.py:423
+#: src/Filesystem.py:374
 msgid "GFS (local)"
 msgstr "GFS (lokal)"
 
-#: src/Filesystem.py:470
+#: src/Filesystem.py:472
 msgid "GFS (clustered)"
 msgstr "GFS (terkluster)"
 
+#: src/Filesystem.py:504 src/Filesystem.py:748
+msgid "Cluster name contains illegal character "
+msgstr ""
+
+#: src/Filesystem.py:507 src/Filesystem.py:751
+msgid "GFS name contains illegal character "
+msgstr ""
+
+#: src/Filesystem.py:510 src/Filesystem.py:754
+msgid "Missing Cluster Name"
+msgstr ""
+
+#: src/Filesystem.py:513 src/Filesystem.py:757
+msgid "Missing GFS Name"
+msgstr ""
+
+#: src/Filesystem.py:618
+msgid "GFS2 (local)"
+msgstr "GFS2 (lokal)"
+
+#: src/Filesystem.py:716
+msgid "GFS2 (clustered)"
+msgstr "GFS2 (terkluster)"
+
 #: src/Segment.py:44
-msgid "Stripe "
-msgstr "Stripe "
+msgid "Stripe"
+msgstr "Stripe"
 
 #: src/Segment.py:68
 msgid "Linear Mapping"
 msgstr "Pemetaan Linier"
 
 #: src/Segment.py:109
-msgid "Mirror "
-msgstr "Mirror "
-
-#: src/Multipath.py:11
-#, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah dmsetup gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan Sistem: %"
-"s"
-
-#: src/Multipath.py:12
-#, python-format
-msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"perintah ls gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan Sistem: %"
-"s"
+msgid "Mirror"
+msgstr "Mirror"
 
 #: src/PhysicalVolume.py:142
 #, python-format
-msgid "Partition  %s"
-msgstr "Partisi:   %s"
+msgid "Partition %s"
+msgstr "Partisi %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1458,6 +1397,11 @@ msgstr ""
 "Volume yang telah ada"
 
 #: src/lvui.glade.h:15
+#, fuzzy
+msgid "Clustered"
+msgstr "GFS (terkluster)"
+
+#: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
@@ -1465,11 +1409,11 @@ msgstr ""
 "Buat Volume\n"
 "Logikal Baru"
 
-#: src/lvui.glade.h:17
+#: src/lvui.glade.h:18
 msgid "Create Snapshot"
 msgstr "Buat Snapshot"
 
-#: src/lvui.glade.h:18
+#: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
@@ -1477,15 +1421,15 @@ msgstr ""
 "Buat Grup \n"
 "Volume Baru"
 
-#: src/lvui.glade.h:20
+#: src/lvui.glade.h:21
 msgid "Edit Properties"
 msgstr "Edit Properti"
 
-#: src/lvui.glade.h:21
+#: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
 msgstr "Masukkan path dari Perangkat Blok untuk diinisiasi"
 
-#: src/lvui.glade.h:22
+#: src/lvui.glade.h:23
 msgid ""
 "Extend\n"
 "Volume Group"
@@ -1493,55 +1437,61 @@ msgstr ""
 "Perluas\n"
 "Grup Volume"
 
-#: src/lvui.glade.h:24
+#: src/lvui.glade.h:25
 msgid "Extend Volume Group"
 msgstr "Perluasan Grup Volume"
 
-#: src/lvui.glade.h:25
+#: src/lvui.glade.h:26
 msgid "Format"
 msgstr "Format"
 
-#: src/lvui.glade.h:26
+#: src/lvui.glade.h:27
 msgid "Initialize"
 msgstr "Inisiasi"
 
-#: src/lvui.glade.h:27
+#: src/lvui.glade.h:28
 msgid "Initialize Block Device"
 msgstr "Inisiasi Perangkat Blok"
 
-#: src/lvui.glade.h:28
+#: src/lvui.glade.h:29
 msgid "Initialize Entity"
 msgstr "Inisiasi Entiti"
 
-#: src/lvui.glade.h:29
+#: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
 msgstr "Inisiasi Perangkat _Blok"
 
-#: src/lvui.glade.h:30
+#: src/lvui.glade.h:31
 msgid "Kilo"
 msgstr "Kilo"
 
-#: src/lvui.glade.h:31
+#: src/lvui.glade.h:32
 msgid "Logical Volume Management"
 msgstr "Manajemen Volume Logikal"
 
-#: src/lvui.glade.h:32
+#: src/lvui.glade.h:33
 msgid "Manage Volumes"
 msgstr "Atur Volume"
 
-#: src/lvui.glade.h:33
-msgid "Maximum Logical Volumes: "
-msgstr "Volume Logikal Maksimum: "
-
 #: src/lvui.glade.h:34
-msgid "Maximum Physical Volumes: "
-msgstr "Volume Fisik Maksimum: "
+msgid "Mark Volume Group as 'clustered'"
+msgstr ""
 
 #: src/lvui.glade.h:35
+#, fuzzy
+msgid "Maximum Logical Volumes"
+msgstr "Volume Logikal Maksimum: "
+
+#: src/lvui.glade.h:36
+#, fuzzy
+msgid "Maximum Physical Volumes"
+msgstr "Volume Fisik Maksimum: "
+
+#: src/lvui.glade.h:37
 msgid "Meg"
 msgstr "Meg"
 
-#: src/lvui.glade.h:36
+#: src/lvui.glade.h:38
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
@@ -1549,20 +1499,13 @@ msgstr ""
 "Migrasi Perluasan\n"
 "yang Dipilih dari Volume"
 
-#: src/lvui.glade.h:38
-msgid "Name for Volume Group: "
-msgstr "Nama untuk Grup Volume: "
-
-#: src/lvui.glade.h:39
+#: src/lvui.glade.h:40
 msgid "New Volume Group"
 msgstr "Grup Volume Baru"
 
-#: src/lvui.glade.h:40
-msgid "New Volume Group Form"
-msgstr "Form Grup Volume Baru"
-
 #: src/lvui.glade.h:41
-msgid "Physical Extent Size: "
+#, fuzzy
+msgid "Physical Extent Size"
 msgstr "Ukuran Perluasan Fisik: "
 
 #: src/lvui.glade.h:42
@@ -1614,14 +1557,19 @@ msgid "Some text"
 msgstr "Beberapa teks"
 
 #: src/lvui.glade.h:54
+#, fuzzy
+msgid "Volume Group Name"
+msgstr "Nama Grup Volume:   "
+
+#: src/lvui.glade.h:55
 msgid "_Reload"
 msgstr "_Reload"
 
-#: src/lvui.glade.h:55
+#: src/lvui.glade.h:56
 msgid "_Tools"
 msgstr "Alat bantu"
 
-#: src/lvui.glade.h:56
+#: src/lvui.glade.h:57
 msgid "extend vg message:"
 msgstr "pesan perluasan vg:"
 
@@ -1661,6 +1609,10 @@ msgstr "<b>Ukuran</b>"
 msgid "Add entry to /etc/fstab"
 msgstr "Tambah entri ke /etc/fstab"
 
+#: src/lv_edit_props.glade.h:14
+msgid "Create New Logical Volume (LV)"
+msgstr "Buat Volume Logikal (VL) Baru"
+
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr "Filesystem tidak dapat diubah ukurannya"
@@ -1678,8 +1630,8 @@ msgid "Kilobytes granularity"
 msgstr "Kilobyte granularity"
 
 #: src/lv_edit_props.glade.h:19
-msgid "LV name: "
-msgstr "Nama VL: "
+msgid "LV name:"
+msgstr "Nama VL:"
 
 #: src/lv_edit_props.glade.h:20
 msgid "LV size"
@@ -1706,8 +1658,8 @@ msgid "Mount"
 msgstr "Mount"
 
 #: src/lv_edit_props.glade.h:26
-msgid "Mount point: "
-msgstr "Mount point: "
+msgid "Mount point:"
+msgstr "Mount point:"
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1730,7 +1682,7 @@ msgid "Use remaining"
 msgstr "Pergunakan Sisanya"
 
 #: src/lv_edit_props.glade.h:32
-msgid "stripes of"
+msgid "stripes"
 msgstr "pecahan dari"
 
 #: src/migrate_extents.glade.h:1
@@ -1754,33 +1706,32 @@ msgid "Contiguous"
 msgstr "Berdampingan"
 
 #: src/migrate_extents.glade.h:6
+msgid "Destination:"
+msgstr "Tujuan:"
+
+#: src/migrate_extents.glade.h:7
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
 msgstr ""
-"Sebelum memindahkan VF, perluasan yang sedang dipakai harus "
-"dimigrasi.\n"
+"Sebelum memindahkan VF, perluasan yang sedang dipakai harus dimigrasi.\n"
 "Pilih tujuan perluasan dan aturan migrasi."
 
-#: src/migrate_extents.glade.h:8
+#: src/migrate_extents.glade.h:9
 msgid "Inherit"
 msgstr "Turunkan"
 
-#: src/migrate_extents.glade.h:9
+#: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
 msgstr "Turunkan aturan dari Grup Volume"
 
-#: src/migrate_extents.glade.h:10
+#: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
 msgstr "Migrasi Perluasan"
 
-#: src/migrate_extents.glade.h:11
-msgid "Migrate anywhere even if that reduces performace"
-msgstr "Migrasi kemanapun bahkan jika itu mengurangi performa"
-
 #: src/migrate_extents.glade.h:12
-msgid "Migrate extents to "
-msgstr "Migrasi perluasan ke "
+msgid "Migrate anywhere even if that reduces performance"
+msgstr "Migrasi kemanapun bahkan jika itu mengurangi performa"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1791,12 +1742,161 @@ msgid "Normal"
 msgstr "Normal"
 
 #: src/migrate_extents.glade.h:15
-msgid "Only migrate extents belonging to LV "
+msgid "Only migrate extents belonging to LV"
 msgstr "Hanya migrasi perluasan milik VL"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Pergunakan pikiran sehat"
+
+#~ msgid "Name for Volume Group: "
+#~ msgstr "Nama untuk Grup Volume: "
+
+#~ msgid "New Volume Group Form"
+#~ msgstr "Form Grup Volume Baru"
+
+#~ msgid ""
+#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah vgextend gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah pvcreate gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah lvcreate gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah pvremove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah lvremove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah vgremove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah vgcreate gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
+#~ "%s"
+#~ msgstr ""
+#~ "perintah vgchange gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah vgreduce gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
+#~ "s"
+#~ msgstr ""
+#~ "perintah pvmove gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
+#~ "s"
+#~ msgstr ""
+#~ "perintah umount gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
+#~ "\""
+#~ msgstr ""
+#~ "perintah mount gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah lvresize gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah lvrename gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah lvchange gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid ""
+#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "perintah lvconvert gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid "Swap in use"
+#~ msgstr "Swap yang sedang dipakai"
+
+#~ msgid "Quering Volume Groups"
+#~ msgstr "Mencari Grup Volume"
+
+#~ msgid "Quering Logical Volumes"
+#~ msgstr "Mencari Volume Logikal"
+
+#~ msgid "Quering Physical Volumes"
+#~ msgstr "Mencari Volume Fisik"
+
+#~ msgid "G"
+#~ msgstr "G"
+
+#~ msgid "M"
+#~ msgstr "M"
+
+#~ msgid "K"
+#~ msgstr "K"
+
+#~ msgid ""
+#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
+#~ "%s"
+#~ msgstr ""
+#~ "perintah dmsetup gagal. Perintah yang dicoba: \"%s\" - Pesan Kesalahan "
+#~ "Sistem: %s"
+
+#~ msgid "Migrate extents to "
+#~ msgstr "Migrasi perluasan ke "
 
 #~ msgid ""
 #~ "There is a problem with the value entered in the Size field. The value "

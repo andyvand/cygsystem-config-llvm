@@ -114,6 +114,7 @@ EXCEEDING_MAX_PVS=_("At most %s Physical Volumes can be added to this Volume Gro
 NOT_ENOUGH_SPACE_FOR_NEW_LV=_("Volume Group %s does not have enough space for new Logical Volumes. A possible solution would be to add an additional Physical Volume to the Volume Group.")
 
 ALREADY_A_SNAPSHOT=_("A snapshot of a snapshot is not supported.")
+CANNOT_SNAPSHOT_A_MIRROR=_("A snapshot of a mirrored Logical Volume is not supported.")
 
 CANNOT_REMOVE_UNDER_SNAPSHOT=_("Logical volume %s has snapshot %s currently associated with it. Please remove the snapshot first.")
 CANNOT_REMOVE_UNDER_SNAPSHOTS=_("Logical volume %s has snapshots: %s currently associated with it. Please remove snapshots first.")
@@ -226,7 +227,7 @@ class InputController:
     self.ok_new_vg_button.connect("clicked",self.ok_new_vg)
     self.cancel_new_vg_button = self.glade_xml.get_widget('cancel_new_vg_button')
     self.cancel_new_vg_button.connect("clicked", self.cancel_new_vg)
-
+    
     ##Buttons and fields...
     self.new_vg_name = self.glade_xml.get_widget('new_vg_name')
     self.new_vg_max_pvs = self.glade_xml.get_widget('new_vg_max_pvs')
@@ -235,6 +236,7 @@ class InputController:
     self.new_vg_radio_meg = self.glade_xml.get_widget('radiobutton1')
     self.new_vg_radio_meg.connect('clicked', self.change_new_vg_radio)
     self.new_vg_radio_kilo = self.glade_xml.get_widget('radiobutton2')
+    self.new_vg_clustered = self.glade_xml.get_widget('clustered_butt')
 
   def on_new_vg(self, button):
     self.prep_new_vg_dlg()
@@ -298,14 +300,20 @@ class InputController:
     
     extent_idx = self.new_vg_extent_size.get_history()
     phys_extent_units_meg =  self.new_vg_radio_meg.get_active()
-
+    
+    clustered = self.new_vg_clustered.get_active()
+    if clustered:
+        msg = _("In order for Volume Group to be safely used in clustered environment, lvm2-cluster rpm has to be installed, and clvmd service has to be running")
+        self.infoMessage(msg)
+    
     try:
         self.command_handler.create_new_vg(Name_request,
                                            str(max_physical_volumes),
                                            str(max_logical_volumes),
                                            ACCEPTABLE_EXTENT_SIZES[extent_idx],
                                            phys_extent_units_meg,
-                                           pv.get_path())
+                                           pv.get_path(),
+                                           clustered)
     except CommandError, e:
         self.errorMessage(e.getMessage())
     
@@ -1051,15 +1059,18 @@ class InputController:
           return
       
       # checks
-      if self.command_handler.is_dm_snapshot_loaded() == False:
-          self.errorMessage(NO_DM_SNAPSHOT)
+      if lv.is_snapshot():
+          self.errorMessage(ALREADY_A_SNAPSHOT)
+          return
+      if lv.is_mirrored():
+          self.errorMessage(CANNOT_SNAPSHOT_A_MIRROR)
           return
       t_exts, u_exts, f_exts = vg.get_extent_total_used_free()
       if f_exts == 0:
           self.errorMessage(NOT_ENOUGH_SPACE_FOR_NEW_LV % vg.get_name())
           return
-      if lv.is_snapshot():
-          self.errorMessage(ALREADY_A_SNAPSHOT)
+      if self.command_handler.is_dm_snapshot_loaded() == False:
+          self.errorMessage(NO_DM_SNAPSHOT)
           return
       
       dlg = LV_edit_props(lv, vg, self.model_factory, self.command_handler, True)
@@ -1105,7 +1116,7 @@ class InputController:
   def infoMessage(self, message):
       dlg = gtk.MessageDialog(None, 0,
                               gtk.MESSAGE_INFO,
-                              gtk.BUTTONS_YES_NO,
+                              gtk.BUTTONS_OK,
                               message)
       dlg.show_all()
       rc = dlg.run()
@@ -1289,6 +1300,8 @@ class LV_edit_props:
             else:
                 self.mount = True
             self.mount_at_reboot = (self.mountpoint_at_reboot != None)
+        for fs_name in self.filesystems:
+            self.filesystems[fs_name].set_clustered(vg.clustered())
         
         gladepath = 'lv_edit_props.glade'
         if not os.path.exists(gladepath):
@@ -1994,13 +2007,17 @@ class LV_edit_props:
             
             # make filesystem
             if not self.snapshot:
-                filesys_new.create(lv_path)
+                try:
+                    filesys_new.create(lv_path)
+                except CommandError, e:
+                    self.command_handler.remove_lv(lv_path)
+                    raise e
             
             # mount
             if mount_new:
-                self.command_handler.mount(lv_path, mountpoint_new)
+                self.command_handler.mount(lv_path, mountpoint_new, filesys_new.fsname)
             if mount_at_reboot_new:
-                Fstab.add(lv_path, mountpoint_new, filesys_new.name)
+                Fstab.add(lv_path, mountpoint_new, filesys_new.fsname)
         else:
             ### edit LV ###
             
@@ -2162,13 +2179,16 @@ class LV_edit_props:
                     filesys_new.create(lv_path)
             
             # mount
+            fsname = self.fs.fsname
+            if filesys_change:
+                fsname = filesys_new.fsname
             if mount_new and not mounted:
-                self.command_handler.mount(lv_path, mountpoint_new)
+                self.command_handler.mount(lv_path, mountpoint_new, fsname)
             # remove old fstab entry
             Fstab.remove(self.mount_point)
             if mount_at_reboot_new:
                 # add new entry
-                Fstab.add(lv_path, mountpoint_new, filesys_new.name)
+                Fstab.add(lv_path, mountpoint_new, fsname)
                 
         return True
     

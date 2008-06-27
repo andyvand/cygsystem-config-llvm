@@ -464,16 +464,17 @@ class SingleCylinder:
                                                 False)
         # width
         max_cyl_w = cyl_dim[0]
-        if upper_label_dim[0] > max_cyl_w:
-            max_cyl_w = upper_label_dim[0]
-        if lower_label_dim[0] > max_cyl_w:
-            max_cyl_w = lower_label_dim[0]
+        ellipse_w = get_ellipse_table(self.height/2)[1]
+        if upper_label_dim[0] > max_cyl_w - ellipse_w:
+            max_cyl_w = upper_label_dim[0] + ellipse_w
+        if lower_label_dim[0] > max_cyl_w - ellipse_w:
+            max_cyl_w = lower_label_dim[0] + ellipse_w
         width = main_label_dim[0] + self.label_to_cyl_distance + max_cyl_w
         # height
         height = upper_label_dim[1] + cyl_dim[1] + lower_label_dim[1]
         if main_label_dim[1] > height:
             height = mail_label_dim[1]
-        
+
         return width, height, upper_label_dim[1]
     
     def draw(self, da, gc, (x, y)):
@@ -626,8 +627,8 @@ def draw_cyl_labels_lower(da, pixmap, gc, labels, x, y, cyl_height, draw=True):
                 pixmap.draw_layout(gc, X_lay, Y_lay, layout)
             
             # calculate dimension of encompasing rectangle
-            max_w_tmp = X2 - x
-            max_h_tmp = Y2 - (cyl_height + y)
+            max_w_tmp = X3 - x
+            max_h_tmp = Y3 - (cyl_height + y)
             if max_w_tmp > width_total:
                 width_total = max_w_tmp
             if max_h_tmp > height_total:
@@ -833,14 +834,15 @@ class DoubleCylinder:
         
         # width
         max_cyl_w = cyl_dim[0]
-        if up_cyl_up_label_dim[0] > max_cyl_w:
-            max_cyl_w = up_cyl_up_label_dim[0]
-        if up_cyl_low_label_dim[0] > max_cyl_w:
-            max_cyl_w = up_cyl_low_label_dim[0]
-        if low_cyl_up_label_dim[0] > max_cyl_w:
-            max_cyl_w = low_cyl_up_label_dim[0]
-        if low_cyl_low_label_dim[0] > max_cyl_w:
-            max_cyl_w = low_cyl_low_label_dim[0]
+        ellipse_w = get_ellipse_table(self.height/2)[1]
+        if up_cyl_up_label_dim[0] > max_cyl_w - ellipse_w:
+            max_cyl_w = up_cyl_up_label_dim[0] + ellipse_w
+        if up_cyl_low_label_dim[0] > max_cyl_w - ellipse_w:
+            max_cyl_w = up_cyl_low_label_dim[0] + ellipse_w
+        if low_cyl_up_label_dim[0] > max_cyl_w - ellipse_w:
+            max_cyl_w = low_cyl_up_label_dim[0] + ellipse_w
+        if low_cyl_low_label_dim[0] > max_cyl_w - ellipse_w:
+            max_cyl_w = low_cyl_low_label_dim[0] + ellipse_w
         width = main_label_dim[0] + self.label_to_cyl_distance + max_cyl_w
         # height
         distance = self.distance

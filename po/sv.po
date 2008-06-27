@@ -1,7 +1,7 @@
 # Swedish messages for system-config-lvm.
-# Copyright 2004, 2005 Christian Rose <menthos@menthos.com>.
+# Copyright 2004, 2005, 2006 Christian Rose <menthos@menthos.com>.
 #
-# $Id$
+# $Id: sv.po,v 1.9 2006/07/10 18:03:54 kupcevic Exp $
 #
 # Terminologi
 # -----------
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-lvm\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-08-15 15:50-0400\n"
-"PO-Revision-Date: 2005-10-26 00:11+0200\n"
+"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"PO-Revision-Date: 2006-02-16 23:59+0100\n"
 "Last-Translator: Christian Rose <menthos@menthos.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:30
+#: src/Volume_Tab_View.py:33
 #, python-format
 msgid ""
 "\n"
@@ -160,7 +160,12 @@ msgstr ""
 msgid "A snapshot of a snapshot is not supported."
 msgstr "En ögonblicksbild av en ögonblicksbild stöds inte."
 
-#: src/InputController.py:118
+#: src/InputController.py:117
+#, fuzzy
+msgid "A snapshot of a mirrored Logical Volume is not supported."
+msgstr "En ögonblicksbild av en ögonblicksbild stöds inte."
+
+#: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
@@ -169,7 +174,7 @@ msgstr ""
 "Logiska volymen %s har ögonblicksbilden %s för tillfället associerad med "
 "den. Ta bort ögonblicksbilden först."
 
-#: src/InputController.py:119
+#: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
@@ -178,14 +183,14 @@ msgstr ""
 "Logiska volymen %s har ögonblicksbilder: %s för tillfället associerade med "
 "den. Ta bort ögonblicksbilderna först."
 
-#: src/InputController.py:121
+#: src/InputController.py:122
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr ""
 "Odefinierat typkonverteringsfel i modellfabriken. Kan inte slutföra "
 "uppgiften."
 
-#: src/InputController.py:123
+#: src/InputController.py:124
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -196,7 +201,7 @@ msgstr ""
 "tillfället monterad på %s. Är du fullständigt säker på att du vill förkasta "
 "de data som finns på detta monterade filsystem?"
 
-#: src/InputController.py:125
+#: src/InputController.py:126
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -208,68 +213,62 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:131
+#: src/InputController.py:132
 #, python-format
 msgid "Unused space on %s"
 msgstr "Oanvänt utrymme på %s"
 
-#: src/InputController.py:132
+#: src/InputController.py:133
 #, python-format
 msgid "%s megabytes"
 msgstr "%s megabyte"
 
-#: src/InputController.py:133
+#: src/InputController.py:134
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s kilobyte"
 
-#: src/InputController.py:134
+#: src/InputController.py:135
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s gigabyte"
 
-#: src/InputController.py:135
+#: src/InputController.py:136
 #, python-format
 msgid "%s extents"
 msgstr "%s områden"
 
-#: src/InputController.py:137
+#: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
 msgstr "Återstående ledigt utrymme i volymgruppen:\n"
 
-msgid "Remaining free space in Volume Group:"
-msgstr "Återstående ledigt utrymme i volymgruppen:"
-
-#: src/InputController.py:138
+#: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
 msgstr "Återstående utrymme för denna volym:\n"
 
-msgid "Remaining space for this Volume:"
-msgstr "Återstående utrymme för denna volym:"
-
-#: src/InputController.py:140
+#: src/InputController.py:141
 msgid "Extents"
 msgstr "Områden"
 
-#: src/InputController.py:141
+#: src/InputController.py:142
 msgid "Gigabytes"
 msgstr "Gigabyte"
 
-#: src/InputController.py:142
+#: src/InputController.py:143
 msgid "Megabytes"
 msgstr "Megabyte"
 
-#: src/InputController.py:143
+#: src/InputController.py:144
 msgid "Kilobytes"
 msgstr "Kilobyte"
 
 # Ser mycket trasigt ut... borde buggrapporteras!
-#: src/InputController.py:145
+#: src/InputController.py:146
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s bör endast innehålla talvärden"
 
-#: src/InputController.py:146
+#: src/InputController.py:147
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
@@ -277,7 +276,7 @@ msgstr ""
 "Fältet maximalt antal fysiska volymer bör endast innehålla heltalsvärden "
 "mellan 1 och 256"
 
-#: src/InputController.py:147
+#: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
@@ -285,7 +284,7 @@ msgstr ""
 "Fältet maximalt antal logiska volymer bör endast innehålla heltalsvärden "
 "mellan 1 och 256"
 
-#: src/InputController.py:149
+#: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
@@ -294,7 +293,7 @@ msgstr ""
 "Är du helt säker på att du vill ta bort %s från hanteringen av logiska "
 "volymer?"
 
-#: src/InputController.py:151
+#: src/InputController.py:152
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -306,18 +305,18 @@ msgid ""
 msgstr ""
 "Den fysiska volymen med namnet %s som du vill ta bort har data från aktiva "
 "logiska volymer mappade till dess områden. Eftersom det är den enda fysiska "
-"volymen i volymgruppen finns det ingen plats att flytta dessa data till. "
-"Den rekommenderade åtgärden är att antingen lägga till en ny fysisk volym "
-"innan denna tas bort, eller att ta bort de logiska volymer som är "
-"associerade med denna fysiska volym."
+"volymen i volymgruppen finns det ingen plats att flytta dessa data till. Den "
+"rekommenderade åtgärden är att antingen lägga till en ny fysisk volym innan "
+"denna tas bort, eller att ta bort de logiska volymer som är associerade med "
+"denna fysiska volym."
 
-#: src/InputController.py:152
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "Är du helt säker på att du vill ta bort %s från volymgruppen %s?"
 
-#: src/InputController.py:153
+#: src/InputController.py:154
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -326,7 +325,7 @@ msgstr ""
 "Att ta bort den fysiska volymen %s från volymgruppen %s kommer att lämna "
 "volymgruppen tom, och även ta bort denna. Vill du fortsätta?"
 
-#: src/InputController.py:154
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -337,7 +336,7 @@ msgstr ""
 "är lagrade på %s. En möjlig lösning är att lägga till ytterligare en fysisk "
 "volym till volymgruppen."
 
-#: src/InputController.py:155
+#: src/InputController.py:156
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -345,27 +344,26 @@ msgid ""
 "Physical Extents are unavailable."
 msgstr ""
 "Modulen dm-mirror är antingen inte inläst i din kärna, eller så stöder din "
-"kärna inte målet dm-mirror. Om det stöds bör du försöka köra "
-"\"modprobe dm-mirror\". Annars är åtgärder som kräver att data på fysiska "
-"områden flyttas inte tillgängliga."
+"kärna inte målet dm-mirror. Om det stöds bör du försöka köra \"modprobe dm-"
+"mirror\". Annars är åtgärder som kräver att data på fysiska områden flyttas "
+"inte tillgängliga."
 
-#: src/InputController.py:156
+#: src/InputController.py:157
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
 "\"modprobe dm-snapshot\". Otherwise, creation of snapshots is unavailable."
 msgstr ""
 "Modulen dm-snapshot är antingen inte inläst i din kärna, eller så stöder din "
-"kärna inte målet dm-snapshot. Om det stöds bör du försöka köra "
-"\"modprobe dm-snapshot\". Annars är skapande av ögonblicksbilder inte "
-"tillgängligt."
+"kärna inte målet dm-snapshot. Om det stöds bör du försöka köra \"modprobe dm-"
+"snapshot\". Annars är skapande av ögonblicksbilder inte tillgängligt."
 
-#: src/InputController.py:158
+#: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "Är du helt säker på att du vill ta bort den logiska volymen %s?"
 
-#: src/InputController.py:159
+#: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -374,7 +372,7 @@ msgstr ""
 "Den logiska volymen %s innehåller %s-filsystem. Alla data på det kommer att "
 "gå förlorade! Är du helt säker på att du vill ta bort den logiska volymen %s?"
 
-#: src/InputController.py:160
+#: src/InputController.py:161
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -384,7 +382,13 @@ msgstr ""
 "kommer att gå förlorade! Är du helt säker på att du vill ta bort den logiska "
 "volymen %s?"
 
-#: src/InputController.py:356
+#: src/InputController.py:306
+msgid ""
+"In order for Volume Group to be safely used in clustered environment, lvm2-"
+"cluster rpm has to be installed, and clvmd service has to be running"
+msgstr ""
+
+#: src/InputController.py:364
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -395,7 +399,7 @@ msgstr ""
 "logiska volymen %s. Speglade logiska volymer kan ännu inte migreras, så %s "
 "kan inte tas bort."
 
-#: src/InputController.py:359
+#: src/InputController.py:367
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -406,7 +410,7 @@ msgstr ""
 "logiska volymen %s. Speglade logiska volymer kan ännu inte migreras, så %s "
 "kan inte tas bort."
 
-#: src/InputController.py:362
+#: src/InputController.py:370
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -415,7 +419,7 @@ msgstr ""
 "Den fysiska volymen %s innehåller områden som tillhör %s, en ögonblicksbild "
 "av %s. Ögonblicksbilder kan ännu inte migreras, så %s kan inte tas bort."
 
-#: src/InputController.py:367
+#: src/InputController.py:375
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -425,7 +429,7 @@ msgstr ""
 "ögonblicksbilden %s. Ursprung för ögonblicksbilder kan ännu inte migreras, "
 "så %s kan inte tas bort."
 
-#: src/InputController.py:369
+#: src/InputController.py:377
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -435,7 +439,7 @@ msgstr ""
 "ögonblicksbilderna %s. Ursprung för ögonblicksbilder kan ännu inte migreras, "
 "så %s kan inte tas bort."
 
-#: src/InputController.py:556
+#: src/InputController.py:564
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
@@ -444,7 +448,7 @@ msgstr ""
 "Den logiska volymen \"%s\" har ögonblicksbilder som inte markerats för "
 "borttagning. De måste också tas bort."
 
-#: src/InputController.py:571
+#: src/InputController.py:579
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
@@ -452,13 +456,7 @@ msgstr ""
 "\"%s\", ett ursprung för ögonblicksbilden \"%s\", har tagits bort från "
 "borttagningslistan."
 
-msgid ""
-"\"%s\", the origin of snapshot \"%s\", has been deleted from removal list."
-msgstr ""
-"\"%s\", ursprunget för ögonblicksbilden \"%s\", har tagits bort från "
-"borttagningslistan."
-
-#: src/InputController.py:602
+#: src/InputController.py:610
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
@@ -467,7 +465,7 @@ msgstr ""
 "Den fysiska volymen \"%s\" innehåller områden som tillhör en spegel. Speglar "
 "kan ännu inte migreras, så %s kan inte tas bort."
 
-#: src/InputController.py:605
+#: src/InputController.py:613
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -477,24 +475,24 @@ msgstr ""
 "eller ursprunget för en ögonblicksbild. Ögonblicksbilder kan ännu inte "
 "migreras, så %s kan inte tas bort."
 
-#: src/InputController.py:670
+#: src/InputController.py:678
 msgid "The path you specified does not exist."
 msgstr "Sökvägen du angav finns inte."
 
-#: src/InputController.py:677
+#: src/InputController.py:685
 msgid "The path you specified is not a Block Device."
 msgstr "Sökvägen du angav är ingen blockenhet."
 
-#: src/InputController.py:748
+#: src/InputController.py:756
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "Initiering av %s misslyckades"
 
-#: src/InputController.py:985 src/InputController.py:988
+#: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
 msgstr "Välj några områden först"
 
-#: src/InputController.py:1022
+#: src/InputController.py:1030
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
@@ -502,56 +500,47 @@ msgstr ""
 "Det finns inte tillräckligt med lediga områden för att utföra den nödvändiga "
 "migreringen. Att lägga till fler fysiska volymer skulle lösa problemet."
 
-#: src/InputController.py:1181
+#: src/InputController.py:1192
 msgid "Migrate extents"
 msgstr "Migrera områden"
 
-#: src/InputController.py:1307
+#: src/InputController.py:1320
 msgid "Options"
 msgstr "Alternativ"
 
-#: src/InputController.py:1341
+#: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "Skapa en ögonblicksbild av %s"
 
-#: src/InputController.py:1343 src/lv_edit_props.glade.h:14
+#: src/InputController.py:1356
 msgid "Create New Logical Volume"
 msgstr "Skapa ny logisk volym"
 
-#: src/InputController.py:1346
+#: src/InputController.py:1359
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "Redigera %s, en ögonblicksbild av %s"
 
-msgid "Edit %s, a snapshot of %s"
-msgstr "Redigera %s, en ögonblicksbild av %s"
-
-msgid "Edit %s"
-msgstr "Redigera %s"
-
-#: src/InputController.py:1349
+#: src/InputController.py:1362
 msgid "Edit Logical Volume"
 msgstr "Redigera logisk volym"
 
-msgid "Edit"
-msgstr "Redigera"
-
-#: src/InputController.py:1501
+#: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "Underliggande hanteringen av logiska volymer stöder inte spegling"
 
-#: src/InputController.py:1508
+#: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "Strimlade logiska volymer kan inte speglas."
 
-#: src/InputController.py:1515
+#: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "Logiska volymer med assiocerade ögonblicksbilder kan inte speglas än."
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1522
+#: src/InputController.py:1536
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -559,14 +548,14 @@ msgstr ""
 "Det huvudsakliga syftet med spegling är att skydda data ifall en hårddisk "
 "går sönder. Vill du placera spegelavbilderna på olika hårddiskar?"
 
-#: src/InputController.py:1531
+#: src/InputController.py:1545
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr ""
 "Färre än 3 hårddiskar med ledigt utrymme är tillgängliga. Inaktiverar "
 "spegling."
 
-#: src/InputController.py:1536
+#: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
@@ -574,7 +563,7 @@ msgstr ""
 "Det måste finnas ledigt utrymme på minst tre fysiska volymer för att "
 "aktivera spegling."
 
-#: src/InputController.py:1544
+#: src/InputController.py:1558
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
@@ -582,7 +571,7 @@ msgstr ""
 "Storleken på den logiska volymen har justerats till den största tillgängliga "
 "storleken för speglar."
 
-#: src/InputController.py:1549
+#: src/InputController.py:1563
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -592,444 +581,286 @@ msgstr ""
 "Minska storleken på den logiska volymen till som mest %s, eller lägg till "
 "fysiska volymer."
 
-# FIXME: Typo!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171744
-#
-#: src/InputController.py:1913
-msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr ""
-"Namn som börjar med \"snapshot\" eller \"pvmove\" är reserverade nyckelord."
-
+#: src/InputController.py:1927
 msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
 msgstr ""
 "Namn som börjar med \"snapshot\" eller \"pvmove\" är reserverade nyckelord."
 
-#: src/InputController.py:1915
+#: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr ""
 "Namn som innehåller \"_mlog\" eller \"_mimage\" är reserverade nyckelord."
 
-# FIXME: Typo!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171744
-#
-#: src/InputController.py:1917
-msgid "Names begining with a \"-\" are invalid"
-msgstr "Namn som börjar med ett \"-\" är ogiltiga"
-
+#: src/InputController.py:1931
 msgid "Names beginning with a \"-\" are invalid"
 msgstr "Namn som börjar med ett \"-\" är ogiltiga"
 
-#: src/InputController.py:1919
+#: src/InputController.py:1933
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "Namnet kan varken vara \".\" eller \"..\""
 
-#: src/InputController.py:1925
+#: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "Mellanrum tillåts inte i namn på logiska volymer"
 
-#: src/InputController.py:1928
+#: src/InputController.py:1942
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
 msgstr "Ogiltigt tecken \"%s\" i namn på logisk volym"
 
-#: src/InputController.py:1948
+#: src/InputController.py:1962
 msgid "Please specify mount point"
 msgstr "Ange monteringspunkt"
 
-#: src/InputController.py:2010
+#: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr ""
 "Vill du uppgradera ext2 till ext3 och bevara data på den logiska volymen?"
 
-#: src/InputController.py:2044
+#: src/InputController.py:2062
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr ""
-"Att byta filsystem kommer att förstöra alla data på den logiska volymen! "
-"Är du säker att du vill fortsätta?"
+"Att byta filsystem kommer att förstöra alla data på den logiska volymen! Är "
+"du säker att du vill fortsätta?"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2145
+#: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "Spegeln skapades inte. Slutför återstående uppgifter."
 
-#: src/InputController.py:2194
+#. create mirror
+#: src/InputController.py:2166
+msgid ""
+"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+"Volumes. Completing remaining tasks."
+msgstr ""
+"Underliggande LVM stöder inte att speglar av befintliga logiska volymer "
+"läggs till. Slutför återstående uppgifter."
+
+#: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "För att kunna lägga till spegling måste en del områden migreras."
 
-#: src/InputController.py:2194
+#: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
 msgstr "Vill du migrera de angivna områdena?"
 
-# FIXME: There is no need to duplicate this! Should be bug reported.
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171746
-#
-#. ##TRANSLATOR: The first word in each string below is
-#. ##an lvm command line command phrase.
-#: src/CommandHandler.py:14
-#, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgextend-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:15
-#, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvcreate-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:16
-#, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvcreate-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:17
-#, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvremove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:18
-#, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvremove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:19
-#, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgremove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:20
-#, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgcreate-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:21
-#, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr ""
-"vgchange-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:22
-#, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"vgreduce-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:23
-#, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"pvmove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:24
-#, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"umount-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:25
-#, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr ""
-"mount-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:26
-#, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvresize-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:27
-#, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvrename-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:28
-#, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"lvchange-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:29
-#, python-format
-msgid ""
-"lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
-"s"
-msgstr ""
-"lvconvert-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-msgid ""
-"%s command failed. Command attempted: \"%s\""
-msgstr ""
-"%s-kommandot misslyckades. Försökte med kommandot: \"%s\""
-
-msgid ""
-"%s command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"%s-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-#: src/CommandHandler.py:77
+#: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
 msgstr "Skapar logisk volym"
 
-#: src/CommandHandler.py:96 src/CommandHandler.py:113
+#: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
 msgstr "Ändrar storlek på logisk volym"
 
-#: src/CommandHandler.py:146
+#: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
 msgstr "Lägger till spegel till logisk volym"
 
-#: src/CommandHandler.py:157
+#: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
 msgstr "Tar bort spegel från logisk volym"
 
-#: src/CommandHandler.py:180
+#: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
 msgstr "Initierar fysisk volym"
 
-#: src/CommandHandler.py:191
+#: src/CommandHandler.py:171
 msgid "Adding Physical Volume to Volume Group"
 msgstr "Lägger till fysisk volym till volymgrupp"
 
-#: src/CommandHandler.py:218
+#: src/CommandHandler.py:203
 msgid "Creating Volume Group"
 msgstr "Skapar volymgrupp"
 
-#: src/CommandHandler.py:240
+#: src/CommandHandler.py:225
 msgid "Removing Volume Group"
 msgstr "Tar bort volymgrupp"
 
-#: src/CommandHandler.py:250
+#: src/CommandHandler.py:235
 msgid "Removing Physical Volume"
 msgstr "Tar bort fysisk volym"
 
-#: src/CommandHandler.py:261
+#: src/CommandHandler.py:246
 msgid "Removing Logical Volume"
 msgstr "Tar bort logisk volym"
 
-#: src/CommandHandler.py:273
+#: src/CommandHandler.py:258
 msgid "Renaming Logical Volume"
 msgstr "Byter namn på logisk volym"
 
-#: src/CommandHandler.py:295
+#: src/CommandHandler.py:280
 msgid "Removing Physical Volume from Volume Group"
 msgstr "Tar bort fysisk volym från volymgrupp"
 
-#: src/CommandHandler.py:330
+#: src/CommandHandler.py:315
 msgid "Migrating Extents"
 msgstr "Migrerar områden"
 
-#: src/CommandHandler.py:342
+#: src/CommandHandler.py:327
 msgid "Completing Extent Migration"
 msgstr "Slutför migrering av områden"
 
-#: src/lvm_model.py:46 src/lvmui_constants.py:81
+#: src/CommandHandler.py:378
+#, fuzzy
+msgid "Rereading partition table"
+msgstr "Utökad partition"
+
+#: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
 msgstr "Oanvänd"
 
-#: src/lvm_model.py:47
+#: src/lvm_model.py:46
 msgid "Unused Space"
 msgstr "Oanvänt utrymme"
 
-#: src/lvm_model.py:49
+#: src/lvm_model.py:48
 msgid "Unmounted"
 msgstr "Avmonterad"
 
-#: src/lvm_model.py:59
+#: src/lvm_model.py:58
 msgid "Volume Group Name:   "
 msgstr "Namn på volymgrupp:  "
 
-#: src/lvm_model.py:60
+#: src/lvm_model.py:59
 msgid "System ID:   "
 msgstr "System-id:   "
 
-#: src/lvm_model.py:61
+#: src/lvm_model.py:60
 msgid "Format:   "
 msgstr "Format:   "
 
-#: src/lvm_model.py:62 src/lvm_model.py:79 src/lvm_model.py:94
+#: src/lvm_model.py:61 src/lvm_model.py:78 src/lvm_model.py:93
 msgid "Attributes:   "
 msgstr "Attribut:     "
 
-#: src/lvm_model.py:63
+#: src/lvm_model.py:62
 msgid "Volume Group Size:   "
 msgstr "Storlek på volymgrupp:"
 
-#: src/lvm_model.py:64
+#: src/lvm_model.py:63
 msgid "Available Space:   "
 msgstr "Tillgängligt utrymme:"
 
-#: src/lvm_model.py:65
+#: src/lvm_model.py:64
 msgid "Total Number of Extents:   "
 msgstr "Totalt antal områden:   "
 
-#: src/lvm_model.py:66
+#: src/lvm_model.py:65
 msgid "Number of Free Extents:   "
 msgstr "Antal lediga områden:  "
 
-#: src/lvm_model.py:67
+#: src/lvm_model.py:66
 msgid "Extent Size:   "
 msgstr "Storlek på område:"
 
-#: src/lvm_model.py:68
+#: src/lvm_model.py:67
 msgid "Maximum Allowed Physical Volumes:   "
 msgstr "Maximalt antal fysiska volymer:     "
 
-#: src/lvm_model.py:69
+#: src/lvm_model.py:68
 msgid "Number of Physical Volumes:   "
 msgstr "Antal fysiska volymer:        "
 
-#: src/lvm_model.py:70
+#: src/lvm_model.py:69
 msgid "Maximum Allowed Logical Volumes:   "
 msgstr "Maximalt antal logiska volymer:    "
 
-#: src/lvm_model.py:71
+#: src/lvm_model.py:70
 msgid "Number of Logical Volumes:   "
 msgstr "Antal logiska volymer:       "
 
-#: src/lvm_model.py:72
+#: src/lvm_model.py:71
 msgid "VG UUID:   "
 msgstr "VG-UUID:   "
 
-#: src/lvm_model.py:74
+#: src/lvm_model.py:73
 msgid "Logical Volume Name:   "
 msgstr "Namn på logisk volym:  "
 
-#: src/lvm_model.py:75
+#: src/lvm_model.py:74
 msgid "Logical Volume Size:   "
 msgstr "Storlek på logisk volym:"
 
-#: src/lvm_model.py:76
+#: src/lvm_model.py:75
 msgid "Number of Segments:   "
 msgstr "Antal segment:        "
 
-#: src/lvm_model.py:77
+#: src/lvm_model.py:76
 msgid "Number of Stripes:   "
 msgstr "Antal strimlor:"
 
-#: src/lvm_model.py:78
+#: src/lvm_model.py:77
 msgid "Stripe Size:   "
 msgstr "Storlek på strimla: "
 
-#: src/lvm_model.py:80
+#: src/lvm_model.py:79
 msgid "LV UUID:   "
 msgstr "LV-UUID:   "
 
-#: src/lvm_model.py:82
+#: src/lvm_model.py:81
 msgid "Partition Type:   "
 msgstr "Partitionstyp:    "
 
-#: src/lvm_model.py:83
+#: src/lvm_model.py:82
 msgid "Size:   "
 msgstr "Storlek:"
 
-#: src/lvm_model.py:84
+#: src/lvm_model.py:83
 msgid "Mount Point:   "
 msgstr "Monteringspunkt:"
 
-#: src/lvm_model.py:85
+#: src/lvm_model.py:84
 msgid "Mount Point when Rebooted:   "
 msgstr "Monteringspunkt efter omstart:"
 
-msgid "Mount Point when Rebooted:"
-msgstr "Monteringspunkt efter omstart:"
-
-msgid "Mount Point:"
-msgstr "Monteringspunkt:"
-
-#: src/lvm_model.py:86
+#: src/lvm_model.py:85
 msgid "File System:   "
 msgstr "Filsystem:     "
 
-#: src/lvm_model.py:88
+#: src/lvm_model.py:87
 msgid "Physical Volume Name:   "
 msgstr "Namn på fysisk volym:   "
 
-#: src/lvm_model.py:89
+#: src/lvm_model.py:88
 msgid "Physical Volume Size:   "
 msgstr "Storlek på fysisk volym:"
 
-#: src/lvm_model.py:90
+#: src/lvm_model.py:89
 msgid "Space Used:   "
 msgstr "Använt utrymme:"
 
-#: src/lvm_model.py:91
+#: src/lvm_model.py:90
 msgid "Space Free:   "
 msgstr "Ledigt utrymme:"
 
-#: src/lvm_model.py:92
+#: src/lvm_model.py:91
 msgid "Total Physical Extents:   "
 msgstr "Totalt antal fysiska områden:"
 
-#: src/lvm_model.py:93
+#: src/lvm_model.py:92
 msgid "Allocated Physical Extents:   "
 msgstr "Allokerade fysiska områden:"
 
 # "PV" är nog "Physical Volume", så det blir nog "FV" på svenska
-#: src/lvm_model.py:95
+#: src/lvm_model.py:94
 msgid "PV UUID:   "
 msgstr "FV-UUID:   "
 
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/lvm_model.py:97
-msgid "Not initializable:   "
-msgstr "Inte intieringsbar:  "
-
+#: src/lvm_model.py:96
 msgid "Not initializable:"
 msgstr "Inte intieringsbar:"
 
-#: src/lvm_model.py:98
+#: src/lvm_model.py:97
 msgid "Extended partition"
 msgstr "Utökad partition"
 
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171751
-#
+#. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
-msgid "Swap in use"
-msgstr "Växlingsfil används"
+msgid "Swap partition currently in use"
+msgstr "Växlingspartition som används för tillfället"
 
 #: src/lvm_model.py:100
 msgid "Foreign boot partition"
@@ -1039,107 +870,56 @@ msgstr "Främmande startpartition"
 msgid "Autopartition failure"
 msgstr "Autopartitioneringsfel"
 
-# FIXME: Typo!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171752
-#
-#: src/lvm_model.py:128
-msgid "Quering Volume Groups"
-msgstr "Undersöker volymgrupper"
-
-msgid "Querying Volume Groups"
-msgstr "Undersöker volymgrupper"
-
-# FIXME: Typo!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171752
-#
-#: src/lvm_model.py:129
-msgid "Quering Logical Volumes"
-msgstr "Undersöker logiska volymer:"
-
-msgid "Querying Logical Volumes"
-msgstr "Undersöker logiska volymer:"
-
-# FIXME: Typo!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171752
-#
-#: src/lvm_model.py:130
-msgid "Quering Physical Volumes"
-msgstr "Antal fysiska volymer:"
-
-msgid "Querying Physical Volumes"
-msgstr "Antal fysiska volymer:"
-
-#: src/lvm_model.py:268
+#: src/lvm_model.py:251
 msgid "Partition manually"
 msgstr "Partitionera manuellt"
 
-#: src/lvm_model.py:304
+#: src/lvm_model.py:287
 msgid "Multipath device"
 msgstr "Multisökvägsenhet"
 
-# FIXME: Borde buggrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/lvm_model.py:307
-msgid "Note:   "
-msgstr "Anteckning:   "
-
+#: src/lvm_model.py:290
 msgid "Note:"
 msgstr "Anteckning:"
 
-#: src/lvm_model.py:307
+#: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "Initiera manuellt"
 
-# FIXME: Borde buggrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/lvm_model.py:810
-msgid "Number of mirror images:  "
-msgstr "Antal spegelavbilder:  "
+#: src/lvm_model.py:733
+msgid "Clustered:   "
+msgstr ""
 
+#: src/lvm_model.py:735
+msgid "True"
+msgstr ""
+
+#: src/lvm_model.py:737
+msgid "False"
+msgstr ""
+
+#: src/lvm_model.py:795
 msgid "Number of mirror images:"
 msgstr "Antal spegelavbilder:"
 
-# FIXME: Borde buggrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/lvm_model.py:813
-msgid "Snapshots:  "
-msgstr "Ögonblicksbilder:  "
-
+#: src/lvm_model.py:798
 msgid "Snapshots:"
 msgstr "Ögonblicksbilder:"
 
-# FIXME: Borde buggrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/lvm_model.py:819
-msgid "Snapshot origin:  "
-msgstr "Ursprung för ögonblicksbild:  "
-
+#: src/lvm_model.py:804
 msgid "Snapshot origin:"
 msgstr "Ursprung för ögonblicksbild:"
 
-# FIXME: Borde buggrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/lvm_model.py:826
-msgid "Snapshot usage:  "
-msgstr "Användning av ögonblicksbild:  "
-
+#: src/lvm_model.py:811
 msgid "Snapshot usage:"
 msgstr "Användning av ögonblicksbild:"
 
-#: src/lvm_model.py:849 src/lvm_model.py:855 src/lvm_model.py:899
-#: src/lvm_model.py:915
+#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
+#: src/lvm_model.py:899
 msgid "/   Root Filesystem"
 msgstr "/   Rotfilsystem"
 
-msgid "Root Filesystem"
-msgstr "Rotfilsystem"
-
-#: src/lvm_model.py:918 src/Filesystem.py:120
+#: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
 msgstr "Ingen"
 
@@ -1211,85 +991,80 @@ msgstr "Spegellogg"
 msgid "Unable to process request"
 msgstr "Kan inte behandla begäran"
 
-#: src/lvmui_constants.py:82
+#: src/lvmui_constants.py:65
+#, python-format
+msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr ""
+"%s-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+"Systemfelmeddelande: %s"
+
+#: src/lvmui_constants.py:84
 msgid "Free"
 msgstr "Ledigt"
 
-#: src/lvmui_constants.py:83
+#: src/lvmui_constants.py:85
 msgid "Free space"
 msgstr "Ledigt utrymme"
 
-#: src/lvmui_constants.py:85
+#: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
 msgstr "Opartitionerat utrymme"
 
-#: src/lvmui_constants.py:86
+#: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
 msgstr "Opartitionerat utrymme på %s"
 
-# FIXME: Some translator comments would not hurt...
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171753
-#
-#: src/lvmui_constants.py:88
-msgid "G"
-msgstr "G"
-
-#: src/lvmui_constants.py:89
-msgid "M"
-msgstr "M"
-
 #: src/lvmui_constants.py:90
-msgid "K"
-msgstr "k"
+msgid "GB"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-msgid "B"
-msgstr "B"
+msgid "MB"
+msgstr "MB"
+
+#: src/lvmui_constants.py:92
+msgid "KB"
+msgstr "kB"
+
+#: src/lvmui_constants.py:93
+msgid "Bytes"
+msgstr "byte"
 
 #. File System Types
-#: src/lvmui_constants.py:95
+#: src/lvmui_constants.py:97
 msgid "No Filesystem"
 msgstr "Inget filsystem"
 
-#: src/lvmui_constants.py:96
+#: src/lvmui_constants.py:98
 msgid "Ext2"
 msgstr "Ext2"
 
-msgid "ext2"
-msgstr "ext2"
-
-#: src/lvmui_constants.py:97
+#: src/lvmui_constants.py:99
 msgid "Ext3"
 msgstr "Ext3"
 
-msgid "ext3"
-msgstr "ext3"
-
-#: src/lvmui_constants.py:98
+#: src/lvmui_constants.py:100
 msgid "JFS"
 msgstr "JFS"
 
-#: src/lvmui_constants.py:99
+#: src/lvmui_constants.py:101
 msgid "MSDOS"
 msgstr "MSDOS"
 
-#: src/lvmui_constants.py:100
+#: src/lvmui_constants.py:102
 msgid "Reiserfs"
 msgstr "Reiserfs"
 
-msgid "Reiser"
-msgstr "Reiser"
-
-#: src/lvmui_constants.py:101
+#: src/lvmui_constants.py:103
 msgid "VFAT"
 msgstr "VFAT"
 
-#: src/lvmui_constants.py:102
+#: src/lvmui_constants.py:104
 msgid "XFS"
 msgstr "XFS"
 
-#: src/lvmui_constants.py:103
+#: src/lvmui_constants.py:105
 msgid "Cramfs"
 msgstr "Cramfs"
 
@@ -1328,11 +1103,11 @@ msgstr "Ingen volym vald"
 msgid "Multiple selection"
 msgstr "Flerval"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:46
+#: src/renderer.py:39 src/Volume_Tab_View.py:49
 msgid "Logical View"
 msgstr "Logisk vy"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:45
+#: src/renderer.py:40 src/Volume_Tab_View.py:48
 msgid "Physical View"
 msgstr "Fysisk vy"
 
@@ -1344,7 +1119,7 @@ msgstr "Oallokerad"
 msgid "Uninitialized"
 msgstr "Oinitierad"
 
-#: src/renderer.py:192
+#: src/renderer.py:195
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
@@ -1355,7 +1130,7 @@ msgstr ""
 "volymen %s. Speglade logiska volymer kan ännu inte migreras, så de områdena "
 "kan inte väljas."
 
-#: src/renderer.py:194
+#: src/renderer.py:197
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to mirror image of "
@@ -1366,7 +1141,7 @@ msgstr ""
 "volymen %s. Speglade logiska volymer kan ännu inte migreras, så de områdena "
 "kan inte väljas."
 
-#: src/renderer.py:196
+#: src/renderer.py:199
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
@@ -1375,7 +1150,7 @@ msgstr ""
 "De områden som du försöker välja tillhör %s, en ögonblicksbild av %s. "
 "Ögonblicksbilder kan ännu inte migreras, så de områdena kan inte väljas."
 
-#: src/renderer.py:198
+#: src/renderer.py:201
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
@@ -1386,83 +1161,100 @@ msgstr ""
 "ögonblicksbild. Ursprung för logiska volymer kan ännu inte migreras, så de "
 "områdena kan inte väljas."
 
-# FIXME: This should be bug reported!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171754
-#
-#: src/renderer.py:385
-msgid "Snapshot of "
-msgstr "Ögonblicksbild av "
+#: src/renderer.py:388
+#, python-format
+msgid "Snapshot of %s"
+msgstr "Ögonblicksbild av %s"
 
-#: src/renderer.py:487
+#: src/renderer.py:490
 msgid "Origin"
 msgstr "Ursprung"
 
-#: src/renderer.py:493
+#: src/renderer.py:496
 msgid "Snapshot"
 msgstr "Ögonblicksbild"
 
-msgid "Snapshots"
-msgstr "Ögonblicksbilder"
-
-#: src/renderer.py:537
+#: src/renderer.py:540
 msgid "extent view"
 msgstr "områdesvy"
 
-msgid "Extent view"
-msgstr "Områdesvy"
-
-msgid "Extent View"
-msgstr "Områdesvy"
-
-#: src/Volume_Tab_View.py:42
+#: src/Volume_Tab_View.py:45
 msgid "Volume Groups"
 msgstr "Volymgrupper"
 
-#: src/Volume_Tab_View.py:43
+#: src/Volume_Tab_View.py:46
 msgid "Unallocated Volumes"
 msgstr "Oallokerade volymer"
 
-#: src/Volume_Tab_View.py:44
+#: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
 msgstr "Oinitierade entiteter"
 
-# FIXME: Borde felrapporteras.
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/Volume_Tab_View.py:584
-#, python-format
-msgid "%s mirror synchronisation "
-msgstr "Synkronisering av spegeln %s "
+#: src/Volume_Tab_View.py:63
+msgid ""
+"LVM locks are disabled!!! \n"
+"Massive data corruption may occur.\n"
+"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+msgstr ""
 
+#: src/Volume_Tab_View.py:68
+msgid ""
+"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
+"running. Start daemon with command:\n"
+"service clvmd start \n"
+"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:72
+msgid ""
+"LVM is configured to use Cluster Locking mechanism, but cluster is not "
+"quorate.\n"
+"Either wait until cluster is quorate or turn off cluster locking "
+"(locking_type=1 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:75
+#, python-format
+msgid ""
+"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
+"lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:262
+msgid "Clustered VG"
+msgstr ""
+
+#: src/Volume_Tab_View.py:648
+#, python-format
 msgid "%s mirror synchronisation"
 msgstr "Synkronisering av spegeln %s"
 
 #. no existing partitions, write
-#: src/fdisk_wrapper.py:197
+#: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
 msgstr "Vänta medan partitionen skapas"
 
-#: src/Filesystem.py:9
+#: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
 msgstr "Skapar %s-filsystem"
 
-#: src/Filesystem.py:10
+#: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
 msgstr "Ändrar storlek på %s-filsystem"
 
-#: src/Filesystem.py:11
+#: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
 msgstr "Kontrollerar %s-filsystem"
 
-#: src/Filesystem.py:12
+#: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
 msgstr "Uppgraderar %s-filsystem till %s"
 
-#: src/Filesystem.py:13
+#: src/Filesystem.py:24
 #, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
@@ -1471,7 +1263,7 @@ msgstr ""
 "Skapande av filsystem misslyckades. Försökte med kommandot: \"%s\" - "
 "Systemfelmeddelande: %s"
 
-#: src/Filesystem.py:14
+#: src/Filesystem.py:25
 #, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
@@ -1480,7 +1272,7 @@ msgstr ""
 "Storleksändring av filsystem misslyckades. Försökte med kommandot: \"%s\" - "
 "Systemfelmeddelande: %s"
 
-#: src/Filesystem.py:15
+#: src/Filesystem.py:26
 #, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
@@ -1489,7 +1281,7 @@ msgstr ""
 "Kontroll av filsystem misslyckades. Försökte med kommandot: \"%s\" - "
 "Systemfelmeddelande: %s"
 
-#: src/Filesystem.py:16
+#: src/Filesystem.py:27
 #, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
@@ -1498,33 +1290,43 @@ msgstr ""
 "Uppgradering av filsystem misslyckades. Försökte med kommandot: \"%s\" - "
 "Systemfelmeddelande: %s"
 
-#: src/Filesystem.py:125
+#: src/Filesystem.py:143
 msgid "Unknown filesystem"
 msgstr "Okänt filsystem"
 
-#: src/Filesystem.py:352
-msgid "GFS2 (local)"
-msgstr "GFS2 (lokalt)"
-
-#: src/Filesystem.py:399
-msgid "GFS2 (clustered)"
-msgstr "GFS2 (klustrat)"
-
-#: src/Filesystem.py:423
+#: src/Filesystem.py:374
 msgid "GFS (local)"
 msgstr "GFS (lokalt)"
 
-#: src/Filesystem.py:470
+#: src/Filesystem.py:472
 msgid "GFS (clustered)"
 msgstr "GFS (klustrat)"
 
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
-#: src/Segment.py:44
-msgid "Stripe "
-msgstr "Strimla "
+#: src/Filesystem.py:504 src/Filesystem.py:748
+msgid "Cluster name contains illegal character "
+msgstr ""
 
+#: src/Filesystem.py:507 src/Filesystem.py:751
+msgid "GFS name contains illegal character "
+msgstr ""
+
+#: src/Filesystem.py:510 src/Filesystem.py:754
+msgid "Missing Cluster Name"
+msgstr ""
+
+#: src/Filesystem.py:513 src/Filesystem.py:757
+msgid "Missing GFS Name"
+msgstr ""
+
+#: src/Filesystem.py:618
+msgid "GFS2 (local)"
+msgstr "GFS2 (lokalt)"
+
+#: src/Filesystem.py:716
+msgid "GFS2 (clustered)"
+msgstr "GFS2 (klustrat)"
+
+#: src/Segment.py:44
 msgid "Stripe"
 msgstr "Strimla"
 
@@ -1532,53 +1334,14 @@ msgstr "Strimla"
 msgid "Linear Mapping"
 msgstr "Linjär mappning"
 
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
 #: src/Segment.py:109
-msgid "Mirror "
-msgstr "Spegel "
-
 msgid "Mirror"
 msgstr "Spegel"
 
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171746
-#
-#: src/Multipath.py:11
-#, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"dmsetup-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171746
-#
-#: src/Multipath.py:12
-#, python-format
-msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr ""
-"ls-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
-"Systemfelmeddelande: %s"
-
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171755
-#
 #: src/PhysicalVolume.py:142
 #, python-format
-msgid "Partition  %s"
-msgstr "Partition %s"
-
 msgid "Partition %s"
 msgstr "Partition %s"
-
-msgid "Partition"
-msgstr "Partition"
-
-msgid "Partitions"
-msgstr "Partitioner"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1637,6 +1400,11 @@ msgstr ""
 "befintlig volymgrupp"
 
 #: src/lvui.glade.h:15
+#, fuzzy
+msgid "Clustered"
+msgstr "GFS (klustrat)"
+
+#: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
@@ -1644,11 +1412,11 @@ msgstr ""
 "Skapa ny\n"
 "logisk volym"
 
-#: src/lvui.glade.h:17
+#: src/lvui.glade.h:18
 msgid "Create Snapshot"
 msgstr "Skapa ögonblicksbild"
 
-#: src/lvui.glade.h:18
+#: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
@@ -1656,21 +1424,15 @@ msgstr ""
 "Skapa ny\n"
 "volymgrupp"
 
-#: src/lvui.glade.h:20
+#: src/lvui.glade.h:21
 msgid "Edit Properties"
 msgstr "Redigera egenskaper"
 
-msgid "Properties"
-msgstr "Egenskaper"
-
-msgid "_Edit"
-msgstr "_Redigera"
-
-#: src/lvui.glade.h:21
+#: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
 msgstr "Ange sökvägen till blockenheten som ska initieras"
 
-#: src/lvui.glade.h:22
+#: src/lvui.glade.h:23
 msgid ""
 "Extend\n"
 "Volume Group"
@@ -1678,55 +1440,62 @@ msgstr ""
 "Utöka\n"
 "volymgrupp"
 
-#: src/lvui.glade.h:24
+#: src/lvui.glade.h:25
 msgid "Extend Volume Group"
 msgstr "Utöka volymgrupp"
 
-#: src/lvui.glade.h:25
+#: src/lvui.glade.h:26
 msgid "Format"
 msgstr "Formatera"
 
-#: src/lvui.glade.h:26
+#: src/lvui.glade.h:27
 msgid "Initialize"
 msgstr "Initiera"
 
-#: src/lvui.glade.h:27
+#: src/lvui.glade.h:28
 msgid "Initialize Block Device"
 msgstr "Initiera blockenhet"
 
-#: src/lvui.glade.h:28
+#: src/lvui.glade.h:29
 msgid "Initialize Entity"
 msgstr "Initiera entitet"
 
-#: src/lvui.glade.h:29
+#: src/lvui.glade.h:30
 msgid "Initialize _Block Device"
 msgstr "Initiera _blockenhet"
 
-#: src/lvui.glade.h:30
+#: src/lvui.glade.h:31
 msgid "Kilo"
 msgstr "kB"
 
-#: src/lvui.glade.h:31
+#: src/lvui.glade.h:32
 msgid "Logical Volume Management"
 msgstr "Hantering av logiska volymer"
 
-#: src/lvui.glade.h:32
+#: src/lvui.glade.h:33
 msgid "Manage Volumes"
 msgstr "Hantera volymer"
 
-#: src/lvui.glade.h:33
-msgid "Maximum Logical Volumes: "
-msgstr "Maximalt antal logiska volymer:"
-
 #: src/lvui.glade.h:34
-msgid "Maximum Physical Volumes: "
-msgstr "Maximalt antal fysiska volymer:"
+#, fuzzy
+msgid "Mark Volume Group as 'clustered'"
+msgstr "Namn på volymgrupp:"
 
 #: src/lvui.glade.h:35
+#, fuzzy
+msgid "Maximum Logical Volumes"
+msgstr "Maximalt antal logiska volymer:"
+
+#: src/lvui.glade.h:36
+#, fuzzy
+msgid "Maximum Physical Volumes"
+msgstr "Maximalt antal fysiska volymer:"
+
+#: src/lvui.glade.h:37
 msgid "Meg"
 msgstr "MB"
 
-#: src/lvui.glade.h:36
+#: src/lvui.glade.h:38
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
@@ -1734,20 +1503,13 @@ msgstr ""
 "Migrera valda\n"
 "områden från volym"
 
-#: src/lvui.glade.h:38
-msgid "Name for Volume Group: "
-msgstr "Namn på volymgrupp: "
-
-#: src/lvui.glade.h:39
+#: src/lvui.glade.h:40
 msgid "New Volume Group"
 msgstr "Ny volymgrupp"
 
-#: src/lvui.glade.h:40
-msgid "New Volume Group Form"
-msgstr "Formulär för ny volymgrupp"
-
 #: src/lvui.glade.h:41
-msgid "Physical Extent Size: "
+#, fuzzy
+msgid "Physical Extent Size"
 msgstr "Storlek på fysiskt område:"
 
 #: src/lvui.glade.h:42
@@ -1794,28 +1556,27 @@ msgstr ""
 msgid "Select a Volume Group to add this PV to:"
 msgstr "Välj en volymgrupp att lägga till denna FV i:"
 
-msgid "Select a Volume Group to add this Physical Volume to:"
-msgstr "Välj en volymgrupp att lägga till denna fysiska volym i:"
-
 #: src/lvui.glade.h:53
 msgid "Some text"
 msgstr "En del text"
 
 #: src/lvui.glade.h:54
+#, fuzzy
+msgid "Volume Group Name"
+msgstr "Namn på volymgrupp:"
+
+#: src/lvui.glade.h:55
 msgid "_Reload"
 msgstr "_Läs om"
 
-#: src/lvui.glade.h:55
+#: src/lvui.glade.h:56
 msgid "_Tools"
 msgstr "_Verktyg"
-
-msgid "Tools"
-msgstr "Verktyg"
 
 # FIXME: Borde buggrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
-#: src/lvui.glade.h:56
+#: src/lvui.glade.h:57
 msgid "extend vg message:"
 msgstr "utöka vg-meddelande:"
 
@@ -1843,24 +1604,12 @@ msgstr ""
 msgid "<b>Filesystem</b>"
 msgstr "<b>Filsystem</b>"
 
-msgid "Filesystem"
-msgstr "Filsystem"
-
 # FIXME: Borde buggrapporteras!
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
 #: src/lv_edit_props.glade.h:11
 msgid "<b>LV Properties</b>"
 msgstr "<b>LV-egenskaper</b>"
-
-msgid "LV Properties"
-msgstr "LV-egenskaper"
-
-msgid "<b>Logical Volume Properties</b>"
-msgstr "<b>Egenskaper för logisk volym</b>"
-
-msgid "Logical Volume Properties"
-msgstr "Egenskaper för logisk volym"
 
 #: src/lv_edit_props.glade.h:12
 msgid "<b>Size</b>"
@@ -1869,6 +1618,10 @@ msgstr "<b>Storlek</b>"
 #: src/lv_edit_props.glade.h:13
 msgid "Add entry to /etc/fstab"
 msgstr "Lägg till post i /etc/fstab"
+
+#: src/lv_edit_props.glade.h:14
+msgid "Create New Logical Volume (LV)"
+msgstr "Skapa ny logisk volym (LV)"
 
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
@@ -1886,21 +1639,9 @@ msgstr "Etikett för ledigt återstående utrymme"
 msgid "Kilobytes granularity"
 msgstr "Kilobytegranularitet"
 
-# FIXME: Borde felrapporteras.
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
-#
 #: src/lv_edit_props.glade.h:19
-msgid "LV name: "
-msgstr "LV-namn: "
-
-msgid "Logical Volume name: "
-msgstr "Namn på logisk volym: "
-
 msgid "LV name:"
 msgstr "LV-namn:"
-
-msgid "Logical Volume name:"
-msgstr "Namn på logisk volym:"
 
 # FIXME: Borde felrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
@@ -1909,18 +1650,12 @@ msgstr "Namn på logisk volym:"
 msgid "LV size"
 msgstr "LV-storlek"
 
-msgid "Logical Volume size"
-msgstr "Storlek på logisk volym"
-
 # FIXME: Borde felrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
 #: src/lv_edit_props.glade.h:21
 msgid "LVs under snapshots are not resizable"
 msgstr "Storleken på LV:ar under ögonblicksbilder kan inte ändras"
-
-msgid "Logical Volumes under snapshots are not resizable"
-msgstr "Storleken på logiska volymer under ögonblicksbilder kan inte ändras"
 
 #: src/lv_edit_props.glade.h:22
 msgid "Linear"
@@ -1937,20 +1672,11 @@ msgstr "Speglad"
 msgid "Mirrored LVs are not resizable"
 msgstr "Storleken på speglade LV:ar kan inte ändras"
 
-msgid "Mirrored Logical Volumes are not resizable"
-msgstr "Storleken på speglade logiska volymer kan inte ändras"
-
 #: src/lv_edit_props.glade.h:25
 msgid "Mount"
 msgstr "Montera"
 
-# FIXME: Borde buggrapporteras.
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
-#
 #: src/lv_edit_props.glade.h:26
-msgid "Mount point: "
-msgstr "Monteringspunkt: "
-
 msgid "Mount point:"
 msgstr "Monteringspunkt:"
 
@@ -1974,29 +1700,17 @@ msgstr "Strimlad"
 msgid "Use remaining"
 msgstr "Använd återstående"
 
-msgid "Use remaining space"
-msgstr "Använd återstående utrymme"
-
-# FIXME: Borde felrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171754
-#
 #: src/lv_edit_props.glade.h:32
-msgid "stripes of"
-msgstr "strimlor av"
+msgid "stripes"
+msgstr "strimlor"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
 msgstr "<b>Mål</b>"
 
-msgid "Destination"
-msgstr "Mål"
-
 #: src/migrate_extents.glade.h:2
 msgid "<b>Migration Policy</b>"
 msgstr "<b>Migreringspolicy</b>"
-
-msgid "Migration Policy"
-msgstr "Migreringspolicy"
 
 #: src/migrate_extents.glade.h:3
 msgid "Anywhere - not implemented"
@@ -2009,17 +1723,18 @@ msgstr "Vartsomhelst - inte implementerat"
 msgid "Automatically choose PVs to migrate to"
 msgstr "Välj automatiskt FV:ar att migrera till"
 
-msgid "Automatically choose Physical Volumes to migrate to"
-msgstr "Välj automatiskt fysiska volymer att migrera till"
-
 #: src/migrate_extents.glade.h:5
 msgid "Contiguous"
 msgstr "Sammanhängande"
 
+#: src/migrate_extents.glade.h:6
+msgid "Destination:"
+msgstr "Mål:"
+
 # FIXME: Borde felrapporteras.
 # https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
 #
-#: src/migrate_extents.glade.h:6
+#: src/migrate_extents.glade.h:7
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
@@ -2027,44 +1742,21 @@ msgstr ""
 "För att kunna flytta FV måste områden som används migreras.\n"
 "Välj områdenas mål och migreringspolicy."
 
-msgid ""
-"In order to remove a Physical Volume, extents in use have to be migrated.\n"
-"Select extents' destination and migration policy."
-msgstr ""
-"För att kunna flytta en fysisk volym måste områden som används migreras.\n"
-"Välj områdenas mål och migreringspolicy."
-
-#: src/migrate_extents.glade.h:8
+#: src/migrate_extents.glade.h:9
 msgid "Inherit"
 msgstr "Ärv"
 
-#: src/migrate_extents.glade.h:9
+#: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
 msgstr "Ärv policy från volymgrupp"
 
-#: src/migrate_extents.glade.h:10
+#: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
 msgstr "Migrera områden"
 
-# FIXME: Typo!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171758
-#
-#: src/migrate_extents.glade.h:11
-msgid "Migrate anywhere even if that reduces performace"
-msgstr "Migrera vartsomhelst även om det minskar prestanda"
-
+#: src/migrate_extents.glade.h:12
 msgid "Migrate anywhere even if that reduces performance"
 msgstr "Migrera vartsomhelst även om det minskar prestanda"
-
-# FIXME: Borde buggrapporteras!
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171754
-#
-#: src/migrate_extents.glade.h:12
-msgid "Migrate extents to "
-msgstr "Migrera områden till "
-
-msgid "Migrate extents to"
-msgstr "Migrera områden till"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -2074,22 +1766,475 @@ msgstr "Nya områden placeras bredvid befintliga"
 msgid "Normal"
 msgstr "Normal"
 
-# FIXME: Borde felrapporteras.
-# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
-#
 #: src/migrate_extents.glade.h:15
-msgid "Only migrate extents belonging to LV "
-msgstr "Migrera endast områden som tillhör LV "
-
 msgid "Only migrate extents belonging to LV"
 msgstr "Migrera endast områden som tillhör LV"
-
-msgid "Only migrate extents belonging to Logical Volume"
-msgstr "Migrera endast områden som tillhör logisk volym"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "Använd sunt förnuft"
+
+#~ msgid "Maximum Logical Volumes: "
+#~ msgstr "Maximalt antal logiska volymer:"
+
+#~ msgid "Maximum Physical Volumes: "
+#~ msgstr "Maximalt antal fysiska volymer:"
+
+#~ msgid "Name for Volume Group: "
+#~ msgstr "Namn på volymgrupp: "
+
+#~ msgid "New Volume Group Form"
+#~ msgstr "Formulär för ny volymgrupp"
+
+#~ msgid "Swap partition"
+#~ msgstr "Växlingspartition"
+
+#~ msgid "kB"
+#~ msgstr "kB"
+
+#~ msgid "B"
+#~ msgstr "B"
+
+#~ msgid "bytes"
+#~ msgstr "byte"
+
+#~ msgid ""
+#~ "* In this release, mirroring support is \n"
+#~ "available as a Technology Preview"
+#~ msgstr ""
+#~ "* I denna utgåva är stöd för spegling\n"
+#~ "tillgängligt som en teknikförhandsvisning"
+
+#~ msgid ""
+#~ "* In this release, mirroring support is available as a Technology Preview"
+#~ msgstr ""
+#~ "* I denna utgåva är stöd för spegling tillgängligt som en "
+#~ "teknikförhandsvisning"
+
+#~ msgid ""
+#~ "In this release, mirroring support is \n"
+#~ "available as a Technology Preview"
+#~ msgstr ""
+#~ "I denna utgåva är stöd för spegling\n"
+#~ "tillgängligt som en teknikförhandsvisning"
+
+#~ msgid ""
+#~ "In this release, mirroring support is available as a Technology Preview"
+#~ msgstr ""
+#~ "I denna utgåva är stöd för spegling tillgängligt som en "
+#~ "teknikförhandsvisning"
+
+#~ msgid "* Mirrored"
+#~ msgstr "* Speglad"
+
+#~ msgid "stripes of"
+#~ msgstr "strimlor av"
+
+#~ msgid "Destination"
+#~ msgstr "Mål"
+
+#~ msgid "Remaining free space in Volume Group:"
+#~ msgstr "Återstående ledigt utrymme i volymgruppen:"
+
+#~ msgid "Remaining space for this Volume:"
+#~ msgstr "Återstående utrymme för denna volym:"
+
+#~ msgid ""
+#~ "\"%s\", the origin of snapshot \"%s\", has been deleted from removal list."
+#~ msgstr ""
+#~ "\"%s\", ursprunget för ögonblicksbilden \"%s\", har tagits bort från "
+#~ "borttagningslistan."
+
+#~ msgid "Edit %s, a snapshot of %s"
+#~ msgstr "Redigera %s, en ögonblicksbild av %s"
+
+#~ msgid "Edit %s"
+#~ msgstr "Redigera %s"
+
+#~ msgid "Edit"
+#~ msgstr "Redigera"
+
+# FIXME: Typo!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171744
+#
+#~ msgid ""
+#~ "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
+#~ msgstr ""
+#~ "Namn som börjar med \"snapshot\" eller \"pvmove\" är reserverade "
+#~ "nyckelord."
+
+# FIXME: Typo!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171744
+#
+#~ msgid "Names begining with a \"-\" are invalid"
+#~ msgstr "Namn som börjar med ett \"-\" är ogiltiga"
+
+# FIXME: There is no need to duplicate this! Should be bug reported.
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171746
+#
+#~ msgid ""
+#~ "vgextend command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgextend-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "pvcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "pvcreate-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "lvcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvcreate-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "pvremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "pvremove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "lvremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvremove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "vgremove command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgremove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "vgcreate command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgcreate-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "vgchange command failed. Command attempted: \"%s\" - System Error Message "
+#~ "%s"
+#~ msgstr ""
+#~ "vgchange-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "vgreduce command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "vgreduce-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "pvmove command failed. Command attempted: \"%s\" - System Error Message: %"
+#~ "s"
+#~ msgstr ""
+#~ "pvmove-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "umount command failed. Command attempted: \"%s\" - System Error Message: %"
+#~ "s"
+#~ msgstr ""
+#~ "umount-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "mount command failed. Command Attempted: %s  - System Error Message: \"%s"
+#~ "\""
+#~ msgstr ""
+#~ "mount-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "lvresize command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvresize-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "lvrename command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvrename-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "lvchange command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvchange-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid ""
+#~ "lvconvert command failed. Command attempted: \"%s\" - System Error "
+#~ "Message: %s"
+#~ msgstr ""
+#~ "lvconvert-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+#~ msgid "%s command failed. Command attempted: \"%s\""
+#~ msgstr "%s-kommandot misslyckades. Försökte med kommandot: \"%s\""
+
+#~ msgid "Mount Point when Rebooted:"
+#~ msgstr "Monteringspunkt efter omstart:"
+
+#~ msgid "Mount Point:"
+#~ msgstr "Monteringspunkt:"
+
+# FIXME: Borde felrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Not initializable:   "
+#~ msgstr "Inte intieringsbar:  "
+
+# FIXME: Borde felrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171751
+#
+#~ msgid "Swap in use"
+#~ msgstr "Växlingsfil används"
+
+# FIXME: Typo!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171752
+#
+#~ msgid "Quering Volume Groups"
+#~ msgstr "Undersöker volymgrupper"
+
+#~ msgid "Querying Volume Groups"
+#~ msgstr "Undersöker volymgrupper"
+
+# FIXME: Typo!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171752
+#
+#~ msgid "Quering Logical Volumes"
+#~ msgstr "Undersöker logiska volymer:"
+
+#~ msgid "Querying Logical Volumes"
+#~ msgstr "Undersöker logiska volymer:"
+
+# FIXME: Typo!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171752
+#
+#~ msgid "Quering Physical Volumes"
+#~ msgstr "Antal fysiska volymer:"
+
+#~ msgid "Querying Physical Volumes"
+#~ msgstr "Antal fysiska volymer:"
+
+# FIXME: Borde buggrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Note:   "
+#~ msgstr "Anteckning:   "
+
+# FIXME: Borde buggrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Number of mirror images:  "
+#~ msgstr "Antal spegelavbilder:  "
+
+# FIXME: Borde buggrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Snapshots:  "
+#~ msgstr "Ögonblicksbilder:  "
+
+# FIXME: Borde buggrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Snapshot origin:  "
+#~ msgstr "Ursprung för ögonblicksbild:  "
+
+# FIXME: Borde buggrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Snapshot usage:  "
+#~ msgstr "Användning av ögonblicksbild:  "
+
+#~ msgid "Root Filesystem"
+#~ msgstr "Rotfilsystem"
+
+# FIXME: Some translator comments would not hurt...
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171753
+#
+#~ msgid "G"
+#~ msgstr "G"
+
+#~ msgid "M"
+#~ msgstr "M"
+
+#~ msgid "K"
+#~ msgstr "k"
+
+#~ msgid "ext2"
+#~ msgstr "ext2"
+
+#~ msgid "ext3"
+#~ msgstr "ext3"
+
+#~ msgid "Reiser"
+#~ msgstr "Reiser"
+
+#~ msgid "Snapshots"
+#~ msgstr "Ögonblicksbilder"
+
+#~ msgid "Extent view"
+#~ msgstr "Områdesvy"
+
+#~ msgid "Extent View"
+#~ msgstr "Områdesvy"
+
+# FIXME: Borde felrapporteras.
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "%s mirror synchronisation "
+#~ msgstr "Synkronisering av spegeln %s "
+
+# FIXME: Borde felrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Stripe "
+#~ msgstr "Strimla "
+
+# FIXME: Borde felrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Mirror "
+#~ msgstr "Spegel "
+
+# FIXME: Borde felrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171746
+#
+#~ msgid ""
+#~ "dmsetup command failed. Command attempted: \"%s\" - System Error Message: "
+#~ "%s"
+#~ msgstr ""
+#~ "dmsetup-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+# FIXME: Borde felrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171746
+#
+#~ msgid ""
+#~ "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
+#~ msgstr ""
+#~ "ls-kommandot misslyckades. Försökte med kommandot: \"%s\" - "
+#~ "Systemfelmeddelande: %s"
+
+# FIXME: Borde felrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171755
+#
+#~ msgid "Partition  %s"
+#~ msgstr "Partition %s"
+
+#~ msgid "Partition"
+#~ msgstr "Partition"
+
+#~ msgid "Partitions"
+#~ msgstr "Partitioner"
+
+#~ msgid "Properties"
+#~ msgstr "Egenskaper"
+
+#~ msgid "_Edit"
+#~ msgstr "_Redigera"
+
+#~ msgid "Select a Volume Group to add this Physical Volume to:"
+#~ msgstr "Välj en volymgrupp att lägga till denna fysiska volym i:"
+
+#~ msgid "Tools"
+#~ msgstr "Verktyg"
+
+#~ msgid "Filesystem"
+#~ msgstr "Filsystem"
+
+#~ msgid "LV Properties"
+#~ msgstr "LV-egenskaper"
+
+#~ msgid "<b>Logical Volume Properties</b>"
+#~ msgstr "<b>Egenskaper för logisk volym</b>"
+
+#~ msgid "Logical Volume Properties"
+#~ msgstr "Egenskaper för logisk volym"
+
+# FIXME: Borde felrapporteras.
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
+#
+#~ msgid "LV name: "
+#~ msgstr "LV-namn: "
+
+#~ msgid "Logical Volume name: "
+#~ msgstr "Namn på logisk volym: "
+
+#~ msgid "Logical Volume name:"
+#~ msgstr "Namn på logisk volym:"
+
+#~ msgid "Logical Volume size"
+#~ msgstr "Storlek på logisk volym"
+
+#~ msgid "Logical Volumes under snapshots are not resizable"
+#~ msgstr "Storleken på logiska volymer under ögonblicksbilder kan inte ändras"
+
+#~ msgid "Mirrored Logical Volumes are not resizable"
+#~ msgstr "Storleken på speglade logiska volymer kan inte ändras"
+
+# FIXME: Borde buggrapporteras.
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171747
+#
+#~ msgid "Mount point: "
+#~ msgstr "Monteringspunkt: "
+
+#~ msgid "Use remaining space"
+#~ msgstr "Använd återstående utrymme"
+
+#~ msgid "Migration Policy"
+#~ msgstr "Migreringspolicy"
+
+#~ msgid "Automatically choose Physical Volumes to migrate to"
+#~ msgstr "Välj automatiskt fysiska volymer att migrera till"
+
+#~ msgid ""
+#~ "In order to remove a Physical Volume, extents in use have to be "
+#~ "migrated.\n"
+#~ "Select extents' destination and migration policy."
+#~ msgstr ""
+#~ "För att kunna flytta en fysisk volym måste områden som används migreras.\n"
+#~ "Välj områdenas mål och migreringspolicy."
+
+# FIXME: Typo!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171758
+#
+#~ msgid "Migrate anywhere even if that reduces performace"
+#~ msgstr "Migrera vartsomhelst även om det minskar prestanda"
+
+# FIXME: Borde buggrapporteras!
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171754
+#
+#~ msgid "Migrate extents to "
+#~ msgstr "Migrera områden till "
+
+#~ msgid "Migrate extents to"
+#~ msgstr "Migrera områden till"
+
+# FIXME: Borde felrapporteras.
+# https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=171757
+#
+#~ msgid "Only migrate extents belonging to LV "
+#~ msgstr "Migrera endast områden som tillhör LV "
+
+#~ msgid "Only migrate extents belonging to Logical Volume"
+#~ msgstr "Migrera endast områden som tillhör logisk volym"
 
 #~ msgid ""
 #~ "\n"
@@ -2183,12 +2328,6 @@ msgstr "Använd sunt förnuft"
 #~ msgid "Filesystem:"
 #~ msgstr "Filsystem:"
 
-#~ msgid "Maximum Logical Volumes:"
-#~ msgstr "Maximalt antal logiska volymer:"
-
-#~ msgid "Maximum Physical Volumes:"
-#~ msgstr "Maximalt antal fysiska volymer:"
-
 #~ msgid "Mount point (If blank, LV will not be mounted):"
 #~ msgstr ""
 #~ "Monteringspunkt (om detta är tomt kommer inte den logiska volymen att "
@@ -2238,9 +2377,6 @@ msgstr "Använd sunt förnuft"
 
 #~ msgid "No File System"
 #~ msgstr "Inget filsystem"
-
-#~ msgid "Volume Group Name:"
-#~ msgstr "Namn på volymgrupp:"
 
 #~ msgid "System ID:"
 #~ msgstr "System-id:"

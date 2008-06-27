@@ -176,28 +176,35 @@ class BlockDevice:
         # autodetermine partition number
         if num == None:
             avail_nums = list()
-            if intoExtended:
-                avail_nums = range(5, 100)
-                for i in self.getPartNums():
-                    if i > 4:
-                        avail_nums.remove(i)
+            if not self.useParted:
+                if intoExtended:
+                    avail_nums = range(5, 100)
+                    for i in self.getPartNums():
+                        if i > 4:
+                            avail_nums.remove(i)
+                else:
+                    avail_nums = range(1,5)
+                    for i in self.getPartNums():
+                        if i < 5:
+                            avail_nums.remove(i)
             else:
-                avail_nums = range(1,5)
+                avail_nums = range(1,100)
                 for i in self.getPartNums():
-                    if i < 5:
-                        avail_nums.remove(i)
+                    avail_nums.remove(i)
+            
             if len(avail_nums) == 0:
                 raise BlockDeviceErr_num()
             num = avail_nums[0]
         
         if num in self.getPartNums():
             raise BlockDeviceErr_num()
-        if (id in ID_EXTENDS) and (num > 4):
-            raise BlockDeviceErr_extended()
-        if intoExtended and num < 5:
-            raise BlockDeviceErr_extended()
-        if (not intoExtended) and (num > 4):
-            raise BlockDeviceErr_extended()
+        if not self.useParted:
+            if (id in ID_EXTENDS) and (num > 4):
+                raise BlockDeviceErr_extended()
+            if intoExtended and num < 5:
+                raise BlockDeviceErr_extended()
+            if (not intoExtended) and (num > 4):
+                raise BlockDeviceErr_extended()
         
         part = Partition(beg, end, id, num, bootable, self.sectorSize)
         if part.id in ID_EXTENDS:

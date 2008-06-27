@@ -26,6 +26,7 @@ ExtentBlock.py	\
 WaitMsg.py	\
 Multipath.py	\
 utilities.py	\
+Cluster.py      \
 pixmaps/UV.xpm	\
 pixmaps/VG.xpm	\
 pixmaps/LV.xpm	\
@@ -34,7 +35,7 @@ pixmaps/grad3.xpm	\
 pixmaps/lv_icon.png	\
 system-config-lvm.py
 
-GLADE_FILES = lvui.glade migrate_extents.glade lv_edit_props.glade
+GLADE_FILES = lvui.glade migrate_extents.glade lv_edit_props.glade Filesystem.glade
 
 EXTRA_DIST = $(PYTHON_FILES) $(GLADE_FILES)
 
@@ -69,6 +70,7 @@ install-exec-local:
 	install -m 0640 $(srcdir)/execute.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/migrate_extents.glade  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/lv_edit_props.glade  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/Filesystem.glade  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/cylinder_items.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/PhysicalVolume.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/LogicalVolume.py  $(DESTDIR)$(pkgdatadir)/
@@ -79,6 +81,7 @@ install-exec-local:
 	install -m 0640 $(srcdir)/WaitMsg.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/Multipath.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/utilities.py  $(DESTDIR)$(pkgdatadir)/
+	install -m 0640 $(srcdir)/Cluster.py  $(DESTDIR)$(pkgdatadir)/
 	install -m 0640 $(srcdir)/pixmaps/PV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/LV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/
 	install -m 0640 $(srcdir)/pixmaps/UV.xpm  $(DESTDIR)$(pkgdatadir)/pixmaps/

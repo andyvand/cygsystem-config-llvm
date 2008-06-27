@@ -1,27 +1,26 @@
-# translation of zh_TW.po to
-# translation of zh_TW.po to
-# translation of zh_TW.po to
-# translation of zh_TW.po to Chinese Traditional
+# translation of zh_TW.po to Chinese, Traditional
+# translation of system-config-lvm to Chinese Traditional
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
-# Chester Cheng <ccheng@redhat.com>, 2004, 2005.
+# Chester Cheng <ccheng@redhat.com>, 2004, 2005, 2006.
 # Waika Liu <wliu@redhat.com>, 2005.
+# Walter Cheuk <wwycheuk@netvigator.com>, 2006.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: zh_TW\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2005-09-13 10:37-0400\n"
-"PO-Revision-Date: 2005-11-04 10:44+1000\n"
+"POT-Creation-Date: 2006-07-10 13:46-0400\n"
+"PO-Revision-Date: 2006-02-21 15:50+1000\n"
 "Last-Translator: Chester Cheng <ccheng@redhat.com>\n"
-"Language-Team: Chinese Traditional <zh_TW@li.org>\n"
+"Language-Team: Chinese, Traditional <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.9.1\n"
 
 #: src/InputController.py:36 src/Properties_Renderer.py:24
-#: src/Volume_Tab_View.py:30
+#: src/Volume_Tab_View.py:33
 #, python-format
 msgid ""
 "\n"
@@ -157,26 +156,31 @@ msgstr ""
 msgid "A snapshot of a snapshot is not supported."
 msgstr "不支援為快照製作另一份快照。"
 
-#: src/InputController.py:118
+#: src/InputController.py:117
+#, fuzzy
+msgid "A snapshot of a mirrored Logical Volume is not supported."
+msgstr "不支援為快照製作另一份快照。"
+
+#: src/InputController.py:119
 #, python-format
 msgid ""
 "Logical volume %s has snapshot %s currently associated with it. Please "
 "remove the snapshot first."
 msgstr "現有快照 %s 在邏輯 Volume %s 中。請先移除快照。"
 
-#: src/InputController.py:119
+#: src/InputController.py:120
 #, python-format
 msgid ""
 "Logical volume %s has snapshots: %s currently associated with it. Please "
 "remove snapshots first."
 msgstr "現有快照: %s 在邏輯 Volume %s 中。請先移除快照。"
 
-#: src/InputController.py:121
+#: src/InputController.py:122
 msgid ""
 "Undefined type conversion error in model factory. Unable to complete task."
 msgstr "未定義的類型轉換錯誤。無法完成該項任務。"
 
-#: src/InputController.py:123
+#: src/InputController.py:124
 #, python-format
 msgid ""
 "BIG WARNING: Logical Volume %s has an %s file system on it and is currently "
@@ -186,7 +190,7 @@ msgstr ""
 "重要警告：邏輯 Volume %s 上面已經有了 %s 檔案系統，目前掛載於 %s 上。您是否百"
 "分之百確定要移除這個已掛載檔案系統上的所有檔案？"
 
-#: src/InputController.py:125
+#: src/InputController.py:126
 #, python-format
 msgid ""
 "Logical Volume %s is currently mounted on %s. In order to complete request, "
@@ -196,80 +200,80 @@ msgstr ""
 
 #. ##TRANSLATOR: An extent below is an abstract unit of storage. The size
 #. ##of an extent is user-definable.
-#: src/InputController.py:131
+#: src/InputController.py:132
 #, python-format
 msgid "Unused space on %s"
 msgstr "%s 上的未使用空間"
 
-#: src/InputController.py:132
+#: src/InputController.py:133
 #, python-format
 msgid "%s megabytes"
 msgstr "%s MB"
 
-#: src/InputController.py:133
+#: src/InputController.py:134
 #, python-format
 msgid "%s kilobytes"
 msgstr "%s KB"
 
-#: src/InputController.py:134
+#: src/InputController.py:135
 #, python-format
 msgid "%s gigabytes"
 msgstr "%s GB"
 
-#: src/InputController.py:135
+#: src/InputController.py:136
 #, python-format
 msgid "%s extents"
 msgstr "%s 範圍"
 
-#: src/InputController.py:137
+#: src/InputController.py:138
 msgid "Remaining free space in Volume Group:\n"
 msgstr "在 Volume 群組中剩餘的可用空間:\n"
 
-#: src/InputController.py:138
+#: src/InputController.py:139
 msgid "Remaining space for this Volume:\n"
 msgstr "在這 Volume 中剩餘的空間:\n"
 
-#: src/InputController.py:140
+#: src/InputController.py:141
 msgid "Extents"
 msgstr "範圍"
 
-#: src/InputController.py:141
+#: src/InputController.py:142
 msgid "Gigabytes"
 msgstr "十億位元組"
 
-#: src/InputController.py:142
+#: src/InputController.py:143
 msgid "Megabytes"
 msgstr "百萬位元組"
 
-#: src/InputController.py:143
+#: src/InputController.py:144
 msgid "Kilobytes"
 msgstr "千位元組"
 
-#: src/InputController.py:145
+#: src/InputController.py:146
 #, python-format
 msgid "The %s should only contain number values"
 msgstr "%s 只能包括數字"
 
-#: src/InputController.py:146
+#: src/InputController.py:147
 msgid ""
 "The Maximum Physical Volumes field should contain only integer values "
 "between 1 and 256"
 msgstr "「最大實體 Volume」欄位只能含括 1 到 256 之間的整數值"
 
-#: src/InputController.py:147
+#: src/InputController.py:148
 msgid ""
 "The Maximum Logical Volumes field should contain only integer values between "
 "1 and 256"
 msgstr "「最大邏輯 Volume」欄位只能含括 1 到 256 之間的整數值"
 
-#: src/InputController.py:149
+#: src/InputController.py:150
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from Logical Volume "
 "Management?"
 msgstr "您是否非常確定要從邏輯 Volume 管理中移除 %s？"
 
-#: src/InputController.py:151
+#: src/InputController.py:152
 #, python-format
 msgid ""
 "The Physical Volume named %s, that you wish to remove, has data from active "
@@ -284,13 +288,13 @@ msgstr ""
 "法是在移除這個實體 Volume 前，增加新的實體 Volume；或移除與這個實體 Volume 有"
 "關的邏輯 Volume。"
 
-#: src/InputController.py:152
+#: src/InputController.py:153
 #, python-format
 msgid ""
 "Are you quite certain that you wish to remove %s from the %s Volume Group?"
 msgstr "您是否非常確定要移除 %s（位於 Volume 群組 %s 中）？"
 
-#: src/InputController.py:153
+#: src/InputController.py:154
 #, python-format
 msgid ""
 "Removing Physical Volume %s from the Volume Group %s will leave the Volume "
@@ -299,7 +303,7 @@ msgstr ""
 "移除實體 Volume %s（位於 Volume 群組 %s）將會讓 Volume 群組成為空白，然後也被"
 "移除。您要繼續嗎？"
 
-#: src/InputController.py:154
+#: src/InputController.py:155
 #, python-format
 msgid ""
 "Volume Group %s does not have enough space to move the data stored on %s. A "
@@ -309,7 +313,7 @@ msgstr ""
 "Volume 群組 %s 沒有足夠的空間，將儲存在 %s 的資料移開。可行的解決方法之一，是"
 "在 Volume 群組中，加入額外的實體 Volume。"
 
-#: src/InputController.py:155
+#: src/InputController.py:156
 msgid ""
 "The dm-mirror module is either not loaded in your kernel, or your kernel "
 "does not support the dm-mirror target. If it is supported, try running "
@@ -320,7 +324,7 @@ msgstr ""
 "心支援，請試試執行「modprobe dm-mirror」指令。否則的話，就無法將實體範圍中的"
 "資料移除。"
 
-#: src/InputController.py:156
+#: src/InputController.py:157
 msgid ""
 "The dm-snapshot module is either not loaded in your kernel, or your kernel "
 "does not support the dm-snapshot target. If it is supported, try running "
@@ -330,12 +334,12 @@ msgstr ""
 "核心支援，請嘗試執行「modprobe dm-snapshot」指令。否則的話，便是無法製作快"
 "照。"
 
-#: src/InputController.py:158
+#: src/InputController.py:159
 #, python-format
 msgid "Are you quite certain that you wish to remove logical volume %s?"
 msgstr "您是否非常確定要移除邏輯 Volume %s？"
 
-#: src/InputController.py:159
+#: src/InputController.py:160
 #, python-format
 msgid ""
 "Logical volume %s contains %s filesystem. All data on it will be lost! Are "
@@ -344,7 +348,7 @@ msgstr ""
 "邏輯 Volume %s 包含了 %s 檔案系統。所有在這些檔案系統的資料將會失去！您是否非"
 "常確定要移除邏輯 Volume %s？"
 
-#: src/InputController.py:160
+#: src/InputController.py:161
 #, python-format
 msgid ""
 "Logical volume %s contains data from directory %s. All data in it will be "
@@ -353,7 +357,13 @@ msgstr ""
 "邏輯 Volume %s 包含了目錄 %s 的資料。所有在這些目錄的資料將會失去！ 您是否非"
 "常確定要移除邏輯 Volume %s？"
 
-#: src/InputController.py:356
+#: src/InputController.py:306
+msgid ""
+"In order for Volume Group to be safely used in clustered environment, lvm2-"
+"cluster rpm has to be installed, and clvmd service has to be running"
+msgstr ""
+
+#: src/InputController.py:364
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror log of Logical "
@@ -363,7 +373,7 @@ msgstr ""
 "實體 Volume %s 包含了屬於邏輯 Volume %s 的鏡射記錄範圍。鏡射邏輯 Volumes 還沒"
 "有轉移，所以不能移除 %s。"
 
-#: src/InputController.py:359
+#: src/InputController.py:367
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to a mirror image of Logical "
@@ -373,7 +383,7 @@ msgstr ""
 "實體 Volume %s 包含了屬於邏輯 Volume %s 的鏡射影像範圍。鏡射邏輯 Volumes 還沒"
 "有轉移，所以不能移除 %s。"
 
-#: src/InputController.py:362
+#: src/InputController.py:370
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, a snapshot of %s. "
@@ -382,7 +392,7 @@ msgstr ""
 "實體 Volume %s 包含了屬於 %s (一份 %s 的快照)的範圍。快照還沒有轉移，所以不能"
 "移除 %s。"
 
-#: src/InputController.py:367
+#: src/InputController.py:375
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshot %"
@@ -391,7 +401,7 @@ msgstr ""
 "實體 Volume %s 包含了屬於 %s (快照 %s 的來源)的範圍。快照來源還沒有轉移，所以"
 "不能移除 %s。"
 
-#: src/InputController.py:369
+#: src/InputController.py:377
 #, python-format
 msgid ""
 "Physical Volume %s contains extents belonging to %s, the origin of snapshots "
@@ -400,27 +410,27 @@ msgstr ""
 "實體 Volume %s 包含了屬於 %s (快照 %s 的來源)的範圍。快照來源還沒有轉移，所以"
 "不能移除 %s。"
 
-#: src/InputController.py:556
+#: src/InputController.py:564
 #, python-format
 msgid ""
 "Logical Volume \"%s\" has snapshots that are not selected for removal. They "
 "must be removed as well."
 msgstr "邏輯 Volume \"%s\" 有快照並未作移除選擇。它們也必須移除。"
 
-#: src/InputController.py:571
+#: src/InputController.py:579
 #, python-format
 msgid ""
 "\"%s\", an origin of snapshot \"%s\", has been deleted from removal list."
 msgstr "\"%s\"(一個快照 \"%s\"來源)已從移除清單中刪除。"
 
-#: src/InputController.py:602
+#: src/InputController.py:610
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a mirror. Mirrors are "
 "not migratable, so %s is not removable."
-msgstr "實體 Volume %s 包含了屬於鏡像的範圍。鏡像還沒有轉移，所以不能移除 %s。"
+msgstr "實體 Volume %s 包含了屬於鏡射的範圍。鏡射還沒有轉移，所以不能移除 %s。"
 
-#: src/InputController.py:605
+#: src/InputController.py:613
 #, python-format
 msgid ""
 "Physical Volume \"%s\" contains extents belonging to a snapshot or a "
@@ -429,71 +439,71 @@ msgstr ""
 "實體 Volume \"%s\" 包含了屬於快照或快照來源的範圍。快照還沒有轉移，所以不能移"
 "除 %s。"
 
-#: src/InputController.py:670
+#: src/InputController.py:678
 msgid "The path you specified does not exist."
 msgstr "您指定的路徑不存在。"
 
-#: src/InputController.py:677
+#: src/InputController.py:685
 msgid "The path you specified is not a Block Device."
 msgstr "您指定的路徑並不是磁區裝置。"
 
-#: src/InputController.py:748
+#: src/InputController.py:756
 #, python-format
 msgid "Initialization of %s failed"
 msgstr "%s 初始化失敗"
 
-#: src/InputController.py:985 src/InputController.py:988
+#: src/InputController.py:993 src/InputController.py:996
 msgid "Please select some extents first"
 msgstr "請先選擇一些範圍"
 
-#: src/InputController.py:1022
+#: src/InputController.py:1030
 msgid ""
 "There are not enough free extents to perform the necessary migration. Adding "
 "more physical volumes would solve the problem."
 msgstr ""
 "沒有足夠的可用範圍來執行必需的移動。 加入更多實體 volume 便可解決此問題。"
 
-#: src/InputController.py:1181
+#: src/InputController.py:1192
 msgid "Migrate extents"
 msgstr "轉移範圍"
 
-#: src/InputController.py:1307
+#: src/InputController.py:1320
 msgid "Options"
 msgstr "選項"
 
-#: src/InputController.py:1341
+#: src/InputController.py:1354
 #, python-format
 msgid "Create A Snapshot of %s"
 msgstr "建立一份 %s 的快照"
 
-#: src/InputController.py:1343 src/lv_edit_props.glade.h:14
+#: src/InputController.py:1356
 msgid "Create New Logical Volume"
 msgstr "建立新的邏輯 Volume"
 
-#: src/InputController.py:1346
+#: src/InputController.py:1359
 #, python-format
 msgid "Edit %s, a Snapshot of %s"
 msgstr "編輯一份在快照 %s 的 %s"
 
-#: src/InputController.py:1349
+#: src/InputController.py:1362
 msgid "Edit Logical Volume"
 msgstr "編輯邏輯 Volume"
 
-#: src/InputController.py:1501
+#: src/InputController.py:1515
 msgid "Underlying Logical Volume Management does not support mirroring"
 msgstr "根本的邏輯 Volume 管理並不支援鏡射"
 
-#: src/InputController.py:1508
+#: src/InputController.py:1522
 msgid "Striped Logical Volumes cannot be mirrored."
 msgstr "等量磁碟邏輯 Volume 不能作鏡射。"
 
-#: src/InputController.py:1515
+#: src/InputController.py:1529
 msgid "Logical Volumes with associated snapshots cannot be mirrored yet."
 msgstr "與快照有關的邏輯 Volume 還未可以作鏡射。"
 
 #. mirror images placement: diff HDs or anywhere
 #. prompt
-#: src/InputController.py:1522
+#: src/InputController.py:1536
 msgid ""
 "The primary purpose of mirroring is to protect data in the case of hard "
 "drive failure. Do you want to place mirror images onto different hard drives?"
@@ -501,24 +511,24 @@ msgstr ""
 "鏡射首要的目的是在硬碟錯誤的情況下保護資料。 您是否想要把鏡射影像放置在不同的"
 "硬碟？"
 
-#: src/InputController.py:1531
+#: src/InputController.py:1545
 msgid ""
 "Less than 3 hard drives are available with free space. Disabling mirroring."
 msgstr "少於三個硬碟有可用空間。請停止使用鏡射。"
 
-#: src/InputController.py:1536
+#: src/InputController.py:1550
 msgid ""
 "There must be free space on at least three Physical Volumes to enable "
 "mirroring"
 msgstr "最少要有三個可用空間的實體 Volume 才能使用鏡射"
 
-#: src/InputController.py:1544
+#: src/InputController.py:1558
 msgid ""
 "The size of the Logical Volume has been adjusted to the maximum available "
 "size for mirrors."
 msgstr "邏輯 Volume 的大小已被調整至鏡射的最大可用大小。"
 
-#: src/InputController.py:1549
+#: src/InputController.py:1563
 #, python-format
 msgid ""
 "There is not enough free space to add mirroring. Reduce size of Logical "
@@ -527,214 +537,127 @@ msgstr ""
 "沒有足夠的可用空間來增加鏡射。最多減少邏輯 Volume 大小至 %s， 或增加實體 "
 "Volume。"
 
-#: src/InputController.py:1913
-msgid "Names begining with \"snapshot\" or \"pvmove\" are reserved keywords."
-msgstr "以 \"snapshot\" 或 \"pvmove\"來開首的名稱乃保留關鍵字。"
+#: src/InputController.py:1927
+msgid "Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords."
+msgstr "以 \"snapshot\" 或 \"pvmove\" 開頭的名稱是保留關鍵字。"
 
-#: src/InputController.py:1915
+#: src/InputController.py:1929
 msgid "Names containing \"_mlog\" or \"_mimage\" are reserved keywords."
 msgstr "含有 \"_mlog\" 或 \"_mimage\" 的名稱乃保留關鍵字。"
 
-#: src/InputController.py:1917
-msgid "Names begining with a \"-\" are invalid"
-msgstr "以 \"-\" 來開首的名稱是無效的"
+#: src/InputController.py:1931
+msgid "Names beginning with a \"-\" are invalid"
+msgstr "以 \"-\" 開頭的名稱是無效的"
 
-#: src/InputController.py:1919
+#: src/InputController.py:1933
 msgid "Name can be neither \".\" nor \"..\""
 msgstr "名稱可以不是 \".\" 或 \"..\""
 
-#: src/InputController.py:1925
+#: src/InputController.py:1939
 msgid "Whitespaces are not allowed in Logical Volume names"
 msgstr "邏輯 Volume 名稱並不允許有空格"
 
-#: src/InputController.py:1928
+#: src/InputController.py:1942
 #, python-format
 msgid "Invalid character \"%s\" in Logical Volume name"
-msgstr "邏輯 Volume名稱有無效的字元 \"%s\""
+msgstr "邏輯 Volume 名稱有無效的字元 \"%s\""
 
-#: src/InputController.py:1948
+#: src/InputController.py:1962
 msgid "Please specify mount point"
 msgstr "請指定掛載點"
 
-#: src/InputController.py:2010
+#: src/InputController.py:2028
 msgid "Do you want to upgrade ext2 to ext3 preserving data on Logical Volume?"
 msgstr "您是否想要把 ext2 升級至 ext3，並同時保留邏輯 Volume 的資料？"
 
-#: src/InputController.py:2044
+#: src/InputController.py:2062
 msgid ""
 "Changing the filesystem will destroy all data on the Logical Volume! Are you "
 "sure you want to proceed?"
 msgstr "改變檔案系統將會破壞所有在邏輯 Volume 的資料！ 您是否肯定想要執行？"
 
 #. migration not performed, continue process with no mirroring
-#: src/InputController.py:2145
+#: src/InputController.py:2163
 msgid "Mirror not created. Completing remaining tasks."
 msgstr "尚未建立鏡射。正在完成餘下的工作。"
 
-#: src/InputController.py:2194
+#. create mirror
+#: src/InputController.py:2166
+msgid ""
+"Underlaying LVM doesn't support addition of mirrors to existing Logical "
+"Volumes. Completing remaining tasks."
+msgstr "LVM 底層並不支援額外的邏輯磁區鏡射。完成其他工作中。"
+
+#: src/InputController.py:2215
 msgid "In order to add mirroring, some extents need to be migrated."
 msgstr "為了能增加鏡射，需要轉移一些範圍。"
 
-#: src/InputController.py:2194
+#: src/InputController.py:2215
 msgid "Do you want to migrate specified extents?"
 msgstr "您是否想要轉移指定範圍？"
 
-#. ##TRANSLATOR: The first word in each string below is
-#. ##an lvm command line command phrase.
-#: src/CommandHandler.py:13
-#, python-format
-msgid ""
-"vgextend command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgextend 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:14
-#, python-format
-msgid ""
-"pvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:15
-#, python-format
-msgid ""
-"lvcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:16
-#, python-format
-msgid ""
-"pvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:17
-#, python-format
-msgid ""
-"lvremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:18
-#, python-format
-msgid ""
-"vgremove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgremove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:19
-#, python-format
-msgid ""
-"vgcreate command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgcreate 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:20
-#, python-format
-msgid ""
-"vgchange command failed. Command attempted: \"%s\" - System Error Message %s"
-msgstr "vgchange 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:21
-#, python-format
-msgid ""
-"vgreduce command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "vgreduce 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:22
-#, python-format
-msgid ""
-"pvmove command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "pvmove 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:23
-#, python-format
-msgid ""
-"umount command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "umount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:24
-#, python-format
-msgid ""
-"mount command failed. Command Attempted: %s  - System Error Message: \"%s\""
-msgstr "mount 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:25
-#, python-format
-msgid ""
-"lvresize command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvresize 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:26
-#, python-format
-msgid ""
-"lvrename command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvrename 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:27
-#, python-format
-msgid ""
-"lvchange command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "lvchange 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:28
-#, python-format
-msgid ""
-"lvconvert command failed. Command attempted: \"%s\" - System Error Message: %"
-"s"
-msgstr "lvconvert 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/CommandHandler.py:74
+#: src/CommandHandler.py:55
 msgid "Creating Logical Volume"
 msgstr "正在建立邏輯 Volume"
 
-#: src/CommandHandler.py:93 src/CommandHandler.py:110
+#: src/CommandHandler.py:74 src/CommandHandler.py:91
 msgid "Resizing Logical Volume"
 msgstr "正在調整邏輯 Volume 的大小"
 
-#: src/CommandHandler.py:143
+#: src/CommandHandler.py:124
 msgid "Adding Mirror to Logical Volume"
 msgstr "在邏輯 Volume 中加入鏡射"
 
-#: src/CommandHandler.py:154
+#: src/CommandHandler.py:135
 msgid "Removing Mirror from Logical Volume"
 msgstr "從邏輯 Volume 中移除鏡射"
 
-#: src/CommandHandler.py:177
+#: src/CommandHandler.py:160
 msgid "Initializing Physical Volume"
 msgstr "初始實體 Volume"
 
-#: src/CommandHandler.py:188
+#: src/CommandHandler.py:171
 msgid "Adding Physical Volume to Volume Group"
 msgstr "在 Volume 群組中加入實體 Volume "
 
-#: src/CommandHandler.py:215
+#: src/CommandHandler.py:203
 msgid "Creating Volume Group"
 msgstr "建立 Volume 群組"
 
-#: src/CommandHandler.py:237
+#: src/CommandHandler.py:225
 msgid "Removing Volume Group"
 msgstr "移除 volume 群組"
 
-#: src/CommandHandler.py:247
+#: src/CommandHandler.py:235
 msgid "Removing Physical Volume"
 msgstr "移除實體 Volume"
 
-#: src/CommandHandler.py:258
+#: src/CommandHandler.py:246
 msgid "Removing Logical Volume"
 msgstr "移除邏輯 Volume"
 
-#: src/CommandHandler.py:270
+#: src/CommandHandler.py:258
 msgid "Renaming Logical Volume"
 msgstr "為邏輯 Volume 重新命名"
 
-#: src/CommandHandler.py:292
+#: src/CommandHandler.py:280
 msgid "Removing Physical Volume from Volume Group"
 msgstr "從 Volume 群組中移除實體 Volume"
 
-#: src/CommandHandler.py:327
+#: src/CommandHandler.py:315
 msgid "Migrating Extents"
 msgstr "轉移範圍"
 
-#: src/CommandHandler.py:339
+#: src/CommandHandler.py:327
 msgid "Completing Extent Migration"
 msgstr "正在完成範圍轉移"
 
-#: src/lvm_model.py:45 src/lvmui_constants.py:81
+#: src/CommandHandler.py:378
+#, fuzzy
+msgid "Rereading partition table"
+msgstr "延伸的分割區"
+
+#: src/lvm_model.py:45 src/lvmui_constants.py:83
 msgid "Unused"
 msgstr "未使用的"
 
@@ -875,63 +798,76 @@ msgid "PV UUID:   "
 msgstr "PV UUID:   "
 
 #: src/lvm_model.py:96
-msgid "Not initializable:   "
-msgstr "未初始化:…"
+msgid "Not initializable:"
+msgstr "不能初始化:"
 
 #: src/lvm_model.py:97
 msgid "Extended partition"
 msgstr "延伸的分割區"
 
-#: src/lvm_model.py:98
-msgid "Swap in use"
-msgstr "置換使用中"
-
+#. Translator: the line below refers to a standard linux swap partition.
 #: src/lvm_model.py:99
+msgid "Swap partition currently in use"
+msgstr "目前使用中的置換分割區"
+
+#: src/lvm_model.py:100
 msgid "Foreign boot partition"
 msgstr "外來啟動分割區"
 
-#: src/lvm_model.py:100
+#: src/lvm_model.py:101
 msgid "Autopartition failure"
 msgstr "自動分割錯誤"
 
-#: src/lvm_model.py:250
+#: src/lvm_model.py:251
 msgid "Partition manually"
 msgstr "手動式分割"
 
-#: src/lvm_model.py:286
+#: src/lvm_model.py:287
 msgid "Multipath device"
 msgstr "多種路徑裝置"
 
-#: src/lvm_model.py:289
-msgid "Note:   "
-msgstr "注意：   "
+#: src/lvm_model.py:290
+msgid "Note:"
+msgstr "注意:"
 
-#: src/lvm_model.py:289
+#: src/lvm_model.py:290
 msgid "Initialize manually"
 msgstr "手動式初始"
 
-#: src/lvm_model.py:788
-msgid "Number of mirror images:  "
-msgstr "鏡射影像數量：   "
+#: src/lvm_model.py:733
+msgid "Clustered:   "
+msgstr ""
 
-#: src/lvm_model.py:791
-msgid "Snapshots:  "
-msgstr "快照:…"
+#: src/lvm_model.py:735
+msgid "True"
+msgstr ""
 
-#: src/lvm_model.py:797
-msgid "Snapshot origin:  "
-msgstr "快照來源:…"
+#: src/lvm_model.py:737
+msgid "False"
+msgstr ""
+
+#: src/lvm_model.py:795
+msgid "Number of mirror images:"
+msgstr "鏡射影像數量:"
+
+#: src/lvm_model.py:798
+msgid "Snapshots:"
+msgstr "快照:"
 
 #: src/lvm_model.py:804
-msgid "Snapshot usage:  "
-msgstr "快照用法:…"
+msgid "Snapshot origin:"
+msgstr "快照來源:"
 
-#: src/lvm_model.py:827 src/lvm_model.py:833 src/lvm_model.py:876
-#: src/lvm_model.py:892
+#: src/lvm_model.py:811
+msgid "Snapshot usage:"
+msgstr "快照用法:"
+
+#: src/lvm_model.py:834 src/lvm_model.py:840 src/lvm_model.py:883
+#: src/lvm_model.py:899
 msgid "/   Root Filesystem"
 msgstr "/   Root 的檔案系統"
 
-#: src/lvm_model.py:895 src/Filesystem.py:120
+#: src/lvm_model.py:902 src/Filesystem.py:137
 msgid "None"
 msgstr "全無"
 
@@ -999,73 +935,78 @@ msgstr "鏡射記錄"
 msgid "Unable to process request"
 msgstr "不能處理要求的工作"
 
-#: src/lvmui_constants.py:82
+#: src/lvmui_constants.py:65
+#, python-format
+msgid "%s command failed. Command attempted: \"%s\" - System Error Message: %s"
+msgstr "%s 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
+
+#: src/lvmui_constants.py:84
 msgid "Free"
 msgstr "可用"
 
-#: src/lvmui_constants.py:83
+#: src/lvmui_constants.py:85
 msgid "Free space"
 msgstr "可用空間"
 
-#: src/lvmui_constants.py:85
+#: src/lvmui_constants.py:87
 msgid "Unpartitioned space"
 msgstr "非分割區空間"
 
-#: src/lvmui_constants.py:86
+#: src/lvmui_constants.py:88
 #, python-format
 msgid "Unpartitioned space on %s"
 msgstr "%s 上的非分割區空間"
 
-#: src/lvmui_constants.py:88
-msgid "G"
-msgstr "G"
-
-#: src/lvmui_constants.py:89
-msgid "M"
-msgstr "M"
-
 #: src/lvmui_constants.py:90
-msgid "K"
-msgstr "K"
+msgid "GB"
+msgstr "GB"
 
 #: src/lvmui_constants.py:91
-msgid "B"
-msgstr "B"
+msgid "MB"
+msgstr "MB"
+
+#: src/lvmui_constants.py:92
+msgid "KB"
+msgstr "KB"
+
+#: src/lvmui_constants.py:93
+msgid "Bytes"
+msgstr "位元組"
 
 #. File System Types
-#: src/lvmui_constants.py:95
+#: src/lvmui_constants.py:97
 msgid "No Filesystem"
 msgstr "沒有檔案系統"
 
-#: src/lvmui_constants.py:96
+#: src/lvmui_constants.py:98
 msgid "Ext2"
 msgstr "Ext2"
 
-#: src/lvmui_constants.py:97
+#: src/lvmui_constants.py:99
 msgid "Ext3"
 msgstr "Ext3"
 
-#: src/lvmui_constants.py:98
+#: src/lvmui_constants.py:100
 msgid "JFS"
 msgstr "JFS"
 
-#: src/lvmui_constants.py:99
+#: src/lvmui_constants.py:101
 msgid "MSDOS"
 msgstr "MSDOS"
 
-#: src/lvmui_constants.py:100
+#: src/lvmui_constants.py:102
 msgid "Reiserfs"
 msgstr "Reiserfs"
 
-#: src/lvmui_constants.py:101
+#: src/lvmui_constants.py:103
 msgid "VFAT"
 msgstr "VFAT"
 
-#: src/lvmui_constants.py:102
+#: src/lvmui_constants.py:104
 msgid "XFS"
 msgstr "XFS"
 
-#: src/lvmui_constants.py:103
+#: src/lvmui_constants.py:105
 msgid "Cramfs"
 msgstr "Cramfs"
 
@@ -1104,11 +1045,11 @@ msgstr "尚未選取 Volume"
 msgid "Multiple selection"
 msgstr "多項選擇"
 
-#: src/renderer.py:39 src/Volume_Tab_View.py:46
+#: src/renderer.py:39 src/Volume_Tab_View.py:49
 msgid "Logical View"
 msgstr "邏輯檢視"
 
-#: src/renderer.py:40 src/Volume_Tab_View.py:45
+#: src/renderer.py:40 src/Volume_Tab_View.py:48
 msgid "Physical View"
 msgstr "實體檢視"
 
@@ -1120,7 +1061,7 @@ msgstr "未分配的"
 msgid "Uninitialized"
 msgstr "未初始化的"
 
-#: src/renderer.py:192
+#: src/renderer.py:195
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a mirror log of "
@@ -1130,7 +1071,7 @@ msgstr ""
 "您嘗試選取的範圍是屬於邏輯 Volume %s 的鏡射記錄。 鏡射邏輯 Volume 還沒有轉"
 "移，所以不能選取此範圍。"
 
-#: src/renderer.py:194
+#: src/renderer.py:197
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to mirror image of "
@@ -1140,7 +1081,7 @@ msgstr ""
 "您嘗試選取的範圍是屬於邏輯 Volume %s 的鏡射影像。 鏡射邏輯 Volume 還沒有轉"
 "移，所以不能選取此範圍。"
 
-#: src/renderer.py:196
+#: src/renderer.py:199
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to %s, a snapshot of %"
@@ -1149,7 +1090,7 @@ msgstr ""
 "您嘗試選取的範圍是屬於 %s (一份 %s 的快照)。 快照還沒有轉移，所以不能選取此範"
 "圍。"
 
-#: src/renderer.py:198
+#: src/renderer.py:201
 #, python-format
 msgid ""
 "The extents that you are attempting to select belong to a snapshot origin %"
@@ -1158,137 +1099,165 @@ msgid ""
 msgstr ""
 "您嘗試選取的範圍是屬於 %s 快照來源。 快照來源還沒有轉移，所以不能選取此範圍。"
 
-#: src/renderer.py:385
-msgid "Snapshot of "
-msgstr " 的快照"
+#: src/renderer.py:388
+#, python-format
+msgid "Snapshot of %s"
+msgstr "%s 的快照"
 
-#: src/renderer.py:487
+#: src/renderer.py:490
 msgid "Origin"
 msgstr "來源"
 
-#: src/renderer.py:493
+#: src/renderer.py:496
 msgid "Snapshot"
 msgstr "快照"
 
-#: src/renderer.py:537
+#: src/renderer.py:540
 msgid "extent view"
 msgstr "範圍檢視"
 
-#: src/Volume_Tab_View.py:42
+#: src/Volume_Tab_View.py:45
 msgid "Volume Groups"
 msgstr "Volume 群組"
 
-#: src/Volume_Tab_View.py:43
+#: src/Volume_Tab_View.py:46
 msgid "Unallocated Volumes"
 msgstr "未分配的 Volume"
 
-#: src/Volume_Tab_View.py:44
+#: src/Volume_Tab_View.py:47
 msgid "Uninitialized Entities"
 msgstr "未初始化的個體"
 
-#: src/Volume_Tab_View.py:58
-msgid ""
-"LVM locking is disabled!!! Massive data corruption may occur. Enable locking "
-"in \n"
-"/etc/lvm/lvm.conf and try again. Exiting..."
-msgstr ""
-"LVM 鎖定無法啟用！！！可能會發生大量資料毀損。啟用在 /etc/lvm/lvm.conf 中的鎖"
-"定，然後再試一次。離開中…"
-
-#: src/Volume_Tab_View.py:60
-#, python-format
-msgid "Clustered LVM (cLVM) is not yet supported by %s. Exiting..."
-msgstr "%s 還沒有支援叢集 LVM (cLVM)。離開中…"
-
 #: src/Volume_Tab_View.py:63
+msgid ""
+"LVM locks are disabled!!! \n"
+"Massive data corruption may occur.\n"
+"Enable locking (locking_type=1 or 2 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:68
+msgid ""
+"LVM is configured to use Cluster Locking mechanism, but clvmd daemon is not "
+"running. Start daemon with command:\n"
+"service clvmd start \n"
+"or, turn off cluster locking (locking_type=1 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:72
+msgid ""
+"LVM is configured to use Cluster Locking mechanism, but cluster is not "
+"quorate.\n"
+"Either wait until cluster is quorate or turn off cluster locking "
+"(locking_type=1 in /etc/lvm/lvm.conf)."
+msgstr ""
+
+#: src/Volume_Tab_View.py:75
 #, python-format
 msgid ""
-"%s only supports file-based locking (locking_type=1 in /etc/lvm/lvm.conf). "
-"Exiting..."
+"%s only supports file and cluster based locking (locking_type=1 or 2 in /etc/"
+"lvm/lvm.conf)."
 msgstr ""
-"%s 只支援以檔案為基礎的鎖定 (在 /etc/lvm/lvm.conf 中，locking_type=1)。 離開"
-"中…"
 
-#: src/Volume_Tab_View.py:631
+#: src/Volume_Tab_View.py:262
+msgid "Clustered VG"
+msgstr ""
+
+#: src/Volume_Tab_View.py:648
 #, python-format
-msgid "%s mirror synchronisation "
+msgid "%s mirror synchronisation"
 msgstr "%s 鏡射同步"
 
 #. no existing partitions, write
-#: src/fdisk_wrapper.py:197
+#: src/fdisk_wrapper.py:192
 msgid "Please wait while partition is being created"
 msgstr "正在建立分割區，請稍候"
 
-#: src/Filesystem.py:9
+#: src/Filesystem.py:20
 #, python-format
 msgid "Creating %s filesystem"
 msgstr "正在建立 %s 檔案系統"
 
-#: src/Filesystem.py:10
+#: src/Filesystem.py:21
 #, python-format
 msgid "Resizing %s filesystem"
 msgstr "正在調整 %s 檔案系統大小"
 
-#: src/Filesystem.py:11
+#: src/Filesystem.py:22
 #, python-format
 msgid "Checking %s filesystem"
 msgstr "正在檢查 %s 檔案系統"
 
-#: src/Filesystem.py:12
+#: src/Filesystem.py:23
 #, python-format
 msgid "Upgrading %s filesystem to %s"
 msgstr "正在把 %s 檔案系統升級至 %s"
 
-#: src/Filesystem.py:13
+#: src/Filesystem.py:24
 #, python-format
 msgid ""
 "Creation of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr "建立檔案系統失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
-#: src/Filesystem.py:14
+#: src/Filesystem.py:25
 #, python-format
 msgid ""
 "Resize of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr "調整檔案系統大小失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
-#: src/Filesystem.py:15
+#: src/Filesystem.py:26
 #, python-format
 msgid ""
 "Check of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr "檢查檔案系統失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
-#: src/Filesystem.py:16
+#: src/Filesystem.py:27
 #, python-format
 msgid ""
 "Upgrade of filesystem failed. Command attempted: \"%s\" - System Error "
 "Message: %s"
 msgstr "升級檔案系統失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
-#: src/Filesystem.py:125
+#: src/Filesystem.py:143
 msgid "Unknown filesystem"
 msgstr "未知的檔案系統"
 
-#: src/Filesystem.py:352
-msgid "GFS2 (local)"
-msgstr "GFS2 (本機)"
-
-#: src/Filesystem.py:399
-msgid "GFS2 (clustered)"
-msgstr "GFS2 (叢集)"
-
-#: src/Filesystem.py:423
+#: src/Filesystem.py:374
 msgid "GFS (local)"
 msgstr "GFS (本機)"
 
-#: src/Filesystem.py:470
+#: src/Filesystem.py:472
 msgid "GFS (clustered)"
 msgstr "GFS (叢集)"
 
+#: src/Filesystem.py:504 src/Filesystem.py:748
+msgid "Cluster name contains illegal character "
+msgstr ""
+
+#: src/Filesystem.py:507 src/Filesystem.py:751
+msgid "GFS name contains illegal character "
+msgstr ""
+
+#: src/Filesystem.py:510 src/Filesystem.py:754
+msgid "Missing Cluster Name"
+msgstr ""
+
+#: src/Filesystem.py:513 src/Filesystem.py:757
+msgid "Missing GFS Name"
+msgstr ""
+
+#: src/Filesystem.py:618
+msgid "GFS2 (local)"
+msgstr "GFS2 (本機)"
+
+#: src/Filesystem.py:716
+msgid "GFS2 (clustered)"
+msgstr "GFS2 (叢集)"
+
 #: src/Segment.py:44
-msgid "Stripe "
+msgid "Stripe"
 msgstr "等量磁區"
 
 #: src/Segment.py:68
@@ -1296,24 +1265,13 @@ msgid "Linear Mapping"
 msgstr "線性對應"
 
 #: src/Segment.py:109
-msgid "Mirror "
+msgid "Mirror"
 msgstr "鏡射"
-
-#: src/Multipath.py:11
-#, python-format
-msgid ""
-"dmsetup command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "dmsetup 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
-
-#: src/Multipath.py:12
-#, python-format
-msgid "ls command failed. Command attempted: \"%s\" - System Error Message: %s"
-msgstr "ls 指令失敗。嘗試的指令：\"%s\" - 系統錯誤訊息：%s"
 
 #: src/PhysicalVolume.py:142
 #, python-format
-msgid "Partition  %s"
-msgstr "分割區  %s"
+msgid "Partition %s"
+msgstr "分割區 %s"
 
 #: src/lvui.glade.h:1 src/lv_edit_props.glade.h:1
 msgid "*"
@@ -1372,6 +1330,11 @@ msgstr ""
 "Volume 群組中"
 
 #: src/lvui.glade.h:15
+#, fuzzy
+msgid "Clustered"
+msgstr "GFS (叢集)"
+
+#: src/lvui.glade.h:16
 msgid ""
 "Create New\n"
 "Logical Volume"
@@ -1379,11 +1342,11 @@ msgstr ""
 "建立新的\n"
 "邏輯 Volume"
 
-#: src/lvui.glade.h:17
+#: src/lvui.glade.h:18
 msgid "Create Snapshot"
 msgstr "建立快照"
 
-#: src/lvui.glade.h:18
+#: src/lvui.glade.h:19
 msgid ""
 "Create new \n"
 "Volume Group"
@@ -1391,15 +1354,15 @@ msgstr ""
 "建立新的 \n"
 "Volume 群組"
 
-#: src/lvui.glade.h:20
+#: src/lvui.glade.h:21
 msgid "Edit Properties"
 msgstr "編輯屬性："
 
-#: src/lvui.glade.h:21
+#: src/lvui.glade.h:22
 msgid "Enter path of Block Device to initialize"
 msgstr "請輸入磁區裝置之路徑以作初始化"
 
-#: src/lvui.glade.h:22
+#: src/lvui.glade.h:23
 msgid ""
 "Extend\n"
 "Volume Group"
@@ -1407,55 +1370,61 @@ msgstr ""
 "延伸\n"
 "Volume 群組"
 
-#: src/lvui.glade.h:24
+#: src/lvui.glade.h:25
 msgid "Extend Volume Group"
 msgstr "延伸 Volume 群組"
 
-#: src/lvui.glade.h:25
+#: src/lvui.glade.h:26
 msgid "Format"
 msgstr "格式"
 
-#: src/lvui.glade.h:26
-msgid "Initialize"
-msgstr "初始化的"
-
 #: src/lvui.glade.h:27
-msgid "Initialize Block Device"
-msgstr "初始磁區裝置"
+msgid "Initialize"
+msgstr "初始化"
 
 #: src/lvui.glade.h:28
-msgid "Initialize Entity"
-msgstr "初始個體"
+msgid "Initialize Block Device"
+msgstr "初始化磁區裝置"
 
 #: src/lvui.glade.h:29
-msgid "Initialize _Block Device"
-msgstr "初始 _磁區裝置"
+msgid "Initialize Entity"
+msgstr "初始化個體"
 
 #: src/lvui.glade.h:30
+msgid "Initialize _Block Device"
+msgstr "初始化磁區裝置(_B)"
+
+#: src/lvui.glade.h:31
 msgid "Kilo"
 msgstr "千"
 
-#: src/lvui.glade.h:31
+#: src/lvui.glade.h:32
 msgid "Logical Volume Management"
 msgstr "邏輯 Volume 管理"
 
-#: src/lvui.glade.h:32
+#: src/lvui.glade.h:33
 msgid "Manage Volumes"
 msgstr "管理 Volume"
 
-#: src/lvui.glade.h:33
-msgid "Maximum Logical Volumes: "
-msgstr "最大邏輯 Volume ："
-
 #: src/lvui.glade.h:34
-msgid "Maximum Physical Volumes: "
-msgstr "最大實際 Volume ："
+msgid "Mark Volume Group as 'clustered'"
+msgstr ""
 
 #: src/lvui.glade.h:35
+#, fuzzy
+msgid "Maximum Logical Volumes"
+msgstr "最大邏輯 Volume ："
+
+#: src/lvui.glade.h:36
+#, fuzzy
+msgid "Maximum Physical Volumes"
+msgstr "最大實際 Volume ："
+
+#: src/lvui.glade.h:37
 msgid "Meg"
 msgstr "百萬"
 
-#: src/lvui.glade.h:36
+#: src/lvui.glade.h:38
 msgid ""
 "Migrate Selected\n"
 "Extent(s) From Volume"
@@ -1463,20 +1432,13 @@ msgstr ""
 "從 Volume 中轉移\n"
 "選擇的範圍"
 
-#: src/lvui.glade.h:38
-msgid "Name for Volume Group: "
-msgstr " volume 群組的名稱："
-
-#: src/lvui.glade.h:39
+#: src/lvui.glade.h:40
 msgid "New Volume Group"
 msgstr "新 volume 群組"
 
-#: src/lvui.glade.h:40
-msgid "New Volume Group Form"
-msgstr "新 volume 群組的格式"
-
 #: src/lvui.glade.h:41
-msgid "Physical Extent Size: "
+#, fuzzy
+msgid "Physical Extent Size"
 msgstr "實體範圍的大小： "
 
 #: src/lvui.glade.h:42
@@ -1528,14 +1490,19 @@ msgid "Some text"
 msgstr "一些文字"
 
 #: src/lvui.glade.h:54
-msgid "_Reload"
-msgstr "_重新載入"
+#, fuzzy
+msgid "Volume Group Name"
+msgstr "Volume 群組名稱：   "
 
 #: src/lvui.glade.h:55
-msgid "_Tools"
-msgstr "_工具"
+msgid "_Reload"
+msgstr "重新載入(_R)"
 
 #: src/lvui.glade.h:56
+msgid "_Tools"
+msgstr "工具(_T)"
+
+#: src/lvui.glade.h:57
 msgid "extend vg message:"
 msgstr "延伸 vg 訊息"
 
@@ -1575,6 +1542,10 @@ msgstr "<b>大小</b>"
 msgid "Add entry to /etc/fstab"
 msgstr "在 /etc/fstab 中加入項目"
 
+#: src/lv_edit_props.glade.h:14
+msgid "Create New Logical Volume (LV)"
+msgstr "建立新的邏輯 Volume (LV)"
+
 #: src/lv_edit_props.glade.h:15
 msgid "Filesystem is not resizable"
 msgstr "檔案系統不可調整大小"
@@ -1592,7 +1563,7 @@ msgid "Kilobytes granularity"
 msgstr "千位元組擴充量(Kilobytes granularity)"
 
 #: src/lv_edit_props.glade.h:19
-msgid "LV name: "
+msgid "LV name:"
 msgstr "LV 名稱:"
 
 #: src/lv_edit_props.glade.h:20
@@ -1620,8 +1591,8 @@ msgid "Mount"
 msgstr "掛載"
 
 #: src/lv_edit_props.glade.h:26
-msgid "Mount point: "
-msgstr "掛載點： "
+msgid "Mount point:"
+msgstr "掛載點："
 
 #: src/lv_edit_props.glade.h:27
 msgid "Mount when rebooted"
@@ -1644,8 +1615,8 @@ msgid "Use remaining"
 msgstr "使用剩餘"
 
 #: src/lv_edit_props.glade.h:32
-msgid "stripes of"
-msgstr "等量磁碟，屬於"
+msgid "stripes"
+msgstr "等量磁碟"
 
 #: src/migrate_extents.glade.h:1
 msgid "<b>Destination</b>"
@@ -1668,6 +1639,10 @@ msgid "Contiguous"
 msgstr "連續"
 
 #: src/migrate_extents.glade.h:6
+msgid "Destination:"
+msgstr "目的地:"
+
+#: src/migrate_extents.glade.h:7
 msgid ""
 "In order to remove PV, extents in use have to be migrated.\n"
 "Select extents' destination and migration policy."
@@ -1675,25 +1650,21 @@ msgstr ""
 "為了移除 PV，使用中的範圍需要轉移。\n"
 "請選擇目的地及轉移政策。"
 
-#: src/migrate_extents.glade.h:8
+#: src/migrate_extents.glade.h:9
 msgid "Inherit"
 msgstr "繼承"
 
-#: src/migrate_extents.glade.h:9
+#: src/migrate_extents.glade.h:10
 msgid "Inherit policy from Volume Group"
 msgstr "從 Volume 群組繼承政策"
 
-#: src/migrate_extents.glade.h:10
+#: src/migrate_extents.glade.h:11
 msgid "Migrate Extents"
 msgstr "轉移範圍"
 
-#: src/migrate_extents.glade.h:11
-msgid "Migrate anywhere even if that reduces performace"
-msgstr "轉移至任何地方，縱使這可能會減低效能"
-
 #: src/migrate_extents.glade.h:12
-msgid "Migrate extents to "
-msgstr "轉移範圍至"
+msgid "Migrate anywhere even if that reduces performance"
+msgstr "轉移至任何地方，縱使這會減低效能"
 
 #: src/migrate_extents.glade.h:13
 msgid "New extents are adjacent to existing ones"
@@ -1704,9 +1675,15 @@ msgid "Normal"
 msgstr "正常"
 
 #: src/migrate_extents.glade.h:15
-msgid "Only migrate extents belonging to LV "
-msgstr "只有轉移範圍是屬於 LV"
+msgid "Only migrate extents belonging to LV"
+msgstr "只轉移屬於 LV 的範圍"
 
 #: src/migrate_extents.glade.h:16
 msgid "Use common sense"
 msgstr "使用常識"
+
+#~ msgid "Name for Volume Group: "
+#~ msgstr " volume 群組的名稱："
+
+#~ msgid "New Volume Group Form"
+#~ msgstr "新 volume 群組的格式"

@@ -609,7 +609,7 @@ class lvm_model:
         ext_list = pv.get_extent_blocks()
         start1, size1 = 0, 0
         i = 0
-        while i != (len(ext_list) - 1):
+        while i < len(ext_list):
           start2, size2 = ext_list[i].get_start_size()
           if (start1 + size1) == start2:
             start1, size1 = start2, size2
@@ -697,7 +697,6 @@ class lvm_model:
               fdisk_devname = path
         part = Partition(seg.beg, seg.end, ID_LINUX_LVM, None, False, seg.sectorSize)
         part_num = self.__block_device_model.add(fdisk_devname, part)
-        print part_num
         self.__block_device_model.saveTable(fdisk_devname)
         new_part = self.__block_device_model.getPartition(fdisk_devname, part_num)
         pv.setPartition((devname, new_part))
@@ -730,6 +729,13 @@ class lvm_model:
     text_list = list()
     text_list.append(VG_NAME)
     text_list.append(words[VG_NAME_IDX])
+    
+    text_list.append(_("Clustered:   "))
+    if vg.clustered():
+      text_list.append(_("True"))
+    else:
+      text_list.append(_("False"))
+    
     text_list.append(VG_SYSID)
     text_list.append(words[VG_SYSID_IDX])
     text_list.append(VG_FMT)

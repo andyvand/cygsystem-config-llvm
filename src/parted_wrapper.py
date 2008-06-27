@@ -15,7 +15,21 @@ class Parted:
     def getPartitions(self, devpath):
         sectorSize = FDisk().getDeviceGeometry(devpath)[1]
         parts = list()
-        res = execWithCapture(PARTED, [PARTED, devpath, 'print', '-s'])
+        
+        args = [PARTED, devpath]
+        if self.version() >= '1.6.23' :
+            # parted versioned 1.6.23 and above has command "unit",
+            # 1.6.22 and bellow displays in MBs
+            args.append('unit')
+            args.append('b')
+        args.append('print')
+        args.append('-s')
+        res, status = execWithCaptureStatus(PARTED, args)
+        if status != 0:
+            msg = 'parted failed on ' + devpath
+            print msg
+            raise msg
+        
         lines = res.splitlines()
         for line in lines:
             if not re.match('^[0-9]', line):
@@ -26,8 +40,8 @@ class Parted:
             # partition num
             part_num = int(words[0])
             # beg, end
-            beg = int(float(words[1]) * 1024 * 1024) / sectorSize
-            end = int(float(words[2]) * 1024 * 1024) / sectorSize - 1
+            beg = self.__to_bytes(words[1]) / sectorSize
+            end = self.__to_bytes(words[2]) / sectorSize - 1
             # bootable
             bootable = False
             for word in words:
@@ -60,13 +74,54 @@ class Parted:
             sys.exit(1)
         
         # create partition table
-        print execWithCapture(PARTED, [PARTED, devpath, 'mklabel', 'gpt', '-s'])
+        execWithCapture(PARTED, [PARTED, devpath, 'mklabel', 'gpt', '-s'])
         # create partition
         part = parts[0]
         beg = part.beg * part.sectorSize / 1024.0 / 1024 # parted uses Magabytes
         end = part.end * part.sectorSize / 1024.0 / 1024
-        print beg, end
-        print execWithCapture(PARTED, [PARTED, devpath, 'mkpart', 'primary', str(beg), str(end), '-s'])
+        #print beg, end
+        execWithCapture(PARTED, [PARTED, devpath, 'mkpart', 'primary', str(beg), str(end), '-s'])
         # add flags - if any
         if part.id == ID_LINUX_LVM:
             print execWithCapture(PARTED, [PARTED, devpath, 'set', str(part.num), 'lvm', 'on', '-s'])
+
+
+
+
+    def __to_bytes(self, word):
+        # parted versioned 1.6.23 and above has command "unit",
+        # 1.6.22 and bellow displays in MBs
+        # this function handles both
+        
+        t = word.strip().lower()
+        multiplier = 1024 * 1024
+        if t.endswith('b') or t.endswith('B'):
+            t = t.rstrip('b')
+            t = t.rstrip('B')
+            multiplier = 1
+            if t.endswith('k') or t.endswith('K'):
+                t = t.rstrip('k')
+                t = t.rstrip('K')
+                multiplier = 1024
+            elif t.endswith('m') or t.endswith('M'):
+                t = t.rstrip('M')
+                t = t.rstrip('m')
+                multiplier = 1024 * 1024
+            elif t.endswith('g') or t.endswith('G'):
+                t = t.rstrip('G')
+                t = t.rstrip('g')
+                multiplier = 1024 * 1024 * 1024
+            elif t.endswith('t') or t.endswith('T'):
+                t = t.rstrip('T')
+                t = t.rstrip('t')
+                multiplier = 1024 * 1024 * 1024 * 1024
+        return int(float(t) * multiplier)
+
+
+    def version(self):
+        res, status = execWithCaptureStatus(PARTED, [PARTED, '-v'])
+        res = res.strip()
+        words = res.split()
+        if len(words) != 3:
+            raise "unable to get parted version"
+        return words[2]

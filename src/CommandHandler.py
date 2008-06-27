@@ -136,9 +136,11 @@ class CommandHandler:
     if res != 0:
       raise CommandError('FATAL', COMMAND_FAILURE % ("lvconvert",cmdstr,err))
   
-  def mount(self, dev_path, mnt_point): 
+  def mount(self, dev_path, mnt_point, fstype): 
     cmd_args = list()
     cmd_args.append("/bin/mount")
+    cmd_args.append('-t')
+    cmd_args.append(fstype)
     cmd_args.append(dev_path)
     cmd_args.append(mnt_point)
     cmdstr = ' '.join(cmd_args)
@@ -171,7 +173,7 @@ class CommandHandler:
       raise CommandError('FATAL', COMMAND_FAILURE % ("vgextend",cmdstr,err))
 
   def create_new_vg(self, name, max_phys, max_log, extent_size, is_unit_megs,
-                    pv):
+                    pv, clustered=False):
 
     if is_unit_megs:
       units_arg = 'm'
@@ -189,6 +191,11 @@ class CommandHandler:
     args.append(max_phys)
     args.append("-s")
     args.append(size_arg)
+    args.append('-c')
+    if clustered:
+      args.append('y')
+    else:
+      args.append('n')
     args.append(name.strip())
     args.append(pv.strip())
     cmdstr = ' '.join(args)
@@ -366,5 +373,7 @@ class CommandHandler:
     BLOCKDEV_BIN = '/sbin/blockdev'
     args = [BLOCKDEV_BIN, '--rereadpt', devpath]
     out, err, status = execWithCaptureErrorStatus(BLOCKDEV_BIN, args)
-    print status
-    return (status == 0)
+    if status != 0:
+      return False
+    execWithCaptureProgress('sleep', ['sleep', '1'], _('Rereading partition table'))
+    return True

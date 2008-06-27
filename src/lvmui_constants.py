@@ -107,4 +107,4 @@ CRAMFS_T=_("Cramfs")
 
 
 # UI support for mirroring
-MIRRORING_UI_SUPPORT = False
+MIRRORING_UI_SUPPORT = True
