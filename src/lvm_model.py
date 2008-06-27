@@ -93,10 +93,9 @@ PV_PE_ALLOC_COUNT=_("Allocated Physical Extents:   ")
 PV_ATTR=_("Attributes:   ")
 PV_UUID=_("PV UUID:   ")
 
-NOT_INITIALIZABLE=_("Not initializable:")
+NOT_INITIALIZABLE=_("Not initializable:   ")
 EXTENDED_PARTITION=_("Extended partition")
-#Translator: the line below refers to a standard linux swap partition.
-SWAP_IN_USE=_("Swap partition currently in use")
+SWAP_IN_USE=_("Swap in use")
 FOREIGN_BOOT_PARTITION=_("Foreign boot partition")
 AUTOPARTITION_FAILURE=_("Autopartition failure")
 
@@ -287,7 +286,7 @@ class lvm_model:
           pv.add_property(NOT_INITIALIZABLE, _("Multipath device"))
           if pv.initializable:
             pv.initializable = False
-            pv.add_property(_("Note:"), _("Initialize manually"))
+            pv.add_property(_("Note:   "), _("Initialize manually"))
     # all done
     return pvs_list
   def __query_partitions2(self, devname, segs, part_dictionary, seg_list):
@@ -786,23 +785,23 @@ class lvm_model:
     text_list.append(LV_NAME)
     text_list.append(lv.get_name())
     if lv.is_mirrored():
-      text_list.append(_("Number of mirror images:"))
+      text_list.append(_("Number of mirror images:  "))
       text_list.append(str(len(lv.get_segments()[0].get_images())-1))
     if lv.has_snapshots():
-      text_list.append(_("Snapshots:"))
+      text_list.append(_("Snapshots:  "))
       string = lv.get_snapshots()[0].get_name()
       for snap in lv.get_snapshots()[1:]:
         string = string + ', ' + snap.get_name()
       text_list.append(string)
     if lv.is_snapshot():
-      text_list.append(_("Snapshot origin:"))
+      text_list.append(_("Snapshot origin:  "))
       text_list.append(lv.get_snapshot_info()[0].get_name())
     text_list.append(VG_NAME)
     text_list.append(lv.get_vg().get_name())
     text_list.append(LV_SIZE)
     text_list.append(lv.get_size_total_string())
     if lv.is_snapshot():
-      text_list.append(_("Snapshot usage:"))
+      text_list.append(_("Snapshot usage:  "))
       text_list.append(str(lv.get_snapshot_info()[1]) + '%')
     text_list.append(LV_SEG_COUNT)
     text_list.append(str(len(lv.get_segments())))

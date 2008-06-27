@@ -1451,13 +1451,12 @@ class LV_edit_props:
             else:
                 self.mirror_to_diff_hds = None # prompt for option
             self.glade_xml.get_widget('enable_mirroring').set_active(already_mirrored)
+        # disable mirroring support for now :(
         self.mirror_to_diff_hds = False
-        if MIRRORING_UI_SUPPORT == False:
-            if self.new:
-                self.glade_xml.get_widget('enable_mirroring').hide()
-            else:
-                self.glade_xml.get_widget('lv_properties_frame').hide()
-        
+        if self.new:
+            self.glade_xml.get_widget('enable_mirroring').hide()
+        else:
+            self.glade_xml.get_widget('lv_properties_frame').hide()
         # set up mirror limits
         self.on_enable_mirroring(None)
         
@@ -1512,7 +1511,7 @@ class LV_edit_props:
                 return
         # check if lv is origin - no mirroring
         if not self.new:
-            if self.lv.has_snapshots() and not self.lv.is_mirrored():
+            if self.lv.has_snapshots():
                 self.errorMessage(_("Logical Volumes with associated snapshots cannot be mirrored yet."))
                 self.glade_xml.get_widget('enable_mirroring').set_active(False)
                 self.update_size_limits()
@@ -1911,11 +1910,11 @@ class LV_edit_props:
         # illegal characters
         invalid_lvname_message = ''
         if re.match('snapshot', name_new) or re.match('pvmove', name_new):
-            invalid_lvname_message = _("Names beginning with \"snapshot\" or \"pvmove\" are reserved keywords.")
+            invalid_lvname_message = _("Names begining with \"snapshot\" or \"pvmove\" are reserved keywords.")
         elif re.search('_mlog', name_new) or re.search('_mimage', name_new):
             invalid_lvname_message = _("Names containing \"_mlog\" or \"_mimage\" are reserved keywords.")
         elif name_new[0] == '-':
-            invalid_lvname_message = _("Names beginning with a \"-\" are invalid")
+            invalid_lvname_message = _("Names begining with a \"-\" are invalid")
         elif name_new == '.' or name_new == '..':
             invalid_lvname_message = _("Name can be neither \".\" nor \"..\"")
         else:
@@ -2146,7 +2145,7 @@ class LV_edit_props:
                     self.infoMessage(_("Mirror not created. Completing remaining tasks."))
                 else:
                     # create mirror
-                    self.infoMessage(_('Underlaying LVM doesn\'t support addition of mirrors to existing Logical Volumes. Completing remaining tasks.'))
+                    self.infoMessage('fixme: addition of mirror not implemented yet, should be ready for U2, I hope :). Completing remaining tasks.')
                     #self.command_handler.add_mirroring(self.lv.get_path(), pvlist_from_make_room)
                     pass
             

@@ -52,22 +52,21 @@ class Volume_Tab_View:
                                                                                 
     self.model_factory = model_factory
     
-    # check locking type
-    #locking_type = self.model_factory.get_locking_type()
-    #if locking_type != 1:
-    #    if locking_type == 0:
-    #        msg = _("LVM locking is disabled!!! Massive data corruption may occur. Enable locking in \n/etc/lvm/lvm.conf and try again. Exiting...")
-    #    elif locking_type == 2:
-    #        msg = _("Clustered LVM (cLVM) is not yet supported by %s. Exiting...")
-    #        msg = msg % PROGNAME
-    #    else:
-    #        msg = _("%s only supports file-based locking (locking_type=1 in /etc/lvm/lvm.conf). Exiting...")
-    #        msg = msg % PROGNAME
-    #    dlg = gtk.MessageDialog(None, 0,
-    #                            gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
-    #                            msg)
-    #    dlg.run()
-    #    sys.exit(10)
+    locking_type = self.model_factory.get_locking_type()
+    if locking_type != 1:
+        if locking_type == 0:
+            msg = _("LVM locking is disabled!!! Massive data corruption may occur. Enable locking in \n/etc/lvm/lvm.conf and try again. Exiting...")
+        elif locking_type == 2:
+            msg = _("Clustered LVM (cLVM) is not yet supported by %s. Exiting...")
+            msg = msg % PROGNAME
+        else:
+            msg = _("%s only supports file-based locking (locking_type=1 in /etc/lvm/lvm.conf). Exiting...")
+            msg = msg % PROGNAME
+        dlg = gtk.MessageDialog(None, 0,
+                                gtk.MESSAGE_ERROR, gtk.BUTTONS_OK,
+                                msg)
+        dlg.run()
+        sys.exit(10)
     
     
     self.main_win = app
@@ -585,9 +584,9 @@ class MirrorSyncProgress:
         
     
     def initiate(self):
-        if MIRRORING_UI_SUPPORT == False:
-            return
-        
+        # mirroring support disabled for now :(
+        return
+    
         # return if timer is already ticking
         if self.timer != 0:
             return
@@ -598,7 +597,7 @@ class MirrorSyncProgress:
     def crank(self):
         # initiate lvprobe if not initiated
         if self.forked_command == None:
-            args = [LVM_BIN_PATH, 'lvs', '--noheadings', '--separator', ';', '-o', 'lv_name,vg_name,lv_attr,copy_percent,move_pv']
+            args = [LVM_BIN_PATH, 'lvs', '--noheadings', '--separator', '\";\"', '-o', 'lv_name,vg_name,lv_attr,copy_percent,move_pv']
             self.forked_command = ForkedCommand(LVM_BIN_PATH, args)
             self.forked_command.fork()
         
@@ -629,7 +628,7 @@ class MirrorSyncProgress:
             for name in mirrors:
                 if name not in self.progress_bars:
                     progress = gtk.ProgressBar()
-                    progress.set_text(_("%s mirror synchronisation") % name)
+                    progress.set_text(_("%s mirror synchronisation ") % name)
                     progress.set_fraction(mirrors[name]/100.0)
                     hbox = gtk.HBox()
                     hbox.pack_end(progress)

@@ -20,7 +20,7 @@ def execWithCaptureErrorStatus(bin, args):
     if len(args) > 0:
         for arg in args[1:]:
             command = command + ' ' + arg
-    return _execWithCaptureErrorStatus(BASH_PATH, [BASH_PATH, '-c', command])
+    return __execWithCaptureErrorStatus(BASH_PATH, [BASH_PATH, '-c', command])
 
 
 def execWithCaptureProgress(bin, args, message):
@@ -129,7 +129,7 @@ class ForkedCommand:
             os.close(self.fd_read_out)
             os.close(self.fd_read_err)
             
-            out, err, res = _execWithCaptureErrorStatus(self.bin, self.args, 0, '/', 0, 1, 2, -1, False)
+            out, err, res = __execWithCaptureErrorStatus(self.bin, self.args, 0, '/', 0, 1, 2, -1, False)
             # let parent process know result of system call through IPC
             os.write(self.fd_write_out, out)
             os.write(self.fd_write_err, err)
@@ -176,7 +176,7 @@ class ForkedCommand:
 
 
 
-def _execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdin = 0, catchfd = 1, catcherrfd = 2, closefd = -1, update_gtk=True):
+def __execWithCaptureErrorStatus(command, argv, searchPath = 0, root = '/', stdin = 0, catchfd = 1, catcherrfd = 2, closefd = -1, update_gtk=True):
     if not os.access (root + command, os.X_OK):
         raise RuntimeError, command + " can not be run"
     

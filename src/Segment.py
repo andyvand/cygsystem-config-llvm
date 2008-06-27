@@ -41,7 +41,7 @@ class StripedSegment(Segment):
   
   def add_stripe(self, id, extent_block):
     self.stripes[id] = extent_block
-    extent_block.set_annotation(_("Stripe") + str(id))
+    extent_block.set_annotation(_("Stripe ") + str(id))
   def get_stripes(self):
     return self.stripes
   
@@ -106,7 +106,7 @@ class MirroredSegment(Segment):
     # set annotations
     for seg in image_lv.get_segments():
       extent = seg.get_extent_block()
-      extent.set_annotation(_("Mirror") + str(image_num))
+      extent.set_annotation(_("Mirror ") + str(image_num))
   def get_images(self):
     return self.image_lvs
   def clear_images(self):
